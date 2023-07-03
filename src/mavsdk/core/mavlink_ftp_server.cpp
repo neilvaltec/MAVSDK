@@ -218,7 +218,10 @@ void MavlinkFtpServer::process_mavlink_ftp_message(const mavlink_message_t& msg)
     }
 }
 
-MavlinkFtpServer::~MavlinkFtpServer() {}
+MavlinkFtpServer::~MavlinkFtpServer()
+{
+    _reset();
+}
 
 void MavlinkFtpServer::_call_op_result_callback(ServerResult result)
 {
@@ -950,6 +953,8 @@ MavlinkFtpServer::ServerResult MavlinkFtpServer::_work_terminate(PayloadHeader* 
     }
 
     payload->size = 0;
+
+    _reset();
 
     return ServerResult::SUCCESS;
 }
