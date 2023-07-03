@@ -127,7 +127,7 @@ jobs:
         id: cache
         with:
           path: ~/.hunter
-          key: ${{ github.job }}-${{ hashFiles('~/.hunter/**') }}
+          key: ${{ github.job }}-${{ hashFiles('~/.hunter/**') }}-2
       - name: install mavlink on the system
         run: |
             cmake -Bthird_party/mavlink/build -Sthird_party/mavlink
