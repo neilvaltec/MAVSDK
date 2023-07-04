@@ -16,6 +16,7 @@ add_executable(system_tests_runner
     ftp_rename_file.cpp
     ftp_create_dir.cpp
     ftp_remove_dir.cpp
+    ftp_compare_files.cpp
 )
 
 target_include_directories(system_tests_runner

@@ -190,8 +190,21 @@ private:
         ResultCallback callback{};
     };
 
-    using Item = std::
-        variant<DownloadItem, UploadItem, RemoveItem, RenameItem, CreateDirItem, RemoveDirItem>;
+    struct CompareFilesItem {
+        std::string local_path{};
+        std::string remote_path{};
+        uint32_t local_crc{};
+        AreFilesIdenticalCallback callback{};
+    };
+
+    using Item = std::variant<
+        DownloadItem,
+        UploadItem,
+        RemoveItem,
+        RenameItem,
+        CreateDirItem,
+        RemoveDirItem,
+        CompareFilesItem>;
     struct Work {
         Item item;
         PayloadHeader payload; // The last payload saved for retries
@@ -220,8 +233,6 @@ private:
         ERR_TIMEOUT = 200, ///< Timeout
         ERR_FILE_IO_ERROR, ///< File IO operation error
     };
-
-    using file_crc32_ResultCallback = std::function<void(ClientResult, uint32_t)>;
 
     static constexpr auto DIRENT_FILE = "F"; ///< Identifies File returned from List command
     static constexpr auto DIRENT_DIR = "D"; ///< Identifies Directory returned from List command
@@ -277,8 +288,6 @@ private:
 
     ListDirectoryCallback _curr_dir_items_result_callback{};
 
-    file_crc32_ResultCallback _current_crc32_result_callback{};
-
     bool download_start(Work& work, DownloadItem& item);
     bool download_continue(Work& work, DownloadItem& item, PayloadHeader* payload);
 
@@ -293,6 +302,8 @@ private:
 
     bool remove_dir_start(Work& work, RemoveDirItem& item);
 
+    bool compare_files_start(Work& work, CompareFilesItem& item);
+
     static ClientResult result_from_nak(PayloadHeader* payload);
 
     void timeout();
@@ -300,7 +311,6 @@ private:
     void reset_timer();
     void stop_timer();
 
-    void _calc_file_crc32_async(const std::string& path, file_crc32_ResultCallback callback);
     ClientResult _calc_local_file_crc32(const std::string& path, uint32_t& csum);
 
     void _process_ack(PayloadHeader* payload);
@@ -310,7 +320,6 @@ private:
     void _call_op_result_callback(ServerResult result);
     void _call_op_progress_callback(uint32_t bytes_written, uint32_t total_bytes);
     void _call_dir_items_result_callback(ServerResult result, std::vector<std::string> list);
-    void _call_crc32_result_callback(ServerResult result, uint32_t crc32);
     void _generic_command_async(Opcode opcode, uint32_t offset, const std::string& path);
     void _read();
     void _write();
@@ -343,7 +352,6 @@ private:
     ServerResult _work_create_directory(PayloadHeader* payload);
     ServerResult _work_remove_file(PayloadHeader* payload);
     ServerResult _work_rename(PayloadHeader* payload);
-    ServerResult _work_calc_file_CRC32(PayloadHeader* payload);
 
     std::mutex _tmp_files_mutex{};
     std::unordered_map<std::string, std::string> _tmp_files{};

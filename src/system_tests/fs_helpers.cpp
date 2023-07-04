@@ -7,13 +7,13 @@
 #include <vector>
 #include <cstring>
 
-bool create_temp_file(const fs::path& path, size_t len)
+bool create_temp_file(const fs::path& path, size_t len, uint8_t start)
 {
     std::vector<uint8_t> data;
     data.reserve(len);
 
     for (size_t i = 0; i < len; ++i) {
-        data.push_back(static_cast<uint8_t>(i % 256));
+        data.push_back(static_cast<uint8_t>((i + start) % 256));
     }
 
     const auto parent_path = path.parent_path();
