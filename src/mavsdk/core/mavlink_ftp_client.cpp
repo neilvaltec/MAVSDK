@@ -89,6 +89,11 @@ void MavlinkFtpClient::do_work()
                 if (!create_dir_start(*work, item)) {
                     work_queue_guard.pop_front();
                 }
+            },
+            [&](RemoveDirItem& item) {
+                if (!remove_dir_start(*work, item)) {
+                    work_queue_guard.pop_front();
+                }
             }},
         work->item);
 }
@@ -233,6 +238,23 @@ void MavlinkFtpClient::process_mavlink_ftp_message(const mavlink_message_t& msg)
             [&](CreateDirItem& item) {
                 if (payload->opcode == RSP_ACK) {
                     if (payload->req_opcode == CMD_CREATE_DIRECTORY) {
+                        stop_timer();
+                        item.callback(ClientResult::Success);
+                        work_queue_guard.pop_front();
+
+                    } else {
+                        LogWarn() << "Unexpected ack";
+                    }
+
+                } else if (payload->opcode == RSP_NAK) {
+                    stop_timer();
+                    item.callback(result_from_nak(payload));
+                    work_queue_guard.pop_front();
+                }
+            },
+            [&](RemoveDirItem& item) {
+                if (payload->opcode == RSP_ACK) {
+                    if (payload->req_opcode == CMD_REMOVE_DIRECTORY) {
                         stop_timer();
                         item.callback(ClientResult::Success);
                         work_queue_guard.pop_front();
@@ -592,6 +614,27 @@ bool MavlinkFtpClient::create_dir_start(Work& work, CreateDirItem& item)
     }
 
     work.last_opcode = CMD_CREATE_DIRECTORY;
+    work.payload.seq_number = _seq_number++;
+    work.payload.session = 0;
+    work.payload.opcode = work.last_opcode;
+    work.payload.offset = 0;
+    strncpy(reinterpret_cast<char*>(work.payload.data), item.path.c_str(), max_data_length - 1);
+    work.payload.size = item.path.length() + 1;
+    start_timer();
+
+    _send_mavlink_ftp_message(work.payload);
+
+    return true;
+}
+
+bool MavlinkFtpClient::remove_dir_start(Work& work, RemoveDirItem& item)
+{
+    if (item.path.length() + 1 >= max_data_length) {
+        item.callback(ClientResult::InvalidParameter);
+        return false;
+    }
+
+    work.last_opcode = CMD_REMOVE_DIRECTORY;
     work.payload.seq_number = _seq_number++;
     work.payload.session = 0;
     work.payload.opcode = work.last_opcode;
@@ -1092,10 +1135,12 @@ MavlinkFtpClient::ClientResult MavlinkFtpClient::remove_directory(const std::str
 
 void MavlinkFtpClient::remove_directory_async(const std::string& path, ResultCallback callback)
 {
-    (void)path;
-    (void)callback;
-    std::lock_guard<std::mutex> lock(_curr_op_mutex);
-    //_generic_command_async(CMD_REMOVE_DIRECTORY, 0, path, callback);
+    auto item = RemoveDirItem{};
+    item.path = path;
+    item.callback = callback;
+    auto new_work = Work{std::move(item)};
+
+    _work_queue.push_back(std::make_shared<Work>(std::move(new_work)));
 }
 
 MavlinkFtpClient::ClientResult MavlinkFtpClient::remove_file(const std::string& path)
@@ -1312,6 +1357,19 @@ void MavlinkFtpClient::timeout()
                 _send_mavlink_ftp_message(work->payload);
             },
             [&](CreateDirItem& item) {
+                if (--work->retries == 0) {
+                    item.callback(ClientResult::Timeout);
+                    work_queue_guard.pop_front();
+                    return;
+                }
+                if (_debugging) {
+                    LogDebug() << "Retries left: " << work->retries;
+                }
+
+                start_timer();
+                _send_mavlink_ftp_message(work->payload);
+            },
+            [&](RemoveDirItem& item) {
                 if (--work->retries == 0) {
                     item.callback(ClientResult::Timeout);
                     work_queue_guard.pop_front();

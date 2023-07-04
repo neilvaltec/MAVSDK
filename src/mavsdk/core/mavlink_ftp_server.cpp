@@ -979,6 +979,10 @@ MavlinkFtpServer::ServerResult MavlinkFtpServer::_work_reset(PayloadHeader* payl
 
 MavlinkFtpServer::ServerResult MavlinkFtpServer::_work_remove_directory(PayloadHeader* payload)
 {
+    if (_root_dir.empty()) {
+        return ServerResult::ERR_FAIL_FILE_DOES_NOT_EXIST;
+    }
+
     std::string path = _get_path(payload);
     if (path.rfind(_root_dir, 0) != 0) {
         LogWarn() << "FTP: invalid path " << path;
