@@ -17,11 +17,6 @@ Ftp::Ftp(std::shared_ptr<System> system) : PluginBase(), _impl{std::make_unique<
 
 Ftp::~Ftp() {}
 
-void Ftp::reset_async(const ResultCallback callback)
-{
-    _impl->reset_async(callback);
-}
-
 void Ftp::download_async(
     std::string remote_file_path, std::string local_dir, const DownloadCallback& callback)
 {
@@ -99,19 +94,9 @@ Ftp::are_files_identical(std::string local_file_path, std::string remote_file_pa
     return _impl->are_files_identical(local_file_path, remote_file_path);
 }
 
-Ftp::Result Ftp::set_root_directory(std::string root_dir) const
-{
-    return _impl->set_root_directory(root_dir);
-}
-
 Ftp::Result Ftp::set_target_compid(uint32_t compid) const
 {
     return _impl->set_target_compid(compid);
-}
-
-uint32_t Ftp::get_our_compid() const
-{
-    return _impl->get_our_compid();
 }
 
 bool operator==(const Ftp::ProgressData& lhs, const Ftp::ProgressData& rhs)

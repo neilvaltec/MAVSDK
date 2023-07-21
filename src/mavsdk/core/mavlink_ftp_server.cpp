@@ -174,6 +174,7 @@ void MavlinkFtpServer::process_mavlink_ftp_message(const mavlink_message_t& msg)
         payload->opcode = RSP_ACK;
 
     } else {
+        LogWarn() << "This case!";
         uint8_t r_errno = errno;
         payload->req_opcode = payload->opcode;
         payload->opcode = RSP_NAK;
@@ -746,6 +747,10 @@ std::string MavlinkFtpServer::_get_rel_path(const std::string& path)
 MavlinkFtpServer::ServerResult
 MavlinkFtpServer::_work_list(PayloadHeader* payload, bool list_hidden)
 {
+    if (_root_dir.empty()) {
+        return ServerResult::ERR_FAIL_FILE_DOES_NOT_EXIST;
+    }
+
     ServerResult error_code = ServerResult::SUCCESS;
 
     uint8_t offset = 0;
@@ -800,11 +805,24 @@ MavlinkFtpServer::_work_list(PayloadHeader* payload, bool list_hidden)
             }
             uint8_t len = static_cast<uint8_t>(entry_s.length() + 1);
             memcpy(&payload->data[offset], entry_s.c_str(), len);
+
             offset += len;
         }
+        closedir(dfd);
     }
 
-    payload->size = offset;
+    LogWarn() << "Setting offset: " << (int)offset;
+
+    if (offset == 0) {
+        // We are done and need to respond with EOF.
+        error_code = ServerResult::ERR_EOF;
+        payload->size = 1;
+        // FIXME: don't read wrong errno downstream.
+        errno = 0;
+
+    } else {
+        payload->size = offset;
+    }
 
     return error_code;
 }

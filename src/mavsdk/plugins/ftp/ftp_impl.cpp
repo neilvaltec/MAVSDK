@@ -1,24 +1,7 @@
+#include <algorithm>
 #include <functional>
 #include <iostream>
 
-#if defined(WINDOWS)
-#include "tronkko_dirent.h"
-#include "stackoverflow_unistd.h"
-// Fix MSVC error C4003
-// https://stackoverflow.com/a/6884102/8548472
-#ifdef max
-#undef max
-#endif
-#else
-#include <dirent.h>
-#include <unistd.h>
-#endif
-#include <fcntl.h>
-#include <sys/stat.h>
-#include <algorithm>
-
-#include "crc32.h"
-#include "fs.h"
 #include "ftp_impl.h"
 #include "system.h"
 
@@ -47,14 +30,6 @@ void FtpImpl::enable() {}
 
 void FtpImpl::disable() {}
 
-void FtpImpl::reset_async(Ftp::ResultCallback callback)
-{
-    _system_impl->mavlink_ftp_client().reset_async(
-        [callback, this](MavlinkFtpClient::ClientResult result) {
-            callback(result_from_mavlink_ftp_result(result));
-        });
-}
-
 void FtpImpl::download_async(
     const std::string& remote_path, const std::string& local_folder, Ftp::DownloadCallback callback)
 {
@@ -63,7 +38,6 @@ void FtpImpl::download_async(
         local_folder,
         [callback, this](
             MavlinkFtpClient::ClientResult result, MavlinkFtpClient::ProgressData progress_data) {
-            LogDebug() << "Got client result: " << result;
             callback(
                 result_from_mavlink_ftp_result(result),
                 progress_data_from_mavlink_ftp_progress_data(progress_data));
@@ -92,15 +66,12 @@ std::pair<Ftp::Result, std::vector<std::string>> FtpImpl::list_directory(const s
     return std::pair{result_from_mavlink_ftp_result(ret.first), ret.second};
 }
 
-void FtpImpl::list_directory_async(
-    const std::string& path, Ftp::ListDirectoryCallback callback, uint32_t offset)
+void FtpImpl::list_directory_async(const std::string& path, Ftp::ListDirectoryCallback callback)
 {
     _system_impl->mavlink_ftp_client().list_directory_async(
-        path,
-        [callback, this](MavlinkFtpClient::ClientResult result, auto&& dirs) {
+        path, [callback, this](MavlinkFtpClient::ClientResult result, auto&& dirs) {
             callback(result_from_mavlink_ftp_result(result), dirs);
-        },
-        offset);
+        });
 }
 
 Ftp::Result FtpImpl::create_directory(const std::string& path)
@@ -177,12 +148,6 @@ void FtpImpl::are_files_identical_async(
         [callback, this](MavlinkFtpClient::ClientResult result, bool identical) {
             callback(result_from_mavlink_ftp_result(result), identical);
         });
-}
-
-Ftp::Result FtpImpl::set_root_directory(const std::string& root_dir)
-{
-    return result_from_mavlink_ftp_result(
-        _system_impl->mavlink_ftp_client().set_root_directory(root_dir));
 }
 
 Ftp::Result FtpImpl::set_target_compid(uint8_t component_id)

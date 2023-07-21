@@ -1,6 +1,5 @@
 #pragma once
 
-#include <atomic>
 #include <cinttypes>
 #include <functional>
 #include <fstream>
@@ -66,8 +65,6 @@ public:
 
     void do_work();
 
-    void send();
-
     std::pair<ClientResult, std::vector<std::string>> list_directory(const std::string& path);
     ClientResult create_directory(const std::string& path);
     ClientResult remove_directory(const std::string& path);
@@ -85,8 +82,7 @@ public:
         const std::string& local_file_path,
         const std::string& remote_folder,
         UploadCallback callback);
-    void list_directory_async(
-        const std::string& path, ListDirectoryCallback callback, uint32_t offset = 0);
+    void list_directory_async(const std::string& path, ListDirectoryCallback callback);
     void create_directory_async(const std::string& path, ResultCallback callback);
     void remove_directory_async(const std::string& path, ResultCallback callback);
     void remove_file_async(const std::string& path, ResultCallback callback);
@@ -100,8 +96,6 @@ public:
     ClientResult set_root_directory(const std::string& root_dir);
     uint8_t get_our_compid();
     ClientResult set_target_compid(uint8_t component_id);
-
-    std::optional<std::string> write_tmp_file(const std::string& path, const std::string& content);
 
 private:
     static constexpr unsigned RETRIES = 10;
@@ -197,6 +191,13 @@ private:
         AreFilesIdenticalCallback callback{};
     };
 
+    struct ListDirItem {
+        std::string path{};
+        ListDirectoryCallback callback{};
+        uint32_t offset{0};
+        std::vector<std::string> dirs{};
+    };
+
     using Item = std::variant<
         DownloadItem,
         UploadItem,
@@ -204,14 +205,17 @@ private:
         RenameItem,
         CreateDirItem,
         RemoveDirItem,
-        CompareFilesItem>;
+        CompareFilesItem,
+        ListDirItem>;
+
     struct Work {
         Item item;
         PayloadHeader payload; // The last payload saved for retries
         unsigned retries{RETRIES};
         bool started{false};
         Opcode last_opcode{};
-        uint16_t last_seq_number{0};
+        uint16_t last_received_seq_number{0};
+        uint16_t last_sent_seq_number{0};
         Work(Item new_item) : item(std::move(new_item)) {}
     };
 
@@ -257,37 +261,6 @@ private:
         std::string path;
     };
 
-    struct SessionInfo _session_info {}; ///< Session info, fd=-1 for no active session
-
-    SystemImpl& _system_impl;
-
-    uint8_t _network_id = 0;
-    uint8_t _target_component_id = 0;
-    bool _target_component_id_set{false};
-    Opcode _curr_op = CMD_NONE;
-    std::mutex _curr_op_mutex{};
-    std::mutex _timer_mutex{};
-    std::string _last_path{};
-    uint16_t _seq_number = 0;
-    OfstreamWithPath _ofstream{};
-    bool _session_valid = false;
-    uint8_t _session = 0;
-    ServerResult _session_result = ServerResult::SUCCESS;
-    uint32_t _bytes_transferred = 0;
-    uint32_t _file_size = 0;
-    std::vector<std::string> _curr_directory_list{};
-
-    void* _timeout_cookie = nullptr;
-
-    ResultCallback _curr_op_result_callback{};
-    // _curr_op_progress_callback is used for download_callback_t as well as upload_callback_t
-    static_assert(
-        std::is_same<DownloadCallback, UploadCallback>::value, "callback types don't match");
-    DownloadCallback _curr_op_progress_callback{};
-    int _last_progress_percentage{-1};
-
-    ListDirectoryCallback _curr_dir_items_result_callback{};
-
     bool download_start(Work& work, DownloadItem& item);
     bool download_continue(Work& work, DownloadItem& item, PayloadHeader* payload);
 
@@ -304,60 +277,32 @@ private:
 
     bool compare_files_start(Work& work, CompareFilesItem& item);
 
+    bool list_dir_start(Work& work, ListDirItem& item);
+    bool list_dir_continue(Work& work, ListDirItem& item, PayloadHeader* payload);
+
     static ClientResult result_from_nak(PayloadHeader* payload);
 
     void timeout();
     void start_timer();
-    void reset_timer();
     void stop_timer();
 
-    ClientResult _calc_local_file_crc32(const std::string& path, uint32_t& csum);
+    ClientResult calc_local_file_crc32(const std::string& path, uint32_t& csum);
 
-    void _process_ack(PayloadHeader* payload);
-    void _process_nak(PayloadHeader* payload);
-    void _process_nak(ServerResult result);
-    static ClientResult _translate(ServerResult result);
-    void _call_op_result_callback(ServerResult result);
-    void _call_op_progress_callback(uint32_t bytes_written, uint32_t total_bytes);
-    void _call_dir_items_result_callback(ServerResult result, std::vector<std::string> list);
-    void _generic_command_async(Opcode opcode, uint32_t offset, const std::string& path);
-    void _read();
-    void _write();
-    void _end_read_session(bool delete_file = false);
-    void _end_write_session();
-    void _terminate_session();
-    void _send_mavlink_ftp_message(const PayloadHeader& payload);
+    static ClientResult translate(ServerResult result);
+    void send_mavlink_ftp_message(const PayloadHeader& payload);
 
-    void _list_directory(uint32_t offset);
-    uint8_t _get_target_component_id();
-
-    // prepend a root directory to each file/dir access to avoid enumerating the full FS tree
-    std::string _root_dir{"."};
+    uint8_t get_target_component_id();
 
     void process_mavlink_ftp_message(const mavlink_message_t& msg);
 
-    std::string _data_as_string(PayloadHeader* payload);
-    std::string _get_path(PayloadHeader* payload);
-    std::string _get_path(const std::string& payload_path);
-    std::string _get_rel_path(const std::string& path);
+    SystemImpl& _system_impl;
 
-    ServerResult _work_list(PayloadHeader* payload, bool list_hidden = false);
-    ServerResult _work_open(PayloadHeader* payload, int oflag);
-    ServerResult _work_read(PayloadHeader* payload);
-    ServerResult _work_burst(PayloadHeader* payload);
-    ServerResult _work_write(PayloadHeader* payload);
-    ServerResult _work_terminate(PayloadHeader* payload);
-    ServerResult _work_reset(PayloadHeader* payload);
-    ServerResult _work_remove_directory(PayloadHeader* payload);
-    ServerResult _work_create_directory(PayloadHeader* payload);
-    ServerResult _work_remove_file(PayloadHeader* payload);
-    ServerResult _work_rename(PayloadHeader* payload);
+    uint8_t _target_component_id = 0;
+    bool _target_component_id_set{false};
+    uint8_t _session = 0;
+    uint8_t _network_id = 0;
 
-    std::mutex _tmp_files_mutex{};
-    std::unordered_map<std::string, std::string> _tmp_files{};
-    std::string _tmp_dir{};
-
-    std::atomic<bool> _active{false};
+    void* _timeout_cookie = nullptr;
 
     LockedQueue<Work> _work_queue{};
 
