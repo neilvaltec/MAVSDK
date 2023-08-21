@@ -285,9 +285,7 @@ void MavlinkFtpClient::process_mavlink_ftp_message(const mavlink_message_t& msg)
             [&](ListDirItem& item) {
                 if (payload->opcode == RSP_ACK) {
                     if (payload->req_opcode == CMD_LIST_DIRECTORY) {
-                        LogDebug() << "GOT RESPONSE regarding list dir";
-                        // Whenever we do get an ack,
-                        // reset the retry counter.
+                        // Whenever we do get an ack, reset the retry counter.
                         work->retries = RETRIES;
 
                         if (!list_dir_continue(*work, item, payload)) {
@@ -659,7 +657,7 @@ bool MavlinkFtpClient::list_dir_start(Work& work, ListDirItem& item)
 bool MavlinkFtpClient::list_dir_continue(Work& work, ListDirItem& item, PayloadHeader* payload)
 {
     if (_debugging) {
-        LogWarn() << "List dir response received, got " << (int)payload->size << " chars";
+        LogDebug() << "List dir response received, got " << (int)payload->size << " chars";
     }
 
     if (payload->size > max_data_length) {

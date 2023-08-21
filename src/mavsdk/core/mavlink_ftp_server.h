@@ -64,7 +64,7 @@ private:
     };
 
     /// @brief Command opcodes
-    enum Opcode : uint8_t {
+    enum class Opcode : uint8_t {
         CMD_NONE, ///< ignored, always acked
         CMD_TERMINATE_SESSION, ///< Terminates open Read session
         CMD_RESET_SESSIONS, ///< Terminates all open Read sessions
@@ -88,9 +88,9 @@ private:
 
     using file_crc32_ResultCallback = std::function<void(ServerResult, uint32_t)>;
 
-    static constexpr auto DIRENT_FILE = "F"; ///< Identifies File returned from List command
-    static constexpr auto DIRENT_DIR = "D"; ///< Identifies Directory returned from List command
-    static constexpr auto DIRENT_SKIP = "S"; ///< Identifies Skipped entry from List command
+    static constexpr auto DIRENT_FILE = 'F'; ///< Identifies File returned from List command
+    static constexpr auto DIRENT_DIR = 'D'; ///< Identifies Directory returned from List command
+    static constexpr auto DIRENT_SKIP = 'S'; ///< Identifies Skipped entry from List command
 
     /// @brief Maximum data size in RequestHeader::data
     static constexpr uint8_t max_data_length = 239;
@@ -102,9 +102,9 @@ private:
     PACK(struct PayloadHeader {
         uint16_t seq_number; ///< sequence number for message
         uint8_t session; ///< Session id for read and write commands
-        uint8_t opcode; ///< Command opcode
+        Opcode opcode; ///< Command opcode
         uint8_t size; ///< Size of data
-        uint8_t req_opcode; ///< Request opcode returned in RSP_ACK, RSP_NAK message
+        Opcode req_opcode; ///< Request opcode returned in RSP_ACK, RSP_NAK message
         uint8_t burst_complete; ///< Only used if req_opcode=CMD_BURST_READ_FILE - 1: set of burst
         ///< packets complete, 0: More burst packets coming.
         uint8_t padding; ///< 32 bit alignment padding
@@ -136,7 +136,7 @@ private:
     uint8_t _network_id = 0;
     uint8_t _target_system_id = 0;
     uint8_t _target_component_id = 0;
-    Opcode _curr_op = CMD_NONE;
+    Opcode _curr_op = Opcode::CMD_NONE;
     std::mutex _curr_op_mutex{};
     mavlink_message_t _last_command{};
     uint32_t _max_last_command_retries{5};
@@ -154,17 +154,12 @@ private:
 
     ServerResult _calc_local_file_crc32(const std::string& path, uint32_t& csum);
 
-    void _process_ack(PayloadHeader* payload);
-    void _process_nak(PayloadHeader* payload);
-    void _process_nak(ServerResult result);
     void _call_op_result_callback(ServerResult result);
     void _call_op_progress_callback(uint32_t bytes_written, uint32_t total_bytes);
     void _call_dir_items_result_callback(ServerResult result, std::vector<std::string> list);
     void _call_crc32_result_callback(ServerResult result, uint32_t crc32);
-    void _read();
     void _write();
     void _end_read_session(bool delete_file = false);
-    void _end_write_session();
     void _terminate_session();
     void _send_mavlink_ftp_message(const PayloadHeader& payload);
 
@@ -176,30 +171,28 @@ private:
     std::string _root_dir{};
 
     bool _last_reply_valid = false;
-    uint16_t _last_reply_seq = 0;
     mavlink_message_t _last_reply{};
 
     void process_mavlink_ftp_message(const mavlink_message_t& msg);
 
-    std::string _data_as_string(PayloadHeader* payload);
-    std::string _get_path(PayloadHeader* payload);
+    std::string _data_as_string(const PayloadHeader& payload);
+    std::string _get_path(const PayloadHeader& payload);
     std::string _get_path(const std::string& payload_path);
-    std::string _get_rel_path(const std::string& path);
 
-    ServerResult _work_list(PayloadHeader* payload, bool list_hidden = false);
-    ServerResult _work_open_file_readonly(PayloadHeader* payload);
-    ServerResult _work_open_file_writeonly(PayloadHeader* payload);
-    ServerResult _work_create_file(PayloadHeader* payload);
-    ServerResult _work_read(PayloadHeader* payload);
-    ServerResult _work_burst(PayloadHeader* payload);
-    ServerResult _work_write(PayloadHeader* payload);
-    ServerResult _work_terminate(PayloadHeader* payload);
-    ServerResult _work_reset(PayloadHeader* payload);
-    ServerResult _work_remove_directory(PayloadHeader* payload);
-    ServerResult _work_create_directory(PayloadHeader* payload);
-    ServerResult _work_remove_file(PayloadHeader* payload);
-    ServerResult _work_rename(PayloadHeader* payload);
-    ServerResult _work_calc_file_CRC32(PayloadHeader* payload);
+    void _work_list(const PayloadHeader& payload, PayloadHeader& response);
+    void _work_open_file_readonly(const PayloadHeader& payload, PayloadHeader& response);
+    void _work_open_file_writeonly(const PayloadHeader& payload, PayloadHeader& response);
+    void _work_create_file(const PayloadHeader& payload, PayloadHeader& response);
+    void _work_read(const PayloadHeader& payload, PayloadHeader& response);
+    void _work_burst(const PayloadHeader& payload, PayloadHeader& response);
+    void _work_write(const PayloadHeader& payload, PayloadHeader& response);
+    void _work_terminate(const PayloadHeader& payload, PayloadHeader& response);
+    void _work_reset(const PayloadHeader& payload, PayloadHeader& response);
+    void _work_remove_directory(const PayloadHeader& payload, PayloadHeader& response);
+    void _work_create_directory(const PayloadHeader& payload, PayloadHeader& response);
+    void _work_remove_file(const PayloadHeader& payload, PayloadHeader& response);
+    void _work_rename(const PayloadHeader& payload, PayloadHeader& response);
+    void _work_calc_file_CRC32(const PayloadHeader& payload, PayloadHeader& response);
 
     std::mutex _tmp_files_mutex{};
     std::unordered_map<std::string, std::string> _tmp_files{};
