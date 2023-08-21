@@ -12,10 +12,6 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 
-#ifndef O_ACCMODE
-#define O_ACCMODE (O_RDONLY | O_WRONLY | O_RDWR)
-#endif
-
 #include "unused.h"
 #include "crc32.h"
 #include "fs.h"
@@ -117,21 +113,21 @@ void MavlinkFtpServer::process_mavlink_ftp_message(const mavlink_message_t& msg)
                 if (_debugging) {
                     LogDebug() << "OPC:CMD_OPEN_FILE_RO";
                 }
-                error_code = _work_open(payload, O_RDONLY);
+                error_code = _work_open_file_readonly(payload);
                 break;
 
             case CMD_CREATE_FILE:
                 if (_debugging) {
                     LogDebug() << "OPC:CMD_CREATE_FILE";
                 }
-                error_code = _work_open(payload, O_CREAT | O_TRUNC | O_WRONLY);
+                error_code = _work_create_file(payload);
                 break;
 
             case CMD_OPEN_FILE_WO:
                 if (_debugging) {
                     LogDebug() << "OPC:CMD_OPEN_FILE_WO";
                 }
-                error_code = _work_open(payload, O_CREAT | O_WRONLY);
+                error_code = _work_open_file_writeonly(payload);
                 break;
 
             case CMD_READ_FILE:
@@ -456,14 +452,11 @@ MavlinkFtpServer::_work_list(PayloadHeader* payload, bool list_hidden)
     return error_code;
 }
 
-MavlinkFtpServer::ServerResult MavlinkFtpServer::_work_open(PayloadHeader* payload, int oflag)
+MavlinkFtpServer::ServerResult MavlinkFtpServer::_work_open_file_readonly(PayloadHeader* payload)
 {
     if (_session_info.fd >= 0) {
         _reset();
-        // return ServerResult::ERR_NO_SESSIONS_AVAILABLE;
     }
-
-    LogWarn() << (_root_dir.empty() ? "EMPTY" : "not empty");
 
     std::string path = [payload, this]() {
         std::lock_guard<std::mutex> lock(_tmp_files_mutex);
@@ -479,24 +472,84 @@ MavlinkFtpServer::ServerResult MavlinkFtpServer::_work_open(PayloadHeader* paylo
         return ServerResult::ERR_FAIL_FILE_DOES_NOT_EXIST;
     }
 
-    // TODO: check again
-    LogInfo() << "Finding " << path << " in " << _root_dir;
+    if (_debugging) {
+        LogInfo() << "Finding " << path << " in " << _root_dir;
+    }
     if (path.rfind(_root_dir, 0) != 0) {
         LogWarn() << "FTP: invalid path " << path;
         return ServerResult::ERR_FAIL;
     }
-    LogDebug() << "going to open: " << path;
 
-    // fail only if requested open for read
-    if ((oflag & O_ACCMODE) == O_RDONLY && !fs_exists(path)) {
+    if (_debugging) {
+        LogDebug() << "Going to open readonly: " << path;
+    }
+
+    if (!fs_exists(path)) {
         LogWarn() << "FTP: Open failed - file not found";
         return ServerResult::ERR_FAIL_FILE_DOES_NOT_EXIST;
     }
 
     uint32_t file_size = fs_file_size(path);
 
-    // Set mode to 666 in case oflag has O_CREAT
-    int fd = ::open(path.c_str(), oflag, 0666);
+    int fd = ::open(path.c_str(), O_RDONLY);
+
+    if (fd < 0) {
+        LogWarn() << "FTP: Open failed";
+        return ServerResult::ERR_FAIL;
+    }
+
+    _session_info.fd = fd;
+    _session_info.file_size = file_size;
+    _session_info.stream_download = false;
+
+    payload->session = 0;
+    payload->size = sizeof(uint32_t);
+    memcpy(payload->data, &file_size, payload->size);
+
+    return ServerResult::SUCCESS;
+}
+
+MavlinkFtpServer::ServerResult MavlinkFtpServer::_work_open_file_writeonly(PayloadHeader* payload)
+{
+    if (_session_info.fd >= 0) {
+        _reset();
+    }
+
+    std::string path = [payload, this]() {
+        std::lock_guard<std::mutex> lock(_tmp_files_mutex);
+        const auto it = _tmp_files.find(_data_as_string(payload));
+        if (it != _tmp_files.end()) {
+            return it->second;
+        } else {
+            return _root_dir.empty() ? "" : _get_path(payload);
+        }
+    }();
+
+    if (path.empty()) {
+        return ServerResult::ERR_FAIL_FILE_DOES_NOT_EXIST;
+    }
+
+    if (_debugging) {
+        LogInfo() << "Finding " << path << " in " << _root_dir;
+    }
+    if (path.rfind(_root_dir, 0) != 0) {
+        LogWarn() << "FTP: invalid path " << path;
+        return ServerResult::ERR_FAIL;
+    }
+
+    if (_debugging) {
+        LogDebug() << "Going to open writeonly: " << path;
+    }
+
+    // fail only if requested open for read
+    if (!fs_exists(path)) {
+        LogWarn() << "FTP: Open failed - file not found";
+        return ServerResult::ERR_FAIL_FILE_DOES_NOT_EXIST;
+    }
+
+    uint32_t file_size = fs_file_size(path);
+
+    int fd = ::open(path.c_str(), O_WRONLY, 0666);
 
     if (fd < 0) {
         LogWarn() << "FTP: Open failed";
@@ -511,6 +564,54 @@ MavlinkFtpServer::ServerResult MavlinkFtpServer::_work_open(PayloadHeader* paylo
     payload->session = 0;
     payload->size = sizeof(uint32_t);
     memcpy(payload->data, &file_size, payload->size);
+
+    return ServerResult::SUCCESS;
+}
+
+MavlinkFtpServer::ServerResult MavlinkFtpServer::_work_create_file(PayloadHeader* payload)
+{
+    if (_session_info.fd >= 0) {
+        _reset();
+    }
+
+    std::string path = [payload, this]() {
+        std::lock_guard<std::mutex> lock(_tmp_files_mutex);
+        const auto it = _tmp_files.find(_data_as_string(payload));
+        if (it != _tmp_files.end()) {
+            return it->second;
+        } else {
+            return _root_dir.empty() ? "" : _get_path(payload);
+        }
+    }();
+
+    if (path.empty()) {
+        return ServerResult::ERR_FAIL_FILE_DOES_NOT_EXIST;
+    }
+
+    if (_debugging) {
+        LogInfo() << "Finding " << path << " in " << _root_dir;
+    }
+    if (path.rfind(_root_dir, 0) != 0) {
+        LogWarn() << "FTP: invalid path " << path;
+        return ServerResult::ERR_FAIL;
+    }
+
+    if (_debugging) {
+        LogDebug() << "Creating file: " << path;
+    }
+
+    int fd = ::open(path.c_str(), O_CREAT | O_TRUNC | O_WRONLY, 0666);
+
+    if (fd < 0) {
+        LogWarn() << "FTP: Open failed";
+        return ServerResult::ERR_FAIL;
+    }
+
+    _session_info.fd = fd;
+    _session_info.file_size = 0;
+
+    payload->session = 0;
+    payload->size = 0;
 
     return ServerResult::SUCCESS;
 }

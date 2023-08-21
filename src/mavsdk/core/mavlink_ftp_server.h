@@ -187,7 +187,9 @@ private:
     std::string _get_rel_path(const std::string& path);
 
     ServerResult _work_list(PayloadHeader* payload, bool list_hidden = false);
-    ServerResult _work_open(PayloadHeader* payload, int oflag);
+    ServerResult _work_open_file_readonly(PayloadHeader* payload);
+    ServerResult _work_open_file_writeonly(PayloadHeader* payload);
+    ServerResult _work_create_file(PayloadHeader* payload);
     ServerResult _work_read(PayloadHeader* payload);
     ServerResult _work_burst(PayloadHeader* payload);
     ServerResult _work_write(PayloadHeader* payload);

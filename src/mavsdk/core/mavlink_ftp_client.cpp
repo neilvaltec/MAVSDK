@@ -169,7 +169,8 @@ void MavlinkFtpClient::process_mavlink_ftp_message(const mavlink_message_t& msg)
             },
             [&](UploadItem& item) {
                 if (payload->opcode == RSP_ACK) {
-                    if (payload->req_opcode == CMD_OPEN_FILE_WO ||
+                    if (payload->req_opcode == CMD_CREATE_FILE ||
+                        payload->req_opcode == CMD_OPEN_FILE_WO ||
                         payload->req_opcode == CMD_WRITE_FILE) {
                         // Whenever we do get an ack,
                         // reset the retry counter.
@@ -437,7 +438,7 @@ bool MavlinkFtpClient::upload_start(Work& work, UploadItem& item)
         return false;
     }
 
-    work.last_opcode = CMD_OPEN_FILE_WO;
+    work.last_opcode = CMD_CREATE_FILE;
     work.payload = {};
     work.payload.seq_number = work.last_sent_seq_number++;
     work.payload.session = 0;
