@@ -17,6 +17,7 @@
 #include "fs.h"
 #include "filesystem_include.h"
 #include "log.h"
+#include "unused.h"
 
 #ifndef PATH_MAX
 #define PATH_MAX 4096
@@ -26,10 +27,9 @@
 
 namespace mavsdk {
 
-bool fs_exists(const std::string& filename)
+bool fs_exists(const fs::path& path)
 {
-    struct stat buffer;
-    return (stat(filename.c_str(), &buffer) == 0);
+    return fs::exists(path);
 }
 
 uint32_t fs_file_size(const std::string& filename)
@@ -115,10 +115,11 @@ bool fs_create_directory(const std::string& path)
     return (mkdir(path.c_str(), (S_IRWXU | S_IRWXG | S_IRWXO)) == 0);
 }
 
-bool fs_remove(const std::string& path)
+bool fs_remove(const fs::path& path)
 {
-    LogWarn() << "Removing file: " << path;
-    return (remove(path.c_str()) == 0);
+    std::error_code ec;
+    return fs::remove(path, ec);
+    UNUSED(ec);
 }
 
 bool fs_rename(const std::string& old_name, const std::string& new_name)

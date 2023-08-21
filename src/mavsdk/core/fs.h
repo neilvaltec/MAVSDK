@@ -3,6 +3,9 @@
 #include <string>
 #include <optional>
 #include <cstdint>
+#include <filesystem>
+
+namespace fs = std::filesystem;
 
 namespace mavsdk {
 
@@ -12,7 +15,7 @@ const std::string path_separator = "\\";
 const std::string path_separator = "/";
 #endif
 
-bool fs_exists(const std::string& filename);
+bool fs_exists(const fs::path& filename);
 
 uint32_t fs_file_size(const std::string& filename);
 
@@ -22,7 +25,7 @@ std::string fs_canonical(const std::string& path);
 
 bool fs_create_directory(const std::string& path);
 
-bool fs_remove(const std::string& path);
+bool fs_remove(const fs::path& path);
 
 bool fs_rename(const std::string& old_name, const std::string& new_name);
 

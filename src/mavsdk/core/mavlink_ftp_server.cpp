@@ -16,6 +16,7 @@
 #define O_ACCMODE (O_RDONLY | O_WRONLY | O_RDWR)
 #endif
 
+#include "unused.h"
 #include "crc32.h"
 #include "fs.h"
 #include <algorithm>
@@ -26,6 +27,13 @@ namespace mavsdk {
 MavlinkFtpServer::MavlinkFtpServer(ServerComponentImpl& server_component_impl) :
     _server_component_impl(server_component_impl)
 {
+    if (const char* env_p = std::getenv("MAVSDK_FTP_DEBUGGING")) {
+        if (std::string(env_p) == "1") {
+            LogDebug() << "Ftp debugging is on.";
+            _debugging = true;
+        }
+    }
+
     _server_component_impl.register_mavlink_message_handler(
         MAVLINK_MSG_ID_FILE_TRANSFER_PROTOCOL,
         [this](const mavlink_message_t& message) { process_mavlink_ftp_message(message); },
@@ -38,8 +46,11 @@ void MavlinkFtpServer::process_mavlink_ftp_message(const mavlink_message_t& msg)
     mavlink_file_transfer_protocol_t ftp_req;
     mavlink_msg_file_transfer_protocol_decode(&msg, &ftp_req);
 
-    LogWarn() << "target: " << std::to_string(ftp_req.target_component)
-              << ", our: " << std::to_string(_server_component_impl.get_own_component_id());
+    if (_debugging) {
+        LogDebug() << "Processing FTP message to target compid: "
+                   << std::to_string(ftp_req.target_component) << ", our compid: "
+                   << std::to_string(_server_component_impl.get_own_component_id());
+    }
 
     if (ftp_req.target_system != 0 &&
         ftp_req.target_system != _server_component_impl.get_own_system_id()) {
@@ -57,22 +68,14 @@ void MavlinkFtpServer::process_mavlink_ftp_message(const mavlink_message_t& msg)
 
     ServerResult error_code = ServerResult::SUCCESS;
 
-    // basic sanity checks; must validate length before use
+    // Basic sanity check: validate length before use.
     if (payload->size > max_data_length) {
         error_code = ServerResult::ERR_INVALID_DATA_SIZE;
     } else {
-        LogDebug() << "ftp - opc: " << (int)payload->opcode << " size: " << (int)payload->size
-                   << " offset: " << (int)payload->offset << " seq: " << payload->seq_number;
-
-        // check the sequence number: if this is a resent request, resend the last response
-        // if (_last_reply_valid) {
-        //    if (payload->seq_number + 1 == _last_reply_seq) {
-        //        // This is the same request as the one we replied to last.
-        //        LogWarn() << "Wrong sequence - resend last response";
-        //        _server_component_impl.send_message(_last_reply);
-        //        return;
-        //    }
-        //}
+        if (_debugging) {
+            LogDebug() << "FTP opcode: " << (int)payload->opcode << ", size: " << (int)payload->size
+                       << ", offset: " << (int)payload->offset << ", seq: " << payload->seq_number;
+        }
 
         if (_curr_op != CMD_NONE && _curr_op != payload->req_opcode) {
             LogWarn() << "Received ACK not matching our current operation, resetting";
@@ -84,77 +87,107 @@ void MavlinkFtpServer::process_mavlink_ftp_message(const mavlink_message_t& msg)
 
         switch (payload->opcode) {
             case CMD_NONE:
-                LogInfo() << "OPC:CMD_NONE";
+                if (_debugging) {
+                    LogDebug() << "OPC:CMD_NONE";
+                }
                 break;
 
             case CMD_TERMINATE_SESSION:
-                LogInfo() << "OPC:CMD_TERMINATE_SESSION";
+                if (_debugging) {
+                    LogDebug() << "OPC:CMD_TERMINATE_SESSION";
+                }
                 error_code = _work_terminate(payload);
                 break;
 
             case CMD_RESET_SESSIONS:
-                LogInfo() << "OPC:CMD_RESET_SESSIONS";
+                if (_debugging) {
+                    LogDebug() << "OPC:CMD_RESET_SESSIONS";
+                }
                 error_code = _work_reset(payload);
                 break;
 
             case CMD_LIST_DIRECTORY:
-                LogInfo() << "OPC:CMD_LIST_DIRECTORY";
+                if (_debugging) {
+                    LogDebug() << "OPC:CMD_LIST_DIRECTORY";
+                }
                 error_code = _work_list(payload);
                 break;
 
             case CMD_OPEN_FILE_RO:
-                LogInfo() << "OPC:CMD_OPEN_FILE_RO";
+                if (_debugging) {
+                    LogDebug() << "OPC:CMD_OPEN_FILE_RO";
+                }
                 error_code = _work_open(payload, O_RDONLY);
                 break;
 
             case CMD_CREATE_FILE:
-                LogInfo() << "OPC:CMD_CREATE_FILE";
+                if (_debugging) {
+                    LogDebug() << "OPC:CMD_CREATE_FILE";
+                }
                 error_code = _work_open(payload, O_CREAT | O_TRUNC | O_WRONLY);
                 break;
 
             case CMD_OPEN_FILE_WO:
-                LogInfo() << "OPC:CMD_OPEN_FILE_WO";
+                if (_debugging) {
+                    LogDebug() << "OPC:CMD_OPEN_FILE_WO";
+                }
                 error_code = _work_open(payload, O_CREAT | O_WRONLY);
                 break;
 
             case CMD_READ_FILE:
-                LogInfo() << "OPC:CMD_READ_FILE";
+                if (_debugging) {
+                    LogDebug() << "OPC:CMD_READ_FILE";
+                }
                 error_code = _work_read(payload);
                 break;
 
             case CMD_BURST_READ_FILE:
-                LogInfo() << "OPC:CMD_BURST_READ_FILE";
+                if (_debugging) {
+                    LogDebug() << "OPC:CMD_BURST_READ_FILE";
+                }
                 error_code = _work_burst(payload);
                 stream_send = true;
                 break;
 
             case CMD_WRITE_FILE:
-                LogInfo() << "OPC:CMD_WRITE_FILE";
+                if (_debugging) {
+                    LogDebug() << "OPC:CMD_WRITE_FILE";
+                }
                 error_code = _work_write(payload);
                 break;
 
             case CMD_REMOVE_FILE:
-                LogInfo() << "OPC:CMD_REMOVE_FILE";
+                if (_debugging) {
+                    LogDebug() << "OPC:CMD_REMOVE_FILE";
+                }
                 error_code = _work_remove_file(payload);
                 break;
 
             case CMD_RENAME:
-                LogInfo() << "OPC:CMD_RENAME";
+                if (_debugging) {
+                    LogDebug() << "OPC:CMD_RENAME";
+                }
                 error_code = _work_rename(payload);
                 break;
 
             case CMD_CREATE_DIRECTORY:
-                LogInfo() << "OPC:CMD_CREATE_DIRECTORY";
+                if (_debugging) {
+                    LogDebug() << "OPC:CMD_CREATE_DIRECTORY";
+                }
                 error_code = _work_create_directory(payload);
                 break;
 
             case CMD_REMOVE_DIRECTORY:
-                LogInfo() << "OPC:CMD_REMOVE_DIRECTORY";
+                if (_debugging) {
+                    LogDebug() << "OPC:CMD_REMOVE_DIRECTORY";
+                }
                 error_code = _work_remove_directory(payload);
                 break;
 
             case CMD_CALC_FILE_CRC32:
-                LogInfo() << "OPC:CMD_CALC_FILE_CRC32";
+                if (_debugging) {
+                    LogDebug() << "OPC:CMD_CALC_FILE_CRC32";
+                }
                 error_code = _work_calc_file_CRC32(payload);
                 break;
 
@@ -164,7 +197,9 @@ void MavlinkFtpServer::process_mavlink_ftp_message(const mavlink_message_t& msg)
         }
     }
 
-    LogWarn() << "Error code: " << std::to_string(error_code);
+    if (_debugging) {
+        LogDebug() << "Error code: " << std::to_string(error_code);
+    }
 
     payload->seq_number++;
 
@@ -174,7 +209,6 @@ void MavlinkFtpServer::process_mavlink_ftp_message(const mavlink_message_t& msg)
         payload->opcode = RSP_ACK;
 
     } else {
-        LogWarn() << "This case!";
         uint8_t r_errno = errno;
         payload->req_opcode = payload->opcode;
         payload->opcode = RSP_NAK;
@@ -203,10 +237,6 @@ void MavlinkFtpServer::process_mavlink_ftp_message(const mavlink_message_t& msg)
         _last_reply_valid = true;
         _last_reply_seq = payload->seq_number;
 
-        if (payload->opcode == RSP_NAK) {
-            LogWarn() << "Sending nak!";
-        }
-
         mavlink_msg_file_transfer_protocol_pack(
             _server_component_impl.get_own_system_id(),
             _server_component_impl.get_own_component_id(),
@@ -222,126 +252,6 @@ void MavlinkFtpServer::process_mavlink_ftp_message(const mavlink_message_t& msg)
 MavlinkFtpServer::~MavlinkFtpServer()
 {
     _reset();
-}
-
-void MavlinkFtpServer::_call_op_result_callback(ServerResult result)
-{
-    if (_curr_op_result_callback) {
-        const auto temp_callback = _curr_op_result_callback;
-        _server_component_impl.call_user_callback(
-            [temp_callback, result]() { temp_callback(_translate(result)); });
-    }
-}
-
-void MavlinkFtpServer::_call_op_progress_callback(uint32_t bytes_read, uint32_t total_bytes)
-{
-    if (_curr_op_progress_callback) {
-        // Slow callback down to only report ever 1%, otherwise we are slowing
-        // everything down way too much.
-        int percentage = 100 * bytes_read / total_bytes;
-        if (_last_progress_percentage != percentage) {
-            _last_progress_percentage = percentage;
-
-            const auto temp_callback = _curr_op_progress_callback;
-            _server_component_impl.call_user_callback([temp_callback, bytes_read, total_bytes]() {
-                ProgressData progress;
-                progress.bytes_transferred = bytes_read;
-                progress.total_bytes = total_bytes;
-                temp_callback(ClientResult::Next, progress);
-            });
-        }
-    }
-}
-
-void MavlinkFtpServer::_call_dir_items_result_callback(
-    ServerResult result, std::vector<std::string> list)
-{
-    if (_curr_dir_items_result_callback) {
-        const auto temp_callback = _curr_dir_items_result_callback;
-        _server_component_impl.call_user_callback(
-            [temp_callback, result, list]() { temp_callback(_translate(result), list); });
-    }
-}
-
-void MavlinkFtpServer::_call_crc32_result_callback(ServerResult result, uint32_t crc32)
-{
-    if (_current_crc32_result_callback) {
-        const auto temp_callback = _current_crc32_result_callback;
-        _server_component_impl.call_user_callback(
-            [temp_callback, result, crc32]() { temp_callback(_translate(result), crc32); });
-    }
-}
-
-MavlinkFtpServer::ClientResult MavlinkFtpServer::_translate(ServerResult result)
-{
-    switch (result) {
-        case ServerResult::SUCCESS:
-            return ClientResult::Success;
-        case ServerResult::ERR_TIMEOUT:
-            return ClientResult::Timeout;
-        case ServerResult::ERR_FILE_IO_ERROR:
-            return ClientResult::FileIoError;
-        case ServerResult::ERR_FAIL_FILE_EXISTS:
-            return ClientResult::FileExists;
-        case ServerResult::ERR_FAIL_FILE_PROTECTED:
-            return ClientResult::FileProtected;
-        case ServerResult::ERR_UNKOWN_COMMAND:
-            return ClientResult::Unsupported;
-        case ServerResult::ERR_FAIL_FILE_DOES_NOT_EXIST:
-            return ClientResult::FileDoesNotExist;
-        default:
-            return ClientResult::ProtocolError;
-    }
-}
-
-void MavlinkFtpServer::reset_async(ResultCallback callback)
-{
-    std::lock_guard<std::mutex> lock(_curr_op_mutex);
-    if (_curr_op != CMD_NONE) {
-        callback(ClientResult::Busy);
-        return;
-    }
-
-    auto payload = PayloadHeader{};
-    payload.seq_number = _seq_number++;
-    payload.session = _session;
-    payload.opcode = _curr_op = CMD_RESET_SESSIONS;
-    payload.offset = 0;
-    payload.size = 0;
-    _curr_op_result_callback = callback;
-    _send_mavlink_ftp_message(payload);
-}
-
-void MavlinkFtpServer::download_async(
-    const std::string& remote_path, const std::string& local_folder, DownloadCallback callback)
-{
-    std::lock_guard<std::mutex> lock(_curr_op_mutex);
-    if (_curr_op != CMD_NONE) {
-        ProgressData empty{};
-        callback(ClientResult::Busy, empty);
-        return;
-    }
-
-    std::string local_path = local_folder + path_separator + fs_filename(remote_path);
-
-    _ofstream.stream.open(local_path, std::fstream::trunc | std::fstream::binary);
-    _ofstream.path = local_path;
-    if (!_ofstream.stream) {
-        _end_read_session();
-        ProgressData empty{};
-        callback(ClientResult::FileIoError, empty);
-        return;
-    }
-
-    _curr_op_progress_callback = callback;
-    _last_progress_percentage = -1;
-
-    const auto result_callback = [callback](ClientResult result) {
-        ProgressData empty{};
-        callback(result, empty);
-    };
-
-    _generic_command_async(CMD_OPEN_FILE_RO, 0, remote_path, result_callback);
 }
 
 void MavlinkFtpServer::_end_read_session(bool delete_file)
@@ -375,45 +285,6 @@ void MavlinkFtpServer::_read()
     _send_mavlink_ftp_message(payload);
 }
 
-void MavlinkFtpServer::upload_async(
-    const std::string& local_file_path, const std::string& remote_folder, UploadCallback callback)
-{
-    std::lock_guard<std::mutex> lock(_curr_op_mutex);
-    if (_curr_op != CMD_NONE) {
-        ProgressData empty{};
-        callback(ClientResult::Busy, empty);
-        return;
-    }
-
-    if (!fs_exists(local_file_path)) {
-        ProgressData empty{};
-        callback(ClientResult::FileDoesNotExist, empty);
-        return;
-    }
-
-    _ifstream.open(local_file_path, std::fstream::binary);
-    if (!_ifstream) {
-        _end_write_session();
-        ProgressData empty{};
-        callback(ClientResult::FileIoError, empty);
-        return;
-    }
-
-    _file_size = fs_file_size(local_file_path);
-    _curr_op_progress_callback = callback;
-    _last_progress_percentage = -1;
-
-    std::string local_path(local_file_path);
-    std::string remote_file_path = remote_folder + path_separator + fs_filename(local_path);
-
-    const auto result_callback = [callback](ClientResult result) {
-        ProgressData empty{};
-        callback(result, empty);
-    };
-
-    _generic_command_async(CMD_OPEN_FILE_WO, 0, remote_file_path, result_callback);
-}
-
 void MavlinkFtpServer::_end_write_session()
 {
     _curr_op = CMD_NONE;
@@ -421,30 +292,6 @@ void MavlinkFtpServer::_end_write_session()
         _ifstream.close();
     }
     _terminate_session();
-}
-
-void MavlinkFtpServer::_write()
-{
-    if (_bytes_transferred >= _file_size) {
-        _session_result = ServerResult::SUCCESS;
-        _end_write_session();
-        return;
-    }
-
-    auto payload = PayloadHeader{};
-    payload.seq_number = _seq_number++;
-    payload.session = _session;
-    payload.opcode = _curr_op = CMD_WRITE_FILE;
-    payload.offset = _bytes_transferred;
-    int bytes_read = _ifstream.readsome(reinterpret_cast<char*>(payload.data), max_data_length);
-    if (!_ifstream) {
-        _end_write_session();
-        _call_op_result_callback(ServerResult::ERR_FILE_IO_ERROR);
-        return;
-    }
-    payload.size = bytes_read;
-    _bytes_transferred += bytes_read;
-    _send_mavlink_ftp_message(payload);
 }
 
 void MavlinkFtpServer::_terminate_session()
@@ -461,39 +308,6 @@ void MavlinkFtpServer::_terminate_session()
     _send_mavlink_ftp_message(payload);
 }
 
-std::pair<MavlinkFtpServer::ClientResult, std::vector<std::string>>
-MavlinkFtpServer::list_directory(const std::string& path)
-{
-    std::promise<std::pair<ClientResult, std::vector<std::string>>> prom;
-    auto fut = prom.get_future();
-
-    list_directory_async(
-        path, [&prom](const ClientResult result, const std::vector<std::string> dirs) {
-            prom.set_value(std::make_pair(result, dirs));
-        });
-
-    return fut.get();
-}
-
-void MavlinkFtpServer::list_directory_async(
-    const std::string& path, ListDirectoryCallback callback, uint32_t offset)
-{
-    std::lock_guard<std::mutex> lock(_curr_op_mutex);
-    if (_curr_op != CMD_NONE && offset == 0) {
-        callback(ClientResult::Busy, std::vector<std::string>());
-        return;
-    }
-    if (path.length() >= max_data_length) {
-        callback(ClientResult::InvalidParameter, std::vector<std::string>());
-        return;
-    }
-
-    _last_path = path;
-    // TODOTODO
-    _curr_dir_items_result_callback = callback;
-    _list_directory(offset);
-}
-
 void MavlinkFtpServer::_list_directory(uint32_t offset)
 {
     auto payload = PayloadHeader{};
@@ -507,190 +321,6 @@ void MavlinkFtpServer::_list_directory(uint32_t offset)
     if (offset == 0) {
         _curr_directory_list.clear();
     }
-    _send_mavlink_ftp_message(payload);
-}
-
-void MavlinkFtpServer::_generic_command_async(
-    Opcode opcode, uint32_t offset, const std::string& path, ResultCallback callback)
-{
-    if (_curr_op != CMD_NONE) {
-        callback(ClientResult::Busy);
-        return;
-    }
-    if (path.length() >= max_data_length) {
-        callback(ClientResult::InvalidParameter);
-        return;
-    }
-
-    auto payload = PayloadHeader{};
-    payload.seq_number = _seq_number++;
-    payload.session = 0;
-    payload.opcode = _curr_op = opcode;
-    payload.offset = offset;
-    strncpy(reinterpret_cast<char*>(payload.data), path.c_str(), max_data_length - 1);
-    payload.size = path.length() + 1;
-
-    _curr_op_result_callback = callback;
-    _send_mavlink_ftp_message(payload);
-}
-
-MavlinkFtpServer::ClientResult MavlinkFtpServer::create_directory(const std::string& path)
-{
-    std::promise<ClientResult> prom;
-    auto fut = prom.get_future();
-
-    create_directory_async(path, [&prom](const ClientResult result) { prom.set_value(result); });
-
-    return fut.get();
-}
-
-void MavlinkFtpServer::create_directory_async(const std::string& path, ResultCallback callback)
-{
-    std::lock_guard<std::mutex> lock(_curr_op_mutex);
-    _generic_command_async(CMD_CREATE_DIRECTORY, 0, path, callback);
-}
-
-MavlinkFtpServer::ClientResult MavlinkFtpServer::remove_directory(const std::string& path)
-{
-    std::promise<ClientResult> prom;
-    auto fut = prom.get_future();
-
-    remove_directory_async(path, [&prom](const ClientResult result) { prom.set_value(result); });
-
-    return fut.get();
-}
-
-void MavlinkFtpServer::remove_directory_async(const std::string& path, ResultCallback callback)
-{
-    std::lock_guard<std::mutex> lock(_curr_op_mutex);
-    _generic_command_async(CMD_REMOVE_DIRECTORY, 0, path, callback);
-}
-
-MavlinkFtpServer::ClientResult MavlinkFtpServer::remove_file(const std::string& path)
-{
-    std::promise<ClientResult> prom;
-    auto fut = prom.get_future();
-
-    remove_file_async(path, [&prom](const ClientResult result) { prom.set_value(result); });
-
-    return fut.get();
-}
-
-void MavlinkFtpServer::remove_file_async(const std::string& path, ResultCallback callback)
-{
-    std::lock_guard<std::mutex> lock(_curr_op_mutex);
-    _generic_command_async(CMD_REMOVE_FILE, 0, path, callback);
-}
-
-MavlinkFtpServer::ClientResult
-MavlinkFtpServer::rename(const std::string& from_path, const std::string& to_path)
-{
-    std::promise<ClientResult> prom;
-    auto fut = prom.get_future();
-
-    rename_async(
-        from_path, to_path, [&prom](const ClientResult result) { prom.set_value(result); });
-
-    return fut.get();
-}
-
-void MavlinkFtpServer::rename_async(
-    const std::string& from_path, const std::string& to_path, ResultCallback callback)
-{
-    std::lock_guard<std::mutex> lock(_curr_op_mutex);
-    if (_curr_op != CMD_NONE) {
-        callback(ClientResult::Busy);
-        return;
-    }
-    if (from_path.length() + to_path.length() + 1 >= max_data_length) {
-        callback(ClientResult::InvalidParameter);
-        return;
-    }
-
-    auto payload = PayloadHeader{};
-    payload.seq_number = _seq_number++;
-    payload.session = 0;
-    payload.opcode = _curr_op = CMD_RENAME;
-    payload.offset = 0;
-    strncpy(reinterpret_cast<char*>(payload.data), from_path.c_str(), max_data_length - 1);
-    payload.size = from_path.length() + 1;
-    strncpy(
-        reinterpret_cast<char*>(&payload.data[payload.size]),
-        to_path.c_str(),
-        max_data_length - payload.size);
-    payload.size += to_path.length() + 1;
-    _curr_op_result_callback = callback;
-    _send_mavlink_ftp_message(payload);
-}
-
-std::pair<MavlinkFtpServer::ClientResult, bool>
-MavlinkFtpServer::are_files_identical(const std::string& local_path, const std::string& remote_path)
-{
-    std::promise<std::pair<ClientResult, bool>> prom;
-    auto fut = prom.get_future();
-
-    are_files_identical_async(
-        local_path, remote_path, [&prom](const ClientResult result, const bool are_identical) {
-            prom.set_value(std::make_pair(result, are_identical));
-        });
-
-    return fut.get();
-}
-
-void MavlinkFtpServer::are_files_identical_async(
-    const std::string& local_path,
-    const std::string& remote_path,
-    AreFilesIdenticalCallback callback)
-{
-    if (!callback) {
-        return;
-    }
-
-    auto temp_callback = callback;
-
-    uint32_t crc_local = 0;
-    auto result_local = _calc_local_file_crc32(local_path, crc_local);
-    if (result_local != ClientResult::Success) {
-        _server_component_impl.call_user_callback(
-            [temp_callback, result_local]() { temp_callback(result_local, false); });
-        return;
-    }
-
-    _calc_file_crc32_async(
-        remote_path,
-        [this, crc_local, temp_callback](ClientResult result_remote, uint32_t crc_remote) {
-            if (result_remote != ClientResult::Success) {
-                _server_component_impl.call_user_callback(
-                    [temp_callback, result_remote]() { temp_callback(result_remote, false); });
-            } else {
-                _server_component_impl.call_user_callback([temp_callback, crc_local, crc_remote]() {
-                    temp_callback(ClientResult::Success, crc_local == crc_remote);
-                });
-            }
-        });
-}
-
-void MavlinkFtpServer::_calc_file_crc32_async(
-    const std::string& path, file_crc32_ResultCallback callback)
-{
-    std::lock_guard<std::mutex> lock(_curr_op_mutex);
-    if (_curr_op != CMD_NONE) {
-        callback(ClientResult::Busy, 0);
-        return;
-    }
-    if (path.length() >= max_data_length) {
-        callback(ClientResult::InvalidParameter, 0);
-        return;
-    }
-
-    auto payload = PayloadHeader{};
-    payload.seq_number = _seq_number++;
-    payload.session = 0;
-    payload.opcode = _curr_op = CMD_CALC_FILE_CRC32;
-    payload.offset = 0;
-    strncpy(reinterpret_cast<char*>(payload.data), path.c_str(), max_data_length - 1);
-    payload.size = path.length() + 1;
-    _current_crc32_result_callback = callback;
     _send_mavlink_ftp_message(payload);
 }
 
@@ -728,10 +358,9 @@ std::string MavlinkFtpServer::_get_path(PayloadHeader* payload)
     return _get_path(_data_as_string(payload));
 }
 
-MavlinkFtpServer::ClientResult MavlinkFtpServer::set_root_directory(const std::string& root_dir)
+void MavlinkFtpServer::set_root_directory(const std::string& root_dir)
 {
     _root_dir = fs_canonical(root_dir);
-    return ClientResult::Success;
 }
 
 std::string MavlinkFtpServer::_get_path(const std::string& payload_path)
@@ -965,13 +594,7 @@ MavlinkFtpServer::ServerResult MavlinkFtpServer::_work_write(PayloadHeader* payl
 
 MavlinkFtpServer::ServerResult MavlinkFtpServer::_work_terminate(PayloadHeader* payload)
 {
-    if (payload->session != 0 || _session_info.fd < 0) {
-        _reset();
-        // return ServerResult::ERR_INVALID_SESSION;
-    }
-
-    payload->size = 0;
-
+    UNUSED(payload);
     _reset();
 
     return ServerResult::SUCCESS;
@@ -988,9 +611,8 @@ void MavlinkFtpServer::_reset()
 
 MavlinkFtpServer::ServerResult MavlinkFtpServer::_work_reset(PayloadHeader* payload)
 {
+    UNUSED(payload);
     _reset();
-
-    payload->size = 0;
 
     return ServerResult::SUCCESS;
 }
@@ -1083,16 +705,16 @@ MavlinkFtpServer::ServerResult MavlinkFtpServer::_work_rename(PayloadHeader* pay
     }
 }
 
-MavlinkFtpServer::ClientResult
+MavlinkFtpServer::ServerResult
 MavlinkFtpServer::_calc_local_file_crc32(const std::string& path, uint32_t& csum)
 {
     if (!fs_exists(path)) {
-        return ClientResult::FileDoesNotExist;
+        return ServerResult::ERR_FAIL_FILE_DOES_NOT_EXIST;
     }
 
     int fd = ::open(path.c_str(), O_RDONLY);
     if (fd < 0) {
-        return ClientResult::FileIoError;
+        return ServerResult::ERR_FILE_IO_ERROR;
     }
 
     // Read whole file in buffer size chunks
@@ -1106,7 +728,7 @@ MavlinkFtpServer::_calc_local_file_crc32(const std::string& path, uint32_t& csum
             int r_errno = errno;
             close(fd);
             errno = r_errno;
-            return ClientResult::FileIoError;
+            return ServerResult::ERR_FILE_IO_ERROR;
         }
 
         checksum.add((uint8_t*)buffer, bytes_read);
@@ -1116,7 +738,7 @@ MavlinkFtpServer::_calc_local_file_crc32(const std::string& path, uint32_t& csum
 
     csum = checksum.get();
 
-    return ClientResult::Success;
+    return ServerResult::SUCCESS;
 }
 
 MavlinkFtpServer::ServerResult MavlinkFtpServer::_work_calc_file_CRC32(PayloadHeader* payload)
@@ -1133,9 +755,9 @@ MavlinkFtpServer::ServerResult MavlinkFtpServer::_work_calc_file_CRC32(PayloadHe
 
     payload->size = sizeof(uint32_t);
     uint32_t checksum;
-    ClientResult res = _calc_local_file_crc32(path, checksum);
-    if (res != ClientResult::Success) {
-        return ServerResult::ERR_FILE_IO_ERROR;
+    ServerResult res = _calc_local_file_crc32(path, checksum);
+    if (res != ServerResult::SUCCESS) {
+        return res;
     }
     *reinterpret_cast<uint32_t*>(payload->data) = checksum;
 
@@ -1195,40 +817,6 @@ MavlinkFtpServer::write_tmp_file(const std::string& path, const std::string& con
         _tmp_files[path] = file_path;
 
         return {file_path};
-    }
-}
-
-std::ostream& operator<<(std::ostream& str, MavlinkFtpServer::ClientResult const& result)
-{
-    switch (result) {
-        default:
-            // Fallthrough
-        case MavlinkFtpServer::ClientResult::Unknown:
-            return str << "Unknown";
-        case MavlinkFtpServer::ClientResult::Success:
-            return str << "Success";
-        case MavlinkFtpServer::ClientResult::Next:
-            return str << "Next";
-        case MavlinkFtpServer::ClientResult::Timeout:
-            return str << "Timeout";
-        case MavlinkFtpServer::ClientResult::Busy:
-            return str << "Busy";
-        case MavlinkFtpServer::ClientResult::FileIoError:
-            return str << "FileIoError";
-        case MavlinkFtpServer::ClientResult::FileExists:
-            return str << "FileExists";
-        case MavlinkFtpServer::ClientResult::FileDoesNotExist:
-            return str << "FileDoesNotExist";
-        case MavlinkFtpServer::ClientResult::FileProtected:
-            return str << "FileProtected";
-        case MavlinkFtpServer::ClientResult::InvalidParameter:
-            return str << "InvalidParameter";
-        case MavlinkFtpServer::ClientResult::Unsupported:
-            return str << "Unsupported";
-        case MavlinkFtpServer::ClientResult::ProtocolError:
-            return str << "ProtocolError";
-        case MavlinkFtpServer::ClientResult::NoSystem:
-            return str << "NoSystem";
     }
 }
 

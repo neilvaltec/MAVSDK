@@ -29,71 +29,15 @@ public:
     explicit MavlinkFtpServer(ServerComponentImpl& server_component_impl);
     ~MavlinkFtpServer();
 
-    /**
-     * @brief Possible results returned for FTP commands
-     */
-    enum class ClientResult {
-        Unknown, /**< @brief Unknown result. */
-        Success, /**< @brief Success. */
-        Next, /**< @brief Intermediate message showing progress. */
-        Timeout, /**< @brief Timeout. */
-        Busy, /**< @brief Operation is already in progress. */
-        FileIoError, /**< @brief File IO operation error. */
-        FileExists, /**< @brief File exists already. */
-        FileDoesNotExist, /**< @brief File does not exist. */
-        FileProtected, /**< @brief File is write protected. */
-        InvalidParameter, /**< @brief Invalid parameter. */
-        Unsupported, /**< @brief Unsupported command. */
-        ProtocolError, /**< @brief General protocol error. */
-        NoSystem, /**< @brief No system connected. */
-    };
-
-    friend std::ostream& operator<<(std::ostream& str, ClientResult const& result);
-
     struct ProgressData {
         uint32_t bytes_transferred{}; /**< @brief The number of bytes already transferred. */
         uint32_t total_bytes{}; /**< @brief The total bytes to transfer. */
     };
 
-    using ResultCallback = std::function<void(ClientResult)>;
-    using UploadCallback = std::function<void(ClientResult, ProgressData)>;
-    using DownloadCallback = std::function<void(ClientResult, ProgressData)>;
-    using ListDirectoryCallback = std::function<void(ClientResult, std::vector<std::string>)>;
-    using AreFilesIdenticalCallback = std::function<void(ClientResult, bool)>;
-
     void send();
 
-    std::pair<ClientResult, std::vector<std::string>> list_directory(const std::string& path);
-    ClientResult create_directory(const std::string& path);
-    ClientResult remove_directory(const std::string& path);
-    ClientResult remove_file(const std::string& path);
-    ClientResult rename(const std::string& from_path, const std::string& to_path);
-    std::pair<ClientResult, bool>
-    are_files_identical(const std::string& local_path, const std::string& remote_path);
-
-    void reset_async(ResultCallback callback);
-    void download_async(
-        const std::string& remote_file_path,
-        const std::string& local_folder,
-        DownloadCallback callback);
-    void upload_async(
-        const std::string& local_file_path,
-        const std::string& remote_folder,
-        UploadCallback callback);
-    void list_directory_async(
-        const std::string& path, ListDirectoryCallback callback, uint32_t offset = 0);
-    void create_directory_async(const std::string& path, ResultCallback callback);
-    void remove_directory_async(const std::string& path, ResultCallback callback);
-    void remove_file_async(const std::string& path, ResultCallback callback);
-    void
-    rename_async(const std::string& from_path, const std::string& to_path, ResultCallback callback);
-    void are_files_identical_async(
-        const std::string& local_path,
-        const std::string& remote_path,
-        AreFilesIdenticalCallback callback);
-
     void set_retries(uint32_t retries) { _max_last_command_retries = retries; }
-    ClientResult set_root_directory(const std::string& root_dir);
+    void set_root_directory(const std::string& root_dir);
 
     std::optional<std::string> write_tmp_file(const std::string& path, const std::string& content);
 
@@ -142,7 +86,7 @@ private:
         RSP_NAK ///< Nak response
     };
 
-    using file_crc32_ResultCallback = std::function<void(ClientResult, uint32_t)>;
+    using file_crc32_ResultCallback = std::function<void(ServerResult, uint32_t)>;
 
     static constexpr auto DIRENT_FILE = "F"; ///< Identifies File returned from List command
     static constexpr auto DIRENT_DIR = "D"; ///< Identifies Directory returned from List command
@@ -208,30 +152,15 @@ private:
     uint32_t _file_size = 0;
     std::vector<std::string> _curr_directory_list{};
 
-    ResultCallback _curr_op_result_callback{};
-    // _curr_op_progress_callback is used for download_callback_t as well as upload_callback_t
-    static_assert(
-        std::is_same<DownloadCallback, UploadCallback>::value, "callback types don't match");
-    DownloadCallback _curr_op_progress_callback{};
-    int _last_progress_percentage{-1};
-
-    ListDirectoryCallback _curr_dir_items_result_callback{};
-
-    file_crc32_ResultCallback _current_crc32_result_callback{};
-
-    void _calc_file_crc32_async(const std::string& path, file_crc32_ResultCallback callback);
-    ClientResult _calc_local_file_crc32(const std::string& path, uint32_t& csum);
+    ServerResult _calc_local_file_crc32(const std::string& path, uint32_t& csum);
 
     void _process_ack(PayloadHeader* payload);
     void _process_nak(PayloadHeader* payload);
     void _process_nak(ServerResult result);
-    static ClientResult _translate(ServerResult result);
     void _call_op_result_callback(ServerResult result);
     void _call_op_progress_callback(uint32_t bytes_written, uint32_t total_bytes);
     void _call_dir_items_result_callback(ServerResult result, std::vector<std::string> list);
     void _call_crc32_result_callback(ServerResult result, uint32_t crc32);
-    void _generic_command_async(
-        Opcode opcode, uint32_t offset, const std::string& path, ResultCallback callback);
     void _read();
     void _write();
     void _end_read_session(bool delete_file = false);
@@ -273,6 +202,8 @@ private:
     std::mutex _tmp_files_mutex{};
     std::unordered_map<std::string, std::string> _tmp_files{};
     std::string _tmp_dir{};
+
+    bool _debugging{false};
 };
 
 } // namespace mavsdk

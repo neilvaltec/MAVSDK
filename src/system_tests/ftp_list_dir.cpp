@@ -50,7 +50,6 @@ TEST(SystemTest, FtpListDir)
     std::vector<std::string> truth_list;
 
     for (unsigned i = 0; i < 100; ++i) {
-
         auto foldername = std::string(temp_dir + std::to_string(i));
         auto filename = std::string(temp_file + std::to_string(i));
         ASSERT_TRUE(reset_directories(temp_dir_provided / fs::path(foldername)));
