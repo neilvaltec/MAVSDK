@@ -86,12 +86,6 @@ private:
         RSP_NAK ///< Nak response
     };
 
-    using file_crc32_ResultCallback = std::function<void(ServerResult, uint32_t)>;
-
-    static constexpr auto DIRENT_FILE = 'F'; ///< Identifies File returned from List command
-    static constexpr auto DIRENT_DIR = 'D'; ///< Identifies Directory returned from List command
-    static constexpr auto DIRENT_SKIP = 'S'; ///< Identifies Skipped entry from List command
-
     /// @brief Maximum data size in RequestHeader::data
     static constexpr uint8_t max_data_length = 239;
 

@@ -7,7 +7,6 @@
 #include "tronkko_dirent.h"
 #include "stackoverflow_unistd.h"
 #else
-#include <dirent.h>
 #include <unistd.h>
 #endif
 #include <fcntl.h>
@@ -302,9 +301,6 @@ std::string MavlinkFtpServer::_get_path(const std::string& payload_path)
 
 void MavlinkFtpServer::_work_list(const PayloadHeader& payload, PayloadHeader& response)
 {
-    // TODO: implement hidden
-    bool list_hidden = false;
-
     if (_root_dir.empty()) {
         response.opcode = Opcode::RSP_NAK;
         response.size = 1;
@@ -313,6 +309,7 @@ void MavlinkFtpServer::_work_list(const PayloadHeader& payload, PayloadHeader& r
     }
 
     uint8_t offset = 0;
+
     // Move to the requested offset
     uint32_t requested_offset = payload.offset;
 
@@ -336,60 +333,71 @@ void MavlinkFtpServer::_work_list(const PayloadHeader& payload, PayloadHeader& r
     if (_debugging) {
         LogDebug() << "Opening path: " << path.string();
     }
-    struct dirent* dp;
-    DIR* dfd = opendir(path.c_str());
-    if (dfd != nullptr) {
-        while ((dp = readdir(dfd)) != nullptr) {
-            if (requested_offset > 0) {
-                requested_offset--;
+
+    for (const auto& entry : fs::directory_iterator(fs::canonical(path))) {
+        if (requested_offset > 0) {
+            requested_offset--;
+            continue;
+        }
+        const auto name = entry.path().filename();
+
+        std::string payload_str;
+        std::error_code ec;
+
+        const auto is_regular_file = entry.is_regular_file(ec);
+        if (ec) {
+            LogWarn() << "Could not determine whether '" << entry.path().string()
+                      << "' is a file: " << ec.message();
+            continue;
+        }
+
+        const auto is_directory = entry.is_directory(ec);
+        if (ec) {
+            LogWarn() << "Could not determine whether '" << entry.path().string()
+                      << "' is a directory: " << ec.message();
+            continue;
+        }
+
+        if (is_regular_file) {
+            const auto filesize = fs::file_size(entry.path(), ec);
+            if (ec) {
+                LogWarn() << "Could not get file size of '" << entry.path().string()
+                          << "': " << ec.message();
                 continue;
             }
 
-            fs::path filename = dp->d_name;
             if (_debugging) {
-                LogDebug() << "filename found: " << filename.string();
+                LogDebug() << "Found file: " << name.string() << ", size: " << filesize << " bytes";
             }
-            fs::path full_path = fs::canonical(path) / filename;
+
+            payload_str += 'F';
+            payload_str += name.string();
+            payload_str += '\t';
+            payload_str += std::to_string(filesize);
+
+        } else if (is_directory) {
             if (_debugging) {
-                LogDebug() << "Full path: " << full_path.string();
+                LogDebug() << "Found directory: " << name.string();
             }
 
-            auto entry_s = std::string() + DIRENT_SKIP;
-            if (list_hidden || filename.string().rfind(".", 0) != 0) {
-#ifdef _DIRENT_HAVE_D_TYPE
-                bool type_reg = (dp->d_type == DT_REG);
-                bool type_dir = (dp->d_type == DT_DIR);
-#else
-                struct stat statbuf;
-                stat(full_path.c_str(), &statbuf);
-                bool type_reg = S_ISREG(statbuf.st_mode);
-                bool type_dir = S_ISDIR(statbuf.st_mode);
-#endif
-                std::error_code ec{};
-                auto relative_path = fs::relative(full_path, fs::path(_root_dir), ec);
-                if (ec) {
-                    LogErr() << "Relative path error: " << ec.message();
-                    continue;
-                }
+            payload_str += 'D';
+            payload_str += name.string();
 
-                if (type_reg) {
-                    entry_s = std::string() + DIRENT_FILE + '/' + relative_path.string() + '\t' +
-                              std::to_string(fs_file_size(full_path.string()));
-                } else if (type_dir) {
-                    entry_s = std::string() + DIRENT_DIR + '/' + relative_path.string();
-                }
-            }
-
-            // Do we have room for the dir entry and the null terminator?
-            if (offset + entry_s.length() + 1 > max_data_length) {
-                break;
-            }
-            uint8_t len = static_cast<uint8_t>(entry_s.length() + 1);
-            std::memcpy(&response.data[offset], entry_s.c_str(), len);
-
-            offset += len;
+        } else {
+            // Ignore all other types.
+            continue;
         }
-        closedir(dfd);
+
+        auto required_len = payload_str.length() + 1;
+
+        // Do we have room for the dir entry and the null terminator?
+        if (offset + required_len > max_data_length) {
+            break;
+        }
+
+        std::memcpy(&response.data[offset], payload_str.c_str(), required_len);
+
+        offset += static_cast<uint8_t>(required_len);
     }
 
     if (offset == 0) {
@@ -480,10 +488,6 @@ void MavlinkFtpServer::_work_open_file_readonly(
 void MavlinkFtpServer::_work_open_file_writeonly(
     const PayloadHeader& payload, PayloadHeader& response)
 {
-    bool list_hidden = false;
-    // TODO: implement hidden switch
-    UNUSED(list_hidden);
-
     if (_session_info.fd >= 0) {
         _reset();
     }

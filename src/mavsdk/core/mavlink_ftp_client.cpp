@@ -1059,7 +1059,7 @@ MavlinkFtpClient::calc_local_file_crc32(const std::string& path, uint32_t& csum)
     // Read whole file in buffer size chunks
     Crc32 checksum;
     uint8_t buffer[4096];
-    ssize_t bytes_read;
+    std::streamsize bytes_read;
 
     do {
         stream.read(reinterpret_cast<char*>(buffer), sizeof(buffer));

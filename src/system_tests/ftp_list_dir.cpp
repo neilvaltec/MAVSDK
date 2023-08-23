@@ -55,8 +55,8 @@ TEST(SystemTest, FtpListDir)
         ASSERT_TRUE(reset_directories(temp_dir_provided / fs::path(foldername)));
         ASSERT_TRUE(create_temp_file(temp_dir_provided / fs::path(filename), i));
 
-        truth_list.push_back(std::string("D/") + foldername);
-        truth_list.push_back(std::string("F/") + filename + std::string("\t") + std::to_string(i));
+        truth_list.push_back(std::string("D") + foldername);
+        truth_list.push_back(std::string("F") + filename + std::string("\t") + std::to_string(i));
     }
 
     std::sort(truth_list.begin(), truth_list.end());
