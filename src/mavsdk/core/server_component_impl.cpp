@@ -4,8 +4,6 @@
 
 namespace mavsdk {
 
-namespace fs = std::filesystem;
-
 ServerComponentImpl::ServerComponentImpl(MavsdkImpl& mavsdk_impl, uint8_t component_id) :
     _mavsdk_impl(mavsdk_impl),
     _own_component_id(component_id),
