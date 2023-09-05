@@ -138,8 +138,8 @@ jobs:
         run: cmake --build build -j2
       - name: unit tests
         run: ./build/src/unit_tests/unit_tests_runner
-      #- name: system tests # Segfaults, without core dump, can't reproduce it locally, tried everything
-      #  run: ./build/src/system_tests/system_tests_runner
+      - name: system tests
+        run: ./build/src/system_tests/system_tests_runner
 
   ubuntu22-style-and-proto-check:
     name: ubuntu-22.04 (style and proto check)
