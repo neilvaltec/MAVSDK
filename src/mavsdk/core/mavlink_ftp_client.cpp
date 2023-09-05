@@ -452,7 +452,9 @@ bool MavlinkFtpClient::upload_start(Work& work, UploadItem& item)
     work.payload.opcode = work.last_opcode;
     work.payload.offset = 0;
     strncpy(
-        reinterpret_cast<char*>(work.payload.data), remote_file_path.c_str(), max_data_length - 1);
+        reinterpret_cast<char*>(work.payload.data),
+        remote_file_path.string().c_str(),
+        max_data_length - 1);
     work.payload.size = remote_file_path.string().size() + 1;
 
     start_timer();

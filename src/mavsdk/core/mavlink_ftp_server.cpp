@@ -306,7 +306,7 @@ MavlinkFtpServer::_path_from_string(const std::string& payload_path)
 void MavlinkFtpServer::set_root_directory(const std::string& root_dir)
 {
     std::error_code ignored;
-    _root_dir = fs::canonical(fs::path(root_dir), ignored);
+    _root_dir = fs::canonical(fs::path(root_dir), ignored).string();
 }
 
 void MavlinkFtpServer::_work_list(const PayloadHeader& payload, PayloadHeader& response)
