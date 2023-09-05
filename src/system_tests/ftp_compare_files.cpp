@@ -54,11 +54,11 @@ TEST(SystemTest, FtpCompareFiles)
     auto ftp = Ftp{system};
 
     // First we try to compare the file without the root directory set.
-    // We expect that it does not exist as we don't have any permission.
+    // We expect an error as we don't have any permission.
     //
     auto result = ftp.are_files_identical(
         (temp_dir_provided / temp_file).string(), (temp_file_same).string());
-    EXPECT_EQ(result.first, Ftp::Result::FileDoesNotExist);
+    EXPECT_EQ(result.first, Ftp::Result::ProtocolError);
     EXPECT_EQ(result.second, false);
 
     // Now we set the root dir and expect it to work.

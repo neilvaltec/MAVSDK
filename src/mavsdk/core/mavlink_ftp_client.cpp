@@ -3,11 +3,13 @@
 #include "plugin_base.h"
 #include <algorithm>
 #include <fstream>
+#include <filesystem>
 
 #include "crc32.h"
-#include "fs.h"
 
 namespace mavsdk {
+
+namespace fs = std::filesystem;
 
 MavlinkFtpClient::MavlinkFtpClient(SystemImpl& system_impl) : _system_impl(system_impl)
 {
@@ -314,9 +316,9 @@ void MavlinkFtpClient::process_mavlink_ftp_message(const mavlink_message_t& msg)
 
 bool MavlinkFtpClient::download_start(Work& work, DownloadItem& item)
 {
-    std::string local_path = item.local_folder + path_separator + fs_filename(item.remote_path);
+    fs::path local_path = fs::path(item.local_folder) / fs::path(item.remote_path).filename();
 
-    LogDebug() << "Trying to open write to local path: " << local_path;
+    LogDebug() << "Trying to open write to local path: " << local_path.string();
     item.ofstream.open(local_path, std::fstream::trunc | std::fstream::binary);
     if (!item.ofstream) {
         LogErr() << "Could not open it!";
@@ -378,6 +380,7 @@ bool MavlinkFtpClient::download_continue(Work& work, DownloadItem& item, Payload
 
     if (item.bytes_transferred < item.file_size) {
         work.last_opcode = CMD_READ_FILE;
+        work.payload = {};
         work.payload.seq_number = work.last_sent_seq_number++;
         work.payload.session = _session;
         work.payload.opcode = work.last_opcode;
@@ -398,7 +401,7 @@ bool MavlinkFtpClient::download_continue(Work& work, DownloadItem& item, Payload
         // Final step
         work.last_opcode = CMD_TERMINATE_SESSION;
 
-        work.payload = PayloadHeader{};
+        work.payload = {};
         work.payload.seq_number = work.last_sent_seq_number++;
         work.payload.session = _session;
 
@@ -415,7 +418,8 @@ bool MavlinkFtpClient::download_continue(Work& work, DownloadItem& item, Payload
 
 bool MavlinkFtpClient::upload_start(Work& work, UploadItem& item)
 {
-    if (!fs_exists(item.local_file_path)) {
+    std::error_code ec;
+    if (!fs::exists(item.local_file_path, ec)) {
         item.callback(ClientResult::FileDoesNotExist, {});
         return false;
     }
@@ -426,12 +430,17 @@ bool MavlinkFtpClient::upload_start(Work& work, UploadItem& item)
         return false;
     }
 
-    item.file_size = fs_file_size(item.local_file_path);
+    item.file_size = fs::file_size(item.local_file_path, ec);
+    if (ec) {
+        LogWarn() << "Could not get file size of '" << item.local_file_path
+                  << "': " << ec.message();
+        return false;
+    }
 
-    std::string remote_file_path =
-        item.remote_folder + path_separator + fs_filename(item.local_file_path);
+    fs::path remote_file_path =
+        fs::path(item.remote_folder) / fs::path(item.local_file_path).filename();
 
-    if (remote_file_path.length() >= max_data_length) {
+    if (remote_file_path.string().size() >= max_data_length) {
         item.callback(ClientResult::InvalidParameter, {});
         return false;
     }
@@ -444,7 +453,7 @@ bool MavlinkFtpClient::upload_start(Work& work, UploadItem& item)
     work.payload.offset = 0;
     strncpy(
         reinterpret_cast<char*>(work.payload.data), remote_file_path.c_str(), max_data_length - 1);
-    work.payload.size = remote_file_path.length() + 1;
+    work.payload.size = remote_file_path.string().size() + 1;
 
     start_timer();
     send_mavlink_ftp_message(work.payload);
@@ -457,7 +466,7 @@ bool MavlinkFtpClient::upload_continue(Work& work, UploadItem& item)
     if (item.bytes_transferred < item.file_size) {
         work.last_opcode = CMD_WRITE_FILE;
 
-        work.payload = PayloadHeader{};
+        work.payload = {};
         work.payload.seq_number = work.last_sent_seq_number++;
         work.payload.session = _session;
 
@@ -491,7 +500,7 @@ bool MavlinkFtpClient::upload_continue(Work& work, UploadItem& item)
         // Final step
         work.last_opcode = CMD_TERMINATE_SESSION;
 
-        work.payload = PayloadHeader{};
+        work.payload = {};
         work.payload.seq_number = work.last_sent_seq_number++;
         work.payload.session = _session;
 
@@ -541,6 +550,7 @@ bool MavlinkFtpClient::rename_start(Work& work, RenameItem& item)
     }
 
     work.last_opcode = CMD_RENAME;
+    work.payload = {};
     work.payload.seq_number = work.last_sent_seq_number++;
     work.payload.session = 0;
     work.payload.opcode = work.last_opcode;
@@ -590,6 +600,7 @@ bool MavlinkFtpClient::remove_dir_start(Work& work, RemoveDirItem& item)
     }
 
     work.last_opcode = CMD_REMOVE_DIRECTORY;
+    work.payload = {};
     work.payload.seq_number = work.last_sent_seq_number++;
     work.payload.session = 0;
     work.payload.opcode = work.last_opcode;
@@ -689,6 +700,7 @@ bool MavlinkFtpClient::list_dir_continue(Work& work, ListDirItem& item, PayloadH
     }
 
     work.last_opcode = CMD_LIST_DIRECTORY;
+    work.payload = {};
     work.payload.seq_number = work.last_sent_seq_number++;
     work.payload.session = 0;
     work.payload.opcode = work.last_opcode;
@@ -1047,7 +1059,8 @@ void MavlinkFtpClient::timeout()
 MavlinkFtpClient::ClientResult
 MavlinkFtpClient::calc_local_file_crc32(const std::string& path, uint32_t& csum)
 {
-    if (!fs_exists(path)) {
+    std::error_code ec;
+    if (!fs::exists(path, ec)) {
         return ClientResult::FileDoesNotExist;
     }
 

@@ -55,7 +55,7 @@ TEST(SystemTest, FtpUploadFile)
     auto ftp = Ftp{system};
 
     // First we try to access the file without the root directory set.
-    // We expect that it does not exist as we don't have any permission.
+    // We expect an error as we don't have any permission.
     {
         auto prom = std::promise<Ftp::Result>();
         auto fut = prom.get_future();
@@ -66,7 +66,7 @@ TEST(SystemTest, FtpUploadFile)
 
         auto future_status = fut.wait_for(std::chrono::seconds(1));
         ASSERT_EQ(future_status, std::future_status::ready);
-        EXPECT_EQ(fut.get(), Ftp::Result::FileDoesNotExist);
+        EXPECT_EQ(fut.get(), Ftp::Result::ProtocolError);
     }
 
     // Now we set the root dir and expect it to work.
@@ -77,7 +77,7 @@ TEST(SystemTest, FtpUploadFile)
         auto fut = prom.get_future();
         ftp.upload_async(
             (temp_dir_to_upload / temp_file).string(),
-            "/",
+            ".",
             [&prom](Ftp::Result result, Ftp::ProgressData progress_data) {
                 if (result != Ftp::Result::Next) {
                     prom.set_value(result);
@@ -133,7 +133,7 @@ TEST(SystemTest, FtpUploadBigFile)
         auto fut = prom.get_future();
         ftp.upload_async(
             (temp_dir_to_upload / temp_file).string(),
-            "/",
+            "",
             [&prom](Ftp::Result result, Ftp::ProgressData progress_data) {
                 if (result != Ftp::Result::Next) {
                     prom.set_value(result);
@@ -195,7 +195,7 @@ TEST(SystemTest, FtpUploadBigFileLossy)
         auto fut = prom.get_future();
         ftp.upload_async(
             (temp_dir_to_upload / temp_file).string(),
-            "/",
+            "./",
             [&prom](Ftp::Result result, Ftp::ProgressData progress_data) {
                 if (result != Ftp::Result::Next) {
                     prom.set_value(result);
@@ -260,7 +260,7 @@ TEST(SystemTest, FtpUploadStopAndTryAgain)
     auto fut = prom.get_future();
     ftp.upload_async(
         (temp_dir_to_upload / temp_file).string(),
-        "/",
+        "",
         [&prom, &got_half](Ftp::Result result, Ftp::ProgressData progress_data) {
             if (progress_data.bytes_transferred > 500) {
                 got_half = true;
@@ -288,7 +288,7 @@ TEST(SystemTest, FtpUploadStopAndTryAgain)
         auto fut = prom.get_future();
         ftp.upload_async(
             (temp_dir_to_upload / temp_file).string(),
-            "/",
+            "",
             [&prom, &got_half](Ftp::Result result, Ftp::ProgressData progress_data) {
                 if (result != Ftp::Result::Next) {
                     prom.set_value(result);

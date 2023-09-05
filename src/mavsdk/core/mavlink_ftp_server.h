@@ -1,13 +1,13 @@
 #pragma once
 
 #include <cinttypes>
-#include <functional>
 #include <fstream>
 #include <unordered_map>
 #include <mutex>
 #include <optional>
 #include <string>
 #include <utility>
+#include <variant>
 #include <vector>
 
 #include "mavlink_include.h"
@@ -38,8 +38,6 @@ public:
 
     void set_retries(uint32_t retries) { _max_last_command_retries = retries; }
     void set_root_directory(const std::string& root_dir);
-
-    std::optional<std::string> write_tmp_file(const std::string& path, const std::string& content);
 
 private:
     ServerComponentImpl& _server_component_impl;
@@ -111,13 +109,14 @@ private:
         "PayloadHeader size is incorrect.");
 
     struct SessionInfo {
-        int fd{-1};
         uint32_t file_size{0};
         bool stream_download{false};
         uint32_t stream_offset{0};
         uint16_t stream_seq_number{0};
         uint8_t stream_target_system_id{0};
         unsigned stream_chunk_transmitted{0};
+        std::ifstream ifstream;
+        std::ofstream ofstream;
     };
 
     struct OfstreamWithPath {
@@ -169,9 +168,10 @@ private:
 
     void process_mavlink_ftp_message(const mavlink_message_t& msg);
 
-    std::string _data_as_string(const PayloadHeader& payload);
-    std::string _get_path(const PayloadHeader& payload);
-    std::string _get_path(const std::string& payload_path);
+    std::string _data_as_string(const PayloadHeader& payload, size_t entry = 0);
+    std::variant<std::string, ServerResult>
+    _path_from_payload(const PayloadHeader& payload, size_t entry = 0);
+    std::variant<std::string, ServerResult> _path_from_string(const std::string& payload_path);
 
     void _work_list(const PayloadHeader& payload, PayloadHeader& response);
     void _work_open_file_readonly(const PayloadHeader& payload, PayloadHeader& response);

@@ -22,7 +22,6 @@ target_sources(mavsdk
     system.cpp
     system_impl.cpp
     flight_mode.cpp
-    fs.cpp
     mavsdk.cpp
     mavsdk_impl.cpp
     http_loader.cpp
@@ -147,7 +146,6 @@ list(APPEND UNIT_TEST_SOURCES
     ${PROJECT_SOURCE_DIR}/mavsdk/core/cli_arg_test.cpp
     ${PROJECT_SOURCE_DIR}/mavsdk/core/curl_test.cpp
     ${PROJECT_SOURCE_DIR}/mavsdk/core/locked_queue_test.cpp
-    ${PROJECT_SOURCE_DIR}/mavsdk/core/fs_test.cpp
     ${PROJECT_SOURCE_DIR}/mavsdk/core/geometry_test.cpp
     # TODO: add this again
     #${PROJECT_SOURCE_DIR}/mavsdk/core/http_loader_test.cpp

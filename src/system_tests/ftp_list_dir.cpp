@@ -64,8 +64,8 @@ TEST(SystemTest, FtpListDir)
     auto ftp = Ftp{system};
 
     // First we try to list a folder without the root directory set.
-    // We expect that it does not exist as we don't have any permission.
-    EXPECT_EQ(ftp.list_directory("./").first, Ftp::Result::FileDoesNotExist);
+    // We expect an error as we don't have any permission.
+    EXPECT_EQ(ftp.list_directory("./").first, Ftp::Result::ProtocolError);
 
     // Now we set the root dir and expect it to work.
     ftp_server.set_root_dir(temp_dir_provided.string());

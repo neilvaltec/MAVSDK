@@ -49,8 +49,8 @@ TEST(SystemTest, FtpRemoveFile)
     auto ftp = Ftp{system};
 
     // First we try to remove the file without the root directory set.
-    // We expect that it does not exist as we don't have any permission.
-    EXPECT_EQ(ftp.remove_file(temp_file.string()), Ftp::Result::FileDoesNotExist);
+    // We expect an error as we don't have any permission.
+    EXPECT_EQ(ftp.remove_file(temp_file.string()), Ftp::Result::ProtocolError);
 
     // Now we set the root dir and expect it to work.
     ftp_server.set_root_dir(temp_dir_provided.string());

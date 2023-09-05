@@ -51,18 +51,18 @@ TEST(SystemTest, FtpDownloadFile)
     auto ftp = Ftp{system};
 
     // First we try to access the file without the root directory set.
-    // We expect that it does not exist as we don't have any permission.
+    // We expect that an error as we don't have any permission.
     {
         auto prom = std::promise<Ftp::Result>();
         auto fut = prom.get_future();
         ftp.download_async(
-            ("" / temp_file).string(),
+            temp_file.string(),
             temp_dir_downloaded.string(),
             [&prom](Ftp::Result result, Ftp::ProgressData) { prom.set_value(result); });
 
         auto future_status = fut.wait_for(std::chrono::seconds(1));
         ASSERT_EQ(future_status, std::future_status::ready);
-        EXPECT_EQ(fut.get(), Ftp::Result::FileDoesNotExist);
+        EXPECT_EQ(fut.get(), Ftp::Result::ProtocolError);
     }
 
     // Now we set the root dir and expect it to work.
@@ -72,7 +72,7 @@ TEST(SystemTest, FtpDownloadFile)
         auto prom = std::promise<Ftp::Result>();
         auto fut = prom.get_future();
         ftp.download_async(
-            ("" / temp_file).string(),
+            temp_file.string(),
             temp_dir_downloaded.string(),
             [&prom](Ftp::Result result, Ftp::ProgressData progress_data) {
                 if (result != Ftp::Result::Next) {
@@ -127,7 +127,7 @@ TEST(SystemTest, FtpDownloadBigFile)
     auto prom = std::promise<Ftp::Result>();
     auto fut = prom.get_future();
     ftp.download_async(
-        ("" / temp_file).string(),
+        temp_file.string(),
         temp_dir_downloaded.string(),
         [&prom](Ftp::Result result, Ftp::ProgressData progress_data) {
             if (result != Ftp::Result::Next) {

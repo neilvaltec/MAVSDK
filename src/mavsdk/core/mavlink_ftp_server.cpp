@@ -1,22 +1,12 @@
-#include "mavlink_ftp_server.h"
-#include "server_component_impl.h"
+#include <algorithm>
 #include <fstream>
 #include <filesystem>
+#include <future>
 
-#if defined(WINDOWS)
-#include "tronkko_dirent.h"
-#include "stackoverflow_unistd.h"
-#else
-#include <unistd.h>
-#endif
-#include <fcntl.h>
-#include <sys/stat.h>
-
+#include "mavlink_ftp_server.h"
+#include "server_component_impl.h"
 #include "unused.h"
 #include "crc32.h"
-#include "fs.h"
-#include <algorithm>
-#include <future>
 
 namespace mavsdk {
 
@@ -266,62 +256,78 @@ void MavlinkFtpServer::_send_mavlink_ftp_message(const PayloadHeader& payload)
     _server_component_impl.send_message(_last_command);
 }
 
-std::string MavlinkFtpServer::_data_as_string(const PayloadHeader& payload)
+std::string MavlinkFtpServer::_data_as_string(const PayloadHeader& payload, size_t entry)
 {
+    size_t start = 0;
+    size_t end = 0;
     std::string result;
 
-    // Guarantee null termination
-    if (payload.size < max_data_length) {
-        result.resize(payload.size + 1);
-        std::memcpy(result.data(), payload.data, payload.size);
-
-    } else {
-        // This covers the case where there is no space for null termination .
-        result.resize(max_data_length);
-        std::memcpy(result.data(), payload.data, max_data_length);
+    for (int i = entry; i >= 0; --i) {
+        start = end;
+        end +=
+            strnlen(reinterpret_cast<const char*>(&payload.data[start]), max_data_length - start) +
+            1;
     }
+
+    result.resize(end - start);
+    std::memcpy(result.data(), &payload.data[start], end - start);
 
     return result;
 }
 
-std::string MavlinkFtpServer::_get_path(const PayloadHeader& payload)
+std::variant<std::string, MavlinkFtpServer::ServerResult>
+MavlinkFtpServer::_path_from_payload(const PayloadHeader& payload, size_t entry)
 {
-    return _get_path(_data_as_string(payload));
+    auto data = _data_as_string(payload, entry);
+    return _path_from_string(data);
+}
+
+std::variant<std::string, MavlinkFtpServer::ServerResult>
+MavlinkFtpServer::_path_from_string(const std::string& payload_path)
+{
+    // No permission whatsoever if the root dir is not set.
+    if (_root_dir.empty()) {
+        return ServerResult::ERR_FAIL;
+    }
+
+    fs::path combined_path = (fs::path(_root_dir) / payload_path).lexically_normal();
+
+    // Check whether the combined path is inside the root dir.
+    // From: https://stackoverflow.com/a/61125335/8548472
+    auto ret = std::mismatch(_root_dir.begin(), _root_dir.end(), combined_path.string().begin());
+    if (ret.first != _root_dir.end()) {
+        LogWarn() << "Not inside root dir";
+        return ServerResult::ERR_FAIL;
+    }
+
+    return combined_path.string();
 }
 
 void MavlinkFtpServer::set_root_directory(const std::string& root_dir)
 {
-    _root_dir = fs_canonical(root_dir);
-}
-
-std::string MavlinkFtpServer::_get_path(const std::string& payload_path)
-{
-    return fs_canonical(_root_dir + path_separator + payload_path);
+    std::error_code ignored;
+    _root_dir = fs::canonical(fs::path(root_dir), ignored);
 }
 
 void MavlinkFtpServer::_work_list(const PayloadHeader& payload, PayloadHeader& response)
 {
-    if (_root_dir.empty()) {
+    auto maybe_path = _path_from_payload(payload);
+    if (std::holds_alternative<ServerResult>(maybe_path)) {
         response.opcode = Opcode::RSP_NAK;
         response.size = 1;
-        response.data[0] = ServerResult::ERR_FAIL_FILE_DOES_NOT_EXIST;
+        response.data[0] = std::get<ServerResult>(maybe_path);
         return;
     }
+
+    fs::path path = std::get<std::string>(maybe_path);
 
     uint8_t offset = 0;
 
     // Move to the requested offset
     uint32_t requested_offset = payload.offset;
 
-    fs::path path = _get_path(payload);
-    if (path.string().rfind(_root_dir, 0) != 0) {
-        LogWarn() << "FTP: invalid path " << path.string();
-        response.opcode = Opcode::RSP_NAK;
-        response.size = 1;
-        response.data[0] = ServerResult::ERR_FAIL_FILE_PROTECTED;
-        return;
-    }
-    if (!fs_exists(path)) {
+    std::error_code ec;
+    if (!fs::exists(path, ec)) {
         LogWarn() << "FTP: can't open path " << path;
         // this is not an FTP error, abort directory by simulating eof
         response.opcode = Opcode::RSP_NAK;
@@ -342,7 +348,6 @@ void MavlinkFtpServer::_work_list(const PayloadHeader& payload, PayloadHeader& r
         const auto name = entry.path().filename();
 
         std::string payload_str;
-        std::error_code ec;
 
         const auto is_regular_file = entry.is_regular_file(ec);
         if (ec) {
@@ -415,25 +420,27 @@ void MavlinkFtpServer::_work_list(const PayloadHeader& payload, PayloadHeader& r
 void MavlinkFtpServer::_work_open_file_readonly(
     const PayloadHeader& payload, PayloadHeader& response)
 {
-    if (_session_info.fd >= 0) {
+    if (_session_info.ifstream.is_open()) {
         _reset();
     }
 
-    std::string path = [payload, this]() {
+    std::string path;
+    {
         std::lock_guard<std::mutex> lock(_tmp_files_mutex);
         const auto it = _tmp_files.find(_data_as_string(payload));
         if (it != _tmp_files.end()) {
-            return it->second;
+            path = it->second;
         } else {
-            return _root_dir.empty() ? "" : _get_path(payload);
-        }
-    }();
+            auto maybe_path = _path_from_payload(payload);
+            if (std::holds_alternative<ServerResult>(maybe_path)) {
+                response.opcode = Opcode::RSP_NAK;
+                response.size = 1;
+                response.data[0] = std::get<ServerResult>(maybe_path);
+                return;
+            }
 
-    if (path.empty()) {
-        response.opcode = Opcode::RSP_NAK;
-        response.size = 1;
-        response.data[0] = ServerResult::ERR_FAIL_FILE_DOES_NOT_EXIST;
-        return;
+            path = std::get<std::string>(maybe_path);
+        }
     }
 
     if (_debugging) {
@@ -451,23 +458,29 @@ void MavlinkFtpServer::_work_open_file_readonly(
         LogDebug() << "Going to open readonly: " << path;
     }
 
-    if (!fs_exists(path)) {
-        LogWarn() << "FTP: Open failed - file not found";
+    std::error_code ec;
+    if (!fs::exists(path, ec)) {
+        LogErr() << "FTP: Open failed - file doesn't exist";
         response.opcode = Opcode::RSP_NAK;
         response.size = 1;
         response.data[0] = ServerResult::ERR_FAIL_FILE_DOES_NOT_EXIST;
         return;
     }
 
-    uint32_t file_size = fs_file_size(path);
+    auto file_size = static_cast<uint32_t>(fs::file_size(path, ec));
+    if (ec) {
+        LogErr() << "Could not determine file size of '" << path << "': " << ec.message();
+        return;
+    }
 
     if (_debugging) {
         LogDebug() << "Determined filesize to be: " << file_size << " bytes";
     }
 
-    int fd = ::open(path.c_str(), O_RDONLY);
+    std::ifstream ifstream;
+    ifstream.open(path, std::ios::in | std::ios::binary);
 
-    if (fd < 0) {
+    if (!ifstream.is_open()) {
         LogWarn() << "FTP: Open failed";
         response.opcode = Opcode::RSP_NAK;
         response.size = 1;
@@ -475,32 +488,41 @@ void MavlinkFtpServer::_work_open_file_readonly(
         return;
     }
 
-    _session_info.fd = fd;
+    _session_info.ifstream = std::move(ifstream);
     _session_info.file_size = file_size;
     _session_info.stream_download = false;
 
     response.opcode = Opcode::RSP_ACK;
     response.session = 0;
     response.size = sizeof(uint32_t);
-    memcpy(response.data, &file_size, response.size);
+    std::memcpy(response.data, &file_size, response.size);
 }
 
 void MavlinkFtpServer::_work_open_file_writeonly(
     const PayloadHeader& payload, PayloadHeader& response)
 {
-    if (_session_info.fd >= 0) {
+    if (_session_info.ofstream.is_open()) {
         _reset();
     }
 
-    std::string path = [payload, this]() {
+    std::string path;
+    {
         std::lock_guard<std::mutex> lock(_tmp_files_mutex);
         const auto it = _tmp_files.find(_data_as_string(payload));
         if (it != _tmp_files.end()) {
-            return it->second;
+            path = it->second;
         } else {
-            return _root_dir.empty() ? "" : _get_path(payload);
+            auto maybe_path = _path_from_payload(payload);
+            if (std::holds_alternative<ServerResult>(maybe_path)) {
+                response.opcode = Opcode::RSP_NAK;
+                response.size = 1;
+                response.data[0] = std::get<ServerResult>(maybe_path);
+                return;
+            }
+
+            path = std::get<std::string>(maybe_path);
         }
-    }();
+    }
 
     if (path.empty()) {
         response.opcode = Opcode::RSP_NAK;
@@ -525,7 +547,8 @@ void MavlinkFtpServer::_work_open_file_writeonly(
     }
 
     // fail only if requested open for read
-    if (!fs_exists(path)) {
+    std::error_code ec;
+    if (!fs::exists(path, ec)) {
         LogWarn() << "FTP: Open failed - file not found";
         response.opcode = Opcode::RSP_NAK;
         response.size = 1;
@@ -533,20 +556,28 @@ void MavlinkFtpServer::_work_open_file_writeonly(
         return;
     }
 
-    uint32_t file_size = fs_file_size(path);
-
-    int fd = ::open(path.c_str(), O_WRONLY, 0666);
-
-    if (fd < 0) {
-        LogWarn() << "FTP: Open failed";
-        response.opcode = Opcode::RSP_NAK;
-        response.size = 1;
-        response.data[0] =
-            (errno == ENOENT) ? ServerResult::ERR_FAIL_FILE_DOES_NOT_EXIST : ServerResult::ERR_FAIL;
+    auto file_size = static_cast<uint32_t>(fs::file_size(path, ec));
+    if (ec) {
+        LogErr() << "Could not determine file size of '" << path << "': " << ec.message();
         return;
     }
 
-    _session_info.fd = fd;
+    if (_debugging) {
+        LogDebug() << "Determined filesize to be: " << file_size << " bytes";
+    }
+
+    std::ofstream ofstream;
+    ofstream.open(path, std::ios::out | std::ios::binary);
+
+    if (!ofstream.is_open()) {
+        LogWarn() << "FTP: Open failed";
+        response.opcode = Opcode::RSP_NAK;
+        response.size = 1;
+        response.data[0] = ServerResult::ERR_FAIL;
+        return;
+    }
+
+    _session_info.ofstream = std::move(ofstream);
     _session_info.file_size = file_size;
     _session_info.stream_download = false;
 
@@ -558,19 +589,28 @@ void MavlinkFtpServer::_work_open_file_writeonly(
 
 void MavlinkFtpServer::_work_create_file(const PayloadHeader& payload, PayloadHeader& response)
 {
-    if (_session_info.fd >= 0) {
+    if (_session_info.ofstream.is_open()) {
         _reset();
     }
 
-    std::string path = [payload, this]() {
+    std::string path;
+    {
         std::lock_guard<std::mutex> lock(_tmp_files_mutex);
         const auto it = _tmp_files.find(_data_as_string(payload));
         if (it != _tmp_files.end()) {
-            return it->second;
+            path = it->second;
         } else {
-            return _root_dir.empty() ? "" : _get_path(payload);
+            auto maybe_path = _path_from_payload(payload);
+            if (std::holds_alternative<ServerResult>(maybe_path)) {
+                response.opcode = Opcode::RSP_NAK;
+                response.size = 1;
+                response.data[0] = std::get<ServerResult>(maybe_path);
+                return;
+            }
+
+            path = std::get<std::string>(maybe_path);
         }
-    }();
+    }
 
     if (path.empty()) {
         response.opcode = Opcode::RSP_NAK;
@@ -594,9 +634,10 @@ void MavlinkFtpServer::_work_create_file(const PayloadHeader& payload, PayloadHe
         LogDebug() << "Creating file: " << path;
     }
 
-    int fd = ::open(path.c_str(), O_CREAT | O_TRUNC | O_WRONLY, 0666);
+    std::ofstream ofstream;
+    ofstream.open(path, std::ios::out | std::ios::binary);
 
-    if (fd < 0) {
+    if (!ofstream.is_open()) {
         LogWarn() << "FTP: Open failed";
         response.opcode = Opcode::RSP_NAK;
         response.size = 1;
@@ -604,7 +645,8 @@ void MavlinkFtpServer::_work_create_file(const PayloadHeader& payload, PayloadHe
         return;
     }
 
-    _session_info.fd = fd;
+    _session_info.ofstream = std::move(ofstream);
+    _session_info.stream_download = false;
     _session_info.file_size = 0;
 
     response.session = 0;
@@ -614,7 +656,7 @@ void MavlinkFtpServer::_work_create_file(const PayloadHeader& payload, PayloadHe
 
 void MavlinkFtpServer::_work_read(const PayloadHeader& payload, PayloadHeader& response)
 {
-    if (payload.session != 0 || _session_info.fd < 0) {
+    if (payload.session != 0 || !_session_info.ifstream.is_open()) {
         _reset();
     }
 
@@ -623,25 +665,32 @@ void MavlinkFtpServer::_work_read(const PayloadHeader& payload, PayloadHeader& r
         response.opcode = Opcode::RSP_NAK;
         response.size = 1;
         response.data[0] = ServerResult::ERR_EOF;
+        if (_debugging) {
+            LogDebug() << "Reached EOF reading";
+        }
         return;
     }
 
-    if (lseek(_session_info.fd, payload.offset, SEEK_SET) < 0) {
+    _session_info.ifstream.seekg(payload.offset);
+    if (_session_info.ifstream.fail()) {
         response.opcode = Opcode::RSP_NAK;
         response.size = 1;
         response.data[0] = ServerResult::ERR_FAIL;
+        LogWarn() << "Seek failed";
         return;
     }
 
-    auto bytes_read = ::read(_session_info.fd, &response.data[0], max_data_length);
+    _session_info.ifstream.read(reinterpret_cast<char*>(response.data), payload.size);
 
-    if (bytes_read < 0) {
-        // Negative return indicates error other than EOF.
+    if (_session_info.ifstream.fail()) {
         response.opcode = Opcode::RSP_NAK;
         response.size = 1;
         response.data[0] = ServerResult::ERR_FAIL;
+        LogWarn() << "Read failed";
         return;
     }
+
+    const uint32_t bytes_read = _session_info.ifstream.gcount();
 
     response.size = bytes_read;
     response.opcode = Opcode::RSP_ACK;
@@ -650,47 +699,48 @@ void MavlinkFtpServer::_work_read(const PayloadHeader& payload, PayloadHeader& r
 void MavlinkFtpServer::_work_burst(const PayloadHeader& payload, PayloadHeader& response)
 {
     // TODO: implement burst
+    UNUSED(payload);
     UNUSED(response);
 
-    if (payload.session != 0 && _session_info.fd < 0) {
-        _reset();
-    }
+    // if (payload.session != 0 && _session_info.fd < 0) {
+    //    _reset();
+    //}
 
-    // Setup for streaming sends
-    _session_info.stream_download = true;
-    _session_info.stream_offset = payload.offset;
-    _session_info.stream_chunk_transmitted = 0;
-    _session_info.stream_seq_number = payload.seq_number + 1;
-    _session_info.stream_target_system_id = 0; // FIXME: _server_component_impl.get_system_id();
+    //// Setup for streaming sends
+    //_session_info.stream_download = true;
+    //_session_info.stream_offset = payload.offset;
+    //_session_info.stream_chunk_transmitted = 0;
+    //_session_info.stream_seq_number = payload.seq_number + 1;
+    //_session_info.stream_target_system_id = 0; // FIXME: _server_component_impl.get_system_id();
 }
 
 void MavlinkFtpServer::_work_write(const PayloadHeader& payload, PayloadHeader& response)
 {
-    if (payload.session != 0 && _session_info.fd < 0) {
+    if (payload.session != 0 && !_session_info.ofstream.is_open()) {
         _reset();
     }
 
-    if (lseek(_session_info.fd, payload.offset, SEEK_SET) < 0) {
-        // Unable to see to the specified location
+    _session_info.ofstream.seekp(payload.offset);
+    if (_session_info.ifstream.fail()) {
         response.opcode = Opcode::RSP_NAK;
         response.size = 1;
         response.data[0] = ServerResult::ERR_FAIL;
+        LogWarn() << "Seek failed";
         return;
     }
 
-    const int bytes_written = ::write(_session_info.fd, &payload.data[0], payload.size);
-
-    if (bytes_written < 0) {
-        // Negative return indicates error other than eof
+    _session_info.ofstream.write(reinterpret_cast<const char*>(payload.data), payload.size);
+    if (_session_info.ofstream.fail()) {
         response.opcode = Opcode::RSP_NAK;
         response.size = 1;
         response.data[0] = ServerResult::ERR_FAIL;
+        LogWarn() << "Write failed";
         return;
     }
 
     response.opcode = Opcode::RSP_ACK;
     response.size = sizeof(uint32_t);
-    std::memcpy(response.data, &bytes_written, response.size);
+    std::memcpy(response.data, &payload.size, response.size);
 }
 
 void MavlinkFtpServer::_work_terminate(const PayloadHeader& payload, PayloadHeader& response)
@@ -705,10 +755,12 @@ void MavlinkFtpServer::_work_terminate(const PayloadHeader& payload, PayloadHead
 
 void MavlinkFtpServer::_reset()
 {
-    if (_session_info.fd != -1) {
-        close(_session_info.fd);
-        _session_info.fd = -1;
-        _session_info.stream_download = false;
+    if (_session_info.ifstream.is_open()) {
+        _session_info.ifstream.close();
+    }
+
+    if (_session_info.ofstream.is_open()) {
+        _session_info.ofstream.close();
     }
 }
 
@@ -721,29 +773,24 @@ void MavlinkFtpServer::_work_reset(const PayloadHeader& payload, PayloadHeader& 
 
 void MavlinkFtpServer::_work_remove_directory(const PayloadHeader& payload, PayloadHeader& response)
 {
-    if (_root_dir.empty()) {
+    auto maybe_path = _path_from_payload(payload);
+    if (std::holds_alternative<ServerResult>(maybe_path)) {
+        response.opcode = Opcode::RSP_NAK;
+        response.size = 1;
+        response.data[0] = std::get<ServerResult>(maybe_path);
+        return;
+    }
+
+    fs::path path = std::get<std::string>(maybe_path);
+
+    std::error_code ec;
+    if (!fs::exists(path, ec)) {
         response.opcode = Opcode::RSP_NAK;
         response.size = 1;
         response.data[0] = ServerResult::ERR_FAIL_FILE_DOES_NOT_EXIST;
         return;
     }
-
-    std::string path = _get_path(payload);
-    if (path.rfind(_root_dir, 0) != 0) {
-        LogWarn() << "FTP: invalid path " << path;
-        response.opcode = Opcode::RSP_NAK;
-        response.size = 1;
-        response.data[0] = ServerResult::ERR_FAIL;
-        return;
-    }
-
-    if (!fs_exists(path)) {
-        response.opcode = Opcode::RSP_NAK;
-        response.size = 1;
-        response.data[0] = ServerResult::ERR_FAIL_FILE_DOES_NOT_EXIST;
-        return;
-    }
-    if (fs_remove(path)) {
+    if (fs::remove(path, ec)) {
         response.opcode = Opcode::RSP_ACK;
     } else {
         response.opcode = Opcode::RSP_NAK;
@@ -754,55 +801,54 @@ void MavlinkFtpServer::_work_remove_directory(const PayloadHeader& payload, Payl
 
 void MavlinkFtpServer::_work_create_directory(const PayloadHeader& payload, PayloadHeader& response)
 {
-    if (_root_dir.empty()) {
+    auto maybe_path = _path_from_payload(payload);
+    if (std::holds_alternative<ServerResult>(maybe_path)) {
         response.opcode = Opcode::RSP_NAK;
         response.size = 1;
-        response.data[0] = ServerResult::ERR_FAIL_FILE_DOES_NOT_EXIST;
+        response.data[0] = std::get<ServerResult>(maybe_path);
         return;
     }
 
-    std::string path = _get_path(payload);
-    if (path.rfind(_root_dir, 0) != 0) {
-        LogWarn() << "FTP: invalid path " << path;
-        response.opcode = Opcode::RSP_NAK;
-        response.size = 1;
-        response.data[0] = ServerResult::ERR_FAIL;
-        return;
-    }
+    auto path = std::get<std::string>(maybe_path);
 
-    if (fs_exists(path)) {
+    std::error_code ec;
+    if (fs::exists(path, ec)) {
         response.opcode = Opcode::RSP_NAK;
         response.size = 1;
         response.data[0] = ServerResult::ERR_FAIL_FILE_EXISTS;
         return;
     }
-    if (fs_create_directory(path)) {
+
+    if (fs::create_directory(path, ec)) {
         response.opcode = Opcode::RSP_ACK;
     } else {
         response.opcode = Opcode::RSP_NAK;
         response.size = 2;
         response.data[0] = ServerResult::ERR_FAIL_ERRNO;
-        response.data[1] = errno;
+        response.data[1] = static_cast<uint8_t>(ec.value());
     }
 }
 
 void MavlinkFtpServer::_work_remove_file(const PayloadHeader& payload, PayloadHeader& response)
 {
-    std::string path = _get_path(payload);
-    if (path.rfind(_root_dir, 0) != 0) {
+    auto maybe_path = _path_from_payload(payload);
+    if (std::holds_alternative<ServerResult>(maybe_path)) {
         response.opcode = Opcode::RSP_NAK;
         response.size = 1;
-        response.data[0] = ServerResult::ERR_FAIL;
+        response.data[0] = std::get<ServerResult>(maybe_path);
         return;
     }
 
-    if (!fs_exists(path)) {
+    auto path = std::get<std::string>(maybe_path);
+
+    std::error_code ec;
+    if (!fs::exists(path, ec)) {
         response.opcode = Opcode::RSP_NAK;
         response.size = 1;
         response.data[0] = ServerResult::ERR_FAIL_FILE_DOES_NOT_EXIST;
         return;
     }
-    if (fs_remove(path)) {
+    if (fs::remove(path, ec)) {
         response.opcode = Opcode::RSP_ACK;
     } else {
         response.opcode = Opcode::RSP_NAK;
@@ -813,31 +859,42 @@ void MavlinkFtpServer::_work_remove_file(const PayloadHeader& payload, PayloadHe
 
 void MavlinkFtpServer::_work_rename(const PayloadHeader& payload, PayloadHeader& response)
 {
-    size_t term_i = payload.size;
-    if (payload.size >= max_data_length) {
-        term_i = max_data_length - 1;
-    }
-    response.data[term_i] = '\0';
+    auto maybe_old_name = _path_from_payload(payload, 0);
 
-    std::string old_name = std::string(reinterpret_cast<const char*>(&(payload.data[0])));
-    std::string new_name = _get_path(
-        std::string(reinterpret_cast<const char*>(&(payload.data[old_name.length() + 1]))));
-    old_name = _get_path(old_name);
-    if (old_name.rfind(_root_dir, 0) != 0 || new_name.rfind(_root_dir, 0) != 0) {
+    if (std::holds_alternative<ServerResult>(maybe_old_name)) {
         response.opcode = Opcode::RSP_NAK;
         response.size = 1;
-        response.data[0] = ServerResult::ERR_FAIL;
+        response.data[0] = std::get<ServerResult>(maybe_old_name);
         return;
     }
 
-    if (!fs_exists(old_name)) {
+    auto old_name = std::get<std::string>(maybe_old_name);
+
+    auto maybe_new_name = _path_from_payload(payload, 1);
+
+    if (std::holds_alternative<ServerResult>(maybe_new_name)) {
+        response.opcode = Opcode::RSP_NAK;
+        response.size = 1;
+        response.data[0] = std::get<ServerResult>(maybe_new_name);
+        return;
+    }
+
+    auto new_name = std::get<std::string>(maybe_new_name);
+
+    if (_debugging) {
+        LogDebug() << "Rename from old_name " << old_name << " to " << new_name;
+    }
+
+    std::error_code ec;
+    if (!fs::exists(old_name, ec)) {
         response.opcode = Opcode::RSP_NAK;
         response.size = 1;
         response.data[0] = ServerResult::ERR_FAIL_FILE_DOES_NOT_EXIST;
         return;
     }
 
-    if (fs_rename(old_name, new_name)) {
+    fs::rename(old_name, new_name, ec);
+    if (!ec) {
         response.opcode = Opcode::RSP_ACK;
     } else {
         response.opcode = Opcode::RSP_NAK;
@@ -849,33 +906,35 @@ void MavlinkFtpServer::_work_rename(const PayloadHeader& payload, PayloadHeader&
 MavlinkFtpServer::ServerResult
 MavlinkFtpServer::_calc_local_file_crc32(const std::string& path, uint32_t& csum)
 {
-    if (!fs_exists(path)) {
+    std::error_code ec;
+    if (!fs::exists(path, ec)) {
         return ServerResult::ERR_FAIL_FILE_DOES_NOT_EXIST;
     }
 
-    int fd = ::open(path.c_str(), O_RDONLY);
-    if (fd < 0) {
+    std::ifstream ifstream;
+    ifstream.open(path, std::ios::in | std::ios::binary);
+
+    if (!ifstream.is_open()) {
         return ServerResult::ERR_FILE_IO_ERROR;
     }
 
     // Read whole file in buffer size chunks
     Crc32 checksum;
     char buffer[18392];
-    ssize_t bytes_read;
     do {
-        bytes_read = ::read(fd, buffer, sizeof(buffer));
+        ifstream.read(buffer, sizeof(buffer));
 
-        if (bytes_read < 0) {
-            int r_errno = errno;
-            close(fd);
-            errno = r_errno;
+        if (ifstream.fail() && !ifstream.eof()) {
+            ifstream.close();
             return ServerResult::ERR_FILE_IO_ERROR;
         }
 
+        auto bytes_read = ifstream.gcount();
         checksum.add((uint8_t*)buffer, bytes_read);
-    } while (bytes_read == sizeof(buffer));
 
-    close(fd);
+    } while (!ifstream.eof());
+
+    ifstream.close();
 
     csum = checksum.get();
 
@@ -884,16 +943,18 @@ MavlinkFtpServer::_calc_local_file_crc32(const std::string& path, uint32_t& csum
 
 void MavlinkFtpServer::_work_calc_file_CRC32(const PayloadHeader& payload, PayloadHeader& response)
 {
-    std::string path = _get_path(payload);
-    if (path.rfind(_root_dir, 0) != 0) {
-        LogWarn() << "FTP: invalid path " << path;
+    auto maybe_path = _path_from_payload(payload);
+    if (std::holds_alternative<ServerResult>(maybe_path)) {
         response.opcode = Opcode::RSP_NAK;
         response.size = 1;
-        response.data[0] = ServerResult::ERR_FAIL;
+        response.data[0] = std::get<ServerResult>(maybe_path);
         return;
     }
 
-    if (!fs_exists(path)) {
+    auto path = std::get<std::string>(maybe_path);
+
+    std::error_code ec;
+    if (!fs::exists(path, ec)) {
         response.opcode = Opcode::RSP_NAK;
         response.size = 1;
         response.data[0] = ServerResult::ERR_FAIL_FILE_DOES_NOT_EXIST;
@@ -919,54 +980,6 @@ void MavlinkFtpServer::send()
     // Anything to stream?
     if (!_session_info.stream_download) {
         return;
-    }
-}
-
-std::optional<std::string>
-MavlinkFtpServer::write_tmp_file(const std::string& path, const std::string& content)
-{
-    // TODO: Check if currently an operation is ongoing.
-
-    if (path.find("..") != std::string::npos) {
-        LogWarn() << "Path with .. not supported.";
-        return {};
-    }
-
-    if (path.find('/') != std::string::npos) {
-        LogWarn() << "Path with / not supported.";
-        return {};
-    }
-
-    if (path.find('\\') != std::string::npos) {
-        LogWarn() << "Path with \\ not supported.";
-        return {};
-    }
-
-    // We use a temporary directory to put these
-    if (_tmp_dir.empty()) {
-        auto maybe_tmp_dir = create_tmp_directory("mavsdk-mavlink-ftp-tmp-files");
-        if (maybe_tmp_dir) {
-            _tmp_dir = maybe_tmp_dir.value();
-        }
-        // If we can't get a tmp dir, we'll just try to use our current working dir,
-        // or whatever is the root dir by default.
-    }
-
-    const auto file_path = _tmp_dir + path_separator + path;
-    std::ofstream out(file_path);
-    out << content;
-    out.flush();
-    if (out.bad()) {
-        LogWarn() << "Writing to " << file_path << " failed";
-        out.close();
-        return {};
-    } else {
-        out.close();
-
-        std::lock_guard<std::mutex> lock(_tmp_files_mutex);
-        _tmp_files[path] = file_path;
-
-        return {file_path};
     }
 }
 
