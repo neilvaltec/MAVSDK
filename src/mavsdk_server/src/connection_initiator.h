@@ -10,6 +10,21 @@
 namespace mavsdk {
 namespace mavsdk_server {
 
+std::vector<std::string> split(const std::string &s, char delimiter) {
+    std::vector<std::string> tokens;
+    std::string token;
+    for (char c : s) {
+        if (c == delimiter) {
+            tokens.push_back(token);
+            token.clear();
+        } else {
+            token += c;
+        }
+    }
+    tokens.push_back(token); // For the last token
+    return tokens;
+};
+
 template<typename Mavsdk> class ConnectionInitiator {
 public:
     ConnectionInitiator() {}
@@ -20,11 +35,15 @@ public:
         LogInfo() << "Waiting to discover system on " << connection_url << "...";
         _discovery_future = wrapped_subscribe_on_new_system(mavsdk);
 
-        if (!add_any_connection(mavsdk, connection_url)) {
-            return false;
-        }
+        std::vector<std::string> all_connection_url = split(connection_url, ',');
 
-        return true;
+        // the loop below adds the number of ports the sdk monitors.
+        for (const auto& each_connection_url : all_connection_url) {
+            if (!add_any_connection(mavsdk, each_connection_url)) {
+                return false;
+            }
+        }
+        return true;      
     }
 
     bool wait() { return _discovery_future.get(); }

@@ -4,6 +4,7 @@
 #include <iostream>
 #include <limits>
 #include <string>
+#include <vector>
 
 static auto constexpr default_connection = "udp://:14540";
 static auto constexpr default_mavsdk_server_port = 50051;
@@ -15,7 +16,7 @@ static bool is_integer(const std::string& tested_integer);
 
 int main(int argc, char** argv)
 {
-    std::string connection_url = default_connection;
+    std::vector<std::string> connection_urls = {};
     int mavsdk_server_port = default_mavsdk_server_port;
     int mavsdk_sysid = default_sysid;
     int mavsdk_compid = default_compid;
@@ -82,12 +83,22 @@ int main(int argc, char** argv)
                 return 1;
             }
         } else {
-            connection_url = current_arg;
+            connection_urls.push_back(current_arg);
         }
     }
 
     MavsdkServer* mavsdk_server;
     mavsdk_server_init(&mavsdk_server);
+
+    // Concatenating the strings with a comma separator
+    std::string connection_url;
+    for (int i = 0; i < connection_urls.size(); ++i) {
+        connection_url += connection_urls[i];
+        if (i < connection_urls.size() - 1) { // Don't add a comma after the last element
+            connection_url += ",";
+        }
+    }
+
     const auto is_started = mavsdk_server_run_with_mavlink_ids(
         mavsdk_server,
         connection_url.c_str(),
