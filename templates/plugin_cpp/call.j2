@@ -1,13 +1,13 @@
 {% if is_async %}
-void {{ plugin_name.upper_camel_case }}::{{ name.lower_snake_case }}_async({% for param in params %}{% if param.type_info.name.endswith("Result") %}Result{% else %}{{ param.type_info.name }}{% endif %} {{ param.name.lower_snake_case }}, {% endfor %}const ResultCallback callback)
+void {{ plugin_name.upper_camel_case }}::{{ name.lower_snake_case }}_async({% for param in params %}{% if param.name.lower_snake_case != "drone_id" %}{% if param.type_info.name.endswith("Result") %}Result{% else %}{{ param.type_info.name }}{% endif %} {{ param.name.lower_snake_case }}, {% endif %}{% endfor %}const ResultCallback callback)
 {
-    _impl->{{ name.lower_snake_case }}_async({% for param in params %}{{ param.name.lower_snake_case }}, {% endfor %}callback);
+    _impl->{{ name.lower_snake_case }}_async({% for param in params %}{% if param.name.lower_snake_case != "drone_id" %}{{ param.name.lower_snake_case }}, {% endif %}{% endfor %}callback);
 }
 {% endif %}
 
 {% if is_sync %}
-{% if has_result %}{{ plugin_name.upper_camel_case }}::Result{% else %}void{% endif %} {{ plugin_name.upper_camel_case }}::{{ name.lower_snake_case }}({% for param in params %}{% if param.type_info.name.endswith("Result") %}Result{% else %}{{ param.type_info.name }}{% endif %} {{ param.name.lower_snake_case }}{{ ", " if not loop.last }}{% endfor %}) const
+{% if has_result %}{{ plugin_name.upper_camel_case }}::Result{% else %}void{% endif %} {{ plugin_name.upper_camel_case }}::{{ name.lower_snake_case }}({% for param in params %}{% if param.name.lower_snake_case != "drone_id" %}{% if param.type_info.name.endswith("Result") %}Result{% else %}{{ param.type_info.name }}{% endif %} {{ param.name.lower_snake_case }}{{ ", " if not loop.last }}{% endif %}{% endfor %}) const
 {
-    {% if has_result %}return {% endif %}_impl->{{ name.lower_snake_case }}({% for param in params %}{{ param.name.lower_snake_case }}{{ ", " if not loop.last }}{% endfor %});
+    {% if has_result %}return {% endif %}_impl->{{ name.lower_snake_case }}({% for param in params %}{% if param.name.lower_snake_case != "drone_id" %}{{ param.name.lower_snake_case }}{{ ", " if not loop.last }}{% endif %}{% endfor %});
 }
 {% endif %}
