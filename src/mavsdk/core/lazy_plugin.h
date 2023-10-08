@@ -24,6 +24,10 @@ public:
     // }
 
     Plugin* maybe_plugin(int32_t system_id) {
+        if (system_id == 0) {
+            std::cout << "Did you specify drone_id or specify it as 0? drone id should start from 1." << std::endl;
+            return nullptr;
+        }
         std::lock_guard<std::mutex> lock(_mutex);
         auto it = _dict_plugin.find(system_id);
         if (it == _dict_plugin.end()) {
@@ -36,7 +40,7 @@ public:
 private:
     Mavsdk& _mavsdk;
     // std::unique_ptr<Plugin> _plugin{};
-    std::unordered_map<int, std::unique_ptr<Plugin>> _dict_plugin{};
+    std::unordered_map<int, std::unique_ptr<Plugin>> _dict_plugin{}; // drone_id starts from 1
     std::mutex _mutex{};
 };
 
