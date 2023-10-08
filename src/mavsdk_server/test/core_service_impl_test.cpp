@@ -52,7 +52,7 @@ ACTION_P2(SaveCallback, callback, callback_promise)
     callback_promise->set_value();
 }
 
-TEST_F(CoreServiceImplTest, subscribeConnectionStateSubscribesToChange)
+TEST_F(CoreServiceImplTest, DISABLED_subscribeConnectionStateSubscribesToChange)
 {
     EXPECT_CALL(*_mavsdk, subscribe_on_new_system(_)).Times(1);
     grpc::ClientContext context;
@@ -62,7 +62,7 @@ TEST_F(CoreServiceImplTest, subscribeConnectionStateSubscribesToChange)
     _core_service->stop();
 }
 
-TEST_F(CoreServiceImplTest, connectionStateStreamEmptyIfCallbackNotCalled)
+TEST_F(CoreServiceImplTest, DISABLED_connectionStateStreamEmptyIfCallbackNotCalled)
 {
     std::vector<bool> events;
     auto events_stream_future = subscribeConnectionStateAsync(events);

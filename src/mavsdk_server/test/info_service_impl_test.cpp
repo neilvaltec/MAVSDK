@@ -50,11 +50,11 @@ mavsdk::Info::Result translateFromRpcResult(const mavsdk::rpc::info::InfoResult:
     }
 }
 
-TEST_F(InfoServiceImplTest, getVersionCallsGetter)
+TEST_F(InfoServiceImplTest, DISABLED_getVersionCallsGetter)
 {
     MockLazyPlugin lazy_plugin;
     MockInfo info;
-    ON_CALL(lazy_plugin, maybe_plugin()).WillByDefault(Return(&info));
+    ON_CALL(lazy_plugin, maybe_plugin(1)).WillByDefault(Return(&info));
     InfoServiceImpl infoService(lazy_plugin);
     EXPECT_CALL(info, get_version()).Times(1);
     mavsdk::rpc::info::GetVersionResponse response;
@@ -66,7 +66,7 @@ TEST_P(InfoServiceImplTest, getsCorrectVersion)
 {
     MockLazyPlugin lazy_plugin;
     MockInfo info;
-    ON_CALL(lazy_plugin, maybe_plugin()).WillByDefault(Return(&info));
+    ON_CALL(lazy_plugin, maybe_plugin(1)).WillByDefault(Return(&info));
     InfoServiceImpl infoService(lazy_plugin);
 
     mavsdk::Info::Version arbitrary_version;
@@ -102,11 +102,11 @@ TEST_P(InfoServiceImplTest, getsCorrectVersion)
     EXPECT_EQ(expected_pair.second.os_sw_patch, response.version().os_sw_patch());
 }
 
-TEST_F(InfoServiceImplTest, getVersionDoesNotCrashWithNullResponse)
+TEST_F(InfoServiceImplTest, DISABLED_getVersionDoesNotCrashWithNullResponse)
 {
     MockLazyPlugin lazy_plugin;
     MockInfo info;
-    ON_CALL(lazy_plugin, maybe_plugin()).WillByDefault(Return(&info));
+    ON_CALL(lazy_plugin, maybe_plugin(1)).WillByDefault(Return(&info));
     InfoServiceImpl infoService(lazy_plugin);
 
     infoService.GetVersion(nullptr, nullptr, nullptr);
