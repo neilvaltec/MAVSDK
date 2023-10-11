@@ -31,7 +31,7 @@ public:
         std::lock_guard<std::mutex> lock(_mutex);
         auto it = _dict_plugin.find(system_id);
         if (it == _dict_plugin.end()) {
-            auto system = _mavsdk.systems().at(system_id);
+            auto system = _mavsdk.systems().at(system_id - 1);
             _dict_plugin[system_id] = std::make_unique<Plugin>(system);
         }
         return _dict_plugin[system_id].get();
