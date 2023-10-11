@@ -1,3 +1,13 @@
+- `MAVSDK` needs to checkout to branch *valtec_dev_multi-connection*.
+- `MAVSDK/proto` needs to checkout to branch *valtec_dev_multi-connection*.
+- cmake, then generate proto files, then build
+    ```
+    cmake -DCMAKE_BUILD_TYPE=Debug -DBUILD_SHARED_LIBS=OFF -DBUILD_MAVSDK_SERVER=ON -Bbuild/default -H. && tools/generate_from_protos.sh && cmake --build build/default -j8
+    ```
+
+---
+
+
 <img alt="MAVSDK" src="https://mavsdk.mavlink.io/main/assets/site/sdk_logo_full.png" width="400">
 
 [![GitHub Actions Status](https://github.com/mavlink/MAVSDK/workflows/Build%20and%20Test/badge.svg?branch=main)](https://github.com/mavlink/MAVSDK/actions?query=branch%3Amain)
