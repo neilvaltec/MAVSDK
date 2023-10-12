@@ -9,7 +9,7 @@
     ```
   - cmake, then generate proto files, then build, also install to local folder "MAVSDK/install"
     ```
-    cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=install -DDEPS_INSTALL_PATH=install -Bbuild/default -H.
+    cmake -DCMAKE_BUILD_TYPE=Debug -DBUILD_MAVSDK_SERVER=ON -DCMAKE_INSTALL_PREFIX=install -DDEPS_INSTALL_PATH=install -Bbuild/default -H.
     tools/generate_from_protos.sh
     cmake --build build/default --target install
     ```
