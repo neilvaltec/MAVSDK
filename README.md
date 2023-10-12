@@ -1,8 +1,17 @@
 - `MAVSDK` needs to checkout to branch *valtec_dev_multi-connection*.
 - `MAVSDK/proto` needs to checkout to branch *valtec_dev_multi-connection*.
-- cmake, then generate proto files, then build
+- To build
+  - cmake, then generate proto files, then build
     ```
-    cmake -DCMAKE_BUILD_TYPE=Debug -DBUILD_SHARED_LIBS=OFF -DBUILD_MAVSDK_SERVER=ON -Bbuild/default -H. && tools/generate_from_protos.sh && cmake --build build/default -j8
+    cmake -DCMAKE_BUILD_TYPE=Debug -DBUILD_SHARED_LIBS=OFF -DBUILD_MAVSDK_SERVER=ON -Bbuild/default -H.
+    tools/generate_from_protos.sh
+    cmake --build build/default -j8
+    ```
+  - cmake, then generate proto files, then build, also install to local folder "MAVSDK/install"
+    ```
+    cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=install -DDEPS_INSTALL_PATH=install -Bbuild/default -H.
+    tools/generate_from_protos.sh
+    cmake --build build/default --target install
     ```
 
 ---
