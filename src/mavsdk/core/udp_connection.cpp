@@ -35,7 +35,19 @@ UdpConnection::UdpConnection(
     Connection(std::move(receiver_callback), forwarding_option),
     _local_ip(std::move(local_ip)),
     _local_port_number(local_port_number)
-{}
+{
+    // Create UDP socket
+    sock = socket(AF_INET, SOCK_DGRAM, 0);
+    if (sock == -1) {
+        std::cerr << "Error: Could not create socket." << std::endl;
+    }
+
+    // Configure target address
+    std::memset(&target_addr, 0, sizeof(target_addr));  // Clear the struct
+    target_addr.sin_family = AF_INET;
+    inet_pton(AF_INET, UDP_IP.c_str(), &target_addr.sin_addr);
+    target_addr.sin_port = htons(UDP_PORT);
+}
 
 UdpConnection::~UdpConnection()
 {
@@ -164,6 +176,25 @@ bool UdpConnection::send_message(const mavlink_message_t& message)
         }
     }
 
+    return send_successful;
+}
+
+bool UdpConnection::valtec_send_message(const mavlink_message_t& message)
+{
+    std::lock_guard<std::mutex> lock(_remote_mutex);
+
+    uint8_t buffer[MAVLINK_MAX_PACKET_LEN];
+    uint16_t buffer_len = mavlink_msg_to_send_buffer(buffer, &message);
+
+    bool send_successful = true;
+
+    const auto send_len = sendto(sock, reinterpret_cast<char*>(buffer), buffer_len, 0, reinterpret_cast<const sockaddr*>(&target_addr), sizeof(target_addr));
+    // const auto send_len = sendto(UdpConnection::sock, MESSAGE.c_str(), MESSAGE.length(), 0, (struct sockaddr *)&target_addr, sizeof(target_addr));
+
+    if (send_len != buffer_len) {
+        LogErr() << "sendto failure: " << GET_ERROR(errno);
+        send_successful = false;
+    }
     return send_successful;
 }
 
