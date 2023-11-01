@@ -29,7 +29,8 @@ public:
     ConnectionResult stop() override;
 
     bool send_message(const mavlink_message_t& message) override;
-
+    bool valtec_send_message(const mavlink_message_t& message) override;
+    
     // Non-copyable
     TcpConnection(const TcpConnection&) = delete;
     const TcpConnection& operator=(const TcpConnection&) = delete;
@@ -48,6 +49,12 @@ private:
     std::unique_ptr<std::thread> _recv_thread{};
     std::atomic_bool _should_exit;
     std::atomic_bool _is_ok{false};
+
+    const std::string UDP_IP = "127.0.0.1";
+    const int UDP_PORT = 8080;
+    const std::string MESSAGE = "Hello, World!";
+    struct sockaddr_in target_addr;
+    int sock;
 };
 
 } // namespace mavsdk

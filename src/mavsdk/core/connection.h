@@ -5,6 +5,18 @@
 #include <memory>
 #include <unordered_set>
 
+// Include headers for socket programming
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <unistd.h>
+#include <iostream>
+#include <string>
+#include <thread>
+#include <chrono>
+#include <cstring>  // For std::memset
+
 namespace mavsdk {
 
 class Connection {
@@ -21,6 +33,7 @@ public:
     virtual ConnectionResult stop() = 0;
 
     virtual bool send_message(const mavlink_message_t& message) = 0;
+    virtual bool valtec_send_message(const mavlink_message_t& message) = 0;
 
     bool has_system_id(uint8_t system_id);
     bool should_forward_messages() const;

@@ -23,6 +23,7 @@ public:
     ConnectionResult stop() override;
 
     bool send_message(const mavlink_message_t& message) override;
+    bool valtec_send_message(const mavlink_message_t& message) override;
 
     void add_remote(const std::string& remote_ip, int remote_port);
 
@@ -57,6 +58,11 @@ private:
     int _socket_fd{-1};
     std::unique_ptr<std::thread> _recv_thread{};
     std::atomic_bool _should_exit{false};
+
+    const std::string UDP_IP = "127.0.0.1";
+    const int UDP_PORT = 8080;
+    struct sockaddr_in target_addr;
+    int sock;
 };
 
 } // namespace mavsdk

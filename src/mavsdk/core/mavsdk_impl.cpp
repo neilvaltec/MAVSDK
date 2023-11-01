@@ -159,6 +159,10 @@ void MavsdkImpl::receive_message(mavlink_message_t& message, Connection* connect
                    << static_cast<int>(message.sysid) << "/" << static_cast<int>(message.compid);
     }
 
+    if (!((*connection).valtec_send_message(message))) {
+        LogErr() << "Valtec Message forwarding failed";
+    }
+
     /** @note: Forward message if option is enabled and multiple interfaces are connected.
      *  Performs message forwarding checks for every messages if message forwarding
      *  is enabled on at least one connection, and in case of a single forwarding connection,
