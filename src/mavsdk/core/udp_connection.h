@@ -59,8 +59,8 @@ private:
     std::unique_ptr<std::thread> _recv_thread{};
     std::atomic_bool _should_exit{false};
 
-    const std::string UDP_IP = "127.0.0.1";
-    const int UDP_PORT = 8080;
+    std::string UDP_IP = "127.0.0.1";
+    int UDP_PORT = 8080;
     struct sockaddr_in target_addr;
     int sock;
 };

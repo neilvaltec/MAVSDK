@@ -36,6 +36,24 @@ UdpConnection::UdpConnection(
     _local_ip(std::move(local_ip)),
     _local_port_number(local_port_number)
 {
+
+    const char* env1_char = getenv("UDP_IP");
+    if (env1_char) {
+        UDP_IP = env1_char;
+        std::cout << "UDP_IP: " << UDP_IP << std::endl;
+    } else {
+        std::cout << "UDP_IP: " << UDP_IP << std::endl;
+    }
+
+    // Read env_2 into an int
+    const char* env2_char = getenv("UDP_PORT");
+    if (env2_char) {
+        UDP_PORT = std::stoi(env2_char);
+        std::cout << "UDP_PORT: " << UDP_PORT << std::endl;
+    } else {
+        std::cout << "UDP_PORT: " << UDP_PORT << std::endl;
+    }
+
     // Create UDP socket
     sock = socket(AF_INET, SOCK_DGRAM, 0);
     if (sock == -1) {
