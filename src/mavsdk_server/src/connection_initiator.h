@@ -76,7 +76,7 @@ private:
 
         mavsdk.subscribe_on_new_system([this, &mavsdk]() {
             std::lock_guard<std::mutex> guard(_mutex);
-            const auto system = mavsdk.systems().at(0);
+            const auto system = mavsdk.systems().back();
 
             if (!_is_discovery_finished && system->is_connected()) {
                 LogInfo() << "System discovered";
@@ -84,6 +84,8 @@ private:
                 _is_discovery_finished = true;
                 _discovery_promise->set_value(true);
             }
+
+            LogInfo() << "Total systems (drones): " << mavsdk.systems().size();
         });
 
         return future;
