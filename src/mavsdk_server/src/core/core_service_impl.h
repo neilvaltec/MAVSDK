@@ -1,9 +1,13 @@
 #include <future>
 #include <string>
 #include <chrono>
+#include <thread>
 
 #include "core/core.grpc.pb.h"
 #include "mavsdk.h"
+
+using std::chrono::seconds;
+using std::this_thread::sleep_for;
 
 namespace mavsdk {
 namespace mavsdk_server {
@@ -60,11 +64,7 @@ public:
             }
         }
 
-        auto system = get_system(_mavsdk);
-
-        if (!system) {
-            succeed = false;
-        }
+        succeed = discover_new_system(_mavsdk);
 
         if (response != nullptr) {
             response->set_succeed(succeed);
@@ -73,35 +73,33 @@ public:
         return grpc::Status::OK;
     }
 
-    std::shared_ptr<System> get_system(Mavsdk& mavsdk)
+    bool discover_new_system(Mavsdk& mavsdk)
     {
+        size_t original_num_systems = mavsdk.systems().size();
+        bool new_system_discoverd = false;
+
         std::cout << "Waiting to discover system...\n";
-        auto prom = std::promise<std::shared_ptr<System>>{};
-        auto fut = prom.get_future();
+        mavsdk.subscribe_on_new_system([&mavsdk, original_num_systems, &new_system_discoverd]() {
+            const auto systems = mavsdk.systems();
 
-        // We wait for new systems to be discovered, once we find one that has an
-        // autopilot, we decide to use it.
-        mavsdk.subscribe_on_new_system([&mavsdk, &prom]() {
-            auto system = mavsdk.systems().back();
-
-            if (system->has_autopilot()) {
-                std::cout << "Discovered autopilot\n";
-
-                // Unsubscribe again as we only want to find one system.
-                mavsdk.subscribe_on_new_system(nullptr);
-                prom.set_value(system);
+            if (systems.size() > original_num_systems) {
+                std::cout << "Discovered system\n";
+                std::cout << "Original number of systems: " << original_num_systems << "\n";
+                std::cout << "Number of systems after discover: " << int(systems.size()) << "\n";
+                new_system_discoverd = true;
             }
         });
 
-        // We usually receive heartbeats at 1Hz, therefore we should find a
-        // system after around 3 seconds max, surely.
-        if (fut.wait_for(std::chrono::seconds(3)) == std::future_status::timeout) {
-            std::cerr << "No autopilot found.\n";
-            return {};
-        }
+        // We usually receive heartbeats at 1Hz, therefore we should find a system after around 2
+        // seconds.
+        sleep_for(std::chrono::seconds(2));
 
-        // Get discovered system now.
-        return fut.get();
+        if (!new_system_discoverd) {
+            std::cerr << "Not all systems found, exiting.\n";
+            return false;
+        } else {
+            return true;
+        }
     }
 
 private:
