@@ -1,8 +1,13 @@
 #include <future>
 #include <string>
+#include <chrono>
+#include <thread>
 
 #include "core/core.grpc.pb.h"
 #include "mavsdk.h"
+
+using std::chrono::seconds;
+using std::this_thread::sleep_for;
 
 namespace mavsdk {
 namespace mavsdk_server {
@@ -44,6 +49,58 @@ public:
     }
 
     void stop() { _stop_promise.set_value(); }
+
+    grpc::Status AddNewConnection(
+        grpc::ServerContext* /* context */,
+        const rpc::core::AddNewConnectionRequest* request,
+        rpc::core::AddNewConnectionResponse* response) override
+    {
+        bool succeed = false;
+
+        if (request != nullptr) {
+            ConnectionResult connection_result = _mavsdk.add_any_connection(request->connection_url());
+            if (connection_result != ConnectionResult::Success) {
+                std::cerr << "Connection failed: " << connection_result << '\n';
+            }
+        }
+
+        succeed = discover_new_system(_mavsdk);
+
+        if (response != nullptr) {
+            response->set_succeed(succeed);
+        }
+
+        return grpc::Status::OK;
+    }
+
+    bool discover_new_system(Mavsdk& mavsdk)
+    {
+        size_t original_num_systems = mavsdk.systems().size();
+        bool new_system_discoverd = false;
+
+        std::cout << "Waiting to discover system...\n";
+        mavsdk.subscribe_on_new_system([&mavsdk, original_num_systems, &new_system_discoverd]() {
+            const auto systems = mavsdk.systems();
+
+            if (systems.size() > original_num_systems) {
+                std::cout << "Discovered system\n";
+                std::cout << "Original number of systems: " << original_num_systems << "\n";
+                std::cout << "Number of systems after discover: " << int(systems.size()) << "\n";
+                new_system_discoverd = true;
+            }
+        });
+
+        // We usually receive heartbeats at 1Hz, therefore we should find a system after around 2
+        // seconds.
+        sleep_for(std::chrono::seconds(2));
+
+        if (!new_system_discoverd) {
+            std::cerr << "Not all systems found, exiting.\n";
+            return false;
+        } else {
+            return true;
+        }
+    }
 
 private:
     Mavsdk& _mavsdk;
