@@ -90,12 +90,18 @@ int main(int argc, char** argv)
     MavsdkServer* mavsdk_server;
     mavsdk_server_init(&mavsdk_server);
 
-    // Concatenating the strings with a comma separator
-    std::string connection_url;
-    for (int i = 0; i < connection_urls.size(); ++i) {
-        connection_url += connection_urls[i];
-        if (i < connection_urls.size() - 1) { // Don't add a comma after the last element
-            connection_url += ",";
+    bool start_without_init_connection = false;
+    std::string connection_url = "";
+
+    if (connection_urls.size() == 0){
+        start_without_init_connection = true;
+    } else {
+        // Concatenating the strings with a comma separator
+        for (int i = 0; i < connection_urls.size(); ++i) {
+            connection_url += connection_urls[i];
+            if (i < connection_urls.size() - 1) { // Don't add a comma after the last element
+                connection_url += ",";
+            }
         }
     }
 
@@ -104,7 +110,8 @@ int main(int argc, char** argv)
         connection_url.c_str(),
         mavsdk_server_port,
         static_cast<uint8_t>(mavsdk_sysid),
-        static_cast<uint8_t>(mavsdk_compid));
+        static_cast<uint8_t>(mavsdk_compid),
+        start_without_init_connection);
 
     if (!is_started) {
         std::cout << "Failed to start, exiting...\n";

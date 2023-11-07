@@ -30,8 +30,13 @@ public:
     ConnectionInitiator() {}
     ~ConnectionInitiator() {}
 
-    bool start(Mavsdk& mavsdk, const std::string& connection_url)
+    bool start(Mavsdk& mavsdk, const std::string& connection_url, bool start_without_init_connection = false)
     {
+        if (start_without_init_connection) {
+            LogInfo() << "Starting without initial connection...";
+            return true;
+        }
+
         LogInfo() << "Waiting to discover system on " << connection_url << "...";
         _discovery_future = wrapped_subscribe_on_new_system(mavsdk);
 

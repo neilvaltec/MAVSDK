@@ -13,9 +13,9 @@ public:
     Impl() {}
     ~Impl() {}
 
-    bool connect(const std::string& connection_url)
+    bool connect(const std::string& connection_url, bool start_without_init_connection)
     {
-        _connection_initiator.start(_mavsdk, connection_url);
+        _connection_initiator.start(_mavsdk, connection_url, start_without_init_connection);
         return _connection_initiator.wait();
     }
 
@@ -60,9 +60,9 @@ int MavsdkServer::startGrpcServer(const int port)
     return _impl->startGrpcServer(port);
 }
 
-bool MavsdkServer::connect(const std::string& connection_url)
+bool MavsdkServer::connect(const std::string& connection_url, bool start_without_init_connection)
 {
-    return _impl->connect(connection_url);
+    return _impl->connect(connection_url, start_without_init_connection);
 }
 
 void MavsdkServer::wait()

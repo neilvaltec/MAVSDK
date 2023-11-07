@@ -8,9 +8,9 @@ void mavsdk_server_init(MavsdkServer** mavsdk_server)
 }
 
 int mavsdk_server_run(
-    MavsdkServer* mavsdk_server, const char* system_address, const int mavsdk_server_port)
+    MavsdkServer* mavsdk_server, const char* system_address, const int mavsdk_server_port, bool start_without_init_connection)
 {
-    if (!mavsdk_server->connect(std::string(system_address))) {
+    if (!mavsdk_server->connect(std::string(system_address), start_without_init_connection)) {
         // Connection was cancelled
         return false;
     }
@@ -29,10 +29,11 @@ int mavsdk_server_run_with_mavlink_ids(
     const char* system_address,
     const int mavsdk_server_port,
     const uint8_t system_id,
-    const uint8_t component_id)
+    const uint8_t component_id,
+    bool start_without_init_connection = false)
 {
     mavsdk_server->setMavlinkIds(system_id, component_id);
-    return mavsdk_server_run(mavsdk_server, system_address, mavsdk_server_port);
+    return mavsdk_server_run(mavsdk_server, system_address, mavsdk_server_port, start_without_init_connection);
 }
 
 int mavsdk_server_get_port(MavsdkServer* mavsdk_server)

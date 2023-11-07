@@ -28,7 +28,8 @@ DLLExport int mavsdk_server_run_with_mavlink_ids(
     const char* system_address,
     const int mavsdk_server_port,
     const uint8_t system_id,
-    const uint8_t component_id);
+    const uint8_t component_id,
+    bool start_without_init_connection);
 
 DLLExport int mavsdk_server_get_port(struct MavsdkServer* mavsdk_server);
 
