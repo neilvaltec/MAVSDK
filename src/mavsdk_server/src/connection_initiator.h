@@ -51,7 +51,12 @@ public:
         return true;      
     }
 
-    bool wait() { return _discovery_future.get(); }
+    bool wait(bool start_without_init_connection = false) { 
+        if (start_without_init_connection) {
+            return true;
+        }
+        return _discovery_future.get(); 
+    }
 
     void cancel()
     {
