@@ -270,6 +270,18 @@ class GetFlightInformationRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.info.GetFlightInformationRequest)
  private:
   class _Internal;
@@ -277,6 +289,7 @@ class GetFlightInformationRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_info_2finfo_2eproto;
 };
@@ -564,6 +577,18 @@ class GetIdentificationRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.info.GetIdentificationRequest)
  private:
   class _Internal;
@@ -571,6 +596,7 @@ class GetIdentificationRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_info_2finfo_2eproto;
 };
@@ -858,6 +884,18 @@ class GetProductRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.info.GetProductRequest)
  private:
   class _Internal;
@@ -865,6 +903,7 @@ class GetProductRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_info_2finfo_2eproto;
 };
@@ -1152,6 +1191,18 @@ class GetVersionRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.info.GetVersionRequest)
  private:
   class _Internal;
@@ -1159,6 +1210,7 @@ class GetVersionRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_info_2finfo_2eproto;
 };
@@ -1446,6 +1498,18 @@ class GetSpeedFactorRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.info.GetSpeedFactorRequest)
  private:
   class _Internal;
@@ -1453,6 +1517,7 @@ class GetSpeedFactorRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_info_2finfo_2eproto;
 };
@@ -2561,6 +2626,26 @@ class InfoResult final :
 #endif  // __GNUC__
 // GetFlightInformationRequest
 
+// int32 drone_id = 1;
+inline void GetFlightInformationRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 GetFlightInformationRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 GetFlightInformationRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.info.GetFlightInformationRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void GetFlightInformationRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void GetFlightInformationRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.info.GetFlightInformationRequest.drone_id)
+}
+
 // -------------------------------------------------------------------
 
 // GetFlightInformationResponse
@@ -2748,6 +2833,26 @@ inline void GetFlightInformationResponse::set_allocated_flight_info(::mavsdk::rp
 // -------------------------------------------------------------------
 
 // GetIdentificationRequest
+
+// int32 drone_id = 1;
+inline void GetIdentificationRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 GetIdentificationRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 GetIdentificationRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.info.GetIdentificationRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void GetIdentificationRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void GetIdentificationRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.info.GetIdentificationRequest.drone_id)
+}
 
 // -------------------------------------------------------------------
 
@@ -2937,6 +3042,26 @@ inline void GetIdentificationResponse::set_allocated_identification(::mavsdk::rp
 
 // GetProductRequest
 
+// int32 drone_id = 1;
+inline void GetProductRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 GetProductRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 GetProductRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.info.GetProductRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void GetProductRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void GetProductRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.info.GetProductRequest.drone_id)
+}
+
 // -------------------------------------------------------------------
 
 // GetProductResponse
@@ -3125,6 +3250,26 @@ inline void GetProductResponse::set_allocated_product(::mavsdk::rpc::info::Produ
 
 // GetVersionRequest
 
+// int32 drone_id = 1;
+inline void GetVersionRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 GetVersionRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 GetVersionRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.info.GetVersionRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void GetVersionRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void GetVersionRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.info.GetVersionRequest.drone_id)
+}
+
 // -------------------------------------------------------------------
 
 // GetVersionResponse
@@ -3312,6 +3457,26 @@ inline void GetVersionResponse::set_allocated_version(::mavsdk::rpc::info::Versi
 // -------------------------------------------------------------------
 
 // GetSpeedFactorRequest
+
+// int32 drone_id = 1;
+inline void GetSpeedFactorRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 GetSpeedFactorRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 GetSpeedFactorRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.info.GetSpeedFactorRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void GetSpeedFactorRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void GetSpeedFactorRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.info.GetSpeedFactorRequest.drone_id)
+}
 
 // -------------------------------------------------------------------
 

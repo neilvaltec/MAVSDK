@@ -21,7 +21,8 @@ namespace rpc {
 namespace shell {
 constexpr SendRequest::SendRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : command_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : command_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , drone_id_(0){}
 struct SendRequestDefaultTypeInternal {
   constexpr SendRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -44,7 +45,8 @@ struct SendResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SendResponseDefaultTypeInternal _SendResponse_default_instance_;
 constexpr SubscribeReceiveRequest::SubscribeReceiveRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeReceiveRequestDefaultTypeInternal {
   constexpr SubscribeReceiveRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -93,6 +95,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_shell_2fshell_2eproto::offsets
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::shell::SendRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::shell::SendRequest, command_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::shell::SendResponse, _internal_metadata_),
@@ -105,6 +108,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_shell_2fshell_2eproto::offsets
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::shell::SubscribeReceiveRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::shell::ReceiveResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -121,10 +125,10 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_shell_2fshell_2eproto::offsets
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::mavsdk::rpc::shell::SendRequest)},
-  { 6, -1, sizeof(::mavsdk::rpc::shell::SendResponse)},
-  { 12, -1, sizeof(::mavsdk::rpc::shell::SubscribeReceiveRequest)},
-  { 17, -1, sizeof(::mavsdk::rpc::shell::ReceiveResponse)},
-  { 23, -1, sizeof(::mavsdk::rpc::shell::ShellResult)},
+  { 7, -1, sizeof(::mavsdk::rpc::shell::SendResponse)},
+  { 13, -1, sizeof(::mavsdk::rpc::shell::SubscribeReceiveRequest)},
+  { 19, -1, sizeof(::mavsdk::rpc::shell::ReceiveResponse)},
+  { 25, -1, sizeof(::mavsdk::rpc::shell::ShellResult)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -137,30 +141,31 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_shell_2fshell_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\021shell/shell.proto\022\020mavsdk.rpc.shell\032\024m"
-  "avsdk_options.proto\"\036\n\013SendRequest\022\017\n\007co"
-  "mmand\030\001 \001(\t\"C\n\014SendResponse\0223\n\014shell_res"
-  "ult\030\001 \001(\0132\035.mavsdk.rpc.shell.ShellResult"
-  "\"\031\n\027SubscribeReceiveRequest\"\037\n\017ReceiveRe"
-  "sponse\022\014\n\004data\030\001 \001(\t\"\346\001\n\013ShellResult\0224\n\006"
-  "result\030\001 \001(\0162$.mavsdk.rpc.shell.ShellRes"
-  "ult.Result\022\022\n\nresult_str\030\002 \001(\t\"\214\001\n\006Resul"
-  "t\022\022\n\016RESULT_UNKNOWN\020\000\022\022\n\016RESULT_SUCCESS\020"
-  "\001\022\024\n\020RESULT_NO_SYSTEM\020\002\022\033\n\027RESULT_CONNEC"
-  "TION_ERROR\020\003\022\026\n\022RESULT_NO_RESPONSE\020\004\022\017\n\013"
-  "RESULT_BUSY\020\0052\305\001\n\014ShellService\022K\n\004Send\022\035"
-  ".mavsdk.rpc.shell.SendRequest\032\036.mavsdk.r"
-  "pc.shell.SendResponse\"\004\200\265\030\001\022h\n\020Subscribe"
-  "Receive\022).mavsdk.rpc.shell.SubscribeRece"
-  "iveRequest\032!.mavsdk.rpc.shell.ReceiveRes"
-  "ponse\"\004\200\265\030\0000\001B\035\n\017io.mavsdk.shellB\nShellP"
-  "rotob\006proto3"
+  "avsdk_options.proto\"0\n\013SendRequest\022\020\n\010dr"
+  "one_id\030\001 \001(\005\022\017\n\007command\030\002 \001(\t\"C\n\014SendRes"
+  "ponse\0223\n\014shell_result\030\001 \001(\0132\035.mavsdk.rpc"
+  ".shell.ShellResult\"+\n\027SubscribeReceiveRe"
+  "quest\022\020\n\010drone_id\030\001 \001(\005\"\037\n\017ReceiveRespon"
+  "se\022\014\n\004data\030\001 \001(\t\"\346\001\n\013ShellResult\0224\n\006resu"
+  "lt\030\001 \001(\0162$.mavsdk.rpc.shell.ShellResult."
+  "Result\022\022\n\nresult_str\030\002 \001(\t\"\214\001\n\006Result\022\022\n"
+  "\016RESULT_UNKNOWN\020\000\022\022\n\016RESULT_SUCCESS\020\001\022\024\n"
+  "\020RESULT_NO_SYSTEM\020\002\022\033\n\027RESULT_CONNECTION"
+  "_ERROR\020\003\022\026\n\022RESULT_NO_RESPONSE\020\004\022\017\n\013RESU"
+  "LT_BUSY\020\0052\305\001\n\014ShellService\022K\n\004Send\022\035.mav"
+  "sdk.rpc.shell.SendRequest\032\036.mavsdk.rpc.s"
+  "hell.SendResponse\"\004\200\265\030\001\022h\n\020SubscribeRece"
+  "ive\022).mavsdk.rpc.shell.SubscribeReceiveR"
+  "equest\032!.mavsdk.rpc.shell.ReceiveRespons"
+  "e\"\004\200\265\030\0000\001B\035\n\017io.mavsdk.shellB\nShellProto"
+  "b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_shell_2fshell_2eproto_deps[1] = {
   &::descriptor_table_mavsdk_5foptions_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_shell_2fshell_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_shell_2fshell_2eproto = {
-  false, false, 692, descriptor_table_protodef_shell_2fshell_2eproto, "shell/shell.proto", 
+  false, false, 728, descriptor_table_protodef_shell_2fshell_2eproto, "shell/shell.proto", 
   &descriptor_table_shell_2fshell_2eproto_once, descriptor_table_shell_2fshell_2eproto_deps, 1, 5,
   schemas, file_default_instances, TableStruct_shell_2fshell_2eproto::offsets,
   file_level_metadata_shell_2fshell_2eproto, file_level_enum_descriptors_shell_2fshell_2eproto, file_level_service_descriptors_shell_2fshell_2eproto,
@@ -227,11 +232,13 @@ SendRequest::SendRequest(const SendRequest& from)
     command_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_command(), 
       GetArenaForAllocation());
   }
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.shell.SendRequest)
 }
 
 inline void SendRequest::SharedCtor() {
 command_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+drone_id_ = 0;
 }
 
 SendRequest::~SendRequest() {
@@ -263,6 +270,7 @@ void SendRequest::Clear() {
   (void) cached_has_bits;
 
   command_.ClearToEmpty();
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -272,9 +280,16 @@ const char* SendRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string command = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string command = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_command();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mavsdk.rpc.shell.SendRequest.command"));
@@ -310,14 +325,20 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string command = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // string command = 2;
   if (!this->_internal_command().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_command().data(), static_cast<int>(this->_internal_command().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "mavsdk.rpc.shell.SendRequest.command");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_command(), target);
+        2, this->_internal_command(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -336,11 +357,18 @@ size_t SendRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string command = 1;
+  // string command = 2;
   if (!this->_internal_command().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_command());
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -374,6 +402,9 @@ void SendRequest::MergeFrom(const SendRequest& from) {
   if (!from._internal_command().empty()) {
     _internal_set_command(from._internal_command());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -396,6 +427,7 @@ void SendRequest::InternalSwap(SendRequest* other) {
       &command_, GetArenaForAllocation(),
       &other->command_, other->GetArenaForAllocation()
   );
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SendRequest::GetMetadata() const {
@@ -622,10 +654,12 @@ SubscribeReceiveRequest::SubscribeReceiveRequest(::PROTOBUF_NAMESPACE_ID::Arena*
 SubscribeReceiveRequest::SubscribeReceiveRequest(const SubscribeReceiveRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.shell.SubscribeReceiveRequest)
 }
 
 inline void SubscribeReceiveRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeReceiveRequest::~SubscribeReceiveRequest() {
@@ -655,6 +689,7 @@ void SubscribeReceiveRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -663,6 +698,16 @@ const char* SubscribeReceiveRequest::_InternalParse(const char* ptr, ::PROTOBUF_
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -673,6 +718,8 @@ const char* SubscribeReceiveRequest::_InternalParse(const char* ptr, ::PROTOBUF_
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -687,6 +734,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.shell.SubscribeReceiveRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -703,6 +756,13 @@ size_t SubscribeReceiveRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -732,6 +792,9 @@ void SubscribeReceiveRequest::MergeFrom(const SubscribeReceiveRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -749,6 +812,7 @@ bool SubscribeReceiveRequest::IsInitialized() const {
 void SubscribeReceiveRequest::InternalSwap(SubscribeReceiveRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeReceiveRequest::GetMetadata() const {

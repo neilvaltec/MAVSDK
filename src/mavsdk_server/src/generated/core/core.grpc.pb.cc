@@ -26,6 +26,7 @@ namespace core {
 static const char* CoreService_method_names[] = {
   "/mavsdk.rpc.core.CoreService/SubscribeConnectionState",
   "/mavsdk.rpc.core.CoreService/SetMavlinkTimeout",
+  "/mavsdk.rpc.core.CoreService/AddNewConnection",
 };
 
 std::unique_ptr< CoreService::Stub> CoreService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -37,6 +38,7 @@ std::unique_ptr< CoreService::Stub> CoreService::NewStub(const std::shared_ptr< 
 CoreService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
   : channel_(channel), rpcmethod_SubscribeConnectionState_(CoreService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
   , rpcmethod_SetMavlinkTimeout_(CoreService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_AddNewConnection_(CoreService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::ClientReader< ::mavsdk::rpc::core::ConnectionStateResponse>* CoreService::Stub::SubscribeConnectionStateRaw(::grpc::ClientContext* context, const ::mavsdk::rpc::core::SubscribeConnectionStateRequest& request) {
@@ -78,6 +80,29 @@ void CoreService::Stub::async::SetMavlinkTimeout(::grpc::ClientContext* context,
   return result;
 }
 
+::grpc::Status CoreService::Stub::AddNewConnection(::grpc::ClientContext* context, const ::mavsdk::rpc::core::AddNewConnectionRequest& request, ::mavsdk::rpc::core::AddNewConnectionResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::mavsdk::rpc::core::AddNewConnectionRequest, ::mavsdk::rpc::core::AddNewConnectionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_AddNewConnection_, context, request, response);
+}
+
+void CoreService::Stub::async::AddNewConnection(::grpc::ClientContext* context, const ::mavsdk::rpc::core::AddNewConnectionRequest* request, ::mavsdk::rpc::core::AddNewConnectionResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::mavsdk::rpc::core::AddNewConnectionRequest, ::mavsdk::rpc::core::AddNewConnectionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AddNewConnection_, context, request, response, std::move(f));
+}
+
+void CoreService::Stub::async::AddNewConnection(::grpc::ClientContext* context, const ::mavsdk::rpc::core::AddNewConnectionRequest* request, ::mavsdk::rpc::core::AddNewConnectionResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AddNewConnection_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mavsdk::rpc::core::AddNewConnectionResponse>* CoreService::Stub::PrepareAsyncAddNewConnectionRaw(::grpc::ClientContext* context, const ::mavsdk::rpc::core::AddNewConnectionRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::mavsdk::rpc::core::AddNewConnectionResponse, ::mavsdk::rpc::core::AddNewConnectionRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_AddNewConnection_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::mavsdk::rpc::core::AddNewConnectionResponse>* CoreService::Stub::AsyncAddNewConnectionRaw(::grpc::ClientContext* context, const ::mavsdk::rpc::core::AddNewConnectionRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncAddNewConnectionRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 CoreService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       CoreService_method_names[0],
@@ -99,6 +124,16 @@ CoreService::Service::Service() {
              ::mavsdk::rpc::core::SetMavlinkTimeoutResponse* resp) {
                return service->SetMavlinkTimeout(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      CoreService_method_names[2],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< CoreService::Service, ::mavsdk::rpc::core::AddNewConnectionRequest, ::mavsdk::rpc::core::AddNewConnectionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](CoreService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::mavsdk::rpc::core::AddNewConnectionRequest* req,
+             ::mavsdk::rpc::core::AddNewConnectionResponse* resp) {
+               return service->AddNewConnection(ctx, req, resp);
+             }, this)));
 }
 
 CoreService::Service::~Service() {
@@ -112,6 +147,13 @@ CoreService::Service::~Service() {
 }
 
 ::grpc::Status CoreService::Service::SetMavlinkTimeout(::grpc::ServerContext* context, const ::mavsdk::rpc::core::SetMavlinkTimeoutRequest* request, ::mavsdk::rpc::core::SetMavlinkTimeoutResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status CoreService::Service::AddNewConnection(::grpc::ServerContext* context, const ::mavsdk::rpc::core::AddNewConnectionRequest* request, ::mavsdk::rpc::core::AddNewConnectionResponse* response) {
   (void) context;
   (void) request;
   (void) response;

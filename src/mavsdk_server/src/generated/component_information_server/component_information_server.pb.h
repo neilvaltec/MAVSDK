@@ -489,9 +489,10 @@ class ProvideFloatParamRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kParamFieldNumber = 1,
+    kParamFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // .mavsdk.rpc.component_information_server.FloatParam param = 1;
+  // .mavsdk.rpc.component_information_server.FloatParam param = 2;
   bool has_param() const;
   private:
   bool _internal_has_param() const;
@@ -509,6 +510,15 @@ class ProvideFloatParamRequest final :
       ::mavsdk::rpc::component_information_server::FloatParam* param);
   ::mavsdk::rpc::component_information_server::FloatParam* unsafe_arena_release_param();
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.component_information_server.ProvideFloatParamRequest)
  private:
   class _Internal;
@@ -517,6 +527,7 @@ class ProvideFloatParamRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::mavsdk::rpc::component_information_server::FloatParam* param_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_component_5finformation_5fserver_2fcomponent_5finformation_5fserver_2eproto;
 };
@@ -939,6 +950,18 @@ class SubscribeFloatParamRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.component_information_server.SubscribeFloatParamRequest)
  private:
   class _Internal;
@@ -946,6 +969,7 @@ class SubscribeFloatParamRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_component_5finformation_5fserver_2fcomponent_5finformation_5fserver_2eproto;
 };
@@ -1591,7 +1615,27 @@ inline void FloatParam::set_max_value(float value) {
 
 // ProvideFloatParamRequest
 
-// .mavsdk.rpc.component_information_server.FloatParam param = 1;
+// int32 drone_id = 1;
+inline void ProvideFloatParamRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ProvideFloatParamRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ProvideFloatParamRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.component_information_server.ProvideFloatParamRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void ProvideFloatParamRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void ProvideFloatParamRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.component_information_server.ProvideFloatParamRequest.drone_id)
+}
+
+// .mavsdk.rpc.component_information_server.FloatParam param = 2;
 inline bool ProvideFloatParamRequest::_internal_has_param() const {
   return this != internal_default_instance() && param_ != nullptr;
 }
@@ -1848,6 +1892,26 @@ inline void FloatParamUpdate::set_value(float value) {
 // -------------------------------------------------------------------
 
 // SubscribeFloatParamRequest
+
+// int32 drone_id = 1;
+inline void SubscribeFloatParamRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeFloatParamRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeFloatParamRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.component_information_server.SubscribeFloatParamRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SubscribeFloatParamRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SubscribeFloatParamRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.component_information_server.SubscribeFloatParamRequest.drone_id)
+}
 
 // -------------------------------------------------------------------
 

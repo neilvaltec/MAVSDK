@@ -20,7 +20,8 @@ namespace mavsdk {
 namespace rpc {
 namespace transponder {
 constexpr SubscribeTransponderRequest::SubscribeTransponderRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeTransponderRequestDefaultTypeInternal {
   constexpr SubscribeTransponderRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -44,7 +45,8 @@ struct TransponderResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TransponderResponseDefaultTypeInternal _TransponderResponse_default_instance_;
 constexpr SetRateTransponderRequest::SetRateTransponderRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : rate_hz_(0){}
+  : rate_hz_(0)
+  , drone_id_(0){}
 struct SetRateTransponderRequestDefaultTypeInternal {
   constexpr SetRateTransponderRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -116,6 +118,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_transponder_2ftransponder_2epr
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::transponder::SubscribeTransponderRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::transponder::TransponderResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -127,6 +130,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_transponder_2ftransponder_2epr
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::transponder::SetRateTransponderRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::transponder::SetRateTransponderRequest, rate_hz_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::transponder::SetRateTransponderResponse, _internal_metadata_),
@@ -160,11 +164,11 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_transponder_2ftransponder_2epr
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::mavsdk::rpc::transponder::SubscribeTransponderRequest)},
-  { 5, -1, sizeof(::mavsdk::rpc::transponder::TransponderResponse)},
-  { 11, -1, sizeof(::mavsdk::rpc::transponder::SetRateTransponderRequest)},
-  { 17, -1, sizeof(::mavsdk::rpc::transponder::SetRateTransponderResponse)},
-  { 23, -1, sizeof(::mavsdk::rpc::transponder::AdsbVehicle)},
-  { 39, -1, sizeof(::mavsdk::rpc::transponder::TransponderResult)},
+  { 6, -1, sizeof(::mavsdk::rpc::transponder::TransponderResponse)},
+  { 12, -1, sizeof(::mavsdk::rpc::transponder::SetRateTransponderRequest)},
+  { 19, -1, sizeof(::mavsdk::rpc::transponder::SetRateTransponderResponse)},
+  { 25, -1, sizeof(::mavsdk::rpc::transponder::AdsbVehicle)},
+  { 41, -1, sizeof(::mavsdk::rpc::transponder::TransponderResult)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -178,57 +182,58 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_transponder_2ftransponder_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\035transponder/transponder.proto\022\026mavsdk."
-  "rpc.transponder\"\035\n\033SubscribeTransponderR"
-  "equest\"O\n\023TransponderResponse\0228\n\013transpo"
-  "nder\030\001 \001(\0132#.mavsdk.rpc.transponder.Adsb"
-  "Vehicle\",\n\031SetRateTransponderRequest\022\017\n\007"
-  "rate_hz\030\001 \001(\001\"c\n\032SetRateTransponderRespo"
-  "nse\022E\n\022transponder_result\030\001 \001(\0132).mavsdk"
-  ".rpc.transponder.TransponderResult\"\263\002\n\013A"
-  "dsbVehicle\022\024\n\014icao_address\030\001 \001(\r\022\024\n\014lati"
-  "tude_deg\030\002 \001(\001\022\025\n\rlongitude_deg\030\003 \001(\001\022\033\n"
-  "\023absolute_altitude_m\030\005 \001(\002\022\023\n\013heading_de"
-  "g\030\006 \001(\002\022\037\n\027horizontal_velocity_m_s\030\007 \001(\002"
-  "\022\035\n\025vertical_velocity_m_s\030\010 \001(\002\022\020\n\010calls"
-  "ign\030\t \001(\t\022=\n\014emitter_type\030\n \001(\0162\'.mavsdk"
-  ".rpc.transponder.AdsbEmitterType\022\016\n\006squa"
-  "wk\030\r \001(\r\022\016\n\006tslc_s\030\016 \001(\r\"\217\002\n\021Transponder"
-  "Result\022@\n\006result\030\001 \001(\01620.mavsdk.rpc.tran"
-  "sponder.TransponderResult.Result\022\022\n\nresu"
-  "lt_str\030\002 \001(\t\"\243\001\n\006Result\022\022\n\016RESULT_UNKNOW"
-  "N\020\000\022\022\n\016RESULT_SUCCESS\020\001\022\024\n\020RESULT_NO_SYS"
-  "TEM\020\002\022\033\n\027RESULT_CONNECTION_ERROR\020\003\022\017\n\013RE"
-  "SULT_BUSY\020\004\022\031\n\025RESULT_COMMAND_DENIED\020\005\022\022"
-  "\n\016RESULT_TIMEOUT\020\006*\255\005\n\017AdsbEmitterType\022\035"
-  "\n\031ADSB_EMITTER_TYPE_NO_INFO\020\000\022\033\n\027ADSB_EM"
-  "ITTER_TYPE_LIGHT\020\001\022\033\n\027ADSB_EMITTER_TYPE_"
-  "SMALL\020\002\022\033\n\027ADSB_EMITTER_TYPE_LARGE\020\003\022\'\n#"
-  "ADSB_EMITTER_TYPE_HIGH_VORTEX_LARGE\020\004\022\033\n"
-  "\027ADSB_EMITTER_TYPE_HEAVY\020\005\022\"\n\036ADSB_EMITT"
-  "ER_TYPE_HIGHLY_MANUV\020\006\022\037\n\033ADSB_EMITTER_T"
-  "YPE_ROTOCRAFT\020\007\022 \n\034ADSB_EMITTER_TYPE_UNA"
-  "SSIGNED\020\010\022\034\n\030ADSB_EMITTER_TYPE_GLIDER\020\t\022"
-  "!\n\035ADSB_EMITTER_TYPE_LIGHTER_AIR\020\n\022\037\n\033AD"
-  "SB_EMITTER_TYPE_PARACHUTE\020\013\022!\n\035ADSB_EMIT"
-  "TER_TYPE_ULTRA_LIGHT\020\014\022!\n\035ADSB_EMITTER_T"
-  "YPE_UNASSIGNED2\020\r\022\031\n\025ADSB_EMITTER_TYPE_U"
-  "AV\020\016\022\033\n\027ADSB_EMITTER_TYPE_SPACE\020\017\022!\n\035ADS"
-  "B_EMITTER_TYPE_UNASSGINED3\020\020\022\'\n#ADSB_EMI"
-  "TTER_TYPE_EMERGENCY_SURFACE\020\021\022%\n!ADSB_EM"
-  "ITTER_TYPE_SERVICE_SURFACE\020\022\022$\n ADSB_EMI"
-  "TTER_TYPE_POINT_OBSTACLE\020\0232\221\002\n\022Transpond"
-  "erService\022|\n\024SubscribeTransponder\0223.mavs"
-  "dk.rpc.transponder.SubscribeTransponderR"
-  "equest\032+.mavsdk.rpc.transponder.Transpon"
-  "derResponse\"\0000\001\022}\n\022SetRateTransponder\0221."
-  "mavsdk.rpc.transponder.SetRateTransponde"
-  "rRequest\0322.mavsdk.rpc.transponder.SetRat"
-  "eTransponderResponse\"\000B)\n\025io.mavsdk.tran"
-  "sponderB\020TransponderProtob\006proto3"
+  "rpc.transponder\"/\n\033SubscribeTransponderR"
+  "equest\022\020\n\010drone_id\030\001 \001(\005\"O\n\023TransponderR"
+  "esponse\0228\n\013transponder\030\001 \001(\0132#.mavsdk.rp"
+  "c.transponder.AdsbVehicle\">\n\031SetRateTran"
+  "sponderRequest\022\020\n\010drone_id\030\001 \001(\005\022\017\n\007rate"
+  "_hz\030\002 \001(\001\"c\n\032SetRateTransponderResponse\022"
+  "E\n\022transponder_result\030\001 \001(\0132).mavsdk.rpc"
+  ".transponder.TransponderResult\"\263\002\n\013AdsbV"
+  "ehicle\022\024\n\014icao_address\030\001 \001(\r\022\024\n\014latitude"
+  "_deg\030\002 \001(\001\022\025\n\rlongitude_deg\030\003 \001(\001\022\033\n\023abs"
+  "olute_altitude_m\030\005 \001(\002\022\023\n\013heading_deg\030\006 "
+  "\001(\002\022\037\n\027horizontal_velocity_m_s\030\007 \001(\002\022\035\n\025"
+  "vertical_velocity_m_s\030\010 \001(\002\022\020\n\010callsign\030"
+  "\t \001(\t\022=\n\014emitter_type\030\n \001(\0162\'.mavsdk.rpc"
+  ".transponder.AdsbEmitterType\022\016\n\006squawk\030\r"
+  " \001(\r\022\016\n\006tslc_s\030\016 \001(\r\"\217\002\n\021TransponderResu"
+  "lt\022@\n\006result\030\001 \001(\01620.mavsdk.rpc.transpon"
+  "der.TransponderResult.Result\022\022\n\nresult_s"
+  "tr\030\002 \001(\t\"\243\001\n\006Result\022\022\n\016RESULT_UNKNOWN\020\000\022"
+  "\022\n\016RESULT_SUCCESS\020\001\022\024\n\020RESULT_NO_SYSTEM\020"
+  "\002\022\033\n\027RESULT_CONNECTION_ERROR\020\003\022\017\n\013RESULT"
+  "_BUSY\020\004\022\031\n\025RESULT_COMMAND_DENIED\020\005\022\022\n\016RE"
+  "SULT_TIMEOUT\020\006*\255\005\n\017AdsbEmitterType\022\035\n\031AD"
+  "SB_EMITTER_TYPE_NO_INFO\020\000\022\033\n\027ADSB_EMITTE"
+  "R_TYPE_LIGHT\020\001\022\033\n\027ADSB_EMITTER_TYPE_SMAL"
+  "L\020\002\022\033\n\027ADSB_EMITTER_TYPE_LARGE\020\003\022\'\n#ADSB"
+  "_EMITTER_TYPE_HIGH_VORTEX_LARGE\020\004\022\033\n\027ADS"
+  "B_EMITTER_TYPE_HEAVY\020\005\022\"\n\036ADSB_EMITTER_T"
+  "YPE_HIGHLY_MANUV\020\006\022\037\n\033ADSB_EMITTER_TYPE_"
+  "ROTOCRAFT\020\007\022 \n\034ADSB_EMITTER_TYPE_UNASSIG"
+  "NED\020\010\022\034\n\030ADSB_EMITTER_TYPE_GLIDER\020\t\022!\n\035A"
+  "DSB_EMITTER_TYPE_LIGHTER_AIR\020\n\022\037\n\033ADSB_E"
+  "MITTER_TYPE_PARACHUTE\020\013\022!\n\035ADSB_EMITTER_"
+  "TYPE_ULTRA_LIGHT\020\014\022!\n\035ADSB_EMITTER_TYPE_"
+  "UNASSIGNED2\020\r\022\031\n\025ADSB_EMITTER_TYPE_UAV\020\016"
+  "\022\033\n\027ADSB_EMITTER_TYPE_SPACE\020\017\022!\n\035ADSB_EM"
+  "ITTER_TYPE_UNASSGINED3\020\020\022\'\n#ADSB_EMITTER"
+  "_TYPE_EMERGENCY_SURFACE\020\021\022%\n!ADSB_EMITTE"
+  "R_TYPE_SERVICE_SURFACE\020\022\022$\n ADSB_EMITTER"
+  "_TYPE_POINT_OBSTACLE\020\0232\221\002\n\022TransponderSe"
+  "rvice\022|\n\024SubscribeTransponder\0223.mavsdk.r"
+  "pc.transponder.SubscribeTransponderReque"
+  "st\032+.mavsdk.rpc.transponder.TransponderR"
+  "esponse\"\0000\001\022}\n\022SetRateTransponder\0221.mavs"
+  "dk.rpc.transponder.SetRateTransponderReq"
+  "uest\0322.mavsdk.rpc.transponder.SetRateTra"
+  "nsponderResponse\"\000B)\n\025io.mavsdk.transpon"
+  "derB\020TransponderProtob\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_transponder_2ftransponder_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_transponder_2ftransponder_2eproto = {
-  false, false, 1913, descriptor_table_protodef_transponder_2ftransponder_2eproto, "transponder/transponder.proto", 
+  false, false, 1949, descriptor_table_protodef_transponder_2ftransponder_2eproto, "transponder/transponder.proto", 
   &descriptor_table_transponder_2ftransponder_2eproto_once, nullptr, 0, 6,
   schemas, file_default_instances, TableStruct_transponder_2ftransponder_2eproto::offsets,
   file_level_metadata_transponder_2ftransponder_2eproto, file_level_enum_descriptors_transponder_2ftransponder_2eproto, file_level_service_descriptors_transponder_2ftransponder_2eproto,
@@ -324,10 +329,12 @@ SubscribeTransponderRequest::SubscribeTransponderRequest(::PROTOBUF_NAMESPACE_ID
 SubscribeTransponderRequest::SubscribeTransponderRequest(const SubscribeTransponderRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.transponder.SubscribeTransponderRequest)
 }
 
 inline void SubscribeTransponderRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeTransponderRequest::~SubscribeTransponderRequest() {
@@ -357,6 +364,7 @@ void SubscribeTransponderRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -365,6 +373,16 @@ const char* SubscribeTransponderRequest::_InternalParse(const char* ptr, ::PROTO
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -375,6 +393,8 @@ const char* SubscribeTransponderRequest::_InternalParse(const char* ptr, ::PROTO
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -389,6 +409,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.transponder.SubscribeTransponderRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -405,6 +431,13 @@ size_t SubscribeTransponderRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -434,6 +467,9 @@ void SubscribeTransponderRequest::MergeFrom(const SubscribeTransponderRequest& f
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -451,6 +487,7 @@ bool SubscribeTransponderRequest::IsInitialized() const {
 void SubscribeTransponderRequest::InternalSwap(SubscribeTransponderRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeTransponderRequest::GetMetadata() const {
@@ -677,12 +714,17 @@ SetRateTransponderRequest::SetRateTransponderRequest(::PROTOBUF_NAMESPACE_ID::Ar
 SetRateTransponderRequest::SetRateTransponderRequest(const SetRateTransponderRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  rate_hz_ = from.rate_hz_;
+  ::memcpy(&rate_hz_, &from.rate_hz_,
+    static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.transponder.SetRateTransponderRequest)
 }
 
 inline void SetRateTransponderRequest::SharedCtor() {
-rate_hz_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&rate_hz_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
 }
 
 SetRateTransponderRequest::~SetRateTransponderRequest() {
@@ -712,7 +754,9 @@ void SetRateTransponderRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  rate_hz_ = 0;
+  ::memset(&rate_hz_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&drone_id_) -
+      reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -722,9 +766,16 @@ const char* SetRateTransponderRequest::_InternalParse(const char* ptr, ::PROTOBU
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // double rate_hz = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double rate_hz = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           rate_hz_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
@@ -758,10 +809,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_rate_hz(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_rate_hz(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -780,9 +837,16 @@ size_t SetRateTransponderRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     total_size += 1 + 8;
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -816,6 +880,9 @@ void SetRateTransponderRequest::MergeFrom(const SetRateTransponderRequest& from)
   if (!(from._internal_rate_hz() <= 0 && from._internal_rate_hz() >= 0)) {
     _internal_set_rate_hz(from._internal_rate_hz());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -833,7 +900,12 @@ bool SetRateTransponderRequest::IsInitialized() const {
 void SetRateTransponderRequest::InternalSwap(SetRateTransponderRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(rate_hz_, other->rate_hz_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetRateTransponderRequest, drone_id_)
+      + sizeof(SetRateTransponderRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetRateTransponderRequest, rate_hz_)>(
+          reinterpret_cast<char*>(&rate_hz_),
+          reinterpret_cast<char*>(&other->rate_hz_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetRateTransponderRequest::GetMetadata() const {

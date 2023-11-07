@@ -20,7 +20,8 @@ namespace mavsdk {
 namespace rpc {
 namespace telemetry {
 constexpr SubscribePositionRequest::SubscribePositionRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribePositionRequestDefaultTypeInternal {
   constexpr SubscribePositionRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -43,7 +44,8 @@ struct PositionResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PositionResponseDefaultTypeInternal _PositionResponse_default_instance_;
 constexpr SubscribeHomeRequest::SubscribeHomeRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeHomeRequestDefaultTypeInternal {
   constexpr SubscribeHomeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -66,7 +68,8 @@ struct HomeResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT HomeResponseDefaultTypeInternal _HomeResponse_default_instance_;
 constexpr SubscribeInAirRequest::SubscribeInAirRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeInAirRequestDefaultTypeInternal {
   constexpr SubscribeInAirRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -89,7 +92,8 @@ struct InAirResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT InAirResponseDefaultTypeInternal _InAirResponse_default_instance_;
 constexpr SubscribeLandedStateRequest::SubscribeLandedStateRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeLandedStateRequestDefaultTypeInternal {
   constexpr SubscribeLandedStateRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -113,7 +117,8 @@ struct LandedStateResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT LandedStateResponseDefaultTypeInternal _LandedStateResponse_default_instance_;
 constexpr SubscribeArmedRequest::SubscribeArmedRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeArmedRequestDefaultTypeInternal {
   constexpr SubscribeArmedRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -136,7 +141,8 @@ struct ArmedResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ArmedResponseDefaultTypeInternal _ArmedResponse_default_instance_;
 constexpr SubscribeVtolStateRequest::SubscribeVtolStateRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeVtolStateRequestDefaultTypeInternal {
   constexpr SubscribeVtolStateRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -160,7 +166,8 @@ struct VtolStateResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT VtolStateResponseDefaultTypeInternal _VtolStateResponse_default_instance_;
 constexpr SubscribeAttitudeQuaternionRequest::SubscribeAttitudeQuaternionRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeAttitudeQuaternionRequestDefaultTypeInternal {
   constexpr SubscribeAttitudeQuaternionRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -183,7 +190,8 @@ struct AttitudeQuaternionResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AttitudeQuaternionResponseDefaultTypeInternal _AttitudeQuaternionResponse_default_instance_;
 constexpr SubscribeAttitudeEulerRequest::SubscribeAttitudeEulerRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeAttitudeEulerRequestDefaultTypeInternal {
   constexpr SubscribeAttitudeEulerRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -206,7 +214,8 @@ struct AttitudeEulerResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AttitudeEulerResponseDefaultTypeInternal _AttitudeEulerResponse_default_instance_;
 constexpr SubscribeAttitudeAngularVelocityBodyRequest::SubscribeAttitudeAngularVelocityBodyRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeAttitudeAngularVelocityBodyRequestDefaultTypeInternal {
   constexpr SubscribeAttitudeAngularVelocityBodyRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -229,7 +238,8 @@ struct AttitudeAngularVelocityBodyResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AttitudeAngularVelocityBodyResponseDefaultTypeInternal _AttitudeAngularVelocityBodyResponse_default_instance_;
 constexpr SubscribeCameraAttitudeQuaternionRequest::SubscribeCameraAttitudeQuaternionRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeCameraAttitudeQuaternionRequestDefaultTypeInternal {
   constexpr SubscribeCameraAttitudeQuaternionRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -252,7 +262,8 @@ struct CameraAttitudeQuaternionResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CameraAttitudeQuaternionResponseDefaultTypeInternal _CameraAttitudeQuaternionResponse_default_instance_;
 constexpr SubscribeCameraAttitudeEulerRequest::SubscribeCameraAttitudeEulerRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeCameraAttitudeEulerRequestDefaultTypeInternal {
   constexpr SubscribeCameraAttitudeEulerRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -275,7 +286,8 @@ struct CameraAttitudeEulerResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CameraAttitudeEulerResponseDefaultTypeInternal _CameraAttitudeEulerResponse_default_instance_;
 constexpr SubscribeVelocityNedRequest::SubscribeVelocityNedRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeVelocityNedRequestDefaultTypeInternal {
   constexpr SubscribeVelocityNedRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -298,7 +310,8 @@ struct VelocityNedResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT VelocityNedResponseDefaultTypeInternal _VelocityNedResponse_default_instance_;
 constexpr SubscribeGpsInfoRequest::SubscribeGpsInfoRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeGpsInfoRequestDefaultTypeInternal {
   constexpr SubscribeGpsInfoRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -321,7 +334,8 @@ struct GpsInfoResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GpsInfoResponseDefaultTypeInternal _GpsInfoResponse_default_instance_;
 constexpr SubscribeRawGpsRequest::SubscribeRawGpsRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeRawGpsRequestDefaultTypeInternal {
   constexpr SubscribeRawGpsRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -344,7 +358,8 @@ struct RawGpsResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RawGpsResponseDefaultTypeInternal _RawGpsResponse_default_instance_;
 constexpr SubscribeBatteryRequest::SubscribeBatteryRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeBatteryRequestDefaultTypeInternal {
   constexpr SubscribeBatteryRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -367,7 +382,8 @@ struct BatteryResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BatteryResponseDefaultTypeInternal _BatteryResponse_default_instance_;
 constexpr SubscribeFlightModeRequest::SubscribeFlightModeRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeFlightModeRequestDefaultTypeInternal {
   constexpr SubscribeFlightModeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -391,7 +407,8 @@ struct FlightModeResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT FlightModeResponseDefaultTypeInternal _FlightModeResponse_default_instance_;
 constexpr SubscribeHealthRequest::SubscribeHealthRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeHealthRequestDefaultTypeInternal {
   constexpr SubscribeHealthRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -414,7 +431,8 @@ struct HealthResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT HealthResponseDefaultTypeInternal _HealthResponse_default_instance_;
 constexpr SubscribeRcStatusRequest::SubscribeRcStatusRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeRcStatusRequestDefaultTypeInternal {
   constexpr SubscribeRcStatusRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -437,7 +455,8 @@ struct RcStatusResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RcStatusResponseDefaultTypeInternal _RcStatusResponse_default_instance_;
 constexpr SubscribeStatusTextRequest::SubscribeStatusTextRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeStatusTextRequestDefaultTypeInternal {
   constexpr SubscribeStatusTextRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -460,7 +479,8 @@ struct StatusTextResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT StatusTextResponseDefaultTypeInternal _StatusTextResponse_default_instance_;
 constexpr SubscribeActuatorControlTargetRequest::SubscribeActuatorControlTargetRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeActuatorControlTargetRequestDefaultTypeInternal {
   constexpr SubscribeActuatorControlTargetRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -483,7 +503,8 @@ struct ActuatorControlTargetResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ActuatorControlTargetResponseDefaultTypeInternal _ActuatorControlTargetResponse_default_instance_;
 constexpr SubscribeActuatorOutputStatusRequest::SubscribeActuatorOutputStatusRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeActuatorOutputStatusRequestDefaultTypeInternal {
   constexpr SubscribeActuatorOutputStatusRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -506,7 +527,8 @@ struct ActuatorOutputStatusResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ActuatorOutputStatusResponseDefaultTypeInternal _ActuatorOutputStatusResponse_default_instance_;
 constexpr SubscribeOdometryRequest::SubscribeOdometryRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeOdometryRequestDefaultTypeInternal {
   constexpr SubscribeOdometryRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -529,7 +551,8 @@ struct OdometryResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT OdometryResponseDefaultTypeInternal _OdometryResponse_default_instance_;
 constexpr SubscribePositionVelocityNedRequest::SubscribePositionVelocityNedRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribePositionVelocityNedRequestDefaultTypeInternal {
   constexpr SubscribePositionVelocityNedRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -552,7 +575,8 @@ struct PositionVelocityNedResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PositionVelocityNedResponseDefaultTypeInternal _PositionVelocityNedResponse_default_instance_;
 constexpr SubscribeGroundTruthRequest::SubscribeGroundTruthRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeGroundTruthRequestDefaultTypeInternal {
   constexpr SubscribeGroundTruthRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -575,7 +599,8 @@ struct GroundTruthResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GroundTruthResponseDefaultTypeInternal _GroundTruthResponse_default_instance_;
 constexpr SubscribeFixedwingMetricsRequest::SubscribeFixedwingMetricsRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeFixedwingMetricsRequestDefaultTypeInternal {
   constexpr SubscribeFixedwingMetricsRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -598,7 +623,8 @@ struct FixedwingMetricsResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT FixedwingMetricsResponseDefaultTypeInternal _FixedwingMetricsResponse_default_instance_;
 constexpr SubscribeImuRequest::SubscribeImuRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeImuRequestDefaultTypeInternal {
   constexpr SubscribeImuRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -621,7 +647,8 @@ struct ImuResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ImuResponseDefaultTypeInternal _ImuResponse_default_instance_;
 constexpr SubscribeScaledImuRequest::SubscribeScaledImuRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeScaledImuRequestDefaultTypeInternal {
   constexpr SubscribeScaledImuRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -644,7 +671,8 @@ struct ScaledImuResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ScaledImuResponseDefaultTypeInternal _ScaledImuResponse_default_instance_;
 constexpr SubscribeRawImuRequest::SubscribeRawImuRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeRawImuRequestDefaultTypeInternal {
   constexpr SubscribeRawImuRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -667,7 +695,8 @@ struct RawImuResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RawImuResponseDefaultTypeInternal _RawImuResponse_default_instance_;
 constexpr SubscribeHealthAllOkRequest::SubscribeHealthAllOkRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeHealthAllOkRequestDefaultTypeInternal {
   constexpr SubscribeHealthAllOkRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -690,7 +719,8 @@ struct HealthAllOkResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT HealthAllOkResponseDefaultTypeInternal _HealthAllOkResponse_default_instance_;
 constexpr SubscribeUnixEpochTimeRequest::SubscribeUnixEpochTimeRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeUnixEpochTimeRequestDefaultTypeInternal {
   constexpr SubscribeUnixEpochTimeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -713,7 +743,8 @@ struct UnixEpochTimeResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UnixEpochTimeResponseDefaultTypeInternal _UnixEpochTimeResponse_default_instance_;
 constexpr SubscribeDistanceSensorRequest::SubscribeDistanceSensorRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeDistanceSensorRequestDefaultTypeInternal {
   constexpr SubscribeDistanceSensorRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -736,7 +767,8 @@ struct DistanceSensorResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DistanceSensorResponseDefaultTypeInternal _DistanceSensorResponse_default_instance_;
 constexpr SubscribeScaledPressureRequest::SubscribeScaledPressureRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeScaledPressureRequestDefaultTypeInternal {
   constexpr SubscribeScaledPressureRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -759,7 +791,8 @@ struct ScaledPressureResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ScaledPressureResponseDefaultTypeInternal _ScaledPressureResponse_default_instance_;
 constexpr SubscribeHeadingRequest::SubscribeHeadingRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeHeadingRequestDefaultTypeInternal {
   constexpr SubscribeHeadingRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -783,7 +816,8 @@ struct HeadingResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT HeadingResponseDefaultTypeInternal _HeadingResponse_default_instance_;
 constexpr SetRatePositionRequest::SetRatePositionRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : rate_hz_(0){}
+  : rate_hz_(0)
+  , drone_id_(0){}
 struct SetRatePositionRequestDefaultTypeInternal {
   constexpr SetRatePositionRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -807,7 +841,8 @@ struct SetRatePositionResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetRatePositionResponseDefaultTypeInternal _SetRatePositionResponse_default_instance_;
 constexpr SetRateHomeRequest::SetRateHomeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : rate_hz_(0){}
+  : rate_hz_(0)
+  , drone_id_(0){}
 struct SetRateHomeRequestDefaultTypeInternal {
   constexpr SetRateHomeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -831,7 +866,8 @@ struct SetRateHomeResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetRateHomeResponseDefaultTypeInternal _SetRateHomeResponse_default_instance_;
 constexpr SetRateInAirRequest::SetRateInAirRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : rate_hz_(0){}
+  : rate_hz_(0)
+  , drone_id_(0){}
 struct SetRateInAirRequestDefaultTypeInternal {
   constexpr SetRateInAirRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -855,7 +891,8 @@ struct SetRateInAirResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetRateInAirResponseDefaultTypeInternal _SetRateInAirResponse_default_instance_;
 constexpr SetRateLandedStateRequest::SetRateLandedStateRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : rate_hz_(0){}
+  : rate_hz_(0)
+  , drone_id_(0){}
 struct SetRateLandedStateRequestDefaultTypeInternal {
   constexpr SetRateLandedStateRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -879,7 +916,8 @@ struct SetRateLandedStateResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetRateLandedStateResponseDefaultTypeInternal _SetRateLandedStateResponse_default_instance_;
 constexpr SetRateVtolStateRequest::SetRateVtolStateRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : rate_hz_(0){}
+  : rate_hz_(0)
+  , drone_id_(0){}
 struct SetRateVtolStateRequestDefaultTypeInternal {
   constexpr SetRateVtolStateRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -903,7 +941,8 @@ struct SetRateVtolStateResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetRateVtolStateResponseDefaultTypeInternal _SetRateVtolStateResponse_default_instance_;
 constexpr SetRateAttitudeRequest::SetRateAttitudeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : rate_hz_(0){}
+  : rate_hz_(0)
+  , drone_id_(0){}
 struct SetRateAttitudeRequestDefaultTypeInternal {
   constexpr SetRateAttitudeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -927,7 +966,8 @@ struct SetRateAttitudeResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetRateAttitudeResponseDefaultTypeInternal _SetRateAttitudeResponse_default_instance_;
 constexpr SetRateAttitudeAngularVelocityBodyRequest::SetRateAttitudeAngularVelocityBodyRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : rate_hz_(0){}
+  : rate_hz_(0)
+  , drone_id_(0){}
 struct SetRateAttitudeAngularVelocityBodyRequestDefaultTypeInternal {
   constexpr SetRateAttitudeAngularVelocityBodyRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -951,7 +991,8 @@ struct SetRateAttitudeAngularVelocityBodyResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetRateAttitudeAngularVelocityBodyResponseDefaultTypeInternal _SetRateAttitudeAngularVelocityBodyResponse_default_instance_;
 constexpr SetRateCameraAttitudeQuaternionRequest::SetRateCameraAttitudeQuaternionRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : rate_hz_(0){}
+  : rate_hz_(0)
+  , drone_id_(0){}
 struct SetRateCameraAttitudeQuaternionRequestDefaultTypeInternal {
   constexpr SetRateCameraAttitudeQuaternionRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -975,7 +1016,8 @@ struct SetRateCameraAttitudeQuaternionResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetRateCameraAttitudeQuaternionResponseDefaultTypeInternal _SetRateCameraAttitudeQuaternionResponse_default_instance_;
 constexpr SetRateCameraAttitudeRequest::SetRateCameraAttitudeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : rate_hz_(0){}
+  : rate_hz_(0)
+  , drone_id_(0){}
 struct SetRateCameraAttitudeRequestDefaultTypeInternal {
   constexpr SetRateCameraAttitudeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -999,7 +1041,8 @@ struct SetRateCameraAttitudeResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetRateCameraAttitudeResponseDefaultTypeInternal _SetRateCameraAttitudeResponse_default_instance_;
 constexpr SetRateVelocityNedRequest::SetRateVelocityNedRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : rate_hz_(0){}
+  : rate_hz_(0)
+  , drone_id_(0){}
 struct SetRateVelocityNedRequestDefaultTypeInternal {
   constexpr SetRateVelocityNedRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1023,7 +1066,8 @@ struct SetRateVelocityNedResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetRateVelocityNedResponseDefaultTypeInternal _SetRateVelocityNedResponse_default_instance_;
 constexpr SetRateGpsInfoRequest::SetRateGpsInfoRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : rate_hz_(0){}
+  : rate_hz_(0)
+  , drone_id_(0){}
 struct SetRateGpsInfoRequestDefaultTypeInternal {
   constexpr SetRateGpsInfoRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1047,7 +1091,8 @@ struct SetRateGpsInfoResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetRateGpsInfoResponseDefaultTypeInternal _SetRateGpsInfoResponse_default_instance_;
 constexpr SetRateRawGpsRequest::SetRateRawGpsRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : rate_hz_(0){}
+  : rate_hz_(0)
+  , drone_id_(0){}
 struct SetRateRawGpsRequestDefaultTypeInternal {
   constexpr SetRateRawGpsRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1059,7 +1104,8 @@ struct SetRateRawGpsRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetRateRawGpsRequestDefaultTypeInternal _SetRateRawGpsRequest_default_instance_;
 constexpr SetRateBatteryRequest::SetRateBatteryRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : rate_hz_(0){}
+  : rate_hz_(0)
+  , drone_id_(0){}
 struct SetRateBatteryRequestDefaultTypeInternal {
   constexpr SetRateBatteryRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1083,7 +1129,8 @@ struct SetRateBatteryResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetRateBatteryResponseDefaultTypeInternal _SetRateBatteryResponse_default_instance_;
 constexpr SetRateRcStatusRequest::SetRateRcStatusRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : rate_hz_(0){}
+  : rate_hz_(0)
+  , drone_id_(0){}
 struct SetRateRcStatusRequestDefaultTypeInternal {
   constexpr SetRateRcStatusRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1107,7 +1154,8 @@ struct SetRateRcStatusResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetRateRcStatusResponseDefaultTypeInternal _SetRateRcStatusResponse_default_instance_;
 constexpr SetRateActuatorControlTargetRequest::SetRateActuatorControlTargetRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : rate_hz_(0){}
+  : rate_hz_(0)
+  , drone_id_(0){}
 struct SetRateActuatorControlTargetRequestDefaultTypeInternal {
   constexpr SetRateActuatorControlTargetRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1131,7 +1179,8 @@ struct SetRateActuatorControlTargetResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetRateActuatorControlTargetResponseDefaultTypeInternal _SetRateActuatorControlTargetResponse_default_instance_;
 constexpr SetRateActuatorOutputStatusRequest::SetRateActuatorOutputStatusRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : rate_hz_(0){}
+  : rate_hz_(0)
+  , drone_id_(0){}
 struct SetRateActuatorOutputStatusRequestDefaultTypeInternal {
   constexpr SetRateActuatorOutputStatusRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1155,7 +1204,8 @@ struct SetRateActuatorOutputStatusResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetRateActuatorOutputStatusResponseDefaultTypeInternal _SetRateActuatorOutputStatusResponse_default_instance_;
 constexpr SetRateOdometryRequest::SetRateOdometryRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : rate_hz_(0){}
+  : rate_hz_(0)
+  , drone_id_(0){}
 struct SetRateOdometryRequestDefaultTypeInternal {
   constexpr SetRateOdometryRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1179,7 +1229,8 @@ struct SetRateOdometryResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetRateOdometryResponseDefaultTypeInternal _SetRateOdometryResponse_default_instance_;
 constexpr SetRatePositionVelocityNedRequest::SetRatePositionVelocityNedRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : rate_hz_(0){}
+  : rate_hz_(0)
+  , drone_id_(0){}
 struct SetRatePositionVelocityNedRequestDefaultTypeInternal {
   constexpr SetRatePositionVelocityNedRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1203,7 +1254,8 @@ struct SetRatePositionVelocityNedResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetRatePositionVelocityNedResponseDefaultTypeInternal _SetRatePositionVelocityNedResponse_default_instance_;
 constexpr SetRateGroundTruthRequest::SetRateGroundTruthRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : rate_hz_(0){}
+  : rate_hz_(0)
+  , drone_id_(0){}
 struct SetRateGroundTruthRequestDefaultTypeInternal {
   constexpr SetRateGroundTruthRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1227,7 +1279,8 @@ struct SetRateGroundTruthResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetRateGroundTruthResponseDefaultTypeInternal _SetRateGroundTruthResponse_default_instance_;
 constexpr SetRateFixedwingMetricsRequest::SetRateFixedwingMetricsRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : rate_hz_(0){}
+  : rate_hz_(0)
+  , drone_id_(0){}
 struct SetRateFixedwingMetricsRequestDefaultTypeInternal {
   constexpr SetRateFixedwingMetricsRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1251,7 +1304,8 @@ struct SetRateFixedwingMetricsResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetRateFixedwingMetricsResponseDefaultTypeInternal _SetRateFixedwingMetricsResponse_default_instance_;
 constexpr SetRateImuRequest::SetRateImuRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : rate_hz_(0){}
+  : rate_hz_(0)
+  , drone_id_(0){}
 struct SetRateImuRequestDefaultTypeInternal {
   constexpr SetRateImuRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1275,7 +1329,8 @@ struct SetRateImuResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetRateImuResponseDefaultTypeInternal _SetRateImuResponse_default_instance_;
 constexpr SetRateScaledImuRequest::SetRateScaledImuRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : rate_hz_(0){}
+  : rate_hz_(0)
+  , drone_id_(0){}
 struct SetRateScaledImuRequestDefaultTypeInternal {
   constexpr SetRateScaledImuRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1299,7 +1354,8 @@ struct SetRateScaledImuResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetRateScaledImuResponseDefaultTypeInternal _SetRateScaledImuResponse_default_instance_;
 constexpr SetRateRawImuRequest::SetRateRawImuRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : rate_hz_(0){}
+  : rate_hz_(0)
+  , drone_id_(0){}
 struct SetRateRawImuRequestDefaultTypeInternal {
   constexpr SetRateRawImuRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1323,7 +1379,8 @@ struct SetRateRawImuResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetRateRawImuResponseDefaultTypeInternal _SetRateRawImuResponse_default_instance_;
 constexpr SetRateUnixEpochTimeRequest::SetRateUnixEpochTimeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : rate_hz_(0){}
+  : rate_hz_(0)
+  , drone_id_(0){}
 struct SetRateUnixEpochTimeRequestDefaultTypeInternal {
   constexpr SetRateUnixEpochTimeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1347,7 +1404,8 @@ struct SetRateUnixEpochTimeResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetRateUnixEpochTimeResponseDefaultTypeInternal _SetRateUnixEpochTimeResponse_default_instance_;
 constexpr SetRateDistanceSensorRequest::SetRateDistanceSensorRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : rate_hz_(0){}
+  : rate_hz_(0)
+  , drone_id_(0){}
 struct SetRateDistanceSensorRequestDefaultTypeInternal {
   constexpr SetRateDistanceSensorRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1370,7 +1428,8 @@ struct SetRateDistanceSensorResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetRateDistanceSensorResponseDefaultTypeInternal _SetRateDistanceSensorResponse_default_instance_;
 constexpr GetGpsGlobalOriginRequest::GetGpsGlobalOriginRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct GetGpsGlobalOriginRequestDefaultTypeInternal {
   constexpr GetGpsGlobalOriginRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1850,6 +1909,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribePositionRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::PositionResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1861,6 +1921,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribeHomeRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::HomeResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1872,6 +1933,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribeInAirRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::InAirResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1883,6 +1945,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribeLandedStateRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::LandedStateResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1894,6 +1957,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribeArmedRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::ArmedResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1905,6 +1969,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribeVtolStateRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::VtolStateResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1916,6 +1981,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribeAttitudeQuaternionRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::AttitudeQuaternionResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1927,6 +1993,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribeAttitudeEulerRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::AttitudeEulerResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1938,6 +2005,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribeAttitudeAngularVelocityBodyRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::AttitudeAngularVelocityBodyResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1949,6 +2017,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribeCameraAttitudeQuaternionRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::CameraAttitudeQuaternionResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1960,6 +2029,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribeCameraAttitudeEulerRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::CameraAttitudeEulerResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1971,6 +2041,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribeVelocityNedRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::VelocityNedResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1982,6 +2053,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribeGpsInfoRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::GpsInfoResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1993,6 +2065,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribeRawGpsRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::RawGpsResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2004,6 +2077,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribeBatteryRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::BatteryResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2015,6 +2089,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribeFlightModeRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::FlightModeResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2026,6 +2101,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribeHealthRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::HealthResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2037,6 +2113,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribeRcStatusRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::RcStatusResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2048,6 +2125,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribeStatusTextRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::StatusTextResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2059,6 +2137,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribeActuatorControlTargetRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::ActuatorControlTargetResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2070,6 +2149,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribeActuatorOutputStatusRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::ActuatorOutputStatusResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2081,6 +2161,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribeOdometryRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::OdometryResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2092,6 +2173,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribePositionVelocityNedRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::PositionVelocityNedResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2103,6 +2185,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribeGroundTruthRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::GroundTruthResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2114,6 +2197,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribeFixedwingMetricsRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::FixedwingMetricsResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2125,6 +2209,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribeImuRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::ImuResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2136,6 +2221,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribeScaledImuRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::ScaledImuResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2147,6 +2233,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribeRawImuRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::RawImuResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2158,6 +2245,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribeHealthAllOkRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::HealthAllOkResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2169,6 +2257,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribeUnixEpochTimeRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::UnixEpochTimeResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2180,6 +2269,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribeDistanceSensorRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::DistanceSensorResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2191,6 +2281,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribeScaledPressureRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::ScaledPressureResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2202,6 +2293,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SubscribeHeadingRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::HeadingResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2213,6 +2305,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRatePositionRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRatePositionRequest, rate_hz_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRatePositionResponse, _internal_metadata_),
@@ -2225,6 +2318,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateHomeRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateHomeRequest, rate_hz_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateHomeResponse, _internal_metadata_),
@@ -2237,6 +2331,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateInAirRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateInAirRequest, rate_hz_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateInAirResponse, _internal_metadata_),
@@ -2249,6 +2344,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateLandedStateRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateLandedStateRequest, rate_hz_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateLandedStateResponse, _internal_metadata_),
@@ -2261,6 +2357,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateVtolStateRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateVtolStateRequest, rate_hz_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateVtolStateResponse, _internal_metadata_),
@@ -2273,6 +2370,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateAttitudeRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateAttitudeRequest, rate_hz_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateAttitudeResponse, _internal_metadata_),
@@ -2285,6 +2383,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateAttitudeAngularVelocityBodyRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateAttitudeAngularVelocityBodyRequest, rate_hz_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateAttitudeAngularVelocityBodyResponse, _internal_metadata_),
@@ -2297,6 +2396,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateCameraAttitudeQuaternionRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateCameraAttitudeQuaternionRequest, rate_hz_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateCameraAttitudeQuaternionResponse, _internal_metadata_),
@@ -2309,6 +2409,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateCameraAttitudeRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateCameraAttitudeRequest, rate_hz_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateCameraAttitudeResponse, _internal_metadata_),
@@ -2321,6 +2422,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateVelocityNedRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateVelocityNedRequest, rate_hz_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateVelocityNedResponse, _internal_metadata_),
@@ -2333,6 +2435,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateGpsInfoRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateGpsInfoRequest, rate_hz_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateGpsInfoResponse, _internal_metadata_),
@@ -2345,12 +2448,14 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateRawGpsRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateRawGpsRequest, rate_hz_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateBatteryRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateBatteryRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateBatteryRequest, rate_hz_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateBatteryResponse, _internal_metadata_),
@@ -2363,6 +2468,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateRcStatusRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateRcStatusRequest, rate_hz_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateRcStatusResponse, _internal_metadata_),
@@ -2375,6 +2481,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateActuatorControlTargetRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateActuatorControlTargetRequest, rate_hz_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateActuatorControlTargetResponse, _internal_metadata_),
@@ -2387,6 +2494,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateActuatorOutputStatusRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateActuatorOutputStatusRequest, rate_hz_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateActuatorOutputStatusResponse, _internal_metadata_),
@@ -2399,6 +2507,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateOdometryRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateOdometryRequest, rate_hz_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateOdometryResponse, _internal_metadata_),
@@ -2411,6 +2520,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRatePositionVelocityNedRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRatePositionVelocityNedRequest, rate_hz_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRatePositionVelocityNedResponse, _internal_metadata_),
@@ -2423,6 +2533,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateGroundTruthRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateGroundTruthRequest, rate_hz_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateGroundTruthResponse, _internal_metadata_),
@@ -2435,6 +2546,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateFixedwingMetricsRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateFixedwingMetricsRequest, rate_hz_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateFixedwingMetricsResponse, _internal_metadata_),
@@ -2447,6 +2559,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateImuRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateImuRequest, rate_hz_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateImuResponse, _internal_metadata_),
@@ -2459,6 +2572,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateScaledImuRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateScaledImuRequest, rate_hz_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateScaledImuResponse, _internal_metadata_),
@@ -2471,6 +2585,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateRawImuRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateRawImuRequest, rate_hz_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateRawImuResponse, _internal_metadata_),
@@ -2483,6 +2598,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateUnixEpochTimeRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateUnixEpochTimeRequest, rate_hz_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateUnixEpochTimeResponse, _internal_metadata_),
@@ -2495,6 +2611,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateDistanceSensorRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateDistanceSensorRequest, rate_hz_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::SetRateDistanceSensorResponse, _internal_metadata_),
@@ -2507,6 +2624,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::GetGpsGlobalOriginRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::telemetry::GetGpsGlobalOriginResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2776,152 +2894,152 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_telemetry_2ftelemetry_2eproto:
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::mavsdk::rpc::telemetry::SubscribePositionRequest)},
-  { 5, -1, sizeof(::mavsdk::rpc::telemetry::PositionResponse)},
-  { 11, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeHomeRequest)},
-  { 16, -1, sizeof(::mavsdk::rpc::telemetry::HomeResponse)},
-  { 22, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeInAirRequest)},
-  { 27, -1, sizeof(::mavsdk::rpc::telemetry::InAirResponse)},
-  { 33, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeLandedStateRequest)},
-  { 38, -1, sizeof(::mavsdk::rpc::telemetry::LandedStateResponse)},
-  { 44, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeArmedRequest)},
-  { 49, -1, sizeof(::mavsdk::rpc::telemetry::ArmedResponse)},
-  { 55, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeVtolStateRequest)},
-  { 60, -1, sizeof(::mavsdk::rpc::telemetry::VtolStateResponse)},
-  { 66, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeAttitudeQuaternionRequest)},
-  { 71, -1, sizeof(::mavsdk::rpc::telemetry::AttitudeQuaternionResponse)},
-  { 77, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeAttitudeEulerRequest)},
-  { 82, -1, sizeof(::mavsdk::rpc::telemetry::AttitudeEulerResponse)},
-  { 88, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeAttitudeAngularVelocityBodyRequest)},
-  { 93, -1, sizeof(::mavsdk::rpc::telemetry::AttitudeAngularVelocityBodyResponse)},
-  { 99, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeCameraAttitudeQuaternionRequest)},
-  { 104, -1, sizeof(::mavsdk::rpc::telemetry::CameraAttitudeQuaternionResponse)},
-  { 110, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeCameraAttitudeEulerRequest)},
-  { 115, -1, sizeof(::mavsdk::rpc::telemetry::CameraAttitudeEulerResponse)},
-  { 121, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeVelocityNedRequest)},
-  { 126, -1, sizeof(::mavsdk::rpc::telemetry::VelocityNedResponse)},
-  { 132, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeGpsInfoRequest)},
-  { 137, -1, sizeof(::mavsdk::rpc::telemetry::GpsInfoResponse)},
-  { 143, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeRawGpsRequest)},
-  { 148, -1, sizeof(::mavsdk::rpc::telemetry::RawGpsResponse)},
-  { 154, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeBatteryRequest)},
-  { 159, -1, sizeof(::mavsdk::rpc::telemetry::BatteryResponse)},
-  { 165, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeFlightModeRequest)},
-  { 170, -1, sizeof(::mavsdk::rpc::telemetry::FlightModeResponse)},
-  { 176, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeHealthRequest)},
-  { 181, -1, sizeof(::mavsdk::rpc::telemetry::HealthResponse)},
-  { 187, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeRcStatusRequest)},
-  { 192, -1, sizeof(::mavsdk::rpc::telemetry::RcStatusResponse)},
-  { 198, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeStatusTextRequest)},
-  { 203, -1, sizeof(::mavsdk::rpc::telemetry::StatusTextResponse)},
-  { 209, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeActuatorControlTargetRequest)},
-  { 214, -1, sizeof(::mavsdk::rpc::telemetry::ActuatorControlTargetResponse)},
-  { 220, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeActuatorOutputStatusRequest)},
-  { 225, -1, sizeof(::mavsdk::rpc::telemetry::ActuatorOutputStatusResponse)},
-  { 231, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeOdometryRequest)},
-  { 236, -1, sizeof(::mavsdk::rpc::telemetry::OdometryResponse)},
-  { 242, -1, sizeof(::mavsdk::rpc::telemetry::SubscribePositionVelocityNedRequest)},
-  { 247, -1, sizeof(::mavsdk::rpc::telemetry::PositionVelocityNedResponse)},
-  { 253, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeGroundTruthRequest)},
-  { 258, -1, sizeof(::mavsdk::rpc::telemetry::GroundTruthResponse)},
-  { 264, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeFixedwingMetricsRequest)},
-  { 269, -1, sizeof(::mavsdk::rpc::telemetry::FixedwingMetricsResponse)},
-  { 275, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeImuRequest)},
-  { 280, -1, sizeof(::mavsdk::rpc::telemetry::ImuResponse)},
-  { 286, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeScaledImuRequest)},
-  { 291, -1, sizeof(::mavsdk::rpc::telemetry::ScaledImuResponse)},
-  { 297, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeRawImuRequest)},
-  { 302, -1, sizeof(::mavsdk::rpc::telemetry::RawImuResponse)},
-  { 308, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeHealthAllOkRequest)},
-  { 313, -1, sizeof(::mavsdk::rpc::telemetry::HealthAllOkResponse)},
-  { 319, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeUnixEpochTimeRequest)},
-  { 324, -1, sizeof(::mavsdk::rpc::telemetry::UnixEpochTimeResponse)},
-  { 330, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeDistanceSensorRequest)},
-  { 335, -1, sizeof(::mavsdk::rpc::telemetry::DistanceSensorResponse)},
-  { 341, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeScaledPressureRequest)},
-  { 346, -1, sizeof(::mavsdk::rpc::telemetry::ScaledPressureResponse)},
-  { 352, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeHeadingRequest)},
-  { 357, -1, sizeof(::mavsdk::rpc::telemetry::HeadingResponse)},
-  { 363, -1, sizeof(::mavsdk::rpc::telemetry::SetRatePositionRequest)},
-  { 369, -1, sizeof(::mavsdk::rpc::telemetry::SetRatePositionResponse)},
-  { 375, -1, sizeof(::mavsdk::rpc::telemetry::SetRateHomeRequest)},
-  { 381, -1, sizeof(::mavsdk::rpc::telemetry::SetRateHomeResponse)},
-  { 387, -1, sizeof(::mavsdk::rpc::telemetry::SetRateInAirRequest)},
-  { 393, -1, sizeof(::mavsdk::rpc::telemetry::SetRateInAirResponse)},
-  { 399, -1, sizeof(::mavsdk::rpc::telemetry::SetRateLandedStateRequest)},
-  { 405, -1, sizeof(::mavsdk::rpc::telemetry::SetRateLandedStateResponse)},
-  { 411, -1, sizeof(::mavsdk::rpc::telemetry::SetRateVtolStateRequest)},
-  { 417, -1, sizeof(::mavsdk::rpc::telemetry::SetRateVtolStateResponse)},
-  { 423, -1, sizeof(::mavsdk::rpc::telemetry::SetRateAttitudeRequest)},
-  { 429, -1, sizeof(::mavsdk::rpc::telemetry::SetRateAttitudeResponse)},
-  { 435, -1, sizeof(::mavsdk::rpc::telemetry::SetRateAttitudeAngularVelocityBodyRequest)},
-  { 441, -1, sizeof(::mavsdk::rpc::telemetry::SetRateAttitudeAngularVelocityBodyResponse)},
-  { 447, -1, sizeof(::mavsdk::rpc::telemetry::SetRateCameraAttitudeQuaternionRequest)},
-  { 453, -1, sizeof(::mavsdk::rpc::telemetry::SetRateCameraAttitudeQuaternionResponse)},
-  { 459, -1, sizeof(::mavsdk::rpc::telemetry::SetRateCameraAttitudeRequest)},
-  { 465, -1, sizeof(::mavsdk::rpc::telemetry::SetRateCameraAttitudeResponse)},
-  { 471, -1, sizeof(::mavsdk::rpc::telemetry::SetRateVelocityNedRequest)},
-  { 477, -1, sizeof(::mavsdk::rpc::telemetry::SetRateVelocityNedResponse)},
-  { 483, -1, sizeof(::mavsdk::rpc::telemetry::SetRateGpsInfoRequest)},
-  { 489, -1, sizeof(::mavsdk::rpc::telemetry::SetRateGpsInfoResponse)},
-  { 495, -1, sizeof(::mavsdk::rpc::telemetry::SetRateRawGpsRequest)},
-  { 501, -1, sizeof(::mavsdk::rpc::telemetry::SetRateBatteryRequest)},
-  { 507, -1, sizeof(::mavsdk::rpc::telemetry::SetRateBatteryResponse)},
-  { 513, -1, sizeof(::mavsdk::rpc::telemetry::SetRateRcStatusRequest)},
-  { 519, -1, sizeof(::mavsdk::rpc::telemetry::SetRateRcStatusResponse)},
-  { 525, -1, sizeof(::mavsdk::rpc::telemetry::SetRateActuatorControlTargetRequest)},
-  { 531, -1, sizeof(::mavsdk::rpc::telemetry::SetRateActuatorControlTargetResponse)},
-  { 537, -1, sizeof(::mavsdk::rpc::telemetry::SetRateActuatorOutputStatusRequest)},
-  { 543, -1, sizeof(::mavsdk::rpc::telemetry::SetRateActuatorOutputStatusResponse)},
-  { 549, -1, sizeof(::mavsdk::rpc::telemetry::SetRateOdometryRequest)},
-  { 555, -1, sizeof(::mavsdk::rpc::telemetry::SetRateOdometryResponse)},
-  { 561, -1, sizeof(::mavsdk::rpc::telemetry::SetRatePositionVelocityNedRequest)},
-  { 567, -1, sizeof(::mavsdk::rpc::telemetry::SetRatePositionVelocityNedResponse)},
-  { 573, -1, sizeof(::mavsdk::rpc::telemetry::SetRateGroundTruthRequest)},
-  { 579, -1, sizeof(::mavsdk::rpc::telemetry::SetRateGroundTruthResponse)},
-  { 585, -1, sizeof(::mavsdk::rpc::telemetry::SetRateFixedwingMetricsRequest)},
-  { 591, -1, sizeof(::mavsdk::rpc::telemetry::SetRateFixedwingMetricsResponse)},
-  { 597, -1, sizeof(::mavsdk::rpc::telemetry::SetRateImuRequest)},
-  { 603, -1, sizeof(::mavsdk::rpc::telemetry::SetRateImuResponse)},
-  { 609, -1, sizeof(::mavsdk::rpc::telemetry::SetRateScaledImuRequest)},
-  { 615, -1, sizeof(::mavsdk::rpc::telemetry::SetRateScaledImuResponse)},
-  { 621, -1, sizeof(::mavsdk::rpc::telemetry::SetRateRawImuRequest)},
-  { 627, -1, sizeof(::mavsdk::rpc::telemetry::SetRateRawImuResponse)},
-  { 633, -1, sizeof(::mavsdk::rpc::telemetry::SetRateUnixEpochTimeRequest)},
-  { 639, -1, sizeof(::mavsdk::rpc::telemetry::SetRateUnixEpochTimeResponse)},
-  { 645, -1, sizeof(::mavsdk::rpc::telemetry::SetRateDistanceSensorRequest)},
-  { 651, -1, sizeof(::mavsdk::rpc::telemetry::SetRateDistanceSensorResponse)},
-  { 657, -1, sizeof(::mavsdk::rpc::telemetry::GetGpsGlobalOriginRequest)},
-  { 662, -1, sizeof(::mavsdk::rpc::telemetry::GetGpsGlobalOriginResponse)},
-  { 669, -1, sizeof(::mavsdk::rpc::telemetry::Position)},
-  { 678, -1, sizeof(::mavsdk::rpc::telemetry::Heading)},
-  { 684, -1, sizeof(::mavsdk::rpc::telemetry::Quaternion)},
-  { 694, -1, sizeof(::mavsdk::rpc::telemetry::EulerAngle)},
-  { 703, -1, sizeof(::mavsdk::rpc::telemetry::AngularVelocityBody)},
-  { 711, -1, sizeof(::mavsdk::rpc::telemetry::GpsInfo)},
-  { 718, -1, sizeof(::mavsdk::rpc::telemetry::RawGps)},
-  { 737, -1, sizeof(::mavsdk::rpc::telemetry::Battery)},
-  { 745, -1, sizeof(::mavsdk::rpc::telemetry::Health)},
-  { 757, -1, sizeof(::mavsdk::rpc::telemetry::RcStatus)},
-  { 765, -1, sizeof(::mavsdk::rpc::telemetry::StatusText)},
-  { 772, -1, sizeof(::mavsdk::rpc::telemetry::ActuatorControlTarget)},
-  { 779, -1, sizeof(::mavsdk::rpc::telemetry::ActuatorOutputStatus)},
-  { 786, -1, sizeof(::mavsdk::rpc::telemetry::Covariance)},
-  { 792, -1, sizeof(::mavsdk::rpc::telemetry::VelocityBody)},
-  { 800, -1, sizeof(::mavsdk::rpc::telemetry::PositionBody)},
-  { 808, -1, sizeof(::mavsdk::rpc::telemetry::Odometry)},
-  { 822, -1, sizeof(::mavsdk::rpc::telemetry::DistanceSensor)},
-  { 830, -1, sizeof(::mavsdk::rpc::telemetry::ScaledPressure)},
-  { 840, -1, sizeof(::mavsdk::rpc::telemetry::PositionNed)},
-  { 848, -1, sizeof(::mavsdk::rpc::telemetry::VelocityNed)},
-  { 856, -1, sizeof(::mavsdk::rpc::telemetry::PositionVelocityNed)},
-  { 863, -1, sizeof(::mavsdk::rpc::telemetry::GroundTruth)},
-  { 871, -1, sizeof(::mavsdk::rpc::telemetry::FixedwingMetrics)},
-  { 879, -1, sizeof(::mavsdk::rpc::telemetry::AccelerationFrd)},
-  { 887, -1, sizeof(::mavsdk::rpc::telemetry::AngularVelocityFrd)},
-  { 895, -1, sizeof(::mavsdk::rpc::telemetry::MagneticFieldFrd)},
-  { 903, -1, sizeof(::mavsdk::rpc::telemetry::Imu)},
-  { 913, -1, sizeof(::mavsdk::rpc::telemetry::GpsGlobalOrigin)},
-  { 921, -1, sizeof(::mavsdk::rpc::telemetry::TelemetryResult)},
+  { 6, -1, sizeof(::mavsdk::rpc::telemetry::PositionResponse)},
+  { 12, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeHomeRequest)},
+  { 18, -1, sizeof(::mavsdk::rpc::telemetry::HomeResponse)},
+  { 24, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeInAirRequest)},
+  { 30, -1, sizeof(::mavsdk::rpc::telemetry::InAirResponse)},
+  { 36, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeLandedStateRequest)},
+  { 42, -1, sizeof(::mavsdk::rpc::telemetry::LandedStateResponse)},
+  { 48, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeArmedRequest)},
+  { 54, -1, sizeof(::mavsdk::rpc::telemetry::ArmedResponse)},
+  { 60, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeVtolStateRequest)},
+  { 66, -1, sizeof(::mavsdk::rpc::telemetry::VtolStateResponse)},
+  { 72, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeAttitudeQuaternionRequest)},
+  { 78, -1, sizeof(::mavsdk::rpc::telemetry::AttitudeQuaternionResponse)},
+  { 84, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeAttitudeEulerRequest)},
+  { 90, -1, sizeof(::mavsdk::rpc::telemetry::AttitudeEulerResponse)},
+  { 96, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeAttitudeAngularVelocityBodyRequest)},
+  { 102, -1, sizeof(::mavsdk::rpc::telemetry::AttitudeAngularVelocityBodyResponse)},
+  { 108, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeCameraAttitudeQuaternionRequest)},
+  { 114, -1, sizeof(::mavsdk::rpc::telemetry::CameraAttitudeQuaternionResponse)},
+  { 120, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeCameraAttitudeEulerRequest)},
+  { 126, -1, sizeof(::mavsdk::rpc::telemetry::CameraAttitudeEulerResponse)},
+  { 132, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeVelocityNedRequest)},
+  { 138, -1, sizeof(::mavsdk::rpc::telemetry::VelocityNedResponse)},
+  { 144, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeGpsInfoRequest)},
+  { 150, -1, sizeof(::mavsdk::rpc::telemetry::GpsInfoResponse)},
+  { 156, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeRawGpsRequest)},
+  { 162, -1, sizeof(::mavsdk::rpc::telemetry::RawGpsResponse)},
+  { 168, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeBatteryRequest)},
+  { 174, -1, sizeof(::mavsdk::rpc::telemetry::BatteryResponse)},
+  { 180, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeFlightModeRequest)},
+  { 186, -1, sizeof(::mavsdk::rpc::telemetry::FlightModeResponse)},
+  { 192, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeHealthRequest)},
+  { 198, -1, sizeof(::mavsdk::rpc::telemetry::HealthResponse)},
+  { 204, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeRcStatusRequest)},
+  { 210, -1, sizeof(::mavsdk::rpc::telemetry::RcStatusResponse)},
+  { 216, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeStatusTextRequest)},
+  { 222, -1, sizeof(::mavsdk::rpc::telemetry::StatusTextResponse)},
+  { 228, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeActuatorControlTargetRequest)},
+  { 234, -1, sizeof(::mavsdk::rpc::telemetry::ActuatorControlTargetResponse)},
+  { 240, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeActuatorOutputStatusRequest)},
+  { 246, -1, sizeof(::mavsdk::rpc::telemetry::ActuatorOutputStatusResponse)},
+  { 252, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeOdometryRequest)},
+  { 258, -1, sizeof(::mavsdk::rpc::telemetry::OdometryResponse)},
+  { 264, -1, sizeof(::mavsdk::rpc::telemetry::SubscribePositionVelocityNedRequest)},
+  { 270, -1, sizeof(::mavsdk::rpc::telemetry::PositionVelocityNedResponse)},
+  { 276, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeGroundTruthRequest)},
+  { 282, -1, sizeof(::mavsdk::rpc::telemetry::GroundTruthResponse)},
+  { 288, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeFixedwingMetricsRequest)},
+  { 294, -1, sizeof(::mavsdk::rpc::telemetry::FixedwingMetricsResponse)},
+  { 300, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeImuRequest)},
+  { 306, -1, sizeof(::mavsdk::rpc::telemetry::ImuResponse)},
+  { 312, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeScaledImuRequest)},
+  { 318, -1, sizeof(::mavsdk::rpc::telemetry::ScaledImuResponse)},
+  { 324, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeRawImuRequest)},
+  { 330, -1, sizeof(::mavsdk::rpc::telemetry::RawImuResponse)},
+  { 336, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeHealthAllOkRequest)},
+  { 342, -1, sizeof(::mavsdk::rpc::telemetry::HealthAllOkResponse)},
+  { 348, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeUnixEpochTimeRequest)},
+  { 354, -1, sizeof(::mavsdk::rpc::telemetry::UnixEpochTimeResponse)},
+  { 360, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeDistanceSensorRequest)},
+  { 366, -1, sizeof(::mavsdk::rpc::telemetry::DistanceSensorResponse)},
+  { 372, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeScaledPressureRequest)},
+  { 378, -1, sizeof(::mavsdk::rpc::telemetry::ScaledPressureResponse)},
+  { 384, -1, sizeof(::mavsdk::rpc::telemetry::SubscribeHeadingRequest)},
+  { 390, -1, sizeof(::mavsdk::rpc::telemetry::HeadingResponse)},
+  { 396, -1, sizeof(::mavsdk::rpc::telemetry::SetRatePositionRequest)},
+  { 403, -1, sizeof(::mavsdk::rpc::telemetry::SetRatePositionResponse)},
+  { 409, -1, sizeof(::mavsdk::rpc::telemetry::SetRateHomeRequest)},
+  { 416, -1, sizeof(::mavsdk::rpc::telemetry::SetRateHomeResponse)},
+  { 422, -1, sizeof(::mavsdk::rpc::telemetry::SetRateInAirRequest)},
+  { 429, -1, sizeof(::mavsdk::rpc::telemetry::SetRateInAirResponse)},
+  { 435, -1, sizeof(::mavsdk::rpc::telemetry::SetRateLandedStateRequest)},
+  { 442, -1, sizeof(::mavsdk::rpc::telemetry::SetRateLandedStateResponse)},
+  { 448, -1, sizeof(::mavsdk::rpc::telemetry::SetRateVtolStateRequest)},
+  { 455, -1, sizeof(::mavsdk::rpc::telemetry::SetRateVtolStateResponse)},
+  { 461, -1, sizeof(::mavsdk::rpc::telemetry::SetRateAttitudeRequest)},
+  { 468, -1, sizeof(::mavsdk::rpc::telemetry::SetRateAttitudeResponse)},
+  { 474, -1, sizeof(::mavsdk::rpc::telemetry::SetRateAttitudeAngularVelocityBodyRequest)},
+  { 481, -1, sizeof(::mavsdk::rpc::telemetry::SetRateAttitudeAngularVelocityBodyResponse)},
+  { 487, -1, sizeof(::mavsdk::rpc::telemetry::SetRateCameraAttitudeQuaternionRequest)},
+  { 494, -1, sizeof(::mavsdk::rpc::telemetry::SetRateCameraAttitudeQuaternionResponse)},
+  { 500, -1, sizeof(::mavsdk::rpc::telemetry::SetRateCameraAttitudeRequest)},
+  { 507, -1, sizeof(::mavsdk::rpc::telemetry::SetRateCameraAttitudeResponse)},
+  { 513, -1, sizeof(::mavsdk::rpc::telemetry::SetRateVelocityNedRequest)},
+  { 520, -1, sizeof(::mavsdk::rpc::telemetry::SetRateVelocityNedResponse)},
+  { 526, -1, sizeof(::mavsdk::rpc::telemetry::SetRateGpsInfoRequest)},
+  { 533, -1, sizeof(::mavsdk::rpc::telemetry::SetRateGpsInfoResponse)},
+  { 539, -1, sizeof(::mavsdk::rpc::telemetry::SetRateRawGpsRequest)},
+  { 546, -1, sizeof(::mavsdk::rpc::telemetry::SetRateBatteryRequest)},
+  { 553, -1, sizeof(::mavsdk::rpc::telemetry::SetRateBatteryResponse)},
+  { 559, -1, sizeof(::mavsdk::rpc::telemetry::SetRateRcStatusRequest)},
+  { 566, -1, sizeof(::mavsdk::rpc::telemetry::SetRateRcStatusResponse)},
+  { 572, -1, sizeof(::mavsdk::rpc::telemetry::SetRateActuatorControlTargetRequest)},
+  { 579, -1, sizeof(::mavsdk::rpc::telemetry::SetRateActuatorControlTargetResponse)},
+  { 585, -1, sizeof(::mavsdk::rpc::telemetry::SetRateActuatorOutputStatusRequest)},
+  { 592, -1, sizeof(::mavsdk::rpc::telemetry::SetRateActuatorOutputStatusResponse)},
+  { 598, -1, sizeof(::mavsdk::rpc::telemetry::SetRateOdometryRequest)},
+  { 605, -1, sizeof(::mavsdk::rpc::telemetry::SetRateOdometryResponse)},
+  { 611, -1, sizeof(::mavsdk::rpc::telemetry::SetRatePositionVelocityNedRequest)},
+  { 618, -1, sizeof(::mavsdk::rpc::telemetry::SetRatePositionVelocityNedResponse)},
+  { 624, -1, sizeof(::mavsdk::rpc::telemetry::SetRateGroundTruthRequest)},
+  { 631, -1, sizeof(::mavsdk::rpc::telemetry::SetRateGroundTruthResponse)},
+  { 637, -1, sizeof(::mavsdk::rpc::telemetry::SetRateFixedwingMetricsRequest)},
+  { 644, -1, sizeof(::mavsdk::rpc::telemetry::SetRateFixedwingMetricsResponse)},
+  { 650, -1, sizeof(::mavsdk::rpc::telemetry::SetRateImuRequest)},
+  { 657, -1, sizeof(::mavsdk::rpc::telemetry::SetRateImuResponse)},
+  { 663, -1, sizeof(::mavsdk::rpc::telemetry::SetRateScaledImuRequest)},
+  { 670, -1, sizeof(::mavsdk::rpc::telemetry::SetRateScaledImuResponse)},
+  { 676, -1, sizeof(::mavsdk::rpc::telemetry::SetRateRawImuRequest)},
+  { 683, -1, sizeof(::mavsdk::rpc::telemetry::SetRateRawImuResponse)},
+  { 689, -1, sizeof(::mavsdk::rpc::telemetry::SetRateUnixEpochTimeRequest)},
+  { 696, -1, sizeof(::mavsdk::rpc::telemetry::SetRateUnixEpochTimeResponse)},
+  { 702, -1, sizeof(::mavsdk::rpc::telemetry::SetRateDistanceSensorRequest)},
+  { 709, -1, sizeof(::mavsdk::rpc::telemetry::SetRateDistanceSensorResponse)},
+  { 715, -1, sizeof(::mavsdk::rpc::telemetry::GetGpsGlobalOriginRequest)},
+  { 721, -1, sizeof(::mavsdk::rpc::telemetry::GetGpsGlobalOriginResponse)},
+  { 728, -1, sizeof(::mavsdk::rpc::telemetry::Position)},
+  { 737, -1, sizeof(::mavsdk::rpc::telemetry::Heading)},
+  { 743, -1, sizeof(::mavsdk::rpc::telemetry::Quaternion)},
+  { 753, -1, sizeof(::mavsdk::rpc::telemetry::EulerAngle)},
+  { 762, -1, sizeof(::mavsdk::rpc::telemetry::AngularVelocityBody)},
+  { 770, -1, sizeof(::mavsdk::rpc::telemetry::GpsInfo)},
+  { 777, -1, sizeof(::mavsdk::rpc::telemetry::RawGps)},
+  { 796, -1, sizeof(::mavsdk::rpc::telemetry::Battery)},
+  { 804, -1, sizeof(::mavsdk::rpc::telemetry::Health)},
+  { 816, -1, sizeof(::mavsdk::rpc::telemetry::RcStatus)},
+  { 824, -1, sizeof(::mavsdk::rpc::telemetry::StatusText)},
+  { 831, -1, sizeof(::mavsdk::rpc::telemetry::ActuatorControlTarget)},
+  { 838, -1, sizeof(::mavsdk::rpc::telemetry::ActuatorOutputStatus)},
+  { 845, -1, sizeof(::mavsdk::rpc::telemetry::Covariance)},
+  { 851, -1, sizeof(::mavsdk::rpc::telemetry::VelocityBody)},
+  { 859, -1, sizeof(::mavsdk::rpc::telemetry::PositionBody)},
+  { 867, -1, sizeof(::mavsdk::rpc::telemetry::Odometry)},
+  { 881, -1, sizeof(::mavsdk::rpc::telemetry::DistanceSensor)},
+  { 889, -1, sizeof(::mavsdk::rpc::telemetry::ScaledPressure)},
+  { 899, -1, sizeof(::mavsdk::rpc::telemetry::PositionNed)},
+  { 907, -1, sizeof(::mavsdk::rpc::telemetry::VelocityNed)},
+  { 915, -1, sizeof(::mavsdk::rpc::telemetry::PositionVelocityNed)},
+  { 922, -1, sizeof(::mavsdk::rpc::telemetry::GroundTruth)},
+  { 930, -1, sizeof(::mavsdk::rpc::telemetry::FixedwingMetrics)},
+  { 938, -1, sizeof(::mavsdk::rpc::telemetry::AccelerationFrd)},
+  { 946, -1, sizeof(::mavsdk::rpc::telemetry::AngularVelocityFrd)},
+  { 954, -1, sizeof(::mavsdk::rpc::telemetry::MagneticFieldFrd)},
+  { 962, -1, sizeof(::mavsdk::rpc::telemetry::Imu)},
+  { 972, -1, sizeof(::mavsdk::rpc::telemetry::GpsGlobalOrigin)},
+  { 980, -1, sizeof(::mavsdk::rpc::telemetry::TelemetryResult)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -3076,504 +3194,531 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_telemetry_2ftelemetry_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\031telemetry/telemetry.proto\022\024mavsdk.rpc."
-  "telemetry\032\024mavsdk_options.proto\"\032\n\030Subsc"
-  "ribePositionRequest\"D\n\020PositionResponse\022"
-  "0\n\010position\030\001 \001(\0132\036.mavsdk.rpc.telemetry"
-  ".Position\"\026\n\024SubscribeHomeRequest\"<\n\014Hom"
-  "eResponse\022,\n\004home\030\001 \001(\0132\036.mavsdk.rpc.tel"
-  "emetry.Position\"\027\n\025SubscribeInAirRequest"
-  "\"\"\n\rInAirResponse\022\021\n\tis_in_air\030\001 \001(\010\"\035\n\033"
-  "SubscribeLandedStateRequest\"N\n\023LandedSta"
-  "teResponse\0227\n\014landed_state\030\001 \001(\0162!.mavsd"
-  "k.rpc.telemetry.LandedState\"\027\n\025Subscribe"
-  "ArmedRequest\"!\n\rArmedResponse\022\020\n\010is_arme"
-  "d\030\001 \001(\010\"\033\n\031SubscribeVtolStateRequest\"H\n\021"
-  "VtolStateResponse\0223\n\nvtol_state\030\001 \001(\0162\037."
-  "mavsdk.rpc.telemetry.VtolState\"$\n\"Subscr"
-  "ibeAttitudeQuaternionRequest\"[\n\032Attitude"
-  "QuaternionResponse\022=\n\023attitude_quaternio"
-  "n\030\001 \001(\0132 .mavsdk.rpc.telemetry.Quaternio"
-  "n\"\037\n\035SubscribeAttitudeEulerRequest\"Q\n\025At"
-  "titudeEulerResponse\0228\n\016attitude_euler\030\001 "
-  "\001(\0132 .mavsdk.rpc.telemetry.EulerAngle\"-\n"
-  "+SubscribeAttitudeAngularVelocityBodyReq"
-  "uest\"x\n#AttitudeAngularVelocityBodyRespo"
-  "nse\022Q\n\036attitude_angular_velocity_body\030\001 "
-  "\001(\0132).mavsdk.rpc.telemetry.AngularVeloci"
-  "tyBody\"*\n(SubscribeCameraAttitudeQuatern"
-  "ionRequest\"a\n CameraAttitudeQuaternionRe"
-  "sponse\022=\n\023attitude_quaternion\030\001 \001(\0132 .ma"
-  "vsdk.rpc.telemetry.Quaternion\"%\n#Subscri"
-  "beCameraAttitudeEulerRequest\"W\n\033CameraAt"
-  "titudeEulerResponse\0228\n\016attitude_euler\030\001 "
-  "\001(\0132 .mavsdk.rpc.telemetry.EulerAngle\"\035\n"
-  "\033SubscribeVelocityNedRequest\"N\n\023Velocity"
-  "NedResponse\0227\n\014velocity_ned\030\001 \001(\0132!.mavs"
-  "dk.rpc.telemetry.VelocityNed\"\031\n\027Subscrib"
-  "eGpsInfoRequest\"B\n\017GpsInfoResponse\022/\n\010gp"
-  "s_info\030\001 \001(\0132\035.mavsdk.rpc.telemetry.GpsI"
-  "nfo\"\030\n\026SubscribeRawGpsRequest\"\?\n\016RawGpsR"
-  "esponse\022-\n\007raw_gps\030\001 \001(\0132\034.mavsdk.rpc.te"
-  "lemetry.RawGps\"\031\n\027SubscribeBatteryReques"
-  "t\"A\n\017BatteryResponse\022.\n\007battery\030\001 \001(\0132\035."
-  "mavsdk.rpc.telemetry.Battery\"\034\n\032Subscrib"
-  "eFlightModeRequest\"K\n\022FlightModeResponse"
-  "\0225\n\013flight_mode\030\001 \001(\0162 .mavsdk.rpc.telem"
-  "etry.FlightMode\"\030\n\026SubscribeHealthReques"
-  "t\">\n\016HealthResponse\022,\n\006health\030\001 \001(\0132\034.ma"
-  "vsdk.rpc.telemetry.Health\"\032\n\030SubscribeRc"
-  "StatusRequest\"E\n\020RcStatusResponse\0221\n\trc_"
-  "status\030\001 \001(\0132\036.mavsdk.rpc.telemetry.RcSt"
-  "atus\"\034\n\032SubscribeStatusTextRequest\"K\n\022St"
-  "atusTextResponse\0225\n\013status_text\030\001 \001(\0132 ."
-  "mavsdk.rpc.telemetry.StatusText\"\'\n%Subsc"
-  "ribeActuatorControlTargetRequest\"m\n\035Actu"
+  "telemetry\032\024mavsdk_options.proto\",\n\030Subsc"
+  "ribePositionRequest\022\020\n\010drone_id\030\001 \001(\005\"D\n"
+  "\020PositionResponse\0220\n\010position\030\001 \001(\0132\036.ma"
+  "vsdk.rpc.telemetry.Position\"(\n\024Subscribe"
+  "HomeRequest\022\020\n\010drone_id\030\001 \001(\005\"<\n\014HomeRes"
+  "ponse\022,\n\004home\030\001 \001(\0132\036.mavsdk.rpc.telemet"
+  "ry.Position\")\n\025SubscribeInAirRequest\022\020\n\010"
+  "drone_id\030\001 \001(\005\"\"\n\rInAirResponse\022\021\n\tis_in"
+  "_air\030\001 \001(\010\"/\n\033SubscribeLandedStateReques"
+  "t\022\020\n\010drone_id\030\001 \001(\005\"N\n\023LandedStateRespon"
+  "se\0227\n\014landed_state\030\001 \001(\0162!.mavsdk.rpc.te"
+  "lemetry.LandedState\")\n\025SubscribeArmedReq"
+  "uest\022\020\n\010drone_id\030\001 \001(\005\"!\n\rArmedResponse\022"
+  "\020\n\010is_armed\030\001 \001(\010\"-\n\031SubscribeVtolStateR"
+  "equest\022\020\n\010drone_id\030\001 \001(\005\"H\n\021VtolStateRes"
+  "ponse\0223\n\nvtol_state\030\001 \001(\0162\037.mavsdk.rpc.t"
+  "elemetry.VtolState\"6\n\"SubscribeAttitudeQ"
+  "uaternionRequest\022\020\n\010drone_id\030\001 \001(\005\"[\n\032At"
+  "titudeQuaternionResponse\022=\n\023attitude_qua"
+  "ternion\030\001 \001(\0132 .mavsdk.rpc.telemetry.Qua"
+  "ternion\"1\n\035SubscribeAttitudeEulerRequest"
+  "\022\020\n\010drone_id\030\001 \001(\005\"Q\n\025AttitudeEulerRespo"
+  "nse\0228\n\016attitude_euler\030\001 \001(\0132 .mavsdk.rpc"
+  ".telemetry.EulerAngle\"\?\n+SubscribeAttitu"
+  "deAngularVelocityBodyRequest\022\020\n\010drone_id"
+  "\030\001 \001(\005\"x\n#AttitudeAngularVelocityBodyRes"
+  "ponse\022Q\n\036attitude_angular_velocity_body\030"
+  "\001 \001(\0132).mavsdk.rpc.telemetry.AngularVelo"
+  "cityBody\"<\n(SubscribeCameraAttitudeQuate"
+  "rnionRequest\022\020\n\010drone_id\030\001 \001(\005\"a\n Camera"
+  "AttitudeQuaternionResponse\022=\n\023attitude_q"
+  "uaternion\030\001 \001(\0132 .mavsdk.rpc.telemetry.Q"
+  "uaternion\"7\n#SubscribeCameraAttitudeEule"
+  "rRequest\022\020\n\010drone_id\030\001 \001(\005\"W\n\033CameraAtti"
+  "tudeEulerResponse\0228\n\016attitude_euler\030\001 \001("
+  "\0132 .mavsdk.rpc.telemetry.EulerAngle\"/\n\033S"
+  "ubscribeVelocityNedRequest\022\020\n\010drone_id\030\001"
+  " \001(\005\"N\n\023VelocityNedResponse\0227\n\014velocity_"
+  "ned\030\001 \001(\0132!.mavsdk.rpc.telemetry.Velocit"
+  "yNed\"+\n\027SubscribeGpsInfoRequest\022\020\n\010drone"
+  "_id\030\001 \001(\005\"B\n\017GpsInfoResponse\022/\n\010gps_info"
+  "\030\001 \001(\0132\035.mavsdk.rpc.telemetry.GpsInfo\"*\n"
+  "\026SubscribeRawGpsRequest\022\020\n\010drone_id\030\001 \001("
+  "\005\"\?\n\016RawGpsResponse\022-\n\007raw_gps\030\001 \001(\0132\034.m"
+  "avsdk.rpc.telemetry.RawGps\"+\n\027SubscribeB"
+  "atteryRequest\022\020\n\010drone_id\030\001 \001(\005\"A\n\017Batte"
+  "ryResponse\022.\n\007battery\030\001 \001(\0132\035.mavsdk.rpc"
+  ".telemetry.Battery\".\n\032SubscribeFlightMod"
+  "eRequest\022\020\n\010drone_id\030\001 \001(\005\"K\n\022FlightMode"
+  "Response\0225\n\013flight_mode\030\001 \001(\0162 .mavsdk.r"
+  "pc.telemetry.FlightMode\"*\n\026SubscribeHeal"
+  "thRequest\022\020\n\010drone_id\030\001 \001(\005\">\n\016HealthRes"
+  "ponse\022,\n\006health\030\001 \001(\0132\034.mavsdk.rpc.telem"
+  "etry.Health\",\n\030SubscribeRcStatusRequest\022"
+  "\020\n\010drone_id\030\001 \001(\005\"E\n\020RcStatusResponse\0221\n"
+  "\trc_status\030\001 \001(\0132\036.mavsdk.rpc.telemetry."
+  "RcStatus\".\n\032SubscribeStatusTextRequest\022\020"
+  "\n\010drone_id\030\001 \001(\005\"K\n\022StatusTextResponse\0225"
+  "\n\013status_text\030\001 \001(\0132 .mavsdk.rpc.telemet"
+  "ry.StatusText\"9\n%SubscribeActuatorContro"
+  "lTargetRequest\022\020\n\010drone_id\030\001 \001(\005\"m\n\035Actu"
   "atorControlTargetResponse\022L\n\027actuator_co"
   "ntrol_target\030\001 \001(\0132+.mavsdk.rpc.telemetr"
-  "y.ActuatorControlTarget\"&\n$SubscribeActu"
-  "atorOutputStatusRequest\"j\n\034ActuatorOutpu"
-  "tStatusResponse\022J\n\026actuator_output_statu"
-  "s\030\001 \001(\0132*.mavsdk.rpc.telemetry.ActuatorO"
-  "utputStatus\"\032\n\030SubscribeOdometryRequest\""
-  "D\n\020OdometryResponse\0220\n\010odometry\030\001 \001(\0132\036."
-  "mavsdk.rpc.telemetry.Odometry\"%\n#Subscri"
-  "bePositionVelocityNedRequest\"g\n\033Position"
-  "VelocityNedResponse\022H\n\025position_velocity"
-  "_ned\030\001 \001(\0132).mavsdk.rpc.telemetry.Positi"
-  "onVelocityNed\"\035\n\033SubscribeGroundTruthReq"
-  "uest\"N\n\023GroundTruthResponse\0227\n\014ground_tr"
-  "uth\030\001 \001(\0132!.mavsdk.rpc.telemetry.GroundT"
-  "ruth\"\"\n SubscribeFixedwingMetricsRequest"
-  "\"]\n\030FixedwingMetricsResponse\022A\n\021fixedwin"
-  "g_metrics\030\001 \001(\0132&.mavsdk.rpc.telemetry.F"
-  "ixedwingMetrics\"\025\n\023SubscribeImuRequest\"5"
-  "\n\013ImuResponse\022&\n\003imu\030\001 \001(\0132\031.mavsdk.rpc."
-  "telemetry.Imu\"\033\n\031SubscribeScaledImuReque"
-  "st\";\n\021ScaledImuResponse\022&\n\003imu\030\001 \001(\0132\031.m"
-  "avsdk.rpc.telemetry.Imu\"\030\n\026SubscribeRawI"
-  "muRequest\"8\n\016RawImuResponse\022&\n\003imu\030\001 \001(\013"
-  "2\031.mavsdk.rpc.telemetry.Imu\"\035\n\033Subscribe"
-  "HealthAllOkRequest\"/\n\023HealthAllOkRespons"
-  "e\022\030\n\020is_health_all_ok\030\001 \001(\010\"\037\n\035Subscribe"
-  "UnixEpochTimeRequest\"(\n\025UnixEpochTimeRes"
-  "ponse\022\017\n\007time_us\030\001 \001(\004\" \n\036SubscribeDista"
-  "nceSensorRequest\"W\n\026DistanceSensorRespon"
-  "se\022=\n\017distance_sensor\030\001 \001(\0132$.mavsdk.rpc"
-  ".telemetry.DistanceSensor\" \n\036SubscribeSc"
-  "aledPressureRequest\"W\n\026ScaledPressureRes"
-  "ponse\022=\n\017scaled_pressure\030\001 \001(\0132$.mavsdk."
-  "rpc.telemetry.ScaledPressure\"\031\n\027Subscrib"
-  "eHeadingRequest\"E\n\017HeadingResponse\0222\n\013he"
-  "ading_deg\030\001 \001(\0132\035.mavsdk.rpc.telemetry.H"
-  "eading\")\n\026SetRatePositionRequest\022\017\n\007rate"
-  "_hz\030\001 \001(\001\"Z\n\027SetRatePositionResponse\022\?\n\020"
-  "telemetry_result\030\001 \001(\0132%.mavsdk.rpc.tele"
-  "metry.TelemetryResult\"%\n\022SetRateHomeRequ"
-  "est\022\017\n\007rate_hz\030\001 \001(\001\"V\n\023SetRateHomeRespo"
-  "nse\022\?\n\020telemetry_result\030\001 \001(\0132%.mavsdk.r"
-  "pc.telemetry.TelemetryResult\"&\n\023SetRateI"
-  "nAirRequest\022\017\n\007rate_hz\030\001 \001(\001\"W\n\024SetRateI"
-  "nAirResponse\022\?\n\020telemetry_result\030\001 \001(\0132%"
-  ".mavsdk.rpc.telemetry.TelemetryResult\",\n"
-  "\031SetRateLandedStateRequest\022\017\n\007rate_hz\030\001 "
-  "\001(\001\"]\n\032SetRateLandedStateResponse\022\?\n\020tel"
+  "y.ActuatorControlTarget\"8\n$SubscribeActu"
+  "atorOutputStatusRequest\022\020\n\010drone_id\030\001 \001("
+  "\005\"j\n\034ActuatorOutputStatusResponse\022J\n\026act"
+  "uator_output_status\030\001 \001(\0132*.mavsdk.rpc.t"
+  "elemetry.ActuatorOutputStatus\",\n\030Subscri"
+  "beOdometryRequest\022\020\n\010drone_id\030\001 \001(\005\"D\n\020O"
+  "dometryResponse\0220\n\010odometry\030\001 \001(\0132\036.mavs"
+  "dk.rpc.telemetry.Odometry\"7\n#SubscribePo"
+  "sitionVelocityNedRequest\022\020\n\010drone_id\030\001 \001"
+  "(\005\"g\n\033PositionVelocityNedResponse\022H\n\025pos"
+  "ition_velocity_ned\030\001 \001(\0132).mavsdk.rpc.te"
+  "lemetry.PositionVelocityNed\"/\n\033Subscribe"
+  "GroundTruthRequest\022\020\n\010drone_id\030\001 \001(\005\"N\n\023"
+  "GroundTruthResponse\0227\n\014ground_truth\030\001 \001("
+  "\0132!.mavsdk.rpc.telemetry.GroundTruth\"4\n "
+  "SubscribeFixedwingMetricsRequest\022\020\n\010dron"
+  "e_id\030\001 \001(\005\"]\n\030FixedwingMetricsResponse\022A"
+  "\n\021fixedwing_metrics\030\001 \001(\0132&.mavsdk.rpc.t"
+  "elemetry.FixedwingMetrics\"\'\n\023SubscribeIm"
+  "uRequest\022\020\n\010drone_id\030\001 \001(\005\"5\n\013ImuRespons"
+  "e\022&\n\003imu\030\001 \001(\0132\031.mavsdk.rpc.telemetry.Im"
+  "u\"-\n\031SubscribeScaledImuRequest\022\020\n\010drone_"
+  "id\030\001 \001(\005\";\n\021ScaledImuResponse\022&\n\003imu\030\001 \001"
+  "(\0132\031.mavsdk.rpc.telemetry.Imu\"*\n\026Subscri"
+  "beRawImuRequest\022\020\n\010drone_id\030\001 \001(\005\"8\n\016Raw"
+  "ImuResponse\022&\n\003imu\030\001 \001(\0132\031.mavsdk.rpc.te"
+  "lemetry.Imu\"/\n\033SubscribeHealthAllOkReque"
+  "st\022\020\n\010drone_id\030\001 \001(\005\"/\n\023HealthAllOkRespo"
+  "nse\022\030\n\020is_health_all_ok\030\001 \001(\010\"1\n\035Subscri"
+  "beUnixEpochTimeRequest\022\020\n\010drone_id\030\001 \001(\005"
+  "\"(\n\025UnixEpochTimeResponse\022\017\n\007time_us\030\001 \001"
+  "(\004\"2\n\036SubscribeDistanceSensorRequest\022\020\n\010"
+  "drone_id\030\001 \001(\005\"W\n\026DistanceSensorResponse"
+  "\022=\n\017distance_sensor\030\001 \001(\0132$.mavsdk.rpc.t"
+  "elemetry.DistanceSensor\"2\n\036SubscribeScal"
+  "edPressureRequest\022\020\n\010drone_id\030\001 \001(\005\"W\n\026S"
+  "caledPressureResponse\022=\n\017scaled_pressure"
+  "\030\001 \001(\0132$.mavsdk.rpc.telemetry.ScaledPres"
+  "sure\"+\n\027SubscribeHeadingRequest\022\020\n\010drone"
+  "_id\030\001 \001(\005\"E\n\017HeadingResponse\0222\n\013heading_"
+  "deg\030\001 \001(\0132\035.mavsdk.rpc.telemetry.Heading"
+  "\";\n\026SetRatePositionRequest\022\020\n\010drone_id\030\001"
+  " \001(\005\022\017\n\007rate_hz\030\002 \001(\001\"Z\n\027SetRatePosition"
+  "Response\022\?\n\020telemetry_result\030\001 \001(\0132%.mav"
+  "sdk.rpc.telemetry.TelemetryResult\"7\n\022Set"
+  "RateHomeRequest\022\020\n\010drone_id\030\001 \001(\005\022\017\n\007rat"
+  "e_hz\030\002 \001(\001\"V\n\023SetRateHomeResponse\022\?\n\020tel"
   "emetry_result\030\001 \001(\0132%.mavsdk.rpc.telemet"
-  "ry.TelemetryResult\"*\n\027SetRateVtolStateRe"
-  "quest\022\017\n\007rate_hz\030\001 \001(\001\"[\n\030SetRateVtolSta"
-  "teResponse\022\?\n\020telemetry_result\030\001 \001(\0132%.m"
-  "avsdk.rpc.telemetry.TelemetryResult\")\n\026S"
-  "etRateAttitudeRequest\022\017\n\007rate_hz\030\001 \001(\001\"Z"
-  "\n\027SetRateAttitudeResponse\022\?\n\020telemetry_r"
-  "esult\030\001 \001(\0132%.mavsdk.rpc.telemetry.Telem"
-  "etryResult\"<\n)SetRateAttitudeAngularVelo"
-  "cityBodyRequest\022\017\n\007rate_hz\030\001 \001(\001\"m\n*SetR"
+  "ry.TelemetryResult\"8\n\023SetRateInAirReques"
+  "t\022\020\n\010drone_id\030\001 \001(\005\022\017\n\007rate_hz\030\002 \001(\001\"W\n\024"
+  "SetRateInAirResponse\022\?\n\020telemetry_result"
+  "\030\001 \001(\0132%.mavsdk.rpc.telemetry.TelemetryR"
+  "esult\">\n\031SetRateLandedStateRequest\022\020\n\010dr"
+  "one_id\030\001 \001(\005\022\017\n\007rate_hz\030\002 \001(\001\"]\n\032SetRate"
+  "LandedStateResponse\022\?\n\020telemetry_result\030"
+  "\001 \001(\0132%.mavsdk.rpc.telemetry.TelemetryRe"
+  "sult\"<\n\027SetRateVtolStateRequest\022\020\n\010drone"
+  "_id\030\001 \001(\005\022\017\n\007rate_hz\030\002 \001(\001\"[\n\030SetRateVto"
+  "lStateResponse\022\?\n\020telemetry_result\030\001 \001(\013"
+  "2%.mavsdk.rpc.telemetry.TelemetryResult\""
+  ";\n\026SetRateAttitudeRequest\022\020\n\010drone_id\030\001 "
+  "\001(\005\022\017\n\007rate_hz\030\002 \001(\001\"Z\n\027SetRateAttitudeR"
+  "esponse\022\?\n\020telemetry_result\030\001 \001(\0132%.mavs"
+  "dk.rpc.telemetry.TelemetryResult\"N\n)SetR"
+  "ateAttitudeAngularVelocityBodyRequest\022\020\n"
+  "\010drone_id\030\001 \001(\005\022\017\n\007rate_hz\030\002 \001(\001\"m\n*SetR"
   "ateAttitudeAngularVelocityBodyResponse\022\?"
   "\n\020telemetry_result\030\001 \001(\0132%.mavsdk.rpc.te"
-  "lemetry.TelemetryResult\"9\n&SetRateCamera"
-  "AttitudeQuaternionRequest\022\017\n\007rate_hz\030\001 \001"
-  "(\001\"j\n\'SetRateCameraAttitudeQuaternionRes"
-  "ponse\022\?\n\020telemetry_result\030\001 \001(\0132%.mavsdk"
-  ".rpc.telemetry.TelemetryResult\"/\n\034SetRat"
-  "eCameraAttitudeRequest\022\017\n\007rate_hz\030\001 \001(\001\""
-  "`\n\035SetRateCameraAttitudeResponse\022\?\n\020tele"
-  "metry_result\030\001 \001(\0132%.mavsdk.rpc.telemetr"
-  "y.TelemetryResult\",\n\031SetRateVelocityNedR"
-  "equest\022\017\n\007rate_hz\030\001 \001(\001\"]\n\032SetRateVeloci"
-  "tyNedResponse\022\?\n\020telemetry_result\030\001 \001(\0132"
-  "%.mavsdk.rpc.telemetry.TelemetryResult\"("
-  "\n\025SetRateGpsInfoRequest\022\017\n\007rate_hz\030\001 \001(\001"
-  "\"Y\n\026SetRateGpsInfoResponse\022\?\n\020telemetry_"
-  "result\030\001 \001(\0132%.mavsdk.rpc.telemetry.Tele"
-  "metryResult\"\'\n\024SetRateRawGpsRequest\022\017\n\007r"
-  "ate_hz\030\001 \001(\001\"(\n\025SetRateBatteryRequest\022\017\n"
-  "\007rate_hz\030\001 \001(\001\"Y\n\026SetRateBatteryResponse"
-  "\022\?\n\020telemetry_result\030\001 \001(\0132%.mavsdk.rpc."
-  "telemetry.TelemetryResult\")\n\026SetRateRcSt"
-  "atusRequest\022\017\n\007rate_hz\030\001 \001(\001\"Z\n\027SetRateR"
-  "cStatusResponse\022\?\n\020telemetry_result\030\001 \001("
-  "\0132%.mavsdk.rpc.telemetry.TelemetryResult"
-  "\"6\n#SetRateActuatorControlTargetRequest\022"
-  "\017\n\007rate_hz\030\001 \001(\001\"g\n$SetRateActuatorContr"
-  "olTargetResponse\022\?\n\020telemetry_result\030\001 \001"
-  "(\0132%.mavsdk.rpc.telemetry.TelemetryResul"
-  "t\"5\n\"SetRateActuatorOutputStatusRequest\022"
-  "\017\n\007rate_hz\030\001 \001(\001\"f\n#SetRateActuatorOutpu"
-  "tStatusResponse\022\?\n\020telemetry_result\030\001 \001("
-  "\0132%.mavsdk.rpc.telemetry.TelemetryResult"
-  "\")\n\026SetRateOdometryRequest\022\017\n\007rate_hz\030\001 "
-  "\001(\001\"Z\n\027SetRateOdometryResponse\022\?\n\020teleme"
-  "try_result\030\001 \001(\0132%.mavsdk.rpc.telemetry."
-  "TelemetryResult\"4\n!SetRatePositionVeloci"
-  "tyNedRequest\022\017\n\007rate_hz\030\001 \001(\001\"e\n\"SetRate"
-  "PositionVelocityNedResponse\022\?\n\020telemetry"
+  "lemetry.TelemetryResult\"K\n&SetRateCamera"
+  "AttitudeQuaternionRequest\022\020\n\010drone_id\030\001 "
+  "\001(\005\022\017\n\007rate_hz\030\002 \001(\001\"j\n\'SetRateCameraAtt"
+  "itudeQuaternionResponse\022\?\n\020telemetry_res"
+  "ult\030\001 \001(\0132%.mavsdk.rpc.telemetry.Telemet"
+  "ryResult\"A\n\034SetRateCameraAttitudeRequest"
+  "\022\020\n\010drone_id\030\001 \001(\005\022\017\n\007rate_hz\030\002 \001(\001\"`\n\035S"
+  "etRateCameraAttitudeResponse\022\?\n\020telemetr"
+  "y_result\030\001 \001(\0132%.mavsdk.rpc.telemetry.Te"
+  "lemetryResult\">\n\031SetRateVelocityNedReque"
+  "st\022\020\n\010drone_id\030\001 \001(\005\022\017\n\007rate_hz\030\002 \001(\001\"]\n"
+  "\032SetRateVelocityNedResponse\022\?\n\020telemetry"
   "_result\030\001 \001(\0132%.mavsdk.rpc.telemetry.Tel"
-  "emetryResult\",\n\031SetRateGroundTruthReques"
-  "t\022\017\n\007rate_hz\030\001 \001(\001\"]\n\032SetRateGroundTruth"
-  "Response\022\?\n\020telemetry_result\030\001 \001(\0132%.mav"
-  "sdk.rpc.telemetry.TelemetryResult\"1\n\036Set"
-  "RateFixedwingMetricsRequest\022\017\n\007rate_hz\030\001"
-  " \001(\001\"b\n\037SetRateFixedwingMetricsResponse\022"
-  "\?\n\020telemetry_result\030\001 \001(\0132%.mavsdk.rpc.t"
-  "elemetry.TelemetryResult\"$\n\021SetRateImuRe"
-  "quest\022\017\n\007rate_hz\030\001 \001(\001\"U\n\022SetRateImuResp"
-  "onse\022\?\n\020telemetry_result\030\001 \001(\0132%.mavsdk."
-  "rpc.telemetry.TelemetryResult\"*\n\027SetRate"
-  "ScaledImuRequest\022\017\n\007rate_hz\030\001 \001(\001\"[\n\030Set"
-  "RateScaledImuResponse\022\?\n\020telemetry_resul"
+  "emetryResult\":\n\025SetRateGpsInfoRequest\022\020\n"
+  "\010drone_id\030\001 \001(\005\022\017\n\007rate_hz\030\002 \001(\001\"Y\n\026SetR"
+  "ateGpsInfoResponse\022\?\n\020telemetry_result\030\001"
+  " \001(\0132%.mavsdk.rpc.telemetry.TelemetryRes"
+  "ult\"9\n\024SetRateRawGpsRequest\022\020\n\010drone_id\030"
+  "\001 \001(\005\022\017\n\007rate_hz\030\002 \001(\001\":\n\025SetRateBattery"
+  "Request\022\020\n\010drone_id\030\001 \001(\005\022\017\n\007rate_hz\030\002 \001"
+  "(\001\"Y\n\026SetRateBatteryResponse\022\?\n\020telemetr"
+  "y_result\030\001 \001(\0132%.mavsdk.rpc.telemetry.Te"
+  "lemetryResult\";\n\026SetRateRcStatusRequest\022"
+  "\020\n\010drone_id\030\001 \001(\005\022\017\n\007rate_hz\030\002 \001(\001\"Z\n\027Se"
+  "tRateRcStatusResponse\022\?\n\020telemetry_resul"
   "t\030\001 \001(\0132%.mavsdk.rpc.telemetry.Telemetry"
-  "Result\"\'\n\024SetRateRawImuRequest\022\017\n\007rate_h"
-  "z\030\001 \001(\001\"X\n\025SetRateRawImuResponse\022\?\n\020tele"
-  "metry_result\030\001 \001(\0132%.mavsdk.rpc.telemetr"
-  "y.TelemetryResult\".\n\033SetRateUnixEpochTim"
-  "eRequest\022\017\n\007rate_hz\030\001 \001(\001\"_\n\034SetRateUnix"
-  "EpochTimeResponse\022\?\n\020telemetry_result\030\001 "
+  "Result\"H\n#SetRateActuatorControlTargetRe"
+  "quest\022\020\n\010drone_id\030\001 \001(\005\022\017\n\007rate_hz\030\002 \001(\001"
+  "\"g\n$SetRateActuatorControlTargetResponse"
+  "\022\?\n\020telemetry_result\030\001 \001(\0132%.mavsdk.rpc."
+  "telemetry.TelemetryResult\"G\n\"SetRateActu"
+  "atorOutputStatusRequest\022\020\n\010drone_id\030\001 \001("
+  "\005\022\017\n\007rate_hz\030\002 \001(\001\"f\n#SetRateActuatorOut"
+  "putStatusResponse\022\?\n\020telemetry_result\030\001 "
   "\001(\0132%.mavsdk.rpc.telemetry.TelemetryResu"
-  "lt\"/\n\034SetRateDistanceSensorRequest\022\017\n\007ra"
-  "te_hz\030\001 \001(\001\"`\n\035SetRateDistanceSensorResp"
-  "onse\022\?\n\020telemetry_result\030\001 \001(\0132%.mavsdk."
-  "rpc.telemetry.TelemetryResult\"\033\n\031GetGpsG"
-  "lobalOriginRequest\"\237\001\n\032GetGpsGlobalOrigi"
-  "nResponse\022\?\n\020telemetry_result\030\001 \001(\0132%.ma"
-  "vsdk.rpc.telemetry.TelemetryResult\022@\n\021gp"
-  "s_global_origin\030\002 \001(\0132%.mavsdk.rpc.telem"
-  "etry.GpsGlobalOrigin\"\225\001\n\010Position\022\035\n\014lat"
-  "itude_deg\030\001 \001(\001B\007\202\265\030\003NaN\022\036\n\rlongitude_de"
-  "g\030\002 \001(\001B\007\202\265\030\003NaN\022$\n\023absolute_altitude_m\030"
-  "\003 \001(\002B\007\202\265\030\003NaN\022$\n\023relative_altitude_m\030\004 "
-  "\001(\002B\007\202\265\030\003NaN\"\'\n\007Heading\022\034\n\013heading_deg\030\001"
-  " \001(\001B\007\202\265\030\003NaN\"r\n\nQuaternion\022\022\n\001w\030\001 \001(\002B\007"
-  "\202\265\030\003NaN\022\022\n\001x\030\002 \001(\002B\007\202\265\030\003NaN\022\022\n\001y\030\003 \001(\002B\007"
-  "\202\265\030\003NaN\022\022\n\001z\030\004 \001(\002B\007\202\265\030\003NaN\022\024\n\014timestamp"
-  "_us\030\005 \001(\004\"s\n\nEulerAngle\022\031\n\010roll_deg\030\001 \001("
-  "\002B\007\202\265\030\003NaN\022\032\n\tpitch_deg\030\002 \001(\002B\007\202\265\030\003NaN\022\030"
-  "\n\007yaw_deg\030\003 \001(\002B\007\202\265\030\003NaN\022\024\n\014timestamp_us"
-  "\030\004 \001(\004\"l\n\023AngularVelocityBody\022\033\n\nroll_ra"
-  "d_s\030\001 \001(\002B\007\202\265\030\003NaN\022\034\n\013pitch_rad_s\030\002 \001(\002B"
-  "\007\202\265\030\003NaN\022\032\n\tyaw_rad_s\030\003 \001(\002B\007\202\265\030\003NaN\"Y\n\007"
-  "GpsInfo\022\035\n\016num_satellites\030\001 \001(\005B\005\202\265\030\0010\022/"
-  "\n\010fix_type\030\002 \001(\0162\035.mavsdk.rpc.telemetry."
-  "FixType\"\337\002\n\006RawGps\022\024\n\014timestamp_us\030\001 \001(\004"
-  "\022\024\n\014latitude_deg\030\002 \001(\001\022\025\n\rlongitude_deg\030"
-  "\003 \001(\001\022\033\n\023absolute_altitude_m\030\004 \001(\002\022\014\n\004hd"
-  "op\030\005 \001(\002\022\014\n\004vdop\030\006 \001(\002\022\024\n\014velocity_m_s\030\007"
-  " \001(\002\022\017\n\007cog_deg\030\010 \001(\002\022\034\n\024altitude_ellips"
-  "oid_m\030\t \001(\002\022 \n\030horizontal_uncertainty_m\030"
-  "\n \001(\002\022\036\n\026vertical_uncertainty_m\030\013 \001(\002\022 \n"
-  "\030velocity_uncertainty_m_s\030\014 \001(\002\022\037\n\027headi"
-  "ng_uncertainty_deg\030\r \001(\002\022\017\n\007yaw_deg\030\016 \001("
-  "\002\"\\\n\007Battery\022\021\n\002id\030\003 \001(\rB\005\202\265\030\0010\022\032\n\tvolta"
-  "ge_v\030\001 \001(\002B\007\202\265\030\003NaN\022\"\n\021remaining_percent"
-  "\030\002 \001(\002B\007\202\265\030\003NaN\"\271\002\n\006Health\022.\n\033is_gyromet"
-  "er_calibration_ok\030\001 \001(\010B\t\202\265\030\005false\0222\n\037is"
-  "_accelerometer_calibration_ok\030\002 \001(\010B\t\202\265\030"
-  "\005false\0221\n\036is_magnetometer_calibration_ok"
-  "\030\003 \001(\010B\t\202\265\030\005false\022\'\n\024is_local_position_o"
-  "k\030\005 \001(\010B\t\202\265\030\005false\022(\n\025is_global_position"
-  "_ok\030\006 \001(\010B\t\202\265\030\005false\022&\n\023is_home_position"
-  "_ok\030\007 \001(\010B\t\202\265\030\005false\022\035\n\nis_armable\030\010 \001(\010"
-  "B\t\202\265\030\005false\"|\n\010RcStatus\022%\n\022was_available"
-  "_once\030\001 \001(\010B\t\202\265\030\005false\022\037\n\014is_available\030\002"
-  " \001(\010B\t\202\265\030\005false\022(\n\027signal_strength_perce"
-  "nt\030\003 \001(\002B\007\202\265\030\003NaN\"N\n\nStatusText\0222\n\004type\030"
-  "\001 \001(\0162$.mavsdk.rpc.telemetry.StatusTextT"
-  "ype\022\014\n\004text\030\002 \001(\t\"\?\n\025ActuatorControlTarg"
-  "et\022\024\n\005group\030\001 \001(\005B\005\202\265\030\0010\022\020\n\010controls\030\002 \003"
-  "(\002\"\?\n\024ActuatorOutputStatus\022\025\n\006active\030\001 \001"
-  "(\rB\005\202\265\030\0010\022\020\n\010actuator\030\002 \003(\002\"\'\n\nCovarianc"
-  "e\022\031\n\021covariance_matrix\030\001 \003(\002\";\n\014Velocity"
-  "Body\022\r\n\005x_m_s\030\001 \001(\002\022\r\n\005y_m_s\030\002 \001(\002\022\r\n\005z_"
-  "m_s\030\003 \001(\002\"5\n\014PositionBody\022\013\n\003x_m\030\001 \001(\002\022\013"
-  "\n\003y_m\030\002 \001(\002\022\013\n\003z_m\030\003 \001(\002\"\354\004\n\010Odometry\022\021\n"
-  "\ttime_usec\030\001 \001(\004\0229\n\010frame_id\030\002 \001(\0162\'.mav"
-  "sdk.rpc.telemetry.Odometry.MavFrame\022\?\n\016c"
-  "hild_frame_id\030\003 \001(\0162\'.mavsdk.rpc.telemet"
-  "ry.Odometry.MavFrame\0229\n\rposition_body\030\004 "
-  "\001(\0132\".mavsdk.rpc.telemetry.PositionBody\022"
-  "+\n\001q\030\005 \001(\0132 .mavsdk.rpc.telemetry.Quater"
-  "nion\0229\n\rvelocity_body\030\006 \001(\0132\".mavsdk.rpc"
-  ".telemetry.VelocityBody\022H\n\025angular_veloc"
-  "ity_body\030\007 \001(\0132).mavsdk.rpc.telemetry.An"
-  "gularVelocityBody\0229\n\017pose_covariance\030\010 \001"
-  "(\0132 .mavsdk.rpc.telemetry.Covariance\022=\n\023"
-  "velocity_covariance\030\t \001(\0132 .mavsdk.rpc.t"
-  "elemetry.Covariance\"j\n\010MavFrame\022\023\n\017MAV_F"
-  "RAME_UNDEF\020\000\022\026\n\022MAV_FRAME_BODY_NED\020\010\022\030\n\024"
-  "MAV_FRAME_VISION_NED\020\020\022\027\n\023MAV_FRAME_ESTI"
-  "M_NED\020\022\"\177\n\016DistanceSensor\022#\n\022minimum_dis"
-  "tance_m\030\001 \001(\002B\007\202\265\030\003NaN\022#\n\022maximum_distan"
-  "ce_m\030\002 \001(\002B\007\202\265\030\003NaN\022#\n\022current_distance_"
-  "m\030\003 \001(\002B\007\202\265\030\003NaN\"\260\001\n\016ScaledPressure\022\024\n\014t"
-  "imestamp_us\030\001 \001(\004\022\035\n\025absolute_pressure_h"
-  "pa\030\002 \001(\002\022!\n\031differential_pressure_hpa\030\003 "
-  "\001(\002\022\027\n\017temperature_deg\030\004 \001(\002\022-\n%differen"
-  "tial_pressure_temperature_deg\030\005 \001(\002\"Y\n\013P"
-  "ositionNed\022\030\n\007north_m\030\001 \001(\002B\007\202\265\030\003NaN\022\027\n\006"
-  "east_m\030\002 \001(\002B\007\202\265\030\003NaN\022\027\n\006down_m\030\003 \001(\002B\007\202"
-  "\265\030\003NaN\"D\n\013VelocityNed\022\021\n\tnorth_m_s\030\001 \001(\002"
-  "\022\020\n\010east_m_s\030\002 \001(\002\022\020\n\010down_m_s\030\003 \001(\002\"\177\n\023"
-  "PositionVelocityNed\0223\n\010position\030\001 \001(\0132!."
-  "mavsdk.rpc.telemetry.PositionNed\0223\n\010velo"
-  "city\030\002 \001(\0132!.mavsdk.rpc.telemetry.Veloci"
-  "tyNed\"r\n\013GroundTruth\022\035\n\014latitude_deg\030\001 \001"
-  "(\001B\007\202\265\030\003NaN\022\036\n\rlongitude_deg\030\002 \001(\001B\007\202\265\030\003"
-  "NaN\022$\n\023absolute_altitude_m\030\003 \001(\002B\007\202\265\030\003Na"
-  "N\"x\n\020FixedwingMetrics\022\035\n\014airspeed_m_s\030\001 "
-  "\001(\002B\007\202\265\030\003NaN\022$\n\023throttle_percentage\030\002 \001("
-  "\002B\007\202\265\030\003NaN\022\037\n\016climb_rate_m_s\030\003 \001(\002B\007\202\265\030\003"
-  "NaN\"i\n\017AccelerationFrd\022\035\n\014forward_m_s2\030\001"
-  " \001(\002B\007\202\265\030\003NaN\022\033\n\nright_m_s2\030\002 \001(\002B\007\202\265\030\003N"
-  "aN\022\032\n\tdown_m_s2\030\003 \001(\002B\007\202\265\030\003NaN\"o\n\022Angula"
-  "rVelocityFrd\022\036\n\rforward_rad_s\030\001 \001(\002B\007\202\265\030"
-  "\003NaN\022\034\n\013right_rad_s\030\002 \001(\002B\007\202\265\030\003NaN\022\033\n\ndo"
-  "wn_rad_s\030\003 \001(\002B\007\202\265\030\003NaN\"m\n\020MagneticField"
-  "Frd\022\036\n\rforward_gauss\030\001 \001(\002B\007\202\265\030\003NaN\022\034\n\013r"
-  "ight_gauss\030\002 \001(\002B\007\202\265\030\003NaN\022\033\n\ndown_gauss\030"
-  "\003 \001(\002B\007\202\265\030\003NaN\"\213\002\n\003Imu\022\?\n\020acceleration_f"
-  "rd\030\001 \001(\0132%.mavsdk.rpc.telemetry.Accelera"
-  "tionFrd\022F\n\024angular_velocity_frd\030\002 \001(\0132(."
-  "mavsdk.rpc.telemetry.AngularVelocityFrd\022"
-  "B\n\022magnetic_field_frd\030\003 \001(\0132&.mavsdk.rpc"
-  ".telemetry.MagneticFieldFrd\022!\n\020temperatu"
-  "re_degc\030\004 \001(\002B\007\202\265\030\003NaN\022\024\n\014timestamp_us\030\005"
-  " \001(\004\"m\n\017GpsGlobalOrigin\022\035\n\014latitude_deg\030"
-  "\001 \001(\001B\007\202\265\030\003NaN\022\036\n\rlongitude_deg\030\002 \001(\001B\007\202"
-  "\265\030\003NaN\022\033\n\naltitude_m\030\003 \001(\002B\007\202\265\030\003NaN\"\241\002\n\017"
-  "TelemetryResult\022<\n\006result\030\001 \001(\0162,.mavsdk"
-  ".rpc.telemetry.TelemetryResult.Result\022\022\n"
-  "\nresult_str\030\002 \001(\t\"\273\001\n\006Result\022\022\n\016RESULT_U"
-  "NKNOWN\020\000\022\022\n\016RESULT_SUCCESS\020\001\022\024\n\020RESULT_N"
-  "O_SYSTEM\020\002\022\033\n\027RESULT_CONNECTION_ERROR\020\003\022"
-  "\017\n\013RESULT_BUSY\020\004\022\031\n\025RESULT_COMMAND_DENIE"
-  "D\020\005\022\022\n\016RESULT_TIMEOUT\020\006\022\026\n\022RESULT_UNSUPP"
-  "ORTED\020\007*\244\001\n\007FixType\022\023\n\017FIX_TYPE_NO_GPS\020\000"
-  "\022\023\n\017FIX_TYPE_NO_FIX\020\001\022\023\n\017FIX_TYPE_FIX_2D"
-  "\020\002\022\023\n\017FIX_TYPE_FIX_3D\020\003\022\025\n\021FIX_TYPE_FIX_"
-  "DGPS\020\004\022\026\n\022FIX_TYPE_RTK_FLOAT\020\005\022\026\n\022FIX_TY"
-  "PE_RTK_FIXED\020\006*\206\003\n\nFlightMode\022\027\n\023FLIGHT_"
-  "MODE_UNKNOWN\020\000\022\025\n\021FLIGHT_MODE_READY\020\001\022\027\n"
-  "\023FLIGHT_MODE_TAKEOFF\020\002\022\024\n\020FLIGHT_MODE_HO"
-  "LD\020\003\022\027\n\023FLIGHT_MODE_MISSION\020\004\022 \n\034FLIGHT_"
-  "MODE_RETURN_TO_LAUNCH\020\005\022\024\n\020FLIGHT_MODE_L"
-  "AND\020\006\022\030\n\024FLIGHT_MODE_OFFBOARD\020\007\022\031\n\025FLIGH"
-  "T_MODE_FOLLOW_ME\020\010\022\026\n\022FLIGHT_MODE_MANUAL"
-  "\020\t\022\026\n\022FLIGHT_MODE_ALTCTL\020\n\022\026\n\022FLIGHT_MOD"
-  "E_POSCTL\020\013\022\024\n\020FLIGHT_MODE_ACRO\020\014\022\032\n\026FLIG"
-  "HT_MODE_STABILIZED\020\r\022\031\n\025FLIGHT_MODE_RATT"
-  "ITUDE\020\016*\371\001\n\016StatusTextType\022\032\n\026STATUS_TEX"
-  "T_TYPE_DEBUG\020\000\022\031\n\025STATUS_TEXT_TYPE_INFO\020"
-  "\001\022\033\n\027STATUS_TEXT_TYPE_NOTICE\020\002\022\034\n\030STATUS"
-  "_TEXT_TYPE_WARNING\020\003\022\032\n\026STATUS_TEXT_TYPE"
-  "_ERROR\020\004\022\035\n\031STATUS_TEXT_TYPE_CRITICAL\020\005\022"
-  "\032\n\026STATUS_TEXT_TYPE_ALERT\020\006\022\036\n\032STATUS_TE"
-  "XT_TYPE_EMERGENCY\020\007*\223\001\n\013LandedState\022\030\n\024L"
-  "ANDED_STATE_UNKNOWN\020\000\022\032\n\026LANDED_STATE_ON"
-  "_GROUND\020\001\022\027\n\023LANDED_STATE_IN_AIR\020\002\022\033\n\027LA"
-  "NDED_STATE_TAKING_OFF\020\003\022\030\n\024LANDED_STATE_"
-  "LANDING\020\004*\215\001\n\tVtolState\022\030\n\024VTOL_STATE_UN"
-  "DEFINED\020\000\022\037\n\033VTOL_STATE_TRANSITION_TO_FW"
-  "\020\001\022\037\n\033VTOL_STATE_TRANSITION_TO_MC\020\002\022\021\n\rV"
-  "TOL_STATE_MC\020\003\022\021\n\rVTOL_STATE_FW\020\0042\3765\n\020Te"
-  "lemetryService\022o\n\021SubscribePosition\022..ma"
-  "vsdk.rpc.telemetry.SubscribePositionRequ"
-  "est\032&.mavsdk.rpc.telemetry.PositionRespo"
-  "nse\"\0000\001\022c\n\rSubscribeHome\022*.mavsdk.rpc.te"
-  "lemetry.SubscribeHomeRequest\032\".mavsdk.rp"
-  "c.telemetry.HomeResponse\"\0000\001\022f\n\016Subscrib"
-  "eInAir\022+.mavsdk.rpc.telemetry.SubscribeI"
-  "nAirRequest\032#.mavsdk.rpc.telemetry.InAir"
-  "Response\"\0000\001\022x\n\024SubscribeLandedState\0221.m"
-  "avsdk.rpc.telemetry.SubscribeLandedState"
-  "Request\032).mavsdk.rpc.telemetry.LandedSta"
-  "teResponse\"\0000\001\022f\n\016SubscribeArmed\022+.mavsd"
-  "k.rpc.telemetry.SubscribeArmedRequest\032#."
-  "mavsdk.rpc.telemetry.ArmedResponse\"\0000\001\022r"
-  "\n\022SubscribeVtolState\022/.mavsdk.rpc.teleme"
-  "try.SubscribeVtolStateRequest\032\'.mavsdk.r"
-  "pc.telemetry.VtolStateResponse\"\0000\001\022\215\001\n\033S"
-  "ubscribeAttitudeQuaternion\0228.mavsdk.rpc."
-  "telemetry.SubscribeAttitudeQuaternionReq"
-  "uest\0320.mavsdk.rpc.telemetry.AttitudeQuat"
-  "ernionResponse\"\0000\001\022~\n\026SubscribeAttitudeE"
-  "uler\0223.mavsdk.rpc.telemetry.SubscribeAtt"
-  "itudeEulerRequest\032+.mavsdk.rpc.telemetry"
-  ".AttitudeEulerResponse\"\0000\001\022\250\001\n$Subscribe"
-  "AttitudeAngularVelocityBody\022A.mavsdk.rpc"
-  ".telemetry.SubscribeAttitudeAngularVeloc"
-  "ityBodyRequest\0329.mavsdk.rpc.telemetry.At"
-  "titudeAngularVelocityBodyResponse\"\0000\001\022\237\001"
-  "\n!SubscribeCameraAttitudeQuaternion\022>.ma"
-  "vsdk.rpc.telemetry.SubscribeCameraAttitu"
-  "deQuaternionRequest\0326.mavsdk.rpc.telemet"
-  "ry.CameraAttitudeQuaternionResponse\"\0000\001\022"
-  "\220\001\n\034SubscribeCameraAttitudeEuler\0229.mavsd"
-  "k.rpc.telemetry.SubscribeCameraAttitudeE"
-  "ulerRequest\0321.mavsdk.rpc.telemetry.Camer"
-  "aAttitudeEulerResponse\"\0000\001\022x\n\024SubscribeV"
-  "elocityNed\0221.mavsdk.rpc.telemetry.Subscr"
-  "ibeVelocityNedRequest\032).mavsdk.rpc.telem"
-  "etry.VelocityNedResponse\"\0000\001\022l\n\020Subscrib"
-  "eGpsInfo\022-.mavsdk.rpc.telemetry.Subscrib"
-  "eGpsInfoRequest\032%.mavsdk.rpc.telemetry.G"
-  "psInfoResponse\"\0000\001\022i\n\017SubscribeRawGps\022,."
-  "mavsdk.rpc.telemetry.SubscribeRawGpsRequ"
-  "est\032$.mavsdk.rpc.telemetry.RawGpsRespons"
-  "e\"\0000\001\022l\n\020SubscribeBattery\022-.mavsdk.rpc.t"
-  "elemetry.SubscribeBatteryRequest\032%.mavsd"
-  "k.rpc.telemetry.BatteryResponse\"\0000\001\022u\n\023S"
-  "ubscribeFlightMode\0220.mavsdk.rpc.telemetr"
-  "y.SubscribeFlightModeRequest\032(.mavsdk.rp"
-  "c.telemetry.FlightModeResponse\"\0000\001\022i\n\017Su"
-  "bscribeHealth\022,.mavsdk.rpc.telemetry.Sub"
-  "scribeHealthRequest\032$.mavsdk.rpc.telemet"
-  "ry.HealthResponse\"\0000\001\022o\n\021SubscribeRcStat"
-  "us\022..mavsdk.rpc.telemetry.SubscribeRcSta"
-  "tusRequest\032&.mavsdk.rpc.telemetry.RcStat"
-  "usResponse\"\0000\001\022u\n\023SubscribeStatusText\0220."
-  "mavsdk.rpc.telemetry.SubscribeStatusText"
-  "Request\032(.mavsdk.rpc.telemetry.StatusTex"
-  "tResponse\"\0000\001\022\226\001\n\036SubscribeActuatorContr"
-  "olTarget\022;.mavsdk.rpc.telemetry.Subscrib"
-  "eActuatorControlTargetRequest\0323.mavsdk.r"
-  "pc.telemetry.ActuatorControlTargetRespon"
-  "se\"\0000\001\022\223\001\n\035SubscribeActuatorOutputStatus"
-  "\022:.mavsdk.rpc.telemetry.SubscribeActuato"
-  "rOutputStatusRequest\0322.mavsdk.rpc.teleme"
-  "try.ActuatorOutputStatusResponse\"\0000\001\022o\n\021"
-  "SubscribeOdometry\022..mavsdk.rpc.telemetry"
-  ".SubscribeOdometryRequest\032&.mavsdk.rpc.t"
-  "elemetry.OdometryResponse\"\0000\001\022\220\001\n\034Subscr"
-  "ibePositionVelocityNed\0229.mavsdk.rpc.tele"
-  "metry.SubscribePositionVelocityNedReques"
-  "t\0321.mavsdk.rpc.telemetry.PositionVelocit"
-  "yNedResponse\"\0000\001\022x\n\024SubscribeGroundTruth"
-  "\0221.mavsdk.rpc.telemetry.SubscribeGroundT"
-  "ruthRequest\032).mavsdk.rpc.telemetry.Groun"
-  "dTruthResponse\"\0000\001\022\207\001\n\031SubscribeFixedwin"
-  "gMetrics\0226.mavsdk.rpc.telemetry.Subscrib"
-  "eFixedwingMetricsRequest\032..mavsdk.rpc.te"
-  "lemetry.FixedwingMetricsResponse\"\0000\001\022`\n\014"
-  "SubscribeImu\022).mavsdk.rpc.telemetry.Subs"
-  "cribeImuRequest\032!.mavsdk.rpc.telemetry.I"
-  "muResponse\"\0000\001\022r\n\022SubscribeScaledImu\022/.m"
-  "avsdk.rpc.telemetry.SubscribeScaledImuRe"
-  "quest\032\'.mavsdk.rpc.telemetry.ScaledImuRe"
-  "sponse\"\0000\001\022i\n\017SubscribeRawImu\022,.mavsdk.r"
-  "pc.telemetry.SubscribeRawImuRequest\032$.ma"
-  "vsdk.rpc.telemetry.RawImuResponse\"\0000\001\022x\n"
-  "\024SubscribeHealthAllOk\0221.mavsdk.rpc.telem"
-  "etry.SubscribeHealthAllOkRequest\032).mavsd"
-  "k.rpc.telemetry.HealthAllOkResponse\"\0000\001\022"
-  "~\n\026SubscribeUnixEpochTime\0223.mavsdk.rpc.t"
-  "elemetry.SubscribeUnixEpochTimeRequest\032+"
-  ".mavsdk.rpc.telemetry.UnixEpochTimeRespo"
-  "nse\"\0000\001\022\201\001\n\027SubscribeDistanceSensor\0224.ma"
-  "vsdk.rpc.telemetry.SubscribeDistanceSens"
-  "orRequest\032,.mavsdk.rpc.telemetry.Distanc"
-  "eSensorResponse\"\0000\001\022\201\001\n\027SubscribeScaledP"
-  "ressure\0224.mavsdk.rpc.telemetry.Subscribe"
-  "ScaledPressureRequest\032,.mavsdk.rpc.telem"
-  "etry.ScaledPressureResponse\"\0000\001\022l\n\020Subsc"
-  "ribeHeading\022-.mavsdk.rpc.telemetry.Subsc"
-  "ribeHeadingRequest\032%.mavsdk.rpc.telemetr"
-  "y.HeadingResponse\"\0000\001\022p\n\017SetRatePosition"
-  "\022,.mavsdk.rpc.telemetry.SetRatePositionR"
-  "equest\032-.mavsdk.rpc.telemetry.SetRatePos"
-  "itionResponse\"\000\022d\n\013SetRateHome\022(.mavsdk."
-  "rpc.telemetry.SetRateHomeRequest\032).mavsd"
-  "k.rpc.telemetry.SetRateHomeResponse\"\000\022g\n"
-  "\014SetRateInAir\022).mavsdk.rpc.telemetry.Set"
-  "RateInAirRequest\032*.mavsdk.rpc.telemetry."
-  "SetRateInAirResponse\"\000\022y\n\022SetRateLandedS"
-  "tate\022/.mavsdk.rpc.telemetry.SetRateLande"
-  "dStateRequest\0320.mavsdk.rpc.telemetry.Set"
-  "RateLandedStateResponse\"\000\022s\n\020SetRateVtol"
-  "State\022-.mavsdk.rpc.telemetry.SetRateVtol"
-  "StateRequest\032..mavsdk.rpc.telemetry.SetR"
-  "ateVtolStateResponse\"\000\022p\n\017SetRateAttitud"
-  "e\022,.mavsdk.rpc.telemetry.SetRateAttitude"
-  "Request\032-.mavsdk.rpc.telemetry.SetRateAt"
-  "titudeResponse\"\000\022\202\001\n\025SetRateCameraAttitu"
-  "de\0222.mavsdk.rpc.telemetry.SetRateCameraA"
-  "ttitudeRequest\0323.mavsdk.rpc.telemetry.Se"
-  "tRateCameraAttitudeResponse\"\000\022y\n\022SetRate"
-  "VelocityNed\022/.mavsdk.rpc.telemetry.SetRa"
-  "teVelocityNedRequest\0320.mavsdk.rpc.teleme"
-  "try.SetRateVelocityNedResponse\"\000\022m\n\016SetR"
-  "ateGpsInfo\022+.mavsdk.rpc.telemetry.SetRat"
-  "eGpsInfoRequest\032,.mavsdk.rpc.telemetry.S"
-  "etRateGpsInfoResponse\"\000\022m\n\016SetRateBatter"
-  "y\022+.mavsdk.rpc.telemetry.SetRateBatteryR"
-  "equest\032,.mavsdk.rpc.telemetry.SetRateBat"
-  "teryResponse\"\000\022p\n\017SetRateRcStatus\022,.mavs"
-  "dk.rpc.telemetry.SetRateRcStatusRequest\032"
-  "-.mavsdk.rpc.telemetry.SetRateRcStatusRe"
-  "sponse\"\000\022\227\001\n\034SetRateActuatorControlTarge"
-  "t\0229.mavsdk.rpc.telemetry.SetRateActuator"
-  "ControlTargetRequest\032:.mavsdk.rpc.teleme"
-  "try.SetRateActuatorControlTargetResponse"
-  "\"\000\022\224\001\n\033SetRateActuatorOutputStatus\0228.mav"
+  "lt\";\n\026SetRateOdometryRequest\022\020\n\010drone_id"
+  "\030\001 \001(\005\022\017\n\007rate_hz\030\002 \001(\001\"Z\n\027SetRateOdomet"
+  "ryResponse\022\?\n\020telemetry_result\030\001 \001(\0132%.m"
+  "avsdk.rpc.telemetry.TelemetryResult\"F\n!S"
+  "etRatePositionVelocityNedRequest\022\020\n\010dron"
+  "e_id\030\001 \001(\005\022\017\n\007rate_hz\030\002 \001(\001\"e\n\"SetRatePo"
+  "sitionVelocityNedResponse\022\?\n\020telemetry_r"
+  "esult\030\001 \001(\0132%.mavsdk.rpc.telemetry.Telem"
+  "etryResult\">\n\031SetRateGroundTruthRequest\022"
+  "\020\n\010drone_id\030\001 \001(\005\022\017\n\007rate_hz\030\002 \001(\001\"]\n\032Se"
+  "tRateGroundTruthResponse\022\?\n\020telemetry_re"
+  "sult\030\001 \001(\0132%.mavsdk.rpc.telemetry.Teleme"
+  "tryResult\"C\n\036SetRateFixedwingMetricsRequ"
+  "est\022\020\n\010drone_id\030\001 \001(\005\022\017\n\007rate_hz\030\002 \001(\001\"b"
+  "\n\037SetRateFixedwingMetricsResponse\022\?\n\020tel"
+  "emetry_result\030\001 \001(\0132%.mavsdk.rpc.telemet"
+  "ry.TelemetryResult\"6\n\021SetRateImuRequest\022"
+  "\020\n\010drone_id\030\001 \001(\005\022\017\n\007rate_hz\030\002 \001(\001\"U\n\022Se"
+  "tRateImuResponse\022\?\n\020telemetry_result\030\001 \001"
+  "(\0132%.mavsdk.rpc.telemetry.TelemetryResul"
+  "t\"<\n\027SetRateScaledImuRequest\022\020\n\010drone_id"
+  "\030\001 \001(\005\022\017\n\007rate_hz\030\002 \001(\001\"[\n\030SetRateScaled"
+  "ImuResponse\022\?\n\020telemetry_result\030\001 \001(\0132%."
+  "mavsdk.rpc.telemetry.TelemetryResult\"9\n\024"
+  "SetRateRawImuRequest\022\020\n\010drone_id\030\001 \001(\005\022\017"
+  "\n\007rate_hz\030\002 \001(\001\"X\n\025SetRateRawImuResponse"
+  "\022\?\n\020telemetry_result\030\001 \001(\0132%.mavsdk.rpc."
+  "telemetry.TelemetryResult\"@\n\033SetRateUnix"
+  "EpochTimeRequest\022\020\n\010drone_id\030\001 \001(\005\022\017\n\007ra"
+  "te_hz\030\002 \001(\001\"_\n\034SetRateUnixEpochTimeRespo"
+  "nse\022\?\n\020telemetry_result\030\001 \001(\0132%.mavsdk.r"
+  "pc.telemetry.TelemetryResult\"A\n\034SetRateD"
+  "istanceSensorRequest\022\020\n\010drone_id\030\001 \001(\005\022\017"
+  "\n\007rate_hz\030\002 \001(\001\"`\n\035SetRateDistanceSensor"
+  "Response\022\?\n\020telemetry_result\030\001 \001(\0132%.mav"
+  "sdk.rpc.telemetry.TelemetryResult\"-\n\031Get"
+  "GpsGlobalOriginRequest\022\020\n\010drone_id\030\001 \001(\005"
+  "\"\237\001\n\032GetGpsGlobalOriginResponse\022\?\n\020telem"
+  "etry_result\030\001 \001(\0132%.mavsdk.rpc.telemetry"
+  ".TelemetryResult\022@\n\021gps_global_origin\030\002 "
+  "\001(\0132%.mavsdk.rpc.telemetry.GpsGlobalOrig"
+  "in\"\225\001\n\010Position\022\035\n\014latitude_deg\030\001 \001(\001B\007\202"
+  "\265\030\003NaN\022\036\n\rlongitude_deg\030\002 \001(\001B\007\202\265\030\003NaN\022$"
+  "\n\023absolute_altitude_m\030\003 \001(\002B\007\202\265\030\003NaN\022$\n\023"
+  "relative_altitude_m\030\004 \001(\002B\007\202\265\030\003NaN\"\'\n\007He"
+  "ading\022\034\n\013heading_deg\030\001 \001(\001B\007\202\265\030\003NaN\"r\n\nQ"
+  "uaternion\022\022\n\001w\030\001 \001(\002B\007\202\265\030\003NaN\022\022\n\001x\030\002 \001(\002"
+  "B\007\202\265\030\003NaN\022\022\n\001y\030\003 \001(\002B\007\202\265\030\003NaN\022\022\n\001z\030\004 \001(\002"
+  "B\007\202\265\030\003NaN\022\024\n\014timestamp_us\030\005 \001(\004\"s\n\nEuler"
+  "Angle\022\031\n\010roll_deg\030\001 \001(\002B\007\202\265\030\003NaN\022\032\n\tpitc"
+  "h_deg\030\002 \001(\002B\007\202\265\030\003NaN\022\030\n\007yaw_deg\030\003 \001(\002B\007\202"
+  "\265\030\003NaN\022\024\n\014timestamp_us\030\004 \001(\004\"l\n\023AngularV"
+  "elocityBody\022\033\n\nroll_rad_s\030\001 \001(\002B\007\202\265\030\003NaN"
+  "\022\034\n\013pitch_rad_s\030\002 \001(\002B\007\202\265\030\003NaN\022\032\n\tyaw_ra"
+  "d_s\030\003 \001(\002B\007\202\265\030\003NaN\"Y\n\007GpsInfo\022\035\n\016num_sat"
+  "ellites\030\001 \001(\005B\005\202\265\030\0010\022/\n\010fix_type\030\002 \001(\0162\035"
+  ".mavsdk.rpc.telemetry.FixType\"\337\002\n\006RawGps"
+  "\022\024\n\014timestamp_us\030\001 \001(\004\022\024\n\014latitude_deg\030\002"
+  " \001(\001\022\025\n\rlongitude_deg\030\003 \001(\001\022\033\n\023absolute_"
+  "altitude_m\030\004 \001(\002\022\014\n\004hdop\030\005 \001(\002\022\014\n\004vdop\030\006"
+  " \001(\002\022\024\n\014velocity_m_s\030\007 \001(\002\022\017\n\007cog_deg\030\010 "
+  "\001(\002\022\034\n\024altitude_ellipsoid_m\030\t \001(\002\022 \n\030hor"
+  "izontal_uncertainty_m\030\n \001(\002\022\036\n\026vertical_"
+  "uncertainty_m\030\013 \001(\002\022 \n\030velocity_uncertai"
+  "nty_m_s\030\014 \001(\002\022\037\n\027heading_uncertainty_deg"
+  "\030\r \001(\002\022\017\n\007yaw_deg\030\016 \001(\002\"\\\n\007Battery\022\021\n\002id"
+  "\030\003 \001(\rB\005\202\265\030\0010\022\032\n\tvoltage_v\030\001 \001(\002B\007\202\265\030\003Na"
+  "N\022\"\n\021remaining_percent\030\002 \001(\002B\007\202\265\030\003NaN\"\271\002"
+  "\n\006Health\022.\n\033is_gyrometer_calibration_ok\030"
+  "\001 \001(\010B\t\202\265\030\005false\0222\n\037is_accelerometer_cal"
+  "ibration_ok\030\002 \001(\010B\t\202\265\030\005false\0221\n\036is_magne"
+  "tometer_calibration_ok\030\003 \001(\010B\t\202\265\030\005false\022"
+  "\'\n\024is_local_position_ok\030\005 \001(\010B\t\202\265\030\005false"
+  "\022(\n\025is_global_position_ok\030\006 \001(\010B\t\202\265\030\005fal"
+  "se\022&\n\023is_home_position_ok\030\007 \001(\010B\t\202\265\030\005fal"
+  "se\022\035\n\nis_armable\030\010 \001(\010B\t\202\265\030\005false\"|\n\010RcS"
+  "tatus\022%\n\022was_available_once\030\001 \001(\010B\t\202\265\030\005f"
+  "alse\022\037\n\014is_available\030\002 \001(\010B\t\202\265\030\005false\022(\n"
+  "\027signal_strength_percent\030\003 \001(\002B\007\202\265\030\003NaN\""
+  "N\n\nStatusText\0222\n\004type\030\001 \001(\0162$.mavsdk.rpc"
+  ".telemetry.StatusTextType\022\014\n\004text\030\002 \001(\t\""
+  "\?\n\025ActuatorControlTarget\022\024\n\005group\030\001 \001(\005B"
+  "\005\202\265\030\0010\022\020\n\010controls\030\002 \003(\002\"\?\n\024ActuatorOutp"
+  "utStatus\022\025\n\006active\030\001 \001(\rB\005\202\265\030\0010\022\020\n\010actua"
+  "tor\030\002 \003(\002\"\'\n\nCovariance\022\031\n\021covariance_ma"
+  "trix\030\001 \003(\002\";\n\014VelocityBody\022\r\n\005x_m_s\030\001 \001("
+  "\002\022\r\n\005y_m_s\030\002 \001(\002\022\r\n\005z_m_s\030\003 \001(\002\"5\n\014Posit"
+  "ionBody\022\013\n\003x_m\030\001 \001(\002\022\013\n\003y_m\030\002 \001(\002\022\013\n\003z_m"
+  "\030\003 \001(\002\"\354\004\n\010Odometry\022\021\n\ttime_usec\030\001 \001(\004\0229"
+  "\n\010frame_id\030\002 \001(\0162\'.mavsdk.rpc.telemetry."
+  "Odometry.MavFrame\022\?\n\016child_frame_id\030\003 \001("
+  "\0162\'.mavsdk.rpc.telemetry.Odometry.MavFra"
+  "me\0229\n\rposition_body\030\004 \001(\0132\".mavsdk.rpc.t"
+  "elemetry.PositionBody\022+\n\001q\030\005 \001(\0132 .mavsd"
+  "k.rpc.telemetry.Quaternion\0229\n\rvelocity_b"
+  "ody\030\006 \001(\0132\".mavsdk.rpc.telemetry.Velocit"
+  "yBody\022H\n\025angular_velocity_body\030\007 \001(\0132).m"
+  "avsdk.rpc.telemetry.AngularVelocityBody\022"
+  "9\n\017pose_covariance\030\010 \001(\0132 .mavsdk.rpc.te"
+  "lemetry.Covariance\022=\n\023velocity_covarianc"
+  "e\030\t \001(\0132 .mavsdk.rpc.telemetry.Covarianc"
+  "e\"j\n\010MavFrame\022\023\n\017MAV_FRAME_UNDEF\020\000\022\026\n\022MA"
+  "V_FRAME_BODY_NED\020\010\022\030\n\024MAV_FRAME_VISION_N"
+  "ED\020\020\022\027\n\023MAV_FRAME_ESTIM_NED\020\022\"\177\n\016Distanc"
+  "eSensor\022#\n\022minimum_distance_m\030\001 \001(\002B\007\202\265\030"
+  "\003NaN\022#\n\022maximum_distance_m\030\002 \001(\002B\007\202\265\030\003Na"
+  "N\022#\n\022current_distance_m\030\003 \001(\002B\007\202\265\030\003NaN\"\260"
+  "\001\n\016ScaledPressure\022\024\n\014timestamp_us\030\001 \001(\004\022"
+  "\035\n\025absolute_pressure_hpa\030\002 \001(\002\022!\n\031differ"
+  "ential_pressure_hpa\030\003 \001(\002\022\027\n\017temperature"
+  "_deg\030\004 \001(\002\022-\n%differential_pressure_temp"
+  "erature_deg\030\005 \001(\002\"Y\n\013PositionNed\022\030\n\007nort"
+  "h_m\030\001 \001(\002B\007\202\265\030\003NaN\022\027\n\006east_m\030\002 \001(\002B\007\202\265\030\003"
+  "NaN\022\027\n\006down_m\030\003 \001(\002B\007\202\265\030\003NaN\"D\n\013Velocity"
+  "Ned\022\021\n\tnorth_m_s\030\001 \001(\002\022\020\n\010east_m_s\030\002 \001(\002"
+  "\022\020\n\010down_m_s\030\003 \001(\002\"\177\n\023PositionVelocityNe"
+  "d\0223\n\010position\030\001 \001(\0132!.mavsdk.rpc.telemet"
+  "ry.PositionNed\0223\n\010velocity\030\002 \001(\0132!.mavsd"
+  "k.rpc.telemetry.VelocityNed\"r\n\013GroundTru"
+  "th\022\035\n\014latitude_deg\030\001 \001(\001B\007\202\265\030\003NaN\022\036\n\rlon"
+  "gitude_deg\030\002 \001(\001B\007\202\265\030\003NaN\022$\n\023absolute_al"
+  "titude_m\030\003 \001(\002B\007\202\265\030\003NaN\"x\n\020FixedwingMetr"
+  "ics\022\035\n\014airspeed_m_s\030\001 \001(\002B\007\202\265\030\003NaN\022$\n\023th"
+  "rottle_percentage\030\002 \001(\002B\007\202\265\030\003NaN\022\037\n\016clim"
+  "b_rate_m_s\030\003 \001(\002B\007\202\265\030\003NaN\"i\n\017Acceleratio"
+  "nFrd\022\035\n\014forward_m_s2\030\001 \001(\002B\007\202\265\030\003NaN\022\033\n\nr"
+  "ight_m_s2\030\002 \001(\002B\007\202\265\030\003NaN\022\032\n\tdown_m_s2\030\003 "
+  "\001(\002B\007\202\265\030\003NaN\"o\n\022AngularVelocityFrd\022\036\n\rfo"
+  "rward_rad_s\030\001 \001(\002B\007\202\265\030\003NaN\022\034\n\013right_rad_"
+  "s\030\002 \001(\002B\007\202\265\030\003NaN\022\033\n\ndown_rad_s\030\003 \001(\002B\007\202\265"
+  "\030\003NaN\"m\n\020MagneticFieldFrd\022\036\n\rforward_gau"
+  "ss\030\001 \001(\002B\007\202\265\030\003NaN\022\034\n\013right_gauss\030\002 \001(\002B\007"
+  "\202\265\030\003NaN\022\033\n\ndown_gauss\030\003 \001(\002B\007\202\265\030\003NaN\"\213\002\n"
+  "\003Imu\022\?\n\020acceleration_frd\030\001 \001(\0132%.mavsdk."
+  "rpc.telemetry.AccelerationFrd\022F\n\024angular"
+  "_velocity_frd\030\002 \001(\0132(.mavsdk.rpc.telemet"
+  "ry.AngularVelocityFrd\022B\n\022magnetic_field_"
+  "frd\030\003 \001(\0132&.mavsdk.rpc.telemetry.Magneti"
+  "cFieldFrd\022!\n\020temperature_degc\030\004 \001(\002B\007\202\265\030"
+  "\003NaN\022\024\n\014timestamp_us\030\005 \001(\004\"m\n\017GpsGlobalO"
+  "rigin\022\035\n\014latitude_deg\030\001 \001(\001B\007\202\265\030\003NaN\022\036\n\r"
+  "longitude_deg\030\002 \001(\001B\007\202\265\030\003NaN\022\033\n\naltitude"
+  "_m\030\003 \001(\002B\007\202\265\030\003NaN\"\241\002\n\017TelemetryResult\022<\n"
+  "\006result\030\001 \001(\0162,.mavsdk.rpc.telemetry.Tel"
+  "emetryResult.Result\022\022\n\nresult_str\030\002 \001(\t\""
+  "\273\001\n\006Result\022\022\n\016RESULT_UNKNOWN\020\000\022\022\n\016RESULT"
+  "_SUCCESS\020\001\022\024\n\020RESULT_NO_SYSTEM\020\002\022\033\n\027RESU"
+  "LT_CONNECTION_ERROR\020\003\022\017\n\013RESULT_BUSY\020\004\022\031"
+  "\n\025RESULT_COMMAND_DENIED\020\005\022\022\n\016RESULT_TIME"
+  "OUT\020\006\022\026\n\022RESULT_UNSUPPORTED\020\007*\244\001\n\007FixTyp"
+  "e\022\023\n\017FIX_TYPE_NO_GPS\020\000\022\023\n\017FIX_TYPE_NO_FI"
+  "X\020\001\022\023\n\017FIX_TYPE_FIX_2D\020\002\022\023\n\017FIX_TYPE_FIX"
+  "_3D\020\003\022\025\n\021FIX_TYPE_FIX_DGPS\020\004\022\026\n\022FIX_TYPE"
+  "_RTK_FLOAT\020\005\022\026\n\022FIX_TYPE_RTK_FIXED\020\006*\206\003\n"
+  "\nFlightMode\022\027\n\023FLIGHT_MODE_UNKNOWN\020\000\022\025\n\021"
+  "FLIGHT_MODE_READY\020\001\022\027\n\023FLIGHT_MODE_TAKEO"
+  "FF\020\002\022\024\n\020FLIGHT_MODE_HOLD\020\003\022\027\n\023FLIGHT_MOD"
+  "E_MISSION\020\004\022 \n\034FLIGHT_MODE_RETURN_TO_LAU"
+  "NCH\020\005\022\024\n\020FLIGHT_MODE_LAND\020\006\022\030\n\024FLIGHT_MO"
+  "DE_OFFBOARD\020\007\022\031\n\025FLIGHT_MODE_FOLLOW_ME\020\010"
+  "\022\026\n\022FLIGHT_MODE_MANUAL\020\t\022\026\n\022FLIGHT_MODE_"
+  "ALTCTL\020\n\022\026\n\022FLIGHT_MODE_POSCTL\020\013\022\024\n\020FLIG"
+  "HT_MODE_ACRO\020\014\022\032\n\026FLIGHT_MODE_STABILIZED"
+  "\020\r\022\031\n\025FLIGHT_MODE_RATTITUDE\020\016*\371\001\n\016Status"
+  "TextType\022\032\n\026STATUS_TEXT_TYPE_DEBUG\020\000\022\031\n\025"
+  "STATUS_TEXT_TYPE_INFO\020\001\022\033\n\027STATUS_TEXT_T"
+  "YPE_NOTICE\020\002\022\034\n\030STATUS_TEXT_TYPE_WARNING"
+  "\020\003\022\032\n\026STATUS_TEXT_TYPE_ERROR\020\004\022\035\n\031STATUS"
+  "_TEXT_TYPE_CRITICAL\020\005\022\032\n\026STATUS_TEXT_TYP"
+  "E_ALERT\020\006\022\036\n\032STATUS_TEXT_TYPE_EMERGENCY\020"
+  "\007*\223\001\n\013LandedState\022\030\n\024LANDED_STATE_UNKNOW"
+  "N\020\000\022\032\n\026LANDED_STATE_ON_GROUND\020\001\022\027\n\023LANDE"
+  "D_STATE_IN_AIR\020\002\022\033\n\027LANDED_STATE_TAKING_"
+  "OFF\020\003\022\030\n\024LANDED_STATE_LANDING\020\004*\215\001\n\tVtol"
+  "State\022\030\n\024VTOL_STATE_UNDEFINED\020\000\022\037\n\033VTOL_"
+  "STATE_TRANSITION_TO_FW\020\001\022\037\n\033VTOL_STATE_T"
+  "RANSITION_TO_MC\020\002\022\021\n\rVTOL_STATE_MC\020\003\022\021\n\r"
+  "VTOL_STATE_FW\020\0042\3765\n\020TelemetryService\022o\n\021"
+  "SubscribePosition\022..mavsdk.rpc.telemetry"
+  ".SubscribePositionRequest\032&.mavsdk.rpc.t"
+  "elemetry.PositionResponse\"\0000\001\022c\n\rSubscri"
+  "beHome\022*.mavsdk.rpc.telemetry.SubscribeH"
+  "omeRequest\032\".mavsdk.rpc.telemetry.HomeRe"
+  "sponse\"\0000\001\022f\n\016SubscribeInAir\022+.mavsdk.rp"
+  "c.telemetry.SubscribeInAirRequest\032#.mavs"
+  "dk.rpc.telemetry.InAirResponse\"\0000\001\022x\n\024Su"
+  "bscribeLandedState\0221.mavsdk.rpc.telemetr"
+  "y.SubscribeLandedStateRequest\032).mavsdk.r"
+  "pc.telemetry.LandedStateResponse\"\0000\001\022f\n\016"
+  "SubscribeArmed\022+.mavsdk.rpc.telemetry.Su"
+  "bscribeArmedRequest\032#.mavsdk.rpc.telemet"
+  "ry.ArmedResponse\"\0000\001\022r\n\022SubscribeVtolSta"
+  "te\022/.mavsdk.rpc.telemetry.SubscribeVtolS"
+  "tateRequest\032\'.mavsdk.rpc.telemetry.VtolS"
+  "tateResponse\"\0000\001\022\215\001\n\033SubscribeAttitudeQu"
+  "aternion\0228.mavsdk.rpc.telemetry.Subscrib"
+  "eAttitudeQuaternionRequest\0320.mavsdk.rpc."
+  "telemetry.AttitudeQuaternionResponse\"\0000\001"
+  "\022~\n\026SubscribeAttitudeEuler\0223.mavsdk.rpc."
+  "telemetry.SubscribeAttitudeEulerRequest\032"
+  "+.mavsdk.rpc.telemetry.AttitudeEulerResp"
+  "onse\"\0000\001\022\250\001\n$SubscribeAttitudeAngularVel"
+  "ocityBody\022A.mavsdk.rpc.telemetry.Subscri"
+  "beAttitudeAngularVelocityBodyRequest\0329.m"
+  "avsdk.rpc.telemetry.AttitudeAngularVeloc"
+  "ityBodyResponse\"\0000\001\022\237\001\n!SubscribeCameraA"
+  "ttitudeQuaternion\022>.mavsdk.rpc.telemetry"
+  ".SubscribeCameraAttitudeQuaternionReques"
+  "t\0326.mavsdk.rpc.telemetry.CameraAttitudeQ"
+  "uaternionResponse\"\0000\001\022\220\001\n\034SubscribeCamer"
+  "aAttitudeEuler\0229.mavsdk.rpc.telemetry.Su"
+  "bscribeCameraAttitudeEulerRequest\0321.mavs"
+  "dk.rpc.telemetry.CameraAttitudeEulerResp"
+  "onse\"\0000\001\022x\n\024SubscribeVelocityNed\0221.mavsd"
+  "k.rpc.telemetry.SubscribeVelocityNedRequ"
+  "est\032).mavsdk.rpc.telemetry.VelocityNedRe"
+  "sponse\"\0000\001\022l\n\020SubscribeGpsInfo\022-.mavsdk."
+  "rpc.telemetry.SubscribeGpsInfoRequest\032%."
+  "mavsdk.rpc.telemetry.GpsInfoResponse\"\0000\001"
+  "\022i\n\017SubscribeRawGps\022,.mavsdk.rpc.telemet"
+  "ry.SubscribeRawGpsRequest\032$.mavsdk.rpc.t"
+  "elemetry.RawGpsResponse\"\0000\001\022l\n\020Subscribe"
+  "Battery\022-.mavsdk.rpc.telemetry.Subscribe"
+  "BatteryRequest\032%.mavsdk.rpc.telemetry.Ba"
+  "tteryResponse\"\0000\001\022u\n\023SubscribeFlightMode"
+  "\0220.mavsdk.rpc.telemetry.SubscribeFlightM"
+  "odeRequest\032(.mavsdk.rpc.telemetry.Flight"
+  "ModeResponse\"\0000\001\022i\n\017SubscribeHealth\022,.ma"
+  "vsdk.rpc.telemetry.SubscribeHealthReques"
+  "t\032$.mavsdk.rpc.telemetry.HealthResponse\""
+  "\0000\001\022o\n\021SubscribeRcStatus\022..mavsdk.rpc.te"
+  "lemetry.SubscribeRcStatusRequest\032&.mavsd"
+  "k.rpc.telemetry.RcStatusResponse\"\0000\001\022u\n\023"
+  "SubscribeStatusText\0220.mavsdk.rpc.telemet"
+  "ry.SubscribeStatusTextRequest\032(.mavsdk.r"
+  "pc.telemetry.StatusTextResponse\"\0000\001\022\226\001\n\036"
+  "SubscribeActuatorControlTarget\022;.mavsdk."
+  "rpc.telemetry.SubscribeActuatorControlTa"
+  "rgetRequest\0323.mavsdk.rpc.telemetry.Actua"
+  "torControlTargetResponse\"\0000\001\022\223\001\n\035Subscri"
+  "beActuatorOutputStatus\022:.mavsdk.rpc.tele"
+  "metry.SubscribeActuatorOutputStatusReque"
+  "st\0322.mavsdk.rpc.telemetry.ActuatorOutput"
+  "StatusResponse\"\0000\001\022o\n\021SubscribeOdometry\022"
+  "..mavsdk.rpc.telemetry.SubscribeOdometry"
+  "Request\032&.mavsdk.rpc.telemetry.OdometryR"
+  "esponse\"\0000\001\022\220\001\n\034SubscribePositionVelocit"
+  "yNed\0229.mavsdk.rpc.telemetry.SubscribePos"
+  "itionVelocityNedRequest\0321.mavsdk.rpc.tel"
+  "emetry.PositionVelocityNedResponse\"\0000\001\022x"
+  "\n\024SubscribeGroundTruth\0221.mavsdk.rpc.tele"
+  "metry.SubscribeGroundTruthRequest\032).mavs"
+  "dk.rpc.telemetry.GroundTruthResponse\"\0000\001"
+  "\022\207\001\n\031SubscribeFixedwingMetrics\0226.mavsdk."
+  "rpc.telemetry.SubscribeFixedwingMetricsR"
+  "equest\032..mavsdk.rpc.telemetry.FixedwingM"
+  "etricsResponse\"\0000\001\022`\n\014SubscribeImu\022).mav"
+  "sdk.rpc.telemetry.SubscribeImuRequest\032!."
+  "mavsdk.rpc.telemetry.ImuResponse\"\0000\001\022r\n\022"
+  "SubscribeScaledImu\022/.mavsdk.rpc.telemetr"
+  "y.SubscribeScaledImuRequest\032\'.mavsdk.rpc"
+  ".telemetry.ScaledImuResponse\"\0000\001\022i\n\017Subs"
+  "cribeRawImu\022,.mavsdk.rpc.telemetry.Subsc"
+  "ribeRawImuRequest\032$.mavsdk.rpc.telemetry"
+  ".RawImuResponse\"\0000\001\022x\n\024SubscribeHealthAl"
+  "lOk\0221.mavsdk.rpc.telemetry.SubscribeHeal"
+  "thAllOkRequest\032).mavsdk.rpc.telemetry.He"
+  "althAllOkResponse\"\0000\001\022~\n\026SubscribeUnixEp"
+  "ochTime\0223.mavsdk.rpc.telemetry.Subscribe"
+  "UnixEpochTimeRequest\032+.mavsdk.rpc.teleme"
+  "try.UnixEpochTimeResponse\"\0000\001\022\201\001\n\027Subscr"
+  "ibeDistanceSensor\0224.mavsdk.rpc.telemetry"
+  ".SubscribeDistanceSensorRequest\032,.mavsdk"
+  ".rpc.telemetry.DistanceSensorResponse\"\0000"
+  "\001\022\201\001\n\027SubscribeScaledPressure\0224.mavsdk.r"
+  "pc.telemetry.SubscribeScaledPressureRequ"
+  "est\032,.mavsdk.rpc.telemetry.ScaledPressur"
+  "eResponse\"\0000\001\022l\n\020SubscribeHeading\022-.mavs"
+  "dk.rpc.telemetry.SubscribeHeadingRequest"
+  "\032%.mavsdk.rpc.telemetry.HeadingResponse\""
+  "\0000\001\022p\n\017SetRatePosition\022,.mavsdk.rpc.tele"
+  "metry.SetRatePositionRequest\032-.mavsdk.rp"
+  "c.telemetry.SetRatePositionResponse\"\000\022d\n"
+  "\013SetRateHome\022(.mavsdk.rpc.telemetry.SetR"
+  "ateHomeRequest\032).mavsdk.rpc.telemetry.Se"
+  "tRateHomeResponse\"\000\022g\n\014SetRateInAir\022).ma"
+  "vsdk.rpc.telemetry.SetRateInAirRequest\032*"
+  ".mavsdk.rpc.telemetry.SetRateInAirRespon"
+  "se\"\000\022y\n\022SetRateLandedState\022/.mavsdk.rpc."
+  "telemetry.SetRateLandedStateRequest\0320.ma"
+  "vsdk.rpc.telemetry.SetRateLandedStateRes"
+  "ponse\"\000\022s\n\020SetRateVtolState\022-.mavsdk.rpc"
+  ".telemetry.SetRateVtolStateRequest\032..mav"
+  "sdk.rpc.telemetry.SetRateVtolStateRespon"
+  "se\"\000\022p\n\017SetRateAttitude\022,.mavsdk.rpc.tel"
+  "emetry.SetRateAttitudeRequest\032-.mavsdk.r"
+  "pc.telemetry.SetRateAttitudeResponse\"\000\022\202"
+  "\001\n\025SetRateCameraAttitude\0222.mavsdk.rpc.te"
+  "lemetry.SetRateCameraAttitudeRequest\0323.m"
+  "avsdk.rpc.telemetry.SetRateCameraAttitud"
+  "eResponse\"\000\022y\n\022SetRateVelocityNed\022/.mavs"
+  "dk.rpc.telemetry.SetRateVelocityNedReque"
+  "st\0320.mavsdk.rpc.telemetry.SetRateVelocit"
+  "yNedResponse\"\000\022m\n\016SetRateGpsInfo\022+.mavsd"
+  "k.rpc.telemetry.SetRateGpsInfoRequest\032,."
+  "mavsdk.rpc.telemetry.SetRateGpsInfoRespo"
+  "nse\"\000\022m\n\016SetRateBattery\022+.mavsdk.rpc.tel"
+  "emetry.SetRateBatteryRequest\032,.mavsdk.rp"
+  "c.telemetry.SetRateBatteryResponse\"\000\022p\n\017"
+  "SetRateRcStatus\022,.mavsdk.rpc.telemetry.S"
+  "etRateRcStatusRequest\032-.mavsdk.rpc.telem"
+  "etry.SetRateRcStatusResponse\"\000\022\227\001\n\034SetRa"
+  "teActuatorControlTarget\0229.mavsdk.rpc.tel"
+  "emetry.SetRateActuatorControlTargetReque"
+  "st\032:.mavsdk.rpc.telemetry.SetRateActuato"
+  "rControlTargetResponse\"\000\022\224\001\n\033SetRateActu"
+  "atorOutputStatus\0228.mavsdk.rpc.telemetry."
+  "SetRateActuatorOutputStatusRequest\0329.mav"
   "sdk.rpc.telemetry.SetRateActuatorOutputS"
-  "tatusRequest\0329.mavsdk.rpc.telemetry.SetR"
-  "ateActuatorOutputStatusResponse\"\000\022p\n\017Set"
-  "RateOdometry\022,.mavsdk.rpc.telemetry.SetR"
-  "ateOdometryRequest\032-.mavsdk.rpc.telemetr"
-  "y.SetRateOdometryResponse\"\000\022\221\001\n\032SetRateP"
-  "ositionVelocityNed\0227.mavsdk.rpc.telemetr"
-  "y.SetRatePositionVelocityNedRequest\0328.ma"
-  "vsdk.rpc.telemetry.SetRatePositionVeloci"
-  "tyNedResponse\"\000\022y\n\022SetRateGroundTruth\022/."
-  "mavsdk.rpc.telemetry.SetRateGroundTruthR"
-  "equest\0320.mavsdk.rpc.telemetry.SetRateGro"
-  "undTruthResponse\"\000\022\210\001\n\027SetRateFixedwingM"
-  "etrics\0224.mavsdk.rpc.telemetry.SetRateFix"
-  "edwingMetricsRequest\0325.mavsdk.rpc.teleme"
-  "try.SetRateFixedwingMetricsResponse\"\000\022a\n"
-  "\nSetRateImu\022\'.mavsdk.rpc.telemetry.SetRa"
-  "teImuRequest\032(.mavsdk.rpc.telemetry.SetR"
-  "ateImuResponse\"\000\022s\n\020SetRateScaledImu\022-.m"
-  "avsdk.rpc.telemetry.SetRateScaledImuRequ"
-  "est\032..mavsdk.rpc.telemetry.SetRateScaled"
-  "ImuResponse\"\000\022j\n\rSetRateRawImu\022*.mavsdk."
-  "rpc.telemetry.SetRateRawImuRequest\032+.mav"
-  "sdk.rpc.telemetry.SetRateRawImuResponse\""
-  "\000\022\177\n\024SetRateUnixEpochTime\0221.mavsdk.rpc.t"
-  "elemetry.SetRateUnixEpochTimeRequest\0322.m"
-  "avsdk.rpc.telemetry.SetRateUnixEpochTime"
-  "Response\"\000\022\202\001\n\025SetRateDistanceSensor\0222.m"
-  "avsdk.rpc.telemetry.SetRateDistanceSenso"
-  "rRequest\0323.mavsdk.rpc.telemetry.SetRateD"
-  "istanceSensorResponse\"\000\022y\n\022GetGpsGlobalO"
-  "rigin\022/.mavsdk.rpc.telemetry.GetGpsGloba"
-  "lOriginRequest\0320.mavsdk.rpc.telemetry.Ge"
-  "tGpsGlobalOriginResponse\"\000B%\n\023io.mavsdk."
-  "telemetryB\016TelemetryProtob\006proto3"
+  "tatusResponse\"\000\022p\n\017SetRateOdometry\022,.mav"
+  "sdk.rpc.telemetry.SetRateOdometryRequest"
+  "\032-.mavsdk.rpc.telemetry.SetRateOdometryR"
+  "esponse\"\000\022\221\001\n\032SetRatePositionVelocityNed"
+  "\0227.mavsdk.rpc.telemetry.SetRatePositionV"
+  "elocityNedRequest\0328.mavsdk.rpc.telemetry"
+  ".SetRatePositionVelocityNedResponse\"\000\022y\n"
+  "\022SetRateGroundTruth\022/.mavsdk.rpc.telemet"
+  "ry.SetRateGroundTruthRequest\0320.mavsdk.rp"
+  "c.telemetry.SetRateGroundTruthResponse\"\000"
+  "\022\210\001\n\027SetRateFixedwingMetrics\0224.mavsdk.rp"
+  "c.telemetry.SetRateFixedwingMetricsReque"
+  "st\0325.mavsdk.rpc.telemetry.SetRateFixedwi"
+  "ngMetricsResponse\"\000\022a\n\nSetRateImu\022\'.mavs"
+  "dk.rpc.telemetry.SetRateImuRequest\032(.mav"
+  "sdk.rpc.telemetry.SetRateImuResponse\"\000\022s"
+  "\n\020SetRateScaledImu\022-.mavsdk.rpc.telemetr"
+  "y.SetRateScaledImuRequest\032..mavsdk.rpc.t"
+  "elemetry.SetRateScaledImuResponse\"\000\022j\n\rS"
+  "etRateRawImu\022*.mavsdk.rpc.telemetry.SetR"
+  "ateRawImuRequest\032+.mavsdk.rpc.telemetry."
+  "SetRateRawImuResponse\"\000\022\177\n\024SetRateUnixEp"
+  "ochTime\0221.mavsdk.rpc.telemetry.SetRateUn"
+  "ixEpochTimeRequest\0322.mavsdk.rpc.telemetr"
+  "y.SetRateUnixEpochTimeResponse\"\000\022\202\001\n\025Set"
+  "RateDistanceSensor\0222.mavsdk.rpc.telemetr"
+  "y.SetRateDistanceSensorRequest\0323.mavsdk."
+  "rpc.telemetry.SetRateDistanceSensorRespo"
+  "nse\"\000\022y\n\022GetGpsGlobalOrigin\022/.mavsdk.rpc"
+  ".telemetry.GetGpsGlobalOriginRequest\0320.m"
+  "avsdk.rpc.telemetry.GetGpsGlobalOriginRe"
+  "sponse\"\000B%\n\023io.mavsdk.telemetryB\016Telemet"
+  "ryProtob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_telemetry_2ftelemetry_2eproto_deps[1] = {
   &::descriptor_table_mavsdk_5foptions_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_telemetry_2ftelemetry_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_telemetry_2ftelemetry_2eproto = {
-  false, false, 19673, descriptor_table_protodef_telemetry_2ftelemetry_2eproto, "telemetry/telemetry.proto", 
+  false, false, 20735, descriptor_table_protodef_telemetry_2ftelemetry_2eproto, "telemetry/telemetry.proto", 
   &descriptor_table_telemetry_2ftelemetry_2eproto_once, descriptor_table_telemetry_2ftelemetry_2eproto_deps, 1, 147,
   schemas, file_default_instances, TableStruct_telemetry_2ftelemetry_2eproto::offsets,
   file_level_metadata_telemetry_2ftelemetry_2eproto, file_level_enum_descriptors_telemetry_2ftelemetry_2eproto, file_level_service_descriptors_telemetry_2ftelemetry_2eproto,
@@ -3764,10 +3909,12 @@ SubscribePositionRequest::SubscribePositionRequest(::PROTOBUF_NAMESPACE_ID::Aren
 SubscribePositionRequest::SubscribePositionRequest(const SubscribePositionRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribePositionRequest)
 }
 
 inline void SubscribePositionRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribePositionRequest::~SubscribePositionRequest() {
@@ -3797,6 +3944,7 @@ void SubscribePositionRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3805,6 +3953,16 @@ const char* SubscribePositionRequest::_InternalParse(const char* ptr, ::PROTOBUF
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -3815,6 +3973,8 @@ const char* SubscribePositionRequest::_InternalParse(const char* ptr, ::PROTOBUF
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -3829,6 +3989,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribePositionRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -3845,6 +4011,13 @@ size_t SubscribePositionRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -3874,6 +4047,9 @@ void SubscribePositionRequest::MergeFrom(const SubscribePositionRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -3891,6 +4067,7 @@ bool SubscribePositionRequest::IsInitialized() const {
 void SubscribePositionRequest::InternalSwap(SubscribePositionRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribePositionRequest::GetMetadata() const {
@@ -4117,10 +4294,12 @@ SubscribeHomeRequest::SubscribeHomeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena
 SubscribeHomeRequest::SubscribeHomeRequest(const SubscribeHomeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribeHomeRequest)
 }
 
 inline void SubscribeHomeRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeHomeRequest::~SubscribeHomeRequest() {
@@ -4150,6 +4329,7 @@ void SubscribeHomeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4158,6 +4338,16 @@ const char* SubscribeHomeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -4168,6 +4358,8 @@ const char* SubscribeHomeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -4182,6 +4374,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribeHomeRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -4198,6 +4396,13 @@ size_t SubscribeHomeRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -4227,6 +4432,9 @@ void SubscribeHomeRequest::MergeFrom(const SubscribeHomeRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -4244,6 +4452,7 @@ bool SubscribeHomeRequest::IsInitialized() const {
 void SubscribeHomeRequest::InternalSwap(SubscribeHomeRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeHomeRequest::GetMetadata() const {
@@ -4470,10 +4679,12 @@ SubscribeInAirRequest::SubscribeInAirRequest(::PROTOBUF_NAMESPACE_ID::Arena* are
 SubscribeInAirRequest::SubscribeInAirRequest(const SubscribeInAirRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribeInAirRequest)
 }
 
 inline void SubscribeInAirRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeInAirRequest::~SubscribeInAirRequest() {
@@ -4503,6 +4714,7 @@ void SubscribeInAirRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4511,6 +4723,16 @@ const char* SubscribeInAirRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -4521,6 +4743,8 @@ const char* SubscribeInAirRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -4535,6 +4759,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribeInAirRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -4551,6 +4781,13 @@ size_t SubscribeInAirRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -4580,6 +4817,9 @@ void SubscribeInAirRequest::MergeFrom(const SubscribeInAirRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -4597,6 +4837,7 @@ bool SubscribeInAirRequest::IsInitialized() const {
 void SubscribeInAirRequest::InternalSwap(SubscribeInAirRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeInAirRequest::GetMetadata() const {
@@ -4806,10 +5047,12 @@ SubscribeLandedStateRequest::SubscribeLandedStateRequest(::PROTOBUF_NAMESPACE_ID
 SubscribeLandedStateRequest::SubscribeLandedStateRequest(const SubscribeLandedStateRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribeLandedStateRequest)
 }
 
 inline void SubscribeLandedStateRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeLandedStateRequest::~SubscribeLandedStateRequest() {
@@ -4839,6 +5082,7 @@ void SubscribeLandedStateRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4847,6 +5091,16 @@ const char* SubscribeLandedStateRequest::_InternalParse(const char* ptr, ::PROTO
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -4857,6 +5111,8 @@ const char* SubscribeLandedStateRequest::_InternalParse(const char* ptr, ::PROTO
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -4871,6 +5127,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribeLandedStateRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -4887,6 +5149,13 @@ size_t SubscribeLandedStateRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -4916,6 +5185,9 @@ void SubscribeLandedStateRequest::MergeFrom(const SubscribeLandedStateRequest& f
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -4933,6 +5205,7 @@ bool SubscribeLandedStateRequest::IsInitialized() const {
 void SubscribeLandedStateRequest::InternalSwap(SubscribeLandedStateRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeLandedStateRequest::GetMetadata() const {
@@ -5145,10 +5418,12 @@ SubscribeArmedRequest::SubscribeArmedRequest(::PROTOBUF_NAMESPACE_ID::Arena* are
 SubscribeArmedRequest::SubscribeArmedRequest(const SubscribeArmedRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribeArmedRequest)
 }
 
 inline void SubscribeArmedRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeArmedRequest::~SubscribeArmedRequest() {
@@ -5178,6 +5453,7 @@ void SubscribeArmedRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5186,6 +5462,16 @@ const char* SubscribeArmedRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -5196,6 +5482,8 @@ const char* SubscribeArmedRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -5210,6 +5498,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribeArmedRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -5226,6 +5520,13 @@ size_t SubscribeArmedRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -5255,6 +5556,9 @@ void SubscribeArmedRequest::MergeFrom(const SubscribeArmedRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -5272,6 +5576,7 @@ bool SubscribeArmedRequest::IsInitialized() const {
 void SubscribeArmedRequest::InternalSwap(SubscribeArmedRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeArmedRequest::GetMetadata() const {
@@ -5481,10 +5786,12 @@ SubscribeVtolStateRequest::SubscribeVtolStateRequest(::PROTOBUF_NAMESPACE_ID::Ar
 SubscribeVtolStateRequest::SubscribeVtolStateRequest(const SubscribeVtolStateRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribeVtolStateRequest)
 }
 
 inline void SubscribeVtolStateRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeVtolStateRequest::~SubscribeVtolStateRequest() {
@@ -5514,6 +5821,7 @@ void SubscribeVtolStateRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5522,6 +5830,16 @@ const char* SubscribeVtolStateRequest::_InternalParse(const char* ptr, ::PROTOBU
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -5532,6 +5850,8 @@ const char* SubscribeVtolStateRequest::_InternalParse(const char* ptr, ::PROTOBU
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -5546,6 +5866,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribeVtolStateRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -5562,6 +5888,13 @@ size_t SubscribeVtolStateRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -5591,6 +5924,9 @@ void SubscribeVtolStateRequest::MergeFrom(const SubscribeVtolStateRequest& from)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -5608,6 +5944,7 @@ bool SubscribeVtolStateRequest::IsInitialized() const {
 void SubscribeVtolStateRequest::InternalSwap(SubscribeVtolStateRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeVtolStateRequest::GetMetadata() const {
@@ -5820,10 +6157,12 @@ SubscribeAttitudeQuaternionRequest::SubscribeAttitudeQuaternionRequest(::PROTOBU
 SubscribeAttitudeQuaternionRequest::SubscribeAttitudeQuaternionRequest(const SubscribeAttitudeQuaternionRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribeAttitudeQuaternionRequest)
 }
 
 inline void SubscribeAttitudeQuaternionRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeAttitudeQuaternionRequest::~SubscribeAttitudeQuaternionRequest() {
@@ -5853,6 +6192,7 @@ void SubscribeAttitudeQuaternionRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5861,6 +6201,16 @@ const char* SubscribeAttitudeQuaternionRequest::_InternalParse(const char* ptr, 
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -5871,6 +6221,8 @@ const char* SubscribeAttitudeQuaternionRequest::_InternalParse(const char* ptr, 
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -5885,6 +6237,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribeAttitudeQuaternionRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -5901,6 +6259,13 @@ size_t SubscribeAttitudeQuaternionRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -5930,6 +6295,9 @@ void SubscribeAttitudeQuaternionRequest::MergeFrom(const SubscribeAttitudeQuater
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -5947,6 +6315,7 @@ bool SubscribeAttitudeQuaternionRequest::IsInitialized() const {
 void SubscribeAttitudeQuaternionRequest::InternalSwap(SubscribeAttitudeQuaternionRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeAttitudeQuaternionRequest::GetMetadata() const {
@@ -6173,10 +6542,12 @@ SubscribeAttitudeEulerRequest::SubscribeAttitudeEulerRequest(::PROTOBUF_NAMESPAC
 SubscribeAttitudeEulerRequest::SubscribeAttitudeEulerRequest(const SubscribeAttitudeEulerRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribeAttitudeEulerRequest)
 }
 
 inline void SubscribeAttitudeEulerRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeAttitudeEulerRequest::~SubscribeAttitudeEulerRequest() {
@@ -6206,6 +6577,7 @@ void SubscribeAttitudeEulerRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6214,6 +6586,16 @@ const char* SubscribeAttitudeEulerRequest::_InternalParse(const char* ptr, ::PRO
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -6224,6 +6606,8 @@ const char* SubscribeAttitudeEulerRequest::_InternalParse(const char* ptr, ::PRO
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -6238,6 +6622,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribeAttitudeEulerRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -6254,6 +6644,13 @@ size_t SubscribeAttitudeEulerRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -6283,6 +6680,9 @@ void SubscribeAttitudeEulerRequest::MergeFrom(const SubscribeAttitudeEulerReques
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -6300,6 +6700,7 @@ bool SubscribeAttitudeEulerRequest::IsInitialized() const {
 void SubscribeAttitudeEulerRequest::InternalSwap(SubscribeAttitudeEulerRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeAttitudeEulerRequest::GetMetadata() const {
@@ -6526,10 +6927,12 @@ SubscribeAttitudeAngularVelocityBodyRequest::SubscribeAttitudeAngularVelocityBod
 SubscribeAttitudeAngularVelocityBodyRequest::SubscribeAttitudeAngularVelocityBodyRequest(const SubscribeAttitudeAngularVelocityBodyRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribeAttitudeAngularVelocityBodyRequest)
 }
 
 inline void SubscribeAttitudeAngularVelocityBodyRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeAttitudeAngularVelocityBodyRequest::~SubscribeAttitudeAngularVelocityBodyRequest() {
@@ -6559,6 +6962,7 @@ void SubscribeAttitudeAngularVelocityBodyRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6567,6 +6971,16 @@ const char* SubscribeAttitudeAngularVelocityBodyRequest::_InternalParse(const ch
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -6577,6 +6991,8 @@ const char* SubscribeAttitudeAngularVelocityBodyRequest::_InternalParse(const ch
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -6591,6 +7007,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribeAttitudeAngularVelocityBodyRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -6607,6 +7029,13 @@ size_t SubscribeAttitudeAngularVelocityBodyRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -6636,6 +7065,9 @@ void SubscribeAttitudeAngularVelocityBodyRequest::MergeFrom(const SubscribeAttit
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -6653,6 +7085,7 @@ bool SubscribeAttitudeAngularVelocityBodyRequest::IsInitialized() const {
 void SubscribeAttitudeAngularVelocityBodyRequest::InternalSwap(SubscribeAttitudeAngularVelocityBodyRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeAttitudeAngularVelocityBodyRequest::GetMetadata() const {
@@ -6879,10 +7312,12 @@ SubscribeCameraAttitudeQuaternionRequest::SubscribeCameraAttitudeQuaternionReque
 SubscribeCameraAttitudeQuaternionRequest::SubscribeCameraAttitudeQuaternionRequest(const SubscribeCameraAttitudeQuaternionRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribeCameraAttitudeQuaternionRequest)
 }
 
 inline void SubscribeCameraAttitudeQuaternionRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeCameraAttitudeQuaternionRequest::~SubscribeCameraAttitudeQuaternionRequest() {
@@ -6912,6 +7347,7 @@ void SubscribeCameraAttitudeQuaternionRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6920,6 +7356,16 @@ const char* SubscribeCameraAttitudeQuaternionRequest::_InternalParse(const char*
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -6930,6 +7376,8 @@ const char* SubscribeCameraAttitudeQuaternionRequest::_InternalParse(const char*
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -6944,6 +7392,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribeCameraAttitudeQuaternionRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -6960,6 +7414,13 @@ size_t SubscribeCameraAttitudeQuaternionRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -6989,6 +7450,9 @@ void SubscribeCameraAttitudeQuaternionRequest::MergeFrom(const SubscribeCameraAt
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -7006,6 +7470,7 @@ bool SubscribeCameraAttitudeQuaternionRequest::IsInitialized() const {
 void SubscribeCameraAttitudeQuaternionRequest::InternalSwap(SubscribeCameraAttitudeQuaternionRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeCameraAttitudeQuaternionRequest::GetMetadata() const {
@@ -7232,10 +7697,12 @@ SubscribeCameraAttitudeEulerRequest::SubscribeCameraAttitudeEulerRequest(::PROTO
 SubscribeCameraAttitudeEulerRequest::SubscribeCameraAttitudeEulerRequest(const SubscribeCameraAttitudeEulerRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribeCameraAttitudeEulerRequest)
 }
 
 inline void SubscribeCameraAttitudeEulerRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeCameraAttitudeEulerRequest::~SubscribeCameraAttitudeEulerRequest() {
@@ -7265,6 +7732,7 @@ void SubscribeCameraAttitudeEulerRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -7273,6 +7741,16 @@ const char* SubscribeCameraAttitudeEulerRequest::_InternalParse(const char* ptr,
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -7283,6 +7761,8 @@ const char* SubscribeCameraAttitudeEulerRequest::_InternalParse(const char* ptr,
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -7297,6 +7777,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribeCameraAttitudeEulerRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -7313,6 +7799,13 @@ size_t SubscribeCameraAttitudeEulerRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -7342,6 +7835,9 @@ void SubscribeCameraAttitudeEulerRequest::MergeFrom(const SubscribeCameraAttitud
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -7359,6 +7855,7 @@ bool SubscribeCameraAttitudeEulerRequest::IsInitialized() const {
 void SubscribeCameraAttitudeEulerRequest::InternalSwap(SubscribeCameraAttitudeEulerRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeCameraAttitudeEulerRequest::GetMetadata() const {
@@ -7585,10 +8082,12 @@ SubscribeVelocityNedRequest::SubscribeVelocityNedRequest(::PROTOBUF_NAMESPACE_ID
 SubscribeVelocityNedRequest::SubscribeVelocityNedRequest(const SubscribeVelocityNedRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribeVelocityNedRequest)
 }
 
 inline void SubscribeVelocityNedRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeVelocityNedRequest::~SubscribeVelocityNedRequest() {
@@ -7618,6 +8117,7 @@ void SubscribeVelocityNedRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -7626,6 +8126,16 @@ const char* SubscribeVelocityNedRequest::_InternalParse(const char* ptr, ::PROTO
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -7636,6 +8146,8 @@ const char* SubscribeVelocityNedRequest::_InternalParse(const char* ptr, ::PROTO
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -7650,6 +8162,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribeVelocityNedRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -7666,6 +8184,13 @@ size_t SubscribeVelocityNedRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -7695,6 +8220,9 @@ void SubscribeVelocityNedRequest::MergeFrom(const SubscribeVelocityNedRequest& f
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -7712,6 +8240,7 @@ bool SubscribeVelocityNedRequest::IsInitialized() const {
 void SubscribeVelocityNedRequest::InternalSwap(SubscribeVelocityNedRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeVelocityNedRequest::GetMetadata() const {
@@ -7938,10 +8467,12 @@ SubscribeGpsInfoRequest::SubscribeGpsInfoRequest(::PROTOBUF_NAMESPACE_ID::Arena*
 SubscribeGpsInfoRequest::SubscribeGpsInfoRequest(const SubscribeGpsInfoRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribeGpsInfoRequest)
 }
 
 inline void SubscribeGpsInfoRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeGpsInfoRequest::~SubscribeGpsInfoRequest() {
@@ -7971,6 +8502,7 @@ void SubscribeGpsInfoRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -7979,6 +8511,16 @@ const char* SubscribeGpsInfoRequest::_InternalParse(const char* ptr, ::PROTOBUF_
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -7989,6 +8531,8 @@ const char* SubscribeGpsInfoRequest::_InternalParse(const char* ptr, ::PROTOBUF_
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -8003,6 +8547,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribeGpsInfoRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -8019,6 +8569,13 @@ size_t SubscribeGpsInfoRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -8048,6 +8605,9 @@ void SubscribeGpsInfoRequest::MergeFrom(const SubscribeGpsInfoRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -8065,6 +8625,7 @@ bool SubscribeGpsInfoRequest::IsInitialized() const {
 void SubscribeGpsInfoRequest::InternalSwap(SubscribeGpsInfoRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeGpsInfoRequest::GetMetadata() const {
@@ -8291,10 +8852,12 @@ SubscribeRawGpsRequest::SubscribeRawGpsRequest(::PROTOBUF_NAMESPACE_ID::Arena* a
 SubscribeRawGpsRequest::SubscribeRawGpsRequest(const SubscribeRawGpsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribeRawGpsRequest)
 }
 
 inline void SubscribeRawGpsRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeRawGpsRequest::~SubscribeRawGpsRequest() {
@@ -8324,6 +8887,7 @@ void SubscribeRawGpsRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -8332,6 +8896,16 @@ const char* SubscribeRawGpsRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -8342,6 +8916,8 @@ const char* SubscribeRawGpsRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -8356,6 +8932,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribeRawGpsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -8372,6 +8954,13 @@ size_t SubscribeRawGpsRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -8401,6 +8990,9 @@ void SubscribeRawGpsRequest::MergeFrom(const SubscribeRawGpsRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -8418,6 +9010,7 @@ bool SubscribeRawGpsRequest::IsInitialized() const {
 void SubscribeRawGpsRequest::InternalSwap(SubscribeRawGpsRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeRawGpsRequest::GetMetadata() const {
@@ -8644,10 +9237,12 @@ SubscribeBatteryRequest::SubscribeBatteryRequest(::PROTOBUF_NAMESPACE_ID::Arena*
 SubscribeBatteryRequest::SubscribeBatteryRequest(const SubscribeBatteryRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribeBatteryRequest)
 }
 
 inline void SubscribeBatteryRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeBatteryRequest::~SubscribeBatteryRequest() {
@@ -8677,6 +9272,7 @@ void SubscribeBatteryRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -8685,6 +9281,16 @@ const char* SubscribeBatteryRequest::_InternalParse(const char* ptr, ::PROTOBUF_
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -8695,6 +9301,8 @@ const char* SubscribeBatteryRequest::_InternalParse(const char* ptr, ::PROTOBUF_
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -8709,6 +9317,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribeBatteryRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -8725,6 +9339,13 @@ size_t SubscribeBatteryRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -8754,6 +9375,9 @@ void SubscribeBatteryRequest::MergeFrom(const SubscribeBatteryRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -8771,6 +9395,7 @@ bool SubscribeBatteryRequest::IsInitialized() const {
 void SubscribeBatteryRequest::InternalSwap(SubscribeBatteryRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeBatteryRequest::GetMetadata() const {
@@ -8997,10 +9622,12 @@ SubscribeFlightModeRequest::SubscribeFlightModeRequest(::PROTOBUF_NAMESPACE_ID::
 SubscribeFlightModeRequest::SubscribeFlightModeRequest(const SubscribeFlightModeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribeFlightModeRequest)
 }
 
 inline void SubscribeFlightModeRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeFlightModeRequest::~SubscribeFlightModeRequest() {
@@ -9030,6 +9657,7 @@ void SubscribeFlightModeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -9038,6 +9666,16 @@ const char* SubscribeFlightModeRequest::_InternalParse(const char* ptr, ::PROTOB
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -9048,6 +9686,8 @@ const char* SubscribeFlightModeRequest::_InternalParse(const char* ptr, ::PROTOB
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -9062,6 +9702,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribeFlightModeRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -9078,6 +9724,13 @@ size_t SubscribeFlightModeRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -9107,6 +9760,9 @@ void SubscribeFlightModeRequest::MergeFrom(const SubscribeFlightModeRequest& fro
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -9124,6 +9780,7 @@ bool SubscribeFlightModeRequest::IsInitialized() const {
 void SubscribeFlightModeRequest::InternalSwap(SubscribeFlightModeRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeFlightModeRequest::GetMetadata() const {
@@ -9336,10 +9993,12 @@ SubscribeHealthRequest::SubscribeHealthRequest(::PROTOBUF_NAMESPACE_ID::Arena* a
 SubscribeHealthRequest::SubscribeHealthRequest(const SubscribeHealthRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribeHealthRequest)
 }
 
 inline void SubscribeHealthRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeHealthRequest::~SubscribeHealthRequest() {
@@ -9369,6 +10028,7 @@ void SubscribeHealthRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -9377,6 +10037,16 @@ const char* SubscribeHealthRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -9387,6 +10057,8 @@ const char* SubscribeHealthRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -9401,6 +10073,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribeHealthRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -9417,6 +10095,13 @@ size_t SubscribeHealthRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -9446,6 +10131,9 @@ void SubscribeHealthRequest::MergeFrom(const SubscribeHealthRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -9463,6 +10151,7 @@ bool SubscribeHealthRequest::IsInitialized() const {
 void SubscribeHealthRequest::InternalSwap(SubscribeHealthRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeHealthRequest::GetMetadata() const {
@@ -9689,10 +10378,12 @@ SubscribeRcStatusRequest::SubscribeRcStatusRequest(::PROTOBUF_NAMESPACE_ID::Aren
 SubscribeRcStatusRequest::SubscribeRcStatusRequest(const SubscribeRcStatusRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribeRcStatusRequest)
 }
 
 inline void SubscribeRcStatusRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeRcStatusRequest::~SubscribeRcStatusRequest() {
@@ -9722,6 +10413,7 @@ void SubscribeRcStatusRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -9730,6 +10422,16 @@ const char* SubscribeRcStatusRequest::_InternalParse(const char* ptr, ::PROTOBUF
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -9740,6 +10442,8 @@ const char* SubscribeRcStatusRequest::_InternalParse(const char* ptr, ::PROTOBUF
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -9754,6 +10458,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribeRcStatusRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -9770,6 +10480,13 @@ size_t SubscribeRcStatusRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -9799,6 +10516,9 @@ void SubscribeRcStatusRequest::MergeFrom(const SubscribeRcStatusRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -9816,6 +10536,7 @@ bool SubscribeRcStatusRequest::IsInitialized() const {
 void SubscribeRcStatusRequest::InternalSwap(SubscribeRcStatusRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeRcStatusRequest::GetMetadata() const {
@@ -10042,10 +10763,12 @@ SubscribeStatusTextRequest::SubscribeStatusTextRequest(::PROTOBUF_NAMESPACE_ID::
 SubscribeStatusTextRequest::SubscribeStatusTextRequest(const SubscribeStatusTextRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribeStatusTextRequest)
 }
 
 inline void SubscribeStatusTextRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeStatusTextRequest::~SubscribeStatusTextRequest() {
@@ -10075,6 +10798,7 @@ void SubscribeStatusTextRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -10083,6 +10807,16 @@ const char* SubscribeStatusTextRequest::_InternalParse(const char* ptr, ::PROTOB
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -10093,6 +10827,8 @@ const char* SubscribeStatusTextRequest::_InternalParse(const char* ptr, ::PROTOB
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -10107,6 +10843,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribeStatusTextRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -10123,6 +10865,13 @@ size_t SubscribeStatusTextRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -10152,6 +10901,9 @@ void SubscribeStatusTextRequest::MergeFrom(const SubscribeStatusTextRequest& fro
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -10169,6 +10921,7 @@ bool SubscribeStatusTextRequest::IsInitialized() const {
 void SubscribeStatusTextRequest::InternalSwap(SubscribeStatusTextRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeStatusTextRequest::GetMetadata() const {
@@ -10395,10 +11148,12 @@ SubscribeActuatorControlTargetRequest::SubscribeActuatorControlTargetRequest(::P
 SubscribeActuatorControlTargetRequest::SubscribeActuatorControlTargetRequest(const SubscribeActuatorControlTargetRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribeActuatorControlTargetRequest)
 }
 
 inline void SubscribeActuatorControlTargetRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeActuatorControlTargetRequest::~SubscribeActuatorControlTargetRequest() {
@@ -10428,6 +11183,7 @@ void SubscribeActuatorControlTargetRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -10436,6 +11192,16 @@ const char* SubscribeActuatorControlTargetRequest::_InternalParse(const char* pt
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -10446,6 +11212,8 @@ const char* SubscribeActuatorControlTargetRequest::_InternalParse(const char* pt
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -10460,6 +11228,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribeActuatorControlTargetRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -10476,6 +11250,13 @@ size_t SubscribeActuatorControlTargetRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -10505,6 +11286,9 @@ void SubscribeActuatorControlTargetRequest::MergeFrom(const SubscribeActuatorCon
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -10522,6 +11306,7 @@ bool SubscribeActuatorControlTargetRequest::IsInitialized() const {
 void SubscribeActuatorControlTargetRequest::InternalSwap(SubscribeActuatorControlTargetRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeActuatorControlTargetRequest::GetMetadata() const {
@@ -10748,10 +11533,12 @@ SubscribeActuatorOutputStatusRequest::SubscribeActuatorOutputStatusRequest(::PRO
 SubscribeActuatorOutputStatusRequest::SubscribeActuatorOutputStatusRequest(const SubscribeActuatorOutputStatusRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribeActuatorOutputStatusRequest)
 }
 
 inline void SubscribeActuatorOutputStatusRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeActuatorOutputStatusRequest::~SubscribeActuatorOutputStatusRequest() {
@@ -10781,6 +11568,7 @@ void SubscribeActuatorOutputStatusRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -10789,6 +11577,16 @@ const char* SubscribeActuatorOutputStatusRequest::_InternalParse(const char* ptr
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -10799,6 +11597,8 @@ const char* SubscribeActuatorOutputStatusRequest::_InternalParse(const char* ptr
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -10813,6 +11613,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribeActuatorOutputStatusRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -10829,6 +11635,13 @@ size_t SubscribeActuatorOutputStatusRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -10858,6 +11671,9 @@ void SubscribeActuatorOutputStatusRequest::MergeFrom(const SubscribeActuatorOutp
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -10875,6 +11691,7 @@ bool SubscribeActuatorOutputStatusRequest::IsInitialized() const {
 void SubscribeActuatorOutputStatusRequest::InternalSwap(SubscribeActuatorOutputStatusRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeActuatorOutputStatusRequest::GetMetadata() const {
@@ -11101,10 +11918,12 @@ SubscribeOdometryRequest::SubscribeOdometryRequest(::PROTOBUF_NAMESPACE_ID::Aren
 SubscribeOdometryRequest::SubscribeOdometryRequest(const SubscribeOdometryRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribeOdometryRequest)
 }
 
 inline void SubscribeOdometryRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeOdometryRequest::~SubscribeOdometryRequest() {
@@ -11134,6 +11953,7 @@ void SubscribeOdometryRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -11142,6 +11962,16 @@ const char* SubscribeOdometryRequest::_InternalParse(const char* ptr, ::PROTOBUF
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -11152,6 +11982,8 @@ const char* SubscribeOdometryRequest::_InternalParse(const char* ptr, ::PROTOBUF
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -11166,6 +11998,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribeOdometryRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -11182,6 +12020,13 @@ size_t SubscribeOdometryRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -11211,6 +12056,9 @@ void SubscribeOdometryRequest::MergeFrom(const SubscribeOdometryRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -11228,6 +12076,7 @@ bool SubscribeOdometryRequest::IsInitialized() const {
 void SubscribeOdometryRequest::InternalSwap(SubscribeOdometryRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeOdometryRequest::GetMetadata() const {
@@ -11454,10 +12303,12 @@ SubscribePositionVelocityNedRequest::SubscribePositionVelocityNedRequest(::PROTO
 SubscribePositionVelocityNedRequest::SubscribePositionVelocityNedRequest(const SubscribePositionVelocityNedRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribePositionVelocityNedRequest)
 }
 
 inline void SubscribePositionVelocityNedRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribePositionVelocityNedRequest::~SubscribePositionVelocityNedRequest() {
@@ -11487,6 +12338,7 @@ void SubscribePositionVelocityNedRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -11495,6 +12347,16 @@ const char* SubscribePositionVelocityNedRequest::_InternalParse(const char* ptr,
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -11505,6 +12367,8 @@ const char* SubscribePositionVelocityNedRequest::_InternalParse(const char* ptr,
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -11519,6 +12383,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribePositionVelocityNedRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -11535,6 +12405,13 @@ size_t SubscribePositionVelocityNedRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -11564,6 +12441,9 @@ void SubscribePositionVelocityNedRequest::MergeFrom(const SubscribePositionVeloc
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -11581,6 +12461,7 @@ bool SubscribePositionVelocityNedRequest::IsInitialized() const {
 void SubscribePositionVelocityNedRequest::InternalSwap(SubscribePositionVelocityNedRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribePositionVelocityNedRequest::GetMetadata() const {
@@ -11807,10 +12688,12 @@ SubscribeGroundTruthRequest::SubscribeGroundTruthRequest(::PROTOBUF_NAMESPACE_ID
 SubscribeGroundTruthRequest::SubscribeGroundTruthRequest(const SubscribeGroundTruthRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribeGroundTruthRequest)
 }
 
 inline void SubscribeGroundTruthRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeGroundTruthRequest::~SubscribeGroundTruthRequest() {
@@ -11840,6 +12723,7 @@ void SubscribeGroundTruthRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -11848,6 +12732,16 @@ const char* SubscribeGroundTruthRequest::_InternalParse(const char* ptr, ::PROTO
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -11858,6 +12752,8 @@ const char* SubscribeGroundTruthRequest::_InternalParse(const char* ptr, ::PROTO
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -11872,6 +12768,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribeGroundTruthRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -11888,6 +12790,13 @@ size_t SubscribeGroundTruthRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -11917,6 +12826,9 @@ void SubscribeGroundTruthRequest::MergeFrom(const SubscribeGroundTruthRequest& f
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -11934,6 +12846,7 @@ bool SubscribeGroundTruthRequest::IsInitialized() const {
 void SubscribeGroundTruthRequest::InternalSwap(SubscribeGroundTruthRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeGroundTruthRequest::GetMetadata() const {
@@ -12160,10 +13073,12 @@ SubscribeFixedwingMetricsRequest::SubscribeFixedwingMetricsRequest(::PROTOBUF_NA
 SubscribeFixedwingMetricsRequest::SubscribeFixedwingMetricsRequest(const SubscribeFixedwingMetricsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribeFixedwingMetricsRequest)
 }
 
 inline void SubscribeFixedwingMetricsRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeFixedwingMetricsRequest::~SubscribeFixedwingMetricsRequest() {
@@ -12193,6 +13108,7 @@ void SubscribeFixedwingMetricsRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -12201,6 +13117,16 @@ const char* SubscribeFixedwingMetricsRequest::_InternalParse(const char* ptr, ::
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -12211,6 +13137,8 @@ const char* SubscribeFixedwingMetricsRequest::_InternalParse(const char* ptr, ::
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -12225,6 +13153,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribeFixedwingMetricsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -12241,6 +13175,13 @@ size_t SubscribeFixedwingMetricsRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -12270,6 +13211,9 @@ void SubscribeFixedwingMetricsRequest::MergeFrom(const SubscribeFixedwingMetrics
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -12287,6 +13231,7 @@ bool SubscribeFixedwingMetricsRequest::IsInitialized() const {
 void SubscribeFixedwingMetricsRequest::InternalSwap(SubscribeFixedwingMetricsRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeFixedwingMetricsRequest::GetMetadata() const {
@@ -12513,10 +13458,12 @@ SubscribeImuRequest::SubscribeImuRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 SubscribeImuRequest::SubscribeImuRequest(const SubscribeImuRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribeImuRequest)
 }
 
 inline void SubscribeImuRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeImuRequest::~SubscribeImuRequest() {
@@ -12546,6 +13493,7 @@ void SubscribeImuRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -12554,6 +13502,16 @@ const char* SubscribeImuRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -12564,6 +13522,8 @@ const char* SubscribeImuRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -12578,6 +13538,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribeImuRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -12594,6 +13560,13 @@ size_t SubscribeImuRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -12623,6 +13596,9 @@ void SubscribeImuRequest::MergeFrom(const SubscribeImuRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -12640,6 +13616,7 @@ bool SubscribeImuRequest::IsInitialized() const {
 void SubscribeImuRequest::InternalSwap(SubscribeImuRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeImuRequest::GetMetadata() const {
@@ -12866,10 +13843,12 @@ SubscribeScaledImuRequest::SubscribeScaledImuRequest(::PROTOBUF_NAMESPACE_ID::Ar
 SubscribeScaledImuRequest::SubscribeScaledImuRequest(const SubscribeScaledImuRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribeScaledImuRequest)
 }
 
 inline void SubscribeScaledImuRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeScaledImuRequest::~SubscribeScaledImuRequest() {
@@ -12899,6 +13878,7 @@ void SubscribeScaledImuRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -12907,6 +13887,16 @@ const char* SubscribeScaledImuRequest::_InternalParse(const char* ptr, ::PROTOBU
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -12917,6 +13907,8 @@ const char* SubscribeScaledImuRequest::_InternalParse(const char* ptr, ::PROTOBU
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -12931,6 +13923,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribeScaledImuRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -12947,6 +13945,13 @@ size_t SubscribeScaledImuRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -12976,6 +13981,9 @@ void SubscribeScaledImuRequest::MergeFrom(const SubscribeScaledImuRequest& from)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -12993,6 +14001,7 @@ bool SubscribeScaledImuRequest::IsInitialized() const {
 void SubscribeScaledImuRequest::InternalSwap(SubscribeScaledImuRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeScaledImuRequest::GetMetadata() const {
@@ -13219,10 +14228,12 @@ SubscribeRawImuRequest::SubscribeRawImuRequest(::PROTOBUF_NAMESPACE_ID::Arena* a
 SubscribeRawImuRequest::SubscribeRawImuRequest(const SubscribeRawImuRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribeRawImuRequest)
 }
 
 inline void SubscribeRawImuRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeRawImuRequest::~SubscribeRawImuRequest() {
@@ -13252,6 +14263,7 @@ void SubscribeRawImuRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -13260,6 +14272,16 @@ const char* SubscribeRawImuRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -13270,6 +14292,8 @@ const char* SubscribeRawImuRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -13284,6 +14308,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribeRawImuRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -13300,6 +14330,13 @@ size_t SubscribeRawImuRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -13329,6 +14366,9 @@ void SubscribeRawImuRequest::MergeFrom(const SubscribeRawImuRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -13346,6 +14386,7 @@ bool SubscribeRawImuRequest::IsInitialized() const {
 void SubscribeRawImuRequest::InternalSwap(SubscribeRawImuRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeRawImuRequest::GetMetadata() const {
@@ -13572,10 +14613,12 @@ SubscribeHealthAllOkRequest::SubscribeHealthAllOkRequest(::PROTOBUF_NAMESPACE_ID
 SubscribeHealthAllOkRequest::SubscribeHealthAllOkRequest(const SubscribeHealthAllOkRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribeHealthAllOkRequest)
 }
 
 inline void SubscribeHealthAllOkRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeHealthAllOkRequest::~SubscribeHealthAllOkRequest() {
@@ -13605,6 +14648,7 @@ void SubscribeHealthAllOkRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -13613,6 +14657,16 @@ const char* SubscribeHealthAllOkRequest::_InternalParse(const char* ptr, ::PROTO
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -13623,6 +14677,8 @@ const char* SubscribeHealthAllOkRequest::_InternalParse(const char* ptr, ::PROTO
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -13637,6 +14693,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribeHealthAllOkRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -13653,6 +14715,13 @@ size_t SubscribeHealthAllOkRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -13682,6 +14751,9 @@ void SubscribeHealthAllOkRequest::MergeFrom(const SubscribeHealthAllOkRequest& f
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -13699,6 +14771,7 @@ bool SubscribeHealthAllOkRequest::IsInitialized() const {
 void SubscribeHealthAllOkRequest::InternalSwap(SubscribeHealthAllOkRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeHealthAllOkRequest::GetMetadata() const {
@@ -13908,10 +14981,12 @@ SubscribeUnixEpochTimeRequest::SubscribeUnixEpochTimeRequest(::PROTOBUF_NAMESPAC
 SubscribeUnixEpochTimeRequest::SubscribeUnixEpochTimeRequest(const SubscribeUnixEpochTimeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribeUnixEpochTimeRequest)
 }
 
 inline void SubscribeUnixEpochTimeRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeUnixEpochTimeRequest::~SubscribeUnixEpochTimeRequest() {
@@ -13941,6 +15016,7 @@ void SubscribeUnixEpochTimeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -13949,6 +15025,16 @@ const char* SubscribeUnixEpochTimeRequest::_InternalParse(const char* ptr, ::PRO
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -13959,6 +15045,8 @@ const char* SubscribeUnixEpochTimeRequest::_InternalParse(const char* ptr, ::PRO
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -13973,6 +15061,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribeUnixEpochTimeRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -13989,6 +15083,13 @@ size_t SubscribeUnixEpochTimeRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -14018,6 +15119,9 @@ void SubscribeUnixEpochTimeRequest::MergeFrom(const SubscribeUnixEpochTimeReques
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -14035,6 +15139,7 @@ bool SubscribeUnixEpochTimeRequest::IsInitialized() const {
 void SubscribeUnixEpochTimeRequest::InternalSwap(SubscribeUnixEpochTimeRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeUnixEpochTimeRequest::GetMetadata() const {
@@ -14246,10 +15351,12 @@ SubscribeDistanceSensorRequest::SubscribeDistanceSensorRequest(::PROTOBUF_NAMESP
 SubscribeDistanceSensorRequest::SubscribeDistanceSensorRequest(const SubscribeDistanceSensorRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribeDistanceSensorRequest)
 }
 
 inline void SubscribeDistanceSensorRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeDistanceSensorRequest::~SubscribeDistanceSensorRequest() {
@@ -14279,6 +15386,7 @@ void SubscribeDistanceSensorRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -14287,6 +15395,16 @@ const char* SubscribeDistanceSensorRequest::_InternalParse(const char* ptr, ::PR
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -14297,6 +15415,8 @@ const char* SubscribeDistanceSensorRequest::_InternalParse(const char* ptr, ::PR
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -14311,6 +15431,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribeDistanceSensorRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -14327,6 +15453,13 @@ size_t SubscribeDistanceSensorRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -14356,6 +15489,9 @@ void SubscribeDistanceSensorRequest::MergeFrom(const SubscribeDistanceSensorRequ
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -14373,6 +15509,7 @@ bool SubscribeDistanceSensorRequest::IsInitialized() const {
 void SubscribeDistanceSensorRequest::InternalSwap(SubscribeDistanceSensorRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeDistanceSensorRequest::GetMetadata() const {
@@ -14599,10 +15736,12 @@ SubscribeScaledPressureRequest::SubscribeScaledPressureRequest(::PROTOBUF_NAMESP
 SubscribeScaledPressureRequest::SubscribeScaledPressureRequest(const SubscribeScaledPressureRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribeScaledPressureRequest)
 }
 
 inline void SubscribeScaledPressureRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeScaledPressureRequest::~SubscribeScaledPressureRequest() {
@@ -14632,6 +15771,7 @@ void SubscribeScaledPressureRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -14640,6 +15780,16 @@ const char* SubscribeScaledPressureRequest::_InternalParse(const char* ptr, ::PR
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -14650,6 +15800,8 @@ const char* SubscribeScaledPressureRequest::_InternalParse(const char* ptr, ::PR
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -14664,6 +15816,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribeScaledPressureRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -14680,6 +15838,13 @@ size_t SubscribeScaledPressureRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -14709,6 +15874,9 @@ void SubscribeScaledPressureRequest::MergeFrom(const SubscribeScaledPressureRequ
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -14726,6 +15894,7 @@ bool SubscribeScaledPressureRequest::IsInitialized() const {
 void SubscribeScaledPressureRequest::InternalSwap(SubscribeScaledPressureRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeScaledPressureRequest::GetMetadata() const {
@@ -14952,10 +16121,12 @@ SubscribeHeadingRequest::SubscribeHeadingRequest(::PROTOBUF_NAMESPACE_ID::Arena*
 SubscribeHeadingRequest::SubscribeHeadingRequest(const SubscribeHeadingRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SubscribeHeadingRequest)
 }
 
 inline void SubscribeHeadingRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeHeadingRequest::~SubscribeHeadingRequest() {
@@ -14985,6 +16156,7 @@ void SubscribeHeadingRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -14993,6 +16165,16 @@ const char* SubscribeHeadingRequest::_InternalParse(const char* ptr, ::PROTOBUF_
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -15003,6 +16185,8 @@ const char* SubscribeHeadingRequest::_InternalParse(const char* ptr, ::PROTOBUF_
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -15017,6 +16201,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.SubscribeHeadingRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -15033,6 +16223,13 @@ size_t SubscribeHeadingRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -15062,6 +16259,9 @@ void SubscribeHeadingRequest::MergeFrom(const SubscribeHeadingRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -15079,6 +16279,7 @@ bool SubscribeHeadingRequest::IsInitialized() const {
 void SubscribeHeadingRequest::InternalSwap(SubscribeHeadingRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeHeadingRequest::GetMetadata() const {
@@ -15305,12 +16506,17 @@ SetRatePositionRequest::SetRatePositionRequest(::PROTOBUF_NAMESPACE_ID::Arena* a
 SetRatePositionRequest::SetRatePositionRequest(const SetRatePositionRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  rate_hz_ = from.rate_hz_;
+  ::memcpy(&rate_hz_, &from.rate_hz_,
+    static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SetRatePositionRequest)
 }
 
 inline void SetRatePositionRequest::SharedCtor() {
-rate_hz_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&rate_hz_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
 }
 
 SetRatePositionRequest::~SetRatePositionRequest() {
@@ -15340,7 +16546,9 @@ void SetRatePositionRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  rate_hz_ = 0;
+  ::memset(&rate_hz_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&drone_id_) -
+      reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -15350,9 +16558,16 @@ const char* SetRatePositionRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // double rate_hz = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double rate_hz = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           rate_hz_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
@@ -15386,10 +16601,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_rate_hz(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_rate_hz(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -15408,9 +16629,16 @@ size_t SetRatePositionRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     total_size += 1 + 8;
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -15444,6 +16672,9 @@ void SetRatePositionRequest::MergeFrom(const SetRatePositionRequest& from) {
   if (!(from._internal_rate_hz() <= 0 && from._internal_rate_hz() >= 0)) {
     _internal_set_rate_hz(from._internal_rate_hz());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -15461,7 +16692,12 @@ bool SetRatePositionRequest::IsInitialized() const {
 void SetRatePositionRequest::InternalSwap(SetRatePositionRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(rate_hz_, other->rate_hz_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetRatePositionRequest, drone_id_)
+      + sizeof(SetRatePositionRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetRatePositionRequest, rate_hz_)>(
+          reinterpret_cast<char*>(&rate_hz_),
+          reinterpret_cast<char*>(&other->rate_hz_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetRatePositionRequest::GetMetadata() const {
@@ -15688,12 +16924,17 @@ SetRateHomeRequest::SetRateHomeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 SetRateHomeRequest::SetRateHomeRequest(const SetRateHomeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  rate_hz_ = from.rate_hz_;
+  ::memcpy(&rate_hz_, &from.rate_hz_,
+    static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SetRateHomeRequest)
 }
 
 inline void SetRateHomeRequest::SharedCtor() {
-rate_hz_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&rate_hz_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
 }
 
 SetRateHomeRequest::~SetRateHomeRequest() {
@@ -15723,7 +16964,9 @@ void SetRateHomeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  rate_hz_ = 0;
+  ::memset(&rate_hz_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&drone_id_) -
+      reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -15733,9 +16976,16 @@ const char* SetRateHomeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // double rate_hz = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double rate_hz = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           rate_hz_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
@@ -15769,10 +17019,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_rate_hz(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_rate_hz(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -15791,9 +17047,16 @@ size_t SetRateHomeRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     total_size += 1 + 8;
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -15827,6 +17090,9 @@ void SetRateHomeRequest::MergeFrom(const SetRateHomeRequest& from) {
   if (!(from._internal_rate_hz() <= 0 && from._internal_rate_hz() >= 0)) {
     _internal_set_rate_hz(from._internal_rate_hz());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -15844,7 +17110,12 @@ bool SetRateHomeRequest::IsInitialized() const {
 void SetRateHomeRequest::InternalSwap(SetRateHomeRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(rate_hz_, other->rate_hz_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetRateHomeRequest, drone_id_)
+      + sizeof(SetRateHomeRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetRateHomeRequest, rate_hz_)>(
+          reinterpret_cast<char*>(&rate_hz_),
+          reinterpret_cast<char*>(&other->rate_hz_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetRateHomeRequest::GetMetadata() const {
@@ -16071,12 +17342,17 @@ SetRateInAirRequest::SetRateInAirRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 SetRateInAirRequest::SetRateInAirRequest(const SetRateInAirRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  rate_hz_ = from.rate_hz_;
+  ::memcpy(&rate_hz_, &from.rate_hz_,
+    static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SetRateInAirRequest)
 }
 
 inline void SetRateInAirRequest::SharedCtor() {
-rate_hz_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&rate_hz_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
 }
 
 SetRateInAirRequest::~SetRateInAirRequest() {
@@ -16106,7 +17382,9 @@ void SetRateInAirRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  rate_hz_ = 0;
+  ::memset(&rate_hz_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&drone_id_) -
+      reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -16116,9 +17394,16 @@ const char* SetRateInAirRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // double rate_hz = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double rate_hz = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           rate_hz_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
@@ -16152,10 +17437,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_rate_hz(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_rate_hz(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -16174,9 +17465,16 @@ size_t SetRateInAirRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     total_size += 1 + 8;
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -16210,6 +17508,9 @@ void SetRateInAirRequest::MergeFrom(const SetRateInAirRequest& from) {
   if (!(from._internal_rate_hz() <= 0 && from._internal_rate_hz() >= 0)) {
     _internal_set_rate_hz(from._internal_rate_hz());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -16227,7 +17528,12 @@ bool SetRateInAirRequest::IsInitialized() const {
 void SetRateInAirRequest::InternalSwap(SetRateInAirRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(rate_hz_, other->rate_hz_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetRateInAirRequest, drone_id_)
+      + sizeof(SetRateInAirRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetRateInAirRequest, rate_hz_)>(
+          reinterpret_cast<char*>(&rate_hz_),
+          reinterpret_cast<char*>(&other->rate_hz_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetRateInAirRequest::GetMetadata() const {
@@ -16454,12 +17760,17 @@ SetRateLandedStateRequest::SetRateLandedStateRequest(::PROTOBUF_NAMESPACE_ID::Ar
 SetRateLandedStateRequest::SetRateLandedStateRequest(const SetRateLandedStateRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  rate_hz_ = from.rate_hz_;
+  ::memcpy(&rate_hz_, &from.rate_hz_,
+    static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SetRateLandedStateRequest)
 }
 
 inline void SetRateLandedStateRequest::SharedCtor() {
-rate_hz_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&rate_hz_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
 }
 
 SetRateLandedStateRequest::~SetRateLandedStateRequest() {
@@ -16489,7 +17800,9 @@ void SetRateLandedStateRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  rate_hz_ = 0;
+  ::memset(&rate_hz_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&drone_id_) -
+      reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -16499,9 +17812,16 @@ const char* SetRateLandedStateRequest::_InternalParse(const char* ptr, ::PROTOBU
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // double rate_hz = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double rate_hz = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           rate_hz_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
@@ -16535,10 +17855,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_rate_hz(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_rate_hz(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -16557,9 +17883,16 @@ size_t SetRateLandedStateRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     total_size += 1 + 8;
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -16593,6 +17926,9 @@ void SetRateLandedStateRequest::MergeFrom(const SetRateLandedStateRequest& from)
   if (!(from._internal_rate_hz() <= 0 && from._internal_rate_hz() >= 0)) {
     _internal_set_rate_hz(from._internal_rate_hz());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -16610,7 +17946,12 @@ bool SetRateLandedStateRequest::IsInitialized() const {
 void SetRateLandedStateRequest::InternalSwap(SetRateLandedStateRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(rate_hz_, other->rate_hz_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetRateLandedStateRequest, drone_id_)
+      + sizeof(SetRateLandedStateRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetRateLandedStateRequest, rate_hz_)>(
+          reinterpret_cast<char*>(&rate_hz_),
+          reinterpret_cast<char*>(&other->rate_hz_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetRateLandedStateRequest::GetMetadata() const {
@@ -16837,12 +18178,17 @@ SetRateVtolStateRequest::SetRateVtolStateRequest(::PROTOBUF_NAMESPACE_ID::Arena*
 SetRateVtolStateRequest::SetRateVtolStateRequest(const SetRateVtolStateRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  rate_hz_ = from.rate_hz_;
+  ::memcpy(&rate_hz_, &from.rate_hz_,
+    static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SetRateVtolStateRequest)
 }
 
 inline void SetRateVtolStateRequest::SharedCtor() {
-rate_hz_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&rate_hz_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
 }
 
 SetRateVtolStateRequest::~SetRateVtolStateRequest() {
@@ -16872,7 +18218,9 @@ void SetRateVtolStateRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  rate_hz_ = 0;
+  ::memset(&rate_hz_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&drone_id_) -
+      reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -16882,9 +18230,16 @@ const char* SetRateVtolStateRequest::_InternalParse(const char* ptr, ::PROTOBUF_
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // double rate_hz = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double rate_hz = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           rate_hz_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
@@ -16918,10 +18273,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_rate_hz(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_rate_hz(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -16940,9 +18301,16 @@ size_t SetRateVtolStateRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     total_size += 1 + 8;
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -16976,6 +18344,9 @@ void SetRateVtolStateRequest::MergeFrom(const SetRateVtolStateRequest& from) {
   if (!(from._internal_rate_hz() <= 0 && from._internal_rate_hz() >= 0)) {
     _internal_set_rate_hz(from._internal_rate_hz());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -16993,7 +18364,12 @@ bool SetRateVtolStateRequest::IsInitialized() const {
 void SetRateVtolStateRequest::InternalSwap(SetRateVtolStateRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(rate_hz_, other->rate_hz_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetRateVtolStateRequest, drone_id_)
+      + sizeof(SetRateVtolStateRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetRateVtolStateRequest, rate_hz_)>(
+          reinterpret_cast<char*>(&rate_hz_),
+          reinterpret_cast<char*>(&other->rate_hz_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetRateVtolStateRequest::GetMetadata() const {
@@ -17220,12 +18596,17 @@ SetRateAttitudeRequest::SetRateAttitudeRequest(::PROTOBUF_NAMESPACE_ID::Arena* a
 SetRateAttitudeRequest::SetRateAttitudeRequest(const SetRateAttitudeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  rate_hz_ = from.rate_hz_;
+  ::memcpy(&rate_hz_, &from.rate_hz_,
+    static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SetRateAttitudeRequest)
 }
 
 inline void SetRateAttitudeRequest::SharedCtor() {
-rate_hz_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&rate_hz_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
 }
 
 SetRateAttitudeRequest::~SetRateAttitudeRequest() {
@@ -17255,7 +18636,9 @@ void SetRateAttitudeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  rate_hz_ = 0;
+  ::memset(&rate_hz_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&drone_id_) -
+      reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -17265,9 +18648,16 @@ const char* SetRateAttitudeRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // double rate_hz = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double rate_hz = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           rate_hz_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
@@ -17301,10 +18691,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_rate_hz(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_rate_hz(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -17323,9 +18719,16 @@ size_t SetRateAttitudeRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     total_size += 1 + 8;
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -17359,6 +18762,9 @@ void SetRateAttitudeRequest::MergeFrom(const SetRateAttitudeRequest& from) {
   if (!(from._internal_rate_hz() <= 0 && from._internal_rate_hz() >= 0)) {
     _internal_set_rate_hz(from._internal_rate_hz());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -17376,7 +18782,12 @@ bool SetRateAttitudeRequest::IsInitialized() const {
 void SetRateAttitudeRequest::InternalSwap(SetRateAttitudeRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(rate_hz_, other->rate_hz_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetRateAttitudeRequest, drone_id_)
+      + sizeof(SetRateAttitudeRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetRateAttitudeRequest, rate_hz_)>(
+          reinterpret_cast<char*>(&rate_hz_),
+          reinterpret_cast<char*>(&other->rate_hz_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetRateAttitudeRequest::GetMetadata() const {
@@ -17603,12 +19014,17 @@ SetRateAttitudeAngularVelocityBodyRequest::SetRateAttitudeAngularVelocityBodyReq
 SetRateAttitudeAngularVelocityBodyRequest::SetRateAttitudeAngularVelocityBodyRequest(const SetRateAttitudeAngularVelocityBodyRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  rate_hz_ = from.rate_hz_;
+  ::memcpy(&rate_hz_, &from.rate_hz_,
+    static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SetRateAttitudeAngularVelocityBodyRequest)
 }
 
 inline void SetRateAttitudeAngularVelocityBodyRequest::SharedCtor() {
-rate_hz_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&rate_hz_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
 }
 
 SetRateAttitudeAngularVelocityBodyRequest::~SetRateAttitudeAngularVelocityBodyRequest() {
@@ -17638,7 +19054,9 @@ void SetRateAttitudeAngularVelocityBodyRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  rate_hz_ = 0;
+  ::memset(&rate_hz_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&drone_id_) -
+      reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -17648,9 +19066,16 @@ const char* SetRateAttitudeAngularVelocityBodyRequest::_InternalParse(const char
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // double rate_hz = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double rate_hz = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           rate_hz_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
@@ -17684,10 +19109,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_rate_hz(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_rate_hz(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -17706,9 +19137,16 @@ size_t SetRateAttitudeAngularVelocityBodyRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     total_size += 1 + 8;
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -17742,6 +19180,9 @@ void SetRateAttitudeAngularVelocityBodyRequest::MergeFrom(const SetRateAttitudeA
   if (!(from._internal_rate_hz() <= 0 && from._internal_rate_hz() >= 0)) {
     _internal_set_rate_hz(from._internal_rate_hz());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -17759,7 +19200,12 @@ bool SetRateAttitudeAngularVelocityBodyRequest::IsInitialized() const {
 void SetRateAttitudeAngularVelocityBodyRequest::InternalSwap(SetRateAttitudeAngularVelocityBodyRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(rate_hz_, other->rate_hz_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetRateAttitudeAngularVelocityBodyRequest, drone_id_)
+      + sizeof(SetRateAttitudeAngularVelocityBodyRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetRateAttitudeAngularVelocityBodyRequest, rate_hz_)>(
+          reinterpret_cast<char*>(&rate_hz_),
+          reinterpret_cast<char*>(&other->rate_hz_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetRateAttitudeAngularVelocityBodyRequest::GetMetadata() const {
@@ -17986,12 +19432,17 @@ SetRateCameraAttitudeQuaternionRequest::SetRateCameraAttitudeQuaternionRequest(:
 SetRateCameraAttitudeQuaternionRequest::SetRateCameraAttitudeQuaternionRequest(const SetRateCameraAttitudeQuaternionRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  rate_hz_ = from.rate_hz_;
+  ::memcpy(&rate_hz_, &from.rate_hz_,
+    static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SetRateCameraAttitudeQuaternionRequest)
 }
 
 inline void SetRateCameraAttitudeQuaternionRequest::SharedCtor() {
-rate_hz_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&rate_hz_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
 }
 
 SetRateCameraAttitudeQuaternionRequest::~SetRateCameraAttitudeQuaternionRequest() {
@@ -18021,7 +19472,9 @@ void SetRateCameraAttitudeQuaternionRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  rate_hz_ = 0;
+  ::memset(&rate_hz_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&drone_id_) -
+      reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -18031,9 +19484,16 @@ const char* SetRateCameraAttitudeQuaternionRequest::_InternalParse(const char* p
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // double rate_hz = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double rate_hz = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           rate_hz_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
@@ -18067,10 +19527,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_rate_hz(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_rate_hz(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -18089,9 +19555,16 @@ size_t SetRateCameraAttitudeQuaternionRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     total_size += 1 + 8;
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -18125,6 +19598,9 @@ void SetRateCameraAttitudeQuaternionRequest::MergeFrom(const SetRateCameraAttitu
   if (!(from._internal_rate_hz() <= 0 && from._internal_rate_hz() >= 0)) {
     _internal_set_rate_hz(from._internal_rate_hz());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -18142,7 +19618,12 @@ bool SetRateCameraAttitudeQuaternionRequest::IsInitialized() const {
 void SetRateCameraAttitudeQuaternionRequest::InternalSwap(SetRateCameraAttitudeQuaternionRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(rate_hz_, other->rate_hz_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetRateCameraAttitudeQuaternionRequest, drone_id_)
+      + sizeof(SetRateCameraAttitudeQuaternionRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetRateCameraAttitudeQuaternionRequest, rate_hz_)>(
+          reinterpret_cast<char*>(&rate_hz_),
+          reinterpret_cast<char*>(&other->rate_hz_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetRateCameraAttitudeQuaternionRequest::GetMetadata() const {
@@ -18369,12 +19850,17 @@ SetRateCameraAttitudeRequest::SetRateCameraAttitudeRequest(::PROTOBUF_NAMESPACE_
 SetRateCameraAttitudeRequest::SetRateCameraAttitudeRequest(const SetRateCameraAttitudeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  rate_hz_ = from.rate_hz_;
+  ::memcpy(&rate_hz_, &from.rate_hz_,
+    static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SetRateCameraAttitudeRequest)
 }
 
 inline void SetRateCameraAttitudeRequest::SharedCtor() {
-rate_hz_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&rate_hz_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
 }
 
 SetRateCameraAttitudeRequest::~SetRateCameraAttitudeRequest() {
@@ -18404,7 +19890,9 @@ void SetRateCameraAttitudeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  rate_hz_ = 0;
+  ::memset(&rate_hz_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&drone_id_) -
+      reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -18414,9 +19902,16 @@ const char* SetRateCameraAttitudeRequest::_InternalParse(const char* ptr, ::PROT
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // double rate_hz = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double rate_hz = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           rate_hz_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
@@ -18450,10 +19945,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_rate_hz(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_rate_hz(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -18472,9 +19973,16 @@ size_t SetRateCameraAttitudeRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     total_size += 1 + 8;
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -18508,6 +20016,9 @@ void SetRateCameraAttitudeRequest::MergeFrom(const SetRateCameraAttitudeRequest&
   if (!(from._internal_rate_hz() <= 0 && from._internal_rate_hz() >= 0)) {
     _internal_set_rate_hz(from._internal_rate_hz());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -18525,7 +20036,12 @@ bool SetRateCameraAttitudeRequest::IsInitialized() const {
 void SetRateCameraAttitudeRequest::InternalSwap(SetRateCameraAttitudeRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(rate_hz_, other->rate_hz_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetRateCameraAttitudeRequest, drone_id_)
+      + sizeof(SetRateCameraAttitudeRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetRateCameraAttitudeRequest, rate_hz_)>(
+          reinterpret_cast<char*>(&rate_hz_),
+          reinterpret_cast<char*>(&other->rate_hz_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetRateCameraAttitudeRequest::GetMetadata() const {
@@ -18752,12 +20268,17 @@ SetRateVelocityNedRequest::SetRateVelocityNedRequest(::PROTOBUF_NAMESPACE_ID::Ar
 SetRateVelocityNedRequest::SetRateVelocityNedRequest(const SetRateVelocityNedRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  rate_hz_ = from.rate_hz_;
+  ::memcpy(&rate_hz_, &from.rate_hz_,
+    static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SetRateVelocityNedRequest)
 }
 
 inline void SetRateVelocityNedRequest::SharedCtor() {
-rate_hz_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&rate_hz_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
 }
 
 SetRateVelocityNedRequest::~SetRateVelocityNedRequest() {
@@ -18787,7 +20308,9 @@ void SetRateVelocityNedRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  rate_hz_ = 0;
+  ::memset(&rate_hz_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&drone_id_) -
+      reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -18797,9 +20320,16 @@ const char* SetRateVelocityNedRequest::_InternalParse(const char* ptr, ::PROTOBU
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // double rate_hz = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double rate_hz = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           rate_hz_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
@@ -18833,10 +20363,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_rate_hz(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_rate_hz(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -18855,9 +20391,16 @@ size_t SetRateVelocityNedRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     total_size += 1 + 8;
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -18891,6 +20434,9 @@ void SetRateVelocityNedRequest::MergeFrom(const SetRateVelocityNedRequest& from)
   if (!(from._internal_rate_hz() <= 0 && from._internal_rate_hz() >= 0)) {
     _internal_set_rate_hz(from._internal_rate_hz());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -18908,7 +20454,12 @@ bool SetRateVelocityNedRequest::IsInitialized() const {
 void SetRateVelocityNedRequest::InternalSwap(SetRateVelocityNedRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(rate_hz_, other->rate_hz_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetRateVelocityNedRequest, drone_id_)
+      + sizeof(SetRateVelocityNedRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetRateVelocityNedRequest, rate_hz_)>(
+          reinterpret_cast<char*>(&rate_hz_),
+          reinterpret_cast<char*>(&other->rate_hz_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetRateVelocityNedRequest::GetMetadata() const {
@@ -19135,12 +20686,17 @@ SetRateGpsInfoRequest::SetRateGpsInfoRequest(::PROTOBUF_NAMESPACE_ID::Arena* are
 SetRateGpsInfoRequest::SetRateGpsInfoRequest(const SetRateGpsInfoRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  rate_hz_ = from.rate_hz_;
+  ::memcpy(&rate_hz_, &from.rate_hz_,
+    static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SetRateGpsInfoRequest)
 }
 
 inline void SetRateGpsInfoRequest::SharedCtor() {
-rate_hz_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&rate_hz_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
 }
 
 SetRateGpsInfoRequest::~SetRateGpsInfoRequest() {
@@ -19170,7 +20726,9 @@ void SetRateGpsInfoRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  rate_hz_ = 0;
+  ::memset(&rate_hz_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&drone_id_) -
+      reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -19180,9 +20738,16 @@ const char* SetRateGpsInfoRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // double rate_hz = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double rate_hz = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           rate_hz_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
@@ -19216,10 +20781,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_rate_hz(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_rate_hz(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -19238,9 +20809,16 @@ size_t SetRateGpsInfoRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     total_size += 1 + 8;
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -19274,6 +20852,9 @@ void SetRateGpsInfoRequest::MergeFrom(const SetRateGpsInfoRequest& from) {
   if (!(from._internal_rate_hz() <= 0 && from._internal_rate_hz() >= 0)) {
     _internal_set_rate_hz(from._internal_rate_hz());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -19291,7 +20872,12 @@ bool SetRateGpsInfoRequest::IsInitialized() const {
 void SetRateGpsInfoRequest::InternalSwap(SetRateGpsInfoRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(rate_hz_, other->rate_hz_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetRateGpsInfoRequest, drone_id_)
+      + sizeof(SetRateGpsInfoRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetRateGpsInfoRequest, rate_hz_)>(
+          reinterpret_cast<char*>(&rate_hz_),
+          reinterpret_cast<char*>(&other->rate_hz_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetRateGpsInfoRequest::GetMetadata() const {
@@ -19518,12 +21104,17 @@ SetRateRawGpsRequest::SetRateRawGpsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena
 SetRateRawGpsRequest::SetRateRawGpsRequest(const SetRateRawGpsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  rate_hz_ = from.rate_hz_;
+  ::memcpy(&rate_hz_, &from.rate_hz_,
+    static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SetRateRawGpsRequest)
 }
 
 inline void SetRateRawGpsRequest::SharedCtor() {
-rate_hz_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&rate_hz_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
 }
 
 SetRateRawGpsRequest::~SetRateRawGpsRequest() {
@@ -19553,7 +21144,9 @@ void SetRateRawGpsRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  rate_hz_ = 0;
+  ::memset(&rate_hz_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&drone_id_) -
+      reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -19563,9 +21156,16 @@ const char* SetRateRawGpsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // double rate_hz = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double rate_hz = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           rate_hz_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
@@ -19599,10 +21199,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_rate_hz(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_rate_hz(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -19621,9 +21227,16 @@ size_t SetRateRawGpsRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     total_size += 1 + 8;
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -19657,6 +21270,9 @@ void SetRateRawGpsRequest::MergeFrom(const SetRateRawGpsRequest& from) {
   if (!(from._internal_rate_hz() <= 0 && from._internal_rate_hz() >= 0)) {
     _internal_set_rate_hz(from._internal_rate_hz());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -19674,7 +21290,12 @@ bool SetRateRawGpsRequest::IsInitialized() const {
 void SetRateRawGpsRequest::InternalSwap(SetRateRawGpsRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(rate_hz_, other->rate_hz_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetRateRawGpsRequest, drone_id_)
+      + sizeof(SetRateRawGpsRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetRateRawGpsRequest, rate_hz_)>(
+          reinterpret_cast<char*>(&rate_hz_),
+          reinterpret_cast<char*>(&other->rate_hz_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetRateRawGpsRequest::GetMetadata() const {
@@ -19701,12 +21322,17 @@ SetRateBatteryRequest::SetRateBatteryRequest(::PROTOBUF_NAMESPACE_ID::Arena* are
 SetRateBatteryRequest::SetRateBatteryRequest(const SetRateBatteryRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  rate_hz_ = from.rate_hz_;
+  ::memcpy(&rate_hz_, &from.rate_hz_,
+    static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SetRateBatteryRequest)
 }
 
 inline void SetRateBatteryRequest::SharedCtor() {
-rate_hz_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&rate_hz_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
 }
 
 SetRateBatteryRequest::~SetRateBatteryRequest() {
@@ -19736,7 +21362,9 @@ void SetRateBatteryRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  rate_hz_ = 0;
+  ::memset(&rate_hz_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&drone_id_) -
+      reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -19746,9 +21374,16 @@ const char* SetRateBatteryRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // double rate_hz = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double rate_hz = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           rate_hz_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
@@ -19782,10 +21417,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_rate_hz(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_rate_hz(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -19804,9 +21445,16 @@ size_t SetRateBatteryRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     total_size += 1 + 8;
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -19840,6 +21488,9 @@ void SetRateBatteryRequest::MergeFrom(const SetRateBatteryRequest& from) {
   if (!(from._internal_rate_hz() <= 0 && from._internal_rate_hz() >= 0)) {
     _internal_set_rate_hz(from._internal_rate_hz());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -19857,7 +21508,12 @@ bool SetRateBatteryRequest::IsInitialized() const {
 void SetRateBatteryRequest::InternalSwap(SetRateBatteryRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(rate_hz_, other->rate_hz_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetRateBatteryRequest, drone_id_)
+      + sizeof(SetRateBatteryRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetRateBatteryRequest, rate_hz_)>(
+          reinterpret_cast<char*>(&rate_hz_),
+          reinterpret_cast<char*>(&other->rate_hz_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetRateBatteryRequest::GetMetadata() const {
@@ -20084,12 +21740,17 @@ SetRateRcStatusRequest::SetRateRcStatusRequest(::PROTOBUF_NAMESPACE_ID::Arena* a
 SetRateRcStatusRequest::SetRateRcStatusRequest(const SetRateRcStatusRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  rate_hz_ = from.rate_hz_;
+  ::memcpy(&rate_hz_, &from.rate_hz_,
+    static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SetRateRcStatusRequest)
 }
 
 inline void SetRateRcStatusRequest::SharedCtor() {
-rate_hz_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&rate_hz_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
 }
 
 SetRateRcStatusRequest::~SetRateRcStatusRequest() {
@@ -20119,7 +21780,9 @@ void SetRateRcStatusRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  rate_hz_ = 0;
+  ::memset(&rate_hz_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&drone_id_) -
+      reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -20129,9 +21792,16 @@ const char* SetRateRcStatusRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // double rate_hz = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double rate_hz = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           rate_hz_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
@@ -20165,10 +21835,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_rate_hz(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_rate_hz(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -20187,9 +21863,16 @@ size_t SetRateRcStatusRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     total_size += 1 + 8;
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -20223,6 +21906,9 @@ void SetRateRcStatusRequest::MergeFrom(const SetRateRcStatusRequest& from) {
   if (!(from._internal_rate_hz() <= 0 && from._internal_rate_hz() >= 0)) {
     _internal_set_rate_hz(from._internal_rate_hz());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -20240,7 +21926,12 @@ bool SetRateRcStatusRequest::IsInitialized() const {
 void SetRateRcStatusRequest::InternalSwap(SetRateRcStatusRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(rate_hz_, other->rate_hz_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetRateRcStatusRequest, drone_id_)
+      + sizeof(SetRateRcStatusRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetRateRcStatusRequest, rate_hz_)>(
+          reinterpret_cast<char*>(&rate_hz_),
+          reinterpret_cast<char*>(&other->rate_hz_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetRateRcStatusRequest::GetMetadata() const {
@@ -20467,12 +22158,17 @@ SetRateActuatorControlTargetRequest::SetRateActuatorControlTargetRequest(::PROTO
 SetRateActuatorControlTargetRequest::SetRateActuatorControlTargetRequest(const SetRateActuatorControlTargetRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  rate_hz_ = from.rate_hz_;
+  ::memcpy(&rate_hz_, &from.rate_hz_,
+    static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SetRateActuatorControlTargetRequest)
 }
 
 inline void SetRateActuatorControlTargetRequest::SharedCtor() {
-rate_hz_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&rate_hz_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
 }
 
 SetRateActuatorControlTargetRequest::~SetRateActuatorControlTargetRequest() {
@@ -20502,7 +22198,9 @@ void SetRateActuatorControlTargetRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  rate_hz_ = 0;
+  ::memset(&rate_hz_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&drone_id_) -
+      reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -20512,9 +22210,16 @@ const char* SetRateActuatorControlTargetRequest::_InternalParse(const char* ptr,
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // double rate_hz = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double rate_hz = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           rate_hz_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
@@ -20548,10 +22253,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_rate_hz(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_rate_hz(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -20570,9 +22281,16 @@ size_t SetRateActuatorControlTargetRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     total_size += 1 + 8;
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -20606,6 +22324,9 @@ void SetRateActuatorControlTargetRequest::MergeFrom(const SetRateActuatorControl
   if (!(from._internal_rate_hz() <= 0 && from._internal_rate_hz() >= 0)) {
     _internal_set_rate_hz(from._internal_rate_hz());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -20623,7 +22344,12 @@ bool SetRateActuatorControlTargetRequest::IsInitialized() const {
 void SetRateActuatorControlTargetRequest::InternalSwap(SetRateActuatorControlTargetRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(rate_hz_, other->rate_hz_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetRateActuatorControlTargetRequest, drone_id_)
+      + sizeof(SetRateActuatorControlTargetRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetRateActuatorControlTargetRequest, rate_hz_)>(
+          reinterpret_cast<char*>(&rate_hz_),
+          reinterpret_cast<char*>(&other->rate_hz_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetRateActuatorControlTargetRequest::GetMetadata() const {
@@ -20850,12 +22576,17 @@ SetRateActuatorOutputStatusRequest::SetRateActuatorOutputStatusRequest(::PROTOBU
 SetRateActuatorOutputStatusRequest::SetRateActuatorOutputStatusRequest(const SetRateActuatorOutputStatusRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  rate_hz_ = from.rate_hz_;
+  ::memcpy(&rate_hz_, &from.rate_hz_,
+    static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SetRateActuatorOutputStatusRequest)
 }
 
 inline void SetRateActuatorOutputStatusRequest::SharedCtor() {
-rate_hz_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&rate_hz_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
 }
 
 SetRateActuatorOutputStatusRequest::~SetRateActuatorOutputStatusRequest() {
@@ -20885,7 +22616,9 @@ void SetRateActuatorOutputStatusRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  rate_hz_ = 0;
+  ::memset(&rate_hz_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&drone_id_) -
+      reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -20895,9 +22628,16 @@ const char* SetRateActuatorOutputStatusRequest::_InternalParse(const char* ptr, 
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // double rate_hz = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double rate_hz = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           rate_hz_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
@@ -20931,10 +22671,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_rate_hz(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_rate_hz(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -20953,9 +22699,16 @@ size_t SetRateActuatorOutputStatusRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     total_size += 1 + 8;
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -20989,6 +22742,9 @@ void SetRateActuatorOutputStatusRequest::MergeFrom(const SetRateActuatorOutputSt
   if (!(from._internal_rate_hz() <= 0 && from._internal_rate_hz() >= 0)) {
     _internal_set_rate_hz(from._internal_rate_hz());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -21006,7 +22762,12 @@ bool SetRateActuatorOutputStatusRequest::IsInitialized() const {
 void SetRateActuatorOutputStatusRequest::InternalSwap(SetRateActuatorOutputStatusRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(rate_hz_, other->rate_hz_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetRateActuatorOutputStatusRequest, drone_id_)
+      + sizeof(SetRateActuatorOutputStatusRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetRateActuatorOutputStatusRequest, rate_hz_)>(
+          reinterpret_cast<char*>(&rate_hz_),
+          reinterpret_cast<char*>(&other->rate_hz_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetRateActuatorOutputStatusRequest::GetMetadata() const {
@@ -21233,12 +22994,17 @@ SetRateOdometryRequest::SetRateOdometryRequest(::PROTOBUF_NAMESPACE_ID::Arena* a
 SetRateOdometryRequest::SetRateOdometryRequest(const SetRateOdometryRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  rate_hz_ = from.rate_hz_;
+  ::memcpy(&rate_hz_, &from.rate_hz_,
+    static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SetRateOdometryRequest)
 }
 
 inline void SetRateOdometryRequest::SharedCtor() {
-rate_hz_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&rate_hz_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
 }
 
 SetRateOdometryRequest::~SetRateOdometryRequest() {
@@ -21268,7 +23034,9 @@ void SetRateOdometryRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  rate_hz_ = 0;
+  ::memset(&rate_hz_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&drone_id_) -
+      reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -21278,9 +23046,16 @@ const char* SetRateOdometryRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // double rate_hz = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double rate_hz = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           rate_hz_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
@@ -21314,10 +23089,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_rate_hz(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_rate_hz(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -21336,9 +23117,16 @@ size_t SetRateOdometryRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     total_size += 1 + 8;
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -21372,6 +23160,9 @@ void SetRateOdometryRequest::MergeFrom(const SetRateOdometryRequest& from) {
   if (!(from._internal_rate_hz() <= 0 && from._internal_rate_hz() >= 0)) {
     _internal_set_rate_hz(from._internal_rate_hz());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -21389,7 +23180,12 @@ bool SetRateOdometryRequest::IsInitialized() const {
 void SetRateOdometryRequest::InternalSwap(SetRateOdometryRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(rate_hz_, other->rate_hz_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetRateOdometryRequest, drone_id_)
+      + sizeof(SetRateOdometryRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetRateOdometryRequest, rate_hz_)>(
+          reinterpret_cast<char*>(&rate_hz_),
+          reinterpret_cast<char*>(&other->rate_hz_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetRateOdometryRequest::GetMetadata() const {
@@ -21616,12 +23412,17 @@ SetRatePositionVelocityNedRequest::SetRatePositionVelocityNedRequest(::PROTOBUF_
 SetRatePositionVelocityNedRequest::SetRatePositionVelocityNedRequest(const SetRatePositionVelocityNedRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  rate_hz_ = from.rate_hz_;
+  ::memcpy(&rate_hz_, &from.rate_hz_,
+    static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SetRatePositionVelocityNedRequest)
 }
 
 inline void SetRatePositionVelocityNedRequest::SharedCtor() {
-rate_hz_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&rate_hz_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
 }
 
 SetRatePositionVelocityNedRequest::~SetRatePositionVelocityNedRequest() {
@@ -21651,7 +23452,9 @@ void SetRatePositionVelocityNedRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  rate_hz_ = 0;
+  ::memset(&rate_hz_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&drone_id_) -
+      reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -21661,9 +23464,16 @@ const char* SetRatePositionVelocityNedRequest::_InternalParse(const char* ptr, :
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // double rate_hz = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double rate_hz = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           rate_hz_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
@@ -21697,10 +23507,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_rate_hz(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_rate_hz(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -21719,9 +23535,16 @@ size_t SetRatePositionVelocityNedRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     total_size += 1 + 8;
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -21755,6 +23578,9 @@ void SetRatePositionVelocityNedRequest::MergeFrom(const SetRatePositionVelocityN
   if (!(from._internal_rate_hz() <= 0 && from._internal_rate_hz() >= 0)) {
     _internal_set_rate_hz(from._internal_rate_hz());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -21772,7 +23598,12 @@ bool SetRatePositionVelocityNedRequest::IsInitialized() const {
 void SetRatePositionVelocityNedRequest::InternalSwap(SetRatePositionVelocityNedRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(rate_hz_, other->rate_hz_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetRatePositionVelocityNedRequest, drone_id_)
+      + sizeof(SetRatePositionVelocityNedRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetRatePositionVelocityNedRequest, rate_hz_)>(
+          reinterpret_cast<char*>(&rate_hz_),
+          reinterpret_cast<char*>(&other->rate_hz_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetRatePositionVelocityNedRequest::GetMetadata() const {
@@ -21999,12 +23830,17 @@ SetRateGroundTruthRequest::SetRateGroundTruthRequest(::PROTOBUF_NAMESPACE_ID::Ar
 SetRateGroundTruthRequest::SetRateGroundTruthRequest(const SetRateGroundTruthRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  rate_hz_ = from.rate_hz_;
+  ::memcpy(&rate_hz_, &from.rate_hz_,
+    static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SetRateGroundTruthRequest)
 }
 
 inline void SetRateGroundTruthRequest::SharedCtor() {
-rate_hz_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&rate_hz_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
 }
 
 SetRateGroundTruthRequest::~SetRateGroundTruthRequest() {
@@ -22034,7 +23870,9 @@ void SetRateGroundTruthRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  rate_hz_ = 0;
+  ::memset(&rate_hz_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&drone_id_) -
+      reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -22044,9 +23882,16 @@ const char* SetRateGroundTruthRequest::_InternalParse(const char* ptr, ::PROTOBU
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // double rate_hz = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double rate_hz = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           rate_hz_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
@@ -22080,10 +23925,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_rate_hz(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_rate_hz(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -22102,9 +23953,16 @@ size_t SetRateGroundTruthRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     total_size += 1 + 8;
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -22138,6 +23996,9 @@ void SetRateGroundTruthRequest::MergeFrom(const SetRateGroundTruthRequest& from)
   if (!(from._internal_rate_hz() <= 0 && from._internal_rate_hz() >= 0)) {
     _internal_set_rate_hz(from._internal_rate_hz());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -22155,7 +24016,12 @@ bool SetRateGroundTruthRequest::IsInitialized() const {
 void SetRateGroundTruthRequest::InternalSwap(SetRateGroundTruthRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(rate_hz_, other->rate_hz_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetRateGroundTruthRequest, drone_id_)
+      + sizeof(SetRateGroundTruthRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetRateGroundTruthRequest, rate_hz_)>(
+          reinterpret_cast<char*>(&rate_hz_),
+          reinterpret_cast<char*>(&other->rate_hz_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetRateGroundTruthRequest::GetMetadata() const {
@@ -22382,12 +24248,17 @@ SetRateFixedwingMetricsRequest::SetRateFixedwingMetricsRequest(::PROTOBUF_NAMESP
 SetRateFixedwingMetricsRequest::SetRateFixedwingMetricsRequest(const SetRateFixedwingMetricsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  rate_hz_ = from.rate_hz_;
+  ::memcpy(&rate_hz_, &from.rate_hz_,
+    static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SetRateFixedwingMetricsRequest)
 }
 
 inline void SetRateFixedwingMetricsRequest::SharedCtor() {
-rate_hz_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&rate_hz_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
 }
 
 SetRateFixedwingMetricsRequest::~SetRateFixedwingMetricsRequest() {
@@ -22417,7 +24288,9 @@ void SetRateFixedwingMetricsRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  rate_hz_ = 0;
+  ::memset(&rate_hz_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&drone_id_) -
+      reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -22427,9 +24300,16 @@ const char* SetRateFixedwingMetricsRequest::_InternalParse(const char* ptr, ::PR
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // double rate_hz = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double rate_hz = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           rate_hz_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
@@ -22463,10 +24343,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_rate_hz(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_rate_hz(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -22485,9 +24371,16 @@ size_t SetRateFixedwingMetricsRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     total_size += 1 + 8;
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -22521,6 +24414,9 @@ void SetRateFixedwingMetricsRequest::MergeFrom(const SetRateFixedwingMetricsRequ
   if (!(from._internal_rate_hz() <= 0 && from._internal_rate_hz() >= 0)) {
     _internal_set_rate_hz(from._internal_rate_hz());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -22538,7 +24434,12 @@ bool SetRateFixedwingMetricsRequest::IsInitialized() const {
 void SetRateFixedwingMetricsRequest::InternalSwap(SetRateFixedwingMetricsRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(rate_hz_, other->rate_hz_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetRateFixedwingMetricsRequest, drone_id_)
+      + sizeof(SetRateFixedwingMetricsRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetRateFixedwingMetricsRequest, rate_hz_)>(
+          reinterpret_cast<char*>(&rate_hz_),
+          reinterpret_cast<char*>(&other->rate_hz_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetRateFixedwingMetricsRequest::GetMetadata() const {
@@ -22765,12 +24666,17 @@ SetRateImuRequest::SetRateImuRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 SetRateImuRequest::SetRateImuRequest(const SetRateImuRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  rate_hz_ = from.rate_hz_;
+  ::memcpy(&rate_hz_, &from.rate_hz_,
+    static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SetRateImuRequest)
 }
 
 inline void SetRateImuRequest::SharedCtor() {
-rate_hz_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&rate_hz_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
 }
 
 SetRateImuRequest::~SetRateImuRequest() {
@@ -22800,7 +24706,9 @@ void SetRateImuRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  rate_hz_ = 0;
+  ::memset(&rate_hz_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&drone_id_) -
+      reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -22810,9 +24718,16 @@ const char* SetRateImuRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // double rate_hz = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double rate_hz = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           rate_hz_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
@@ -22846,10 +24761,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_rate_hz(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_rate_hz(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -22868,9 +24789,16 @@ size_t SetRateImuRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     total_size += 1 + 8;
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -22904,6 +24832,9 @@ void SetRateImuRequest::MergeFrom(const SetRateImuRequest& from) {
   if (!(from._internal_rate_hz() <= 0 && from._internal_rate_hz() >= 0)) {
     _internal_set_rate_hz(from._internal_rate_hz());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -22921,7 +24852,12 @@ bool SetRateImuRequest::IsInitialized() const {
 void SetRateImuRequest::InternalSwap(SetRateImuRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(rate_hz_, other->rate_hz_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetRateImuRequest, drone_id_)
+      + sizeof(SetRateImuRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetRateImuRequest, rate_hz_)>(
+          reinterpret_cast<char*>(&rate_hz_),
+          reinterpret_cast<char*>(&other->rate_hz_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetRateImuRequest::GetMetadata() const {
@@ -23148,12 +25084,17 @@ SetRateScaledImuRequest::SetRateScaledImuRequest(::PROTOBUF_NAMESPACE_ID::Arena*
 SetRateScaledImuRequest::SetRateScaledImuRequest(const SetRateScaledImuRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  rate_hz_ = from.rate_hz_;
+  ::memcpy(&rate_hz_, &from.rate_hz_,
+    static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SetRateScaledImuRequest)
 }
 
 inline void SetRateScaledImuRequest::SharedCtor() {
-rate_hz_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&rate_hz_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
 }
 
 SetRateScaledImuRequest::~SetRateScaledImuRequest() {
@@ -23183,7 +25124,9 @@ void SetRateScaledImuRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  rate_hz_ = 0;
+  ::memset(&rate_hz_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&drone_id_) -
+      reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -23193,9 +25136,16 @@ const char* SetRateScaledImuRequest::_InternalParse(const char* ptr, ::PROTOBUF_
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // double rate_hz = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double rate_hz = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           rate_hz_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
@@ -23229,10 +25179,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_rate_hz(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_rate_hz(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -23251,9 +25207,16 @@ size_t SetRateScaledImuRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     total_size += 1 + 8;
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -23287,6 +25250,9 @@ void SetRateScaledImuRequest::MergeFrom(const SetRateScaledImuRequest& from) {
   if (!(from._internal_rate_hz() <= 0 && from._internal_rate_hz() >= 0)) {
     _internal_set_rate_hz(from._internal_rate_hz());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -23304,7 +25270,12 @@ bool SetRateScaledImuRequest::IsInitialized() const {
 void SetRateScaledImuRequest::InternalSwap(SetRateScaledImuRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(rate_hz_, other->rate_hz_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetRateScaledImuRequest, drone_id_)
+      + sizeof(SetRateScaledImuRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetRateScaledImuRequest, rate_hz_)>(
+          reinterpret_cast<char*>(&rate_hz_),
+          reinterpret_cast<char*>(&other->rate_hz_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetRateScaledImuRequest::GetMetadata() const {
@@ -23531,12 +25502,17 @@ SetRateRawImuRequest::SetRateRawImuRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena
 SetRateRawImuRequest::SetRateRawImuRequest(const SetRateRawImuRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  rate_hz_ = from.rate_hz_;
+  ::memcpy(&rate_hz_, &from.rate_hz_,
+    static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SetRateRawImuRequest)
 }
 
 inline void SetRateRawImuRequest::SharedCtor() {
-rate_hz_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&rate_hz_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
 }
 
 SetRateRawImuRequest::~SetRateRawImuRequest() {
@@ -23566,7 +25542,9 @@ void SetRateRawImuRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  rate_hz_ = 0;
+  ::memset(&rate_hz_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&drone_id_) -
+      reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -23576,9 +25554,16 @@ const char* SetRateRawImuRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // double rate_hz = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double rate_hz = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           rate_hz_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
@@ -23612,10 +25597,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_rate_hz(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_rate_hz(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -23634,9 +25625,16 @@ size_t SetRateRawImuRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     total_size += 1 + 8;
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -23670,6 +25668,9 @@ void SetRateRawImuRequest::MergeFrom(const SetRateRawImuRequest& from) {
   if (!(from._internal_rate_hz() <= 0 && from._internal_rate_hz() >= 0)) {
     _internal_set_rate_hz(from._internal_rate_hz());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -23687,7 +25688,12 @@ bool SetRateRawImuRequest::IsInitialized() const {
 void SetRateRawImuRequest::InternalSwap(SetRateRawImuRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(rate_hz_, other->rate_hz_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetRateRawImuRequest, drone_id_)
+      + sizeof(SetRateRawImuRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetRateRawImuRequest, rate_hz_)>(
+          reinterpret_cast<char*>(&rate_hz_),
+          reinterpret_cast<char*>(&other->rate_hz_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetRateRawImuRequest::GetMetadata() const {
@@ -23914,12 +25920,17 @@ SetRateUnixEpochTimeRequest::SetRateUnixEpochTimeRequest(::PROTOBUF_NAMESPACE_ID
 SetRateUnixEpochTimeRequest::SetRateUnixEpochTimeRequest(const SetRateUnixEpochTimeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  rate_hz_ = from.rate_hz_;
+  ::memcpy(&rate_hz_, &from.rate_hz_,
+    static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SetRateUnixEpochTimeRequest)
 }
 
 inline void SetRateUnixEpochTimeRequest::SharedCtor() {
-rate_hz_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&rate_hz_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
 }
 
 SetRateUnixEpochTimeRequest::~SetRateUnixEpochTimeRequest() {
@@ -23949,7 +25960,9 @@ void SetRateUnixEpochTimeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  rate_hz_ = 0;
+  ::memset(&rate_hz_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&drone_id_) -
+      reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -23959,9 +25972,16 @@ const char* SetRateUnixEpochTimeRequest::_InternalParse(const char* ptr, ::PROTO
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // double rate_hz = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double rate_hz = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           rate_hz_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
@@ -23995,10 +26015,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_rate_hz(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_rate_hz(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -24017,9 +26043,16 @@ size_t SetRateUnixEpochTimeRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     total_size += 1 + 8;
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -24053,6 +26086,9 @@ void SetRateUnixEpochTimeRequest::MergeFrom(const SetRateUnixEpochTimeRequest& f
   if (!(from._internal_rate_hz() <= 0 && from._internal_rate_hz() >= 0)) {
     _internal_set_rate_hz(from._internal_rate_hz());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -24070,7 +26106,12 @@ bool SetRateUnixEpochTimeRequest::IsInitialized() const {
 void SetRateUnixEpochTimeRequest::InternalSwap(SetRateUnixEpochTimeRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(rate_hz_, other->rate_hz_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetRateUnixEpochTimeRequest, drone_id_)
+      + sizeof(SetRateUnixEpochTimeRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetRateUnixEpochTimeRequest, rate_hz_)>(
+          reinterpret_cast<char*>(&rate_hz_),
+          reinterpret_cast<char*>(&other->rate_hz_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetRateUnixEpochTimeRequest::GetMetadata() const {
@@ -24297,12 +26338,17 @@ SetRateDistanceSensorRequest::SetRateDistanceSensorRequest(::PROTOBUF_NAMESPACE_
 SetRateDistanceSensorRequest::SetRateDistanceSensorRequest(const SetRateDistanceSensorRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  rate_hz_ = from.rate_hz_;
+  ::memcpy(&rate_hz_, &from.rate_hz_,
+    static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.SetRateDistanceSensorRequest)
 }
 
 inline void SetRateDistanceSensorRequest::SharedCtor() {
-rate_hz_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&rate_hz_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
 }
 
 SetRateDistanceSensorRequest::~SetRateDistanceSensorRequest() {
@@ -24332,7 +26378,9 @@ void SetRateDistanceSensorRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  rate_hz_ = 0;
+  ::memset(&rate_hz_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&drone_id_) -
+      reinterpret_cast<char*>(&rate_hz_)) + sizeof(drone_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -24342,9 +26390,16 @@ const char* SetRateDistanceSensorRequest::_InternalParse(const char* ptr, ::PROT
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // double rate_hz = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double rate_hz = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           rate_hz_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
@@ -24378,10 +26433,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_rate_hz(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_rate_hz(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -24400,9 +26461,16 @@ size_t SetRateDistanceSensorRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double rate_hz = 1;
+  // double rate_hz = 2;
   if (!(this->_internal_rate_hz() <= 0 && this->_internal_rate_hz() >= 0)) {
     total_size += 1 + 8;
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -24436,6 +26504,9 @@ void SetRateDistanceSensorRequest::MergeFrom(const SetRateDistanceSensorRequest&
   if (!(from._internal_rate_hz() <= 0 && from._internal_rate_hz() >= 0)) {
     _internal_set_rate_hz(from._internal_rate_hz());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -24453,7 +26524,12 @@ bool SetRateDistanceSensorRequest::IsInitialized() const {
 void SetRateDistanceSensorRequest::InternalSwap(SetRateDistanceSensorRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(rate_hz_, other->rate_hz_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetRateDistanceSensorRequest, drone_id_)
+      + sizeof(SetRateDistanceSensorRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetRateDistanceSensorRequest, rate_hz_)>(
+          reinterpret_cast<char*>(&rate_hz_),
+          reinterpret_cast<char*>(&other->rate_hz_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetRateDistanceSensorRequest::GetMetadata() const {
@@ -24680,10 +26756,12 @@ GetGpsGlobalOriginRequest::GetGpsGlobalOriginRequest(::PROTOBUF_NAMESPACE_ID::Ar
 GetGpsGlobalOriginRequest::GetGpsGlobalOriginRequest(const GetGpsGlobalOriginRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.telemetry.GetGpsGlobalOriginRequest)
 }
 
 inline void GetGpsGlobalOriginRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 GetGpsGlobalOriginRequest::~GetGpsGlobalOriginRequest() {
@@ -24713,6 +26791,7 @@ void GetGpsGlobalOriginRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -24721,6 +26800,16 @@ const char* GetGpsGlobalOriginRequest::_InternalParse(const char* ptr, ::PROTOBU
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -24731,6 +26820,8 @@ const char* GetGpsGlobalOriginRequest::_InternalParse(const char* ptr, ::PROTOBU
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -24745,6 +26836,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.telemetry.GetGpsGlobalOriginRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -24761,6 +26858,13 @@ size_t GetGpsGlobalOriginRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -24790,6 +26894,9 @@ void GetGpsGlobalOriginRequest::MergeFrom(const GetGpsGlobalOriginRequest& from)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -24807,6 +26914,7 @@ bool GetGpsGlobalOriginRequest::IsInitialized() const {
 void GetGpsGlobalOriginRequest::InternalSwap(GetGpsGlobalOriginRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetGpsGlobalOriginRequest::GetMetadata() const {

@@ -22,6 +22,7 @@ namespace server_utility {
 constexpr SendStatusTextRequest::SendStatusTextRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : text_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , drone_id_(0)
   , type_(0)
 {}
 struct SendStatusTextRequestDefaultTypeInternal {
@@ -72,6 +73,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_server_5futility_2fserver_5fut
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::server_utility::SendStatusTextRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::server_utility::SendStatusTextRequest, type_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::server_utility::SendStatusTextRequest, text_),
   ~0u,  // no _has_bits_
@@ -90,8 +92,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_server_5futility_2fserver_5fut
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::mavsdk::rpc::server_utility::SendStatusTextRequest)},
-  { 7, -1, sizeof(::mavsdk::rpc::server_utility::SendStatusTextResponse)},
-  { 13, -1, sizeof(::mavsdk::rpc::server_utility::ServerUtilityResult)},
+  { 8, -1, sizeof(::mavsdk::rpc::server_utility::SendStatusTextResponse)},
+  { 14, -1, sizeof(::mavsdk::rpc::server_utility::ServerUtilityResult)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -103,36 +105,37 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_server_5futility_2fserver_5futility_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n#server_utility/server_utility.proto\022\031m"
   "avsdk.rpc.server_utility\032\024mavsdk_options"
-  ".proto\"^\n\025SendStatusTextRequest\0227\n\004type\030"
-  "\001 \001(\0162).mavsdk.rpc.server_utility.Status"
-  "TextType\022\014\n\004text\030\002 \001(\t\"g\n\026SendStatusText"
-  "Response\022M\n\025server_utility_result\030\001 \001(\0132"
-  "..mavsdk.rpc.server_utility.ServerUtilit"
-  "yResult\"\363\001\n\023ServerUtilityResult\022E\n\006resul"
-  "t\030\001 \001(\01625.mavsdk.rpc.server_utility.Serv"
-  "erUtilityResult.Result\022\022\n\nresult_str\030\002 \001"
-  "(\t\"\200\001\n\006Result\022\022\n\016RESULT_UNKNOWN\020\000\022\022\n\016RES"
-  "ULT_SUCCESS\020\001\022\024\n\020RESULT_NO_SYSTEM\020\002\022\033\n\027R"
-  "ESULT_CONNECTION_ERROR\020\003\022\033\n\027RESULT_INVAL"
-  "ID_ARGUMENT\020\004*\371\001\n\016StatusTextType\022\032\n\026STAT"
-  "US_TEXT_TYPE_DEBUG\020\000\022\031\n\025STATUS_TEXT_TYPE"
-  "_INFO\020\001\022\033\n\027STATUS_TEXT_TYPE_NOTICE\020\002\022\034\n\030"
-  "STATUS_TEXT_TYPE_WARNING\020\003\022\032\n\026STATUS_TEX"
-  "T_TYPE_ERROR\020\004\022\035\n\031STATUS_TEXT_TYPE_CRITI"
-  "CAL\020\005\022\032\n\026STATUS_TEXT_TYPE_ALERT\020\006\022\036\n\032STA"
-  "TUS_TEXT_TYPE_EMERGENCY\020\0072\223\001\n\024ServerUtil"
-  "ityService\022{\n\016SendStatusText\0220.mavsdk.rp"
-  "c.server_utility.SendStatusTextRequest\0321"
-  ".mavsdk.rpc.server_utility.SendStatusTex"
-  "tResponse\"\004\200\265\030\001B.\n\030io.mavsdk.server_util"
-  "ityB\022ServerUtilityProtob\006proto3"
+  ".proto\"p\n\025SendStatusTextRequest\022\020\n\010drone"
+  "_id\030\001 \001(\005\0227\n\004type\030\002 \001(\0162).mavsdk.rpc.ser"
+  "ver_utility.StatusTextType\022\014\n\004text\030\003 \001(\t"
+  "\"g\n\026SendStatusTextResponse\022M\n\025server_uti"
+  "lity_result\030\001 \001(\0132..mavsdk.rpc.server_ut"
+  "ility.ServerUtilityResult\"\363\001\n\023ServerUtil"
+  "ityResult\022E\n\006result\030\001 \001(\01625.mavsdk.rpc.s"
+  "erver_utility.ServerUtilityResult.Result"
+  "\022\022\n\nresult_str\030\002 \001(\t\"\200\001\n\006Result\022\022\n\016RESUL"
+  "T_UNKNOWN\020\000\022\022\n\016RESULT_SUCCESS\020\001\022\024\n\020RESUL"
+  "T_NO_SYSTEM\020\002\022\033\n\027RESULT_CONNECTION_ERROR"
+  "\020\003\022\033\n\027RESULT_INVALID_ARGUMENT\020\004*\371\001\n\016Stat"
+  "usTextType\022\032\n\026STATUS_TEXT_TYPE_DEBUG\020\000\022\031"
+  "\n\025STATUS_TEXT_TYPE_INFO\020\001\022\033\n\027STATUS_TEXT"
+  "_TYPE_NOTICE\020\002\022\034\n\030STATUS_TEXT_TYPE_WARNI"
+  "NG\020\003\022\032\n\026STATUS_TEXT_TYPE_ERROR\020\004\022\035\n\031STAT"
+  "US_TEXT_TYPE_CRITICAL\020\005\022\032\n\026STATUS_TEXT_T"
+  "YPE_ALERT\020\006\022\036\n\032STATUS_TEXT_TYPE_EMERGENC"
+  "Y\020\0072\223\001\n\024ServerUtilityService\022{\n\016SendStat"
+  "usText\0220.mavsdk.rpc.server_utility.SendS"
+  "tatusTextRequest\0321.mavsdk.rpc.server_uti"
+  "lity.SendStatusTextResponse\"\004\200\265\030\001B.\n\030io."
+  "mavsdk.server_utilityB\022ServerUtilityProt"
+  "ob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_server_5futility_2fserver_5futility_2eproto_deps[1] = {
   &::descriptor_table_mavsdk_5foptions_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_server_5futility_2fserver_5futility_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_server_5futility_2fserver_5futility_2eproto = {
-  false, false, 991, descriptor_table_protodef_server_5futility_2fserver_5futility_2eproto, "server_utility/server_utility.proto", 
+  false, false, 1009, descriptor_table_protodef_server_5futility_2fserver_5futility_2eproto, "server_utility/server_utility.proto", 
   &descriptor_table_server_5futility_2fserver_5futility_2eproto_once, descriptor_table_server_5futility_2fserver_5futility_2eproto_deps, 1, 3,
   schemas, file_default_instances, TableStruct_server_5futility_2fserver_5futility_2eproto::offsets,
   file_level_metadata_server_5futility_2fserver_5futility_2eproto, file_level_enum_descriptors_server_5futility_2fserver_5futility_2eproto, file_level_service_descriptors_server_5futility_2fserver_5futility_2eproto,
@@ -217,13 +220,18 @@ SendStatusTextRequest::SendStatusTextRequest(const SendStatusTextRequest& from)
     text_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_text(), 
       GetArenaForAllocation());
   }
-  type_ = from.type_;
+  ::memcpy(&drone_id_, &from.drone_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&type_) -
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(type_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.server_utility.SendStatusTextRequest)
 }
 
 inline void SendStatusTextRequest::SharedCtor() {
 text_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-type_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&drone_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&type_) -
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(type_));
 }
 
 SendStatusTextRequest::~SendStatusTextRequest() {
@@ -255,7 +263,9 @@ void SendStatusTextRequest::Clear() {
   (void) cached_has_bits;
 
   text_.ClearToEmpty();
-  type_ = 0;
+  ::memset(&drone_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&type_) -
+      reinterpret_cast<char*>(&drone_id_)) + sizeof(type_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -265,17 +275,24 @@ const char* SendStatusTextRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .mavsdk.rpc.server_utility.StatusTextType type = 1;
+      // int32 drone_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mavsdk.rpc.server_utility.StatusTextType type = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_type(static_cast<::mavsdk::rpc::server_utility::StatusTextType>(val));
         } else goto handle_unusual;
         continue;
-      // string text = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // string text = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_text();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mavsdk.rpc.server_utility.SendStatusTextRequest.text"));
@@ -311,21 +328,27 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.server_utility.StatusTextType type = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // .mavsdk.rpc.server_utility.StatusTextType type = 2;
   if (this->_internal_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      1, this->_internal_type(), target);
+      2, this->_internal_type(), target);
   }
 
-  // string text = 2;
+  // string text = 3;
   if (!this->_internal_text().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_text().data(), static_cast<int>(this->_internal_text().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "mavsdk.rpc.server_utility.SendStatusTextRequest.text");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_text(), target);
+        3, this->_internal_text(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -344,14 +367,21 @@ size_t SendStatusTextRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string text = 2;
+  // string text = 3;
   if (!this->_internal_text().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_text());
   }
 
-  // .mavsdk.rpc.server_utility.StatusTextType type = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
+
+  // .mavsdk.rpc.server_utility.StatusTextType type = 2;
   if (this->_internal_type() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type());
@@ -388,6 +418,9 @@ void SendStatusTextRequest::MergeFrom(const SendStatusTextRequest& from) {
   if (!from._internal_text().empty()) {
     _internal_set_text(from._internal_text());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   if (from._internal_type() != 0) {
     _internal_set_type(from._internal_type());
   }
@@ -413,7 +446,12 @@ void SendStatusTextRequest::InternalSwap(SendStatusTextRequest* other) {
       &text_, GetArenaForAllocation(),
       &other->text_, other->GetArenaForAllocation()
   );
-  swap(type_, other->type_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SendStatusTextRequest, type_)
+      + sizeof(SendStatusTextRequest::type_)
+      - PROTOBUF_FIELD_OFFSET(SendStatusTextRequest, drone_id_)>(
+          reinterpret_cast<char*>(&drone_id_),
+          reinterpret_cast<char*>(&other->drone_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SendStatusTextRequest::GetMetadata() const {

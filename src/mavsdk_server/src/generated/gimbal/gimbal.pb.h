@@ -327,10 +327,20 @@ class SetPitchAndYawRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPitchDegFieldNumber = 1,
-    kYawDegFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
+    kPitchDegFieldNumber = 2,
+    kYawDegFieldNumber = 3,
   };
-  // float pitch_deg = 1;
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // float pitch_deg = 2;
   void clear_pitch_deg();
   float pitch_deg() const;
   void set_pitch_deg(float value);
@@ -339,7 +349,7 @@ class SetPitchAndYawRequest final :
   void _internal_set_pitch_deg(float value);
   public:
 
-  // float yaw_deg = 2;
+  // float yaw_deg = 3;
   void clear_yaw_deg();
   float yaw_deg() const;
   void set_yaw_deg(float value);
@@ -355,6 +365,7 @@ class SetPitchAndYawRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   float pitch_deg_;
   float yaw_deg_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -625,10 +636,20 @@ class SetPitchRateAndYawRateRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPitchRateDegSFieldNumber = 1,
-    kYawRateDegSFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
+    kPitchRateDegSFieldNumber = 2,
+    kYawRateDegSFieldNumber = 3,
   };
-  // float pitch_rate_deg_s = 1;
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // float pitch_rate_deg_s = 2;
   void clear_pitch_rate_deg_s();
   float pitch_rate_deg_s() const;
   void set_pitch_rate_deg_s(float value);
@@ -637,7 +658,7 @@ class SetPitchRateAndYawRateRequest final :
   void _internal_set_pitch_rate_deg_s(float value);
   public:
 
-  // float yaw_rate_deg_s = 2;
+  // float yaw_rate_deg_s = 3;
   void clear_yaw_rate_deg_s();
   float yaw_rate_deg_s() const;
   void set_yaw_rate_deg_s(float value);
@@ -653,6 +674,7 @@ class SetPitchRateAndYawRateRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   float pitch_rate_deg_s_;
   float yaw_rate_deg_s_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -923,9 +945,19 @@ class SetModeRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kGimbalModeFieldNumber = 1,
+    kDroneIdFieldNumber = 1,
+    kGimbalModeFieldNumber = 2,
   };
-  // .mavsdk.rpc.gimbal.GimbalMode gimbal_mode = 1;
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // .mavsdk.rpc.gimbal.GimbalMode gimbal_mode = 2;
   void clear_gimbal_mode();
   ::mavsdk::rpc::gimbal::GimbalMode gimbal_mode() const;
   void set_gimbal_mode(::mavsdk::rpc::gimbal::GimbalMode value);
@@ -941,6 +973,7 @@ class SetModeRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   int gimbal_mode_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_gimbal_2fgimbal_2eproto;
@@ -1210,11 +1243,12 @@ class SetRoiLocationRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kLatitudeDegFieldNumber = 1,
-    kLongitudeDegFieldNumber = 2,
-    kAltitudeMFieldNumber = 3,
+    kLatitudeDegFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
+    kAltitudeMFieldNumber = 4,
+    kLongitudeDegFieldNumber = 3,
   };
-  // double latitude_deg = 1;
+  // double latitude_deg = 2;
   void clear_latitude_deg();
   double latitude_deg() const;
   void set_latitude_deg(double value);
@@ -1223,22 +1257,31 @@ class SetRoiLocationRequest final :
   void _internal_set_latitude_deg(double value);
   public:
 
-  // double longitude_deg = 2;
-  void clear_longitude_deg();
-  double longitude_deg() const;
-  void set_longitude_deg(double value);
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
   private:
-  double _internal_longitude_deg() const;
-  void _internal_set_longitude_deg(double value);
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // float altitude_m = 3;
+  // float altitude_m = 4;
   void clear_altitude_m();
   float altitude_m() const;
   void set_altitude_m(float value);
   private:
   float _internal_altitude_m() const;
   void _internal_set_altitude_m(float value);
+  public:
+
+  // double longitude_deg = 3;
+  void clear_longitude_deg();
+  double longitude_deg() const;
+  void set_longitude_deg(double value);
+  private:
+  double _internal_longitude_deg() const;
+  void _internal_set_longitude_deg(double value);
   public:
 
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.gimbal.SetRoiLocationRequest)
@@ -1249,8 +1292,9 @@ class SetRoiLocationRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   double latitude_deg_;
-  double longitude_deg_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   float altitude_m_;
+  double longitude_deg_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_gimbal_2fgimbal_2eproto;
 };
@@ -1519,9 +1563,19 @@ class TakeControlRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kControlModeFieldNumber = 1,
+    kDroneIdFieldNumber = 1,
+    kControlModeFieldNumber = 2,
   };
-  // .mavsdk.rpc.gimbal.ControlMode control_mode = 1;
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // .mavsdk.rpc.gimbal.ControlMode control_mode = 2;
   void clear_control_mode();
   ::mavsdk::rpc::gimbal::ControlMode control_mode() const;
   void set_control_mode(::mavsdk::rpc::gimbal::ControlMode value);
@@ -1537,6 +1591,7 @@ class TakeControlRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   int control_mode_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_gimbal_2fgimbal_2eproto;
@@ -1805,6 +1860,18 @@ class ReleaseControlRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.gimbal.ReleaseControlRequest)
  private:
   class _Internal;
@@ -1812,6 +1879,7 @@ class ReleaseControlRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_gimbal_2fgimbal_2eproto;
 };
@@ -2079,6 +2147,18 @@ class SubscribeControlRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.gimbal.SubscribeControlRequest)
  private:
   class _Internal;
@@ -2086,6 +2166,7 @@ class SubscribeControlRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_gimbal_2fgimbal_2eproto;
 };
@@ -2624,7 +2705,27 @@ class GimbalResult final :
 #endif  // __GNUC__
 // SetPitchAndYawRequest
 
-// float pitch_deg = 1;
+// int32 drone_id = 1;
+inline void SetPitchAndYawRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetPitchAndYawRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetPitchAndYawRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.gimbal.SetPitchAndYawRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SetPitchAndYawRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SetPitchAndYawRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.gimbal.SetPitchAndYawRequest.drone_id)
+}
+
+// float pitch_deg = 2;
 inline void SetPitchAndYawRequest::clear_pitch_deg() {
   pitch_deg_ = 0;
 }
@@ -2644,7 +2745,7 @@ inline void SetPitchAndYawRequest::set_pitch_deg(float value) {
   // @@protoc_insertion_point(field_set:mavsdk.rpc.gimbal.SetPitchAndYawRequest.pitch_deg)
 }
 
-// float yaw_deg = 2;
+// float yaw_deg = 3;
 inline void SetPitchAndYawRequest::clear_yaw_deg() {
   yaw_deg_ = 0;
 }
@@ -2762,7 +2863,27 @@ inline void SetPitchAndYawResponse::set_allocated_gimbal_result(::mavsdk::rpc::g
 
 // SetPitchRateAndYawRateRequest
 
-// float pitch_rate_deg_s = 1;
+// int32 drone_id = 1;
+inline void SetPitchRateAndYawRateRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetPitchRateAndYawRateRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetPitchRateAndYawRateRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.gimbal.SetPitchRateAndYawRateRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SetPitchRateAndYawRateRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SetPitchRateAndYawRateRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.gimbal.SetPitchRateAndYawRateRequest.drone_id)
+}
+
+// float pitch_rate_deg_s = 2;
 inline void SetPitchRateAndYawRateRequest::clear_pitch_rate_deg_s() {
   pitch_rate_deg_s_ = 0;
 }
@@ -2782,7 +2903,7 @@ inline void SetPitchRateAndYawRateRequest::set_pitch_rate_deg_s(float value) {
   // @@protoc_insertion_point(field_set:mavsdk.rpc.gimbal.SetPitchRateAndYawRateRequest.pitch_rate_deg_s)
 }
 
-// float yaw_rate_deg_s = 2;
+// float yaw_rate_deg_s = 3;
 inline void SetPitchRateAndYawRateRequest::clear_yaw_rate_deg_s() {
   yaw_rate_deg_s_ = 0;
 }
@@ -2900,7 +3021,27 @@ inline void SetPitchRateAndYawRateResponse::set_allocated_gimbal_result(::mavsdk
 
 // SetModeRequest
 
-// .mavsdk.rpc.gimbal.GimbalMode gimbal_mode = 1;
+// int32 drone_id = 1;
+inline void SetModeRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetModeRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetModeRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.gimbal.SetModeRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SetModeRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SetModeRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.gimbal.SetModeRequest.drone_id)
+}
+
+// .mavsdk.rpc.gimbal.GimbalMode gimbal_mode = 2;
 inline void SetModeRequest::clear_gimbal_mode() {
   gimbal_mode_ = 0;
 }
@@ -3018,7 +3159,27 @@ inline void SetModeResponse::set_allocated_gimbal_result(::mavsdk::rpc::gimbal::
 
 // SetRoiLocationRequest
 
-// double latitude_deg = 1;
+// int32 drone_id = 1;
+inline void SetRoiLocationRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetRoiLocationRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetRoiLocationRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.gimbal.SetRoiLocationRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SetRoiLocationRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SetRoiLocationRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.gimbal.SetRoiLocationRequest.drone_id)
+}
+
+// double latitude_deg = 2;
 inline void SetRoiLocationRequest::clear_latitude_deg() {
   latitude_deg_ = 0;
 }
@@ -3038,7 +3199,7 @@ inline void SetRoiLocationRequest::set_latitude_deg(double value) {
   // @@protoc_insertion_point(field_set:mavsdk.rpc.gimbal.SetRoiLocationRequest.latitude_deg)
 }
 
-// double longitude_deg = 2;
+// double longitude_deg = 3;
 inline void SetRoiLocationRequest::clear_longitude_deg() {
   longitude_deg_ = 0;
 }
@@ -3058,7 +3219,7 @@ inline void SetRoiLocationRequest::set_longitude_deg(double value) {
   // @@protoc_insertion_point(field_set:mavsdk.rpc.gimbal.SetRoiLocationRequest.longitude_deg)
 }
 
-// float altitude_m = 3;
+// float altitude_m = 4;
 inline void SetRoiLocationRequest::clear_altitude_m() {
   altitude_m_ = 0;
 }
@@ -3176,7 +3337,27 @@ inline void SetRoiLocationResponse::set_allocated_gimbal_result(::mavsdk::rpc::g
 
 // TakeControlRequest
 
-// .mavsdk.rpc.gimbal.ControlMode control_mode = 1;
+// int32 drone_id = 1;
+inline void TakeControlRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 TakeControlRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 TakeControlRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.gimbal.TakeControlRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void TakeControlRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void TakeControlRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.gimbal.TakeControlRequest.drone_id)
+}
+
+// .mavsdk.rpc.gimbal.ControlMode control_mode = 2;
 inline void TakeControlRequest::clear_control_mode() {
   control_mode_ = 0;
 }
@@ -3294,6 +3475,26 @@ inline void TakeControlResponse::set_allocated_gimbal_result(::mavsdk::rpc::gimb
 
 // ReleaseControlRequest
 
+// int32 drone_id = 1;
+inline void ReleaseControlRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ReleaseControlRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ReleaseControlRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.gimbal.ReleaseControlRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void ReleaseControlRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void ReleaseControlRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.gimbal.ReleaseControlRequest.drone_id)
+}
+
 // -------------------------------------------------------------------
 
 // ReleaseControlResponse
@@ -3391,6 +3592,26 @@ inline void ReleaseControlResponse::set_allocated_gimbal_result(::mavsdk::rpc::g
 // -------------------------------------------------------------------
 
 // SubscribeControlRequest
+
+// int32 drone_id = 1;
+inline void SubscribeControlRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeControlRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeControlRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.gimbal.SubscribeControlRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SubscribeControlRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SubscribeControlRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.gimbal.SubscribeControlRequest.drone_id)
+}
 
 // -------------------------------------------------------------------
 

@@ -24,6 +24,7 @@ class RtkServiceImpl final : public rpc::rtk::RtkService::Service {
 public:
     RtkServiceImpl(LazyPlugin& lazy_plugin) : _lazy_plugin(lazy_plugin) {}
 
+
     template<typename ResponseType>
     void fillResponseWithResult(ResponseType* response, mavsdk::Rtk::Result& result) const
     {
@@ -38,12 +39,18 @@ public:
         response->set_allocated_rtk_result(rpc_rtk_result);
     }
 
-    static std::unique_ptr<rpc::rtk::RtcmData>
-    translateToRpcRtcmData(const mavsdk::Rtk::RtcmData& rtcm_data)
+
+
+
+    static std::unique_ptr<rpc::rtk::RtcmData> translateToRpcRtcmData(const mavsdk::Rtk::RtcmData &rtcm_data)
     {
         auto rpc_obj = std::make_unique<rpc::rtk::RtcmData>();
 
+
+            
         rpc_obj->set_data(rtcm_data.data);
+            
+        
 
         return rpc_obj;
     }
@@ -52,10 +59,16 @@ public:
     {
         mavsdk::Rtk::RtcmData obj;
 
-        obj.data = rtcm_data.data();
 
+            
+        obj.data = rtcm_data.data();
+            
+        
         return obj;
     }
+
+
+
 
     static rpc::rtk::RtkResult::Result translateToRpcResult(const mavsdk::Rtk::Result& result)
     {
@@ -95,17 +108,21 @@ public:
         }
     }
 
+
+
+
     grpc::Status SendRtcmData(
         grpc::ServerContext* /* context */,
         const rpc::rtk::SendRtcmDataRequest* request,
         rpc::rtk::SendRtcmDataResponse* response) override
     {
-        if (_lazy_plugin.maybe_plugin() == nullptr) {
+        if (_lazy_plugin.maybe_plugin(request->drone_id()) == nullptr) {
+            
             if (response != nullptr) {
                 auto result = mavsdk::Rtk::Result::NoSystem;
                 fillResponseWithResult(response, result);
             }
-
+            
             return grpc::Status::OK;
         }
 
@@ -113,19 +130,27 @@ public:
             LogWarn() << "SendRtcmData sent with a null request! Ignoring...";
             return grpc::Status::OK;
         }
+            
+        
+            
+        
+        
+        auto result = _lazy_plugin.maybe_plugin(request->drone_id())->send_rtcm_data(translateFromRpcRtcmData(request->rtcm_data()));
 
-        auto result = _lazy_plugin.maybe_plugin()->send_rtcm_data(
-            translateFromRpcRtcmData(request->rtcm_data()));
 
+        
+
+        
         if (response != nullptr) {
             fillResponseWithResult(response, result);
         }
+        
 
         return grpc::Status::OK;
     }
 
-    void stop()
-    {
+
+    void stop() {
         _stopped.store(true);
         for (auto& prom : _stream_stop_promises) {
             if (auto handle = prom.lock()) {
@@ -135,8 +160,7 @@ public:
     }
 
 private:
-    void register_stream_stop_promise(std::weak_ptr<std::promise<void>> prom)
-    {
+    void register_stream_stop_promise(std::weak_ptr<std::promise<void>> prom) {
         // If we have already stopped, set promise immediately and don't add it to list.
         if (_stopped.load()) {
             if (auto handle = prom.lock()) {
@@ -147,10 +171,8 @@ private:
         }
     }
 
-    void unregister_stream_stop_promise(std::shared_ptr<std::promise<void>> prom)
-    {
-        for (auto it = _stream_stop_promises.begin(); it != _stream_stop_promises.end();
-             /* ++it */) {
+    void unregister_stream_stop_promise(std::shared_ptr<std::promise<void>> prom) {
+        for (auto it = _stream_stop_promises.begin(); it != _stream_stop_promises.end(); /* ++it */) {
             if (it->lock() == prom) {
                 it = _stream_stop_promises.erase(it);
             } else {
@@ -161,7 +183,7 @@ private:
 
     LazyPlugin& _lazy_plugin;
     std::atomic<bool> _stopped{false};
-    std::vector<std::weak_ptr<std::promise<void>>> _stream_stop_promises{};
+    std::vector<std::weak_ptr<std::promise<void>>> _stream_stop_promises {};
 };
 
 } // namespace mavsdk_server

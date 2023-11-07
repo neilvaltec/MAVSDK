@@ -606,9 +606,10 @@ class UploadGeofenceRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPolygonsFieldNumber = 1,
+    kPolygonsFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // repeated .mavsdk.rpc.geofence.Polygon polygons = 1;
+  // repeated .mavsdk.rpc.geofence.Polygon polygons = 2;
   int polygons_size() const;
   private:
   int _internal_polygons_size() const;
@@ -626,6 +627,15 @@ class UploadGeofenceRequest final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mavsdk::rpc::geofence::Polygon >&
       polygons() const;
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.geofence.UploadGeofenceRequest)
  private:
   class _Internal;
@@ -634,6 +644,7 @@ class UploadGeofenceRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mavsdk::rpc::geofence::Polygon > polygons_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_geofence_2fgeofence_2eproto;
 };
@@ -901,6 +912,18 @@ class ClearGeofenceRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 2,
+  };
+  // int32 drone_id = 2;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.geofence.ClearGeofenceRequest)
  private:
   class _Internal;
@@ -908,6 +931,7 @@ class ClearGeofenceRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_geofence_2fgeofence_2eproto;
 };
@@ -1375,7 +1399,27 @@ inline void Polygon::set_fence_type(::mavsdk::rpc::geofence::Polygon_FenceType v
 
 // UploadGeofenceRequest
 
-// repeated .mavsdk.rpc.geofence.Polygon polygons = 1;
+// int32 drone_id = 1;
+inline void UploadGeofenceRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 UploadGeofenceRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 UploadGeofenceRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.geofence.UploadGeofenceRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void UploadGeofenceRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void UploadGeofenceRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.geofence.UploadGeofenceRequest.drone_id)
+}
+
+// repeated .mavsdk.rpc.geofence.Polygon polygons = 2;
 inline int UploadGeofenceRequest::_internal_polygons_size() const {
   return polygons_.size();
 }
@@ -1512,6 +1556,26 @@ inline void UploadGeofenceResponse::set_allocated_geofence_result(::mavsdk::rpc:
 // -------------------------------------------------------------------
 
 // ClearGeofenceRequest
+
+// int32 drone_id = 2;
+inline void ClearGeofenceRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ClearGeofenceRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ClearGeofenceRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.geofence.ClearGeofenceRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void ClearGeofenceRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void ClearGeofenceRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.geofence.ClearGeofenceRequest.drone_id)
+}
 
 // -------------------------------------------------------------------
 

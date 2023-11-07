@@ -372,9 +372,10 @@ class SendRtcmDataRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kRtcmDataFieldNumber = 1,
+    kRtcmDataFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // .mavsdk.rpc.rtk.RtcmData rtcm_data = 1;
+  // .mavsdk.rpc.rtk.RtcmData rtcm_data = 2;
   bool has_rtcm_data() const;
   private:
   bool _internal_has_rtcm_data() const;
@@ -392,6 +393,15 @@ class SendRtcmDataRequest final :
       ::mavsdk::rpc::rtk::RtcmData* rtcm_data);
   ::mavsdk::rpc::rtk::RtcmData* unsafe_arena_release_rtcm_data();
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.rtk.SendRtcmDataRequest)
  private:
   class _Internal;
@@ -400,6 +410,7 @@ class SendRtcmDataRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::mavsdk::rpc::rtk::RtcmData* rtcm_data_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_rtk_2frtk_2eproto;
 };
@@ -803,7 +814,27 @@ inline void RtcmData::set_allocated_data(std::string* data) {
 
 // SendRtcmDataRequest
 
-// .mavsdk.rpc.rtk.RtcmData rtcm_data = 1;
+// int32 drone_id = 1;
+inline void SendRtcmDataRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SendRtcmDataRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SendRtcmDataRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.rtk.SendRtcmDataRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SendRtcmDataRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SendRtcmDataRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.rtk.SendRtcmDataRequest.drone_id)
+}
+
+// .mavsdk.rpc.rtk.RtcmData rtcm_data = 2;
 inline bool SendRtcmDataRequest::_internal_has_rtcm_data() const {
   return this != internal_default_instance() && rtcm_data_ != nullptr;
 }

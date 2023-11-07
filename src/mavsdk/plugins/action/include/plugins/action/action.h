@@ -56,6 +56,7 @@ public:
      */
     ~Action();
 
+
     /**
      * @brief Yaw behaviour during orbit flight.
      */
@@ -63,8 +64,7 @@ public:
         HoldFrontToCircleCenter, /**< @brief Vehicle front points to the center (default). */
         HoldInitialHeading, /**< @brief Vehicle front holds heading when message received. */
         Uncontrolled, /**< @brief Yaw uncontrolled. */
-        HoldFrontTangentToCircle, /**< @brief Vehicle front follows flight path (tangential to
-                                     circle). */
+        HoldFrontTangentToCircle, /**< @brief Vehicle front follows flight path (tangential to circle). */
         RcControlled, /**< @brief Yaw controlled by RC input. */
     };
 
@@ -73,8 +73,11 @@ public:
      *
      * @return A reference to the stream.
      */
-    friend std::ostream&
-    operator<<(std::ostream& str, Action::OrbitYawBehavior const& orbit_yaw_behavior);
+    friend std::ostream& operator<<(std::ostream& str, Action::OrbitYawBehavior const& orbit_yaw_behavior);
+
+
+
+
 
     /**
      * @brief Possible results returned for action requests.
@@ -86,8 +89,7 @@ public:
         ConnectionError, /**< @brief Connection error. */
         Busy, /**< @brief Vehicle is busy. */
         CommandDenied, /**< @brief Command refused by vehicle. */
-        CommandDeniedLandedStateUnknown, /**< @brief Command refused because landed state is
-                                            unknown. */
+        CommandDeniedLandedStateUnknown, /**< @brief Command refused because landed state is unknown. */
         CommandDeniedNotLanded, /**< @brief Command refused because vehicle not landed. */
         Timeout, /**< @brief Request timed out. */
         VtolTransitionSupportUnknown, /**< @brief Hybrid/VTOL transition support is unknown. */
@@ -103,10 +105,15 @@ public:
      */
     friend std::ostream& operator<<(std::ostream& str, Action::Result const& result);
 
+
+
     /**
      * @brief Callback type for asynchronous Action calls.
      */
     using ResultCallback = std::function<void(Result)>;
+
+
+
 
     /**
      * @brief Send command to arm the drone.
@@ -117,6 +124,8 @@ public:
      * This function is non-blocking. See 'arm' for the blocking counterpart.
      */
     void arm_async(const ResultCallback callback);
+
+
 
     /**
      * @brief Send command to arm the drone.
@@ -130,6 +139,9 @@ public:
      */
     Result arm() const;
 
+
+
+
     /**
      * @brief Send command to disarm the drone.
      *
@@ -139,6 +151,8 @@ public:
      * This function is non-blocking. See 'disarm' for the blocking counterpart.
      */
     void disarm_async(const ResultCallback callback);
+
+
 
     /**
      * @brief Send command to disarm the drone.
@@ -152,6 +166,9 @@ public:
      */
     Result disarm() const;
 
+
+
+
     /**
      * @brief Send command to take off and hover.
      *
@@ -163,6 +180,8 @@ public:
      * This function is non-blocking. See 'takeoff' for the blocking counterpart.
      */
     void takeoff_async(const ResultCallback callback);
+
+
 
     /**
      * @brief Send command to take off and hover.
@@ -178,6 +197,9 @@ public:
      */
     Result takeoff() const;
 
+
+
+
     /**
      * @brief Send command to land at the current position.
      *
@@ -186,6 +208,8 @@ public:
      * This function is non-blocking. See 'land' for the blocking counterpart.
      */
     void land_async(const ResultCallback callback);
+
+
 
     /**
      * @brief Send command to land at the current position.
@@ -198,6 +222,9 @@ public:
      */
     Result land() const;
 
+
+
+
     /**
      * @brief Send command to reboot the drone components.
      *
@@ -206,6 +233,8 @@ public:
      * This function is non-blocking. See 'reboot' for the blocking counterpart.
      */
     void reboot_async(const ResultCallback callback);
+
+
 
     /**
      * @brief Send command to reboot the drone components.
@@ -218,6 +247,9 @@ public:
      */
     Result reboot() const;
 
+
+
+
     /**
      * @brief Send command to shut down the drone components.
      *
@@ -228,6 +260,8 @@ public:
      * This function is non-blocking. See 'shutdown' for the blocking counterpart.
      */
     void shutdown_async(const ResultCallback callback);
+
+
 
     /**
      * @brief Send command to shut down the drone components.
@@ -242,27 +276,33 @@ public:
      */
     Result shutdown() const;
 
+
+
+
     /**
      * @brief Send command to terminate the drone.
      *
-     * This will run the terminate routine as configured on the drone (e.g. disarm and open the
-     * parachute).
+     * This will run the terminate routine as configured on the drone (e.g. disarm and open the parachute).
      *
      * This function is non-blocking. See 'terminate' for the blocking counterpart.
      */
     void terminate_async(const ResultCallback callback);
 
+
+
     /**
      * @brief Send command to terminate the drone.
      *
-     * This will run the terminate routine as configured on the drone (e.g. disarm and open the
-     * parachute).
+     * This will run the terminate routine as configured on the drone (e.g. disarm and open the parachute).
      *
      * This function is blocking. See 'terminate_async' for the non-blocking counterpart.
      *
      * @return Result of request.
      */
     Result terminate() const;
+
+
+
 
     /**
      * @brief Send command to kill the drone.
@@ -273,6 +313,8 @@ public:
      * This function is non-blocking. See 'kill' for the blocking counterpart.
      */
     void kill_async(const ResultCallback callback);
+
+
 
     /**
      * @brief Send command to kill the drone.
@@ -286,31 +328,37 @@ public:
      */
     Result kill() const;
 
+
+
+
     /**
      * @brief Send command to return to the launch (takeoff) position and land.
      *
-     * This switches the drone into [Return
-     * mode](https://docs.px4.io/master/en/flight_modes/return.html) which generally means it will
-     * rise up to a certain altitude to clear any obstacles before heading back to the launch
-     * (takeoff) position and land there.
+     * This switches the drone into [Return mode](https://docs.px4.io/master/en/flight_modes/return.html) which
+     * generally means it will rise up to a certain altitude to clear any obstacles before heading
+     * back to the launch (takeoff) position and land there.
      *
      * This function is non-blocking. See 'return_to_launch' for the blocking counterpart.
      */
     void return_to_launch_async(const ResultCallback callback);
 
+
+
     /**
      * @brief Send command to return to the launch (takeoff) position and land.
      *
-     * This switches the drone into [Return
-     * mode](https://docs.px4.io/master/en/flight_modes/return.html) which generally means it will
-     * rise up to a certain altitude to clear any obstacles before heading back to the launch
-     * (takeoff) position and land there.
+     * This switches the drone into [Return mode](https://docs.px4.io/master/en/flight_modes/return.html) which
+     * generally means it will rise up to a certain altitude to clear any obstacles before heading
+     * back to the launch (takeoff) position and land there.
      *
      * This function is blocking. See 'return_to_launch_async' for the non-blocking counterpart.
      *
      * @return Result of request.
      */
     Result return_to_launch() const;
+
+
+
 
     /**
      * @brief Send command to move the vehicle to a specific global position.
@@ -322,12 +370,9 @@ public:
      *
      * This function is non-blocking. See 'goto_location' for the blocking counterpart.
      */
-    void goto_location_async(
-        double latitude_deg,
-        double longitude_deg,
-        float absolute_altitude_m,
-        float yaw_deg,
-        const ResultCallback callback);
+    void goto_location_async(double latitude_deg, double longitude_deg, float absolute_altitude_m, float yaw_deg, const ResultCallback callback);
+
+
 
     /**
      * @brief Send command to move the vehicle to a specific global position.
@@ -341,8 +386,10 @@ public:
      *
      * @return Result of request.
      */
-    Result goto_location(
-        double latitude_deg, double longitude_deg, float absolute_altitude_m, float yaw_deg) const;
+    Result goto_location(double latitude_deg, double longitude_deg, float absolute_altitude_m, float yaw_deg) const;
+
+
+
 
     /**
      * @brief Send command do orbit to the drone.
@@ -351,14 +398,9 @@ public:
      *
      * This function is non-blocking. See 'do_orbit' for the blocking counterpart.
      */
-    void do_orbit_async(
-        float radius_m,
-        float velocity_ms,
-        OrbitYawBehavior yaw_behavior,
-        double latitude_deg,
-        double longitude_deg,
-        double absolute_altitude_m,
-        const ResultCallback callback);
+    void do_orbit_async(float radius_m, float velocity_ms, OrbitYawBehavior yaw_behavior, double latitude_deg, double longitude_deg, double absolute_altitude_m, const ResultCallback callback);
+
+
 
     /**
      * @brief Send command do orbit to the drone.
@@ -369,13 +411,10 @@ public:
      *
      * @return Result of request.
      */
-    Result do_orbit(
-        float radius_m,
-        float velocity_ms,
-        OrbitYawBehavior yaw_behavior,
-        double latitude_deg,
-        double longitude_deg,
-        double absolute_altitude_m) const;
+    Result do_orbit(float radius_m, float velocity_ms, OrbitYawBehavior yaw_behavior, double latitude_deg, double longitude_deg, double absolute_altitude_m) const;
+
+
+
 
     /**
      * @brief Send command to hold position (a.k.a. "Loiter").
@@ -389,6 +428,8 @@ public:
      * This function is non-blocking. See 'hold' for the blocking counterpart.
      */
     void hold_async(const ResultCallback callback);
+
+
 
     /**
      * @brief Send command to hold position (a.k.a. "Loiter").
@@ -405,12 +446,17 @@ public:
      */
     Result hold() const;
 
+
+
+
     /**
      * @brief Send command to set the value of an actuator.
      *
      * This function is non-blocking. See 'set_actuator' for the blocking counterpart.
      */
     void set_actuator_async(int32_t index, float value, const ResultCallback callback);
+
+
 
     /**
      * @brief Send command to set the value of an actuator.
@@ -420,6 +466,9 @@ public:
      * @return Result of request.
      */
     Result set_actuator(int32_t index, float value) const;
+
+
+
 
     /**
      * @brief Send command to transition the drone to fixedwing.
@@ -432,6 +481,8 @@ public:
      */
     void transition_to_fixedwing_async(const ResultCallback callback);
 
+
+
     /**
      * @brief Send command to transition the drone to fixedwing.
      *
@@ -439,12 +490,14 @@ public:
      * command will fail). The command will succeed if called when the vehicle
      * is already in fixedwing mode.
      *
-     * This function is blocking. See 'transition_to_fixedwing_async' for the non-blocking
-     * counterpart.
+     * This function is blocking. See 'transition_to_fixedwing_async' for the non-blocking counterpart.
      *
      * @return Result of request.
      */
     Result transition_to_fixedwing() const;
+
+
+
 
     /**
      * @brief Send command to transition the drone to multicopter.
@@ -457,6 +510,8 @@ public:
      */
     void transition_to_multicopter_async(const ResultCallback callback);
 
+
+
     /**
      * @brief Send command to transition the drone to multicopter.
      *
@@ -464,16 +519,18 @@ public:
      * command will fail). The command will succeed if called when the vehicle
      * is already in multicopter mode.
      *
-     * This function is blocking. See 'transition_to_multicopter_async' for the non-blocking
-     * counterpart.
+     * This function is blocking. See 'transition_to_multicopter_async' for the non-blocking counterpart.
      *
      * @return Result of request.
      */
     Result transition_to_multicopter() const;
 
+
+
+
     /**
-     * @brief Callback type for get_takeoff_altitude_async.
-     */
+    * @brief Callback type for get_takeoff_altitude_async.
+    */
     using GetTakeoffAltitudeCallback = std::function<void(Result, float)>;
 
     /**
@@ -482,6 +539,8 @@ public:
      * This function is non-blocking. See 'get_takeoff_altitude' for the blocking counterpart.
      */
     void get_takeoff_altitude_async(const GetTakeoffAltitudeCallback callback);
+
+
 
     /**
      * @brief Get the takeoff altitude (in meters above ground).
@@ -492,12 +551,17 @@ public:
      */
     std::pair<Result, float> get_takeoff_altitude() const;
 
+
+
+
     /**
      * @brief Set takeoff altitude (in meters above ground).
      *
      * This function is non-blocking. See 'set_takeoff_altitude' for the blocking counterpart.
      */
     void set_takeoff_altitude_async(float altitude, const ResultCallback callback);
+
+
 
     /**
      * @brief Set takeoff altitude (in meters above ground).
@@ -508,9 +572,12 @@ public:
      */
     Result set_takeoff_altitude(float altitude) const;
 
+
+
+
     /**
-     * @brief Callback type for get_maximum_speed_async.
-     */
+    * @brief Callback type for get_maximum_speed_async.
+    */
     using GetMaximumSpeedCallback = std::function<void(Result, float)>;
 
     /**
@@ -519,6 +586,8 @@ public:
      * This function is non-blocking. See 'get_maximum_speed' for the blocking counterpart.
      */
     void get_maximum_speed_async(const GetMaximumSpeedCallback callback);
+
+
 
     /**
      * @brief Get the vehicle maximum speed (in metres/second).
@@ -529,12 +598,17 @@ public:
      */
     std::pair<Result, float> get_maximum_speed() const;
 
+
+
+
     /**
      * @brief Set vehicle maximum speed (in metres/second).
      *
      * This function is non-blocking. See 'set_maximum_speed' for the blocking counterpart.
      */
     void set_maximum_speed_async(float speed, const ResultCallback callback);
+
+
 
     /**
      * @brief Set vehicle maximum speed (in metres/second).
@@ -545,47 +619,55 @@ public:
      */
     Result set_maximum_speed(float speed) const;
 
+
+
+
     /**
-     * @brief Callback type for get_return_to_launch_altitude_async.
-     */
+    * @brief Callback type for get_return_to_launch_altitude_async.
+    */
     using GetReturnToLaunchAltitudeCallback = std::function<void(Result, float)>;
 
     /**
      * @brief Get the return to launch minimum return altitude (in meters).
      *
-     * This function is non-blocking. See 'get_return_to_launch_altitude' for the blocking
-     * counterpart.
+     * This function is non-blocking. See 'get_return_to_launch_altitude' for the blocking counterpart.
      */
     void get_return_to_launch_altitude_async(const GetReturnToLaunchAltitudeCallback callback);
+
+
 
     /**
      * @brief Get the return to launch minimum return altitude (in meters).
      *
-     * This function is blocking. See 'get_return_to_launch_altitude_async' for the non-blocking
-     * counterpart.
+     * This function is blocking. See 'get_return_to_launch_altitude_async' for the non-blocking counterpart.
      *
      * @return Result of request.
      */
     std::pair<Result, float> get_return_to_launch_altitude() const;
 
-    /**
-     * @brief Set the return to launch minimum return altitude (in meters).
-     *
-     * This function is non-blocking. See 'set_return_to_launch_altitude' for the blocking
-     * counterpart.
-     */
-    void
-    set_return_to_launch_altitude_async(float relative_altitude_m, const ResultCallback callback);
+
+
 
     /**
      * @brief Set the return to launch minimum return altitude (in meters).
      *
-     * This function is blocking. See 'set_return_to_launch_altitude_async' for the non-blocking
-     * counterpart.
+     * This function is non-blocking. See 'set_return_to_launch_altitude' for the blocking counterpart.
+     */
+    void set_return_to_launch_altitude_async(float relative_altitude_m, const ResultCallback callback);
+
+
+
+    /**
+     * @brief Set the return to launch minimum return altitude (in meters).
+     *
+     * This function is blocking. See 'set_return_to_launch_altitude_async' for the non-blocking counterpart.
      *
      * @return Result of request.
      */
     Result set_return_to_launch_altitude(float relative_altitude_m) const;
+
+
+
 
     /**
      * @brief Set current speed.
@@ -596,6 +678,8 @@ public:
      * This function is non-blocking. See 'set_current_speed' for the blocking counterpart.
      */
     void set_current_speed_async(float speed_m_s, const ResultCallback callback);
+
+
 
     /**
      * @brief Set current speed.
@@ -608,6 +692,9 @@ public:
      * @return Result of request.
      */
     Result set_current_speed(float speed_m_s) const;
+
+
+
 
     /**
      * @brief Copy constructor.

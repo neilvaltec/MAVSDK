@@ -21,7 +21,8 @@ namespace rpc {
 namespace mocap {
 constexpr SetVisionPositionEstimateRequest::SetVisionPositionEstimateRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : vision_position_estimate_(nullptr){}
+  : vision_position_estimate_(nullptr)
+  , drone_id_(0){}
 struct SetVisionPositionEstimateRequestDefaultTypeInternal {
   constexpr SetVisionPositionEstimateRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -45,7 +46,8 @@ struct SetVisionPositionEstimateResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetVisionPositionEstimateResponseDefaultTypeInternal _SetVisionPositionEstimateResponse_default_instance_;
 constexpr SetAttitudePositionMocapRequest::SetAttitudePositionMocapRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : attitude_position_mocap_(nullptr){}
+  : attitude_position_mocap_(nullptr)
+  , drone_id_(0){}
 struct SetAttitudePositionMocapRequestDefaultTypeInternal {
   constexpr SetAttitudePositionMocapRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -69,7 +71,8 @@ struct SetAttitudePositionMocapResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetAttitudePositionMocapResponseDefaultTypeInternal _SetAttitudePositionMocapResponse_default_instance_;
 constexpr SetOdometryRequest::SetOdometryRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : odometry_(nullptr){}
+  : odometry_(nullptr)
+  , drone_id_(0){}
 struct SetOdometryRequestDefaultTypeInternal {
   constexpr SetOdometryRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -251,6 +254,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_mocap_2fmocap_2eproto::offsets
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::mocap::SetVisionPositionEstimateRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::mocap::SetVisionPositionEstimateRequest, vision_position_estimate_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::mocap::SetVisionPositionEstimateResponse, _internal_metadata_),
@@ -263,6 +267,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_mocap_2fmocap_2eproto::offsets
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::mocap::SetAttitudePositionMocapRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::mocap::SetAttitudePositionMocapRequest, attitude_position_mocap_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::mocap::SetAttitudePositionMocapResponse, _internal_metadata_),
@@ -275,6 +280,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_mocap_2fmocap_2eproto::offsets
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::mocap::SetOdometryRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::mocap::SetOdometryRequest, odometry_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::mocap::SetOdometryResponse, _internal_metadata_),
@@ -370,21 +376,21 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_mocap_2fmocap_2eproto::offsets
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::mavsdk::rpc::mocap::SetVisionPositionEstimateRequest)},
-  { 6, -1, sizeof(::mavsdk::rpc::mocap::SetVisionPositionEstimateResponse)},
-  { 12, -1, sizeof(::mavsdk::rpc::mocap::SetAttitudePositionMocapRequest)},
-  { 18, -1, sizeof(::mavsdk::rpc::mocap::SetAttitudePositionMocapResponse)},
-  { 24, -1, sizeof(::mavsdk::rpc::mocap::SetOdometryRequest)},
-  { 30, -1, sizeof(::mavsdk::rpc::mocap::SetOdometryResponse)},
-  { 36, -1, sizeof(::mavsdk::rpc::mocap::PositionBody)},
-  { 44, -1, sizeof(::mavsdk::rpc::mocap::AngleBody)},
-  { 52, -1, sizeof(::mavsdk::rpc::mocap::SpeedBody)},
-  { 60, -1, sizeof(::mavsdk::rpc::mocap::AngularVelocityBody)},
-  { 68, -1, sizeof(::mavsdk::rpc::mocap::Covariance)},
-  { 74, -1, sizeof(::mavsdk::rpc::mocap::Quaternion)},
-  { 83, -1, sizeof(::mavsdk::rpc::mocap::VisionPositionEstimate)},
-  { 92, -1, sizeof(::mavsdk::rpc::mocap::AttitudePositionMocap)},
-  { 101, -1, sizeof(::mavsdk::rpc::mocap::Odometry)},
-  { 114, -1, sizeof(::mavsdk::rpc::mocap::MocapResult)},
+  { 7, -1, sizeof(::mavsdk::rpc::mocap::SetVisionPositionEstimateResponse)},
+  { 13, -1, sizeof(::mavsdk::rpc::mocap::SetAttitudePositionMocapRequest)},
+  { 20, -1, sizeof(::mavsdk::rpc::mocap::SetAttitudePositionMocapResponse)},
+  { 26, -1, sizeof(::mavsdk::rpc::mocap::SetOdometryRequest)},
+  { 33, -1, sizeof(::mavsdk::rpc::mocap::SetOdometryResponse)},
+  { 39, -1, sizeof(::mavsdk::rpc::mocap::PositionBody)},
+  { 47, -1, sizeof(::mavsdk::rpc::mocap::AngleBody)},
+  { 55, -1, sizeof(::mavsdk::rpc::mocap::SpeedBody)},
+  { 63, -1, sizeof(::mavsdk::rpc::mocap::AngularVelocityBody)},
+  { 71, -1, sizeof(::mavsdk::rpc::mocap::Covariance)},
+  { 77, -1, sizeof(::mavsdk::rpc::mocap::Quaternion)},
+  { 86, -1, sizeof(::mavsdk::rpc::mocap::VisionPositionEstimate)},
+  { 95, -1, sizeof(::mavsdk::rpc::mocap::AttitudePositionMocap)},
+  { 104, -1, sizeof(::mavsdk::rpc::mocap::Odometry)},
+  { 117, -1, sizeof(::mavsdk::rpc::mocap::MocapResult)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -408,76 +414,77 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_mocap_2fmocap_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\021mocap/mocap.proto\022\020mavsdk.rpc.mocap\032\024m"
-  "avsdk_options.proto\"n\n SetVisionPosition"
-  "EstimateRequest\022J\n\030vision_position_estim"
-  "ate\030\001 \001(\0132(.mavsdk.rpc.mocap.VisionPosit"
-  "ionEstimate\"X\n!SetVisionPositionEstimate"
-  "Response\0223\n\014mocap_result\030\001 \001(\0132\035.mavsdk."
-  "rpc.mocap.MocapResult\"k\n\037SetAttitudePosi"
-  "tionMocapRequest\022H\n\027attitude_position_mo"
-  "cap\030\001 \001(\0132\'.mavsdk.rpc.mocap.AttitudePos"
-  "itionMocap\"W\n SetAttitudePositionMocapRe"
-  "sponse\0223\n\014mocap_result\030\001 \001(\0132\035.mavsdk.rp"
-  "c.mocap.MocapResult\"B\n\022SetOdometryReques"
-  "t\022,\n\010odometry\030\001 \001(\0132\032.mavsdk.rpc.mocap.O"
-  "dometry\"J\n\023SetOdometryResponse\0223\n\014mocap_"
-  "result\030\001 \001(\0132\035.mavsdk.rpc.mocap.MocapRes"
-  "ult\"5\n\014PositionBody\022\013\n\003x_m\030\001 \001(\002\022\013\n\003y_m\030"
-  "\002 \001(\002\022\013\n\003z_m\030\003 \001(\002\"A\n\tAngleBody\022\020\n\010roll_"
-  "rad\030\001 \001(\002\022\021\n\tpitch_rad\030\002 \001(\002\022\017\n\007yaw_rad\030"
-  "\003 \001(\002\"8\n\tSpeedBody\022\r\n\005x_m_s\030\001 \001(\002\022\r\n\005y_m"
-  "_s\030\002 \001(\002\022\r\n\005z_m_s\030\003 \001(\002\"Q\n\023AngularVeloci"
-  "tyBody\022\022\n\nroll_rad_s\030\001 \001(\002\022\023\n\013pitch_rad_"
-  "s\030\002 \001(\002\022\021\n\tyaw_rad_s\030\003 \001(\002\"\'\n\nCovariance"
-  "\022\031\n\021covariance_matrix\030\001 \003(\002\"8\n\nQuaternio"
-  "n\022\t\n\001w\030\001 \001(\002\022\t\n\001x\030\002 \001(\002\022\t\n\001y\030\003 \001(\002\022\t\n\001z\030"
-  "\004 \001(\002\"\312\001\n\026VisionPositionEstimate\022\021\n\ttime"
-  "_usec\030\001 \001(\004\0225\n\rposition_body\030\002 \001(\0132\036.mav"
-  "sdk.rpc.mocap.PositionBody\022/\n\nangle_body"
-  "\030\003 \001(\0132\033.mavsdk.rpc.mocap.AngleBody\0225\n\017p"
-  "ose_covariance\030\004 \001(\0132\034.mavsdk.rpc.mocap."
-  "Covariance\"\301\001\n\025AttitudePositionMocap\022\021\n\t"
-  "time_usec\030\001 \001(\004\022\'\n\001q\030\002 \001(\0132\034.mavsdk.rpc."
-  "mocap.Quaternion\0225\n\rposition_body\030\003 \001(\0132"
-  "\036.mavsdk.rpc.mocap.PositionBody\0225\n\017pose_"
-  "covariance\030\004 \001(\0132\034.mavsdk.rpc.mocap.Cova"
-  "riance\"\333\003\n\010Odometry\022\021\n\ttime_usec\030\001 \001(\004\0225"
-  "\n\010frame_id\030\002 \001(\0162#.mavsdk.rpc.mocap.Odom"
-  "etry.MavFrame\0225\n\rposition_body\030\003 \001(\0132\036.m"
-  "avsdk.rpc.mocap.PositionBody\022\'\n\001q\030\004 \001(\0132"
-  "\034.mavsdk.rpc.mocap.Quaternion\022/\n\nspeed_b"
-  "ody\030\005 \001(\0132\033.mavsdk.rpc.mocap.SpeedBody\022D"
-  "\n\025angular_velocity_body\030\006 \001(\0132%.mavsdk.r"
-  "pc.mocap.AngularVelocityBody\0225\n\017pose_cov"
-  "ariance\030\007 \001(\0132\034.mavsdk.rpc.mocap.Covaria"
-  "nce\0229\n\023velocity_covariance\030\010 \001(\0132\034.mavsd"
-  "k.rpc.mocap.Covariance\"<\n\010MavFrame\022\027\n\023MA"
-  "V_FRAME_MOCAP_NED\020\000\022\027\n\023MAV_FRAME_LOCAL_F"
-  "RD\020\001\"\366\001\n\013MocapResult\0224\n\006result\030\001 \001(\0162$.m"
-  "avsdk.rpc.mocap.MocapResult.Result\022\022\n\nre"
-  "sult_str\030\002 \001(\t\"\234\001\n\006Result\022\022\n\016RESULT_UNKN"
-  "OWN\020\000\022\022\n\016RESULT_SUCCESS\020\001\022\024\n\020RESULT_NO_S"
-  "YSTEM\020\002\022\033\n\027RESULT_CONNECTION_ERROR\020\003\022\037\n\033"
-  "RESULT_INVALID_REQUEST_DATA\020\004\022\026\n\022RESULT_"
-  "UNSUPPORTED\020\0052\207\003\n\014MocapService\022\212\001\n\031SetVi"
-  "sionPositionEstimate\0222.mavsdk.rpc.mocap."
-  "SetVisionPositionEstimateRequest\0323.mavsd"
-  "k.rpc.mocap.SetVisionPositionEstimateRes"
-  "ponse\"\004\200\265\030\001\022\207\001\n\030SetAttitudePositionMocap"
-  "\0221.mavsdk.rpc.mocap.SetAttitudePositionM"
-  "ocapRequest\0322.mavsdk.rpc.mocap.SetAttitu"
-  "dePositionMocapResponse\"\004\200\265\030\001\022`\n\013SetOdom"
-  "etry\022$.mavsdk.rpc.mocap.SetOdometryReque"
-  "st\032%.mavsdk.rpc.mocap.SetOdometryRespons"
-  "e\"\004\200\265\030\001B\035\n\017io.mavsdk.mocapB\nMocapProtob\006"
-  "proto3"
+  "avsdk_options.proto\"\200\001\n SetVisionPositio"
+  "nEstimateRequest\022\020\n\010drone_id\030\001 \001(\005\022J\n\030vi"
+  "sion_position_estimate\030\002 \001(\0132(.mavsdk.rp"
+  "c.mocap.VisionPositionEstimate\"X\n!SetVis"
+  "ionPositionEstimateResponse\0223\n\014mocap_res"
+  "ult\030\001 \001(\0132\035.mavsdk.rpc.mocap.MocapResult"
+  "\"}\n\037SetAttitudePositionMocapRequest\022\020\n\010d"
+  "rone_id\030\001 \001(\005\022H\n\027attitude_position_mocap"
+  "\030\002 \001(\0132\'.mavsdk.rpc.mocap.AttitudePositi"
+  "onMocap\"W\n SetAttitudePositionMocapRespo"
+  "nse\0223\n\014mocap_result\030\001 \001(\0132\035.mavsdk.rpc.m"
+  "ocap.MocapResult\"T\n\022SetOdometryRequest\022\020"
+  "\n\010drone_id\030\001 \001(\005\022,\n\010odometry\030\002 \001(\0132\032.mav"
+  "sdk.rpc.mocap.Odometry\"J\n\023SetOdometryRes"
+  "ponse\0223\n\014mocap_result\030\001 \001(\0132\035.mavsdk.rpc"
+  ".mocap.MocapResult\"5\n\014PositionBody\022\013\n\003x_"
+  "m\030\001 \001(\002\022\013\n\003y_m\030\002 \001(\002\022\013\n\003z_m\030\003 \001(\002\"A\n\tAng"
+  "leBody\022\020\n\010roll_rad\030\001 \001(\002\022\021\n\tpitch_rad\030\002 "
+  "\001(\002\022\017\n\007yaw_rad\030\003 \001(\002\"8\n\tSpeedBody\022\r\n\005x_m"
+  "_s\030\001 \001(\002\022\r\n\005y_m_s\030\002 \001(\002\022\r\n\005z_m_s\030\003 \001(\002\"Q"
+  "\n\023AngularVelocityBody\022\022\n\nroll_rad_s\030\001 \001("
+  "\002\022\023\n\013pitch_rad_s\030\002 \001(\002\022\021\n\tyaw_rad_s\030\003 \001("
+  "\002\"\'\n\nCovariance\022\031\n\021covariance_matrix\030\001 \003"
+  "(\002\"8\n\nQuaternion\022\t\n\001w\030\001 \001(\002\022\t\n\001x\030\002 \001(\002\022\t"
+  "\n\001y\030\003 \001(\002\022\t\n\001z\030\004 \001(\002\"\312\001\n\026VisionPositionE"
+  "stimate\022\021\n\ttime_usec\030\001 \001(\004\0225\n\rposition_b"
+  "ody\030\002 \001(\0132\036.mavsdk.rpc.mocap.PositionBod"
+  "y\022/\n\nangle_body\030\003 \001(\0132\033.mavsdk.rpc.mocap"
+  ".AngleBody\0225\n\017pose_covariance\030\004 \001(\0132\034.ma"
+  "vsdk.rpc.mocap.Covariance\"\301\001\n\025AttitudePo"
+  "sitionMocap\022\021\n\ttime_usec\030\001 \001(\004\022\'\n\001q\030\002 \001("
+  "\0132\034.mavsdk.rpc.mocap.Quaternion\0225\n\rposit"
+  "ion_body\030\003 \001(\0132\036.mavsdk.rpc.mocap.Positi"
+  "onBody\0225\n\017pose_covariance\030\004 \001(\0132\034.mavsdk"
+  ".rpc.mocap.Covariance\"\333\003\n\010Odometry\022\021\n\tti"
+  "me_usec\030\001 \001(\004\0225\n\010frame_id\030\002 \001(\0162#.mavsdk"
+  ".rpc.mocap.Odometry.MavFrame\0225\n\rposition"
+  "_body\030\003 \001(\0132\036.mavsdk.rpc.mocap.PositionB"
+  "ody\022\'\n\001q\030\004 \001(\0132\034.mavsdk.rpc.mocap.Quater"
+  "nion\022/\n\nspeed_body\030\005 \001(\0132\033.mavsdk.rpc.mo"
+  "cap.SpeedBody\022D\n\025angular_velocity_body\030\006"
+  " \001(\0132%.mavsdk.rpc.mocap.AngularVelocityB"
+  "ody\0225\n\017pose_covariance\030\007 \001(\0132\034.mavsdk.rp"
+  "c.mocap.Covariance\0229\n\023velocity_covarianc"
+  "e\030\010 \001(\0132\034.mavsdk.rpc.mocap.Covariance\"<\n"
+  "\010MavFrame\022\027\n\023MAV_FRAME_MOCAP_NED\020\000\022\027\n\023MA"
+  "V_FRAME_LOCAL_FRD\020\001\"\366\001\n\013MocapResult\0224\n\006r"
+  "esult\030\001 \001(\0162$.mavsdk.rpc.mocap.MocapResu"
+  "lt.Result\022\022\n\nresult_str\030\002 \001(\t\"\234\001\n\006Result"
+  "\022\022\n\016RESULT_UNKNOWN\020\000\022\022\n\016RESULT_SUCCESS\020\001"
+  "\022\024\n\020RESULT_NO_SYSTEM\020\002\022\033\n\027RESULT_CONNECT"
+  "ION_ERROR\020\003\022\037\n\033RESULT_INVALID_REQUEST_DA"
+  "TA\020\004\022\026\n\022RESULT_UNSUPPORTED\020\0052\207\003\n\014MocapSe"
+  "rvice\022\212\001\n\031SetVisionPositionEstimate\0222.ma"
+  "vsdk.rpc.mocap.SetVisionPositionEstimate"
+  "Request\0323.mavsdk.rpc.mocap.SetVisionPosi"
+  "tionEstimateResponse\"\004\200\265\030\001\022\207\001\n\030SetAttitu"
+  "dePositionMocap\0221.mavsdk.rpc.mocap.SetAt"
+  "titudePositionMocapRequest\0322.mavsdk.rpc."
+  "mocap.SetAttitudePositionMocapResponse\"\004"
+  "\200\265\030\001\022`\n\013SetOdometry\022$.mavsdk.rpc.mocap.S"
+  "etOdometryRequest\032%.mavsdk.rpc.mocap.Set"
+  "OdometryResponse\"\004\200\265\030\001B\035\n\017io.mavsdk.moca"
+  "pB\nMocapProtob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_mocap_2fmocap_2eproto_deps[1] = {
   &::descriptor_table_mavsdk_5foptions_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_mocap_2fmocap_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_mocap_2fmocap_2eproto = {
-  false, false, 2526, descriptor_table_protodef_mocap_2fmocap_2eproto, "mocap/mocap.proto", 
+  false, false, 2581, descriptor_table_protodef_mocap_2fmocap_2eproto, "mocap/mocap.proto", 
   &descriptor_table_mocap_2fmocap_2eproto_once, descriptor_table_mocap_2fmocap_2eproto_deps, 1, 16,
   schemas, file_default_instances, TableStruct_mocap_2fmocap_2eproto::offsets,
   file_level_metadata_mocap_2fmocap_2eproto, file_level_enum_descriptors_mocap_2fmocap_2eproto, file_level_service_descriptors_mocap_2fmocap_2eproto,
@@ -570,11 +577,15 @@ SetVisionPositionEstimateRequest::SetVisionPositionEstimateRequest(const SetVisi
   } else {
     vision_position_estimate_ = nullptr;
   }
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.mocap.SetVisionPositionEstimateRequest)
 }
 
 inline void SetVisionPositionEstimateRequest::SharedCtor() {
-vision_position_estimate_ = nullptr;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&vision_position_estimate_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&vision_position_estimate_)) + sizeof(drone_id_));
 }
 
 SetVisionPositionEstimateRequest::~SetVisionPositionEstimateRequest() {
@@ -609,6 +620,7 @@ void SetVisionPositionEstimateRequest::Clear() {
     delete vision_position_estimate_;
   }
   vision_position_estimate_ = nullptr;
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -618,9 +630,16 @@ const char* SetVisionPositionEstimateRequest::_InternalParse(const char* ptr, ::
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .mavsdk.rpc.mocap.VisionPositionEstimate vision_position_estimate = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mavsdk.rpc.mocap.VisionPositionEstimate vision_position_estimate = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_vision_position_estimate(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -654,12 +673,18 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.mocap.VisionPositionEstimate vision_position_estimate = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // .mavsdk.rpc.mocap.VisionPositionEstimate vision_position_estimate = 2;
   if (this->_internal_has_vision_position_estimate()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::vision_position_estimate(this), target, stream);
+        2, _Internal::vision_position_estimate(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -678,11 +703,18 @@ size_t SetVisionPositionEstimateRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.mocap.VisionPositionEstimate vision_position_estimate = 1;
+  // .mavsdk.rpc.mocap.VisionPositionEstimate vision_position_estimate = 2;
   if (this->_internal_has_vision_position_estimate()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *vision_position_estimate_);
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -716,6 +748,9 @@ void SetVisionPositionEstimateRequest::MergeFrom(const SetVisionPositionEstimate
   if (from._internal_has_vision_position_estimate()) {
     _internal_mutable_vision_position_estimate()->::mavsdk::rpc::mocap::VisionPositionEstimate::MergeFrom(from._internal_vision_position_estimate());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -733,7 +768,12 @@ bool SetVisionPositionEstimateRequest::IsInitialized() const {
 void SetVisionPositionEstimateRequest::InternalSwap(SetVisionPositionEstimateRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(vision_position_estimate_, other->vision_position_estimate_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetVisionPositionEstimateRequest, drone_id_)
+      + sizeof(SetVisionPositionEstimateRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetVisionPositionEstimateRequest, vision_position_estimate_)>(
+          reinterpret_cast<char*>(&vision_position_estimate_),
+          reinterpret_cast<char*>(&other->vision_position_estimate_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetVisionPositionEstimateRequest::GetMetadata() const {
@@ -970,11 +1010,15 @@ SetAttitudePositionMocapRequest::SetAttitudePositionMocapRequest(const SetAttitu
   } else {
     attitude_position_mocap_ = nullptr;
   }
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.mocap.SetAttitudePositionMocapRequest)
 }
 
 inline void SetAttitudePositionMocapRequest::SharedCtor() {
-attitude_position_mocap_ = nullptr;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&attitude_position_mocap_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&attitude_position_mocap_)) + sizeof(drone_id_));
 }
 
 SetAttitudePositionMocapRequest::~SetAttitudePositionMocapRequest() {
@@ -1009,6 +1053,7 @@ void SetAttitudePositionMocapRequest::Clear() {
     delete attitude_position_mocap_;
   }
   attitude_position_mocap_ = nullptr;
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1018,9 +1063,16 @@ const char* SetAttitudePositionMocapRequest::_InternalParse(const char* ptr, ::P
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .mavsdk.rpc.mocap.AttitudePositionMocap attitude_position_mocap = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mavsdk.rpc.mocap.AttitudePositionMocap attitude_position_mocap = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_attitude_position_mocap(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -1054,12 +1106,18 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.mocap.AttitudePositionMocap attitude_position_mocap = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // .mavsdk.rpc.mocap.AttitudePositionMocap attitude_position_mocap = 2;
   if (this->_internal_has_attitude_position_mocap()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::attitude_position_mocap(this), target, stream);
+        2, _Internal::attitude_position_mocap(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1078,11 +1136,18 @@ size_t SetAttitudePositionMocapRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.mocap.AttitudePositionMocap attitude_position_mocap = 1;
+  // .mavsdk.rpc.mocap.AttitudePositionMocap attitude_position_mocap = 2;
   if (this->_internal_has_attitude_position_mocap()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *attitude_position_mocap_);
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1116,6 +1181,9 @@ void SetAttitudePositionMocapRequest::MergeFrom(const SetAttitudePositionMocapRe
   if (from._internal_has_attitude_position_mocap()) {
     _internal_mutable_attitude_position_mocap()->::mavsdk::rpc::mocap::AttitudePositionMocap::MergeFrom(from._internal_attitude_position_mocap());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1133,7 +1201,12 @@ bool SetAttitudePositionMocapRequest::IsInitialized() const {
 void SetAttitudePositionMocapRequest::InternalSwap(SetAttitudePositionMocapRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(attitude_position_mocap_, other->attitude_position_mocap_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetAttitudePositionMocapRequest, drone_id_)
+      + sizeof(SetAttitudePositionMocapRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetAttitudePositionMocapRequest, attitude_position_mocap_)>(
+          reinterpret_cast<char*>(&attitude_position_mocap_),
+          reinterpret_cast<char*>(&other->attitude_position_mocap_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetAttitudePositionMocapRequest::GetMetadata() const {
@@ -1370,11 +1443,15 @@ SetOdometryRequest::SetOdometryRequest(const SetOdometryRequest& from)
   } else {
     odometry_ = nullptr;
   }
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.mocap.SetOdometryRequest)
 }
 
 inline void SetOdometryRequest::SharedCtor() {
-odometry_ = nullptr;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&odometry_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&odometry_)) + sizeof(drone_id_));
 }
 
 SetOdometryRequest::~SetOdometryRequest() {
@@ -1409,6 +1486,7 @@ void SetOdometryRequest::Clear() {
     delete odometry_;
   }
   odometry_ = nullptr;
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1418,9 +1496,16 @@ const char* SetOdometryRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .mavsdk.rpc.mocap.Odometry odometry = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mavsdk.rpc.mocap.Odometry odometry = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_odometry(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -1454,12 +1539,18 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.mocap.Odometry odometry = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // .mavsdk.rpc.mocap.Odometry odometry = 2;
   if (this->_internal_has_odometry()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::odometry(this), target, stream);
+        2, _Internal::odometry(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1478,11 +1569,18 @@ size_t SetOdometryRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.mocap.Odometry odometry = 1;
+  // .mavsdk.rpc.mocap.Odometry odometry = 2;
   if (this->_internal_has_odometry()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *odometry_);
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1516,6 +1614,9 @@ void SetOdometryRequest::MergeFrom(const SetOdometryRequest& from) {
   if (from._internal_has_odometry()) {
     _internal_mutable_odometry()->::mavsdk::rpc::mocap::Odometry::MergeFrom(from._internal_odometry());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1533,7 +1634,12 @@ bool SetOdometryRequest::IsInitialized() const {
 void SetOdometryRequest::InternalSwap(SetOdometryRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(odometry_, other->odometry_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetOdometryRequest, drone_id_)
+      + sizeof(SetOdometryRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetOdometryRequest, odometry_)>(
+          reinterpret_cast<char*>(&odometry_),
+          reinterpret_cast<char*>(&other->odometry_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetOdometryRequest::GetMetadata() const {

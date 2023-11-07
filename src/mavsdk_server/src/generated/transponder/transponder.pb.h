@@ -279,6 +279,18 @@ class SubscribeTransponderRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.transponder.SubscribeTransponderRequest)
  private:
   class _Internal;
@@ -286,6 +298,7 @@ class SubscribeTransponderRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_transponder_2ftransponder_2eproto;
 };
@@ -554,15 +567,25 @@ class SetRateTransponderRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kRateHzFieldNumber = 1,
+    kRateHzFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // double rate_hz = 1;
+  // double rate_hz = 2;
   void clear_rate_hz();
   double rate_hz() const;
   void set_rate_hz(double value);
   private:
   double _internal_rate_hz() const;
   void _internal_set_rate_hz(double value);
+  public:
+
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.transponder.SetRateTransponderRequest)
@@ -573,6 +596,7 @@ class SetRateTransponderRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   double rate_hz_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_transponder_2ftransponder_2eproto;
 };
@@ -1184,6 +1208,26 @@ class TransponderResult final :
 #endif  // __GNUC__
 // SubscribeTransponderRequest
 
+// int32 drone_id = 1;
+inline void SubscribeTransponderRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeTransponderRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeTransponderRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.transponder.SubscribeTransponderRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SubscribeTransponderRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SubscribeTransponderRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.transponder.SubscribeTransponderRequest.drone_id)
+}
+
 // -------------------------------------------------------------------
 
 // TransponderResponse
@@ -1282,7 +1326,27 @@ inline void TransponderResponse::set_allocated_transponder(::mavsdk::rpc::transp
 
 // SetRateTransponderRequest
 
-// double rate_hz = 1;
+// int32 drone_id = 1;
+inline void SetRateTransponderRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetRateTransponderRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetRateTransponderRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.transponder.SetRateTransponderRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SetRateTransponderRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SetRateTransponderRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.transponder.SetRateTransponderRequest.drone_id)
+}
+
+// double rate_hz = 2;
 inline void SetRateTransponderRequest::clear_rate_hz() {
   rate_hz_ = 0;
 }

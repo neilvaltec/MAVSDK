@@ -365,9 +365,19 @@ class SetAllowTakeoffRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kAllowTakeoffFieldNumber = 1,
+    kDroneIdFieldNumber = 1,
+    kAllowTakeoffFieldNumber = 2,
   };
-  // bool allow_takeoff = 1;
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // bool allow_takeoff = 2;
   void clear_allow_takeoff();
   bool allow_takeoff() const;
   void set_allow_takeoff(bool value);
@@ -383,6 +393,7 @@ class SetAllowTakeoffRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   bool allow_takeoff_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_action_5fserver_2faction_5fserver_2eproto;
@@ -504,10 +515,20 @@ class SetArmableRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kArmableFieldNumber = 1,
-    kForceArmableFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
+    kArmableFieldNumber = 2,
+    kForceArmableFieldNumber = 3,
   };
-  // bool armable = 1;
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // bool armable = 2;
   void clear_armable();
   bool armable() const;
   void set_armable(bool value);
@@ -516,7 +537,7 @@ class SetArmableRequest final :
   void _internal_set_armable(bool value);
   public:
 
-  // bool force_armable = 2;
+  // bool force_armable = 3;
   void clear_force_armable();
   bool force_armable() const;
   void set_force_armable(bool value);
@@ -532,6 +553,7 @@ class SetArmableRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   bool armable_;
   bool force_armable_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -654,10 +676,20 @@ class SetDisarmableRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kDisarmableFieldNumber = 1,
-    kForceDisarmableFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
+    kDisarmableFieldNumber = 2,
+    kForceDisarmableFieldNumber = 3,
   };
-  // bool disarmable = 1;
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // bool disarmable = 2;
   void clear_disarmable();
   bool disarmable() const;
   void set_disarmable(bool value);
@@ -666,7 +698,7 @@ class SetDisarmableRequest final :
   void _internal_set_disarmable(bool value);
   public:
 
-  // bool force_disarmable = 2;
+  // bool force_disarmable = 3;
   void clear_force_disarmable();
   bool force_disarmable() const;
   void set_force_disarmable(bool value);
@@ -682,6 +714,7 @@ class SetDisarmableRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   bool disarmable_;
   bool force_disarmable_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -804,9 +837,10 @@ class SetAllowableFlightModesRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kFlightModesFieldNumber = 1,
+    kFlightModesFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // .mavsdk.rpc.action_server.AllowableFlightModes flight_modes = 1;
+  // .mavsdk.rpc.action_server.AllowableFlightModes flight_modes = 2;
   bool has_flight_modes() const;
   private:
   bool _internal_has_flight_modes() const;
@@ -824,6 +858,15 @@ class SetAllowableFlightModesRequest final :
       ::mavsdk::rpc::action_server::AllowableFlightModes* flight_modes);
   ::mavsdk::rpc::action_server::AllowableFlightModes* unsafe_arena_release_flight_modes();
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.action_server.SetAllowableFlightModesRequest)
  private:
   class _Internal;
@@ -832,6 +875,7 @@ class SetAllowableFlightModesRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::mavsdk::rpc::action_server::AllowableFlightModes* flight_modes_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_action_5fserver_2faction_5fserver_2eproto;
 };
@@ -951,6 +995,18 @@ class GetAllowableFlightModesRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.action_server.GetAllowableFlightModesRequest)
  private:
   class _Internal;
@@ -958,6 +1014,7 @@ class GetAllowableFlightModesRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_action_5fserver_2faction_5fserver_2eproto;
 };
@@ -1077,6 +1134,18 @@ class SubscribeArmDisarmRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.action_server.SubscribeArmDisarmRequest)
  private:
   class _Internal;
@@ -1084,6 +1153,7 @@ class SubscribeArmDisarmRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_action_5fserver_2faction_5fserver_2eproto;
 };
@@ -1203,6 +1273,18 @@ class SubscribeFlightModeChangeRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.action_server.SubscribeFlightModeChangeRequest)
  private:
   class _Internal;
@@ -1210,6 +1292,7 @@ class SubscribeFlightModeChangeRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_action_5fserver_2faction_5fserver_2eproto;
 };
@@ -1329,6 +1412,18 @@ class SubscribeTakeoffRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.action_server.SubscribeTakeoffRequest)
  private:
   class _Internal;
@@ -1336,6 +1431,7 @@ class SubscribeTakeoffRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_action_5fserver_2faction_5fserver_2eproto;
 };
@@ -1455,6 +1551,18 @@ class SubscribeLandRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.action_server.SubscribeLandRequest)
  private:
   class _Internal;
@@ -1462,6 +1570,7 @@ class SubscribeLandRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_action_5fserver_2faction_5fserver_2eproto;
 };
@@ -1581,6 +1690,18 @@ class SubscribeRebootRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.action_server.SubscribeRebootRequest)
  private:
   class _Internal;
@@ -1588,6 +1709,7 @@ class SubscribeRebootRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_action_5fserver_2faction_5fserver_2eproto;
 };
@@ -1707,6 +1829,18 @@ class SubscribeShutdownRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.action_server.SubscribeShutdownRequest)
  private:
   class _Internal;
@@ -1714,6 +1848,7 @@ class SubscribeShutdownRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_action_5fserver_2faction_5fserver_2eproto;
 };
@@ -1833,6 +1968,18 @@ class SubscribeTerminateRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.action_server.SubscribeTerminateRequest)
  private:
   class _Internal;
@@ -1840,6 +1987,7 @@ class SubscribeTerminateRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_action_5fserver_2faction_5fserver_2eproto;
 };
@@ -4234,7 +4382,27 @@ class ActionServerResult final :
 #endif  // __GNUC__
 // SetAllowTakeoffRequest
 
-// bool allow_takeoff = 1;
+// int32 drone_id = 1;
+inline void SetAllowTakeoffRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetAllowTakeoffRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetAllowTakeoffRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.action_server.SetAllowTakeoffRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SetAllowTakeoffRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SetAllowTakeoffRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.action_server.SetAllowTakeoffRequest.drone_id)
+}
+
+// bool allow_takeoff = 2;
 inline void SetAllowTakeoffRequest::clear_allow_takeoff() {
   allow_takeoff_ = false;
 }
@@ -4258,7 +4426,27 @@ inline void SetAllowTakeoffRequest::set_allow_takeoff(bool value) {
 
 // SetArmableRequest
 
-// bool armable = 1;
+// int32 drone_id = 1;
+inline void SetArmableRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetArmableRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetArmableRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.action_server.SetArmableRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SetArmableRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SetArmableRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.action_server.SetArmableRequest.drone_id)
+}
+
+// bool armable = 2;
 inline void SetArmableRequest::clear_armable() {
   armable_ = false;
 }
@@ -4278,7 +4466,7 @@ inline void SetArmableRequest::set_armable(bool value) {
   // @@protoc_insertion_point(field_set:mavsdk.rpc.action_server.SetArmableRequest.armable)
 }
 
-// bool force_armable = 2;
+// bool force_armable = 3;
 inline void SetArmableRequest::clear_force_armable() {
   force_armable_ = false;
 }
@@ -4302,7 +4490,27 @@ inline void SetArmableRequest::set_force_armable(bool value) {
 
 // SetDisarmableRequest
 
-// bool disarmable = 1;
+// int32 drone_id = 1;
+inline void SetDisarmableRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetDisarmableRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetDisarmableRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.action_server.SetDisarmableRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SetDisarmableRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SetDisarmableRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.action_server.SetDisarmableRequest.drone_id)
+}
+
+// bool disarmable = 2;
 inline void SetDisarmableRequest::clear_disarmable() {
   disarmable_ = false;
 }
@@ -4322,7 +4530,7 @@ inline void SetDisarmableRequest::set_disarmable(bool value) {
   // @@protoc_insertion_point(field_set:mavsdk.rpc.action_server.SetDisarmableRequest.disarmable)
 }
 
-// bool force_disarmable = 2;
+// bool force_disarmable = 3;
 inline void SetDisarmableRequest::clear_force_disarmable() {
   force_disarmable_ = false;
 }
@@ -4346,7 +4554,27 @@ inline void SetDisarmableRequest::set_force_disarmable(bool value) {
 
 // SetAllowableFlightModesRequest
 
-// .mavsdk.rpc.action_server.AllowableFlightModes flight_modes = 1;
+// int32 drone_id = 1;
+inline void SetAllowableFlightModesRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetAllowableFlightModesRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetAllowableFlightModesRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.action_server.SetAllowableFlightModesRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SetAllowableFlightModesRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SetAllowableFlightModesRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.action_server.SetAllowableFlightModesRequest.drone_id)
+}
+
+// .mavsdk.rpc.action_server.AllowableFlightModes flight_modes = 2;
 inline bool SetAllowableFlightModesRequest::_internal_has_flight_modes() const {
   return this != internal_default_instance() && flight_modes_ != nullptr;
 }
@@ -4440,33 +4668,193 @@ inline void SetAllowableFlightModesRequest::set_allocated_flight_modes(::mavsdk:
 
 // GetAllowableFlightModesRequest
 
+// int32 drone_id = 1;
+inline void GetAllowableFlightModesRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 GetAllowableFlightModesRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 GetAllowableFlightModesRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.action_server.GetAllowableFlightModesRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void GetAllowableFlightModesRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void GetAllowableFlightModesRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.action_server.GetAllowableFlightModesRequest.drone_id)
+}
+
 // -------------------------------------------------------------------
 
 // SubscribeArmDisarmRequest
+
+// int32 drone_id = 1;
+inline void SubscribeArmDisarmRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeArmDisarmRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeArmDisarmRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.action_server.SubscribeArmDisarmRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SubscribeArmDisarmRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SubscribeArmDisarmRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.action_server.SubscribeArmDisarmRequest.drone_id)
+}
 
 // -------------------------------------------------------------------
 
 // SubscribeFlightModeChangeRequest
 
+// int32 drone_id = 1;
+inline void SubscribeFlightModeChangeRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeFlightModeChangeRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeFlightModeChangeRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.action_server.SubscribeFlightModeChangeRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SubscribeFlightModeChangeRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SubscribeFlightModeChangeRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.action_server.SubscribeFlightModeChangeRequest.drone_id)
+}
+
 // -------------------------------------------------------------------
 
 // SubscribeTakeoffRequest
+
+// int32 drone_id = 1;
+inline void SubscribeTakeoffRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeTakeoffRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeTakeoffRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.action_server.SubscribeTakeoffRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SubscribeTakeoffRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SubscribeTakeoffRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.action_server.SubscribeTakeoffRequest.drone_id)
+}
 
 // -------------------------------------------------------------------
 
 // SubscribeLandRequest
 
+// int32 drone_id = 1;
+inline void SubscribeLandRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeLandRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeLandRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.action_server.SubscribeLandRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SubscribeLandRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SubscribeLandRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.action_server.SubscribeLandRequest.drone_id)
+}
+
 // -------------------------------------------------------------------
 
 // SubscribeRebootRequest
+
+// int32 drone_id = 1;
+inline void SubscribeRebootRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeRebootRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeRebootRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.action_server.SubscribeRebootRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SubscribeRebootRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SubscribeRebootRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.action_server.SubscribeRebootRequest.drone_id)
+}
 
 // -------------------------------------------------------------------
 
 // SubscribeShutdownRequest
 
+// int32 drone_id = 1;
+inline void SubscribeShutdownRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeShutdownRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeShutdownRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.action_server.SubscribeShutdownRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SubscribeShutdownRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SubscribeShutdownRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.action_server.SubscribeShutdownRequest.drone_id)
+}
+
 // -------------------------------------------------------------------
 
 // SubscribeTerminateRequest
+
+// int32 drone_id = 1;
+inline void SubscribeTerminateRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeTerminateRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeTerminateRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.action_server.SubscribeTerminateRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SubscribeTerminateRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SubscribeTerminateRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.action_server.SubscribeTerminateRequest.drone_id)
+}
 
 // -------------------------------------------------------------------
 

@@ -274,6 +274,18 @@ class SubscribeCalibrateGyroRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.calibration.SubscribeCalibrateGyroRequest)
  private:
   class _Internal;
@@ -281,6 +293,7 @@ class SubscribeCalibrateGyroRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_calibration_2fcalibration_2eproto;
 };
@@ -568,6 +581,18 @@ class SubscribeCalibrateAccelerometerRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.calibration.SubscribeCalibrateAccelerometerRequest)
  private:
   class _Internal;
@@ -575,6 +600,7 @@ class SubscribeCalibrateAccelerometerRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_calibration_2fcalibration_2eproto;
 };
@@ -862,6 +888,18 @@ class SubscribeCalibrateMagnetometerRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.calibration.SubscribeCalibrateMagnetometerRequest)
  private:
   class _Internal;
@@ -869,6 +907,7 @@ class SubscribeCalibrateMagnetometerRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_calibration_2fcalibration_2eproto;
 };
@@ -1156,6 +1195,18 @@ class SubscribeCalibrateLevelHorizonRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.calibration.SubscribeCalibrateLevelHorizonRequest)
  private:
   class _Internal;
@@ -1163,6 +1214,7 @@ class SubscribeCalibrateLevelHorizonRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_calibration_2fcalibration_2eproto;
 };
@@ -1450,6 +1502,18 @@ class SubscribeCalibrateGimbalAccelerometerRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.calibration.SubscribeCalibrateGimbalAccelerometerRequest)
  private:
   class _Internal;
@@ -1457,6 +1521,7 @@ class SubscribeCalibrateGimbalAccelerometerRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_calibration_2fcalibration_2eproto;
 };
@@ -1744,6 +1809,18 @@ class CancelRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.calibration.CancelRequest)
  private:
   class _Internal;
@@ -1751,6 +1828,7 @@ class CancelRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_calibration_2fcalibration_2eproto;
 };
@@ -2295,6 +2373,26 @@ class ProgressData final :
 #endif  // __GNUC__
 // SubscribeCalibrateGyroRequest
 
+// int32 drone_id = 1;
+inline void SubscribeCalibrateGyroRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeCalibrateGyroRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeCalibrateGyroRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.calibration.SubscribeCalibrateGyroRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SubscribeCalibrateGyroRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SubscribeCalibrateGyroRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.calibration.SubscribeCalibrateGyroRequest.drone_id)
+}
+
 // -------------------------------------------------------------------
 
 // CalibrateGyroResponse
@@ -2482,6 +2580,26 @@ inline void CalibrateGyroResponse::set_allocated_progress_data(::mavsdk::rpc::ca
 // -------------------------------------------------------------------
 
 // SubscribeCalibrateAccelerometerRequest
+
+// int32 drone_id = 1;
+inline void SubscribeCalibrateAccelerometerRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeCalibrateAccelerometerRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeCalibrateAccelerometerRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.calibration.SubscribeCalibrateAccelerometerRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SubscribeCalibrateAccelerometerRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SubscribeCalibrateAccelerometerRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.calibration.SubscribeCalibrateAccelerometerRequest.drone_id)
+}
 
 // -------------------------------------------------------------------
 
@@ -2671,6 +2789,26 @@ inline void CalibrateAccelerometerResponse::set_allocated_progress_data(::mavsdk
 
 // SubscribeCalibrateMagnetometerRequest
 
+// int32 drone_id = 1;
+inline void SubscribeCalibrateMagnetometerRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeCalibrateMagnetometerRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeCalibrateMagnetometerRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.calibration.SubscribeCalibrateMagnetometerRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SubscribeCalibrateMagnetometerRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SubscribeCalibrateMagnetometerRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.calibration.SubscribeCalibrateMagnetometerRequest.drone_id)
+}
+
 // -------------------------------------------------------------------
 
 // CalibrateMagnetometerResponse
@@ -2858,6 +2996,26 @@ inline void CalibrateMagnetometerResponse::set_allocated_progress_data(::mavsdk:
 // -------------------------------------------------------------------
 
 // SubscribeCalibrateLevelHorizonRequest
+
+// int32 drone_id = 1;
+inline void SubscribeCalibrateLevelHorizonRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeCalibrateLevelHorizonRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeCalibrateLevelHorizonRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.calibration.SubscribeCalibrateLevelHorizonRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SubscribeCalibrateLevelHorizonRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SubscribeCalibrateLevelHorizonRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.calibration.SubscribeCalibrateLevelHorizonRequest.drone_id)
+}
 
 // -------------------------------------------------------------------
 
@@ -3047,6 +3205,26 @@ inline void CalibrateLevelHorizonResponse::set_allocated_progress_data(::mavsdk:
 
 // SubscribeCalibrateGimbalAccelerometerRequest
 
+// int32 drone_id = 1;
+inline void SubscribeCalibrateGimbalAccelerometerRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeCalibrateGimbalAccelerometerRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeCalibrateGimbalAccelerometerRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.calibration.SubscribeCalibrateGimbalAccelerometerRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SubscribeCalibrateGimbalAccelerometerRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SubscribeCalibrateGimbalAccelerometerRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.calibration.SubscribeCalibrateGimbalAccelerometerRequest.drone_id)
+}
+
 // -------------------------------------------------------------------
 
 // CalibrateGimbalAccelerometerResponse
@@ -3234,6 +3412,26 @@ inline void CalibrateGimbalAccelerometerResponse::set_allocated_progress_data(::
 // -------------------------------------------------------------------
 
 // CancelRequest
+
+// int32 drone_id = 1;
+inline void CancelRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 CancelRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 CancelRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.calibration.CancelRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void CancelRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void CancelRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.calibration.CancelRequest.drone_id)
+}
 
 // -------------------------------------------------------------------
 

@@ -40,7 +40,8 @@ struct FloatParamDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT FloatParamDefaultTypeInternal _FloatParam_default_instance_;
 constexpr AccessFloatParamsRequest::AccessFloatParamsRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct AccessFloatParamsRequestDefaultTypeInternal {
   constexpr AccessFloatParamsRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -77,7 +78,8 @@ struct FloatParamUpdateDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT FloatParamUpdateDefaultTypeInternal _FloatParamUpdate_default_instance_;
 constexpr SubscribeFloatParamRequest::SubscribeFloatParamRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeFloatParamRequestDefaultTypeInternal {
   constexpr SubscribeFloatParamRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -140,6 +142,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_component_5finformation_2fcomp
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::component_information::AccessFloatParamsRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::component_information::AccessFloatParamsResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -159,6 +162,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_component_5finformation_2fcomp
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::component_information::SubscribeFloatParamRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::component_information::FloatParamResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -176,11 +180,11 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_component_5finformation_2fcomp
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::mavsdk::rpc::component_information::FloatParam)},
   { 14, -1, sizeof(::mavsdk::rpc::component_information::AccessFloatParamsRequest)},
-  { 19, -1, sizeof(::mavsdk::rpc::component_information::AccessFloatParamsResponse)},
-  { 26, -1, sizeof(::mavsdk::rpc::component_information::FloatParamUpdate)},
-  { 33, -1, sizeof(::mavsdk::rpc::component_information::SubscribeFloatParamRequest)},
-  { 38, -1, sizeof(::mavsdk::rpc::component_information::FloatParamResponse)},
-  { 44, -1, sizeof(::mavsdk::rpc::component_information::ComponentInformationResult)},
+  { 20, -1, sizeof(::mavsdk::rpc::component_information::AccessFloatParamsResponse)},
+  { 27, -1, sizeof(::mavsdk::rpc::component_information::FloatParamUpdate)},
+  { 34, -1, sizeof(::mavsdk::rpc::component_information::SubscribeFloatParamRequest)},
+  { 40, -1, sizeof(::mavsdk::rpc::component_information::FloatParamResponse)},
+  { 46, -1, sizeof(::mavsdk::rpc::component_information::ComponentInformationResult)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -201,39 +205,40 @@ const char descriptor_table_protodef_component_5finformation_2fcomponent_5finfor
   "\001(\t\022\030\n\020long_description\030\003 \001(\t\022\014\n\004unit\030\004 "
   "\001(\t\022\026\n\016decimal_places\030\005 \001(\005\022\023\n\013start_val"
   "ue\030\006 \001(\002\022\025\n\rdefault_value\030\007 \001(\002\022\021\n\tmin_v"
-  "alue\030\010 \001(\002\022\021\n\tmax_value\030\t \001(\002\"\032\n\030AccessF"
-  "loatParamsRequest\"\275\001\n\031AccessFloatParamsR"
-  "esponse\022b\n\034component_information_result\030"
-  "\001 \001(\0132<.mavsdk.rpc.component_information"
-  ".ComponentInformationResult\022<\n\006params\030\002 "
-  "\003(\0132,.mavsdk.rpc.component_information.F"
-  "loatParam\"/\n\020FloatParamUpdate\022\014\n\004name\030\001 "
-  "\001(\t\022\r\n\005value\030\002 \001(\002\"\034\n\032SubscribeFloatPara"
-  "mRequest\"^\n\022FloatParamResponse\022H\n\014param_"
-  "update\030\001 \001(\01322.mavsdk.rpc.component_info"
-  "rmation.FloatParamUpdate\"\315\001\n\032ComponentIn"
-  "formationResult\022S\n\006result\030\001 \001(\0162C.mavsdk"
-  ".rpc.component_information.ComponentInfo"
-  "rmationResult.Result\022\022\n\nresult_str\030\002 \001(\t"
-  "\"F\n\006Result\022\022\n\016RESULT_UNKNOWN\020\000\022\022\n\016RESULT"
-  "_SUCCESS\020\001\022\024\n\020RESULT_NO_SYSTEM\020\0032\306\002\n\033Com"
-  "ponentInformationService\022\222\001\n\021AccessFloat"
-  "Params\022:.mavsdk.rpc.component_informatio"
-  "n.AccessFloatParamsRequest\032;.mavsdk.rpc."
-  "component_information.AccessFloatParamsR"
-  "esponse\"\004\200\265\030\001\022\221\001\n\023SubscribeFloatParam\022<."
-  "mavsdk.rpc.component_information.Subscri"
-  "beFloatParamRequest\0324.mavsdk.rpc.compone"
-  "nt_information.FloatParamResponse\"\004\200\265\030\0000"
-  "\001B<\n\037io.mavsdk.component_informationB\031Co"
-  "mponentInformationProtob\006proto3"
+  "alue\030\010 \001(\002\022\021\n\tmax_value\030\t \001(\002\",\n\030AccessF"
+  "loatParamsRequest\022\020\n\010drone_id\030\001 \001(\005\"\275\001\n\031"
+  "AccessFloatParamsResponse\022b\n\034component_i"
+  "nformation_result\030\001 \001(\0132<.mavsdk.rpc.com"
+  "ponent_information.ComponentInformationR"
+  "esult\022<\n\006params\030\002 \003(\0132,.mavsdk.rpc.compo"
+  "nent_information.FloatParam\"/\n\020FloatPara"
+  "mUpdate\022\014\n\004name\030\001 \001(\t\022\r\n\005value\030\002 \001(\002\".\n\032"
+  "SubscribeFloatParamRequest\022\020\n\010drone_id\030\001"
+  " \001(\005\"^\n\022FloatParamResponse\022H\n\014param_upda"
+  "te\030\001 \001(\01322.mavsdk.rpc.component_informat"
+  "ion.FloatParamUpdate\"\315\001\n\032ComponentInform"
+  "ationResult\022S\n\006result\030\001 \001(\0162C.mavsdk.rpc"
+  ".component_information.ComponentInformat"
+  "ionResult.Result\022\022\n\nresult_str\030\002 \001(\t\"F\n\006"
+  "Result\022\022\n\016RESULT_UNKNOWN\020\000\022\022\n\016RESULT_SUC"
+  "CESS\020\001\022\024\n\020RESULT_NO_SYSTEM\020\0032\306\002\n\033Compone"
+  "ntInformationService\022\222\001\n\021AccessFloatPara"
+  "ms\022:.mavsdk.rpc.component_information.Ac"
+  "cessFloatParamsRequest\032;.mavsdk.rpc.comp"
+  "onent_information.AccessFloatParamsRespo"
+  "nse\"\004\200\265\030\001\022\221\001\n\023SubscribeFloatParam\022<.mavs"
+  "dk.rpc.component_information.SubscribeFl"
+  "oatParamRequest\0324.mavsdk.rpc.component_i"
+  "nformation.FloatParamResponse\"\004\200\265\030\0000\001B<\n"
+  "\037io.mavsdk.component_informationB\031Compon"
+  "entInformationProtob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_component_5finformation_2fcomponent_5finformation_2eproto_deps[1] = {
   &::descriptor_table_mavsdk_5foptions_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_component_5finformation_2fcomponent_5finformation_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_component_5finformation_2fcomponent_5finformation_2eproto = {
-  false, false, 1311, descriptor_table_protodef_component_5finformation_2fcomponent_5finformation_2eproto, "component_information/component_information.proto", 
+  false, false, 1347, descriptor_table_protodef_component_5finformation_2fcomponent_5finformation_2eproto, "component_information/component_information.proto", 
   &descriptor_table_component_5finformation_2fcomponent_5finformation_2eproto_once, descriptor_table_component_5finformation_2fcomponent_5finformation_2eproto_deps, 1, 7,
   schemas, file_default_instances, TableStruct_component_5finformation_2fcomponent_5finformation_2eproto::offsets,
   file_level_metadata_component_5finformation_2fcomponent_5finformation_2eproto, file_level_enum_descriptors_component_5finformation_2fcomponent_5finformation_2eproto, file_level_service_descriptors_component_5finformation_2fcomponent_5finformation_2eproto,
@@ -738,10 +743,12 @@ AccessFloatParamsRequest::AccessFloatParamsRequest(::PROTOBUF_NAMESPACE_ID::Aren
 AccessFloatParamsRequest::AccessFloatParamsRequest(const AccessFloatParamsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.component_information.AccessFloatParamsRequest)
 }
 
 inline void AccessFloatParamsRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 AccessFloatParamsRequest::~AccessFloatParamsRequest() {
@@ -771,6 +778,7 @@ void AccessFloatParamsRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -779,6 +787,16 @@ const char* AccessFloatParamsRequest::_InternalParse(const char* ptr, ::PROTOBUF
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -789,6 +807,8 @@ const char* AccessFloatParamsRequest::_InternalParse(const char* ptr, ::PROTOBUF
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -803,6 +823,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.component_information.AccessFloatParamsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -819,6 +845,13 @@ size_t AccessFloatParamsRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -848,6 +881,9 @@ void AccessFloatParamsRequest::MergeFrom(const AccessFloatParamsRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -865,6 +901,7 @@ bool AccessFloatParamsRequest::IsInitialized() const {
 void AccessFloatParamsRequest::InternalSwap(AccessFloatParamsRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata AccessFloatParamsRequest::GetMetadata() const {
@@ -1348,10 +1385,12 @@ SubscribeFloatParamRequest::SubscribeFloatParamRequest(::PROTOBUF_NAMESPACE_ID::
 SubscribeFloatParamRequest::SubscribeFloatParamRequest(const SubscribeFloatParamRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.component_information.SubscribeFloatParamRequest)
 }
 
 inline void SubscribeFloatParamRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeFloatParamRequest::~SubscribeFloatParamRequest() {
@@ -1381,6 +1420,7 @@ void SubscribeFloatParamRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1389,6 +1429,16 @@ const char* SubscribeFloatParamRequest::_InternalParse(const char* ptr, ::PROTOB
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -1399,6 +1449,8 @@ const char* SubscribeFloatParamRequest::_InternalParse(const char* ptr, ::PROTOB
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -1413,6 +1465,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.component_information.SubscribeFloatParamRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -1429,6 +1487,13 @@ size_t SubscribeFloatParamRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -1458,6 +1523,9 @@ void SubscribeFloatParamRequest::MergeFrom(const SubscribeFloatParamRequest& fro
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1475,6 +1543,7 @@ bool SubscribeFloatParamRequest::IsInitialized() const {
 void SubscribeFloatParamRequest::InternalSwap(SubscribeFloatParamRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeFloatParamRequest::GetMetadata() const {

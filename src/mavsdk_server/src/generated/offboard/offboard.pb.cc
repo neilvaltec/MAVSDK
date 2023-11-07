@@ -20,7 +20,8 @@ namespace mavsdk {
 namespace rpc {
 namespace offboard {
 constexpr StartRequest::StartRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct StartRequestDefaultTypeInternal {
   constexpr StartRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -43,7 +44,8 @@ struct StartResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT StartResponseDefaultTypeInternal _StartResponse_default_instance_;
 constexpr StopRequest::StopRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct StopRequestDefaultTypeInternal {
   constexpr StopRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -66,7 +68,8 @@ struct StopResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT StopResponseDefaultTypeInternal _StopResponse_default_instance_;
 constexpr IsActiveRequest::IsActiveRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct IsActiveRequestDefaultTypeInternal {
   constexpr IsActiveRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -90,7 +93,8 @@ struct IsActiveResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IsActiveResponseDefaultTypeInternal _IsActiveResponse_default_instance_;
 constexpr SetAttitudeRequest::SetAttitudeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : attitude_(nullptr){}
+  : attitude_(nullptr)
+  , drone_id_(0){}
 struct SetAttitudeRequestDefaultTypeInternal {
   constexpr SetAttitudeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -114,7 +118,8 @@ struct SetAttitudeResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetAttitudeResponseDefaultTypeInternal _SetAttitudeResponse_default_instance_;
 constexpr SetActuatorControlRequest::SetActuatorControlRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : actuator_control_(nullptr){}
+  : actuator_control_(nullptr)
+  , drone_id_(0){}
 struct SetActuatorControlRequestDefaultTypeInternal {
   constexpr SetActuatorControlRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -138,7 +143,8 @@ struct SetActuatorControlResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetActuatorControlResponseDefaultTypeInternal _SetActuatorControlResponse_default_instance_;
 constexpr SetAttitudeRateRequest::SetAttitudeRateRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : attitude_rate_(nullptr){}
+  : attitude_rate_(nullptr)
+  , drone_id_(0){}
 struct SetAttitudeRateRequestDefaultTypeInternal {
   constexpr SetAttitudeRateRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -162,7 +168,8 @@ struct SetAttitudeRateResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetAttitudeRateResponseDefaultTypeInternal _SetAttitudeRateResponse_default_instance_;
 constexpr SetPositionNedRequest::SetPositionNedRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : position_ned_yaw_(nullptr){}
+  : position_ned_yaw_(nullptr)
+  , drone_id_(0){}
 struct SetPositionNedRequestDefaultTypeInternal {
   constexpr SetPositionNedRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -186,7 +193,8 @@ struct SetPositionNedResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetPositionNedResponseDefaultTypeInternal _SetPositionNedResponse_default_instance_;
 constexpr SetPositionGlobalRequest::SetPositionGlobalRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : position_global_yaw_(nullptr){}
+  : position_global_yaw_(nullptr)
+  , drone_id_(0){}
 struct SetPositionGlobalRequestDefaultTypeInternal {
   constexpr SetPositionGlobalRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -210,7 +218,8 @@ struct SetPositionGlobalResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetPositionGlobalResponseDefaultTypeInternal _SetPositionGlobalResponse_default_instance_;
 constexpr SetVelocityBodyRequest::SetVelocityBodyRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : velocity_body_yawspeed_(nullptr){}
+  : velocity_body_yawspeed_(nullptr)
+  , drone_id_(0){}
 struct SetVelocityBodyRequestDefaultTypeInternal {
   constexpr SetVelocityBodyRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -234,7 +243,8 @@ struct SetVelocityBodyResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetVelocityBodyResponseDefaultTypeInternal _SetVelocityBodyResponse_default_instance_;
 constexpr SetVelocityNedRequest::SetVelocityNedRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : velocity_ned_yaw_(nullptr){}
+  : velocity_ned_yaw_(nullptr)
+  , drone_id_(0){}
 struct SetVelocityNedRequestDefaultTypeInternal {
   constexpr SetVelocityNedRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -259,7 +269,8 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetVelocityNedResponseDefaultTy
 constexpr SetPositionVelocityNedRequest::SetPositionVelocityNedRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : position_ned_yaw_(nullptr)
-  , velocity_ned_yaw_(nullptr){}
+  , velocity_ned_yaw_(nullptr)
+  , drone_id_(0){}
 struct SetPositionVelocityNedRequestDefaultTypeInternal {
   constexpr SetPositionVelocityNedRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -283,7 +294,8 @@ struct SetPositionVelocityNedResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetPositionVelocityNedResponseDefaultTypeInternal _SetPositionVelocityNedResponse_default_instance_;
 constexpr SetAccelerationNedRequest::SetAccelerationNedRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : acceleration_ned_(nullptr){}
+  : acceleration_ned_(nullptr)
+  , drone_id_(0){}
 struct SetAccelerationNedRequestDefaultTypeInternal {
   constexpr SetAccelerationNedRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -462,6 +474,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_offboard_2foffboard_2eproto::o
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::StartRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::StartResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -473,6 +486,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_offboard_2foffboard_2eproto::o
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::StopRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::StopResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -484,6 +498,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_offboard_2foffboard_2eproto::o
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::IsActiveRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::IsActiveResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -495,6 +510,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_offboard_2foffboard_2eproto::o
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::SetAttitudeRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::SetAttitudeRequest, attitude_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::SetAttitudeResponse, _internal_metadata_),
@@ -507,6 +523,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_offboard_2foffboard_2eproto::o
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::SetActuatorControlRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::SetActuatorControlRequest, actuator_control_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::SetActuatorControlResponse, _internal_metadata_),
@@ -519,6 +536,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_offboard_2foffboard_2eproto::o
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::SetAttitudeRateRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::SetAttitudeRateRequest, attitude_rate_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::SetAttitudeRateResponse, _internal_metadata_),
@@ -531,6 +549,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_offboard_2foffboard_2eproto::o
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::SetPositionNedRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::SetPositionNedRequest, position_ned_yaw_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::SetPositionNedResponse, _internal_metadata_),
@@ -543,6 +562,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_offboard_2foffboard_2eproto::o
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::SetPositionGlobalRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::SetPositionGlobalRequest, position_global_yaw_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::SetPositionGlobalResponse, _internal_metadata_),
@@ -555,6 +575,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_offboard_2foffboard_2eproto::o
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::SetVelocityBodyRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::SetVelocityBodyRequest, velocity_body_yawspeed_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::SetVelocityBodyResponse, _internal_metadata_),
@@ -567,6 +588,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_offboard_2foffboard_2eproto::o
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::SetVelocityNedRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::SetVelocityNedRequest, velocity_ned_yaw_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::SetVelocityNedResponse, _internal_metadata_),
@@ -579,6 +601,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_offboard_2foffboard_2eproto::o
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::SetPositionVelocityNedRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::SetPositionVelocityNedRequest, position_ned_yaw_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::SetPositionVelocityNedRequest, velocity_ned_yaw_),
   ~0u,  // no _has_bits_
@@ -592,6 +615,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_offboard_2foffboard_2eproto::o
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::SetAccelerationNedRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::SetAccelerationNedRequest, acceleration_ned_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::offboard::SetAccelerationNedResponse, _internal_metadata_),
@@ -684,39 +708,39 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_offboard_2foffboard_2eproto::o
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::mavsdk::rpc::offboard::StartRequest)},
-  { 5, -1, sizeof(::mavsdk::rpc::offboard::StartResponse)},
-  { 11, -1, sizeof(::mavsdk::rpc::offboard::StopRequest)},
-  { 16, -1, sizeof(::mavsdk::rpc::offboard::StopResponse)},
-  { 22, -1, sizeof(::mavsdk::rpc::offboard::IsActiveRequest)},
-  { 27, -1, sizeof(::mavsdk::rpc::offboard::IsActiveResponse)},
-  { 33, -1, sizeof(::mavsdk::rpc::offboard::SetAttitudeRequest)},
-  { 39, -1, sizeof(::mavsdk::rpc::offboard::SetAttitudeResponse)},
-  { 45, -1, sizeof(::mavsdk::rpc::offboard::SetActuatorControlRequest)},
-  { 51, -1, sizeof(::mavsdk::rpc::offboard::SetActuatorControlResponse)},
-  { 57, -1, sizeof(::mavsdk::rpc::offboard::SetAttitudeRateRequest)},
-  { 63, -1, sizeof(::mavsdk::rpc::offboard::SetAttitudeRateResponse)},
-  { 69, -1, sizeof(::mavsdk::rpc::offboard::SetPositionNedRequest)},
-  { 75, -1, sizeof(::mavsdk::rpc::offboard::SetPositionNedResponse)},
-  { 81, -1, sizeof(::mavsdk::rpc::offboard::SetPositionGlobalRequest)},
-  { 87, -1, sizeof(::mavsdk::rpc::offboard::SetPositionGlobalResponse)},
-  { 93, -1, sizeof(::mavsdk::rpc::offboard::SetVelocityBodyRequest)},
-  { 99, -1, sizeof(::mavsdk::rpc::offboard::SetVelocityBodyResponse)},
-  { 105, -1, sizeof(::mavsdk::rpc::offboard::SetVelocityNedRequest)},
-  { 111, -1, sizeof(::mavsdk::rpc::offboard::SetVelocityNedResponse)},
-  { 117, -1, sizeof(::mavsdk::rpc::offboard::SetPositionVelocityNedRequest)},
-  { 124, -1, sizeof(::mavsdk::rpc::offboard::SetPositionVelocityNedResponse)},
-  { 130, -1, sizeof(::mavsdk::rpc::offboard::SetAccelerationNedRequest)},
-  { 136, -1, sizeof(::mavsdk::rpc::offboard::SetAccelerationNedResponse)},
-  { 142, -1, sizeof(::mavsdk::rpc::offboard::Attitude)},
-  { 151, -1, sizeof(::mavsdk::rpc::offboard::ActuatorControlGroup)},
-  { 157, -1, sizeof(::mavsdk::rpc::offboard::ActuatorControl)},
-  { 163, -1, sizeof(::mavsdk::rpc::offboard::AttitudeRate)},
-  { 172, -1, sizeof(::mavsdk::rpc::offboard::PositionNedYaw)},
-  { 181, -1, sizeof(::mavsdk::rpc::offboard::PositionGlobalYaw)},
-  { 191, -1, sizeof(::mavsdk::rpc::offboard::VelocityBodyYawspeed)},
-  { 200, -1, sizeof(::mavsdk::rpc::offboard::VelocityNedYaw)},
-  { 209, -1, sizeof(::mavsdk::rpc::offboard::AccelerationNed)},
-  { 217, -1, sizeof(::mavsdk::rpc::offboard::OffboardResult)},
+  { 6, -1, sizeof(::mavsdk::rpc::offboard::StartResponse)},
+  { 12, -1, sizeof(::mavsdk::rpc::offboard::StopRequest)},
+  { 18, -1, sizeof(::mavsdk::rpc::offboard::StopResponse)},
+  { 24, -1, sizeof(::mavsdk::rpc::offboard::IsActiveRequest)},
+  { 30, -1, sizeof(::mavsdk::rpc::offboard::IsActiveResponse)},
+  { 36, -1, sizeof(::mavsdk::rpc::offboard::SetAttitudeRequest)},
+  { 43, -1, sizeof(::mavsdk::rpc::offboard::SetAttitudeResponse)},
+  { 49, -1, sizeof(::mavsdk::rpc::offboard::SetActuatorControlRequest)},
+  { 56, -1, sizeof(::mavsdk::rpc::offboard::SetActuatorControlResponse)},
+  { 62, -1, sizeof(::mavsdk::rpc::offboard::SetAttitudeRateRequest)},
+  { 69, -1, sizeof(::mavsdk::rpc::offboard::SetAttitudeRateResponse)},
+  { 75, -1, sizeof(::mavsdk::rpc::offboard::SetPositionNedRequest)},
+  { 82, -1, sizeof(::mavsdk::rpc::offboard::SetPositionNedResponse)},
+  { 88, -1, sizeof(::mavsdk::rpc::offboard::SetPositionGlobalRequest)},
+  { 95, -1, sizeof(::mavsdk::rpc::offboard::SetPositionGlobalResponse)},
+  { 101, -1, sizeof(::mavsdk::rpc::offboard::SetVelocityBodyRequest)},
+  { 108, -1, sizeof(::mavsdk::rpc::offboard::SetVelocityBodyResponse)},
+  { 114, -1, sizeof(::mavsdk::rpc::offboard::SetVelocityNedRequest)},
+  { 121, -1, sizeof(::mavsdk::rpc::offboard::SetVelocityNedResponse)},
+  { 127, -1, sizeof(::mavsdk::rpc::offboard::SetPositionVelocityNedRequest)},
+  { 135, -1, sizeof(::mavsdk::rpc::offboard::SetPositionVelocityNedResponse)},
+  { 141, -1, sizeof(::mavsdk::rpc::offboard::SetAccelerationNedRequest)},
+  { 148, -1, sizeof(::mavsdk::rpc::offboard::SetAccelerationNedResponse)},
+  { 154, -1, sizeof(::mavsdk::rpc::offboard::Attitude)},
+  { 163, -1, sizeof(::mavsdk::rpc::offboard::ActuatorControlGroup)},
+  { 169, -1, sizeof(::mavsdk::rpc::offboard::ActuatorControl)},
+  { 175, -1, sizeof(::mavsdk::rpc::offboard::AttitudeRate)},
+  { 184, -1, sizeof(::mavsdk::rpc::offboard::PositionNedYaw)},
+  { 193, -1, sizeof(::mavsdk::rpc::offboard::PositionGlobalYaw)},
+  { 203, -1, sizeof(::mavsdk::rpc::offboard::VelocityBodyYawspeed)},
+  { 212, -1, sizeof(::mavsdk::rpc::offboard::VelocityNedYaw)},
+  { 221, -1, sizeof(::mavsdk::rpc::offboard::AccelerationNed)},
+  { 229, -1, sizeof(::mavsdk::rpc::offboard::OffboardResult)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -758,128 +782,133 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_offboard_2foffboard_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\027offboard/offboard.proto\022\023mavsdk.rpc.of"
-  "fboard\032\024mavsdk_options.proto\"\016\n\014StartReq"
-  "uest\"M\n\rStartResponse\022<\n\017offboard_result"
-  "\030\001 \001(\0132#.mavsdk.rpc.offboard.OffboardRes"
-  "ult\"\r\n\013StopRequest\"L\n\014StopResponse\022<\n\017of"
-  "fboard_result\030\001 \001(\0132#.mavsdk.rpc.offboar"
-  "d.OffboardResult\"\021\n\017IsActiveRequest\"%\n\020I"
-  "sActiveResponse\022\021\n\tis_active\030\001 \001(\010\"E\n\022Se"
-  "tAttitudeRequest\022/\n\010attitude\030\001 \001(\0132\035.mav"
-  "sdk.rpc.offboard.Attitude\"S\n\023SetAttitude"
-  "Response\022<\n\017offboard_result\030\001 \001(\0132#.mavs"
-  "dk.rpc.offboard.OffboardResult\"[\n\031SetAct"
-  "uatorControlRequest\022>\n\020actuator_control\030"
-  "\001 \001(\0132$.mavsdk.rpc.offboard.ActuatorCont"
-  "rol\"Z\n\032SetActuatorControlResponse\022<\n\017off"
-  "board_result\030\001 \001(\0132#.mavsdk.rpc.offboard"
-  ".OffboardResult\"R\n\026SetAttitudeRateReques"
-  "t\0228\n\rattitude_rate\030\001 \001(\0132!.mavsdk.rpc.of"
-  "fboard.AttitudeRate\"W\n\027SetAttitudeRateRe"
-  "sponse\022<\n\017offboard_result\030\001 \001(\0132#.mavsdk"
-  ".rpc.offboard.OffboardResult\"V\n\025SetPosit"
-  "ionNedRequest\022=\n\020position_ned_yaw\030\001 \001(\0132"
-  "#.mavsdk.rpc.offboard.PositionNedYaw\"V\n\026"
-  "SetPositionNedResponse\022<\n\017offboard_resul"
-  "t\030\001 \001(\0132#.mavsdk.rpc.offboard.OffboardRe"
-  "sult\"_\n\030SetPositionGlobalRequest\022C\n\023posi"
-  "tion_global_yaw\030\001 \001(\0132&.mavsdk.rpc.offbo"
-  "ard.PositionGlobalYaw\"Y\n\031SetPositionGlob"
-  "alResponse\022<\n\017offboard_result\030\001 \001(\0132#.ma"
-  "vsdk.rpc.offboard.OffboardResult\"c\n\026SetV"
-  "elocityBodyRequest\022I\n\026velocity_body_yaws"
-  "peed\030\001 \001(\0132).mavsdk.rpc.offboard.Velocit"
-  "yBodyYawspeed\"W\n\027SetVelocityBodyResponse"
+  "fboard\032\024mavsdk_options.proto\" \n\014StartReq"
+  "uest\022\020\n\010drone_id\030\001 \001(\005\"M\n\rStartResponse\022"
+  "<\n\017offboard_result\030\001 \001(\0132#.mavsdk.rpc.of"
+  "fboard.OffboardResult\"\037\n\013StopRequest\022\020\n\010"
+  "drone_id\030\001 \001(\005\"L\n\014StopResponse\022<\n\017offboa"
+  "rd_result\030\001 \001(\0132#.mavsdk.rpc.offboard.Of"
+  "fboardResult\"#\n\017IsActiveRequest\022\020\n\010drone"
+  "_id\030\001 \001(\005\"%\n\020IsActiveResponse\022\021\n\tis_acti"
+  "ve\030\001 \001(\010\"W\n\022SetAttitudeRequest\022\020\n\010drone_"
+  "id\030\001 \001(\005\022/\n\010attitude\030\002 \001(\0132\035.mavsdk.rpc."
+  "offboard.Attitude\"S\n\023SetAttitudeResponse"
   "\022<\n\017offboard_result\030\001 \001(\0132#.mavsdk.rpc.o"
-  "ffboard.OffboardResult\"V\n\025SetVelocityNed"
-  "Request\022=\n\020velocity_ned_yaw\030\001 \001(\0132#.mavs"
-  "dk.rpc.offboard.VelocityNedYaw\"V\n\026SetVel"
-  "ocityNedResponse\022<\n\017offboard_result\030\001 \001("
-  "\0132#.mavsdk.rpc.offboard.OffboardResult\"\235"
-  "\001\n\035SetPositionVelocityNedRequest\022=\n\020posi"
-  "tion_ned_yaw\030\001 \001(\0132#.mavsdk.rpc.offboard"
-  ".PositionNedYaw\022=\n\020velocity_ned_yaw\030\002 \001("
-  "\0132#.mavsdk.rpc.offboard.VelocityNedYaw\"^"
-  "\n\036SetPositionVelocityNedResponse\022<\n\017offb"
-  "oard_result\030\001 \001(\0132#.mavsdk.rpc.offboard."
-  "OffboardResult\"[\n\031SetAccelerationNedRequ"
-  "est\022>\n\020acceleration_ned\030\001 \001(\0132$.mavsdk.r"
-  "pc.offboard.AccelerationNed\"Z\n\032SetAccele"
-  "rationNedResponse\022<\n\017offboard_result\030\001 \001"
-  "(\0132#.mavsdk.rpc.offboard.OffboardResult\""
-  "V\n\010Attitude\022\020\n\010roll_deg\030\001 \001(\002\022\021\n\tpitch_d"
-  "eg\030\002 \001(\002\022\017\n\007yaw_deg\030\003 \001(\002\022\024\n\014thrust_valu"
-  "e\030\004 \001(\002\"(\n\024ActuatorControlGroup\022\020\n\010contr"
-  "ols\030\001 \003(\002\"L\n\017ActuatorControl\0229\n\006groups\030\001"
-  " \003(\0132).mavsdk.rpc.offboard.ActuatorContr"
-  "olGroup\"`\n\014AttitudeRate\022\022\n\nroll_deg_s\030\001 "
-  "\001(\002\022\023\n\013pitch_deg_s\030\002 \001(\002\022\021\n\tyaw_deg_s\030\003 "
-  "\001(\002\022\024\n\014thrust_value\030\004 \001(\002\"R\n\016PositionNed"
-  "Yaw\022\017\n\007north_m\030\001 \001(\002\022\016\n\006east_m\030\002 \001(\002\022\016\n\006"
-  "down_m\030\003 \001(\002\022\017\n\007yaw_deg\030\004 \001(\002\"\374\001\n\021Positi"
-  "onGlobalYaw\022\017\n\007lat_deg\030\001 \001(\001\022\017\n\007lon_deg\030"
-  "\002 \001(\001\022\r\n\005alt_m\030\003 \001(\002\022\017\n\007yaw_deg\030\004 \001(\002\022J\n"
-  "\raltitude_type\030\005 \001(\01623.mavsdk.rpc.offboa"
-  "rd.PositionGlobalYaw.AltitudeType\"Y\n\014Alt"
-  "itudeType\022\032\n\026ALTITUDE_TYPE_REL_HOME\020\000\022\026\n"
-  "\022ALTITUDE_TYPE_AMSL\020\001\022\025\n\021ALTITUDE_TYPE_A"
-  "GL\020\002\"h\n\024VelocityBodyYawspeed\022\023\n\013forward_"
-  "m_s\030\001 \001(\002\022\021\n\tright_m_s\030\002 \001(\002\022\020\n\010down_m_s"
-  "\030\003 \001(\002\022\026\n\016yawspeed_deg_s\030\004 \001(\002\"X\n\016Veloci"
-  "tyNedYaw\022\021\n\tnorth_m_s\030\001 \001(\002\022\020\n\010east_m_s\030"
-  "\002 \001(\002\022\020\n\010down_m_s\030\003 \001(\002\022\017\n\007yaw_deg\030\004 \001(\002"
-  "\"K\n\017AccelerationNed\022\022\n\nnorth_m_s2\030\001 \001(\002\022"
-  "\021\n\teast_m_s2\030\002 \001(\002\022\021\n\tdown_m_s2\030\003 \001(\002\"\242\002"
-  "\n\016OffboardResult\022:\n\006result\030\001 \001(\0162*.mavsd"
-  "k.rpc.offboard.OffboardResult.Result\022\022\n\n"
-  "result_str\030\002 \001(\t\"\277\001\n\006Result\022\022\n\016RESULT_UN"
-  "KNOWN\020\000\022\022\n\016RESULT_SUCCESS\020\001\022\024\n\020RESULT_NO"
-  "_SYSTEM\020\002\022\033\n\027RESULT_CONNECTION_ERROR\020\003\022\017"
-  "\n\013RESULT_BUSY\020\004\022\031\n\025RESULT_COMMAND_DENIED"
-  "\020\005\022\022\n\016RESULT_TIMEOUT\020\006\022\032\n\026RESULT_NO_SETP"
-  "OINT_SET\020\0072\301\n\n\017OffboardService\022P\n\005Start\022"
-  "!.mavsdk.rpc.offboard.StartRequest\032\".mav"
-  "sdk.rpc.offboard.StartResponse\"\000\022M\n\004Stop"
-  "\022 .mavsdk.rpc.offboard.StopRequest\032!.mav"
-  "sdk.rpc.offboard.StopResponse\"\000\022]\n\010IsAct"
-  "ive\022$.mavsdk.rpc.offboard.IsActiveReques"
-  "t\032%.mavsdk.rpc.offboard.IsActiveResponse"
-  "\"\004\200\265\030\001\022f\n\013SetAttitude\022\'.mavsdk.rpc.offbo"
-  "ard.SetAttitudeRequest\032(.mavsdk.rpc.offb"
-  "oard.SetAttitudeResponse\"\004\200\265\030\001\022{\n\022SetAct"
-  "uatorControl\022..mavsdk.rpc.offboard.SetAc"
-  "tuatorControlRequest\032/.mavsdk.rpc.offboa"
-  "rd.SetActuatorControlResponse\"\004\200\265\030\001\022r\n\017S"
-  "etAttitudeRate\022+.mavsdk.rpc.offboard.Set"
-  "AttitudeRateRequest\032,.mavsdk.rpc.offboar"
-  "d.SetAttitudeRateResponse\"\004\200\265\030\001\022o\n\016SetPo"
-  "sitionNed\022*.mavsdk.rpc.offboard.SetPosit"
-  "ionNedRequest\032+.mavsdk.rpc.offboard.SetP"
-  "ositionNedResponse\"\004\200\265\030\001\022x\n\021SetPositionG"
-  "lobal\022-.mavsdk.rpc.offboard.SetPositionG"
-  "lobalRequest\032..mavsdk.rpc.offboard.SetPo"
-  "sitionGlobalResponse\"\004\200\265\030\001\022r\n\017SetVelocit"
-  "yBody\022+.mavsdk.rpc.offboard.SetVelocityB"
-  "odyRequest\032,.mavsdk.rpc.offboard.SetVelo"
-  "cityBodyResponse\"\004\200\265\030\001\022o\n\016SetVelocityNed"
-  "\022*.mavsdk.rpc.offboard.SetVelocityNedReq"
-  "uest\032+.mavsdk.rpc.offboard.SetVelocityNe"
-  "dResponse\"\004\200\265\030\001\022\207\001\n\026SetPositionVelocityN"
-  "ed\0222.mavsdk.rpc.offboard.SetPositionVelo"
-  "cityNedRequest\0323.mavsdk.rpc.offboard.Set"
-  "PositionVelocityNedResponse\"\004\200\265\030\001\022{\n\022Set"
-  "AccelerationNed\022..mavsdk.rpc.offboard.Se"
-  "tAccelerationNedRequest\032/.mavsdk.rpc.off"
-  "board.SetAccelerationNedResponse\"\004\200\265\030\001B#"
-  "\n\022io.mavsdk.offboardB\rOffboardProtob\006pro"
-  "to3"
+  "ffboard.OffboardResult\"m\n\031SetActuatorCon"
+  "trolRequest\022\020\n\010drone_id\030\001 \001(\005\022>\n\020actuato"
+  "r_control\030\002 \001(\0132$.mavsdk.rpc.offboard.Ac"
+  "tuatorControl\"Z\n\032SetActuatorControlRespo"
+  "nse\022<\n\017offboard_result\030\001 \001(\0132#.mavsdk.rp"
+  "c.offboard.OffboardResult\"d\n\026SetAttitude"
+  "RateRequest\022\020\n\010drone_id\030\001 \001(\005\0228\n\rattitud"
+  "e_rate\030\002 \001(\0132!.mavsdk.rpc.offboard.Attit"
+  "udeRate\"W\n\027SetAttitudeRateResponse\022<\n\017of"
+  "fboard_result\030\001 \001(\0132#.mavsdk.rpc.offboar"
+  "d.OffboardResult\"h\n\025SetPositionNedReques"
+  "t\022\020\n\010drone_id\030\001 \001(\005\022=\n\020position_ned_yaw\030"
+  "\002 \001(\0132#.mavsdk.rpc.offboard.PositionNedY"
+  "aw\"V\n\026SetPositionNedResponse\022<\n\017offboard"
+  "_result\030\001 \001(\0132#.mavsdk.rpc.offboard.Offb"
+  "oardResult\"q\n\030SetPositionGlobalRequest\022\020"
+  "\n\010drone_id\030\001 \001(\005\022C\n\023position_global_yaw\030"
+  "\002 \001(\0132&.mavsdk.rpc.offboard.PositionGlob"
+  "alYaw\"Y\n\031SetPositionGlobalResponse\022<\n\017of"
+  "fboard_result\030\001 \001(\0132#.mavsdk.rpc.offboar"
+  "d.OffboardResult\"u\n\026SetVelocityBodyReque"
+  "st\022\020\n\010drone_id\030\001 \001(\005\022I\n\026velocity_body_ya"
+  "wspeed\030\002 \001(\0132).mavsdk.rpc.offboard.Veloc"
+  "ityBodyYawspeed\"W\n\027SetVelocityBodyRespon"
+  "se\022<\n\017offboard_result\030\001 \001(\0132#.mavsdk.rpc"
+  ".offboard.OffboardResult\"h\n\025SetVelocityN"
+  "edRequest\022\020\n\010drone_id\030\001 \001(\005\022=\n\020velocity_"
+  "ned_yaw\030\002 \001(\0132#.mavsdk.rpc.offboard.Velo"
+  "cityNedYaw\"V\n\026SetVelocityNedResponse\022<\n\017"
+  "offboard_result\030\001 \001(\0132#.mavsdk.rpc.offbo"
+  "ard.OffboardResult\"\257\001\n\035SetPositionVeloci"
+  "tyNedRequest\022\020\n\010drone_id\030\001 \001(\005\022=\n\020positi"
+  "on_ned_yaw\030\002 \001(\0132#.mavsdk.rpc.offboard.P"
+  "ositionNedYaw\022=\n\020velocity_ned_yaw\030\003 \001(\0132"
+  "#.mavsdk.rpc.offboard.VelocityNedYaw\"^\n\036"
+  "SetPositionVelocityNedResponse\022<\n\017offboa"
+  "rd_result\030\001 \001(\0132#.mavsdk.rpc.offboard.Of"
+  "fboardResult\"m\n\031SetAccelerationNedReques"
+  "t\022\020\n\010drone_id\030\001 \001(\005\022>\n\020acceleration_ned\030"
+  "\002 \001(\0132$.mavsdk.rpc.offboard.Acceleration"
+  "Ned\"Z\n\032SetAccelerationNedResponse\022<\n\017off"
+  "board_result\030\001 \001(\0132#.mavsdk.rpc.offboard"
+  ".OffboardResult\"V\n\010Attitude\022\020\n\010roll_deg\030"
+  "\001 \001(\002\022\021\n\tpitch_deg\030\002 \001(\002\022\017\n\007yaw_deg\030\003 \001("
+  "\002\022\024\n\014thrust_value\030\004 \001(\002\"(\n\024ActuatorContr"
+  "olGroup\022\020\n\010controls\030\001 \003(\002\"L\n\017ActuatorCon"
+  "trol\0229\n\006groups\030\001 \003(\0132).mavsdk.rpc.offboa"
+  "rd.ActuatorControlGroup\"`\n\014AttitudeRate\022"
+  "\022\n\nroll_deg_s\030\001 \001(\002\022\023\n\013pitch_deg_s\030\002 \001(\002"
+  "\022\021\n\tyaw_deg_s\030\003 \001(\002\022\024\n\014thrust_value\030\004 \001("
+  "\002\"R\n\016PositionNedYaw\022\017\n\007north_m\030\001 \001(\002\022\016\n\006"
+  "east_m\030\002 \001(\002\022\016\n\006down_m\030\003 \001(\002\022\017\n\007yaw_deg\030"
+  "\004 \001(\002\"\374\001\n\021PositionGlobalYaw\022\017\n\007lat_deg\030\001"
+  " \001(\001\022\017\n\007lon_deg\030\002 \001(\001\022\r\n\005alt_m\030\003 \001(\002\022\017\n\007"
+  "yaw_deg\030\004 \001(\002\022J\n\raltitude_type\030\005 \001(\01623.m"
+  "avsdk.rpc.offboard.PositionGlobalYaw.Alt"
+  "itudeType\"Y\n\014AltitudeType\022\032\n\026ALTITUDE_TY"
+  "PE_REL_HOME\020\000\022\026\n\022ALTITUDE_TYPE_AMSL\020\001\022\025\n"
+  "\021ALTITUDE_TYPE_AGL\020\002\"h\n\024VelocityBodyYaws"
+  "peed\022\023\n\013forward_m_s\030\001 \001(\002\022\021\n\tright_m_s\030\002"
+  " \001(\002\022\020\n\010down_m_s\030\003 \001(\002\022\026\n\016yawspeed_deg_s"
+  "\030\004 \001(\002\"X\n\016VelocityNedYaw\022\021\n\tnorth_m_s\030\001 "
+  "\001(\002\022\020\n\010east_m_s\030\002 \001(\002\022\020\n\010down_m_s\030\003 \001(\002\022"
+  "\017\n\007yaw_deg\030\004 \001(\002\"K\n\017AccelerationNed\022\022\n\nn"
+  "orth_m_s2\030\001 \001(\002\022\021\n\teast_m_s2\030\002 \001(\002\022\021\n\tdo"
+  "wn_m_s2\030\003 \001(\002\"\242\002\n\016OffboardResult\022:\n\006resu"
+  "lt\030\001 \001(\0162*.mavsdk.rpc.offboard.OffboardR"
+  "esult.Result\022\022\n\nresult_str\030\002 \001(\t\"\277\001\n\006Res"
+  "ult\022\022\n\016RESULT_UNKNOWN\020\000\022\022\n\016RESULT_SUCCES"
+  "S\020\001\022\024\n\020RESULT_NO_SYSTEM\020\002\022\033\n\027RESULT_CONN"
+  "ECTION_ERROR\020\003\022\017\n\013RESULT_BUSY\020\004\022\031\n\025RESUL"
+  "T_COMMAND_DENIED\020\005\022\022\n\016RESULT_TIMEOUT\020\006\022\032"
+  "\n\026RESULT_NO_SETPOINT_SET\020\0072\301\n\n\017OffboardS"
+  "ervice\022P\n\005Start\022!.mavsdk.rpc.offboard.St"
+  "artRequest\032\".mavsdk.rpc.offboard.StartRe"
+  "sponse\"\000\022M\n\004Stop\022 .mavsdk.rpc.offboard.S"
+  "topRequest\032!.mavsdk.rpc.offboard.StopRes"
+  "ponse\"\000\022]\n\010IsActive\022$.mavsdk.rpc.offboar"
+  "d.IsActiveRequest\032%.mavsdk.rpc.offboard."
+  "IsActiveResponse\"\004\200\265\030\001\022f\n\013SetAttitude\022\'."
+  "mavsdk.rpc.offboard.SetAttitudeRequest\032("
+  ".mavsdk.rpc.offboard.SetAttitudeResponse"
+  "\"\004\200\265\030\001\022{\n\022SetActuatorControl\022..mavsdk.rp"
+  "c.offboard.SetActuatorControlRequest\032/.m"
+  "avsdk.rpc.offboard.SetActuatorControlRes"
+  "ponse\"\004\200\265\030\001\022r\n\017SetAttitudeRate\022+.mavsdk."
+  "rpc.offboard.SetAttitudeRateRequest\032,.ma"
+  "vsdk.rpc.offboard.SetAttitudeRateRespons"
+  "e\"\004\200\265\030\001\022o\n\016SetPositionNed\022*.mavsdk.rpc.o"
+  "ffboard.SetPositionNedRequest\032+.mavsdk.r"
+  "pc.offboard.SetPositionNedResponse\"\004\200\265\030\001"
+  "\022x\n\021SetPositionGlobal\022-.mavsdk.rpc.offbo"
+  "ard.SetPositionGlobalRequest\032..mavsdk.rp"
+  "c.offboard.SetPositionGlobalResponse\"\004\200\265"
+  "\030\001\022r\n\017SetVelocityBody\022+.mavsdk.rpc.offbo"
+  "ard.SetVelocityBodyRequest\032,.mavsdk.rpc."
+  "offboard.SetVelocityBodyResponse\"\004\200\265\030\001\022o"
+  "\n\016SetVelocityNed\022*.mavsdk.rpc.offboard.S"
+  "etVelocityNedRequest\032+.mavsdk.rpc.offboa"
+  "rd.SetVelocityNedResponse\"\004\200\265\030\001\022\207\001\n\026SetP"
+  "ositionVelocityNed\0222.mavsdk.rpc.offboard"
+  ".SetPositionVelocityNedRequest\0323.mavsdk."
+  "rpc.offboard.SetPositionVelocityNedRespo"
+  "nse\"\004\200\265\030\001\022{\n\022SetAccelerationNed\022..mavsdk"
+  ".rpc.offboard.SetAccelerationNedRequest\032"
+  "/.mavsdk.rpc.offboard.SetAccelerationNed"
+  "Response\"\004\200\265\030\001B#\n\022io.mavsdk.offboardB\rOf"
+  "fboardProtob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_offboard_2foffboard_2eproto_deps[1] = {
   &::descriptor_table_mavsdk_5foptions_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_offboard_2foffboard_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_offboard_2foffboard_2eproto = {
-  false, false, 4603, descriptor_table_protodef_offboard_2foffboard_2eproto, "offboard/offboard.proto", 
+  false, false, 4819, descriptor_table_protodef_offboard_2foffboard_2eproto, "offboard/offboard.proto", 
   &descriptor_table_offboard_2foffboard_2eproto_once, descriptor_table_offboard_2foffboard_2eproto_deps, 1, 34,
   schemas, file_default_instances, TableStruct_offboard_2foffboard_2eproto::offsets,
   file_level_metadata_offboard_2foffboard_2eproto, file_level_enum_descriptors_offboard_2foffboard_2eproto, file_level_service_descriptors_offboard_2foffboard_2eproto,
@@ -968,10 +997,12 @@ StartRequest::StartRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 StartRequest::StartRequest(const StartRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.offboard.StartRequest)
 }
 
 inline void StartRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 StartRequest::~StartRequest() {
@@ -1001,6 +1032,7 @@ void StartRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1009,6 +1041,16 @@ const char* StartRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -1019,6 +1061,8 @@ const char* StartRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -1033,6 +1077,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.offboard.StartRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -1049,6 +1099,13 @@ size_t StartRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -1078,6 +1135,9 @@ void StartRequest::MergeFrom(const StartRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1095,6 +1155,7 @@ bool StartRequest::IsInitialized() const {
 void StartRequest::InternalSwap(StartRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata StartRequest::GetMetadata() const {
@@ -1321,10 +1382,12 @@ StopRequest::StopRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 StopRequest::StopRequest(const StopRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.offboard.StopRequest)
 }
 
 inline void StopRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 StopRequest::~StopRequest() {
@@ -1354,6 +1417,7 @@ void StopRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1362,6 +1426,16 @@ const char* StopRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -1372,6 +1446,8 @@ const char* StopRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -1386,6 +1462,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.offboard.StopRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -1402,6 +1484,13 @@ size_t StopRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -1431,6 +1520,9 @@ void StopRequest::MergeFrom(const StopRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1448,6 +1540,7 @@ bool StopRequest::IsInitialized() const {
 void StopRequest::InternalSwap(StopRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata StopRequest::GetMetadata() const {
@@ -1674,10 +1767,12 @@ IsActiveRequest::IsActiveRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 IsActiveRequest::IsActiveRequest(const IsActiveRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.offboard.IsActiveRequest)
 }
 
 inline void IsActiveRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 IsActiveRequest::~IsActiveRequest() {
@@ -1707,6 +1802,7 @@ void IsActiveRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1715,6 +1811,16 @@ const char* IsActiveRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -1725,6 +1831,8 @@ const char* IsActiveRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -1739,6 +1847,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.offboard.IsActiveRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -1755,6 +1869,13 @@ size_t IsActiveRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -1784,6 +1905,9 @@ void IsActiveRequest::MergeFrom(const IsActiveRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1801,6 +1925,7 @@ bool IsActiveRequest::IsInitialized() const {
 void IsActiveRequest::InternalSwap(IsActiveRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata IsActiveRequest::GetMetadata() const {
@@ -2020,11 +2145,15 @@ SetAttitudeRequest::SetAttitudeRequest(const SetAttitudeRequest& from)
   } else {
     attitude_ = nullptr;
   }
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.offboard.SetAttitudeRequest)
 }
 
 inline void SetAttitudeRequest::SharedCtor() {
-attitude_ = nullptr;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&attitude_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&attitude_)) + sizeof(drone_id_));
 }
 
 SetAttitudeRequest::~SetAttitudeRequest() {
@@ -2059,6 +2188,7 @@ void SetAttitudeRequest::Clear() {
     delete attitude_;
   }
   attitude_ = nullptr;
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2068,9 +2198,16 @@ const char* SetAttitudeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .mavsdk.rpc.offboard.Attitude attitude = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mavsdk.rpc.offboard.Attitude attitude = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_attitude(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -2104,12 +2241,18 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.offboard.Attitude attitude = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // .mavsdk.rpc.offboard.Attitude attitude = 2;
   if (this->_internal_has_attitude()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::attitude(this), target, stream);
+        2, _Internal::attitude(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2128,11 +2271,18 @@ size_t SetAttitudeRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.offboard.Attitude attitude = 1;
+  // .mavsdk.rpc.offboard.Attitude attitude = 2;
   if (this->_internal_has_attitude()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *attitude_);
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2166,6 +2316,9 @@ void SetAttitudeRequest::MergeFrom(const SetAttitudeRequest& from) {
   if (from._internal_has_attitude()) {
     _internal_mutable_attitude()->::mavsdk::rpc::offboard::Attitude::MergeFrom(from._internal_attitude());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2183,7 +2336,12 @@ bool SetAttitudeRequest::IsInitialized() const {
 void SetAttitudeRequest::InternalSwap(SetAttitudeRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(attitude_, other->attitude_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetAttitudeRequest, drone_id_)
+      + sizeof(SetAttitudeRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetAttitudeRequest, attitude_)>(
+          reinterpret_cast<char*>(&attitude_),
+          reinterpret_cast<char*>(&other->attitude_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetAttitudeRequest::GetMetadata() const {
@@ -2420,11 +2578,15 @@ SetActuatorControlRequest::SetActuatorControlRequest(const SetActuatorControlReq
   } else {
     actuator_control_ = nullptr;
   }
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.offboard.SetActuatorControlRequest)
 }
 
 inline void SetActuatorControlRequest::SharedCtor() {
-actuator_control_ = nullptr;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&actuator_control_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&actuator_control_)) + sizeof(drone_id_));
 }
 
 SetActuatorControlRequest::~SetActuatorControlRequest() {
@@ -2459,6 +2621,7 @@ void SetActuatorControlRequest::Clear() {
     delete actuator_control_;
   }
   actuator_control_ = nullptr;
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2468,9 +2631,16 @@ const char* SetActuatorControlRequest::_InternalParse(const char* ptr, ::PROTOBU
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .mavsdk.rpc.offboard.ActuatorControl actuator_control = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mavsdk.rpc.offboard.ActuatorControl actuator_control = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_actuator_control(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -2504,12 +2674,18 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.offboard.ActuatorControl actuator_control = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // .mavsdk.rpc.offboard.ActuatorControl actuator_control = 2;
   if (this->_internal_has_actuator_control()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::actuator_control(this), target, stream);
+        2, _Internal::actuator_control(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2528,11 +2704,18 @@ size_t SetActuatorControlRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.offboard.ActuatorControl actuator_control = 1;
+  // .mavsdk.rpc.offboard.ActuatorControl actuator_control = 2;
   if (this->_internal_has_actuator_control()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *actuator_control_);
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2566,6 +2749,9 @@ void SetActuatorControlRequest::MergeFrom(const SetActuatorControlRequest& from)
   if (from._internal_has_actuator_control()) {
     _internal_mutable_actuator_control()->::mavsdk::rpc::offboard::ActuatorControl::MergeFrom(from._internal_actuator_control());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2583,7 +2769,12 @@ bool SetActuatorControlRequest::IsInitialized() const {
 void SetActuatorControlRequest::InternalSwap(SetActuatorControlRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(actuator_control_, other->actuator_control_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetActuatorControlRequest, drone_id_)
+      + sizeof(SetActuatorControlRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetActuatorControlRequest, actuator_control_)>(
+          reinterpret_cast<char*>(&actuator_control_),
+          reinterpret_cast<char*>(&other->actuator_control_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetActuatorControlRequest::GetMetadata() const {
@@ -2820,11 +3011,15 @@ SetAttitudeRateRequest::SetAttitudeRateRequest(const SetAttitudeRateRequest& fro
   } else {
     attitude_rate_ = nullptr;
   }
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.offboard.SetAttitudeRateRequest)
 }
 
 inline void SetAttitudeRateRequest::SharedCtor() {
-attitude_rate_ = nullptr;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&attitude_rate_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&attitude_rate_)) + sizeof(drone_id_));
 }
 
 SetAttitudeRateRequest::~SetAttitudeRateRequest() {
@@ -2859,6 +3054,7 @@ void SetAttitudeRateRequest::Clear() {
     delete attitude_rate_;
   }
   attitude_rate_ = nullptr;
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2868,9 +3064,16 @@ const char* SetAttitudeRateRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .mavsdk.rpc.offboard.AttitudeRate attitude_rate = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mavsdk.rpc.offboard.AttitudeRate attitude_rate = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_attitude_rate(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -2904,12 +3107,18 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.offboard.AttitudeRate attitude_rate = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // .mavsdk.rpc.offboard.AttitudeRate attitude_rate = 2;
   if (this->_internal_has_attitude_rate()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::attitude_rate(this), target, stream);
+        2, _Internal::attitude_rate(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2928,11 +3137,18 @@ size_t SetAttitudeRateRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.offboard.AttitudeRate attitude_rate = 1;
+  // .mavsdk.rpc.offboard.AttitudeRate attitude_rate = 2;
   if (this->_internal_has_attitude_rate()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *attitude_rate_);
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2966,6 +3182,9 @@ void SetAttitudeRateRequest::MergeFrom(const SetAttitudeRateRequest& from) {
   if (from._internal_has_attitude_rate()) {
     _internal_mutable_attitude_rate()->::mavsdk::rpc::offboard::AttitudeRate::MergeFrom(from._internal_attitude_rate());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2983,7 +3202,12 @@ bool SetAttitudeRateRequest::IsInitialized() const {
 void SetAttitudeRateRequest::InternalSwap(SetAttitudeRateRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(attitude_rate_, other->attitude_rate_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetAttitudeRateRequest, drone_id_)
+      + sizeof(SetAttitudeRateRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetAttitudeRateRequest, attitude_rate_)>(
+          reinterpret_cast<char*>(&attitude_rate_),
+          reinterpret_cast<char*>(&other->attitude_rate_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetAttitudeRateRequest::GetMetadata() const {
@@ -3220,11 +3444,15 @@ SetPositionNedRequest::SetPositionNedRequest(const SetPositionNedRequest& from)
   } else {
     position_ned_yaw_ = nullptr;
   }
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.offboard.SetPositionNedRequest)
 }
 
 inline void SetPositionNedRequest::SharedCtor() {
-position_ned_yaw_ = nullptr;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&position_ned_yaw_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&position_ned_yaw_)) + sizeof(drone_id_));
 }
 
 SetPositionNedRequest::~SetPositionNedRequest() {
@@ -3259,6 +3487,7 @@ void SetPositionNedRequest::Clear() {
     delete position_ned_yaw_;
   }
   position_ned_yaw_ = nullptr;
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3268,9 +3497,16 @@ const char* SetPositionNedRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .mavsdk.rpc.offboard.PositionNedYaw position_ned_yaw = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mavsdk.rpc.offboard.PositionNedYaw position_ned_yaw = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_position_ned_yaw(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -3304,12 +3540,18 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.offboard.PositionNedYaw position_ned_yaw = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // .mavsdk.rpc.offboard.PositionNedYaw position_ned_yaw = 2;
   if (this->_internal_has_position_ned_yaw()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::position_ned_yaw(this), target, stream);
+        2, _Internal::position_ned_yaw(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3328,11 +3570,18 @@ size_t SetPositionNedRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.offboard.PositionNedYaw position_ned_yaw = 1;
+  // .mavsdk.rpc.offboard.PositionNedYaw position_ned_yaw = 2;
   if (this->_internal_has_position_ned_yaw()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *position_ned_yaw_);
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3366,6 +3615,9 @@ void SetPositionNedRequest::MergeFrom(const SetPositionNedRequest& from) {
   if (from._internal_has_position_ned_yaw()) {
     _internal_mutable_position_ned_yaw()->::mavsdk::rpc::offboard::PositionNedYaw::MergeFrom(from._internal_position_ned_yaw());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -3383,7 +3635,12 @@ bool SetPositionNedRequest::IsInitialized() const {
 void SetPositionNedRequest::InternalSwap(SetPositionNedRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(position_ned_yaw_, other->position_ned_yaw_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetPositionNedRequest, drone_id_)
+      + sizeof(SetPositionNedRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetPositionNedRequest, position_ned_yaw_)>(
+          reinterpret_cast<char*>(&position_ned_yaw_),
+          reinterpret_cast<char*>(&other->position_ned_yaw_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetPositionNedRequest::GetMetadata() const {
@@ -3620,11 +3877,15 @@ SetPositionGlobalRequest::SetPositionGlobalRequest(const SetPositionGlobalReques
   } else {
     position_global_yaw_ = nullptr;
   }
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.offboard.SetPositionGlobalRequest)
 }
 
 inline void SetPositionGlobalRequest::SharedCtor() {
-position_global_yaw_ = nullptr;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&position_global_yaw_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&position_global_yaw_)) + sizeof(drone_id_));
 }
 
 SetPositionGlobalRequest::~SetPositionGlobalRequest() {
@@ -3659,6 +3920,7 @@ void SetPositionGlobalRequest::Clear() {
     delete position_global_yaw_;
   }
   position_global_yaw_ = nullptr;
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3668,9 +3930,16 @@ const char* SetPositionGlobalRequest::_InternalParse(const char* ptr, ::PROTOBUF
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .mavsdk.rpc.offboard.PositionGlobalYaw position_global_yaw = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mavsdk.rpc.offboard.PositionGlobalYaw position_global_yaw = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_position_global_yaw(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -3704,12 +3973,18 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.offboard.PositionGlobalYaw position_global_yaw = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // .mavsdk.rpc.offboard.PositionGlobalYaw position_global_yaw = 2;
   if (this->_internal_has_position_global_yaw()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::position_global_yaw(this), target, stream);
+        2, _Internal::position_global_yaw(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3728,11 +4003,18 @@ size_t SetPositionGlobalRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.offboard.PositionGlobalYaw position_global_yaw = 1;
+  // .mavsdk.rpc.offboard.PositionGlobalYaw position_global_yaw = 2;
   if (this->_internal_has_position_global_yaw()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *position_global_yaw_);
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3766,6 +4048,9 @@ void SetPositionGlobalRequest::MergeFrom(const SetPositionGlobalRequest& from) {
   if (from._internal_has_position_global_yaw()) {
     _internal_mutable_position_global_yaw()->::mavsdk::rpc::offboard::PositionGlobalYaw::MergeFrom(from._internal_position_global_yaw());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -3783,7 +4068,12 @@ bool SetPositionGlobalRequest::IsInitialized() const {
 void SetPositionGlobalRequest::InternalSwap(SetPositionGlobalRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(position_global_yaw_, other->position_global_yaw_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetPositionGlobalRequest, drone_id_)
+      + sizeof(SetPositionGlobalRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetPositionGlobalRequest, position_global_yaw_)>(
+          reinterpret_cast<char*>(&position_global_yaw_),
+          reinterpret_cast<char*>(&other->position_global_yaw_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetPositionGlobalRequest::GetMetadata() const {
@@ -4020,11 +4310,15 @@ SetVelocityBodyRequest::SetVelocityBodyRequest(const SetVelocityBodyRequest& fro
   } else {
     velocity_body_yawspeed_ = nullptr;
   }
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.offboard.SetVelocityBodyRequest)
 }
 
 inline void SetVelocityBodyRequest::SharedCtor() {
-velocity_body_yawspeed_ = nullptr;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&velocity_body_yawspeed_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&velocity_body_yawspeed_)) + sizeof(drone_id_));
 }
 
 SetVelocityBodyRequest::~SetVelocityBodyRequest() {
@@ -4059,6 +4353,7 @@ void SetVelocityBodyRequest::Clear() {
     delete velocity_body_yawspeed_;
   }
   velocity_body_yawspeed_ = nullptr;
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4068,9 +4363,16 @@ const char* SetVelocityBodyRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .mavsdk.rpc.offboard.VelocityBodyYawspeed velocity_body_yawspeed = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mavsdk.rpc.offboard.VelocityBodyYawspeed velocity_body_yawspeed = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_velocity_body_yawspeed(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -4104,12 +4406,18 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.offboard.VelocityBodyYawspeed velocity_body_yawspeed = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // .mavsdk.rpc.offboard.VelocityBodyYawspeed velocity_body_yawspeed = 2;
   if (this->_internal_has_velocity_body_yawspeed()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::velocity_body_yawspeed(this), target, stream);
+        2, _Internal::velocity_body_yawspeed(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4128,11 +4436,18 @@ size_t SetVelocityBodyRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.offboard.VelocityBodyYawspeed velocity_body_yawspeed = 1;
+  // .mavsdk.rpc.offboard.VelocityBodyYawspeed velocity_body_yawspeed = 2;
   if (this->_internal_has_velocity_body_yawspeed()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *velocity_body_yawspeed_);
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4166,6 +4481,9 @@ void SetVelocityBodyRequest::MergeFrom(const SetVelocityBodyRequest& from) {
   if (from._internal_has_velocity_body_yawspeed()) {
     _internal_mutable_velocity_body_yawspeed()->::mavsdk::rpc::offboard::VelocityBodyYawspeed::MergeFrom(from._internal_velocity_body_yawspeed());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -4183,7 +4501,12 @@ bool SetVelocityBodyRequest::IsInitialized() const {
 void SetVelocityBodyRequest::InternalSwap(SetVelocityBodyRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(velocity_body_yawspeed_, other->velocity_body_yawspeed_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetVelocityBodyRequest, drone_id_)
+      + sizeof(SetVelocityBodyRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetVelocityBodyRequest, velocity_body_yawspeed_)>(
+          reinterpret_cast<char*>(&velocity_body_yawspeed_),
+          reinterpret_cast<char*>(&other->velocity_body_yawspeed_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetVelocityBodyRequest::GetMetadata() const {
@@ -4420,11 +4743,15 @@ SetVelocityNedRequest::SetVelocityNedRequest(const SetVelocityNedRequest& from)
   } else {
     velocity_ned_yaw_ = nullptr;
   }
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.offboard.SetVelocityNedRequest)
 }
 
 inline void SetVelocityNedRequest::SharedCtor() {
-velocity_ned_yaw_ = nullptr;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&velocity_ned_yaw_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&velocity_ned_yaw_)) + sizeof(drone_id_));
 }
 
 SetVelocityNedRequest::~SetVelocityNedRequest() {
@@ -4459,6 +4786,7 @@ void SetVelocityNedRequest::Clear() {
     delete velocity_ned_yaw_;
   }
   velocity_ned_yaw_ = nullptr;
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4468,9 +4796,16 @@ const char* SetVelocityNedRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .mavsdk.rpc.offboard.VelocityNedYaw velocity_ned_yaw = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mavsdk.rpc.offboard.VelocityNedYaw velocity_ned_yaw = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_velocity_ned_yaw(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -4504,12 +4839,18 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.offboard.VelocityNedYaw velocity_ned_yaw = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // .mavsdk.rpc.offboard.VelocityNedYaw velocity_ned_yaw = 2;
   if (this->_internal_has_velocity_ned_yaw()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::velocity_ned_yaw(this), target, stream);
+        2, _Internal::velocity_ned_yaw(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4528,11 +4869,18 @@ size_t SetVelocityNedRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.offboard.VelocityNedYaw velocity_ned_yaw = 1;
+  // .mavsdk.rpc.offboard.VelocityNedYaw velocity_ned_yaw = 2;
   if (this->_internal_has_velocity_ned_yaw()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *velocity_ned_yaw_);
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4566,6 +4914,9 @@ void SetVelocityNedRequest::MergeFrom(const SetVelocityNedRequest& from) {
   if (from._internal_has_velocity_ned_yaw()) {
     _internal_mutable_velocity_ned_yaw()->::mavsdk::rpc::offboard::VelocityNedYaw::MergeFrom(from._internal_velocity_ned_yaw());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -4583,7 +4934,12 @@ bool SetVelocityNedRequest::IsInitialized() const {
 void SetVelocityNedRequest::InternalSwap(SetVelocityNedRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(velocity_ned_yaw_, other->velocity_ned_yaw_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetVelocityNedRequest, drone_id_)
+      + sizeof(SetVelocityNedRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetVelocityNedRequest, velocity_ned_yaw_)>(
+          reinterpret_cast<char*>(&velocity_ned_yaw_),
+          reinterpret_cast<char*>(&other->velocity_ned_yaw_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetVelocityNedRequest::GetMetadata() const {
@@ -4830,14 +5186,15 @@ SetPositionVelocityNedRequest::SetPositionVelocityNedRequest(const SetPositionVe
   } else {
     velocity_ned_yaw_ = nullptr;
   }
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.offboard.SetPositionVelocityNedRequest)
 }
 
 inline void SetPositionVelocityNedRequest::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&position_ned_yaw_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&velocity_ned_yaw_) -
-    reinterpret_cast<char*>(&position_ned_yaw_)) + sizeof(velocity_ned_yaw_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&position_ned_yaw_)) + sizeof(drone_id_));
 }
 
 SetPositionVelocityNedRequest::~SetPositionVelocityNedRequest() {
@@ -4877,6 +5234,7 @@ void SetPositionVelocityNedRequest::Clear() {
     delete velocity_ned_yaw_;
   }
   velocity_ned_yaw_ = nullptr;
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4886,16 +5244,23 @@ const char* SetPositionVelocityNedRequest::_InternalParse(const char* ptr, ::PRO
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .mavsdk.rpc.offboard.PositionNedYaw position_ned_yaw = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mavsdk.rpc.offboard.PositionNedYaw position_ned_yaw = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_position_ned_yaw(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .mavsdk.rpc.offboard.VelocityNedYaw velocity_ned_yaw = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // .mavsdk.rpc.offboard.VelocityNedYaw velocity_ned_yaw = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_velocity_ned_yaw(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -4929,20 +5294,26 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.offboard.PositionNedYaw position_ned_yaw = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // .mavsdk.rpc.offboard.PositionNedYaw position_ned_yaw = 2;
   if (this->_internal_has_position_ned_yaw()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::position_ned_yaw(this), target, stream);
+        2, _Internal::position_ned_yaw(this), target, stream);
   }
 
-  // .mavsdk.rpc.offboard.VelocityNedYaw velocity_ned_yaw = 2;
+  // .mavsdk.rpc.offboard.VelocityNedYaw velocity_ned_yaw = 3;
   if (this->_internal_has_velocity_ned_yaw()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        2, _Internal::velocity_ned_yaw(this), target, stream);
+        3, _Internal::velocity_ned_yaw(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4961,18 +5332,25 @@ size_t SetPositionVelocityNedRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.offboard.PositionNedYaw position_ned_yaw = 1;
+  // .mavsdk.rpc.offboard.PositionNedYaw position_ned_yaw = 2;
   if (this->_internal_has_position_ned_yaw()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *position_ned_yaw_);
   }
 
-  // .mavsdk.rpc.offboard.VelocityNedYaw velocity_ned_yaw = 2;
+  // .mavsdk.rpc.offboard.VelocityNedYaw velocity_ned_yaw = 3;
   if (this->_internal_has_velocity_ned_yaw()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *velocity_ned_yaw_);
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5009,6 +5387,9 @@ void SetPositionVelocityNedRequest::MergeFrom(const SetPositionVelocityNedReques
   if (from._internal_has_velocity_ned_yaw()) {
     _internal_mutable_velocity_ned_yaw()->::mavsdk::rpc::offboard::VelocityNedYaw::MergeFrom(from._internal_velocity_ned_yaw());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -5027,8 +5408,8 @@ void SetPositionVelocityNedRequest::InternalSwap(SetPositionVelocityNedRequest* 
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(SetPositionVelocityNedRequest, velocity_ned_yaw_)
-      + sizeof(SetPositionVelocityNedRequest::velocity_ned_yaw_)
+      PROTOBUF_FIELD_OFFSET(SetPositionVelocityNedRequest, drone_id_)
+      + sizeof(SetPositionVelocityNedRequest::drone_id_)
       - PROTOBUF_FIELD_OFFSET(SetPositionVelocityNedRequest, position_ned_yaw_)>(
           reinterpret_cast<char*>(&position_ned_yaw_),
           reinterpret_cast<char*>(&other->position_ned_yaw_));
@@ -5268,11 +5649,15 @@ SetAccelerationNedRequest::SetAccelerationNedRequest(const SetAccelerationNedReq
   } else {
     acceleration_ned_ = nullptr;
   }
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.offboard.SetAccelerationNedRequest)
 }
 
 inline void SetAccelerationNedRequest::SharedCtor() {
-acceleration_ned_ = nullptr;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&acceleration_ned_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&acceleration_ned_)) + sizeof(drone_id_));
 }
 
 SetAccelerationNedRequest::~SetAccelerationNedRequest() {
@@ -5307,6 +5692,7 @@ void SetAccelerationNedRequest::Clear() {
     delete acceleration_ned_;
   }
   acceleration_ned_ = nullptr;
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5316,9 +5702,16 @@ const char* SetAccelerationNedRequest::_InternalParse(const char* ptr, ::PROTOBU
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .mavsdk.rpc.offboard.AccelerationNed acceleration_ned = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mavsdk.rpc.offboard.AccelerationNed acceleration_ned = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_acceleration_ned(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -5352,12 +5745,18 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.offboard.AccelerationNed acceleration_ned = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // .mavsdk.rpc.offboard.AccelerationNed acceleration_ned = 2;
   if (this->_internal_has_acceleration_ned()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::acceleration_ned(this), target, stream);
+        2, _Internal::acceleration_ned(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5376,11 +5775,18 @@ size_t SetAccelerationNedRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.offboard.AccelerationNed acceleration_ned = 1;
+  // .mavsdk.rpc.offboard.AccelerationNed acceleration_ned = 2;
   if (this->_internal_has_acceleration_ned()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *acceleration_ned_);
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5414,6 +5820,9 @@ void SetAccelerationNedRequest::MergeFrom(const SetAccelerationNedRequest& from)
   if (from._internal_has_acceleration_ned()) {
     _internal_mutable_acceleration_ned()->::mavsdk::rpc::offboard::AccelerationNed::MergeFrom(from._internal_acceleration_ned());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -5431,7 +5840,12 @@ bool SetAccelerationNedRequest::IsInitialized() const {
 void SetAccelerationNedRequest::InternalSwap(SetAccelerationNedRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(acceleration_ned_, other->acceleration_ned_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetAccelerationNedRequest, drone_id_)
+      + sizeof(SetAccelerationNedRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetAccelerationNedRequest, acceleration_ned_)>(
+          reinterpret_cast<char*>(&acceleration_ned_),
+          reinterpret_cast<char*>(&other->acceleration_ned_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetAccelerationNedRequest::GetMetadata() const {

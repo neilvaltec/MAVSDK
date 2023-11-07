@@ -254,6 +254,18 @@ class GetEntriesRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.log_files.GetEntriesRequest)
  private:
   class _Internal;
@@ -261,6 +273,7 @@ class GetEntriesRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_log_5ffiles_2flog_5ffiles_2eproto;
 };
@@ -549,10 +562,11 @@ class SubscribeDownloadLogFileRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPathFieldNumber = 2,
-    kEntryFieldNumber = 1,
+    kPathFieldNumber = 3,
+    kEntryFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // string path = 2;
+  // string path = 3;
   void clear_path();
   const std::string& path() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -566,7 +580,7 @@ class SubscribeDownloadLogFileRequest final :
   std::string* _internal_mutable_path();
   public:
 
-  // .mavsdk.rpc.log_files.Entry entry = 1;
+  // .mavsdk.rpc.log_files.Entry entry = 2;
   bool has_entry() const;
   private:
   bool _internal_has_entry() const;
@@ -584,6 +598,15 @@ class SubscribeDownloadLogFileRequest final :
       ::mavsdk::rpc::log_files::Entry* entry);
   ::mavsdk::rpc::log_files::Entry* unsafe_arena_release_entry();
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.log_files.SubscribeDownloadLogFileRequest)
  private:
   class _Internal;
@@ -593,6 +616,7 @@ class SubscribeDownloadLogFileRequest final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr path_;
   ::mavsdk::rpc::log_files::Entry* entry_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_log_5ffiles_2flog_5ffiles_2eproto;
 };
@@ -881,10 +905,11 @@ class DownloadLogFileRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPathFieldNumber = 2,
-    kEntryFieldNumber = 1,
+    kPathFieldNumber = 3,
+    kEntryFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // string path = 2;
+  // string path = 3;
   void clear_path();
   const std::string& path() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -898,7 +923,7 @@ class DownloadLogFileRequest final :
   std::string* _internal_mutable_path();
   public:
 
-  // .mavsdk.rpc.log_files.Entry entry = 1;
+  // .mavsdk.rpc.log_files.Entry entry = 2;
   bool has_entry() const;
   private:
   bool _internal_has_entry() const;
@@ -916,6 +941,15 @@ class DownloadLogFileRequest final :
       ::mavsdk::rpc::log_files::Entry* entry);
   ::mavsdk::rpc::log_files::Entry* unsafe_arena_release_entry();
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.log_files.DownloadLogFileRequest)
  private:
   class _Internal;
@@ -925,6 +959,7 @@ class DownloadLogFileRequest final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr path_;
   ::mavsdk::rpc::log_files::Entry* entry_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_log_5ffiles_2flog_5ffiles_2eproto;
 };
@@ -1044,6 +1079,18 @@ class EraseAllLogFilesRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.log_files.EraseAllLogFilesRequest)
  private:
   class _Internal;
@@ -1051,6 +1098,7 @@ class EraseAllLogFilesRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_log_5ffiles_2flog_5ffiles_2eproto;
 };
@@ -1715,6 +1763,26 @@ class LogFilesResult final :
 #endif  // __GNUC__
 // GetEntriesRequest
 
+// int32 drone_id = 1;
+inline void GetEntriesRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 GetEntriesRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 GetEntriesRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.log_files.GetEntriesRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void GetEntriesRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void GetEntriesRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.log_files.GetEntriesRequest.drone_id)
+}
+
 // -------------------------------------------------------------------
 
 // GetEntriesResponse
@@ -1853,7 +1921,27 @@ GetEntriesResponse::entries() const {
 
 // SubscribeDownloadLogFileRequest
 
-// .mavsdk.rpc.log_files.Entry entry = 1;
+// int32 drone_id = 1;
+inline void SubscribeDownloadLogFileRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeDownloadLogFileRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeDownloadLogFileRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.log_files.SubscribeDownloadLogFileRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SubscribeDownloadLogFileRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SubscribeDownloadLogFileRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.log_files.SubscribeDownloadLogFileRequest.drone_id)
+}
+
+// .mavsdk.rpc.log_files.Entry entry = 2;
 inline bool SubscribeDownloadLogFileRequest::_internal_has_entry() const {
   return this != internal_default_instance() && entry_ != nullptr;
 }
@@ -1943,7 +2031,7 @@ inline void SubscribeDownloadLogFileRequest::set_allocated_entry(::mavsdk::rpc::
   // @@protoc_insertion_point(field_set_allocated:mavsdk.rpc.log_files.SubscribeDownloadLogFileRequest.entry)
 }
 
-// string path = 2;
+// string path = 3;
 inline void SubscribeDownloadLogFileRequest::clear_path() {
   path_.ClearToEmpty();
 }
@@ -2177,7 +2265,27 @@ inline void DownloadLogFileResponse::set_allocated_progress(::mavsdk::rpc::log_f
 
 // DownloadLogFileRequest
 
-// .mavsdk.rpc.log_files.Entry entry = 1;
+// int32 drone_id = 1;
+inline void DownloadLogFileRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 DownloadLogFileRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 DownloadLogFileRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.log_files.DownloadLogFileRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void DownloadLogFileRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void DownloadLogFileRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.log_files.DownloadLogFileRequest.drone_id)
+}
+
+// .mavsdk.rpc.log_files.Entry entry = 2;
 inline bool DownloadLogFileRequest::_internal_has_entry() const {
   return this != internal_default_instance() && entry_ != nullptr;
 }
@@ -2267,7 +2375,7 @@ inline void DownloadLogFileRequest::set_allocated_entry(::mavsdk::rpc::log_files
   // @@protoc_insertion_point(field_set_allocated:mavsdk.rpc.log_files.DownloadLogFileRequest.entry)
 }
 
-// string path = 2;
+// string path = 3;
 inline void DownloadLogFileRequest::clear_path() {
   path_.ClearToEmpty();
 }
@@ -2316,6 +2424,26 @@ inline void DownloadLogFileRequest::set_allocated_path(std::string* path) {
 // -------------------------------------------------------------------
 
 // EraseAllLogFilesRequest
+
+// int32 drone_id = 1;
+inline void EraseAllLogFilesRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 EraseAllLogFilesRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 EraseAllLogFilesRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.log_files.EraseAllLogFilesRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void EraseAllLogFilesRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void EraseAllLogFilesRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.log_files.EraseAllLogFilesRequest.drone_id)
+}
 
 // -------------------------------------------------------------------
 

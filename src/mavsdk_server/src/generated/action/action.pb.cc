@@ -20,7 +20,8 @@ namespace mavsdk {
 namespace rpc {
 namespace action {
 constexpr ArmRequest::ArmRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct ArmRequestDefaultTypeInternal {
   constexpr ArmRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -43,7 +44,8 @@ struct ArmResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ArmResponseDefaultTypeInternal _ArmResponse_default_instance_;
 constexpr DisarmRequest::DisarmRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct DisarmRequestDefaultTypeInternal {
   constexpr DisarmRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -66,7 +68,8 @@ struct DisarmResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DisarmResponseDefaultTypeInternal _DisarmResponse_default_instance_;
 constexpr TakeoffRequest::TakeoffRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct TakeoffRequestDefaultTypeInternal {
   constexpr TakeoffRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -89,7 +92,8 @@ struct TakeoffResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TakeoffResponseDefaultTypeInternal _TakeoffResponse_default_instance_;
 constexpr LandRequest::LandRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct LandRequestDefaultTypeInternal {
   constexpr LandRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -112,7 +116,8 @@ struct LandResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT LandResponseDefaultTypeInternal _LandResponse_default_instance_;
 constexpr RebootRequest::RebootRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct RebootRequestDefaultTypeInternal {
   constexpr RebootRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -135,7 +140,8 @@ struct RebootResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RebootResponseDefaultTypeInternal _RebootResponse_default_instance_;
 constexpr ShutdownRequest::ShutdownRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct ShutdownRequestDefaultTypeInternal {
   constexpr ShutdownRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -158,7 +164,8 @@ struct ShutdownResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ShutdownResponseDefaultTypeInternal _ShutdownResponse_default_instance_;
 constexpr TerminateRequest::TerminateRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct TerminateRequestDefaultTypeInternal {
   constexpr TerminateRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -181,7 +188,8 @@ struct TerminateResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TerminateResponseDefaultTypeInternal _TerminateResponse_default_instance_;
 constexpr KillRequest::KillRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct KillRequestDefaultTypeInternal {
   constexpr KillRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -204,7 +212,8 @@ struct KillResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT KillResponseDefaultTypeInternal _KillResponse_default_instance_;
 constexpr ReturnToLaunchRequest::ReturnToLaunchRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct ReturnToLaunchRequestDefaultTypeInternal {
   constexpr ReturnToLaunchRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -229,8 +238,9 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ReturnToLaunchResponseDefaultTy
 constexpr GotoLocationRequest::GotoLocationRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : latitude_deg_(0)
-  , longitude_deg_(0)
+  , drone_id_(0)
   , absolute_altitude_m_(0)
+  , longitude_deg_(0)
   , yaw_deg_(0){}
 struct GotoLocationRequestDefaultTypeInternal {
   constexpr GotoLocationRequestDefaultTypeInternal()
@@ -255,13 +265,14 @@ struct GotoLocationResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GotoLocationResponseDefaultTypeInternal _GotoLocationResponse_default_instance_;
 constexpr DoOrbitRequest::DoOrbitRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : radius_m_(0)
+  : drone_id_(0)
+  , radius_m_(0)
   , velocity_ms_(0)
+  , yaw_behavior_(0)
+
   , latitude_deg_(0)
   , longitude_deg_(0)
-  , absolute_altitude_m_(0)
-  , yaw_behavior_(0)
-{}
+  , absolute_altitude_m_(0){}
 struct DoOrbitRequestDefaultTypeInternal {
   constexpr DoOrbitRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -284,7 +295,8 @@ struct DoOrbitResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DoOrbitResponseDefaultTypeInternal _DoOrbitResponse_default_instance_;
 constexpr HoldRequest::HoldRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct HoldRequestDefaultTypeInternal {
   constexpr HoldRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -308,7 +320,8 @@ struct HoldResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT HoldResponseDefaultTypeInternal _HoldResponse_default_instance_;
 constexpr SetActuatorRequest::SetActuatorRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : index_(0)
+  : drone_id_(0)
+  , index_(0)
   , value_(0){}
 struct SetActuatorRequestDefaultTypeInternal {
   constexpr SetActuatorRequestDefaultTypeInternal()
@@ -332,7 +345,8 @@ struct SetActuatorResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetActuatorResponseDefaultTypeInternal _SetActuatorResponse_default_instance_;
 constexpr TransitionToFixedwingRequest::TransitionToFixedwingRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct TransitionToFixedwingRequestDefaultTypeInternal {
   constexpr TransitionToFixedwingRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -355,7 +369,8 @@ struct TransitionToFixedwingResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TransitionToFixedwingResponseDefaultTypeInternal _TransitionToFixedwingResponse_default_instance_;
 constexpr TransitionToMulticopterRequest::TransitionToMulticopterRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct TransitionToMulticopterRequestDefaultTypeInternal {
   constexpr TransitionToMulticopterRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -378,7 +393,8 @@ struct TransitionToMulticopterResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TransitionToMulticopterResponseDefaultTypeInternal _TransitionToMulticopterResponse_default_instance_;
 constexpr GetTakeoffAltitudeRequest::GetTakeoffAltitudeRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct GetTakeoffAltitudeRequestDefaultTypeInternal {
   constexpr GetTakeoffAltitudeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -403,7 +419,8 @@ struct GetTakeoffAltitudeResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetTakeoffAltitudeResponseDefaultTypeInternal _GetTakeoffAltitudeResponse_default_instance_;
 constexpr SetTakeoffAltitudeRequest::SetTakeoffAltitudeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : altitude_(0){}
+  : drone_id_(0)
+  , altitude_(0){}
 struct SetTakeoffAltitudeRequestDefaultTypeInternal {
   constexpr SetTakeoffAltitudeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -426,7 +443,8 @@ struct SetTakeoffAltitudeResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetTakeoffAltitudeResponseDefaultTypeInternal _SetTakeoffAltitudeResponse_default_instance_;
 constexpr GetMaximumSpeedRequest::GetMaximumSpeedRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct GetMaximumSpeedRequestDefaultTypeInternal {
   constexpr GetMaximumSpeedRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -451,7 +469,8 @@ struct GetMaximumSpeedResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetMaximumSpeedResponseDefaultTypeInternal _GetMaximumSpeedResponse_default_instance_;
 constexpr SetMaximumSpeedRequest::SetMaximumSpeedRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : speed_(0){}
+  : drone_id_(0)
+  , speed_(0){}
 struct SetMaximumSpeedRequestDefaultTypeInternal {
   constexpr SetMaximumSpeedRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -474,7 +493,8 @@ struct SetMaximumSpeedResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetMaximumSpeedResponseDefaultTypeInternal _SetMaximumSpeedResponse_default_instance_;
 constexpr GetReturnToLaunchAltitudeRequest::GetReturnToLaunchAltitudeRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct GetReturnToLaunchAltitudeRequestDefaultTypeInternal {
   constexpr GetReturnToLaunchAltitudeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -499,7 +519,8 @@ struct GetReturnToLaunchAltitudeResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetReturnToLaunchAltitudeResponseDefaultTypeInternal _GetReturnToLaunchAltitudeResponse_default_instance_;
 constexpr SetReturnToLaunchAltitudeRequest::SetReturnToLaunchAltitudeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : relative_altitude_m_(0){}
+  : drone_id_(0)
+  , relative_altitude_m_(0){}
 struct SetReturnToLaunchAltitudeRequestDefaultTypeInternal {
   constexpr SetReturnToLaunchAltitudeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -523,7 +544,8 @@ struct SetReturnToLaunchAltitudeResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetReturnToLaunchAltitudeResponseDefaultTypeInternal _SetReturnToLaunchAltitudeResponse_default_instance_;
 constexpr SetCurrentSpeedRequest::SetCurrentSpeedRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : speed_m_s_(0){}
+  : drone_id_(0)
+  , speed_m_s_(0){}
 struct SetCurrentSpeedRequestDefaultTypeInternal {
   constexpr SetCurrentSpeedRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -572,6 +594,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_action_2faction_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::ArmRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::ArmResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -583,6 +606,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_action_2faction_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::DisarmRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::DisarmResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -594,6 +618,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_action_2faction_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::TakeoffRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::TakeoffResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -605,6 +630,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_action_2faction_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::LandRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::LandResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -616,6 +642,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_action_2faction_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::RebootRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::RebootResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -627,6 +654,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_action_2faction_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::ShutdownRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::ShutdownResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -638,6 +666,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_action_2faction_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::TerminateRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::TerminateResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -649,6 +678,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_action_2faction_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::KillRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::KillResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -660,6 +690,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_action_2faction_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::ReturnToLaunchRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::ReturnToLaunchResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -671,6 +702,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_action_2faction_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::GotoLocationRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::GotoLocationRequest, latitude_deg_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::GotoLocationRequest, longitude_deg_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::GotoLocationRequest, absolute_altitude_m_),
@@ -686,6 +718,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_action_2faction_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::DoOrbitRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::DoOrbitRequest, radius_m_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::DoOrbitRequest, velocity_ms_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::DoOrbitRequest, yaw_behavior_),
@@ -703,6 +736,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_action_2faction_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::HoldRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::HoldResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -714,6 +748,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_action_2faction_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::SetActuatorRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::SetActuatorRequest, index_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::SetActuatorRequest, value_),
   ~0u,  // no _has_bits_
@@ -727,6 +762,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_action_2faction_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::TransitionToFixedwingRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::TransitionToFixedwingResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -738,6 +774,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_action_2faction_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::TransitionToMulticopterRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::TransitionToMulticopterResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -749,6 +786,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_action_2faction_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::GetTakeoffAltitudeRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::GetTakeoffAltitudeResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -761,6 +799,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_action_2faction_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::SetTakeoffAltitudeRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::SetTakeoffAltitudeRequest, altitude_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::SetTakeoffAltitudeResponse, _internal_metadata_),
@@ -773,6 +812,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_action_2faction_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::GetMaximumSpeedRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::GetMaximumSpeedResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -785,6 +825,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_action_2faction_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::SetMaximumSpeedRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::SetMaximumSpeedRequest, speed_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::SetMaximumSpeedResponse, _internal_metadata_),
@@ -797,6 +838,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_action_2faction_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::GetReturnToLaunchAltitudeRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::GetReturnToLaunchAltitudeResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -809,6 +851,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_action_2faction_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::SetReturnToLaunchAltitudeRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::SetReturnToLaunchAltitudeRequest, relative_altitude_m_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::SetReturnToLaunchAltitudeResponse, _internal_metadata_),
@@ -821,6 +864,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_action_2faction_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::SetCurrentSpeedRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::SetCurrentSpeedRequest, speed_m_s_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::action::SetCurrentSpeedResponse, _internal_metadata_),
@@ -838,50 +882,50 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_action_2faction_2eproto::offse
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::mavsdk::rpc::action::ArmRequest)},
-  { 5, -1, sizeof(::mavsdk::rpc::action::ArmResponse)},
-  { 11, -1, sizeof(::mavsdk::rpc::action::DisarmRequest)},
-  { 16, -1, sizeof(::mavsdk::rpc::action::DisarmResponse)},
-  { 22, -1, sizeof(::mavsdk::rpc::action::TakeoffRequest)},
-  { 27, -1, sizeof(::mavsdk::rpc::action::TakeoffResponse)},
-  { 33, -1, sizeof(::mavsdk::rpc::action::LandRequest)},
-  { 38, -1, sizeof(::mavsdk::rpc::action::LandResponse)},
-  { 44, -1, sizeof(::mavsdk::rpc::action::RebootRequest)},
-  { 49, -1, sizeof(::mavsdk::rpc::action::RebootResponse)},
-  { 55, -1, sizeof(::mavsdk::rpc::action::ShutdownRequest)},
-  { 60, -1, sizeof(::mavsdk::rpc::action::ShutdownResponse)},
-  { 66, -1, sizeof(::mavsdk::rpc::action::TerminateRequest)},
-  { 71, -1, sizeof(::mavsdk::rpc::action::TerminateResponse)},
-  { 77, -1, sizeof(::mavsdk::rpc::action::KillRequest)},
-  { 82, -1, sizeof(::mavsdk::rpc::action::KillResponse)},
-  { 88, -1, sizeof(::mavsdk::rpc::action::ReturnToLaunchRequest)},
-  { 93, -1, sizeof(::mavsdk::rpc::action::ReturnToLaunchResponse)},
-  { 99, -1, sizeof(::mavsdk::rpc::action::GotoLocationRequest)},
-  { 108, -1, sizeof(::mavsdk::rpc::action::GotoLocationResponse)},
-  { 114, -1, sizeof(::mavsdk::rpc::action::DoOrbitRequest)},
-  { 125, -1, sizeof(::mavsdk::rpc::action::DoOrbitResponse)},
-  { 131, -1, sizeof(::mavsdk::rpc::action::HoldRequest)},
-  { 136, -1, sizeof(::mavsdk::rpc::action::HoldResponse)},
-  { 142, -1, sizeof(::mavsdk::rpc::action::SetActuatorRequest)},
-  { 149, -1, sizeof(::mavsdk::rpc::action::SetActuatorResponse)},
-  { 155, -1, sizeof(::mavsdk::rpc::action::TransitionToFixedwingRequest)},
-  { 160, -1, sizeof(::mavsdk::rpc::action::TransitionToFixedwingResponse)},
-  { 166, -1, sizeof(::mavsdk::rpc::action::TransitionToMulticopterRequest)},
-  { 171, -1, sizeof(::mavsdk::rpc::action::TransitionToMulticopterResponse)},
-  { 177, -1, sizeof(::mavsdk::rpc::action::GetTakeoffAltitudeRequest)},
-  { 182, -1, sizeof(::mavsdk::rpc::action::GetTakeoffAltitudeResponse)},
-  { 189, -1, sizeof(::mavsdk::rpc::action::SetTakeoffAltitudeRequest)},
-  { 195, -1, sizeof(::mavsdk::rpc::action::SetTakeoffAltitudeResponse)},
-  { 201, -1, sizeof(::mavsdk::rpc::action::GetMaximumSpeedRequest)},
-  { 206, -1, sizeof(::mavsdk::rpc::action::GetMaximumSpeedResponse)},
-  { 213, -1, sizeof(::mavsdk::rpc::action::SetMaximumSpeedRequest)},
-  { 219, -1, sizeof(::mavsdk::rpc::action::SetMaximumSpeedResponse)},
-  { 225, -1, sizeof(::mavsdk::rpc::action::GetReturnToLaunchAltitudeRequest)},
-  { 230, -1, sizeof(::mavsdk::rpc::action::GetReturnToLaunchAltitudeResponse)},
-  { 237, -1, sizeof(::mavsdk::rpc::action::SetReturnToLaunchAltitudeRequest)},
-  { 243, -1, sizeof(::mavsdk::rpc::action::SetReturnToLaunchAltitudeResponse)},
-  { 249, -1, sizeof(::mavsdk::rpc::action::SetCurrentSpeedRequest)},
-  { 255, -1, sizeof(::mavsdk::rpc::action::SetCurrentSpeedResponse)},
-  { 261, -1, sizeof(::mavsdk::rpc::action::ActionResult)},
+  { 6, -1, sizeof(::mavsdk::rpc::action::ArmResponse)},
+  { 12, -1, sizeof(::mavsdk::rpc::action::DisarmRequest)},
+  { 18, -1, sizeof(::mavsdk::rpc::action::DisarmResponse)},
+  { 24, -1, sizeof(::mavsdk::rpc::action::TakeoffRequest)},
+  { 30, -1, sizeof(::mavsdk::rpc::action::TakeoffResponse)},
+  { 36, -1, sizeof(::mavsdk::rpc::action::LandRequest)},
+  { 42, -1, sizeof(::mavsdk::rpc::action::LandResponse)},
+  { 48, -1, sizeof(::mavsdk::rpc::action::RebootRequest)},
+  { 54, -1, sizeof(::mavsdk::rpc::action::RebootResponse)},
+  { 60, -1, sizeof(::mavsdk::rpc::action::ShutdownRequest)},
+  { 66, -1, sizeof(::mavsdk::rpc::action::ShutdownResponse)},
+  { 72, -1, sizeof(::mavsdk::rpc::action::TerminateRequest)},
+  { 78, -1, sizeof(::mavsdk::rpc::action::TerminateResponse)},
+  { 84, -1, sizeof(::mavsdk::rpc::action::KillRequest)},
+  { 90, -1, sizeof(::mavsdk::rpc::action::KillResponse)},
+  { 96, -1, sizeof(::mavsdk::rpc::action::ReturnToLaunchRequest)},
+  { 102, -1, sizeof(::mavsdk::rpc::action::ReturnToLaunchResponse)},
+  { 108, -1, sizeof(::mavsdk::rpc::action::GotoLocationRequest)},
+  { 118, -1, sizeof(::mavsdk::rpc::action::GotoLocationResponse)},
+  { 124, -1, sizeof(::mavsdk::rpc::action::DoOrbitRequest)},
+  { 136, -1, sizeof(::mavsdk::rpc::action::DoOrbitResponse)},
+  { 142, -1, sizeof(::mavsdk::rpc::action::HoldRequest)},
+  { 148, -1, sizeof(::mavsdk::rpc::action::HoldResponse)},
+  { 154, -1, sizeof(::mavsdk::rpc::action::SetActuatorRequest)},
+  { 162, -1, sizeof(::mavsdk::rpc::action::SetActuatorResponse)},
+  { 168, -1, sizeof(::mavsdk::rpc::action::TransitionToFixedwingRequest)},
+  { 174, -1, sizeof(::mavsdk::rpc::action::TransitionToFixedwingResponse)},
+  { 180, -1, sizeof(::mavsdk::rpc::action::TransitionToMulticopterRequest)},
+  { 186, -1, sizeof(::mavsdk::rpc::action::TransitionToMulticopterResponse)},
+  { 192, -1, sizeof(::mavsdk::rpc::action::GetTakeoffAltitudeRequest)},
+  { 198, -1, sizeof(::mavsdk::rpc::action::GetTakeoffAltitudeResponse)},
+  { 205, -1, sizeof(::mavsdk::rpc::action::SetTakeoffAltitudeRequest)},
+  { 212, -1, sizeof(::mavsdk::rpc::action::SetTakeoffAltitudeResponse)},
+  { 218, -1, sizeof(::mavsdk::rpc::action::GetMaximumSpeedRequest)},
+  { 224, -1, sizeof(::mavsdk::rpc::action::GetMaximumSpeedResponse)},
+  { 231, -1, sizeof(::mavsdk::rpc::action::SetMaximumSpeedRequest)},
+  { 238, -1, sizeof(::mavsdk::rpc::action::SetMaximumSpeedResponse)},
+  { 244, -1, sizeof(::mavsdk::rpc::action::GetReturnToLaunchAltitudeRequest)},
+  { 250, -1, sizeof(::mavsdk::rpc::action::GetReturnToLaunchAltitudeResponse)},
+  { 257, -1, sizeof(::mavsdk::rpc::action::SetReturnToLaunchAltitudeRequest)},
+  { 264, -1, sizeof(::mavsdk::rpc::action::SetReturnToLaunchAltitudeResponse)},
+  { 270, -1, sizeof(::mavsdk::rpc::action::SetCurrentSpeedRequest)},
+  { 277, -1, sizeof(::mavsdk::rpc::action::SetCurrentSpeedResponse)},
+  { 283, -1, sizeof(::mavsdk::rpc::action::ActionResult)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -934,157 +978,167 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_action_2faction_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\023action/action.proto\022\021mavsdk.rpc.action"
-  "\032\024mavsdk_options.proto\"\014\n\nArmRequest\"E\n\013"
-  "ArmResponse\0226\n\raction_result\030\001 \001(\0132\037.mav"
-  "sdk.rpc.action.ActionResult\"\017\n\rDisarmReq"
-  "uest\"H\n\016DisarmResponse\0226\n\raction_result\030"
-  "\001 \001(\0132\037.mavsdk.rpc.action.ActionResult\"\020"
-  "\n\016TakeoffRequest\"I\n\017TakeoffResponse\0226\n\ra"
-  "ction_result\030\001 \001(\0132\037.mavsdk.rpc.action.A"
-  "ctionResult\"\r\n\013LandRequest\"F\n\014LandRespon"
-  "se\0226\n\raction_result\030\001 \001(\0132\037.mavsdk.rpc.a"
-  "ction.ActionResult\"\017\n\rRebootRequest\"H\n\016R"
-  "ebootResponse\0226\n\raction_result\030\001 \001(\0132\037.m"
-  "avsdk.rpc.action.ActionResult\"\021\n\017Shutdow"
-  "nRequest\"J\n\020ShutdownResponse\0226\n\raction_r"
-  "esult\030\001 \001(\0132\037.mavsdk.rpc.action.ActionRe"
-  "sult\"\022\n\020TerminateRequest\"K\n\021TerminateRes"
+  "\032\024mavsdk_options.proto\"\036\n\nArmRequest\022\020\n\010"
+  "drone_id\030\001 \001(\005\"E\n\013ArmResponse\0226\n\raction_"
+  "result\030\001 \001(\0132\037.mavsdk.rpc.action.ActionR"
+  "esult\"!\n\rDisarmRequest\022\020\n\010drone_id\030\001 \001(\005"
+  "\"H\n\016DisarmResponse\0226\n\raction_result\030\001 \001("
+  "\0132\037.mavsdk.rpc.action.ActionResult\"\"\n\016Ta"
+  "keoffRequest\022\020\n\010drone_id\030\001 \001(\005\"I\n\017Takeof"
+  "fResponse\0226\n\raction_result\030\001 \001(\0132\037.mavsd"
+  "k.rpc.action.ActionResult\"\037\n\013LandRequest"
+  "\022\020\n\010drone_id\030\001 \001(\005\"F\n\014LandResponse\0226\n\rac"
+  "tion_result\030\001 \001(\0132\037.mavsdk.rpc.action.Ac"
+  "tionResult\"!\n\rRebootRequest\022\020\n\010drone_id\030"
+  "\001 \001(\005\"H\n\016RebootResponse\0226\n\raction_result"
+  "\030\001 \001(\0132\037.mavsdk.rpc.action.ActionResult\""
+  "#\n\017ShutdownRequest\022\020\n\010drone_id\030\001 \001(\005\"J\n\020"
+  "ShutdownResponse\0226\n\raction_result\030\001 \001(\0132"
+  "\037.mavsdk.rpc.action.ActionResult\"$\n\020Term"
+  "inateRequest\022\020\n\010drone_id\030\001 \001(\005\"K\n\021Termin"
+  "ateResponse\0226\n\raction_result\030\001 \001(\0132\037.mav"
+  "sdk.rpc.action.ActionResult\"\037\n\013KillReque"
+  "st\022\020\n\010drone_id\030\001 \001(\005\"F\n\014KillResponse\0226\n\r"
+  "action_result\030\001 \001(\0132\037.mavsdk.rpc.action."
+  "ActionResult\")\n\025ReturnToLaunchRequest\022\020\n"
+  "\010drone_id\030\001 \001(\005\"P\n\026ReturnToLaunchRespons"
+  "e\0226\n\raction_result\030\001 \001(\0132\037.mavsdk.rpc.ac"
+  "tion.ActionResult\"\202\001\n\023GotoLocationReques"
+  "t\022\020\n\010drone_id\030\001 \001(\005\022\024\n\014latitude_deg\030\002 \001("
+  "\001\022\025\n\rlongitude_deg\030\003 \001(\001\022\033\n\023absolute_alt"
+  "itude_m\030\004 \001(\002\022\017\n\007yaw_deg\030\005 \001(\002\"N\n\024GotoLo"
+  "cationResponse\0226\n\raction_result\030\001 \001(\0132\037."
+  "mavsdk.rpc.action.ActionResult\"\351\001\n\016DoOrb"
+  "itRequest\022\020\n\010drone_id\030\001 \001(\005\022\020\n\010radius_m\030"
+  "\002 \001(\002\022\023\n\013velocity_ms\030\003 \001(\002\0229\n\014yaw_behavi"
+  "or\030\004 \001(\0162#.mavsdk.rpc.action.OrbitYawBeh"
+  "avior\022\035\n\014latitude_deg\030\005 \001(\001B\007\202\265\030\003NaN\022\036\n\r"
+  "longitude_deg\030\006 \001(\001B\007\202\265\030\003NaN\022$\n\023absolute"
+  "_altitude_m\030\007 \001(\001B\007\202\265\030\003NaN\"I\n\017DoOrbitRes"
   "ponse\0226\n\raction_result\030\001 \001(\0132\037.mavsdk.rp"
-  "c.action.ActionResult\"\r\n\013KillRequest\"F\n\014"
-  "KillResponse\0226\n\raction_result\030\001 \001(\0132\037.ma"
-  "vsdk.rpc.action.ActionResult\"\027\n\025ReturnTo"
-  "LaunchRequest\"P\n\026ReturnToLaunchResponse\022"
-  "6\n\raction_result\030\001 \001(\0132\037.mavsdk.rpc.acti"
-  "on.ActionResult\"p\n\023GotoLocationRequest\022\024"
-  "\n\014latitude_deg\030\001 \001(\001\022\025\n\rlongitude_deg\030\002 "
-  "\001(\001\022\033\n\023absolute_altitude_m\030\003 \001(\002\022\017\n\007yaw_"
-  "deg\030\004 \001(\002\"N\n\024GotoLocationResponse\0226\n\ract"
-  "ion_result\030\001 \001(\0132\037.mavsdk.rpc.action.Act"
-  "ionResult\"\327\001\n\016DoOrbitRequest\022\020\n\010radius_m"
-  "\030\001 \001(\002\022\023\n\013velocity_ms\030\002 \001(\002\0229\n\014yaw_behav"
-  "ior\030\003 \001(\0162#.mavsdk.rpc.action.OrbitYawBe"
-  "havior\022\035\n\014latitude_deg\030\005 \001(\001B\007\202\265\030\003NaN\022\036\n"
-  "\rlongitude_deg\030\006 \001(\001B\007\202\265\030\003NaN\022$\n\023absolut"
-  "e_altitude_m\030\007 \001(\001B\007\202\265\030\003NaN\"I\n\017DoOrbitRe"
-  "sponse\0226\n\raction_result\030\001 \001(\0132\037.mavsdk.r"
-  "pc.action.ActionResult\"\r\n\013HoldRequest\"F\n"
-  "\014HoldResponse\0226\n\raction_result\030\001 \001(\0132\037.m"
-  "avsdk.rpc.action.ActionResult\"2\n\022SetActu"
-  "atorRequest\022\r\n\005index\030\001 \001(\005\022\r\n\005value\030\002 \001("
-  "\002\"M\n\023SetActuatorResponse\0226\n\raction_resul"
-  "t\030\001 \001(\0132\037.mavsdk.rpc.action.ActionResult"
-  "\"\036\n\034TransitionToFixedwingRequest\"W\n\035Tran"
-  "sitionToFixedwingResponse\0226\n\raction_resu"
-  "lt\030\001 \001(\0132\037.mavsdk.rpc.action.ActionResul"
-  "t\" \n\036TransitionToMulticopterRequest\"Y\n\037T"
-  "ransitionToMulticopterResponse\0226\n\raction"
+  "c.action.ActionResult\"\037\n\013HoldRequest\022\020\n\010"
+  "drone_id\030\001 \001(\005\"F\n\014HoldResponse\0226\n\raction"
   "_result\030\001 \001(\0132\037.mavsdk.rpc.action.Action"
-  "Result\"\033\n\031GetTakeoffAltitudeRequest\"f\n\032G"
-  "etTakeoffAltitudeResponse\0226\n\raction_resu"
+  "Result\"D\n\022SetActuatorRequest\022\020\n\010drone_id"
+  "\030\001 \001(\005\022\r\n\005index\030\002 \001(\005\022\r\n\005value\030\003 \001(\002\"M\n\023"
+  "SetActuatorResponse\0226\n\raction_result\030\001 \001"
+  "(\0132\037.mavsdk.rpc.action.ActionResult\"0\n\034T"
+  "ransitionToFixedwingRequest\022\020\n\010drone_id\030"
+  "\001 \001(\005\"W\n\035TransitionToFixedwingResponse\0226"
+  "\n\raction_result\030\001 \001(\0132\037.mavsdk.rpc.actio"
+  "n.ActionResult\"2\n\036TransitionToMulticopte"
+  "rRequest\022\020\n\010drone_id\030\001 \001(\005\"Y\n\037Transition"
+  "ToMulticopterResponse\0226\n\raction_result\030\001"
+  " \001(\0132\037.mavsdk.rpc.action.ActionResult\"-\n"
+  "\031GetTakeoffAltitudeRequest\022\020\n\010drone_id\030\001"
+  " \001(\005\"f\n\032GetTakeoffAltitudeResponse\0226\n\rac"
+  "tion_result\030\001 \001(\0132\037.mavsdk.rpc.action.Ac"
+  "tionResult\022\020\n\010altitude\030\002 \001(\002\"\?\n\031SetTakeo"
+  "ffAltitudeRequest\022\020\n\010drone_id\030\001 \001(\005\022\020\n\010a"
+  "ltitude\030\002 \001(\002\"T\n\032SetTakeoffAltitudeRespo"
+  "nse\0226\n\raction_result\030\001 \001(\0132\037.mavsdk.rpc."
+  "action.ActionResult\"*\n\026GetMaximumSpeedRe"
+  "quest\022\020\n\010drone_id\030\001 \001(\005\"`\n\027GetMaximumSpe"
+  "edResponse\0226\n\raction_result\030\001 \001(\0132\037.mavs"
+  "dk.rpc.action.ActionResult\022\r\n\005speed\030\002 \001("
+  "\002\"9\n\026SetMaximumSpeedRequest\022\020\n\010drone_id\030"
+  "\001 \001(\005\022\r\n\005speed\030\002 \001(\002\"Q\n\027SetMaximumSpeedR"
+  "esponse\0226\n\raction_result\030\001 \001(\0132\037.mavsdk."
+  "rpc.action.ActionResult\"4\n GetReturnToLa"
+  "unchAltitudeRequest\022\020\n\010drone_id\030\001 \001(\005\"x\n"
+  "!GetReturnToLaunchAltitudeResponse\0226\n\rac"
+  "tion_result\030\001 \001(\0132\037.mavsdk.rpc.action.Ac"
+  "tionResult\022\033\n\023relative_altitude_m\030\002 \001(\002\""
+  "Q\n SetReturnToLaunchAltitudeRequest\022\020\n\010d"
+  "rone_id\030\001 \001(\005\022\033\n\023relative_altitude_m\030\002 \001"
+  "(\002\"[\n!SetReturnToLaunchAltitudeResponse\022"
+  "6\n\raction_result\030\001 \001(\0132\037.mavsdk.rpc.acti"
+  "on.ActionResult\"=\n\026SetCurrentSpeedReques"
+  "t\022\020\n\010drone_id\030\001 \001(\005\022\021\n\tspeed_m_s\030\002 \001(\002\"Q"
+  "\n\027SetCurrentSpeedResponse\0226\n\raction_resu"
   "lt\030\001 \001(\0132\037.mavsdk.rpc.action.ActionResul"
-  "t\022\020\n\010altitude\030\002 \001(\002\"-\n\031SetTakeoffAltitud"
-  "eRequest\022\020\n\010altitude\030\001 \001(\002\"T\n\032SetTakeoff"
-  "AltitudeResponse\0226\n\raction_result\030\001 \001(\0132"
-  "\037.mavsdk.rpc.action.ActionResult\"\030\n\026GetM"
-  "aximumSpeedRequest\"`\n\027GetMaximumSpeedRes"
-  "ponse\0226\n\raction_result\030\001 \001(\0132\037.mavsdk.rp"
-  "c.action.ActionResult\022\r\n\005speed\030\002 \001(\002\"\'\n\026"
-  "SetMaximumSpeedRequest\022\r\n\005speed\030\001 \001(\002\"Q\n"
-  "\027SetMaximumSpeedResponse\0226\n\raction_resul"
-  "t\030\001 \001(\0132\037.mavsdk.rpc.action.ActionResult"
-  "\"\"\n GetReturnToLaunchAltitudeRequest\"x\n!"
-  "GetReturnToLaunchAltitudeResponse\0226\n\ract"
-  "ion_result\030\001 \001(\0132\037.mavsdk.rpc.action.Act"
-  "ionResult\022\033\n\023relative_altitude_m\030\002 \001(\002\"\?"
-  "\n SetReturnToLaunchAltitudeRequest\022\033\n\023re"
-  "lative_altitude_m\030\001 \001(\002\"[\n!SetReturnToLa"
-  "unchAltitudeResponse\0226\n\raction_result\030\001 "
-  "\001(\0132\037.mavsdk.rpc.action.ActionResult\"+\n\026"
-  "SetCurrentSpeedRequest\022\021\n\tspeed_m_s\030\001 \001("
-  "\002\"Q\n\027SetCurrentSpeedResponse\0226\n\raction_r"
-  "esult\030\001 \001(\0132\037.mavsdk.rpc.action.ActionRe"
-  "sult\"\335\003\n\014ActionResult\0226\n\006result\030\001 \001(\0162&."
-  "mavsdk.rpc.action.ActionResult.Result\022\022\n"
-  "\nresult_str\030\002 \001(\t\"\200\003\n\006Result\022\022\n\016RESULT_U"
-  "NKNOWN\020\000\022\022\n\016RESULT_SUCCESS\020\001\022\024\n\020RESULT_N"
-  "O_SYSTEM\020\002\022\033\n\027RESULT_CONNECTION_ERROR\020\003\022"
-  "\017\n\013RESULT_BUSY\020\004\022\031\n\025RESULT_COMMAND_DENIE"
-  "D\020\005\022.\n*RESULT_COMMAND_DENIED_LANDED_STAT"
-  "E_UNKNOWN\020\006\022$\n RESULT_COMMAND_DENIED_NOT"
-  "_LANDED\020\007\022\022\n\016RESULT_TIMEOUT\020\010\022*\n&RESULT_"
-  "VTOL_TRANSITION_SUPPORT_UNKNOWN\020\t\022%\n!RES"
-  "ULT_NO_VTOL_TRANSITION_SUPPORT\020\n\022\032\n\026RESU"
-  "LT_PARAMETER_ERROR\020\013\022\026\n\022RESULT_UNSUPPORT"
-  "ED\020\014*\363\001\n\020OrbitYawBehavior\0222\n.ORBIT_YAW_B"
-  "EHAVIOR_HOLD_FRONT_TO_CIRCLE_CENTER\020\000\022+\n"
-  "\'ORBIT_YAW_BEHAVIOR_HOLD_INITIAL_HEADING"
-  "\020\001\022#\n\037ORBIT_YAW_BEHAVIOR_UNCONTROLLED\020\002\022"
-  "3\n/ORBIT_YAW_BEHAVIOR_HOLD_FRONT_TANGENT"
-  "_TO_CIRCLE\020\003\022$\n ORBIT_YAW_BEHAVIOR_RC_CO"
-  "NTROLLED\020\0042\246\021\n\rActionService\022F\n\003Arm\022\035.ma"
-  "vsdk.rpc.action.ArmRequest\032\036.mavsdk.rpc."
-  "action.ArmResponse\"\000\022O\n\006Disarm\022 .mavsdk."
-  "rpc.action.DisarmRequest\032!.mavsdk.rpc.ac"
-  "tion.DisarmResponse\"\000\022R\n\007Takeoff\022!.mavsd"
-  "k.rpc.action.TakeoffRequest\032\".mavsdk.rpc"
-  ".action.TakeoffResponse\"\000\022I\n\004Land\022\036.mavs"
-  "dk.rpc.action.LandRequest\032\037.mavsdk.rpc.a"
-  "ction.LandResponse\"\000\022O\n\006Reboot\022 .mavsdk."
-  "rpc.action.RebootRequest\032!.mavsdk.rpc.ac"
-  "tion.RebootResponse\"\000\022U\n\010Shutdown\022\".mavs"
-  "dk.rpc.action.ShutdownRequest\032#.mavsdk.r"
-  "pc.action.ShutdownResponse\"\000\022X\n\tTerminat"
-  "e\022#.mavsdk.rpc.action.TerminateRequest\032$"
-  ".mavsdk.rpc.action.TerminateResponse\"\000\022I"
-  "\n\004Kill\022\036.mavsdk.rpc.action.KillRequest\032\037"
-  ".mavsdk.rpc.action.KillResponse\"\000\022g\n\016Ret"
-  "urnToLaunch\022(.mavsdk.rpc.action.ReturnTo"
-  "LaunchRequest\032).mavsdk.rpc.action.Return"
-  "ToLaunchResponse\"\000\022a\n\014GotoLocation\022&.mav"
-  "sdk.rpc.action.GotoLocationRequest\032\'.mav"
-  "sdk.rpc.action.GotoLocationResponse\"\000\022R\n"
-  "\007DoOrbit\022!.mavsdk.rpc.action.DoOrbitRequ"
-  "est\032\".mavsdk.rpc.action.DoOrbitResponse\""
-  "\000\022I\n\004Hold\022\036.mavsdk.rpc.action.HoldReques"
-  "t\032\037.mavsdk.rpc.action.HoldResponse\"\000\022^\n\013"
-  "SetActuator\022%.mavsdk.rpc.action.SetActua"
-  "torRequest\032&.mavsdk.rpc.action.SetActuat"
-  "orResponse\"\000\022|\n\025TransitionToFixedwing\022/."
-  "mavsdk.rpc.action.TransitionToFixedwingR"
-  "equest\0320.mavsdk.rpc.action.TransitionToF"
-  "ixedwingResponse\"\000\022\202\001\n\027TransitionToMulti"
-  "copter\0221.mavsdk.rpc.action.TransitionToM"
-  "ulticopterRequest\0322.mavsdk.rpc.action.Tr"
-  "ansitionToMulticopterResponse\"\000\022s\n\022GetTa"
-  "keoffAltitude\022,.mavsdk.rpc.action.GetTak"
-  "eoffAltitudeRequest\032-.mavsdk.rpc.action."
-  "GetTakeoffAltitudeResponse\"\000\022s\n\022SetTakeo"
-  "ffAltitude\022,.mavsdk.rpc.action.SetTakeof"
-  "fAltitudeRequest\032-.mavsdk.rpc.action.Set"
-  "TakeoffAltitudeResponse\"\000\022j\n\017GetMaximumS"
-  "peed\022).mavsdk.rpc.action.GetMaximumSpeed"
-  "Request\032*.mavsdk.rpc.action.GetMaximumSp"
-  "eedResponse\"\000\022j\n\017SetMaximumSpeed\022).mavsd"
-  "k.rpc.action.SetMaximumSpeedRequest\032*.ma"
-  "vsdk.rpc.action.SetMaximumSpeedResponse\""
-  "\000\022\210\001\n\031GetReturnToLaunchAltitude\0223.mavsdk"
-  ".rpc.action.GetReturnToLaunchAltitudeReq"
-  "uest\0324.mavsdk.rpc.action.GetReturnToLaun"
-  "chAltitudeResponse\"\000\022\210\001\n\031SetReturnToLaun"
-  "chAltitude\0223.mavsdk.rpc.action.SetReturn"
-  "ToLaunchAltitudeRequest\0324.mavsdk.rpc.act"
-  "ion.SetReturnToLaunchAltitudeResponse\"\000\022"
-  "j\n\017SetCurrentSpeed\022).mavsdk.rpc.action.S"
-  "etCurrentSpeedRequest\032*.mavsdk.rpc.actio"
-  "n.SetCurrentSpeedResponse\"\000B\037\n\020io.mavsdk"
-  ".actionB\013ActionProtob\006proto3"
+  "t\"\335\003\n\014ActionResult\0226\n\006result\030\001 \001(\0162&.mav"
+  "sdk.rpc.action.ActionResult.Result\022\022\n\nre"
+  "sult_str\030\002 \001(\t\"\200\003\n\006Result\022\022\n\016RESULT_UNKN"
+  "OWN\020\000\022\022\n\016RESULT_SUCCESS\020\001\022\024\n\020RESULT_NO_S"
+  "YSTEM\020\002\022\033\n\027RESULT_CONNECTION_ERROR\020\003\022\017\n\013"
+  "RESULT_BUSY\020\004\022\031\n\025RESULT_COMMAND_DENIED\020\005"
+  "\022.\n*RESULT_COMMAND_DENIED_LANDED_STATE_U"
+  "NKNOWN\020\006\022$\n RESULT_COMMAND_DENIED_NOT_LA"
+  "NDED\020\007\022\022\n\016RESULT_TIMEOUT\020\010\022*\n&RESULT_VTO"
+  "L_TRANSITION_SUPPORT_UNKNOWN\020\t\022%\n!RESULT"
+  "_NO_VTOL_TRANSITION_SUPPORT\020\n\022\032\n\026RESULT_"
+  "PARAMETER_ERROR\020\013\022\026\n\022RESULT_UNSUPPORTED\020"
+  "\014*\363\001\n\020OrbitYawBehavior\0222\n.ORBIT_YAW_BEHA"
+  "VIOR_HOLD_FRONT_TO_CIRCLE_CENTER\020\000\022+\n\'OR"
+  "BIT_YAW_BEHAVIOR_HOLD_INITIAL_HEADING\020\001\022"
+  "#\n\037ORBIT_YAW_BEHAVIOR_UNCONTROLLED\020\002\0223\n/"
+  "ORBIT_YAW_BEHAVIOR_HOLD_FRONT_TANGENT_TO"
+  "_CIRCLE\020\003\022$\n ORBIT_YAW_BEHAVIOR_RC_CONTR"
+  "OLLED\020\0042\246\021\n\rActionService\022F\n\003Arm\022\035.mavsd"
+  "k.rpc.action.ArmRequest\032\036.mavsdk.rpc.act"
+  "ion.ArmResponse\"\000\022O\n\006Disarm\022 .mavsdk.rpc"
+  ".action.DisarmRequest\032!.mavsdk.rpc.actio"
+  "n.DisarmResponse\"\000\022R\n\007Takeoff\022!.mavsdk.r"
+  "pc.action.TakeoffRequest\032\".mavsdk.rpc.ac"
+  "tion.TakeoffResponse\"\000\022I\n\004Land\022\036.mavsdk."
+  "rpc.action.LandRequest\032\037.mavsdk.rpc.acti"
+  "on.LandResponse\"\000\022O\n\006Reboot\022 .mavsdk.rpc"
+  ".action.RebootRequest\032!.mavsdk.rpc.actio"
+  "n.RebootResponse\"\000\022U\n\010Shutdown\022\".mavsdk."
+  "rpc.action.ShutdownRequest\032#.mavsdk.rpc."
+  "action.ShutdownResponse\"\000\022X\n\tTerminate\022#"
+  ".mavsdk.rpc.action.TerminateRequest\032$.ma"
+  "vsdk.rpc.action.TerminateResponse\"\000\022I\n\004K"
+  "ill\022\036.mavsdk.rpc.action.KillRequest\032\037.ma"
+  "vsdk.rpc.action.KillResponse\"\000\022g\n\016Return"
+  "ToLaunch\022(.mavsdk.rpc.action.ReturnToLau"
+  "nchRequest\032).mavsdk.rpc.action.ReturnToL"
+  "aunchResponse\"\000\022a\n\014GotoLocation\022&.mavsdk"
+  ".rpc.action.GotoLocationRequest\032\'.mavsdk"
+  ".rpc.action.GotoLocationResponse\"\000\022R\n\007Do"
+  "Orbit\022!.mavsdk.rpc.action.DoOrbitRequest"
+  "\032\".mavsdk.rpc.action.DoOrbitResponse\"\000\022I"
+  "\n\004Hold\022\036.mavsdk.rpc.action.HoldRequest\032\037"
+  ".mavsdk.rpc.action.HoldResponse\"\000\022^\n\013Set"
+  "Actuator\022%.mavsdk.rpc.action.SetActuator"
+  "Request\032&.mavsdk.rpc.action.SetActuatorR"
+  "esponse\"\000\022|\n\025TransitionToFixedwing\022/.mav"
+  "sdk.rpc.action.TransitionToFixedwingRequ"
+  "est\0320.mavsdk.rpc.action.TransitionToFixe"
+  "dwingResponse\"\000\022\202\001\n\027TransitionToMulticop"
+  "ter\0221.mavsdk.rpc.action.TransitionToMult"
+  "icopterRequest\0322.mavsdk.rpc.action.Trans"
+  "itionToMulticopterResponse\"\000\022s\n\022GetTakeo"
+  "ffAltitude\022,.mavsdk.rpc.action.GetTakeof"
+  "fAltitudeRequest\032-.mavsdk.rpc.action.Get"
+  "TakeoffAltitudeResponse\"\000\022s\n\022SetTakeoffA"
+  "ltitude\022,.mavsdk.rpc.action.SetTakeoffAl"
+  "titudeRequest\032-.mavsdk.rpc.action.SetTak"
+  "eoffAltitudeResponse\"\000\022j\n\017GetMaximumSpee"
+  "d\022).mavsdk.rpc.action.GetMaximumSpeedReq"
+  "uest\032*.mavsdk.rpc.action.GetMaximumSpeed"
+  "Response\"\000\022j\n\017SetMaximumSpeed\022).mavsdk.r"
+  "pc.action.SetMaximumSpeedRequest\032*.mavsd"
+  "k.rpc.action.SetMaximumSpeedResponse\"\000\022\210"
+  "\001\n\031GetReturnToLaunchAltitude\0223.mavsdk.rp"
+  "c.action.GetReturnToLaunchAltitudeReques"
+  "t\0324.mavsdk.rpc.action.GetReturnToLaunchA"
+  "ltitudeResponse\"\000\022\210\001\n\031SetReturnToLaunchA"
+  "ltitude\0223.mavsdk.rpc.action.SetReturnToL"
+  "aunchAltitudeRequest\0324.mavsdk.rpc.action"
+  ".SetReturnToLaunchAltitudeResponse\"\000\022j\n\017"
+  "SetCurrentSpeed\022).mavsdk.rpc.action.SetC"
+  "urrentSpeedRequest\032*.mavsdk.rpc.action.S"
+  "etCurrentSpeedResponse\"\000B\037\n\020io.mavsdk.ac"
+  "tionB\013ActionProtob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_action_2faction_2eproto_deps[1] = {
   &::descriptor_table_mavsdk_5foptions_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_action_2faction_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_action_2faction_2eproto = {
-  false, false, 5788, descriptor_table_protodef_action_2faction_2eproto, "action/action.proto", 
+  false, false, 6185, descriptor_table_protodef_action_2faction_2eproto, "action/action.proto", 
   &descriptor_table_action_2faction_2eproto_once, descriptor_table_action_2faction_2eproto_deps, 1, 45,
   schemas, file_default_instances, TableStruct_action_2faction_2eproto::offsets,
   file_level_metadata_action_2faction_2eproto, file_level_enum_descriptors_action_2faction_2eproto, file_level_service_descriptors_action_2faction_2eproto,
@@ -1177,10 +1231,12 @@ ArmRequest::ArmRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 ArmRequest::ArmRequest(const ArmRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.action.ArmRequest)
 }
 
 inline void ArmRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 ArmRequest::~ArmRequest() {
@@ -1210,6 +1266,7 @@ void ArmRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1218,6 +1275,16 @@ const char* ArmRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -1228,6 +1295,8 @@ const char* ArmRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -1242,6 +1311,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.action.ArmRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -1258,6 +1333,13 @@ size_t ArmRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -1287,6 +1369,9 @@ void ArmRequest::MergeFrom(const ArmRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1304,6 +1389,7 @@ bool ArmRequest::IsInitialized() const {
 void ArmRequest::InternalSwap(ArmRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ArmRequest::GetMetadata() const {
@@ -1530,10 +1616,12 @@ DisarmRequest::DisarmRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 DisarmRequest::DisarmRequest(const DisarmRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.action.DisarmRequest)
 }
 
 inline void DisarmRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 DisarmRequest::~DisarmRequest() {
@@ -1563,6 +1651,7 @@ void DisarmRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1571,6 +1660,16 @@ const char* DisarmRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -1581,6 +1680,8 @@ const char* DisarmRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -1595,6 +1696,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.action.DisarmRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -1611,6 +1718,13 @@ size_t DisarmRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -1640,6 +1754,9 @@ void DisarmRequest::MergeFrom(const DisarmRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1657,6 +1774,7 @@ bool DisarmRequest::IsInitialized() const {
 void DisarmRequest::InternalSwap(DisarmRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DisarmRequest::GetMetadata() const {
@@ -1883,10 +2001,12 @@ TakeoffRequest::TakeoffRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 TakeoffRequest::TakeoffRequest(const TakeoffRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.action.TakeoffRequest)
 }
 
 inline void TakeoffRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 TakeoffRequest::~TakeoffRequest() {
@@ -1916,6 +2036,7 @@ void TakeoffRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1924,6 +2045,16 @@ const char* TakeoffRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -1934,6 +2065,8 @@ const char* TakeoffRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -1948,6 +2081,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.action.TakeoffRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -1964,6 +2103,13 @@ size_t TakeoffRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -1993,6 +2139,9 @@ void TakeoffRequest::MergeFrom(const TakeoffRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2010,6 +2159,7 @@ bool TakeoffRequest::IsInitialized() const {
 void TakeoffRequest::InternalSwap(TakeoffRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata TakeoffRequest::GetMetadata() const {
@@ -2236,10 +2386,12 @@ LandRequest::LandRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 LandRequest::LandRequest(const LandRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.action.LandRequest)
 }
 
 inline void LandRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 LandRequest::~LandRequest() {
@@ -2269,6 +2421,7 @@ void LandRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2277,6 +2430,16 @@ const char* LandRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -2287,6 +2450,8 @@ const char* LandRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -2301,6 +2466,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.action.LandRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -2317,6 +2488,13 @@ size_t LandRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -2346,6 +2524,9 @@ void LandRequest::MergeFrom(const LandRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2363,6 +2544,7 @@ bool LandRequest::IsInitialized() const {
 void LandRequest::InternalSwap(LandRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata LandRequest::GetMetadata() const {
@@ -2589,10 +2771,12 @@ RebootRequest::RebootRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 RebootRequest::RebootRequest(const RebootRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.action.RebootRequest)
 }
 
 inline void RebootRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 RebootRequest::~RebootRequest() {
@@ -2622,6 +2806,7 @@ void RebootRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2630,6 +2815,16 @@ const char* RebootRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -2640,6 +2835,8 @@ const char* RebootRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -2654,6 +2851,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.action.RebootRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -2670,6 +2873,13 @@ size_t RebootRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -2699,6 +2909,9 @@ void RebootRequest::MergeFrom(const RebootRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2716,6 +2929,7 @@ bool RebootRequest::IsInitialized() const {
 void RebootRequest::InternalSwap(RebootRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RebootRequest::GetMetadata() const {
@@ -2942,10 +3156,12 @@ ShutdownRequest::ShutdownRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 ShutdownRequest::ShutdownRequest(const ShutdownRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.action.ShutdownRequest)
 }
 
 inline void ShutdownRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 ShutdownRequest::~ShutdownRequest() {
@@ -2975,6 +3191,7 @@ void ShutdownRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2983,6 +3200,16 @@ const char* ShutdownRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -2993,6 +3220,8 @@ const char* ShutdownRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -3007,6 +3236,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.action.ShutdownRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -3023,6 +3258,13 @@ size_t ShutdownRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -3052,6 +3294,9 @@ void ShutdownRequest::MergeFrom(const ShutdownRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -3069,6 +3314,7 @@ bool ShutdownRequest::IsInitialized() const {
 void ShutdownRequest::InternalSwap(ShutdownRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ShutdownRequest::GetMetadata() const {
@@ -3295,10 +3541,12 @@ TerminateRequest::TerminateRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 TerminateRequest::TerminateRequest(const TerminateRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.action.TerminateRequest)
 }
 
 inline void TerminateRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 TerminateRequest::~TerminateRequest() {
@@ -3328,6 +3576,7 @@ void TerminateRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3336,6 +3585,16 @@ const char* TerminateRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -3346,6 +3605,8 @@ const char* TerminateRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -3360,6 +3621,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.action.TerminateRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -3376,6 +3643,13 @@ size_t TerminateRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -3405,6 +3679,9 @@ void TerminateRequest::MergeFrom(const TerminateRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -3422,6 +3699,7 @@ bool TerminateRequest::IsInitialized() const {
 void TerminateRequest::InternalSwap(TerminateRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata TerminateRequest::GetMetadata() const {
@@ -3648,10 +3926,12 @@ KillRequest::KillRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 KillRequest::KillRequest(const KillRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.action.KillRequest)
 }
 
 inline void KillRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 KillRequest::~KillRequest() {
@@ -3681,6 +3961,7 @@ void KillRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3689,6 +3970,16 @@ const char* KillRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -3699,6 +3990,8 @@ const char* KillRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -3713,6 +4006,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.action.KillRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -3729,6 +4028,13 @@ size_t KillRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -3758,6 +4064,9 @@ void KillRequest::MergeFrom(const KillRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -3775,6 +4084,7 @@ bool KillRequest::IsInitialized() const {
 void KillRequest::InternalSwap(KillRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata KillRequest::GetMetadata() const {
@@ -4001,10 +4311,12 @@ ReturnToLaunchRequest::ReturnToLaunchRequest(::PROTOBUF_NAMESPACE_ID::Arena* are
 ReturnToLaunchRequest::ReturnToLaunchRequest(const ReturnToLaunchRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.action.ReturnToLaunchRequest)
 }
 
 inline void ReturnToLaunchRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 ReturnToLaunchRequest::~ReturnToLaunchRequest() {
@@ -4034,6 +4346,7 @@ void ReturnToLaunchRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4042,6 +4355,16 @@ const char* ReturnToLaunchRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -4052,6 +4375,8 @@ const char* ReturnToLaunchRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -4066,6 +4391,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.action.ReturnToLaunchRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -4082,6 +4413,13 @@ size_t ReturnToLaunchRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -4111,6 +4449,9 @@ void ReturnToLaunchRequest::MergeFrom(const ReturnToLaunchRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -4128,6 +4469,7 @@ bool ReturnToLaunchRequest::IsInitialized() const {
 void ReturnToLaunchRequest::InternalSwap(ReturnToLaunchRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ReturnToLaunchRequest::GetMetadata() const {
@@ -4406,30 +4748,37 @@ const char* GotoLocationRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // double latitude_deg = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double latitude_deg = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           latitude_deg_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
-      // double longitude_deg = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
+      // double longitude_deg = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 25)) {
           longitude_deg_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
-      // float absolute_altitude_m = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+      // float absolute_altitude_m = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
           absolute_altitude_m_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // float yaw_deg = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+      // float yaw_deg = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 45)) {
           yaw_deg_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
@@ -4463,28 +4812,34 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double latitude_deg = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // double latitude_deg = 2;
   if (!(this->_internal_latitude_deg() <= 0 && this->_internal_latitude_deg() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_latitude_deg(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_latitude_deg(), target);
   }
 
-  // double longitude_deg = 2;
+  // double longitude_deg = 3;
   if (!(this->_internal_longitude_deg() <= 0 && this->_internal_longitude_deg() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_longitude_deg(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(3, this->_internal_longitude_deg(), target);
   }
 
-  // float absolute_altitude_m = 3;
+  // float absolute_altitude_m = 4;
   if (!(this->_internal_absolute_altitude_m() <= 0 && this->_internal_absolute_altitude_m() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_absolute_altitude_m(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_absolute_altitude_m(), target);
   }
 
-  // float yaw_deg = 4;
+  // float yaw_deg = 5;
   if (!(this->_internal_yaw_deg() <= 0 && this->_internal_yaw_deg() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_yaw_deg(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->_internal_yaw_deg(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4503,22 +4858,29 @@ size_t GotoLocationRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double latitude_deg = 1;
+  // double latitude_deg = 2;
   if (!(this->_internal_latitude_deg() <= 0 && this->_internal_latitude_deg() >= 0)) {
     total_size += 1 + 8;
   }
 
-  // double longitude_deg = 2;
-  if (!(this->_internal_longitude_deg() <= 0 && this->_internal_longitude_deg() >= 0)) {
-    total_size += 1 + 8;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
-  // float absolute_altitude_m = 3;
+  // float absolute_altitude_m = 4;
   if (!(this->_internal_absolute_altitude_m() <= 0 && this->_internal_absolute_altitude_m() >= 0)) {
     total_size += 1 + 4;
   }
 
-  // float yaw_deg = 4;
+  // double longitude_deg = 3;
+  if (!(this->_internal_longitude_deg() <= 0 && this->_internal_longitude_deg() >= 0)) {
+    total_size += 1 + 8;
+  }
+
+  // float yaw_deg = 5;
   if (!(this->_internal_yaw_deg() <= 0 && this->_internal_yaw_deg() >= 0)) {
     total_size += 1 + 4;
   }
@@ -4554,11 +4916,14 @@ void GotoLocationRequest::MergeFrom(const GotoLocationRequest& from) {
   if (!(from._internal_latitude_deg() <= 0 && from._internal_latitude_deg() >= 0)) {
     _internal_set_latitude_deg(from._internal_latitude_deg());
   }
-  if (!(from._internal_longitude_deg() <= 0 && from._internal_longitude_deg() >= 0)) {
-    _internal_set_longitude_deg(from._internal_longitude_deg());
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
   }
   if (!(from._internal_absolute_altitude_m() <= 0 && from._internal_absolute_altitude_m() >= 0)) {
     _internal_set_absolute_altitude_m(from._internal_absolute_altitude_m());
+  }
+  if (!(from._internal_longitude_deg() <= 0 && from._internal_longitude_deg() >= 0)) {
+    _internal_set_longitude_deg(from._internal_longitude_deg());
   }
   if (!(from._internal_yaw_deg() <= 0 && from._internal_yaw_deg() >= 0)) {
     _internal_set_yaw_deg(from._internal_yaw_deg());
@@ -4812,17 +5177,17 @@ DoOrbitRequest::DoOrbitRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 DoOrbitRequest::DoOrbitRequest(const DoOrbitRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&radius_m_, &from.radius_m_,
-    static_cast<size_t>(reinterpret_cast<char*>(&yaw_behavior_) -
-    reinterpret_cast<char*>(&radius_m_)) + sizeof(yaw_behavior_));
+  ::memcpy(&drone_id_, &from.drone_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&absolute_altitude_m_) -
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(absolute_altitude_m_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.action.DoOrbitRequest)
 }
 
 inline void DoOrbitRequest::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&radius_m_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&yaw_behavior_) -
-    reinterpret_cast<char*>(&radius_m_)) + sizeof(yaw_behavior_));
+    reinterpret_cast<char*>(&drone_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&absolute_altitude_m_) -
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(absolute_altitude_m_));
 }
 
 DoOrbitRequest::~DoOrbitRequest() {
@@ -4852,9 +5217,9 @@ void DoOrbitRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&radius_m_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&yaw_behavior_) -
-      reinterpret_cast<char*>(&radius_m_)) + sizeof(yaw_behavior_));
+  ::memset(&drone_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&absolute_altitude_m_) -
+      reinterpret_cast<char*>(&drone_id_)) + sizeof(absolute_altitude_m_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4864,23 +5229,30 @@ const char* DoOrbitRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // float radius_m = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // float radius_m = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
           radius_m_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // float velocity_ms = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+      // float velocity_ms = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
           velocity_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // .mavsdk.rpc.action.OrbitYawBehavior yaw_behavior = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+      // .mavsdk.rpc.action.OrbitYawBehavior yaw_behavior = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_yaw_behavior(static_cast<::mavsdk::rpc::action::OrbitYawBehavior>(val));
@@ -4936,23 +5308,29 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // float radius_m = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // float radius_m = 2;
   if (!(this->_internal_radius_m() <= 0 && this->_internal_radius_m() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_radius_m(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_radius_m(), target);
   }
 
-  // float velocity_ms = 2;
+  // float velocity_ms = 3;
   if (!(this->_internal_velocity_ms() <= 0 && this->_internal_velocity_ms() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_velocity_ms(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_velocity_ms(), target);
   }
 
-  // .mavsdk.rpc.action.OrbitYawBehavior yaw_behavior = 3;
+  // .mavsdk.rpc.action.OrbitYawBehavior yaw_behavior = 4;
   if (this->_internal_yaw_behavior() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      3, this->_internal_yaw_behavior(), target);
+      4, this->_internal_yaw_behavior(), target);
   }
 
   // double latitude_deg = 5 [(.mavsdk.options.default_value) = "NaN"];
@@ -4989,14 +5367,27 @@ size_t DoOrbitRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // float radius_m = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
+
+  // float radius_m = 2;
   if (!(this->_internal_radius_m() <= 0 && this->_internal_radius_m() >= 0)) {
     total_size += 1 + 4;
   }
 
-  // float velocity_ms = 2;
+  // float velocity_ms = 3;
   if (!(this->_internal_velocity_ms() <= 0 && this->_internal_velocity_ms() >= 0)) {
     total_size += 1 + 4;
+  }
+
+  // .mavsdk.rpc.action.OrbitYawBehavior yaw_behavior = 4;
+  if (this->_internal_yaw_behavior() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_yaw_behavior());
   }
 
   // double latitude_deg = 5 [(.mavsdk.options.default_value) = "NaN"];
@@ -5012,12 +5403,6 @@ size_t DoOrbitRequest::ByteSizeLong() const {
   // double absolute_altitude_m = 7 [(.mavsdk.options.default_value) = "NaN"];
   if (!(this->_internal_absolute_altitude_m() <= 0 && this->_internal_absolute_altitude_m() >= 0)) {
     total_size += 1 + 8;
-  }
-
-  // .mavsdk.rpc.action.OrbitYawBehavior yaw_behavior = 3;
-  if (this->_internal_yaw_behavior() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_yaw_behavior());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5048,11 +5433,17 @@ void DoOrbitRequest::MergeFrom(const DoOrbitRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   if (!(from._internal_radius_m() <= 0 && from._internal_radius_m() >= 0)) {
     _internal_set_radius_m(from._internal_radius_m());
   }
   if (!(from._internal_velocity_ms() <= 0 && from._internal_velocity_ms() >= 0)) {
     _internal_set_velocity_ms(from._internal_velocity_ms());
+  }
+  if (from._internal_yaw_behavior() != 0) {
+    _internal_set_yaw_behavior(from._internal_yaw_behavior());
   }
   if (!(from._internal_latitude_deg() <= 0 && from._internal_latitude_deg() >= 0)) {
     _internal_set_latitude_deg(from._internal_latitude_deg());
@@ -5062,9 +5453,6 @@ void DoOrbitRequest::MergeFrom(const DoOrbitRequest& from) {
   }
   if (!(from._internal_absolute_altitude_m() <= 0 && from._internal_absolute_altitude_m() >= 0)) {
     _internal_set_absolute_altitude_m(from._internal_absolute_altitude_m());
-  }
-  if (from._internal_yaw_behavior() != 0) {
-    _internal_set_yaw_behavior(from._internal_yaw_behavior());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -5084,11 +5472,11 @@ void DoOrbitRequest::InternalSwap(DoOrbitRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(DoOrbitRequest, yaw_behavior_)
-      + sizeof(DoOrbitRequest::yaw_behavior_)
-      - PROTOBUF_FIELD_OFFSET(DoOrbitRequest, radius_m_)>(
-          reinterpret_cast<char*>(&radius_m_),
-          reinterpret_cast<char*>(&other->radius_m_));
+      PROTOBUF_FIELD_OFFSET(DoOrbitRequest, absolute_altitude_m_)
+      + sizeof(DoOrbitRequest::absolute_altitude_m_)
+      - PROTOBUF_FIELD_OFFSET(DoOrbitRequest, drone_id_)>(
+          reinterpret_cast<char*>(&drone_id_),
+          reinterpret_cast<char*>(&other->drone_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DoOrbitRequest::GetMetadata() const {
@@ -5315,10 +5703,12 @@ HoldRequest::HoldRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 HoldRequest::HoldRequest(const HoldRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.action.HoldRequest)
 }
 
 inline void HoldRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 HoldRequest::~HoldRequest() {
@@ -5348,6 +5738,7 @@ void HoldRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5356,6 +5747,16 @@ const char* HoldRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -5366,6 +5767,8 @@ const char* HoldRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -5380,6 +5783,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.action.HoldRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -5396,6 +5805,13 @@ size_t HoldRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -5425,6 +5841,9 @@ void HoldRequest::MergeFrom(const HoldRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -5442,6 +5861,7 @@ bool HoldRequest::IsInitialized() const {
 void HoldRequest::InternalSwap(HoldRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata HoldRequest::GetMetadata() const {
@@ -5668,17 +6088,17 @@ SetActuatorRequest::SetActuatorRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 SetActuatorRequest::SetActuatorRequest(const SetActuatorRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&index_, &from.index_,
+  ::memcpy(&drone_id_, &from.drone_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&value_) -
-    reinterpret_cast<char*>(&index_)) + sizeof(value_));
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(value_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.action.SetActuatorRequest)
 }
 
 inline void SetActuatorRequest::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&index_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&drone_id_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&value_) -
-    reinterpret_cast<char*>(&index_)) + sizeof(value_));
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(value_));
 }
 
 SetActuatorRequest::~SetActuatorRequest() {
@@ -5708,9 +6128,9 @@ void SetActuatorRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&index_, 0, static_cast<size_t>(
+  ::memset(&drone_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&value_) -
-      reinterpret_cast<char*>(&index_)) + sizeof(value_));
+      reinterpret_cast<char*>(&drone_id_)) + sizeof(value_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5720,16 +6140,23 @@ const char* SetActuatorRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 index = 1;
+      // int32 drone_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int32 index = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // float value = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+      // float value = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
           value_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
@@ -5763,16 +6190,22 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 index = 1;
-  if (this->_internal_index() != 0) {
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_index(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
   }
 
-  // float value = 2;
+  // int32 index = 2;
+  if (this->_internal_index() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_index(), target);
+  }
+
+  // float value = 3;
   if (!(this->_internal_value() <= 0 && this->_internal_value() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_value(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_value(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5791,14 +6224,21 @@ size_t SetActuatorRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // int32 index = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
+
+  // int32 index = 2;
   if (this->_internal_index() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
         this->_internal_index());
   }
 
-  // float value = 2;
+  // float value = 3;
   if (!(this->_internal_value() <= 0 && this->_internal_value() >= 0)) {
     total_size += 1 + 4;
   }
@@ -5831,6 +6271,9 @@ void SetActuatorRequest::MergeFrom(const SetActuatorRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   if (from._internal_index() != 0) {
     _internal_set_index(from._internal_index());
   }
@@ -5857,9 +6300,9 @@ void SetActuatorRequest::InternalSwap(SetActuatorRequest* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(SetActuatorRequest, value_)
       + sizeof(SetActuatorRequest::value_)
-      - PROTOBUF_FIELD_OFFSET(SetActuatorRequest, index_)>(
-          reinterpret_cast<char*>(&index_),
-          reinterpret_cast<char*>(&other->index_));
+      - PROTOBUF_FIELD_OFFSET(SetActuatorRequest, drone_id_)>(
+          reinterpret_cast<char*>(&drone_id_),
+          reinterpret_cast<char*>(&other->drone_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetActuatorRequest::GetMetadata() const {
@@ -6086,10 +6529,12 @@ TransitionToFixedwingRequest::TransitionToFixedwingRequest(::PROTOBUF_NAMESPACE_
 TransitionToFixedwingRequest::TransitionToFixedwingRequest(const TransitionToFixedwingRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.action.TransitionToFixedwingRequest)
 }
 
 inline void TransitionToFixedwingRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 TransitionToFixedwingRequest::~TransitionToFixedwingRequest() {
@@ -6119,6 +6564,7 @@ void TransitionToFixedwingRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6127,6 +6573,16 @@ const char* TransitionToFixedwingRequest::_InternalParse(const char* ptr, ::PROT
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -6137,6 +6593,8 @@ const char* TransitionToFixedwingRequest::_InternalParse(const char* ptr, ::PROT
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -6151,6 +6609,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.action.TransitionToFixedwingRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -6167,6 +6631,13 @@ size_t TransitionToFixedwingRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -6196,6 +6667,9 @@ void TransitionToFixedwingRequest::MergeFrom(const TransitionToFixedwingRequest&
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -6213,6 +6687,7 @@ bool TransitionToFixedwingRequest::IsInitialized() const {
 void TransitionToFixedwingRequest::InternalSwap(TransitionToFixedwingRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata TransitionToFixedwingRequest::GetMetadata() const {
@@ -6439,10 +6914,12 @@ TransitionToMulticopterRequest::TransitionToMulticopterRequest(::PROTOBUF_NAMESP
 TransitionToMulticopterRequest::TransitionToMulticopterRequest(const TransitionToMulticopterRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.action.TransitionToMulticopterRequest)
 }
 
 inline void TransitionToMulticopterRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 TransitionToMulticopterRequest::~TransitionToMulticopterRequest() {
@@ -6472,6 +6949,7 @@ void TransitionToMulticopterRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6480,6 +6958,16 @@ const char* TransitionToMulticopterRequest::_InternalParse(const char* ptr, ::PR
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -6490,6 +6978,8 @@ const char* TransitionToMulticopterRequest::_InternalParse(const char* ptr, ::PR
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -6504,6 +6994,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.action.TransitionToMulticopterRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -6520,6 +7016,13 @@ size_t TransitionToMulticopterRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -6549,6 +7052,9 @@ void TransitionToMulticopterRequest::MergeFrom(const TransitionToMulticopterRequ
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -6566,6 +7072,7 @@ bool TransitionToMulticopterRequest::IsInitialized() const {
 void TransitionToMulticopterRequest::InternalSwap(TransitionToMulticopterRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata TransitionToMulticopterRequest::GetMetadata() const {
@@ -6792,10 +7299,12 @@ GetTakeoffAltitudeRequest::GetTakeoffAltitudeRequest(::PROTOBUF_NAMESPACE_ID::Ar
 GetTakeoffAltitudeRequest::GetTakeoffAltitudeRequest(const GetTakeoffAltitudeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.action.GetTakeoffAltitudeRequest)
 }
 
 inline void GetTakeoffAltitudeRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 GetTakeoffAltitudeRequest::~GetTakeoffAltitudeRequest() {
@@ -6825,6 +7334,7 @@ void GetTakeoffAltitudeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6833,6 +7343,16 @@ const char* GetTakeoffAltitudeRequest::_InternalParse(const char* ptr, ::PROTOBU
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -6843,6 +7363,8 @@ const char* GetTakeoffAltitudeRequest::_InternalParse(const char* ptr, ::PROTOBU
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -6857,6 +7379,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.action.GetTakeoffAltitudeRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -6873,6 +7401,13 @@ size_t GetTakeoffAltitudeRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -6902,6 +7437,9 @@ void GetTakeoffAltitudeRequest::MergeFrom(const GetTakeoffAltitudeRequest& from)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -6919,6 +7457,7 @@ bool GetTakeoffAltitudeRequest::IsInitialized() const {
 void GetTakeoffAltitudeRequest::InternalSwap(GetTakeoffAltitudeRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetTakeoffAltitudeRequest::GetMetadata() const {
@@ -7176,12 +7715,17 @@ SetTakeoffAltitudeRequest::SetTakeoffAltitudeRequest(::PROTOBUF_NAMESPACE_ID::Ar
 SetTakeoffAltitudeRequest::SetTakeoffAltitudeRequest(const SetTakeoffAltitudeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  altitude_ = from.altitude_;
+  ::memcpy(&drone_id_, &from.drone_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&altitude_) -
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(altitude_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.action.SetTakeoffAltitudeRequest)
 }
 
 inline void SetTakeoffAltitudeRequest::SharedCtor() {
-altitude_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&drone_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&altitude_) -
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(altitude_));
 }
 
 SetTakeoffAltitudeRequest::~SetTakeoffAltitudeRequest() {
@@ -7211,7 +7755,9 @@ void SetTakeoffAltitudeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  altitude_ = 0;
+  ::memset(&drone_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&altitude_) -
+      reinterpret_cast<char*>(&drone_id_)) + sizeof(altitude_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -7221,9 +7767,16 @@ const char* SetTakeoffAltitudeRequest::_InternalParse(const char* ptr, ::PROTOBU
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // float altitude = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // float altitude = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
           altitude_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
@@ -7257,10 +7810,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // float altitude = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // float altitude = 2;
   if (!(this->_internal_altitude() <= 0 && this->_internal_altitude() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_altitude(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_altitude(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -7279,7 +7838,14 @@ size_t SetTakeoffAltitudeRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // float altitude = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
+
+  // float altitude = 2;
   if (!(this->_internal_altitude() <= 0 && this->_internal_altitude() >= 0)) {
     total_size += 1 + 4;
   }
@@ -7312,6 +7878,9 @@ void SetTakeoffAltitudeRequest::MergeFrom(const SetTakeoffAltitudeRequest& from)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   if (!(from._internal_altitude() <= 0 && from._internal_altitude() >= 0)) {
     _internal_set_altitude(from._internal_altitude());
   }
@@ -7332,7 +7901,12 @@ bool SetTakeoffAltitudeRequest::IsInitialized() const {
 void SetTakeoffAltitudeRequest::InternalSwap(SetTakeoffAltitudeRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(altitude_, other->altitude_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetTakeoffAltitudeRequest, altitude_)
+      + sizeof(SetTakeoffAltitudeRequest::altitude_)
+      - PROTOBUF_FIELD_OFFSET(SetTakeoffAltitudeRequest, drone_id_)>(
+          reinterpret_cast<char*>(&drone_id_),
+          reinterpret_cast<char*>(&other->drone_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetTakeoffAltitudeRequest::GetMetadata() const {
@@ -7559,10 +8133,12 @@ GetMaximumSpeedRequest::GetMaximumSpeedRequest(::PROTOBUF_NAMESPACE_ID::Arena* a
 GetMaximumSpeedRequest::GetMaximumSpeedRequest(const GetMaximumSpeedRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.action.GetMaximumSpeedRequest)
 }
 
 inline void GetMaximumSpeedRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 GetMaximumSpeedRequest::~GetMaximumSpeedRequest() {
@@ -7592,6 +8168,7 @@ void GetMaximumSpeedRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -7600,6 +8177,16 @@ const char* GetMaximumSpeedRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -7610,6 +8197,8 @@ const char* GetMaximumSpeedRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -7624,6 +8213,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.action.GetMaximumSpeedRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -7640,6 +8235,13 @@ size_t GetMaximumSpeedRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -7669,6 +8271,9 @@ void GetMaximumSpeedRequest::MergeFrom(const GetMaximumSpeedRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -7686,6 +8291,7 @@ bool GetMaximumSpeedRequest::IsInitialized() const {
 void GetMaximumSpeedRequest::InternalSwap(GetMaximumSpeedRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetMaximumSpeedRequest::GetMetadata() const {
@@ -7943,12 +8549,17 @@ SetMaximumSpeedRequest::SetMaximumSpeedRequest(::PROTOBUF_NAMESPACE_ID::Arena* a
 SetMaximumSpeedRequest::SetMaximumSpeedRequest(const SetMaximumSpeedRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  speed_ = from.speed_;
+  ::memcpy(&drone_id_, &from.drone_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&speed_) -
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(speed_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.action.SetMaximumSpeedRequest)
 }
 
 inline void SetMaximumSpeedRequest::SharedCtor() {
-speed_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&drone_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&speed_) -
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(speed_));
 }
 
 SetMaximumSpeedRequest::~SetMaximumSpeedRequest() {
@@ -7978,7 +8589,9 @@ void SetMaximumSpeedRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  speed_ = 0;
+  ::memset(&drone_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&speed_) -
+      reinterpret_cast<char*>(&drone_id_)) + sizeof(speed_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -7988,9 +8601,16 @@ const char* SetMaximumSpeedRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // float speed = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // float speed = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
           speed_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
@@ -8024,10 +8644,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // float speed = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // float speed = 2;
   if (!(this->_internal_speed() <= 0 && this->_internal_speed() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_speed(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_speed(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -8046,7 +8672,14 @@ size_t SetMaximumSpeedRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // float speed = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
+
+  // float speed = 2;
   if (!(this->_internal_speed() <= 0 && this->_internal_speed() >= 0)) {
     total_size += 1 + 4;
   }
@@ -8079,6 +8712,9 @@ void SetMaximumSpeedRequest::MergeFrom(const SetMaximumSpeedRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   if (!(from._internal_speed() <= 0 && from._internal_speed() >= 0)) {
     _internal_set_speed(from._internal_speed());
   }
@@ -8099,7 +8735,12 @@ bool SetMaximumSpeedRequest::IsInitialized() const {
 void SetMaximumSpeedRequest::InternalSwap(SetMaximumSpeedRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(speed_, other->speed_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetMaximumSpeedRequest, speed_)
+      + sizeof(SetMaximumSpeedRequest::speed_)
+      - PROTOBUF_FIELD_OFFSET(SetMaximumSpeedRequest, drone_id_)>(
+          reinterpret_cast<char*>(&drone_id_),
+          reinterpret_cast<char*>(&other->drone_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetMaximumSpeedRequest::GetMetadata() const {
@@ -8326,10 +8967,12 @@ GetReturnToLaunchAltitudeRequest::GetReturnToLaunchAltitudeRequest(::PROTOBUF_NA
 GetReturnToLaunchAltitudeRequest::GetReturnToLaunchAltitudeRequest(const GetReturnToLaunchAltitudeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.action.GetReturnToLaunchAltitudeRequest)
 }
 
 inline void GetReturnToLaunchAltitudeRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 GetReturnToLaunchAltitudeRequest::~GetReturnToLaunchAltitudeRequest() {
@@ -8359,6 +9002,7 @@ void GetReturnToLaunchAltitudeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -8367,6 +9011,16 @@ const char* GetReturnToLaunchAltitudeRequest::_InternalParse(const char* ptr, ::
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -8377,6 +9031,8 @@ const char* GetReturnToLaunchAltitudeRequest::_InternalParse(const char* ptr, ::
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -8391,6 +9047,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.action.GetReturnToLaunchAltitudeRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -8407,6 +9069,13 @@ size_t GetReturnToLaunchAltitudeRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -8436,6 +9105,9 @@ void GetReturnToLaunchAltitudeRequest::MergeFrom(const GetReturnToLaunchAltitude
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -8453,6 +9125,7 @@ bool GetReturnToLaunchAltitudeRequest::IsInitialized() const {
 void GetReturnToLaunchAltitudeRequest::InternalSwap(GetReturnToLaunchAltitudeRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetReturnToLaunchAltitudeRequest::GetMetadata() const {
@@ -8710,12 +9383,17 @@ SetReturnToLaunchAltitudeRequest::SetReturnToLaunchAltitudeRequest(::PROTOBUF_NA
 SetReturnToLaunchAltitudeRequest::SetReturnToLaunchAltitudeRequest(const SetReturnToLaunchAltitudeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  relative_altitude_m_ = from.relative_altitude_m_;
+  ::memcpy(&drone_id_, &from.drone_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&relative_altitude_m_) -
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(relative_altitude_m_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.action.SetReturnToLaunchAltitudeRequest)
 }
 
 inline void SetReturnToLaunchAltitudeRequest::SharedCtor() {
-relative_altitude_m_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&drone_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&relative_altitude_m_) -
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(relative_altitude_m_));
 }
 
 SetReturnToLaunchAltitudeRequest::~SetReturnToLaunchAltitudeRequest() {
@@ -8745,7 +9423,9 @@ void SetReturnToLaunchAltitudeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  relative_altitude_m_ = 0;
+  ::memset(&drone_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&relative_altitude_m_) -
+      reinterpret_cast<char*>(&drone_id_)) + sizeof(relative_altitude_m_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -8755,9 +9435,16 @@ const char* SetReturnToLaunchAltitudeRequest::_InternalParse(const char* ptr, ::
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // float relative_altitude_m = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // float relative_altitude_m = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
           relative_altitude_m_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
@@ -8791,10 +9478,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // float relative_altitude_m = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // float relative_altitude_m = 2;
   if (!(this->_internal_relative_altitude_m() <= 0 && this->_internal_relative_altitude_m() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_relative_altitude_m(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_relative_altitude_m(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -8813,7 +9506,14 @@ size_t SetReturnToLaunchAltitudeRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // float relative_altitude_m = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
+
+  // float relative_altitude_m = 2;
   if (!(this->_internal_relative_altitude_m() <= 0 && this->_internal_relative_altitude_m() >= 0)) {
     total_size += 1 + 4;
   }
@@ -8846,6 +9546,9 @@ void SetReturnToLaunchAltitudeRequest::MergeFrom(const SetReturnToLaunchAltitude
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   if (!(from._internal_relative_altitude_m() <= 0 && from._internal_relative_altitude_m() >= 0)) {
     _internal_set_relative_altitude_m(from._internal_relative_altitude_m());
   }
@@ -8866,7 +9569,12 @@ bool SetReturnToLaunchAltitudeRequest::IsInitialized() const {
 void SetReturnToLaunchAltitudeRequest::InternalSwap(SetReturnToLaunchAltitudeRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(relative_altitude_m_, other->relative_altitude_m_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetReturnToLaunchAltitudeRequest, relative_altitude_m_)
+      + sizeof(SetReturnToLaunchAltitudeRequest::relative_altitude_m_)
+      - PROTOBUF_FIELD_OFFSET(SetReturnToLaunchAltitudeRequest, drone_id_)>(
+          reinterpret_cast<char*>(&drone_id_),
+          reinterpret_cast<char*>(&other->drone_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetReturnToLaunchAltitudeRequest::GetMetadata() const {
@@ -9093,12 +9801,17 @@ SetCurrentSpeedRequest::SetCurrentSpeedRequest(::PROTOBUF_NAMESPACE_ID::Arena* a
 SetCurrentSpeedRequest::SetCurrentSpeedRequest(const SetCurrentSpeedRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  speed_m_s_ = from.speed_m_s_;
+  ::memcpy(&drone_id_, &from.drone_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&speed_m_s_) -
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(speed_m_s_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.action.SetCurrentSpeedRequest)
 }
 
 inline void SetCurrentSpeedRequest::SharedCtor() {
-speed_m_s_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&drone_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&speed_m_s_) -
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(speed_m_s_));
 }
 
 SetCurrentSpeedRequest::~SetCurrentSpeedRequest() {
@@ -9128,7 +9841,9 @@ void SetCurrentSpeedRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  speed_m_s_ = 0;
+  ::memset(&drone_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&speed_m_s_) -
+      reinterpret_cast<char*>(&drone_id_)) + sizeof(speed_m_s_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -9138,9 +9853,16 @@ const char* SetCurrentSpeedRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // float speed_m_s = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // float speed_m_s = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
           speed_m_s_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
@@ -9174,10 +9896,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // float speed_m_s = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // float speed_m_s = 2;
   if (!(this->_internal_speed_m_s() <= 0 && this->_internal_speed_m_s() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_speed_m_s(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_speed_m_s(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -9196,7 +9924,14 @@ size_t SetCurrentSpeedRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // float speed_m_s = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
+
+  // float speed_m_s = 2;
   if (!(this->_internal_speed_m_s() <= 0 && this->_internal_speed_m_s() >= 0)) {
     total_size += 1 + 4;
   }
@@ -9229,6 +9964,9 @@ void SetCurrentSpeedRequest::MergeFrom(const SetCurrentSpeedRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   if (!(from._internal_speed_m_s() <= 0 && from._internal_speed_m_s() >= 0)) {
     _internal_set_speed_m_s(from._internal_speed_m_s());
   }
@@ -9249,7 +9987,12 @@ bool SetCurrentSpeedRequest::IsInitialized() const {
 void SetCurrentSpeedRequest::InternalSwap(SetCurrentSpeedRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(speed_m_s_, other->speed_m_s_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetCurrentSpeedRequest, speed_m_s_)
+      + sizeof(SetCurrentSpeedRequest::speed_m_s_)
+      - PROTOBUF_FIELD_OFFSET(SetCurrentSpeedRequest, drone_id_)>(
+          reinterpret_cast<char*>(&drone_id_),
+          reinterpret_cast<char*>(&other->drone_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetCurrentSpeedRequest::GetMetadata() const {

@@ -243,6 +243,18 @@ class StartPositionControlRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.manual_control.StartPositionControlRequest)
  private:
   class _Internal;
@@ -250,6 +262,7 @@ class StartPositionControlRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_manual_5fcontrol_2fmanual_5fcontrol_2eproto;
 };
@@ -517,6 +530,18 @@ class StartAltitudeControlRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.manual_control.StartAltitudeControlRequest)
  private:
   class _Internal;
@@ -524,6 +549,7 @@ class StartAltitudeControlRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_manual_5fcontrol_2fmanual_5fcontrol_2eproto;
 };
@@ -792,12 +818,22 @@ class SetManualControlInputRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kXFieldNumber = 1,
-    kYFieldNumber = 2,
-    kZFieldNumber = 3,
-    kRFieldNumber = 4,
+    kDroneIdFieldNumber = 1,
+    kXFieldNumber = 2,
+    kYFieldNumber = 3,
+    kZFieldNumber = 4,
+    kRFieldNumber = 5,
   };
-  // float x = 1;
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // float x = 2;
   void clear_x();
   float x() const;
   void set_x(float value);
@@ -806,7 +842,7 @@ class SetManualControlInputRequest final :
   void _internal_set_x(float value);
   public:
 
-  // float y = 2;
+  // float y = 3;
   void clear_y();
   float y() const;
   void set_y(float value);
@@ -815,7 +851,7 @@ class SetManualControlInputRequest final :
   void _internal_set_y(float value);
   public:
 
-  // float z = 3;
+  // float z = 4;
   void clear_z();
   float z() const;
   void set_z(float value);
@@ -824,7 +860,7 @@ class SetManualControlInputRequest final :
   void _internal_set_z(float value);
   public:
 
-  // float r = 4;
+  // float r = 5;
   void clear_r();
   float r() const;
   void set_r(float value);
@@ -840,6 +876,7 @@ class SetManualControlInputRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   float x_;
   float y_;
   float z_;
@@ -1205,6 +1242,26 @@ class ManualControlResult final :
 #endif  // __GNUC__
 // StartPositionControlRequest
 
+// int32 drone_id = 1;
+inline void StartPositionControlRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 StartPositionControlRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 StartPositionControlRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.manual_control.StartPositionControlRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void StartPositionControlRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void StartPositionControlRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.manual_control.StartPositionControlRequest.drone_id)
+}
+
 // -------------------------------------------------------------------
 
 // StartPositionControlResponse
@@ -1302,6 +1359,26 @@ inline void StartPositionControlResponse::set_allocated_manual_control_result(::
 // -------------------------------------------------------------------
 
 // StartAltitudeControlRequest
+
+// int32 drone_id = 1;
+inline void StartAltitudeControlRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 StartAltitudeControlRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 StartAltitudeControlRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.manual_control.StartAltitudeControlRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void StartAltitudeControlRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void StartAltitudeControlRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.manual_control.StartAltitudeControlRequest.drone_id)
+}
 
 // -------------------------------------------------------------------
 
@@ -1401,7 +1478,27 @@ inline void StartAltitudeControlResponse::set_allocated_manual_control_result(::
 
 // SetManualControlInputRequest
 
-// float x = 1;
+// int32 drone_id = 1;
+inline void SetManualControlInputRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetManualControlInputRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetManualControlInputRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.manual_control.SetManualControlInputRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SetManualControlInputRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SetManualControlInputRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.manual_control.SetManualControlInputRequest.drone_id)
+}
+
+// float x = 2;
 inline void SetManualControlInputRequest::clear_x() {
   x_ = 0;
 }
@@ -1421,7 +1518,7 @@ inline void SetManualControlInputRequest::set_x(float value) {
   // @@protoc_insertion_point(field_set:mavsdk.rpc.manual_control.SetManualControlInputRequest.x)
 }
 
-// float y = 2;
+// float y = 3;
 inline void SetManualControlInputRequest::clear_y() {
   y_ = 0;
 }
@@ -1441,7 +1538,7 @@ inline void SetManualControlInputRequest::set_y(float value) {
   // @@protoc_insertion_point(field_set:mavsdk.rpc.manual_control.SetManualControlInputRequest.y)
 }
 
-// float z = 3;
+// float z = 4;
 inline void SetManualControlInputRequest::clear_z() {
   z_ = 0;
 }
@@ -1461,7 +1558,7 @@ inline void SetManualControlInputRequest::set_z(float value) {
   // @@protoc_insertion_point(field_set:mavsdk.rpc.manual_control.SetManualControlInputRequest.z)
 }
 
-// float r = 4;
+// float r = 5;
 inline void SetManualControlInputRequest::clear_r() {
   r_ = 0;
 }

@@ -20,7 +20,8 @@ namespace mavsdk {
 namespace rpc {
 namespace calibration {
 constexpr SubscribeCalibrateGyroRequest::SubscribeCalibrateGyroRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeCalibrateGyroRequestDefaultTypeInternal {
   constexpr SubscribeCalibrateGyroRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -44,7 +45,8 @@ struct CalibrateGyroResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CalibrateGyroResponseDefaultTypeInternal _CalibrateGyroResponse_default_instance_;
 constexpr SubscribeCalibrateAccelerometerRequest::SubscribeCalibrateAccelerometerRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeCalibrateAccelerometerRequestDefaultTypeInternal {
   constexpr SubscribeCalibrateAccelerometerRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -68,7 +70,8 @@ struct CalibrateAccelerometerResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CalibrateAccelerometerResponseDefaultTypeInternal _CalibrateAccelerometerResponse_default_instance_;
 constexpr SubscribeCalibrateMagnetometerRequest::SubscribeCalibrateMagnetometerRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeCalibrateMagnetometerRequestDefaultTypeInternal {
   constexpr SubscribeCalibrateMagnetometerRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -92,7 +95,8 @@ struct CalibrateMagnetometerResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CalibrateMagnetometerResponseDefaultTypeInternal _CalibrateMagnetometerResponse_default_instance_;
 constexpr SubscribeCalibrateLevelHorizonRequest::SubscribeCalibrateLevelHorizonRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeCalibrateLevelHorizonRequestDefaultTypeInternal {
   constexpr SubscribeCalibrateLevelHorizonRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -116,7 +120,8 @@ struct CalibrateLevelHorizonResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CalibrateLevelHorizonResponseDefaultTypeInternal _CalibrateLevelHorizonResponse_default_instance_;
 constexpr SubscribeCalibrateGimbalAccelerometerRequest::SubscribeCalibrateGimbalAccelerometerRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeCalibrateGimbalAccelerometerRequestDefaultTypeInternal {
   constexpr SubscribeCalibrateGimbalAccelerometerRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -140,7 +145,8 @@ struct CalibrateGimbalAccelerometerResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CalibrateGimbalAccelerometerResponseDefaultTypeInternal _CalibrateGimbalAccelerometerResponse_default_instance_;
 constexpr CancelRequest::CancelRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct CancelRequestDefaultTypeInternal {
   constexpr CancelRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -204,6 +210,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_calibration_2fcalibration_2epr
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::calibration::SubscribeCalibrateGyroRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::calibration::CalibrateGyroResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -216,6 +223,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_calibration_2fcalibration_2epr
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::calibration::SubscribeCalibrateAccelerometerRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::calibration::CalibrateAccelerometerResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -228,6 +236,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_calibration_2fcalibration_2epr
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::calibration::SubscribeCalibrateMagnetometerRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::calibration::CalibrateMagnetometerResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -240,6 +249,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_calibration_2fcalibration_2epr
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::calibration::SubscribeCalibrateLevelHorizonRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::calibration::CalibrateLevelHorizonResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -252,6 +262,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_calibration_2fcalibration_2epr
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::calibration::SubscribeCalibrateGimbalAccelerometerRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::calibration::CalibrateGimbalAccelerometerResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -264,6 +275,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_calibration_2fcalibration_2epr
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::calibration::CancelRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::calibration::CancelResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -289,19 +301,19 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_calibration_2fcalibration_2epr
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::mavsdk::rpc::calibration::SubscribeCalibrateGyroRequest)},
-  { 5, -1, sizeof(::mavsdk::rpc::calibration::CalibrateGyroResponse)},
-  { 12, -1, sizeof(::mavsdk::rpc::calibration::SubscribeCalibrateAccelerometerRequest)},
-  { 17, -1, sizeof(::mavsdk::rpc::calibration::CalibrateAccelerometerResponse)},
-  { 24, -1, sizeof(::mavsdk::rpc::calibration::SubscribeCalibrateMagnetometerRequest)},
-  { 29, -1, sizeof(::mavsdk::rpc::calibration::CalibrateMagnetometerResponse)},
-  { 36, -1, sizeof(::mavsdk::rpc::calibration::SubscribeCalibrateLevelHorizonRequest)},
-  { 41, -1, sizeof(::mavsdk::rpc::calibration::CalibrateLevelHorizonResponse)},
-  { 48, -1, sizeof(::mavsdk::rpc::calibration::SubscribeCalibrateGimbalAccelerometerRequest)},
-  { 53, -1, sizeof(::mavsdk::rpc::calibration::CalibrateGimbalAccelerometerResponse)},
-  { 60, -1, sizeof(::mavsdk::rpc::calibration::CancelRequest)},
-  { 65, -1, sizeof(::mavsdk::rpc::calibration::CancelResponse)},
-  { 71, -1, sizeof(::mavsdk::rpc::calibration::CalibrationResult)},
-  { 78, -1, sizeof(::mavsdk::rpc::calibration::ProgressData)},
+  { 6, -1, sizeof(::mavsdk::rpc::calibration::CalibrateGyroResponse)},
+  { 13, -1, sizeof(::mavsdk::rpc::calibration::SubscribeCalibrateAccelerometerRequest)},
+  { 19, -1, sizeof(::mavsdk::rpc::calibration::CalibrateAccelerometerResponse)},
+  { 26, -1, sizeof(::mavsdk::rpc::calibration::SubscribeCalibrateMagnetometerRequest)},
+  { 32, -1, sizeof(::mavsdk::rpc::calibration::CalibrateMagnetometerResponse)},
+  { 39, -1, sizeof(::mavsdk::rpc::calibration::SubscribeCalibrateLevelHorizonRequest)},
+  { 45, -1, sizeof(::mavsdk::rpc::calibration::CalibrateLevelHorizonResponse)},
+  { 52, -1, sizeof(::mavsdk::rpc::calibration::SubscribeCalibrateGimbalAccelerometerRequest)},
+  { 58, -1, sizeof(::mavsdk::rpc::calibration::CalibrateGimbalAccelerometerResponse)},
+  { 65, -1, sizeof(::mavsdk::rpc::calibration::CancelRequest)},
+  { 71, -1, sizeof(::mavsdk::rpc::calibration::CancelResponse)},
+  { 77, -1, sizeof(::mavsdk::rpc::calibration::CalibrationResult)},
+  { 84, -1, sizeof(::mavsdk::rpc::calibration::ProgressData)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -323,81 +335,83 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_calibration_2fcalibration_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\035calibration/calibration.proto\022\026mavsdk."
-  "rpc.calibration\032\024mavsdk_options.proto\"\037\n"
-  "\035SubscribeCalibrateGyroRequest\"\233\001\n\025Calib"
-  "rateGyroResponse\022E\n\022calibration_result\030\001"
-  " \001(\0132).mavsdk.rpc.calibration.Calibratio"
-  "nResult\022;\n\rprogress_data\030\002 \001(\0132$.mavsdk."
-  "rpc.calibration.ProgressData\"(\n&Subscrib"
-  "eCalibrateAccelerometerRequest\"\244\001\n\036Calib"
-  "rateAccelerometerResponse\022E\n\022calibration"
-  "_result\030\001 \001(\0132).mavsdk.rpc.calibration.C"
-  "alibrationResult\022;\n\rprogress_data\030\002 \001(\0132"
-  "$.mavsdk.rpc.calibration.ProgressData\"\'\n"
-  "%SubscribeCalibrateMagnetometerRequest\"\243"
-  "\001\n\035CalibrateMagnetometerResponse\022E\n\022cali"
-  "bration_result\030\001 \001(\0132).mavsdk.rpc.calibr"
-  "ation.CalibrationResult\022;\n\rprogress_data"
-  "\030\002 \001(\0132$.mavsdk.rpc.calibration.Progress"
-  "Data\"\'\n%SubscribeCalibrateLevelHorizonRe"
-  "quest\"\243\001\n\035CalibrateLevelHorizonResponse\022"
-  "E\n\022calibration_result\030\001 \001(\0132).mavsdk.rpc"
-  ".calibration.CalibrationResult\022;\n\rprogre"
-  "ss_data\030\002 \001(\0132$.mavsdk.rpc.calibration.P"
-  "rogressData\".\n,SubscribeCalibrateGimbalA"
-  "ccelerometerRequest\"\252\001\n$CalibrateGimbalA"
-  "ccelerometerResponse\022E\n\022calibration_resu"
-  "lt\030\001 \001(\0132).mavsdk.rpc.calibration.Calibr"
-  "ationResult\022;\n\rprogress_data\030\002 \001(\0132$.mav"
-  "sdk.rpc.calibration.ProgressData\"\017\n\rCanc"
-  "elRequest\"W\n\016CancelResponse\022E\n\022calibrati"
-  "on_result\030\001 \001(\0132).mavsdk.rpc.calibration"
-  ".CalibrationResult\"\372\002\n\021CalibrationResult"
-  "\022@\n\006result\030\001 \001(\01620.mavsdk.rpc.calibratio"
-  "n.CalibrationResult.Result\022\022\n\nresult_str"
-  "\030\002 \001(\t\"\216\002\n\006Result\022\022\n\016RESULT_UNKNOWN\020\000\022\022\n"
-  "\016RESULT_SUCCESS\020\001\022\017\n\013RESULT_NEXT\020\002\022\021\n\rRE"
-  "SULT_FAILED\020\003\022\024\n\020RESULT_NO_SYSTEM\020\004\022\033\n\027R"
-  "ESULT_CONNECTION_ERROR\020\005\022\017\n\013RESULT_BUSY\020"
-  "\006\022\031\n\025RESULT_COMMAND_DENIED\020\007\022\022\n\016RESULT_T"
-  "IMEOUT\020\010\022\024\n\020RESULT_CANCELLED\020\t\022\027\n\023RESULT"
-  "_FAILED_ARMED\020\n\022\026\n\022RESULT_UNSUPPORTED\020\013\""
-  "\203\001\n\014ProgressData\022\037\n\014has_progress\030\001 \001(\010B\t"
-  "\202\265\030\005false\022\031\n\010progress\030\002 \001(\002B\007\202\265\030\003NaN\022\"\n\017"
-  "has_status_text\030\003 \001(\010B\t\202\265\030\005false\022\023\n\013stat"
-  "us_text\030\004 \001(\t2\254\007\n\022CalibrationService\022\212\001\n"
-  "\026SubscribeCalibrateGyro\0225.mavsdk.rpc.cal"
-  "ibration.SubscribeCalibrateGyroRequest\032-"
-  ".mavsdk.rpc.calibration.CalibrateGyroRes"
-  "ponse\"\010\200\265\030\000\210\265\030\0010\001\022\245\001\n\037SubscribeCalibrate"
-  "Accelerometer\022>.mavsdk.rpc.calibration.S"
-  "ubscribeCalibrateAccelerometerRequest\0326."
-  "mavsdk.rpc.calibration.CalibrateAccelero"
-  "meterResponse\"\010\200\265\030\000\210\265\030\0010\001\022\242\001\n\036SubscribeC"
-  "alibrateMagnetometer\022=.mavsdk.rpc.calibr"
-  "ation.SubscribeCalibrateMagnetometerRequ"
-  "est\0325.mavsdk.rpc.calibration.CalibrateMa"
-  "gnetometerResponse\"\010\200\265\030\000\210\265\030\0010\001\022\242\001\n\036Subsc"
-  "ribeCalibrateLevelHorizon\022=.mavsdk.rpc.c"
-  "alibration.SubscribeCalibrateLevelHorizo"
-  "nRequest\0325.mavsdk.rpc.calibration.Calibr"
-  "ateLevelHorizonResponse\"\010\200\265\030\000\210\265\030\0010\001\022\267\001\n%"
-  "SubscribeCalibrateGimbalAccelerometer\022D."
-  "mavsdk.rpc.calibration.SubscribeCalibrat"
-  "eGimbalAccelerometerRequest\032<.mavsdk.rpc"
-  ".calibration.CalibrateGimbalAcceleromete"
-  "rResponse\"\010\200\265\030\000\210\265\030\0010\001\022]\n\006Cancel\022%.mavsdk"
-  ".rpc.calibration.CancelRequest\032&.mavsdk."
-  "rpc.calibration.CancelResponse\"\004\200\265\030\001B)\n\025"
-  "io.mavsdk.calibrationB\020CalibrationProtob"
-  "\006proto3"
+  "rpc.calibration\032\024mavsdk_options.proto\"1\n"
+  "\035SubscribeCalibrateGyroRequest\022\020\n\010drone_"
+  "id\030\001 \001(\005\"\233\001\n\025CalibrateGyroResponse\022E\n\022ca"
+  "libration_result\030\001 \001(\0132).mavsdk.rpc.cali"
+  "bration.CalibrationResult\022;\n\rprogress_da"
+  "ta\030\002 \001(\0132$.mavsdk.rpc.calibration.Progre"
+  "ssData\":\n&SubscribeCalibrateAcceleromete"
+  "rRequest\022\020\n\010drone_id\030\001 \001(\005\"\244\001\n\036Calibrate"
+  "AccelerometerResponse\022E\n\022calibration_res"
+  "ult\030\001 \001(\0132).mavsdk.rpc.calibration.Calib"
+  "rationResult\022;\n\rprogress_data\030\002 \001(\0132$.ma"
+  "vsdk.rpc.calibration.ProgressData\"9\n%Sub"
+  "scribeCalibrateMagnetometerRequest\022\020\n\010dr"
+  "one_id\030\001 \001(\005\"\243\001\n\035CalibrateMagnetometerRe"
+  "sponse\022E\n\022calibration_result\030\001 \001(\0132).mav"
+  "sdk.rpc.calibration.CalibrationResult\022;\n"
+  "\rprogress_data\030\002 \001(\0132$.mavsdk.rpc.calibr"
+  "ation.ProgressData\"9\n%SubscribeCalibrate"
+  "LevelHorizonRequest\022\020\n\010drone_id\030\001 \001(\005\"\243\001"
+  "\n\035CalibrateLevelHorizonResponse\022E\n\022calib"
+  "ration_result\030\001 \001(\0132).mavsdk.rpc.calibra"
+  "tion.CalibrationResult\022;\n\rprogress_data\030"
+  "\002 \001(\0132$.mavsdk.rpc.calibration.ProgressD"
+  "ata\"@\n,SubscribeCalibrateGimbalAccelerom"
+  "eterRequest\022\020\n\010drone_id\030\001 \001(\005\"\252\001\n$Calibr"
+  "ateGimbalAccelerometerResponse\022E\n\022calibr"
+  "ation_result\030\001 \001(\0132).mavsdk.rpc.calibrat"
+  "ion.CalibrationResult\022;\n\rprogress_data\030\002"
+  " \001(\0132$.mavsdk.rpc.calibration.ProgressDa"
+  "ta\"!\n\rCancelRequest\022\020\n\010drone_id\030\001 \001(\005\"W\n"
+  "\016CancelResponse\022E\n\022calibration_result\030\001 "
+  "\001(\0132).mavsdk.rpc.calibration.Calibration"
+  "Result\"\372\002\n\021CalibrationResult\022@\n\006result\030\001"
+  " \001(\01620.mavsdk.rpc.calibration.Calibratio"
+  "nResult.Result\022\022\n\nresult_str\030\002 \001(\t\"\216\002\n\006R"
+  "esult\022\022\n\016RESULT_UNKNOWN\020\000\022\022\n\016RESULT_SUCC"
+  "ESS\020\001\022\017\n\013RESULT_NEXT\020\002\022\021\n\rRESULT_FAILED\020"
+  "\003\022\024\n\020RESULT_NO_SYSTEM\020\004\022\033\n\027RESULT_CONNEC"
+  "TION_ERROR\020\005\022\017\n\013RESULT_BUSY\020\006\022\031\n\025RESULT_"
+  "COMMAND_DENIED\020\007\022\022\n\016RESULT_TIMEOUT\020\010\022\024\n\020"
+  "RESULT_CANCELLED\020\t\022\027\n\023RESULT_FAILED_ARME"
+  "D\020\n\022\026\n\022RESULT_UNSUPPORTED\020\013\"\203\001\n\014Progress"
+  "Data\022\037\n\014has_progress\030\001 \001(\010B\t\202\265\030\005false\022\031\n"
+  "\010progress\030\002 \001(\002B\007\202\265\030\003NaN\022\"\n\017has_status_t"
+  "ext\030\003 \001(\010B\t\202\265\030\005false\022\023\n\013status_text\030\004 \001("
+  "\t2\254\007\n\022CalibrationService\022\212\001\n\026SubscribeCa"
+  "librateGyro\0225.mavsdk.rpc.calibration.Sub"
+  "scribeCalibrateGyroRequest\032-.mavsdk.rpc."
+  "calibration.CalibrateGyroResponse\"\010\200\265\030\000\210"
+  "\265\030\0010\001\022\245\001\n\037SubscribeCalibrateAcceleromete"
+  "r\022>.mavsdk.rpc.calibration.SubscribeCali"
+  "brateAccelerometerRequest\0326.mavsdk.rpc.c"
+  "alibration.CalibrateAccelerometerRespons"
+  "e\"\010\200\265\030\000\210\265\030\0010\001\022\242\001\n\036SubscribeCalibrateMagn"
+  "etometer\022=.mavsdk.rpc.calibration.Subscr"
+  "ibeCalibrateMagnetometerRequest\0325.mavsdk"
+  ".rpc.calibration.CalibrateMagnetometerRe"
+  "sponse\"\010\200\265\030\000\210\265\030\0010\001\022\242\001\n\036SubscribeCalibrat"
+  "eLevelHorizon\022=.mavsdk.rpc.calibration.S"
+  "ubscribeCalibrateLevelHorizonRequest\0325.m"
+  "avsdk.rpc.calibration.CalibrateLevelHori"
+  "zonResponse\"\010\200\265\030\000\210\265\030\0010\001\022\267\001\n%SubscribeCal"
+  "ibrateGimbalAccelerometer\022D.mavsdk.rpc.c"
+  "alibration.SubscribeCalibrateGimbalAccel"
+  "erometerRequest\032<.mavsdk.rpc.calibration"
+  ".CalibrateGimbalAccelerometerResponse\"\010\200"
+  "\265\030\000\210\265\030\0010\001\022]\n\006Cancel\022%.mavsdk.rpc.calibra"
+  "tion.CancelRequest\032&.mavsdk.rpc.calibrat"
+  "ion.CancelResponse\"\004\200\265\030\001B)\n\025io.mavsdk.ca"
+  "librationB\020CalibrationProtob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_calibration_2fcalibration_2eproto_deps[1] = {
   &::descriptor_table_mavsdk_5foptions_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_calibration_2fcalibration_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_calibration_2fcalibration_2eproto = {
-  false, false, 2727, descriptor_table_protodef_calibration_2fcalibration_2eproto, "calibration/calibration.proto", 
+  false, false, 2835, descriptor_table_protodef_calibration_2fcalibration_2eproto, "calibration/calibration.proto", 
   &descriptor_table_calibration_2fcalibration_2eproto_once, descriptor_table_calibration_2fcalibration_2eproto_deps, 1, 14,
   schemas, file_default_instances, TableStruct_calibration_2fcalibration_2eproto::offsets,
   file_level_metadata_calibration_2fcalibration_2eproto, file_level_enum_descriptors_calibration_2fcalibration_2eproto, file_level_service_descriptors_calibration_2fcalibration_2eproto,
@@ -471,10 +485,12 @@ SubscribeCalibrateGyroRequest::SubscribeCalibrateGyroRequest(::PROTOBUF_NAMESPAC
 SubscribeCalibrateGyroRequest::SubscribeCalibrateGyroRequest(const SubscribeCalibrateGyroRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.calibration.SubscribeCalibrateGyroRequest)
 }
 
 inline void SubscribeCalibrateGyroRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeCalibrateGyroRequest::~SubscribeCalibrateGyroRequest() {
@@ -504,6 +520,7 @@ void SubscribeCalibrateGyroRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -512,6 +529,16 @@ const char* SubscribeCalibrateGyroRequest::_InternalParse(const char* ptr, ::PRO
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -522,6 +549,8 @@ const char* SubscribeCalibrateGyroRequest::_InternalParse(const char* ptr, ::PRO
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -536,6 +565,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.calibration.SubscribeCalibrateGyroRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -552,6 +587,13 @@ size_t SubscribeCalibrateGyroRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -581,6 +623,9 @@ void SubscribeCalibrateGyroRequest::MergeFrom(const SubscribeCalibrateGyroReques
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -598,6 +643,7 @@ bool SubscribeCalibrateGyroRequest::IsInitialized() const {
 void SubscribeCalibrateGyroRequest::InternalSwap(SubscribeCalibrateGyroRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeCalibrateGyroRequest::GetMetadata() const {
@@ -872,10 +918,12 @@ SubscribeCalibrateAccelerometerRequest::SubscribeCalibrateAccelerometerRequest(:
 SubscribeCalibrateAccelerometerRequest::SubscribeCalibrateAccelerometerRequest(const SubscribeCalibrateAccelerometerRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.calibration.SubscribeCalibrateAccelerometerRequest)
 }
 
 inline void SubscribeCalibrateAccelerometerRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeCalibrateAccelerometerRequest::~SubscribeCalibrateAccelerometerRequest() {
@@ -905,6 +953,7 @@ void SubscribeCalibrateAccelerometerRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -913,6 +962,16 @@ const char* SubscribeCalibrateAccelerometerRequest::_InternalParse(const char* p
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -923,6 +982,8 @@ const char* SubscribeCalibrateAccelerometerRequest::_InternalParse(const char* p
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -937,6 +998,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.calibration.SubscribeCalibrateAccelerometerRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -953,6 +1020,13 @@ size_t SubscribeCalibrateAccelerometerRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -982,6 +1056,9 @@ void SubscribeCalibrateAccelerometerRequest::MergeFrom(const SubscribeCalibrateA
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -999,6 +1076,7 @@ bool SubscribeCalibrateAccelerometerRequest::IsInitialized() const {
 void SubscribeCalibrateAccelerometerRequest::InternalSwap(SubscribeCalibrateAccelerometerRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeCalibrateAccelerometerRequest::GetMetadata() const {
@@ -1273,10 +1351,12 @@ SubscribeCalibrateMagnetometerRequest::SubscribeCalibrateMagnetometerRequest(::P
 SubscribeCalibrateMagnetometerRequest::SubscribeCalibrateMagnetometerRequest(const SubscribeCalibrateMagnetometerRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.calibration.SubscribeCalibrateMagnetometerRequest)
 }
 
 inline void SubscribeCalibrateMagnetometerRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeCalibrateMagnetometerRequest::~SubscribeCalibrateMagnetometerRequest() {
@@ -1306,6 +1386,7 @@ void SubscribeCalibrateMagnetometerRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1314,6 +1395,16 @@ const char* SubscribeCalibrateMagnetometerRequest::_InternalParse(const char* pt
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -1324,6 +1415,8 @@ const char* SubscribeCalibrateMagnetometerRequest::_InternalParse(const char* pt
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -1338,6 +1431,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.calibration.SubscribeCalibrateMagnetometerRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -1354,6 +1453,13 @@ size_t SubscribeCalibrateMagnetometerRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -1383,6 +1489,9 @@ void SubscribeCalibrateMagnetometerRequest::MergeFrom(const SubscribeCalibrateMa
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1400,6 +1509,7 @@ bool SubscribeCalibrateMagnetometerRequest::IsInitialized() const {
 void SubscribeCalibrateMagnetometerRequest::InternalSwap(SubscribeCalibrateMagnetometerRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeCalibrateMagnetometerRequest::GetMetadata() const {
@@ -1674,10 +1784,12 @@ SubscribeCalibrateLevelHorizonRequest::SubscribeCalibrateLevelHorizonRequest(::P
 SubscribeCalibrateLevelHorizonRequest::SubscribeCalibrateLevelHorizonRequest(const SubscribeCalibrateLevelHorizonRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.calibration.SubscribeCalibrateLevelHorizonRequest)
 }
 
 inline void SubscribeCalibrateLevelHorizonRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeCalibrateLevelHorizonRequest::~SubscribeCalibrateLevelHorizonRequest() {
@@ -1707,6 +1819,7 @@ void SubscribeCalibrateLevelHorizonRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1715,6 +1828,16 @@ const char* SubscribeCalibrateLevelHorizonRequest::_InternalParse(const char* pt
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -1725,6 +1848,8 @@ const char* SubscribeCalibrateLevelHorizonRequest::_InternalParse(const char* pt
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -1739,6 +1864,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.calibration.SubscribeCalibrateLevelHorizonRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -1755,6 +1886,13 @@ size_t SubscribeCalibrateLevelHorizonRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -1784,6 +1922,9 @@ void SubscribeCalibrateLevelHorizonRequest::MergeFrom(const SubscribeCalibrateLe
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1801,6 +1942,7 @@ bool SubscribeCalibrateLevelHorizonRequest::IsInitialized() const {
 void SubscribeCalibrateLevelHorizonRequest::InternalSwap(SubscribeCalibrateLevelHorizonRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeCalibrateLevelHorizonRequest::GetMetadata() const {
@@ -2075,10 +2217,12 @@ SubscribeCalibrateGimbalAccelerometerRequest::SubscribeCalibrateGimbalAccelerome
 SubscribeCalibrateGimbalAccelerometerRequest::SubscribeCalibrateGimbalAccelerometerRequest(const SubscribeCalibrateGimbalAccelerometerRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.calibration.SubscribeCalibrateGimbalAccelerometerRequest)
 }
 
 inline void SubscribeCalibrateGimbalAccelerometerRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeCalibrateGimbalAccelerometerRequest::~SubscribeCalibrateGimbalAccelerometerRequest() {
@@ -2108,6 +2252,7 @@ void SubscribeCalibrateGimbalAccelerometerRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2116,6 +2261,16 @@ const char* SubscribeCalibrateGimbalAccelerometerRequest::_InternalParse(const c
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -2126,6 +2281,8 @@ const char* SubscribeCalibrateGimbalAccelerometerRequest::_InternalParse(const c
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -2140,6 +2297,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.calibration.SubscribeCalibrateGimbalAccelerometerRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -2156,6 +2319,13 @@ size_t SubscribeCalibrateGimbalAccelerometerRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -2185,6 +2355,9 @@ void SubscribeCalibrateGimbalAccelerometerRequest::MergeFrom(const SubscribeCali
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2202,6 +2375,7 @@ bool SubscribeCalibrateGimbalAccelerometerRequest::IsInitialized() const {
 void SubscribeCalibrateGimbalAccelerometerRequest::InternalSwap(SubscribeCalibrateGimbalAccelerometerRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeCalibrateGimbalAccelerometerRequest::GetMetadata() const {
@@ -2476,10 +2650,12 @@ CancelRequest::CancelRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 CancelRequest::CancelRequest(const CancelRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.calibration.CancelRequest)
 }
 
 inline void CancelRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 CancelRequest::~CancelRequest() {
@@ -2509,6 +2685,7 @@ void CancelRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2517,6 +2694,16 @@ const char* CancelRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -2527,6 +2714,8 @@ const char* CancelRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -2541,6 +2730,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.calibration.CancelRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -2557,6 +2752,13 @@ size_t CancelRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -2586,6 +2788,9 @@ void CancelRequest::MergeFrom(const CancelRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2603,6 +2808,7 @@ bool CancelRequest::IsInitialized() const {
 void CancelRequest::InternalSwap(CancelRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CancelRequest::GetMetadata() const {

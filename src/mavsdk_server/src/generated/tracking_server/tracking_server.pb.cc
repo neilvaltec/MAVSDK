@@ -21,7 +21,8 @@ namespace rpc {
 namespace tracking_server {
 constexpr SetTrackingPointStatusRequest::SetTrackingPointStatusRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : tracked_point_(nullptr){}
+  : tracked_point_(nullptr)
+  , drone_id_(0){}
 struct SetTrackingPointStatusRequestDefaultTypeInternal {
   constexpr SetTrackingPointStatusRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -44,7 +45,8 @@ struct SetTrackingPointStatusResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetTrackingPointStatusResponseDefaultTypeInternal _SetTrackingPointStatusResponse_default_instance_;
 constexpr SetTrackingRectangleStatusRequest::SetTrackingRectangleStatusRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : tracked_rectangle_(nullptr){}
+  : tracked_rectangle_(nullptr)
+  , drone_id_(0){}
 struct SetTrackingRectangleStatusRequestDefaultTypeInternal {
   constexpr SetTrackingRectangleStatusRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -66,7 +68,8 @@ struct SetTrackingRectangleStatusResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetTrackingRectangleStatusResponseDefaultTypeInternal _SetTrackingRectangleStatusResponse_default_instance_;
 constexpr SetTrackingOffStatusRequest::SetTrackingOffStatusRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SetTrackingOffStatusRequestDefaultTypeInternal {
   constexpr SetTrackingOffStatusRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -88,7 +91,8 @@ struct SetTrackingOffStatusResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetTrackingOffStatusResponseDefaultTypeInternal _SetTrackingOffStatusResponse_default_instance_;
 constexpr SubscribeTrackingPointCommandRequest::SubscribeTrackingPointCommandRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeTrackingPointCommandRequestDefaultTypeInternal {
   constexpr SubscribeTrackingPointCommandRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -111,7 +115,8 @@ struct TrackingPointCommandResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TrackingPointCommandResponseDefaultTypeInternal _TrackingPointCommandResponse_default_instance_;
 constexpr SubscribeTrackingRectangleCommandRequest::SubscribeTrackingRectangleCommandRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeTrackingRectangleCommandRequestDefaultTypeInternal {
   constexpr SubscribeTrackingRectangleCommandRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -134,7 +139,8 @@ struct TrackingRectangleCommandResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TrackingRectangleCommandResponseDefaultTypeInternal _TrackingRectangleCommandResponse_default_instance_;
 constexpr SubscribeTrackingOffCommandRequest::SubscribeTrackingOffCommandRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeTrackingOffCommandRequestDefaultTypeInternal {
   constexpr SubscribeTrackingOffCommandRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -158,7 +164,8 @@ struct TrackingOffCommandResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TrackingOffCommandResponseDefaultTypeInternal _TrackingOffCommandResponse_default_instance_;
 constexpr RespondTrackingPointCommandRequest::RespondTrackingPointCommandRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : command_answer_(0)
+  : drone_id_(0)
+  , command_answer_(0)
 {}
 struct RespondTrackingPointCommandRequestDefaultTypeInternal {
   constexpr RespondTrackingPointCommandRequestDefaultTypeInternal()
@@ -183,7 +190,8 @@ struct RespondTrackingPointCommandResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RespondTrackingPointCommandResponseDefaultTypeInternal _RespondTrackingPointCommandResponse_default_instance_;
 constexpr RespondTrackingRectangleCommandRequest::RespondTrackingRectangleCommandRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : command_answer_(0)
+  : drone_id_(0)
+  , command_answer_(0)
 {}
 struct RespondTrackingRectangleCommandRequestDefaultTypeInternal {
   constexpr RespondTrackingRectangleCommandRequestDefaultTypeInternal()
@@ -208,7 +216,8 @@ struct RespondTrackingRectangleCommandResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RespondTrackingRectangleCommandResponseDefaultTypeInternal _RespondTrackingRectangleCommandResponse_default_instance_;
 constexpr RespondTrackingOffCommandRequest::RespondTrackingOffCommandRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : command_answer_(0)
+  : drone_id_(0)
+  , command_answer_(0)
 {}
 struct RespondTrackingOffCommandRequestDefaultTypeInternal {
   constexpr RespondTrackingOffCommandRequestDefaultTypeInternal()
@@ -287,6 +296,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_tracking_5fserver_2ftracking_5
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::tracking_server::SetTrackingPointStatusRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::tracking_server::SetTrackingPointStatusRequest, tracked_point_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::tracking_server::SetTrackingPointStatusResponse, _internal_metadata_),
@@ -298,6 +308,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_tracking_5fserver_2ftracking_5
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::tracking_server::SetTrackingRectangleStatusRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::tracking_server::SetTrackingRectangleStatusRequest, tracked_rectangle_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::tracking_server::SetTrackingRectangleStatusResponse, _internal_metadata_),
@@ -309,6 +320,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_tracking_5fserver_2ftracking_5
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::tracking_server::SetTrackingOffStatusRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::tracking_server::SetTrackingOffStatusResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -319,6 +331,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_tracking_5fserver_2ftracking_5
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::tracking_server::SubscribeTrackingPointCommandRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::tracking_server::TrackingPointCommandResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -330,6 +343,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_tracking_5fserver_2ftracking_5
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::tracking_server::SubscribeTrackingRectangleCommandRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::tracking_server::TrackingRectangleCommandResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -341,6 +355,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_tracking_5fserver_2ftracking_5
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::tracking_server::SubscribeTrackingOffCommandRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::tracking_server::TrackingOffCommandResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -352,6 +367,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_tracking_5fserver_2ftracking_5
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::tracking_server::RespondTrackingPointCommandRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::tracking_server::RespondTrackingPointCommandRequest, command_answer_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::tracking_server::RespondTrackingPointCommandResponse, _internal_metadata_),
@@ -364,6 +380,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_tracking_5fserver_2ftracking_5
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::tracking_server::RespondTrackingRectangleCommandRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::tracking_server::RespondTrackingRectangleCommandRequest, command_answer_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::tracking_server::RespondTrackingRectangleCommandResponse, _internal_metadata_),
@@ -376,6 +393,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_tracking_5fserver_2ftracking_5
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::tracking_server::RespondTrackingOffCommandRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::tracking_server::RespondTrackingOffCommandRequest, command_answer_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::tracking_server::RespondTrackingOffCommandResponse, _internal_metadata_),
@@ -410,26 +428,26 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_tracking_5fserver_2ftracking_5
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::mavsdk::rpc::tracking_server::SetTrackingPointStatusRequest)},
-  { 6, -1, sizeof(::mavsdk::rpc::tracking_server::SetTrackingPointStatusResponse)},
-  { 11, -1, sizeof(::mavsdk::rpc::tracking_server::SetTrackingRectangleStatusRequest)},
-  { 17, -1, sizeof(::mavsdk::rpc::tracking_server::SetTrackingRectangleStatusResponse)},
-  { 22, -1, sizeof(::mavsdk::rpc::tracking_server::SetTrackingOffStatusRequest)},
-  { 27, -1, sizeof(::mavsdk::rpc::tracking_server::SetTrackingOffStatusResponse)},
-  { 32, -1, sizeof(::mavsdk::rpc::tracking_server::SubscribeTrackingPointCommandRequest)},
-  { 37, -1, sizeof(::mavsdk::rpc::tracking_server::TrackingPointCommandResponse)},
-  { 43, -1, sizeof(::mavsdk::rpc::tracking_server::SubscribeTrackingRectangleCommandRequest)},
-  { 48, -1, sizeof(::mavsdk::rpc::tracking_server::TrackingRectangleCommandResponse)},
-  { 54, -1, sizeof(::mavsdk::rpc::tracking_server::SubscribeTrackingOffCommandRequest)},
-  { 59, -1, sizeof(::mavsdk::rpc::tracking_server::TrackingOffCommandResponse)},
-  { 65, -1, sizeof(::mavsdk::rpc::tracking_server::RespondTrackingPointCommandRequest)},
-  { 71, -1, sizeof(::mavsdk::rpc::tracking_server::RespondTrackingPointCommandResponse)},
-  { 77, -1, sizeof(::mavsdk::rpc::tracking_server::RespondTrackingRectangleCommandRequest)},
-  { 83, -1, sizeof(::mavsdk::rpc::tracking_server::RespondTrackingRectangleCommandResponse)},
-  { 89, -1, sizeof(::mavsdk::rpc::tracking_server::RespondTrackingOffCommandRequest)},
-  { 95, -1, sizeof(::mavsdk::rpc::tracking_server::RespondTrackingOffCommandResponse)},
-  { 101, -1, sizeof(::mavsdk::rpc::tracking_server::TrackPoint)},
-  { 109, -1, sizeof(::mavsdk::rpc::tracking_server::TrackRectangle)},
-  { 118, -1, sizeof(::mavsdk::rpc::tracking_server::TrackingServerResult)},
+  { 7, -1, sizeof(::mavsdk::rpc::tracking_server::SetTrackingPointStatusResponse)},
+  { 12, -1, sizeof(::mavsdk::rpc::tracking_server::SetTrackingRectangleStatusRequest)},
+  { 19, -1, sizeof(::mavsdk::rpc::tracking_server::SetTrackingRectangleStatusResponse)},
+  { 24, -1, sizeof(::mavsdk::rpc::tracking_server::SetTrackingOffStatusRequest)},
+  { 30, -1, sizeof(::mavsdk::rpc::tracking_server::SetTrackingOffStatusResponse)},
+  { 35, -1, sizeof(::mavsdk::rpc::tracking_server::SubscribeTrackingPointCommandRequest)},
+  { 41, -1, sizeof(::mavsdk::rpc::tracking_server::TrackingPointCommandResponse)},
+  { 47, -1, sizeof(::mavsdk::rpc::tracking_server::SubscribeTrackingRectangleCommandRequest)},
+  { 53, -1, sizeof(::mavsdk::rpc::tracking_server::TrackingRectangleCommandResponse)},
+  { 59, -1, sizeof(::mavsdk::rpc::tracking_server::SubscribeTrackingOffCommandRequest)},
+  { 65, -1, sizeof(::mavsdk::rpc::tracking_server::TrackingOffCommandResponse)},
+  { 71, -1, sizeof(::mavsdk::rpc::tracking_server::RespondTrackingPointCommandRequest)},
+  { 78, -1, sizeof(::mavsdk::rpc::tracking_server::RespondTrackingPointCommandResponse)},
+  { 84, -1, sizeof(::mavsdk::rpc::tracking_server::RespondTrackingRectangleCommandRequest)},
+  { 91, -1, sizeof(::mavsdk::rpc::tracking_server::RespondTrackingRectangleCommandResponse)},
+  { 97, -1, sizeof(::mavsdk::rpc::tracking_server::RespondTrackingOffCommandRequest)},
+  { 104, -1, sizeof(::mavsdk::rpc::tracking_server::RespondTrackingOffCommandResponse)},
+  { 110, -1, sizeof(::mavsdk::rpc::tracking_server::TrackPoint)},
+  { 118, -1, sizeof(::mavsdk::rpc::tracking_server::TrackRectangle)},
+  { 127, -1, sizeof(::mavsdk::rpc::tracking_server::TrackingServerResult)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -459,102 +477,106 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_tracking_5fserver_2ftracking_5fserver_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n%tracking_server/tracking_server.proto\022"
   "\032mavsdk.rpc.tracking_server\032\024mavsdk_opti"
-  "ons.proto\"^\n\035SetTrackingPointStatusReque"
-  "st\022=\n\rtracked_point\030\001 \001(\0132&.mavsdk.rpc.t"
-  "racking_server.TrackPoint\" \n\036SetTracking"
-  "PointStatusResponse\"j\n!SetTrackingRectan"
-  "gleStatusRequest\022E\n\021tracked_rectangle\030\001 "
-  "\001(\0132*.mavsdk.rpc.tracking_server.TrackRe"
-  "ctangle\"$\n\"SetTrackingRectangleStatusRes"
-  "ponse\"\035\n\033SetTrackingOffStatusRequest\"\036\n\034"
-  "SetTrackingOffStatusResponse\"&\n$Subscrib"
-  "eTrackingPointCommandRequest\"[\n\034Tracking"
-  "PointCommandResponse\022;\n\013track_point\030\001 \001("
-  "\0132&.mavsdk.rpc.tracking_server.TrackPoin"
-  "t\"*\n(SubscribeTrackingRectangleCommandRe"
-  "quest\"g\n TrackingRectangleCommandRespons"
-  "e\022C\n\017track_rectangle\030\001 \001(\0132*.mavsdk.rpc."
-  "tracking_server.TrackRectangle\"$\n\"Subscr"
-  "ibeTrackingOffCommandRequest\"+\n\032Tracking"
-  "OffCommandResponse\022\r\n\005dummy\030\001 \001(\005\"g\n\"Res"
-  "pondTrackingPointCommandRequest\022A\n\016comma"
-  "nd_answer\030\001 \001(\0162).mavsdk.rpc.tracking_se"
-  "rver.CommandAnswer\"w\n#RespondTrackingPoi"
-  "ntCommandResponse\022P\n\026tracking_server_res"
-  "ult\030\001 \001(\01320.mavsdk.rpc.tracking_server.T"
-  "rackingServerResult\"k\n&RespondTrackingRe"
-  "ctangleCommandRequest\022A\n\016command_answer\030"
-  "\001 \001(\0162).mavsdk.rpc.tracking_server.Comma"
-  "ndAnswer\"{\n\'RespondTrackingRectangleComm"
-  "andResponse\022P\n\026tracking_server_result\030\001 "
-  "\001(\01320.mavsdk.rpc.tracking_server.Trackin"
-  "gServerResult\"e\n RespondTrackingOffComma"
-  "ndRequest\022A\n\016command_answer\030\001 \001(\0162).mavs"
-  "dk.rpc.tracking_server.CommandAnswer\"u\n!"
-  "RespondTrackingOffCommandResponse\022P\n\026tra"
-  "cking_server_result\030\001 \001(\01320.mavsdk.rpc.t"
-  "racking_server.TrackingServerResult\">\n\nT"
-  "rackPoint\022\017\n\007point_x\030\001 \001(\002\022\017\n\007point_y\030\002 "
-  "\001(\002\022\016\n\006radius\030\003 \001(\002\"\204\001\n\016TrackRectangle\022\031"
-  "\n\021top_left_corner_x\030\001 \001(\002\022\031\n\021top_left_co"
-  "rner_y\030\002 \001(\002\022\035\n\025bottom_right_corner_x\030\003 "
-  "\001(\002\022\035\n\025bottom_right_corner_y\030\004 \001(\002\"\330\001\n\024T"
-  "rackingServerResult\022G\n\006result\030\001 \001(\01627.ma"
-  "vsdk.rpc.tracking_server.TrackingServerR"
-  "esult.Result\022\022\n\nresult_str\030\002 \001(\t\"c\n\006Resu"
-  "lt\022\022\n\016RESULT_UNKNOWN\020\000\022\022\n\016RESULT_SUCCESS"
-  "\020\001\022\024\n\020RESULT_NO_SYSTEM\020\002\022\033\n\027RESULT_CONNE"
-  "CTION_ERROR\020\003*\253\001\n\rCommandAnswer\022\033\n\027COMMA"
-  "ND_ANSWER_ACCEPTED\020\000\022\'\n#COMMAND_ANSWER_T"
-  "EMPORARILY_REJECTED\020\001\022\031\n\025COMMAND_ANSWER_"
-  "DENIED\020\002\022\036\n\032COMMAND_ANSWER_UNSUPPORTED\020\003"
-  "\022\031\n\025COMMAND_ANSWER_FAILED\020\0042\330\013\n\025Tracking"
-  "ServerService\022\225\001\n\026SetTrackingPointStatus"
-  "\0229.mavsdk.rpc.tracking_server.SetTrackin"
-  "gPointStatusRequest\032:.mavsdk.rpc.trackin"
-  "g_server.SetTrackingPointStatusResponse\""
-  "\004\200\265\030\001\022\241\001\n\032SetTrackingRectangleStatus\022=.m"
-  "avsdk.rpc.tracking_server.SetTrackingRec"
-  "tangleStatusRequest\032>.mavsdk.rpc.trackin"
-  "g_server.SetTrackingRectangleStatusRespo"
-  "nse\"\004\200\265\030\001\022\217\001\n\024SetTrackingOffStatus\0227.mav"
-  "sdk.rpc.tracking_server.SetTrackingOffSt"
-  "atusRequest\0328.mavsdk.rpc.tracking_server"
-  ".SetTrackingOffStatusResponse\"\004\200\265\030\001\022\243\001\n\035"
-  "SubscribeTrackingPointCommand\022@.mavsdk.r"
-  "pc.tracking_server.SubscribeTrackingPoin"
-  "tCommandRequest\0328.mavsdk.rpc.tracking_se"
-  "rver.TrackingPointCommandResponse\"\004\200\265\030\0000"
-  "\001\022\257\001\n!SubscribeTrackingRectangleCommand\022"
-  "D.mavsdk.rpc.tracking_server.SubscribeTr"
-  "ackingRectangleCommandRequest\032<.mavsdk.r"
-  "pc.tracking_server.TrackingRectangleComm"
-  "andResponse\"\004\200\265\030\0000\001\022\235\001\n\033SubscribeTrackin"
-  "gOffCommand\022>.mavsdk.rpc.tracking_server"
-  ".SubscribeTrackingOffCommandRequest\0326.ma"
-  "vsdk.rpc.tracking_server.TrackingOffComm"
-  "andResponse\"\004\200\265\030\0000\001\022\244\001\n\033RespondTrackingP"
-  "ointCommand\022>.mavsdk.rpc.tracking_server"
-  ".RespondTrackingPointCommandRequest\032\?.ma"
-  "vsdk.rpc.tracking_server.RespondTracking"
-  "PointCommandResponse\"\004\200\265\030\001\022\260\001\n\037RespondTr"
-  "ackingRectangleCommand\022B.mavsdk.rpc.trac"
-  "king_server.RespondTrackingRectangleComm"
-  "andRequest\032C.mavsdk.rpc.tracking_server."
-  "RespondTrackingRectangleCommandResponse\""
-  "\004\200\265\030\001\022\236\001\n\031RespondTrackingOffCommand\022<.ma"
-  "vsdk.rpc.tracking_server.RespondTracking"
-  "OffCommandRequest\032=.mavsdk.rpc.tracking_"
-  "server.RespondTrackingOffCommandResponse"
-  "\"\004\200\265\030\001B0\n\031io.mavsdk.tracking_serverB\023Tra"
-  "ckingServerProtob\006proto3"
+  "ons.proto\"p\n\035SetTrackingPointStatusReque"
+  "st\022\020\n\010drone_id\030\001 \001(\005\022=\n\rtracked_point\030\002 "
+  "\001(\0132&.mavsdk.rpc.tracking_server.TrackPo"
+  "int\" \n\036SetTrackingPointStatusResponse\"|\n"
+  "!SetTrackingRectangleStatusRequest\022\020\n\010dr"
+  "one_id\030\001 \001(\005\022E\n\021tracked_rectangle\030\002 \001(\0132"
+  "*.mavsdk.rpc.tracking_server.TrackRectan"
+  "gle\"$\n\"SetTrackingRectangleStatusRespons"
+  "e\"/\n\033SetTrackingOffStatusRequest\022\020\n\010dron"
+  "e_id\030\001 \001(\005\"\036\n\034SetTrackingOffStatusRespon"
+  "se\"8\n$SubscribeTrackingPointCommandReque"
+  "st\022\020\n\010drone_id\030\001 \001(\005\"[\n\034TrackingPointCom"
+  "mandResponse\022;\n\013track_point\030\001 \001(\0132&.mavs"
+  "dk.rpc.tracking_server.TrackPoint\"<\n(Sub"
+  "scribeTrackingRectangleCommandRequest\022\020\n"
+  "\010drone_id\030\001 \001(\005\"g\n TrackingRectangleComm"
+  "andResponse\022C\n\017track_rectangle\030\001 \001(\0132*.m"
+  "avsdk.rpc.tracking_server.TrackRectangle"
+  "\"6\n\"SubscribeTrackingOffCommandRequest\022\020"
+  "\n\010drone_id\030\001 \001(\005\"+\n\032TrackingOffCommandRe"
+  "sponse\022\r\n\005dummy\030\001 \001(\005\"y\n\"RespondTracking"
+  "PointCommandRequest\022\020\n\010drone_id\030\001 \001(\005\022A\n"
+  "\016command_answer\030\002 \001(\0162).mavsdk.rpc.track"
+  "ing_server.CommandAnswer\"w\n#RespondTrack"
+  "ingPointCommandResponse\022P\n\026tracking_serv"
+  "er_result\030\001 \001(\01320.mavsdk.rpc.tracking_se"
+  "rver.TrackingServerResult\"}\n&RespondTrac"
+  "kingRectangleCommandRequest\022\020\n\010drone_id\030"
+  "\001 \001(\005\022A\n\016command_answer\030\002 \001(\0162).mavsdk.r"
+  "pc.tracking_server.CommandAnswer\"{\n\'Resp"
+  "ondTrackingRectangleCommandResponse\022P\n\026t"
+  "racking_server_result\030\001 \001(\01320.mavsdk.rpc"
+  ".tracking_server.TrackingServerResult\"w\n"
+  " RespondTrackingOffCommandRequest\022\020\n\010dro"
+  "ne_id\030\001 \001(\005\022A\n\016command_answer\030\002 \001(\0162).ma"
+  "vsdk.rpc.tracking_server.CommandAnswer\"u"
+  "\n!RespondTrackingOffCommandResponse\022P\n\026t"
+  "racking_server_result\030\001 \001(\01320.mavsdk.rpc"
+  ".tracking_server.TrackingServerResult\">\n"
+  "\nTrackPoint\022\017\n\007point_x\030\001 \001(\002\022\017\n\007point_y\030"
+  "\002 \001(\002\022\016\n\006radius\030\003 \001(\002\"\204\001\n\016TrackRectangle"
+  "\022\031\n\021top_left_corner_x\030\001 \001(\002\022\031\n\021top_left_"
+  "corner_y\030\002 \001(\002\022\035\n\025bottom_right_corner_x\030"
+  "\003 \001(\002\022\035\n\025bottom_right_corner_y\030\004 \001(\002\"\330\001\n"
+  "\024TrackingServerResult\022G\n\006result\030\001 \001(\01627."
+  "mavsdk.rpc.tracking_server.TrackingServe"
+  "rResult.Result\022\022\n\nresult_str\030\002 \001(\t\"c\n\006Re"
+  "sult\022\022\n\016RESULT_UNKNOWN\020\000\022\022\n\016RESULT_SUCCE"
+  "SS\020\001\022\024\n\020RESULT_NO_SYSTEM\020\002\022\033\n\027RESULT_CON"
+  "NECTION_ERROR\020\003*\253\001\n\rCommandAnswer\022\033\n\027COM"
+  "MAND_ANSWER_ACCEPTED\020\000\022\'\n#COMMAND_ANSWER"
+  "_TEMPORARILY_REJECTED\020\001\022\031\n\025COMMAND_ANSWE"
+  "R_DENIED\020\002\022\036\n\032COMMAND_ANSWER_UNSUPPORTED"
+  "\020\003\022\031\n\025COMMAND_ANSWER_FAILED\020\0042\330\013\n\025Tracki"
+  "ngServerService\022\225\001\n\026SetTrackingPointStat"
+  "us\0229.mavsdk.rpc.tracking_server.SetTrack"
+  "ingPointStatusRequest\032:.mavsdk.rpc.track"
+  "ing_server.SetTrackingPointStatusRespons"
+  "e\"\004\200\265\030\001\022\241\001\n\032SetTrackingRectangleStatus\022="
+  ".mavsdk.rpc.tracking_server.SetTrackingR"
+  "ectangleStatusRequest\032>.mavsdk.rpc.track"
+  "ing_server.SetTrackingRectangleStatusRes"
+  "ponse\"\004\200\265\030\001\022\217\001\n\024SetTrackingOffStatus\0227.m"
+  "avsdk.rpc.tracking_server.SetTrackingOff"
+  "StatusRequest\0328.mavsdk.rpc.tracking_serv"
+  "er.SetTrackingOffStatusResponse\"\004\200\265\030\001\022\243\001"
+  "\n\035SubscribeTrackingPointCommand\022@.mavsdk"
+  ".rpc.tracking_server.SubscribeTrackingPo"
+  "intCommandRequest\0328.mavsdk.rpc.tracking_"
+  "server.TrackingPointCommandResponse\"\004\200\265\030"
+  "\0000\001\022\257\001\n!SubscribeTrackingRectangleComman"
+  "d\022D.mavsdk.rpc.tracking_server.Subscribe"
+  "TrackingRectangleCommandRequest\032<.mavsdk"
+  ".rpc.tracking_server.TrackingRectangleCo"
+  "mmandResponse\"\004\200\265\030\0000\001\022\235\001\n\033SubscribeTrack"
+  "ingOffCommand\022>.mavsdk.rpc.tracking_serv"
+  "er.SubscribeTrackingOffCommandRequest\0326."
+  "mavsdk.rpc.tracking_server.TrackingOffCo"
+  "mmandResponse\"\004\200\265\030\0000\001\022\244\001\n\033RespondTrackin"
+  "gPointCommand\022>.mavsdk.rpc.tracking_serv"
+  "er.RespondTrackingPointCommandRequest\032\?."
+  "mavsdk.rpc.tracking_server.RespondTracki"
+  "ngPointCommandResponse\"\004\200\265\030\001\022\260\001\n\037Respond"
+  "TrackingRectangleCommand\022B.mavsdk.rpc.tr"
+  "acking_server.RespondTrackingRectangleCo"
+  "mmandRequest\032C.mavsdk.rpc.tracking_serve"
+  "r.RespondTrackingRectangleCommandRespons"
+  "e\"\004\200\265\030\001\022\236\001\n\031RespondTrackingOffCommand\022<."
+  "mavsdk.rpc.tracking_server.RespondTracki"
+  "ngOffCommandRequest\032=.mavsdk.rpc.trackin"
+  "g_server.RespondTrackingOffCommandRespon"
+  "se\"\004\200\265\030\001B0\n\031io.mavsdk.tracking_serverB\023T"
+  "rackingServerProtob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_tracking_5fserver_2ftracking_5fserver_2eproto_deps[1] = {
   &::descriptor_table_mavsdk_5foptions_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_tracking_5fserver_2ftracking_5fserver_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_tracking_5fserver_2ftracking_5fserver_2eproto = {
-  false, false, 3624, descriptor_table_protodef_tracking_5fserver_2ftracking_5fserver_2eproto, "tracking_server/tracking_server.proto", 
+  false, false, 3786, descriptor_table_protodef_tracking_5fserver_2ftracking_5fserver_2eproto, "tracking_server/tracking_server.proto", 
   &descriptor_table_tracking_5fserver_2ftracking_5fserver_2eproto_once, descriptor_table_tracking_5fserver_2ftracking_5fserver_2eproto_deps, 1, 21,
   schemas, file_default_instances, TableStruct_tracking_5fserver_2ftracking_5fserver_2eproto::offsets,
   file_level_metadata_tracking_5fserver_2ftracking_5fserver_2eproto, file_level_enum_descriptors_tracking_5fserver_2ftracking_5fserver_2eproto, file_level_service_descriptors_tracking_5fserver_2ftracking_5fserver_2eproto,
@@ -639,11 +661,15 @@ SetTrackingPointStatusRequest::SetTrackingPointStatusRequest(const SetTrackingPo
   } else {
     tracked_point_ = nullptr;
   }
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.tracking_server.SetTrackingPointStatusRequest)
 }
 
 inline void SetTrackingPointStatusRequest::SharedCtor() {
-tracked_point_ = nullptr;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&tracked_point_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&tracked_point_)) + sizeof(drone_id_));
 }
 
 SetTrackingPointStatusRequest::~SetTrackingPointStatusRequest() {
@@ -678,6 +704,7 @@ void SetTrackingPointStatusRequest::Clear() {
     delete tracked_point_;
   }
   tracked_point_ = nullptr;
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -687,9 +714,16 @@ const char* SetTrackingPointStatusRequest::_InternalParse(const char* ptr, ::PRO
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .mavsdk.rpc.tracking_server.TrackPoint tracked_point = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mavsdk.rpc.tracking_server.TrackPoint tracked_point = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_tracked_point(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -723,12 +757,18 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.tracking_server.TrackPoint tracked_point = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // .mavsdk.rpc.tracking_server.TrackPoint tracked_point = 2;
   if (this->_internal_has_tracked_point()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::tracked_point(this), target, stream);
+        2, _Internal::tracked_point(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -747,11 +787,18 @@ size_t SetTrackingPointStatusRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.tracking_server.TrackPoint tracked_point = 1;
+  // .mavsdk.rpc.tracking_server.TrackPoint tracked_point = 2;
   if (this->_internal_has_tracked_point()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *tracked_point_);
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -785,6 +832,9 @@ void SetTrackingPointStatusRequest::MergeFrom(const SetTrackingPointStatusReques
   if (from._internal_has_tracked_point()) {
     _internal_mutable_tracked_point()->::mavsdk::rpc::tracking_server::TrackPoint::MergeFrom(from._internal_tracked_point());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -802,7 +852,12 @@ bool SetTrackingPointStatusRequest::IsInitialized() const {
 void SetTrackingPointStatusRequest::InternalSwap(SetTrackingPointStatusRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(tracked_point_, other->tracked_point_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetTrackingPointStatusRequest, drone_id_)
+      + sizeof(SetTrackingPointStatusRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetTrackingPointStatusRequest, tracked_point_)>(
+          reinterpret_cast<char*>(&tracked_point_),
+          reinterpret_cast<char*>(&other->tracked_point_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetTrackingPointStatusRequest::GetMetadata() const {
@@ -992,11 +1047,15 @@ SetTrackingRectangleStatusRequest::SetTrackingRectangleStatusRequest(const SetTr
   } else {
     tracked_rectangle_ = nullptr;
   }
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.tracking_server.SetTrackingRectangleStatusRequest)
 }
 
 inline void SetTrackingRectangleStatusRequest::SharedCtor() {
-tracked_rectangle_ = nullptr;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&tracked_rectangle_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&tracked_rectangle_)) + sizeof(drone_id_));
 }
 
 SetTrackingRectangleStatusRequest::~SetTrackingRectangleStatusRequest() {
@@ -1031,6 +1090,7 @@ void SetTrackingRectangleStatusRequest::Clear() {
     delete tracked_rectangle_;
   }
   tracked_rectangle_ = nullptr;
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1040,9 +1100,16 @@ const char* SetTrackingRectangleStatusRequest::_InternalParse(const char* ptr, :
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .mavsdk.rpc.tracking_server.TrackRectangle tracked_rectangle = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mavsdk.rpc.tracking_server.TrackRectangle tracked_rectangle = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_tracked_rectangle(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -1076,12 +1143,18 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.tracking_server.TrackRectangle tracked_rectangle = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // .mavsdk.rpc.tracking_server.TrackRectangle tracked_rectangle = 2;
   if (this->_internal_has_tracked_rectangle()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::tracked_rectangle(this), target, stream);
+        2, _Internal::tracked_rectangle(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1100,11 +1173,18 @@ size_t SetTrackingRectangleStatusRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.tracking_server.TrackRectangle tracked_rectangle = 1;
+  // .mavsdk.rpc.tracking_server.TrackRectangle tracked_rectangle = 2;
   if (this->_internal_has_tracked_rectangle()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *tracked_rectangle_);
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1138,6 +1218,9 @@ void SetTrackingRectangleStatusRequest::MergeFrom(const SetTrackingRectangleStat
   if (from._internal_has_tracked_rectangle()) {
     _internal_mutable_tracked_rectangle()->::mavsdk::rpc::tracking_server::TrackRectangle::MergeFrom(from._internal_tracked_rectangle());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1155,7 +1238,12 @@ bool SetTrackingRectangleStatusRequest::IsInitialized() const {
 void SetTrackingRectangleStatusRequest::InternalSwap(SetTrackingRectangleStatusRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(tracked_rectangle_, other->tracked_rectangle_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetTrackingRectangleStatusRequest, drone_id_)
+      + sizeof(SetTrackingRectangleStatusRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetTrackingRectangleStatusRequest, tracked_rectangle_)>(
+          reinterpret_cast<char*>(&tracked_rectangle_),
+          reinterpret_cast<char*>(&other->tracked_rectangle_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetTrackingRectangleStatusRequest::GetMetadata() const {
@@ -1335,10 +1423,12 @@ SetTrackingOffStatusRequest::SetTrackingOffStatusRequest(::PROTOBUF_NAMESPACE_ID
 SetTrackingOffStatusRequest::SetTrackingOffStatusRequest(const SetTrackingOffStatusRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.tracking_server.SetTrackingOffStatusRequest)
 }
 
 inline void SetTrackingOffStatusRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SetTrackingOffStatusRequest::~SetTrackingOffStatusRequest() {
@@ -1368,6 +1458,7 @@ void SetTrackingOffStatusRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1376,6 +1467,16 @@ const char* SetTrackingOffStatusRequest::_InternalParse(const char* ptr, ::PROTO
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -1386,6 +1487,8 @@ const char* SetTrackingOffStatusRequest::_InternalParse(const char* ptr, ::PROTO
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -1400,6 +1503,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.tracking_server.SetTrackingOffStatusRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -1416,6 +1525,13 @@ size_t SetTrackingOffStatusRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -1445,6 +1561,9 @@ void SetTrackingOffStatusRequest::MergeFrom(const SetTrackingOffStatusRequest& f
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1462,6 +1581,7 @@ bool SetTrackingOffStatusRequest::IsInitialized() const {
 void SetTrackingOffStatusRequest::InternalSwap(SetTrackingOffStatusRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetTrackingOffStatusRequest::GetMetadata() const {
@@ -1641,10 +1761,12 @@ SubscribeTrackingPointCommandRequest::SubscribeTrackingPointCommandRequest(::PRO
 SubscribeTrackingPointCommandRequest::SubscribeTrackingPointCommandRequest(const SubscribeTrackingPointCommandRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.tracking_server.SubscribeTrackingPointCommandRequest)
 }
 
 inline void SubscribeTrackingPointCommandRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeTrackingPointCommandRequest::~SubscribeTrackingPointCommandRequest() {
@@ -1674,6 +1796,7 @@ void SubscribeTrackingPointCommandRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1682,6 +1805,16 @@ const char* SubscribeTrackingPointCommandRequest::_InternalParse(const char* ptr
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -1692,6 +1825,8 @@ const char* SubscribeTrackingPointCommandRequest::_InternalParse(const char* ptr
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -1706,6 +1841,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.tracking_server.SubscribeTrackingPointCommandRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -1722,6 +1863,13 @@ size_t SubscribeTrackingPointCommandRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -1751,6 +1899,9 @@ void SubscribeTrackingPointCommandRequest::MergeFrom(const SubscribeTrackingPoin
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1768,6 +1919,7 @@ bool SubscribeTrackingPointCommandRequest::IsInitialized() const {
 void SubscribeTrackingPointCommandRequest::InternalSwap(SubscribeTrackingPointCommandRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeTrackingPointCommandRequest::GetMetadata() const {
@@ -1994,10 +2146,12 @@ SubscribeTrackingRectangleCommandRequest::SubscribeTrackingRectangleCommandReque
 SubscribeTrackingRectangleCommandRequest::SubscribeTrackingRectangleCommandRequest(const SubscribeTrackingRectangleCommandRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.tracking_server.SubscribeTrackingRectangleCommandRequest)
 }
 
 inline void SubscribeTrackingRectangleCommandRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeTrackingRectangleCommandRequest::~SubscribeTrackingRectangleCommandRequest() {
@@ -2027,6 +2181,7 @@ void SubscribeTrackingRectangleCommandRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2035,6 +2190,16 @@ const char* SubscribeTrackingRectangleCommandRequest::_InternalParse(const char*
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -2045,6 +2210,8 @@ const char* SubscribeTrackingRectangleCommandRequest::_InternalParse(const char*
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -2059,6 +2226,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.tracking_server.SubscribeTrackingRectangleCommandRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -2075,6 +2248,13 @@ size_t SubscribeTrackingRectangleCommandRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -2104,6 +2284,9 @@ void SubscribeTrackingRectangleCommandRequest::MergeFrom(const SubscribeTracking
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2121,6 +2304,7 @@ bool SubscribeTrackingRectangleCommandRequest::IsInitialized() const {
 void SubscribeTrackingRectangleCommandRequest::InternalSwap(SubscribeTrackingRectangleCommandRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeTrackingRectangleCommandRequest::GetMetadata() const {
@@ -2347,10 +2531,12 @@ SubscribeTrackingOffCommandRequest::SubscribeTrackingOffCommandRequest(::PROTOBU
 SubscribeTrackingOffCommandRequest::SubscribeTrackingOffCommandRequest(const SubscribeTrackingOffCommandRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.tracking_server.SubscribeTrackingOffCommandRequest)
 }
 
 inline void SubscribeTrackingOffCommandRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeTrackingOffCommandRequest::~SubscribeTrackingOffCommandRequest() {
@@ -2380,6 +2566,7 @@ void SubscribeTrackingOffCommandRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2388,6 +2575,16 @@ const char* SubscribeTrackingOffCommandRequest::_InternalParse(const char* ptr, 
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -2398,6 +2595,8 @@ const char* SubscribeTrackingOffCommandRequest::_InternalParse(const char* ptr, 
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -2412,6 +2611,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.tracking_server.SubscribeTrackingOffCommandRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -2428,6 +2633,13 @@ size_t SubscribeTrackingOffCommandRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -2457,6 +2669,9 @@ void SubscribeTrackingOffCommandRequest::MergeFrom(const SubscribeTrackingOffCom
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2474,6 +2689,7 @@ bool SubscribeTrackingOffCommandRequest::IsInitialized() const {
 void SubscribeTrackingOffCommandRequest::InternalSwap(SubscribeTrackingOffCommandRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeTrackingOffCommandRequest::GetMetadata() const {
@@ -2685,12 +2901,17 @@ RespondTrackingPointCommandRequest::RespondTrackingPointCommandRequest(::PROTOBU
 RespondTrackingPointCommandRequest::RespondTrackingPointCommandRequest(const RespondTrackingPointCommandRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  command_answer_ = from.command_answer_;
+  ::memcpy(&drone_id_, &from.drone_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&command_answer_) -
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(command_answer_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.tracking_server.RespondTrackingPointCommandRequest)
 }
 
 inline void RespondTrackingPointCommandRequest::SharedCtor() {
-command_answer_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&drone_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&command_answer_) -
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(command_answer_));
 }
 
 RespondTrackingPointCommandRequest::~RespondTrackingPointCommandRequest() {
@@ -2720,7 +2941,9 @@ void RespondTrackingPointCommandRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  command_answer_ = 0;
+  ::memset(&drone_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&command_answer_) -
+      reinterpret_cast<char*>(&drone_id_)) + sizeof(command_answer_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2730,9 +2953,16 @@ const char* RespondTrackingPointCommandRequest::_InternalParse(const char* ptr, 
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .mavsdk.rpc.tracking_server.CommandAnswer command_answer = 1;
+      // int32 drone_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mavsdk.rpc.tracking_server.CommandAnswer command_answer = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_command_answer(static_cast<::mavsdk::rpc::tracking_server::CommandAnswer>(val));
@@ -2767,11 +2997,17 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.tracking_server.CommandAnswer command_answer = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // .mavsdk.rpc.tracking_server.CommandAnswer command_answer = 2;
   if (this->_internal_command_answer() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      1, this->_internal_command_answer(), target);
+      2, this->_internal_command_answer(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2790,7 +3026,14 @@ size_t RespondTrackingPointCommandRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.tracking_server.CommandAnswer command_answer = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
+
+  // .mavsdk.rpc.tracking_server.CommandAnswer command_answer = 2;
   if (this->_internal_command_answer() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_command_answer());
@@ -2824,6 +3067,9 @@ void RespondTrackingPointCommandRequest::MergeFrom(const RespondTrackingPointCom
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   if (from._internal_command_answer() != 0) {
     _internal_set_command_answer(from._internal_command_answer());
   }
@@ -2844,7 +3090,12 @@ bool RespondTrackingPointCommandRequest::IsInitialized() const {
 void RespondTrackingPointCommandRequest::InternalSwap(RespondTrackingPointCommandRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(command_answer_, other->command_answer_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(RespondTrackingPointCommandRequest, command_answer_)
+      + sizeof(RespondTrackingPointCommandRequest::command_answer_)
+      - PROTOBUF_FIELD_OFFSET(RespondTrackingPointCommandRequest, drone_id_)>(
+          reinterpret_cast<char*>(&drone_id_),
+          reinterpret_cast<char*>(&other->drone_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RespondTrackingPointCommandRequest::GetMetadata() const {
@@ -3071,12 +3322,17 @@ RespondTrackingRectangleCommandRequest::RespondTrackingRectangleCommandRequest(:
 RespondTrackingRectangleCommandRequest::RespondTrackingRectangleCommandRequest(const RespondTrackingRectangleCommandRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  command_answer_ = from.command_answer_;
+  ::memcpy(&drone_id_, &from.drone_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&command_answer_) -
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(command_answer_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.tracking_server.RespondTrackingRectangleCommandRequest)
 }
 
 inline void RespondTrackingRectangleCommandRequest::SharedCtor() {
-command_answer_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&drone_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&command_answer_) -
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(command_answer_));
 }
 
 RespondTrackingRectangleCommandRequest::~RespondTrackingRectangleCommandRequest() {
@@ -3106,7 +3362,9 @@ void RespondTrackingRectangleCommandRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  command_answer_ = 0;
+  ::memset(&drone_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&command_answer_) -
+      reinterpret_cast<char*>(&drone_id_)) + sizeof(command_answer_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3116,9 +3374,16 @@ const char* RespondTrackingRectangleCommandRequest::_InternalParse(const char* p
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .mavsdk.rpc.tracking_server.CommandAnswer command_answer = 1;
+      // int32 drone_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mavsdk.rpc.tracking_server.CommandAnswer command_answer = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_command_answer(static_cast<::mavsdk::rpc::tracking_server::CommandAnswer>(val));
@@ -3153,11 +3418,17 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.tracking_server.CommandAnswer command_answer = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // .mavsdk.rpc.tracking_server.CommandAnswer command_answer = 2;
   if (this->_internal_command_answer() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      1, this->_internal_command_answer(), target);
+      2, this->_internal_command_answer(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3176,7 +3447,14 @@ size_t RespondTrackingRectangleCommandRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.tracking_server.CommandAnswer command_answer = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
+
+  // .mavsdk.rpc.tracking_server.CommandAnswer command_answer = 2;
   if (this->_internal_command_answer() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_command_answer());
@@ -3210,6 +3488,9 @@ void RespondTrackingRectangleCommandRequest::MergeFrom(const RespondTrackingRect
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   if (from._internal_command_answer() != 0) {
     _internal_set_command_answer(from._internal_command_answer());
   }
@@ -3230,7 +3511,12 @@ bool RespondTrackingRectangleCommandRequest::IsInitialized() const {
 void RespondTrackingRectangleCommandRequest::InternalSwap(RespondTrackingRectangleCommandRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(command_answer_, other->command_answer_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(RespondTrackingRectangleCommandRequest, command_answer_)
+      + sizeof(RespondTrackingRectangleCommandRequest::command_answer_)
+      - PROTOBUF_FIELD_OFFSET(RespondTrackingRectangleCommandRequest, drone_id_)>(
+          reinterpret_cast<char*>(&drone_id_),
+          reinterpret_cast<char*>(&other->drone_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RespondTrackingRectangleCommandRequest::GetMetadata() const {
@@ -3457,12 +3743,17 @@ RespondTrackingOffCommandRequest::RespondTrackingOffCommandRequest(::PROTOBUF_NA
 RespondTrackingOffCommandRequest::RespondTrackingOffCommandRequest(const RespondTrackingOffCommandRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  command_answer_ = from.command_answer_;
+  ::memcpy(&drone_id_, &from.drone_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&command_answer_) -
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(command_answer_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.tracking_server.RespondTrackingOffCommandRequest)
 }
 
 inline void RespondTrackingOffCommandRequest::SharedCtor() {
-command_answer_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&drone_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&command_answer_) -
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(command_answer_));
 }
 
 RespondTrackingOffCommandRequest::~RespondTrackingOffCommandRequest() {
@@ -3492,7 +3783,9 @@ void RespondTrackingOffCommandRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  command_answer_ = 0;
+  ::memset(&drone_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&command_answer_) -
+      reinterpret_cast<char*>(&drone_id_)) + sizeof(command_answer_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3502,9 +3795,16 @@ const char* RespondTrackingOffCommandRequest::_InternalParse(const char* ptr, ::
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .mavsdk.rpc.tracking_server.CommandAnswer command_answer = 1;
+      // int32 drone_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mavsdk.rpc.tracking_server.CommandAnswer command_answer = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_command_answer(static_cast<::mavsdk::rpc::tracking_server::CommandAnswer>(val));
@@ -3539,11 +3839,17 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.tracking_server.CommandAnswer command_answer = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // .mavsdk.rpc.tracking_server.CommandAnswer command_answer = 2;
   if (this->_internal_command_answer() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      1, this->_internal_command_answer(), target);
+      2, this->_internal_command_answer(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3562,7 +3868,14 @@ size_t RespondTrackingOffCommandRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.tracking_server.CommandAnswer command_answer = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
+
+  // .mavsdk.rpc.tracking_server.CommandAnswer command_answer = 2;
   if (this->_internal_command_answer() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_command_answer());
@@ -3596,6 +3909,9 @@ void RespondTrackingOffCommandRequest::MergeFrom(const RespondTrackingOffCommand
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   if (from._internal_command_answer() != 0) {
     _internal_set_command_answer(from._internal_command_answer());
   }
@@ -3616,7 +3932,12 @@ bool RespondTrackingOffCommandRequest::IsInitialized() const {
 void RespondTrackingOffCommandRequest::InternalSwap(RespondTrackingOffCommandRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(command_answer_, other->command_answer_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(RespondTrackingOffCommandRequest, command_answer_)
+      + sizeof(RespondTrackingOffCommandRequest::command_answer_)
+      - PROTOBUF_FIELD_OFFSET(RespondTrackingOffCommandRequest, drone_id_)>(
+          reinterpret_cast<char*>(&drone_id_),
+          reinterpret_cast<char*>(&other->drone_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RespondTrackingOffCommandRequest::GetMetadata() const {

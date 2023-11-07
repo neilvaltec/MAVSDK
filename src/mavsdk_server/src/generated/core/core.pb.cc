@@ -20,7 +20,8 @@ namespace mavsdk {
 namespace rpc {
 namespace core {
 constexpr SubscribeConnectionStateRequest::SubscribeConnectionStateRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeConnectionStateRequestDefaultTypeInternal {
   constexpr SubscribeConnectionStateRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -44,7 +45,8 @@ struct ConnectionStateResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ConnectionStateResponseDefaultTypeInternal _ConnectionStateResponse_default_instance_;
 constexpr SetMavlinkTimeoutRequest::SetMavlinkTimeoutRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : timeout_s_(0){}
+  : timeout_s_(0)
+  , drone_id_(0){}
 struct SetMavlinkTimeoutRequestDefaultTypeInternal {
   constexpr SetMavlinkTimeoutRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -77,10 +79,34 @@ struct ConnectionStateDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ConnectionStateDefaultTypeInternal _ConnectionState_default_instance_;
+constexpr AddNewConnectionRequest::AddNewConnectionRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : connection_url_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct AddNewConnectionRequestDefaultTypeInternal {
+  constexpr AddNewConnectionRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~AddNewConnectionRequestDefaultTypeInternal() {}
+  union {
+    AddNewConnectionRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AddNewConnectionRequestDefaultTypeInternal _AddNewConnectionRequest_default_instance_;
+constexpr AddNewConnectionResponse::AddNewConnectionResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : succeed_(false){}
+struct AddNewConnectionResponseDefaultTypeInternal {
+  constexpr AddNewConnectionResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~AddNewConnectionResponseDefaultTypeInternal() {}
+  union {
+    AddNewConnectionResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AddNewConnectionResponseDefaultTypeInternal _AddNewConnectionResponse_default_instance_;
 }  // namespace core
 }  // namespace rpc
 }  // namespace mavsdk
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_core_2fcore_2eproto[5];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_core_2fcore_2eproto[7];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_core_2fcore_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_core_2fcore_2eproto = nullptr;
 
@@ -90,6 +116,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_core_2fcore_2eproto::offsets[]
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::core::SubscribeConnectionStateRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::core::ConnectionStateResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -101,6 +128,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_core_2fcore_2eproto::offsets[]
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::core::SetMavlinkTimeoutRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::core::SetMavlinkTimeoutRequest, timeout_s_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::core::SetMavlinkTimeoutResponse, _internal_metadata_),
@@ -113,13 +141,27 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_core_2fcore_2eproto::offsets[]
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::core::ConnectionState, is_connected_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::core::AddNewConnectionRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::core::AddNewConnectionRequest, connection_url_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::core::AddNewConnectionResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::core::AddNewConnectionResponse, succeed_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::mavsdk::rpc::core::SubscribeConnectionStateRequest)},
-  { 5, -1, sizeof(::mavsdk::rpc::core::ConnectionStateResponse)},
-  { 11, -1, sizeof(::mavsdk::rpc::core::SetMavlinkTimeoutRequest)},
-  { 17, -1, sizeof(::mavsdk::rpc::core::SetMavlinkTimeoutResponse)},
-  { 22, -1, sizeof(::mavsdk::rpc::core::ConnectionState)},
+  { 6, -1, sizeof(::mavsdk::rpc::core::ConnectionStateResponse)},
+  { 12, -1, sizeof(::mavsdk::rpc::core::SetMavlinkTimeoutRequest)},
+  { 19, -1, sizeof(::mavsdk::rpc::core::SetMavlinkTimeoutResponse)},
+  { 24, -1, sizeof(::mavsdk::rpc::core::ConnectionState)},
+  { 30, -1, sizeof(::mavsdk::rpc::core::AddNewConnectionRequest)},
+  { 36, -1, sizeof(::mavsdk::rpc::core::AddNewConnectionResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -128,28 +170,36 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mavsdk::rpc::core::_SetMavlinkTimeoutRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mavsdk::rpc::core::_SetMavlinkTimeoutResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mavsdk::rpc::core::_ConnectionState_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mavsdk::rpc::core::_AddNewConnectionRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mavsdk::rpc::core::_AddNewConnectionResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_core_2fcore_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\017core/core.proto\022\017mavsdk.rpc.core\"!\n\037Su"
-  "bscribeConnectionStateRequest\"U\n\027Connect"
-  "ionStateResponse\022:\n\020connection_state\030\001 \001"
-  "(\0132 .mavsdk.rpc.core.ConnectionState\"-\n\030"
-  "SetMavlinkTimeoutRequest\022\021\n\ttimeout_s\030\001 "
-  "\001(\001\"\033\n\031SetMavlinkTimeoutResponse\"\'\n\017Conn"
-  "ectionState\022\024\n\014is_connected\030\002 \001(\0102\367\001\n\013Co"
-  "reService\022z\n\030SubscribeConnectionState\0220."
-  "mavsdk.rpc.core.SubscribeConnectionState"
-  "Request\032(.mavsdk.rpc.core.ConnectionStat"
-  "eResponse\"\0000\001\022l\n\021SetMavlinkTimeout\022).mav"
-  "sdk.rpc.core.SetMavlinkTimeoutRequest\032*."
-  "mavsdk.rpc.core.SetMavlinkTimeoutRespons"
-  "e\"\000B\033\n\016io.mavsdk.coreB\tCoreProtob\006proto3"
+  "\n\017core/core.proto\022\017mavsdk.rpc.core\"3\n\037Su"
+  "bscribeConnectionStateRequest\022\020\n\010drone_i"
+  "d\030\001 \001(\005\"U\n\027ConnectionStateResponse\022:\n\020co"
+  "nnection_state\030\001 \001(\0132 .mavsdk.rpc.core.C"
+  "onnectionState\"\?\n\030SetMavlinkTimeoutReque"
+  "st\022\020\n\010drone_id\030\001 \001(\005\022\021\n\ttimeout_s\030\002 \001(\001\""
+  "\033\n\031SetMavlinkTimeoutResponse\"\'\n\017Connecti"
+  "onState\022\024\n\014is_connected\030\002 \001(\010\"1\n\027AddNewC"
+  "onnectionRequest\022\026\n\016connection_url\030\001 \001(\t"
+  "\"+\n\030AddNewConnectionResponse\022\017\n\007succeed\030"
+  "\001 \001(\0102\342\002\n\013CoreService\022z\n\030SubscribeConnec"
+  "tionState\0220.mavsdk.rpc.core.SubscribeCon"
+  "nectionStateRequest\032(.mavsdk.rpc.core.Co"
+  "nnectionStateResponse\"\0000\001\022l\n\021SetMavlinkT"
+  "imeout\022).mavsdk.rpc.core.SetMavlinkTimeo"
+  "utRequest\032*.mavsdk.rpc.core.SetMavlinkTi"
+  "meoutResponse\"\000\022i\n\020AddNewConnection\022(.ma"
+  "vsdk.rpc.core.AddNewConnectionRequest\032)."
+  "mavsdk.rpc.core.AddNewConnectionResponse"
+  "\"\000B\033\n\016io.mavsdk.coreB\tCoreProtob\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_core_2fcore_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_core_2fcore_2eproto = {
-  false, false, 560, descriptor_table_protodef_core_2fcore_2eproto, "core/core.proto", 
-  &descriptor_table_core_2fcore_2eproto_once, nullptr, 0, 5,
+  false, false, 799, descriptor_table_protodef_core_2fcore_2eproto, "core/core.proto", 
+  &descriptor_table_core_2fcore_2eproto_once, nullptr, 0, 7,
   schemas, file_default_instances, TableStruct_core_2fcore_2eproto::offsets,
   file_level_metadata_core_2fcore_2eproto, file_level_enum_descriptors_core_2fcore_2eproto, file_level_service_descriptors_core_2fcore_2eproto,
 };
@@ -181,10 +231,12 @@ SubscribeConnectionStateRequest::SubscribeConnectionStateRequest(::PROTOBUF_NAME
 SubscribeConnectionStateRequest::SubscribeConnectionStateRequest(const SubscribeConnectionStateRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.core.SubscribeConnectionStateRequest)
 }
 
 inline void SubscribeConnectionStateRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeConnectionStateRequest::~SubscribeConnectionStateRequest() {
@@ -214,6 +266,7 @@ void SubscribeConnectionStateRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -222,6 +275,16 @@ const char* SubscribeConnectionStateRequest::_InternalParse(const char* ptr, ::P
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -232,6 +295,8 @@ const char* SubscribeConnectionStateRequest::_InternalParse(const char* ptr, ::P
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -246,6 +311,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.core.SubscribeConnectionStateRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -262,6 +333,13 @@ size_t SubscribeConnectionStateRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -291,6 +369,9 @@ void SubscribeConnectionStateRequest::MergeFrom(const SubscribeConnectionStateRe
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -308,6 +389,7 @@ bool SubscribeConnectionStateRequest::IsInitialized() const {
 void SubscribeConnectionStateRequest::InternalSwap(SubscribeConnectionStateRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeConnectionStateRequest::GetMetadata() const {
@@ -534,12 +616,17 @@ SetMavlinkTimeoutRequest::SetMavlinkTimeoutRequest(::PROTOBUF_NAMESPACE_ID::Aren
 SetMavlinkTimeoutRequest::SetMavlinkTimeoutRequest(const SetMavlinkTimeoutRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  timeout_s_ = from.timeout_s_;
+  ::memcpy(&timeout_s_, &from.timeout_s_,
+    static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&timeout_s_)) + sizeof(drone_id_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.core.SetMavlinkTimeoutRequest)
 }
 
 inline void SetMavlinkTimeoutRequest::SharedCtor() {
-timeout_s_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&timeout_s_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&timeout_s_)) + sizeof(drone_id_));
 }
 
 SetMavlinkTimeoutRequest::~SetMavlinkTimeoutRequest() {
@@ -569,7 +656,9 @@ void SetMavlinkTimeoutRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  timeout_s_ = 0;
+  ::memset(&timeout_s_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&drone_id_) -
+      reinterpret_cast<char*>(&timeout_s_)) + sizeof(drone_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -579,9 +668,16 @@ const char* SetMavlinkTimeoutRequest::_InternalParse(const char* ptr, ::PROTOBUF
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // double timeout_s = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double timeout_s = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           timeout_s_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
@@ -615,10 +711,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double timeout_s = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // double timeout_s = 2;
   if (!(this->_internal_timeout_s() <= 0 && this->_internal_timeout_s() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_timeout_s(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_timeout_s(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -637,9 +739,16 @@ size_t SetMavlinkTimeoutRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double timeout_s = 1;
+  // double timeout_s = 2;
   if (!(this->_internal_timeout_s() <= 0 && this->_internal_timeout_s() >= 0)) {
     total_size += 1 + 8;
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -673,6 +782,9 @@ void SetMavlinkTimeoutRequest::MergeFrom(const SetMavlinkTimeoutRequest& from) {
   if (!(from._internal_timeout_s() <= 0 && from._internal_timeout_s() >= 0)) {
     _internal_set_timeout_s(from._internal_timeout_s());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -690,7 +802,12 @@ bool SetMavlinkTimeoutRequest::IsInitialized() const {
 void SetMavlinkTimeoutRequest::InternalSwap(SetMavlinkTimeoutRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(timeout_s_, other->timeout_s_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetMavlinkTimeoutRequest, drone_id_)
+      + sizeof(SetMavlinkTimeoutRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetMavlinkTimeoutRequest, timeout_s_)>(
+          reinterpret_cast<char*>(&timeout_s_),
+          reinterpret_cast<char*>(&other->timeout_s_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetMavlinkTimeoutRequest::GetMetadata() const {
@@ -1035,6 +1152,389 @@ void ConnectionState::InternalSwap(ConnectionState* other) {
       file_level_metadata_core_2fcore_2eproto[4]);
 }
 
+// ===================================================================
+
+class AddNewConnectionRequest::_Internal {
+ public:
+};
+
+AddNewConnectionRequest::AddNewConnectionRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:mavsdk.rpc.core.AddNewConnectionRequest)
+}
+AddNewConnectionRequest::AddNewConnectionRequest(const AddNewConnectionRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  connection_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_connection_url().empty()) {
+    connection_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_connection_url(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.core.AddNewConnectionRequest)
+}
+
+inline void AddNewConnectionRequest::SharedCtor() {
+connection_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+AddNewConnectionRequest::~AddNewConnectionRequest() {
+  // @@protoc_insertion_point(destructor:mavsdk.rpc.core.AddNewConnectionRequest)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void AddNewConnectionRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  connection_url_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void AddNewConnectionRequest::ArenaDtor(void* object) {
+  AddNewConnectionRequest* _this = reinterpret_cast< AddNewConnectionRequest* >(object);
+  (void)_this;
+}
+void AddNewConnectionRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void AddNewConnectionRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void AddNewConnectionRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mavsdk.rpc.core.AddNewConnectionRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  connection_url_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* AddNewConnectionRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string connection_url = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_connection_url();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mavsdk.rpc.core.AddNewConnectionRequest.connection_url"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* AddNewConnectionRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.core.AddNewConnectionRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string connection_url = 1;
+  if (!this->_internal_connection_url().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_connection_url().data(), static_cast<int>(this->_internal_connection_url().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mavsdk.rpc.core.AddNewConnectionRequest.connection_url");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_connection_url(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mavsdk.rpc.core.AddNewConnectionRequest)
+  return target;
+}
+
+size_t AddNewConnectionRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mavsdk.rpc.core.AddNewConnectionRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string connection_url = 1;
+  if (!this->_internal_connection_url().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_connection_url());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData AddNewConnectionRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    AddNewConnectionRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AddNewConnectionRequest::GetClassData() const { return &_class_data_; }
+
+void AddNewConnectionRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<AddNewConnectionRequest *>(to)->MergeFrom(
+      static_cast<const AddNewConnectionRequest &>(from));
+}
+
+
+void AddNewConnectionRequest::MergeFrom(const AddNewConnectionRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mavsdk.rpc.core.AddNewConnectionRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_connection_url().empty()) {
+    _internal_set_connection_url(from._internal_connection_url());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void AddNewConnectionRequest::CopyFrom(const AddNewConnectionRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mavsdk.rpc.core.AddNewConnectionRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AddNewConnectionRequest::IsInitialized() const {
+  return true;
+}
+
+void AddNewConnectionRequest::InternalSwap(AddNewConnectionRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &connection_url_, GetArenaForAllocation(),
+      &other->connection_url_, other->GetArenaForAllocation()
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata AddNewConnectionRequest::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_core_2fcore_2eproto_getter, &descriptor_table_core_2fcore_2eproto_once,
+      file_level_metadata_core_2fcore_2eproto[5]);
+}
+
+// ===================================================================
+
+class AddNewConnectionResponse::_Internal {
+ public:
+};
+
+AddNewConnectionResponse::AddNewConnectionResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:mavsdk.rpc.core.AddNewConnectionResponse)
+}
+AddNewConnectionResponse::AddNewConnectionResponse(const AddNewConnectionResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  succeed_ = from.succeed_;
+  // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.core.AddNewConnectionResponse)
+}
+
+inline void AddNewConnectionResponse::SharedCtor() {
+succeed_ = false;
+}
+
+AddNewConnectionResponse::~AddNewConnectionResponse() {
+  // @@protoc_insertion_point(destructor:mavsdk.rpc.core.AddNewConnectionResponse)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void AddNewConnectionResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void AddNewConnectionResponse::ArenaDtor(void* object) {
+  AddNewConnectionResponse* _this = reinterpret_cast< AddNewConnectionResponse* >(object);
+  (void)_this;
+}
+void AddNewConnectionResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void AddNewConnectionResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void AddNewConnectionResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mavsdk.rpc.core.AddNewConnectionResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  succeed_ = false;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* AddNewConnectionResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // bool succeed = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          succeed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* AddNewConnectionResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.core.AddNewConnectionResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bool succeed = 1;
+  if (this->_internal_succeed() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(1, this->_internal_succeed(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mavsdk.rpc.core.AddNewConnectionResponse)
+  return target;
+}
+
+size_t AddNewConnectionResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mavsdk.rpc.core.AddNewConnectionResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bool succeed = 1;
+  if (this->_internal_succeed() != 0) {
+    total_size += 1 + 1;
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData AddNewConnectionResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    AddNewConnectionResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AddNewConnectionResponse::GetClassData() const { return &_class_data_; }
+
+void AddNewConnectionResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<AddNewConnectionResponse *>(to)->MergeFrom(
+      static_cast<const AddNewConnectionResponse &>(from));
+}
+
+
+void AddNewConnectionResponse::MergeFrom(const AddNewConnectionResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mavsdk.rpc.core.AddNewConnectionResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_succeed() != 0) {
+    _internal_set_succeed(from._internal_succeed());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void AddNewConnectionResponse::CopyFrom(const AddNewConnectionResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mavsdk.rpc.core.AddNewConnectionResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AddNewConnectionResponse::IsInitialized() const {
+  return true;
+}
+
+void AddNewConnectionResponse::InternalSwap(AddNewConnectionResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(succeed_, other->succeed_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata AddNewConnectionResponse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_core_2fcore_2eproto_getter, &descriptor_table_core_2fcore_2eproto_once,
+      file_level_metadata_core_2fcore_2eproto[6]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace core
 }  // namespace rpc
@@ -1054,6 +1554,12 @@ template<> PROTOBUF_NOINLINE ::mavsdk::rpc::core::SetMavlinkTimeoutResponse* Are
 }
 template<> PROTOBUF_NOINLINE ::mavsdk::rpc::core::ConnectionState* Arena::CreateMaybeMessage< ::mavsdk::rpc::core::ConnectionState >(Arena* arena) {
   return Arena::CreateMessageInternal< ::mavsdk::rpc::core::ConnectionState >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mavsdk::rpc::core::AddNewConnectionRequest* Arena::CreateMaybeMessage< ::mavsdk::rpc::core::AddNewConnectionRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mavsdk::rpc::core::AddNewConnectionRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mavsdk::rpc::core::AddNewConnectionResponse* Arena::CreateMaybeMessage< ::mavsdk::rpc::core::AddNewConnectionResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mavsdk::rpc::core::AddNewConnectionResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

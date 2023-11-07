@@ -272,9 +272,10 @@ class PlayTuneRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kTuneDescriptionFieldNumber = 1,
+    kTuneDescriptionFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // .mavsdk.rpc.tune.TuneDescription tune_description = 1;
+  // .mavsdk.rpc.tune.TuneDescription tune_description = 2;
   bool has_tune_description() const;
   private:
   bool _internal_has_tune_description() const;
@@ -292,6 +293,15 @@ class PlayTuneRequest final :
       ::mavsdk::rpc::tune::TuneDescription* tune_description);
   ::mavsdk::rpc::tune::TuneDescription* unsafe_arena_release_tune_description();
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.tune.PlayTuneRequest)
  private:
   class _Internal;
@@ -300,6 +310,7 @@ class PlayTuneRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::mavsdk::rpc::tune::TuneDescription* tune_description_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_tune_2ftune_2eproto;
 };
@@ -814,7 +825,27 @@ class TuneResult final :
 #endif  // __GNUC__
 // PlayTuneRequest
 
-// .mavsdk.rpc.tune.TuneDescription tune_description = 1;
+// int32 drone_id = 1;
+inline void PlayTuneRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PlayTuneRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PlayTuneRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.tune.PlayTuneRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void PlayTuneRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void PlayTuneRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.tune.PlayTuneRequest.drone_id)
+}
+
+// .mavsdk.rpc.tune.TuneDescription tune_description = 2;
 inline bool PlayTuneRequest::_internal_has_tune_description() const {
   return this != internal_default_instance() && tune_description_ != nullptr;
 }

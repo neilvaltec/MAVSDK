@@ -387,9 +387,10 @@ class UploadMissionRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kMissionPlanFieldNumber = 1,
+    kMissionPlanFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // .mavsdk.rpc.mission.MissionPlan mission_plan = 1;
+  // .mavsdk.rpc.mission.MissionPlan mission_plan = 2;
   bool has_mission_plan() const;
   private:
   bool _internal_has_mission_plan() const;
@@ -407,6 +408,15 @@ class UploadMissionRequest final :
       ::mavsdk::rpc::mission::MissionPlan* mission_plan);
   ::mavsdk::rpc::mission::MissionPlan* unsafe_arena_release_mission_plan();
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.mission.UploadMissionRequest)
  private:
   class _Internal;
@@ -415,6 +425,7 @@ class UploadMissionRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::mavsdk::rpc::mission::MissionPlan* mission_plan_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_mission_2fmission_2eproto;
 };
@@ -683,9 +694,10 @@ class SubscribeUploadMissionWithProgressRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kMissionPlanFieldNumber = 1,
+    kMissionPlanFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // .mavsdk.rpc.mission.MissionPlan mission_plan = 1;
+  // .mavsdk.rpc.mission.MissionPlan mission_plan = 2;
   bool has_mission_plan() const;
   private:
   bool _internal_has_mission_plan() const;
@@ -703,6 +715,15 @@ class SubscribeUploadMissionWithProgressRequest final :
       ::mavsdk::rpc::mission::MissionPlan* mission_plan);
   ::mavsdk::rpc::mission::MissionPlan* unsafe_arena_release_mission_plan();
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.mission.SubscribeUploadMissionWithProgressRequest)
  private:
   class _Internal;
@@ -711,6 +732,7 @@ class SubscribeUploadMissionWithProgressRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::mavsdk::rpc::mission::MissionPlan* mission_plan_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_mission_2fmission_2eproto;
 };
@@ -998,6 +1020,18 @@ class CancelMissionUploadRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.mission.CancelMissionUploadRequest)
  private:
   class _Internal;
@@ -1005,6 +1039,7 @@ class CancelMissionUploadRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_mission_2fmission_2eproto;
 };
@@ -1272,6 +1307,18 @@ class DownloadMissionRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.mission.DownloadMissionRequest)
  private:
   class _Internal;
@@ -1279,6 +1326,7 @@ class DownloadMissionRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_mission_2fmission_2eproto;
 };
@@ -1566,6 +1614,18 @@ class SubscribeDownloadMissionWithProgressRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.mission.SubscribeDownloadMissionWithProgressRequest)
  private:
   class _Internal;
@@ -1573,6 +1633,7 @@ class SubscribeDownloadMissionWithProgressRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_mission_2fmission_2eproto;
 };
@@ -1860,6 +1921,18 @@ class CancelMissionDownloadRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.mission.CancelMissionDownloadRequest)
  private:
   class _Internal;
@@ -1867,6 +1940,7 @@ class CancelMissionDownloadRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_mission_2fmission_2eproto;
 };
@@ -2134,6 +2208,18 @@ class StartMissionRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.mission.StartMissionRequest)
  private:
   class _Internal;
@@ -2141,6 +2227,7 @@ class StartMissionRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_mission_2fmission_2eproto;
 };
@@ -2408,6 +2495,18 @@ class PauseMissionRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.mission.PauseMissionRequest)
  private:
   class _Internal;
@@ -2415,6 +2514,7 @@ class PauseMissionRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_mission_2fmission_2eproto;
 };
@@ -2682,6 +2782,18 @@ class ClearMissionRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.mission.ClearMissionRequest)
  private:
   class _Internal;
@@ -2689,6 +2801,7 @@ class ClearMissionRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_mission_2fmission_2eproto;
 };
@@ -2957,9 +3070,19 @@ class SetCurrentMissionItemRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIndexFieldNumber = 1,
+    kDroneIdFieldNumber = 1,
+    kIndexFieldNumber = 2,
   };
-  // int32 index = 1;
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // int32 index = 2;
   void clear_index();
   ::PROTOBUF_NAMESPACE_ID::int32 index() const;
   void set_index(::PROTOBUF_NAMESPACE_ID::int32 value);
@@ -2975,6 +3098,7 @@ class SetCurrentMissionItemRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   ::PROTOBUF_NAMESPACE_ID::int32 index_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_mission_2fmission_2eproto;
@@ -3243,6 +3367,18 @@ class IsMissionFinishedRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.mission.IsMissionFinishedRequest)
  private:
   class _Internal;
@@ -3250,6 +3386,7 @@ class IsMissionFinishedRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_mission_2fmission_2eproto;
 };
@@ -3528,6 +3665,18 @@ class SubscribeMissionProgressRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.mission.SubscribeMissionProgressRequest)
  private:
   class _Internal;
@@ -3535,6 +3684,7 @@ class SubscribeMissionProgressRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_mission_2fmission_2eproto;
 };
@@ -3802,6 +3952,18 @@ class GetReturnToLaunchAfterMissionRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.mission.GetReturnToLaunchAfterMissionRequest)
  private:
   class _Internal;
@@ -3809,6 +3971,7 @@ class GetReturnToLaunchAfterMissionRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_mission_2fmission_2eproto;
 };
@@ -4088,9 +4251,19 @@ class SetReturnToLaunchAfterMissionRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kEnableFieldNumber = 1,
+    kDroneIdFieldNumber = 1,
+    kEnableFieldNumber = 2,
   };
-  // bool enable = 1;
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // bool enable = 2;
   void clear_enable();
   bool enable() const;
   void set_enable(bool value);
@@ -4106,6 +4279,7 @@ class SetReturnToLaunchAfterMissionRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   bool enable_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_mission_2fmission_2eproto;
@@ -5407,7 +5581,27 @@ class ProgressDataOrMission final :
 #endif  // __GNUC__
 // UploadMissionRequest
 
-// .mavsdk.rpc.mission.MissionPlan mission_plan = 1;
+// int32 drone_id = 1;
+inline void UploadMissionRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 UploadMissionRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 UploadMissionRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.mission.UploadMissionRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void UploadMissionRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void UploadMissionRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.mission.UploadMissionRequest.drone_id)
+}
+
+// .mavsdk.rpc.mission.MissionPlan mission_plan = 2;
 inline bool UploadMissionRequest::_internal_has_mission_plan() const {
   return this != internal_default_instance() && mission_plan_ != nullptr;
 }
@@ -5595,7 +5789,27 @@ inline void UploadMissionResponse::set_allocated_mission_result(::mavsdk::rpc::m
 
 // SubscribeUploadMissionWithProgressRequest
 
-// .mavsdk.rpc.mission.MissionPlan mission_plan = 1;
+// int32 drone_id = 1;
+inline void SubscribeUploadMissionWithProgressRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeUploadMissionWithProgressRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeUploadMissionWithProgressRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.mission.SubscribeUploadMissionWithProgressRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SubscribeUploadMissionWithProgressRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SubscribeUploadMissionWithProgressRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.mission.SubscribeUploadMissionWithProgressRequest.drone_id)
+}
+
+// .mavsdk.rpc.mission.MissionPlan mission_plan = 2;
 inline bool SubscribeUploadMissionWithProgressRequest::_internal_has_mission_plan() const {
   return this != internal_default_instance() && mission_plan_ != nullptr;
 }
@@ -5873,6 +6087,26 @@ inline void UploadMissionWithProgressResponse::set_allocated_progress_data(::mav
 
 // CancelMissionUploadRequest
 
+// int32 drone_id = 1;
+inline void CancelMissionUploadRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 CancelMissionUploadRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 CancelMissionUploadRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.mission.CancelMissionUploadRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void CancelMissionUploadRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void CancelMissionUploadRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.mission.CancelMissionUploadRequest.drone_id)
+}
+
 // -------------------------------------------------------------------
 
 // CancelMissionUploadResponse
@@ -5970,6 +6204,26 @@ inline void CancelMissionUploadResponse::set_allocated_mission_result(::mavsdk::
 // -------------------------------------------------------------------
 
 // DownloadMissionRequest
+
+// int32 drone_id = 1;
+inline void DownloadMissionRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 DownloadMissionRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 DownloadMissionRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.mission.DownloadMissionRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void DownloadMissionRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void DownloadMissionRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.mission.DownloadMissionRequest.drone_id)
+}
 
 // -------------------------------------------------------------------
 
@@ -6159,6 +6413,26 @@ inline void DownloadMissionResponse::set_allocated_mission_plan(::mavsdk::rpc::m
 
 // SubscribeDownloadMissionWithProgressRequest
 
+// int32 drone_id = 1;
+inline void SubscribeDownloadMissionWithProgressRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeDownloadMissionWithProgressRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeDownloadMissionWithProgressRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.mission.SubscribeDownloadMissionWithProgressRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SubscribeDownloadMissionWithProgressRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SubscribeDownloadMissionWithProgressRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.mission.SubscribeDownloadMissionWithProgressRequest.drone_id)
+}
+
 // -------------------------------------------------------------------
 
 // DownloadMissionWithProgressResponse
@@ -6347,6 +6621,26 @@ inline void DownloadMissionWithProgressResponse::set_allocated_progress_data(::m
 
 // CancelMissionDownloadRequest
 
+// int32 drone_id = 1;
+inline void CancelMissionDownloadRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 CancelMissionDownloadRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 CancelMissionDownloadRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.mission.CancelMissionDownloadRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void CancelMissionDownloadRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void CancelMissionDownloadRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.mission.CancelMissionDownloadRequest.drone_id)
+}
+
 // -------------------------------------------------------------------
 
 // CancelMissionDownloadResponse
@@ -6444,6 +6738,26 @@ inline void CancelMissionDownloadResponse::set_allocated_mission_result(::mavsdk
 // -------------------------------------------------------------------
 
 // StartMissionRequest
+
+// int32 drone_id = 1;
+inline void StartMissionRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 StartMissionRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 StartMissionRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.mission.StartMissionRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void StartMissionRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void StartMissionRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.mission.StartMissionRequest.drone_id)
+}
 
 // -------------------------------------------------------------------
 
@@ -6543,6 +6857,26 @@ inline void StartMissionResponse::set_allocated_mission_result(::mavsdk::rpc::mi
 
 // PauseMissionRequest
 
+// int32 drone_id = 1;
+inline void PauseMissionRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PauseMissionRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PauseMissionRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.mission.PauseMissionRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void PauseMissionRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void PauseMissionRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.mission.PauseMissionRequest.drone_id)
+}
+
 // -------------------------------------------------------------------
 
 // PauseMissionResponse
@@ -6640,6 +6974,26 @@ inline void PauseMissionResponse::set_allocated_mission_result(::mavsdk::rpc::mi
 // -------------------------------------------------------------------
 
 // ClearMissionRequest
+
+// int32 drone_id = 1;
+inline void ClearMissionRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ClearMissionRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ClearMissionRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.mission.ClearMissionRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void ClearMissionRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void ClearMissionRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.mission.ClearMissionRequest.drone_id)
+}
 
 // -------------------------------------------------------------------
 
@@ -6739,7 +7093,27 @@ inline void ClearMissionResponse::set_allocated_mission_result(::mavsdk::rpc::mi
 
 // SetCurrentMissionItemRequest
 
-// int32 index = 1;
+// int32 drone_id = 1;
+inline void SetCurrentMissionItemRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetCurrentMissionItemRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetCurrentMissionItemRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.mission.SetCurrentMissionItemRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SetCurrentMissionItemRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SetCurrentMissionItemRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.mission.SetCurrentMissionItemRequest.drone_id)
+}
+
+// int32 index = 2;
 inline void SetCurrentMissionItemRequest::clear_index() {
   index_ = 0;
 }
@@ -6856,6 +7230,26 @@ inline void SetCurrentMissionItemResponse::set_allocated_mission_result(::mavsdk
 // -------------------------------------------------------------------
 
 // IsMissionFinishedRequest
+
+// int32 drone_id = 1;
+inline void IsMissionFinishedRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 IsMissionFinishedRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 IsMissionFinishedRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.mission.IsMissionFinishedRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void IsMissionFinishedRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void IsMissionFinishedRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.mission.IsMissionFinishedRequest.drone_id)
+}
 
 // -------------------------------------------------------------------
 
@@ -6975,6 +7369,26 @@ inline void IsMissionFinishedResponse::set_is_finished(bool value) {
 
 // SubscribeMissionProgressRequest
 
+// int32 drone_id = 1;
+inline void SubscribeMissionProgressRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeMissionProgressRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeMissionProgressRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.mission.SubscribeMissionProgressRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SubscribeMissionProgressRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SubscribeMissionProgressRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.mission.SubscribeMissionProgressRequest.drone_id)
+}
+
 // -------------------------------------------------------------------
 
 // MissionProgressResponse
@@ -7072,6 +7486,26 @@ inline void MissionProgressResponse::set_allocated_mission_progress(::mavsdk::rp
 // -------------------------------------------------------------------
 
 // GetReturnToLaunchAfterMissionRequest
+
+// int32 drone_id = 1;
+inline void GetReturnToLaunchAfterMissionRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 GetReturnToLaunchAfterMissionRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 GetReturnToLaunchAfterMissionRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.mission.GetReturnToLaunchAfterMissionRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void GetReturnToLaunchAfterMissionRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void GetReturnToLaunchAfterMissionRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.mission.GetReturnToLaunchAfterMissionRequest.drone_id)
+}
 
 // -------------------------------------------------------------------
 
@@ -7191,7 +7625,27 @@ inline void GetReturnToLaunchAfterMissionResponse::set_enable(bool value) {
 
 // SetReturnToLaunchAfterMissionRequest
 
-// bool enable = 1;
+// int32 drone_id = 1;
+inline void SetReturnToLaunchAfterMissionRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetReturnToLaunchAfterMissionRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetReturnToLaunchAfterMissionRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.mission.SetReturnToLaunchAfterMissionRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SetReturnToLaunchAfterMissionRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SetReturnToLaunchAfterMissionRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.mission.SetReturnToLaunchAfterMissionRequest.drone_id)
+}
+
+// bool enable = 2;
 inline void SetReturnToLaunchAfterMissionRequest::clear_enable() {
   enable_ = false;
 }

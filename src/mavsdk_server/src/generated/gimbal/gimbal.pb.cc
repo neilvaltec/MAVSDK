@@ -21,7 +21,8 @@ namespace rpc {
 namespace gimbal {
 constexpr SetPitchAndYawRequest::SetPitchAndYawRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : pitch_deg_(0)
+  : drone_id_(0)
+  , pitch_deg_(0)
   , yaw_deg_(0){}
 struct SetPitchAndYawRequestDefaultTypeInternal {
   constexpr SetPitchAndYawRequestDefaultTypeInternal()
@@ -46,7 +47,8 @@ struct SetPitchAndYawResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetPitchAndYawResponseDefaultTypeInternal _SetPitchAndYawResponse_default_instance_;
 constexpr SetPitchRateAndYawRateRequest::SetPitchRateAndYawRateRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : pitch_rate_deg_s_(0)
+  : drone_id_(0)
+  , pitch_rate_deg_s_(0)
   , yaw_rate_deg_s_(0){}
 struct SetPitchRateAndYawRateRequestDefaultTypeInternal {
   constexpr SetPitchRateAndYawRateRequestDefaultTypeInternal()
@@ -71,7 +73,8 @@ struct SetPitchRateAndYawRateResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetPitchRateAndYawRateResponseDefaultTypeInternal _SetPitchRateAndYawRateResponse_default_instance_;
 constexpr SetModeRequest::SetModeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : gimbal_mode_(0)
+  : drone_id_(0)
+  , gimbal_mode_(0)
 {}
 struct SetModeRequestDefaultTypeInternal {
   constexpr SetModeRequestDefaultTypeInternal()
@@ -97,8 +100,9 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetModeResponseDefaultTypeInter
 constexpr SetRoiLocationRequest::SetRoiLocationRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : latitude_deg_(0)
-  , longitude_deg_(0)
-  , altitude_m_(0){}
+  , drone_id_(0)
+  , altitude_m_(0)
+  , longitude_deg_(0){}
 struct SetRoiLocationRequestDefaultTypeInternal {
   constexpr SetRoiLocationRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -122,7 +126,8 @@ struct SetRoiLocationResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetRoiLocationResponseDefaultTypeInternal _SetRoiLocationResponse_default_instance_;
 constexpr TakeControlRequest::TakeControlRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : control_mode_(0)
+  : drone_id_(0)
+  , control_mode_(0)
 {}
 struct TakeControlRequestDefaultTypeInternal {
   constexpr TakeControlRequestDefaultTypeInternal()
@@ -146,7 +151,8 @@ struct TakeControlResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TakeControlResponseDefaultTypeInternal _TakeControlResponse_default_instance_;
 constexpr ReleaseControlRequest::ReleaseControlRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct ReleaseControlRequestDefaultTypeInternal {
   constexpr ReleaseControlRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -169,7 +175,8 @@ struct ReleaseControlResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ReleaseControlResponseDefaultTypeInternal _ReleaseControlResponse_default_instance_;
 constexpr SubscribeControlRequest::SubscribeControlRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeControlRequestDefaultTypeInternal {
   constexpr SubscribeControlRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -235,6 +242,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_gimbal_2fgimbal_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::gimbal::SetPitchAndYawRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::gimbal::SetPitchAndYawRequest, pitch_deg_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::gimbal::SetPitchAndYawRequest, yaw_deg_),
   ~0u,  // no _has_bits_
@@ -248,6 +256,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_gimbal_2fgimbal_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::gimbal::SetPitchRateAndYawRateRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::gimbal::SetPitchRateAndYawRateRequest, pitch_rate_deg_s_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::gimbal::SetPitchRateAndYawRateRequest, yaw_rate_deg_s_),
   ~0u,  // no _has_bits_
@@ -261,6 +270,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_gimbal_2fgimbal_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::gimbal::SetModeRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::gimbal::SetModeRequest, gimbal_mode_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::gimbal::SetModeResponse, _internal_metadata_),
@@ -273,6 +283,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_gimbal_2fgimbal_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::gimbal::SetRoiLocationRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::gimbal::SetRoiLocationRequest, latitude_deg_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::gimbal::SetRoiLocationRequest, longitude_deg_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::gimbal::SetRoiLocationRequest, altitude_m_),
@@ -287,6 +298,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_gimbal_2fgimbal_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::gimbal::TakeControlRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::gimbal::TakeControlRequest, control_mode_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::gimbal::TakeControlResponse, _internal_metadata_),
@@ -299,6 +311,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_gimbal_2fgimbal_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::gimbal::ReleaseControlRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::gimbal::ReleaseControlResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -310,6 +323,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_gimbal_2fgimbal_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::gimbal::SubscribeControlRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::gimbal::ControlResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -336,21 +350,21 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_gimbal_2fgimbal_2eproto::offse
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::mavsdk::rpc::gimbal::SetPitchAndYawRequest)},
-  { 7, -1, sizeof(::mavsdk::rpc::gimbal::SetPitchAndYawResponse)},
-  { 13, -1, sizeof(::mavsdk::rpc::gimbal::SetPitchRateAndYawRateRequest)},
-  { 20, -1, sizeof(::mavsdk::rpc::gimbal::SetPitchRateAndYawRateResponse)},
-  { 26, -1, sizeof(::mavsdk::rpc::gimbal::SetModeRequest)},
-  { 32, -1, sizeof(::mavsdk::rpc::gimbal::SetModeResponse)},
-  { 38, -1, sizeof(::mavsdk::rpc::gimbal::SetRoiLocationRequest)},
-  { 46, -1, sizeof(::mavsdk::rpc::gimbal::SetRoiLocationResponse)},
-  { 52, -1, sizeof(::mavsdk::rpc::gimbal::TakeControlRequest)},
-  { 58, -1, sizeof(::mavsdk::rpc::gimbal::TakeControlResponse)},
-  { 64, -1, sizeof(::mavsdk::rpc::gimbal::ReleaseControlRequest)},
-  { 69, -1, sizeof(::mavsdk::rpc::gimbal::ReleaseControlResponse)},
-  { 75, -1, sizeof(::mavsdk::rpc::gimbal::SubscribeControlRequest)},
-  { 80, -1, sizeof(::mavsdk::rpc::gimbal::ControlResponse)},
-  { 86, -1, sizeof(::mavsdk::rpc::gimbal::ControlStatus)},
-  { 96, -1, sizeof(::mavsdk::rpc::gimbal::GimbalResult)},
+  { 8, -1, sizeof(::mavsdk::rpc::gimbal::SetPitchAndYawResponse)},
+  { 14, -1, sizeof(::mavsdk::rpc::gimbal::SetPitchRateAndYawRateRequest)},
+  { 22, -1, sizeof(::mavsdk::rpc::gimbal::SetPitchRateAndYawRateResponse)},
+  { 28, -1, sizeof(::mavsdk::rpc::gimbal::SetModeRequest)},
+  { 35, -1, sizeof(::mavsdk::rpc::gimbal::SetModeResponse)},
+  { 41, -1, sizeof(::mavsdk::rpc::gimbal::SetRoiLocationRequest)},
+  { 50, -1, sizeof(::mavsdk::rpc::gimbal::SetRoiLocationResponse)},
+  { 56, -1, sizeof(::mavsdk::rpc::gimbal::TakeControlRequest)},
+  { 63, -1, sizeof(::mavsdk::rpc::gimbal::TakeControlResponse)},
+  { 69, -1, sizeof(::mavsdk::rpc::gimbal::ReleaseControlRequest)},
+  { 75, -1, sizeof(::mavsdk::rpc::gimbal::ReleaseControlResponse)},
+  { 81, -1, sizeof(::mavsdk::rpc::gimbal::SubscribeControlRequest)},
+  { 87, -1, sizeof(::mavsdk::rpc::gimbal::ControlResponse)},
+  { 93, -1, sizeof(::mavsdk::rpc::gimbal::ControlStatus)},
+  { 103, -1, sizeof(::mavsdk::rpc::gimbal::GimbalResult)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -374,70 +388,73 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_gimbal_2fgimbal_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\023gimbal/gimbal.proto\022\021mavsdk.rpc.gimbal"
-  "\";\n\025SetPitchAndYawRequest\022\021\n\tpitch_deg\030\001"
-  " \001(\002\022\017\n\007yaw_deg\030\002 \001(\002\"P\n\026SetPitchAndYawR"
-  "esponse\0226\n\rgimbal_result\030\001 \001(\0132\037.mavsdk."
-  "rpc.gimbal.GimbalResult\"Q\n\035SetPitchRateA"
-  "ndYawRateRequest\022\030\n\020pitch_rate_deg_s\030\001 \001"
-  "(\002\022\026\n\016yaw_rate_deg_s\030\002 \001(\002\"X\n\036SetPitchRa"
-  "teAndYawRateResponse\0226\n\rgimbal_result\030\001 "
-  "\001(\0132\037.mavsdk.rpc.gimbal.GimbalResult\"D\n\016"
-  "SetModeRequest\0222\n\013gimbal_mode\030\001 \001(\0162\035.ma"
-  "vsdk.rpc.gimbal.GimbalMode\"I\n\017SetModeRes"
-  "ponse\0226\n\rgimbal_result\030\001 \001(\0132\037.mavsdk.rp"
-  "c.gimbal.GimbalResult\"X\n\025SetRoiLocationR"
-  "equest\022\024\n\014latitude_deg\030\001 \001(\001\022\025\n\rlongitud"
-  "e_deg\030\002 \001(\001\022\022\n\naltitude_m\030\003 \001(\002\"P\n\026SetRo"
-  "iLocationResponse\0226\n\rgimbal_result\030\001 \001(\013"
-  "2\037.mavsdk.rpc.gimbal.GimbalResult\"J\n\022Tak"
-  "eControlRequest\0224\n\014control_mode\030\001 \001(\0162\036."
-  "mavsdk.rpc.gimbal.ControlMode\"M\n\023TakeCon"
-  "trolResponse\0226\n\rgimbal_result\030\001 \001(\0132\037.ma"
-  "vsdk.rpc.gimbal.GimbalResult\"\027\n\025ReleaseC"
-  "ontrolRequest\"P\n\026ReleaseControlResponse\022"
-  "6\n\rgimbal_result\030\001 \001(\0132\037.mavsdk.rpc.gimb"
-  "al.GimbalResult\"\031\n\027SubscribeControlReque"
-  "st\"K\n\017ControlResponse\0228\n\016control_status\030"
-  "\001 \001(\0132 .mavsdk.rpc.gimbal.ControlStatus\""
-  "\307\001\n\rControlStatus\0224\n\014control_mode\030\001 \001(\0162"
-  "\036.mavsdk.rpc.gimbal.ControlMode\022\035\n\025sysid"
-  "_primary_control\030\002 \001(\005\022\036\n\026compid_primary"
-  "_control\030\003 \001(\005\022\037\n\027sysid_secondary_contro"
-  "l\030\004 \001(\005\022 \n\030compid_secondary_control\030\005 \001("
-  "\005\"\341\001\n\014GimbalResult\0226\n\006result\030\001 \001(\0162&.mav"
-  "sdk.rpc.gimbal.GimbalResult.Result\022\022\n\nre"
-  "sult_str\030\002 \001(\t\"\204\001\n\006Result\022\022\n\016RESULT_UNKN"
-  "OWN\020\000\022\022\n\016RESULT_SUCCESS\020\001\022\020\n\014RESULT_ERRO"
-  "R\020\002\022\022\n\016RESULT_TIMEOUT\020\003\022\026\n\022RESULT_UNSUPP"
-  "ORTED\020\004\022\024\n\020RESULT_NO_SYSTEM\020\005*B\n\nGimbalM"
-  "ode\022\032\n\026GIMBAL_MODE_YAW_FOLLOW\020\000\022\030\n\024GIMBA"
-  "L_MODE_YAW_LOCK\020\001*Z\n\013ControlMode\022\025\n\021CONT"
-  "ROL_MODE_NONE\020\000\022\030\n\024CONTROL_MODE_PRIMARY\020"
-  "\001\022\032\n\026CONTROL_MODE_SECONDARY\020\0022\347\005\n\rGimbal"
-  "Service\022g\n\016SetPitchAndYaw\022(.mavsdk.rpc.g"
-  "imbal.SetPitchAndYawRequest\032).mavsdk.rpc"
-  ".gimbal.SetPitchAndYawResponse\"\000\022\177\n\026SetP"
-  "itchRateAndYawRate\0220.mavsdk.rpc.gimbal.S"
-  "etPitchRateAndYawRateRequest\0321.mavsdk.rp"
-  "c.gimbal.SetPitchRateAndYawRateResponse\""
-  "\000\022R\n\007SetMode\022!.mavsdk.rpc.gimbal.SetMode"
-  "Request\032\".mavsdk.rpc.gimbal.SetModeRespo"
-  "nse\"\000\022g\n\016SetRoiLocation\022(.mavsdk.rpc.gim"
-  "bal.SetRoiLocationRequest\032).mavsdk.rpc.g"
-  "imbal.SetRoiLocationResponse\"\000\022^\n\013TakeCo"
-  "ntrol\022%.mavsdk.rpc.gimbal.TakeControlReq"
-  "uest\032&.mavsdk.rpc.gimbal.TakeControlResp"
-  "onse\"\000\022g\n\016ReleaseControl\022(.mavsdk.rpc.gi"
-  "mbal.ReleaseControlRequest\032).mavsdk.rpc."
-  "gimbal.ReleaseControlResponse\"\000\022f\n\020Subsc"
-  "ribeControl\022*.mavsdk.rpc.gimbal.Subscrib"
-  "eControlRequest\032\".mavsdk.rpc.gimbal.Cont"
-  "rolResponse\"\0000\001B\037\n\020io.mavsdk.gimbalB\013Gim"
-  "balProtob\006proto3"
+  "\"M\n\025SetPitchAndYawRequest\022\020\n\010drone_id\030\001 "
+  "\001(\005\022\021\n\tpitch_deg\030\002 \001(\002\022\017\n\007yaw_deg\030\003 \001(\002\""
+  "P\n\026SetPitchAndYawResponse\0226\n\rgimbal_resu"
+  "lt\030\001 \001(\0132\037.mavsdk.rpc.gimbal.GimbalResul"
+  "t\"c\n\035SetPitchRateAndYawRateRequest\022\020\n\010dr"
+  "one_id\030\001 \001(\005\022\030\n\020pitch_rate_deg_s\030\002 \001(\002\022\026"
+  "\n\016yaw_rate_deg_s\030\003 \001(\002\"X\n\036SetPitchRateAn"
+  "dYawRateResponse\0226\n\rgimbal_result\030\001 \001(\0132"
+  "\037.mavsdk.rpc.gimbal.GimbalResult\"V\n\016SetM"
+  "odeRequest\022\020\n\010drone_id\030\001 \001(\005\0222\n\013gimbal_m"
+  "ode\030\002 \001(\0162\035.mavsdk.rpc.gimbal.GimbalMode"
+  "\"I\n\017SetModeResponse\0226\n\rgimbal_result\030\001 \001"
+  "(\0132\037.mavsdk.rpc.gimbal.GimbalResult\"j\n\025S"
+  "etRoiLocationRequest\022\020\n\010drone_id\030\001 \001(\005\022\024"
+  "\n\014latitude_deg\030\002 \001(\001\022\025\n\rlongitude_deg\030\003 "
+  "\001(\001\022\022\n\naltitude_m\030\004 \001(\002\"P\n\026SetRoiLocatio"
+  "nResponse\0226\n\rgimbal_result\030\001 \001(\0132\037.mavsd"
+  "k.rpc.gimbal.GimbalResult\"\\\n\022TakeControl"
+  "Request\022\020\n\010drone_id\030\001 \001(\005\0224\n\014control_mod"
+  "e\030\002 \001(\0162\036.mavsdk.rpc.gimbal.ControlMode\""
+  "M\n\023TakeControlResponse\0226\n\rgimbal_result\030"
+  "\001 \001(\0132\037.mavsdk.rpc.gimbal.GimbalResult\")"
+  "\n\025ReleaseControlRequest\022\020\n\010drone_id\030\001 \001("
+  "\005\"P\n\026ReleaseControlResponse\0226\n\rgimbal_re"
+  "sult\030\001 \001(\0132\037.mavsdk.rpc.gimbal.GimbalRes"
+  "ult\"+\n\027SubscribeControlRequest\022\020\n\010drone_"
+  "id\030\001 \001(\005\"K\n\017ControlResponse\0228\n\016control_s"
+  "tatus\030\001 \001(\0132 .mavsdk.rpc.gimbal.ControlS"
+  "tatus\"\307\001\n\rControlStatus\0224\n\014control_mode\030"
+  "\001 \001(\0162\036.mavsdk.rpc.gimbal.ControlMode\022\035\n"
+  "\025sysid_primary_control\030\002 \001(\005\022\036\n\026compid_p"
+  "rimary_control\030\003 \001(\005\022\037\n\027sysid_secondary_"
+  "control\030\004 \001(\005\022 \n\030compid_secondary_contro"
+  "l\030\005 \001(\005\"\341\001\n\014GimbalResult\0226\n\006result\030\001 \001(\016"
+  "2&.mavsdk.rpc.gimbal.GimbalResult.Result"
+  "\022\022\n\nresult_str\030\002 \001(\t\"\204\001\n\006Result\022\022\n\016RESUL"
+  "T_UNKNOWN\020\000\022\022\n\016RESULT_SUCCESS\020\001\022\020\n\014RESUL"
+  "T_ERROR\020\002\022\022\n\016RESULT_TIMEOUT\020\003\022\026\n\022RESULT_"
+  "UNSUPPORTED\020\004\022\024\n\020RESULT_NO_SYSTEM\020\005*B\n\nG"
+  "imbalMode\022\032\n\026GIMBAL_MODE_YAW_FOLLOW\020\000\022\030\n"
+  "\024GIMBAL_MODE_YAW_LOCK\020\001*Z\n\013ControlMode\022\025"
+  "\n\021CONTROL_MODE_NONE\020\000\022\030\n\024CONTROL_MODE_PR"
+  "IMARY\020\001\022\032\n\026CONTROL_MODE_SECONDARY\020\0022\347\005\n\r"
+  "GimbalService\022g\n\016SetPitchAndYaw\022(.mavsdk"
+  ".rpc.gimbal.SetPitchAndYawRequest\032).mavs"
+  "dk.rpc.gimbal.SetPitchAndYawResponse\"\000\022\177"
+  "\n\026SetPitchRateAndYawRate\0220.mavsdk.rpc.gi"
+  "mbal.SetPitchRateAndYawRateRequest\0321.mav"
+  "sdk.rpc.gimbal.SetPitchRateAndYawRateRes"
+  "ponse\"\000\022R\n\007SetMode\022!.mavsdk.rpc.gimbal.S"
+  "etModeRequest\032\".mavsdk.rpc.gimbal.SetMod"
+  "eResponse\"\000\022g\n\016SetRoiLocation\022(.mavsdk.r"
+  "pc.gimbal.SetRoiLocationRequest\032).mavsdk"
+  ".rpc.gimbal.SetRoiLocationResponse\"\000\022^\n\013"
+  "TakeControl\022%.mavsdk.rpc.gimbal.TakeCont"
+  "rolRequest\032&.mavsdk.rpc.gimbal.TakeContr"
+  "olResponse\"\000\022g\n\016ReleaseControl\022(.mavsdk."
+  "rpc.gimbal.ReleaseControlRequest\032).mavsd"
+  "k.rpc.gimbal.ReleaseControlResponse\"\000\022f\n"
+  "\020SubscribeControl\022*.mavsdk.rpc.gimbal.Su"
+  "bscribeControlRequest\032\".mavsdk.rpc.gimba"
+  "l.ControlResponse\"\0000\001B\037\n\020io.mavsdk.gimba"
+  "lB\013GimbalProtob\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_gimbal_2fgimbal_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_gimbal_2fgimbal_2eproto = {
-  false, false, 2416, descriptor_table_protodef_gimbal_2fgimbal_2eproto, "gimbal/gimbal.proto", 
+  false, false, 2542, descriptor_table_protodef_gimbal_2fgimbal_2eproto, "gimbal/gimbal.proto", 
   &descriptor_table_gimbal_2fgimbal_2eproto_once, nullptr, 0, 16,
   schemas, file_default_instances, TableStruct_gimbal_2fgimbal_2eproto::offsets,
   file_level_metadata_gimbal_2fgimbal_2eproto, file_level_enum_descriptors_gimbal_2fgimbal_2eproto, file_level_service_descriptors_gimbal_2fgimbal_2eproto,
@@ -528,17 +545,17 @@ SetPitchAndYawRequest::SetPitchAndYawRequest(::PROTOBUF_NAMESPACE_ID::Arena* are
 SetPitchAndYawRequest::SetPitchAndYawRequest(const SetPitchAndYawRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&pitch_deg_, &from.pitch_deg_,
+  ::memcpy(&drone_id_, &from.drone_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&yaw_deg_) -
-    reinterpret_cast<char*>(&pitch_deg_)) + sizeof(yaw_deg_));
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(yaw_deg_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.gimbal.SetPitchAndYawRequest)
 }
 
 inline void SetPitchAndYawRequest::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&pitch_deg_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&drone_id_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&yaw_deg_) -
-    reinterpret_cast<char*>(&pitch_deg_)) + sizeof(yaw_deg_));
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(yaw_deg_));
 }
 
 SetPitchAndYawRequest::~SetPitchAndYawRequest() {
@@ -568,9 +585,9 @@ void SetPitchAndYawRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&pitch_deg_, 0, static_cast<size_t>(
+  ::memset(&drone_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&yaw_deg_) -
-      reinterpret_cast<char*>(&pitch_deg_)) + sizeof(yaw_deg_));
+      reinterpret_cast<char*>(&drone_id_)) + sizeof(yaw_deg_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -580,16 +597,23 @@ const char* SetPitchAndYawRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // float pitch_deg = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // float pitch_deg = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
           pitch_deg_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // float yaw_deg = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+      // float yaw_deg = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
           yaw_deg_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
@@ -623,16 +647,22 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // float pitch_deg = 1;
-  if (!(this->_internal_pitch_deg() <= 0 && this->_internal_pitch_deg() >= 0)) {
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_pitch_deg(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
   }
 
-  // float yaw_deg = 2;
+  // float pitch_deg = 2;
+  if (!(this->_internal_pitch_deg() <= 0 && this->_internal_pitch_deg() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_pitch_deg(), target);
+  }
+
+  // float yaw_deg = 3;
   if (!(this->_internal_yaw_deg() <= 0 && this->_internal_yaw_deg() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_yaw_deg(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_yaw_deg(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -651,12 +681,19 @@ size_t SetPitchAndYawRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // float pitch_deg = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
+
+  // float pitch_deg = 2;
   if (!(this->_internal_pitch_deg() <= 0 && this->_internal_pitch_deg() >= 0)) {
     total_size += 1 + 4;
   }
 
-  // float yaw_deg = 2;
+  // float yaw_deg = 3;
   if (!(this->_internal_yaw_deg() <= 0 && this->_internal_yaw_deg() >= 0)) {
     total_size += 1 + 4;
   }
@@ -689,6 +726,9 @@ void SetPitchAndYawRequest::MergeFrom(const SetPitchAndYawRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   if (!(from._internal_pitch_deg() <= 0 && from._internal_pitch_deg() >= 0)) {
     _internal_set_pitch_deg(from._internal_pitch_deg());
   }
@@ -715,9 +755,9 @@ void SetPitchAndYawRequest::InternalSwap(SetPitchAndYawRequest* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(SetPitchAndYawRequest, yaw_deg_)
       + sizeof(SetPitchAndYawRequest::yaw_deg_)
-      - PROTOBUF_FIELD_OFFSET(SetPitchAndYawRequest, pitch_deg_)>(
-          reinterpret_cast<char*>(&pitch_deg_),
-          reinterpret_cast<char*>(&other->pitch_deg_));
+      - PROTOBUF_FIELD_OFFSET(SetPitchAndYawRequest, drone_id_)>(
+          reinterpret_cast<char*>(&drone_id_),
+          reinterpret_cast<char*>(&other->drone_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetPitchAndYawRequest::GetMetadata() const {
@@ -944,17 +984,17 @@ SetPitchRateAndYawRateRequest::SetPitchRateAndYawRateRequest(::PROTOBUF_NAMESPAC
 SetPitchRateAndYawRateRequest::SetPitchRateAndYawRateRequest(const SetPitchRateAndYawRateRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&pitch_rate_deg_s_, &from.pitch_rate_deg_s_,
+  ::memcpy(&drone_id_, &from.drone_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&yaw_rate_deg_s_) -
-    reinterpret_cast<char*>(&pitch_rate_deg_s_)) + sizeof(yaw_rate_deg_s_));
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(yaw_rate_deg_s_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.gimbal.SetPitchRateAndYawRateRequest)
 }
 
 inline void SetPitchRateAndYawRateRequest::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&pitch_rate_deg_s_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&drone_id_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&yaw_rate_deg_s_) -
-    reinterpret_cast<char*>(&pitch_rate_deg_s_)) + sizeof(yaw_rate_deg_s_));
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(yaw_rate_deg_s_));
 }
 
 SetPitchRateAndYawRateRequest::~SetPitchRateAndYawRateRequest() {
@@ -984,9 +1024,9 @@ void SetPitchRateAndYawRateRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&pitch_rate_deg_s_, 0, static_cast<size_t>(
+  ::memset(&drone_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&yaw_rate_deg_s_) -
-      reinterpret_cast<char*>(&pitch_rate_deg_s_)) + sizeof(yaw_rate_deg_s_));
+      reinterpret_cast<char*>(&drone_id_)) + sizeof(yaw_rate_deg_s_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -996,16 +1036,23 @@ const char* SetPitchRateAndYawRateRequest::_InternalParse(const char* ptr, ::PRO
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // float pitch_rate_deg_s = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // float pitch_rate_deg_s = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
           pitch_rate_deg_s_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // float yaw_rate_deg_s = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+      // float yaw_rate_deg_s = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
           yaw_rate_deg_s_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
@@ -1039,16 +1086,22 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // float pitch_rate_deg_s = 1;
-  if (!(this->_internal_pitch_rate_deg_s() <= 0 && this->_internal_pitch_rate_deg_s() >= 0)) {
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_pitch_rate_deg_s(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
   }
 
-  // float yaw_rate_deg_s = 2;
+  // float pitch_rate_deg_s = 2;
+  if (!(this->_internal_pitch_rate_deg_s() <= 0 && this->_internal_pitch_rate_deg_s() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_pitch_rate_deg_s(), target);
+  }
+
+  // float yaw_rate_deg_s = 3;
   if (!(this->_internal_yaw_rate_deg_s() <= 0 && this->_internal_yaw_rate_deg_s() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_yaw_rate_deg_s(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_yaw_rate_deg_s(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1067,12 +1120,19 @@ size_t SetPitchRateAndYawRateRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // float pitch_rate_deg_s = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
+
+  // float pitch_rate_deg_s = 2;
   if (!(this->_internal_pitch_rate_deg_s() <= 0 && this->_internal_pitch_rate_deg_s() >= 0)) {
     total_size += 1 + 4;
   }
 
-  // float yaw_rate_deg_s = 2;
+  // float yaw_rate_deg_s = 3;
   if (!(this->_internal_yaw_rate_deg_s() <= 0 && this->_internal_yaw_rate_deg_s() >= 0)) {
     total_size += 1 + 4;
   }
@@ -1105,6 +1165,9 @@ void SetPitchRateAndYawRateRequest::MergeFrom(const SetPitchRateAndYawRateReques
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   if (!(from._internal_pitch_rate_deg_s() <= 0 && from._internal_pitch_rate_deg_s() >= 0)) {
     _internal_set_pitch_rate_deg_s(from._internal_pitch_rate_deg_s());
   }
@@ -1131,9 +1194,9 @@ void SetPitchRateAndYawRateRequest::InternalSwap(SetPitchRateAndYawRateRequest* 
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(SetPitchRateAndYawRateRequest, yaw_rate_deg_s_)
       + sizeof(SetPitchRateAndYawRateRequest::yaw_rate_deg_s_)
-      - PROTOBUF_FIELD_OFFSET(SetPitchRateAndYawRateRequest, pitch_rate_deg_s_)>(
-          reinterpret_cast<char*>(&pitch_rate_deg_s_),
-          reinterpret_cast<char*>(&other->pitch_rate_deg_s_));
+      - PROTOBUF_FIELD_OFFSET(SetPitchRateAndYawRateRequest, drone_id_)>(
+          reinterpret_cast<char*>(&drone_id_),
+          reinterpret_cast<char*>(&other->drone_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetPitchRateAndYawRateRequest::GetMetadata() const {
@@ -1360,12 +1423,17 @@ SetModeRequest::SetModeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 SetModeRequest::SetModeRequest(const SetModeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  gimbal_mode_ = from.gimbal_mode_;
+  ::memcpy(&drone_id_, &from.drone_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&gimbal_mode_) -
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(gimbal_mode_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.gimbal.SetModeRequest)
 }
 
 inline void SetModeRequest::SharedCtor() {
-gimbal_mode_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&drone_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&gimbal_mode_) -
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(gimbal_mode_));
 }
 
 SetModeRequest::~SetModeRequest() {
@@ -1395,7 +1463,9 @@ void SetModeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  gimbal_mode_ = 0;
+  ::memset(&drone_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&gimbal_mode_) -
+      reinterpret_cast<char*>(&drone_id_)) + sizeof(gimbal_mode_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1405,9 +1475,16 @@ const char* SetModeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .mavsdk.rpc.gimbal.GimbalMode gimbal_mode = 1;
+      // int32 drone_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mavsdk.rpc.gimbal.GimbalMode gimbal_mode = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_gimbal_mode(static_cast<::mavsdk::rpc::gimbal::GimbalMode>(val));
@@ -1442,11 +1519,17 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.gimbal.GimbalMode gimbal_mode = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // .mavsdk.rpc.gimbal.GimbalMode gimbal_mode = 2;
   if (this->_internal_gimbal_mode() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      1, this->_internal_gimbal_mode(), target);
+      2, this->_internal_gimbal_mode(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1465,7 +1548,14 @@ size_t SetModeRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.gimbal.GimbalMode gimbal_mode = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
+
+  // .mavsdk.rpc.gimbal.GimbalMode gimbal_mode = 2;
   if (this->_internal_gimbal_mode() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_gimbal_mode());
@@ -1499,6 +1589,9 @@ void SetModeRequest::MergeFrom(const SetModeRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   if (from._internal_gimbal_mode() != 0) {
     _internal_set_gimbal_mode(from._internal_gimbal_mode());
   }
@@ -1519,7 +1612,12 @@ bool SetModeRequest::IsInitialized() const {
 void SetModeRequest::InternalSwap(SetModeRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(gimbal_mode_, other->gimbal_mode_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetModeRequest, gimbal_mode_)
+      + sizeof(SetModeRequest::gimbal_mode_)
+      - PROTOBUF_FIELD_OFFSET(SetModeRequest, drone_id_)>(
+          reinterpret_cast<char*>(&drone_id_),
+          reinterpret_cast<char*>(&other->drone_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetModeRequest::GetMetadata() const {
@@ -1747,16 +1845,16 @@ SetRoiLocationRequest::SetRoiLocationRequest(const SetRoiLocationRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&latitude_deg_, &from.latitude_deg_,
-    static_cast<size_t>(reinterpret_cast<char*>(&altitude_m_) -
-    reinterpret_cast<char*>(&latitude_deg_)) + sizeof(altitude_m_));
+    static_cast<size_t>(reinterpret_cast<char*>(&longitude_deg_) -
+    reinterpret_cast<char*>(&latitude_deg_)) + sizeof(longitude_deg_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.gimbal.SetRoiLocationRequest)
 }
 
 inline void SetRoiLocationRequest::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&latitude_deg_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&altitude_m_) -
-    reinterpret_cast<char*>(&latitude_deg_)) + sizeof(altitude_m_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&longitude_deg_) -
+    reinterpret_cast<char*>(&latitude_deg_)) + sizeof(longitude_deg_));
 }
 
 SetRoiLocationRequest::~SetRoiLocationRequest() {
@@ -1787,8 +1885,8 @@ void SetRoiLocationRequest::Clear() {
   (void) cached_has_bits;
 
   ::memset(&latitude_deg_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&altitude_m_) -
-      reinterpret_cast<char*>(&latitude_deg_)) + sizeof(altitude_m_));
+      reinterpret_cast<char*>(&longitude_deg_) -
+      reinterpret_cast<char*>(&latitude_deg_)) + sizeof(longitude_deg_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1798,23 +1896,30 @@ const char* SetRoiLocationRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // double latitude_deg = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 9)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double latitude_deg = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
           latitude_deg_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
-      // double longitude_deg = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
+      // double longitude_deg = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 25)) {
           longitude_deg_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
-      // float altitude_m = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+      // float altitude_m = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
           altitude_m_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
@@ -1848,22 +1953,28 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // double latitude_deg = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // double latitude_deg = 2;
   if (!(this->_internal_latitude_deg() <= 0 && this->_internal_latitude_deg() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(1, this->_internal_latitude_deg(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_latitude_deg(), target);
   }
 
-  // double longitude_deg = 2;
+  // double longitude_deg = 3;
   if (!(this->_internal_longitude_deg() <= 0 && this->_internal_longitude_deg() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_longitude_deg(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(3, this->_internal_longitude_deg(), target);
   }
 
-  // float altitude_m = 3;
+  // float altitude_m = 4;
   if (!(this->_internal_altitude_m() <= 0 && this->_internal_altitude_m() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_altitude_m(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_altitude_m(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1882,19 +1993,26 @@ size_t SetRoiLocationRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // double latitude_deg = 1;
+  // double latitude_deg = 2;
   if (!(this->_internal_latitude_deg() <= 0 && this->_internal_latitude_deg() >= 0)) {
     total_size += 1 + 8;
   }
 
-  // double longitude_deg = 2;
-  if (!(this->_internal_longitude_deg() <= 0 && this->_internal_longitude_deg() >= 0)) {
-    total_size += 1 + 8;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
-  // float altitude_m = 3;
+  // float altitude_m = 4;
   if (!(this->_internal_altitude_m() <= 0 && this->_internal_altitude_m() >= 0)) {
     total_size += 1 + 4;
+  }
+
+  // double longitude_deg = 3;
+  if (!(this->_internal_longitude_deg() <= 0 && this->_internal_longitude_deg() >= 0)) {
+    total_size += 1 + 8;
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1928,11 +2046,14 @@ void SetRoiLocationRequest::MergeFrom(const SetRoiLocationRequest& from) {
   if (!(from._internal_latitude_deg() <= 0 && from._internal_latitude_deg() >= 0)) {
     _internal_set_latitude_deg(from._internal_latitude_deg());
   }
-  if (!(from._internal_longitude_deg() <= 0 && from._internal_longitude_deg() >= 0)) {
-    _internal_set_longitude_deg(from._internal_longitude_deg());
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
   }
   if (!(from._internal_altitude_m() <= 0 && from._internal_altitude_m() >= 0)) {
     _internal_set_altitude_m(from._internal_altitude_m());
+  }
+  if (!(from._internal_longitude_deg() <= 0 && from._internal_longitude_deg() >= 0)) {
+    _internal_set_longitude_deg(from._internal_longitude_deg());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1952,8 +2073,8 @@ void SetRoiLocationRequest::InternalSwap(SetRoiLocationRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(SetRoiLocationRequest, altitude_m_)
-      + sizeof(SetRoiLocationRequest::altitude_m_)
+      PROTOBUF_FIELD_OFFSET(SetRoiLocationRequest, longitude_deg_)
+      + sizeof(SetRoiLocationRequest::longitude_deg_)
       - PROTOBUF_FIELD_OFFSET(SetRoiLocationRequest, latitude_deg_)>(
           reinterpret_cast<char*>(&latitude_deg_),
           reinterpret_cast<char*>(&other->latitude_deg_));
@@ -2183,12 +2304,17 @@ TakeControlRequest::TakeControlRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 TakeControlRequest::TakeControlRequest(const TakeControlRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  control_mode_ = from.control_mode_;
+  ::memcpy(&drone_id_, &from.drone_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&control_mode_) -
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(control_mode_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.gimbal.TakeControlRequest)
 }
 
 inline void TakeControlRequest::SharedCtor() {
-control_mode_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&drone_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&control_mode_) -
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(control_mode_));
 }
 
 TakeControlRequest::~TakeControlRequest() {
@@ -2218,7 +2344,9 @@ void TakeControlRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  control_mode_ = 0;
+  ::memset(&drone_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&control_mode_) -
+      reinterpret_cast<char*>(&drone_id_)) + sizeof(control_mode_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2228,9 +2356,16 @@ const char* TakeControlRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .mavsdk.rpc.gimbal.ControlMode control_mode = 1;
+      // int32 drone_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mavsdk.rpc.gimbal.ControlMode control_mode = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_control_mode(static_cast<::mavsdk::rpc::gimbal::ControlMode>(val));
@@ -2265,11 +2400,17 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.gimbal.ControlMode control_mode = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // .mavsdk.rpc.gimbal.ControlMode control_mode = 2;
   if (this->_internal_control_mode() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      1, this->_internal_control_mode(), target);
+      2, this->_internal_control_mode(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2288,7 +2429,14 @@ size_t TakeControlRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.gimbal.ControlMode control_mode = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
+
+  // .mavsdk.rpc.gimbal.ControlMode control_mode = 2;
   if (this->_internal_control_mode() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_control_mode());
@@ -2322,6 +2470,9 @@ void TakeControlRequest::MergeFrom(const TakeControlRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   if (from._internal_control_mode() != 0) {
     _internal_set_control_mode(from._internal_control_mode());
   }
@@ -2342,7 +2493,12 @@ bool TakeControlRequest::IsInitialized() const {
 void TakeControlRequest::InternalSwap(TakeControlRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(control_mode_, other->control_mode_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(TakeControlRequest, control_mode_)
+      + sizeof(TakeControlRequest::control_mode_)
+      - PROTOBUF_FIELD_OFFSET(TakeControlRequest, drone_id_)>(
+          reinterpret_cast<char*>(&drone_id_),
+          reinterpret_cast<char*>(&other->drone_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata TakeControlRequest::GetMetadata() const {
@@ -2569,10 +2725,12 @@ ReleaseControlRequest::ReleaseControlRequest(::PROTOBUF_NAMESPACE_ID::Arena* are
 ReleaseControlRequest::ReleaseControlRequest(const ReleaseControlRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.gimbal.ReleaseControlRequest)
 }
 
 inline void ReleaseControlRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 ReleaseControlRequest::~ReleaseControlRequest() {
@@ -2602,6 +2760,7 @@ void ReleaseControlRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2610,6 +2769,16 @@ const char* ReleaseControlRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -2620,6 +2789,8 @@ const char* ReleaseControlRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -2634,6 +2805,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.gimbal.ReleaseControlRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -2650,6 +2827,13 @@ size_t ReleaseControlRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -2679,6 +2863,9 @@ void ReleaseControlRequest::MergeFrom(const ReleaseControlRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2696,6 +2883,7 @@ bool ReleaseControlRequest::IsInitialized() const {
 void ReleaseControlRequest::InternalSwap(ReleaseControlRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ReleaseControlRequest::GetMetadata() const {
@@ -2922,10 +3110,12 @@ SubscribeControlRequest::SubscribeControlRequest(::PROTOBUF_NAMESPACE_ID::Arena*
 SubscribeControlRequest::SubscribeControlRequest(const SubscribeControlRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.gimbal.SubscribeControlRequest)
 }
 
 inline void SubscribeControlRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeControlRequest::~SubscribeControlRequest() {
@@ -2955,6 +3145,7 @@ void SubscribeControlRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2963,6 +3154,16 @@ const char* SubscribeControlRequest::_InternalParse(const char* ptr, ::PROTOBUF_
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -2973,6 +3174,8 @@ const char* SubscribeControlRequest::_InternalParse(const char* ptr, ::PROTOBUF_
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -2987,6 +3190,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.gimbal.SubscribeControlRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -3003,6 +3212,13 @@ size_t SubscribeControlRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -3032,6 +3248,9 @@ void SubscribeControlRequest::MergeFrom(const SubscribeControlRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -3049,6 +3268,7 @@ bool SubscribeControlRequest::IsInitialized() const {
 void SubscribeControlRequest::InternalSwap(SubscribeControlRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeControlRequest::GetMetadata() const {

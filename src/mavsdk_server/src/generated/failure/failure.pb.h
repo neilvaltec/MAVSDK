@@ -296,11 +296,21 @@ class InjectRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kFailureUnitFieldNumber = 1,
-    kFailureTypeFieldNumber = 2,
-    kInstanceFieldNumber = 3,
+    kDroneIdFieldNumber = 1,
+    kFailureUnitFieldNumber = 2,
+    kFailureTypeFieldNumber = 3,
+    kInstanceFieldNumber = 4,
   };
-  // .mavsdk.rpc.failure.FailureUnit failure_unit = 1;
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // .mavsdk.rpc.failure.FailureUnit failure_unit = 2;
   void clear_failure_unit();
   ::mavsdk::rpc::failure::FailureUnit failure_unit() const;
   void set_failure_unit(::mavsdk::rpc::failure::FailureUnit value);
@@ -309,7 +319,7 @@ class InjectRequest final :
   void _internal_set_failure_unit(::mavsdk::rpc::failure::FailureUnit value);
   public:
 
-  // .mavsdk.rpc.failure.FailureType failure_type = 2;
+  // .mavsdk.rpc.failure.FailureType failure_type = 3;
   void clear_failure_type();
   ::mavsdk::rpc::failure::FailureType failure_type() const;
   void set_failure_type(::mavsdk::rpc::failure::FailureType value);
@@ -318,7 +328,7 @@ class InjectRequest final :
   void _internal_set_failure_type(::mavsdk::rpc::failure::FailureType value);
   public:
 
-  // int32 instance = 3;
+  // int32 instance = 4;
   void clear_instance();
   ::PROTOBUF_NAMESPACE_ID::int32 instance() const;
   void set_instance(::PROTOBUF_NAMESPACE_ID::int32 value);
@@ -334,6 +344,7 @@ class InjectRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   int failure_unit_;
   int failure_type_;
   ::PROTOBUF_NAMESPACE_ID::int32 instance_;
@@ -696,7 +707,27 @@ class FailureResult final :
 #endif  // __GNUC__
 // InjectRequest
 
-// .mavsdk.rpc.failure.FailureUnit failure_unit = 1;
+// int32 drone_id = 1;
+inline void InjectRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 InjectRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 InjectRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.failure.InjectRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void InjectRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void InjectRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.failure.InjectRequest.drone_id)
+}
+
+// .mavsdk.rpc.failure.FailureUnit failure_unit = 2;
 inline void InjectRequest::clear_failure_unit() {
   failure_unit_ = 0;
 }
@@ -716,7 +747,7 @@ inline void InjectRequest::set_failure_unit(::mavsdk::rpc::failure::FailureUnit 
   // @@protoc_insertion_point(field_set:mavsdk.rpc.failure.InjectRequest.failure_unit)
 }
 
-// .mavsdk.rpc.failure.FailureType failure_type = 2;
+// .mavsdk.rpc.failure.FailureType failure_type = 3;
 inline void InjectRequest::clear_failure_type() {
   failure_type_ = 0;
 }
@@ -736,7 +767,7 @@ inline void InjectRequest::set_failure_type(::mavsdk::rpc::failure::FailureType 
   // @@protoc_insertion_point(field_set:mavsdk.rpc.failure.InjectRequest.failure_type)
 }
 
-// int32 instance = 3;
+// int32 instance = 4;
 inline void InjectRequest::clear_instance() {
   instance_ = 0;
 }

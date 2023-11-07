@@ -20,7 +20,8 @@ namespace mavsdk {
 namespace rpc {
 namespace manual_control {
 constexpr StartPositionControlRequest::StartPositionControlRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct StartPositionControlRequestDefaultTypeInternal {
   constexpr StartPositionControlRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -43,7 +44,8 @@ struct StartPositionControlResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT StartPositionControlResponseDefaultTypeInternal _StartPositionControlResponse_default_instance_;
 constexpr StartAltitudeControlRequest::StartAltitudeControlRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct StartAltitudeControlRequestDefaultTypeInternal {
   constexpr StartAltitudeControlRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -67,7 +69,8 @@ struct StartAltitudeControlResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT StartAltitudeControlResponseDefaultTypeInternal _StartAltitudeControlResponse_default_instance_;
 constexpr SetManualControlInputRequest::SetManualControlInputRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : x_(0)
+  : drone_id_(0)
+  , x_(0)
   , y_(0)
   , z_(0)
   , r_(0){}
@@ -119,6 +122,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_manual_5fcontrol_2fmanual_5fco
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::manual_control::StartPositionControlRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::manual_control::StartPositionControlResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -130,6 +134,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_manual_5fcontrol_2fmanual_5fco
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::manual_control::StartAltitudeControlRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::manual_control::StartAltitudeControlResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -141,6 +146,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_manual_5fcontrol_2fmanual_5fco
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::manual_control::SetManualControlInputRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::manual_control::SetManualControlInputRequest, x_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::manual_control::SetManualControlInputRequest, y_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::manual_control::SetManualControlInputRequest, z_),
@@ -161,12 +167,12 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_manual_5fcontrol_2fmanual_5fco
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::mavsdk::rpc::manual_control::StartPositionControlRequest)},
-  { 5, -1, sizeof(::mavsdk::rpc::manual_control::StartPositionControlResponse)},
-  { 11, -1, sizeof(::mavsdk::rpc::manual_control::StartAltitudeControlRequest)},
-  { 16, -1, sizeof(::mavsdk::rpc::manual_control::StartAltitudeControlResponse)},
-  { 22, -1, sizeof(::mavsdk::rpc::manual_control::SetManualControlInputRequest)},
-  { 31, -1, sizeof(::mavsdk::rpc::manual_control::SetManualControlInputResponse)},
-  { 37, -1, sizeof(::mavsdk::rpc::manual_control::ManualControlResult)},
+  { 6, -1, sizeof(::mavsdk::rpc::manual_control::StartPositionControlResponse)},
+  { 12, -1, sizeof(::mavsdk::rpc::manual_control::StartAltitudeControlRequest)},
+  { 18, -1, sizeof(::mavsdk::rpc::manual_control::StartAltitudeControlResponse)},
+  { 24, -1, sizeof(::mavsdk::rpc::manual_control::SetManualControlInputRequest)},
+  { 34, -1, sizeof(::mavsdk::rpc::manual_control::SetManualControlInputResponse)},
+  { 40, -1, sizeof(::mavsdk::rpc::manual_control::ManualControlResult)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -182,47 +188,48 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_manual_5fcontrol_2fmanual_5fcontrol_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n#manual_control/manual_control.proto\022\031m"
   "avsdk.rpc.manual_control\032\024mavsdk_options"
-  ".proto\"\035\n\033StartPositionControlRequest\"m\n"
-  "\034StartPositionControlResponse\022M\n\025manual_"
-  "control_result\030\001 \001(\0132..mavsdk.rpc.manual"
-  "_control.ManualControlResult\"\035\n\033StartAlt"
-  "itudeControlRequest\"m\n\034StartAltitudeCont"
-  "rolResponse\022M\n\025manual_control_result\030\001 \001"
-  "(\0132..mavsdk.rpc.manual_control.ManualCon"
-  "trolResult\"J\n\034SetManualControlInputReque"
-  "st\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002\022\t\n\001r"
-  "\030\004 \001(\002\"n\n\035SetManualControlInputResponse\022"
-  "M\n\025manual_control_result\030\001 \001(\0132..mavsdk."
-  "rpc.manual_control.ManualControlResult\"\317"
-  "\002\n\023ManualControlResult\022E\n\006result\030\001 \001(\01625"
+  ".proto\"/\n\033StartPositionControlRequest\022\020\n"
+  "\010drone_id\030\001 \001(\005\"m\n\034StartPositionControlR"
+  "esponse\022M\n\025manual_control_result\030\001 \001(\0132."
   ".mavsdk.rpc.manual_control.ManualControl"
-  "Result.Result\022\022\n\nresult_str\030\002 \001(\t\"\334\001\n\006Re"
-  "sult\022\022\n\016RESULT_UNKNOWN\020\000\022\022\n\016RESULT_SUCCE"
-  "SS\020\001\022\024\n\020RESULT_NO_SYSTEM\020\002\022\033\n\027RESULT_CON"
-  "NECTION_ERROR\020\003\022\017\n\013RESULT_BUSY\020\004\022\031\n\025RESU"
-  "LT_COMMAND_DENIED\020\005\022\022\n\016RESULT_TIMEOUT\020\006\022"
-  "\035\n\031RESULT_INPUT_OUT_OF_RANGE\020\007\022\030\n\024RESULT"
-  "_INPUT_NOT_SET\020\0102\301\003\n\024ManualControlServic"
-  "e\022\211\001\n\024StartPositionControl\0226.mavsdk.rpc."
-  "manual_control.StartPositionControlReque"
-  "st\0327.mavsdk.rpc.manual_control.StartPosi"
-  "tionControlResponse\"\000\022\211\001\n\024StartAltitudeC"
-  "ontrol\0226.mavsdk.rpc.manual_control.Start"
-  "AltitudeControlRequest\0327.mavsdk.rpc.manu"
-  "al_control.StartAltitudeControlResponse\""
-  "\000\022\220\001\n\025SetManualControlInput\0227.mavsdk.rpc"
-  ".manual_control.SetManualControlInputReq"
-  "uest\0328.mavsdk.rpc.manual_control.SetManu"
-  "alControlInputResponse\"\004\200\265\030\001B.\n\030io.mavsd"
-  "k.manual_controlB\022ManualControlProtob\006pr"
-  "oto3"
+  "Result\"/\n\033StartAltitudeControlRequest\022\020\n"
+  "\010drone_id\030\001 \001(\005\"m\n\034StartAltitudeControlR"
+  "esponse\022M\n\025manual_control_result\030\001 \001(\0132."
+  ".mavsdk.rpc.manual_control.ManualControl"
+  "Result\"\\\n\034SetManualControlInputRequest\022\020"
+  "\n\010drone_id\030\001 \001(\005\022\t\n\001x\030\002 \001(\002\022\t\n\001y\030\003 \001(\002\022\t"
+  "\n\001z\030\004 \001(\002\022\t\n\001r\030\005 \001(\002\"n\n\035SetManualControl"
+  "InputResponse\022M\n\025manual_control_result\030\001"
+  " \001(\0132..mavsdk.rpc.manual_control.ManualC"
+  "ontrolResult\"\317\002\n\023ManualControlResult\022E\n\006"
+  "result\030\001 \001(\01625.mavsdk.rpc.manual_control"
+  ".ManualControlResult.Result\022\022\n\nresult_st"
+  "r\030\002 \001(\t\"\334\001\n\006Result\022\022\n\016RESULT_UNKNOWN\020\000\022\022"
+  "\n\016RESULT_SUCCESS\020\001\022\024\n\020RESULT_NO_SYSTEM\020\002"
+  "\022\033\n\027RESULT_CONNECTION_ERROR\020\003\022\017\n\013RESULT_"
+  "BUSY\020\004\022\031\n\025RESULT_COMMAND_DENIED\020\005\022\022\n\016RES"
+  "ULT_TIMEOUT\020\006\022\035\n\031RESULT_INPUT_OUT_OF_RAN"
+  "GE\020\007\022\030\n\024RESULT_INPUT_NOT_SET\020\0102\301\003\n\024Manua"
+  "lControlService\022\211\001\n\024StartPositionControl"
+  "\0226.mavsdk.rpc.manual_control.StartPositi"
+  "onControlRequest\0327.mavsdk.rpc.manual_con"
+  "trol.StartPositionControlResponse\"\000\022\211\001\n\024"
+  "StartAltitudeControl\0226.mavsdk.rpc.manual"
+  "_control.StartAltitudeControlRequest\0327.m"
+  "avsdk.rpc.manual_control.StartAltitudeCo"
+  "ntrolResponse\"\000\022\220\001\n\025SetManualControlInpu"
+  "t\0227.mavsdk.rpc.manual_control.SetManualC"
+  "ontrolInputRequest\0328.mavsdk.rpc.manual_c"
+  "ontrol.SetManualControlInputResponse\"\004\200\265"
+  "\030\001B.\n\030io.mavsdk.manual_controlB\022ManualCo"
+  "ntrolProtob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_manual_5fcontrol_2fmanual_5fcontrol_2eproto_deps[1] = {
   &::descriptor_table_mavsdk_5foptions_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_manual_5fcontrol_2fmanual_5fcontrol_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_manual_5fcontrol_2fmanual_5fcontrol_2eproto = {
-  false, false, 1404, descriptor_table_protodef_manual_5fcontrol_2fmanual_5fcontrol_2eproto, "manual_control/manual_control.proto", 
+  false, false, 1458, descriptor_table_protodef_manual_5fcontrol_2fmanual_5fcontrol_2eproto, "manual_control/manual_control.proto", 
   &descriptor_table_manual_5fcontrol_2fmanual_5fcontrol_2eproto_once, descriptor_table_manual_5fcontrol_2fmanual_5fcontrol_2eproto_deps, 1, 7,
   schemas, file_default_instances, TableStruct_manual_5fcontrol_2fmanual_5fcontrol_2eproto::offsets,
   file_level_metadata_manual_5fcontrol_2fmanual_5fcontrol_2eproto, file_level_enum_descriptors_manual_5fcontrol_2fmanual_5fcontrol_2eproto, file_level_service_descriptors_manual_5fcontrol_2fmanual_5fcontrol_2eproto,
@@ -290,10 +297,12 @@ StartPositionControlRequest::StartPositionControlRequest(::PROTOBUF_NAMESPACE_ID
 StartPositionControlRequest::StartPositionControlRequest(const StartPositionControlRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.manual_control.StartPositionControlRequest)
 }
 
 inline void StartPositionControlRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 StartPositionControlRequest::~StartPositionControlRequest() {
@@ -323,6 +332,7 @@ void StartPositionControlRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -331,6 +341,16 @@ const char* StartPositionControlRequest::_InternalParse(const char* ptr, ::PROTO
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -341,6 +361,8 @@ const char* StartPositionControlRequest::_InternalParse(const char* ptr, ::PROTO
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -355,6 +377,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.manual_control.StartPositionControlRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -371,6 +399,13 @@ size_t StartPositionControlRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -400,6 +435,9 @@ void StartPositionControlRequest::MergeFrom(const StartPositionControlRequest& f
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -417,6 +455,7 @@ bool StartPositionControlRequest::IsInitialized() const {
 void StartPositionControlRequest::InternalSwap(StartPositionControlRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata StartPositionControlRequest::GetMetadata() const {
@@ -643,10 +682,12 @@ StartAltitudeControlRequest::StartAltitudeControlRequest(::PROTOBUF_NAMESPACE_ID
 StartAltitudeControlRequest::StartAltitudeControlRequest(const StartAltitudeControlRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.manual_control.StartAltitudeControlRequest)
 }
 
 inline void StartAltitudeControlRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 StartAltitudeControlRequest::~StartAltitudeControlRequest() {
@@ -676,6 +717,7 @@ void StartAltitudeControlRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -684,6 +726,16 @@ const char* StartAltitudeControlRequest::_InternalParse(const char* ptr, ::PROTO
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -694,6 +746,8 @@ const char* StartAltitudeControlRequest::_InternalParse(const char* ptr, ::PROTO
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -708,6 +762,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.manual_control.StartAltitudeControlRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -724,6 +784,13 @@ size_t StartAltitudeControlRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -753,6 +820,9 @@ void StartAltitudeControlRequest::MergeFrom(const StartAltitudeControlRequest& f
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -770,6 +840,7 @@ bool StartAltitudeControlRequest::IsInitialized() const {
 void StartAltitudeControlRequest::InternalSwap(StartAltitudeControlRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata StartAltitudeControlRequest::GetMetadata() const {
@@ -996,17 +1067,17 @@ SetManualControlInputRequest::SetManualControlInputRequest(::PROTOBUF_NAMESPACE_
 SetManualControlInputRequest::SetManualControlInputRequest(const SetManualControlInputRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&x_, &from.x_,
+  ::memcpy(&drone_id_, &from.drone_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&r_) -
-    reinterpret_cast<char*>(&x_)) + sizeof(r_));
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(r_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.manual_control.SetManualControlInputRequest)
 }
 
 inline void SetManualControlInputRequest::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&x_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&drone_id_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&r_) -
-    reinterpret_cast<char*>(&x_)) + sizeof(r_));
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(r_));
 }
 
 SetManualControlInputRequest::~SetManualControlInputRequest() {
@@ -1036,9 +1107,9 @@ void SetManualControlInputRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&x_, 0, static_cast<size_t>(
+  ::memset(&drone_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&r_) -
-      reinterpret_cast<char*>(&x_)) + sizeof(r_));
+      reinterpret_cast<char*>(&drone_id_)) + sizeof(r_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1048,30 +1119,37 @@ const char* SetManualControlInputRequest::_InternalParse(const char* ptr, ::PROT
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // float x = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // float x = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
           x_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // float y = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+      // float y = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
           y_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // float z = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+      // float z = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
           z_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // float r = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+      // float r = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 45)) {
           r_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
@@ -1105,28 +1183,34 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // float x = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // float x = 2;
   if (!(this->_internal_x() <= 0 && this->_internal_x() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_x(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_x(), target);
   }
 
-  // float y = 2;
+  // float y = 3;
   if (!(this->_internal_y() <= 0 && this->_internal_y() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_y(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_y(), target);
   }
 
-  // float z = 3;
+  // float z = 4;
   if (!(this->_internal_z() <= 0 && this->_internal_z() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_z(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_z(), target);
   }
 
-  // float r = 4;
+  // float r = 5;
   if (!(this->_internal_r() <= 0 && this->_internal_r() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_r(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->_internal_r(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1145,22 +1229,29 @@ size_t SetManualControlInputRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // float x = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
+
+  // float x = 2;
   if (!(this->_internal_x() <= 0 && this->_internal_x() >= 0)) {
     total_size += 1 + 4;
   }
 
-  // float y = 2;
+  // float y = 3;
   if (!(this->_internal_y() <= 0 && this->_internal_y() >= 0)) {
     total_size += 1 + 4;
   }
 
-  // float z = 3;
+  // float z = 4;
   if (!(this->_internal_z() <= 0 && this->_internal_z() >= 0)) {
     total_size += 1 + 4;
   }
 
-  // float r = 4;
+  // float r = 5;
   if (!(this->_internal_r() <= 0 && this->_internal_r() >= 0)) {
     total_size += 1 + 4;
   }
@@ -1193,6 +1284,9 @@ void SetManualControlInputRequest::MergeFrom(const SetManualControlInputRequest&
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   if (!(from._internal_x() <= 0 && from._internal_x() >= 0)) {
     _internal_set_x(from._internal_x());
   }
@@ -1225,9 +1319,9 @@ void SetManualControlInputRequest::InternalSwap(SetManualControlInputRequest* ot
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(SetManualControlInputRequest, r_)
       + sizeof(SetManualControlInputRequest::r_)
-      - PROTOBUF_FIELD_OFFSET(SetManualControlInputRequest, x_)>(
-          reinterpret_cast<char*>(&x_),
-          reinterpret_cast<char*>(&other->x_));
+      - PROTOBUF_FIELD_OFFSET(SetManualControlInputRequest, drone_id_)>(
+          reinterpret_cast<char*>(&drone_id_),
+          reinterpret_cast<char*>(&other->drone_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetManualControlInputRequest::GetMetadata() const {

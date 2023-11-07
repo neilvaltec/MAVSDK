@@ -233,9 +233,10 @@ class SendRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kCommandFieldNumber = 1,
+    kCommandFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // string command = 1;
+  // string command = 2;
   void clear_command();
   const std::string& command() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -249,6 +250,15 @@ class SendRequest final :
   std::string* _internal_mutable_command();
   public:
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.shell.SendRequest)
  private:
   class _Internal;
@@ -257,6 +267,7 @@ class SendRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr command_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_shell_2fshell_2eproto;
 };
@@ -524,6 +535,18 @@ class SubscribeReceiveRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.shell.SubscribeReceiveRequest)
  private:
   class _Internal;
@@ -531,6 +554,7 @@ class SubscribeReceiveRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_shell_2fshell_2eproto;
 };
@@ -882,7 +906,27 @@ class ShellResult final :
 #endif  // __GNUC__
 // SendRequest
 
-// string command = 1;
+// int32 drone_id = 1;
+inline void SendRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SendRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SendRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.shell.SendRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SendRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SendRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.shell.SendRequest.drone_id)
+}
+
+// string command = 2;
 inline void SendRequest::clear_command() {
   command_.ClearToEmpty();
 }
@@ -1025,6 +1069,26 @@ inline void SendResponse::set_allocated_shell_result(::mavsdk::rpc::shell::Shell
 // -------------------------------------------------------------------
 
 // SubscribeReceiveRequest
+
+// int32 drone_id = 1;
+inline void SubscribeReceiveRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeReceiveRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeReceiveRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.shell.SubscribeReceiveRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SubscribeReceiveRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SubscribeReceiveRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.shell.SubscribeReceiveRequest.drone_id)
+}
 
 // -------------------------------------------------------------------
 

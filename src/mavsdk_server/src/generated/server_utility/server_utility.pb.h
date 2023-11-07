@@ -255,10 +255,11 @@ class SendStatusTextRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kTextFieldNumber = 2,
-    kTypeFieldNumber = 1,
+    kTextFieldNumber = 3,
+    kDroneIdFieldNumber = 1,
+    kTypeFieldNumber = 2,
   };
-  // string text = 2;
+  // string text = 3;
   void clear_text();
   const std::string& text() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -272,7 +273,16 @@ class SendStatusTextRequest final :
   std::string* _internal_mutable_text();
   public:
 
-  // .mavsdk.rpc.server_utility.StatusTextType type = 1;
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // .mavsdk.rpc.server_utility.StatusTextType type = 2;
   void clear_type();
   ::mavsdk::rpc::server_utility::StatusTextType type() const;
   void set_type(::mavsdk::rpc::server_utility::StatusTextType value);
@@ -289,6 +299,7 @@ class SendStatusTextRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr text_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   int type_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_server_5futility_2fserver_5futility_2eproto;
@@ -643,7 +654,27 @@ class ServerUtilityResult final :
 #endif  // __GNUC__
 // SendStatusTextRequest
 
-// .mavsdk.rpc.server_utility.StatusTextType type = 1;
+// int32 drone_id = 1;
+inline void SendStatusTextRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SendStatusTextRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SendStatusTextRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.server_utility.SendStatusTextRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SendStatusTextRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SendStatusTextRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.server_utility.SendStatusTextRequest.drone_id)
+}
+
+// .mavsdk.rpc.server_utility.StatusTextType type = 2;
 inline void SendStatusTextRequest::clear_type() {
   type_ = 0;
 }
@@ -663,7 +694,7 @@ inline void SendStatusTextRequest::set_type(::mavsdk::rpc::server_utility::Statu
   // @@protoc_insertion_point(field_set:mavsdk.rpc.server_utility.SendStatusTextRequest.type)
 }
 
-// string text = 2;
+// string text = 3;
 inline void SendStatusTextRequest::clear_text() {
   text_.ClearToEmpty();
 }

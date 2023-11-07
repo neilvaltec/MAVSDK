@@ -302,9 +302,10 @@ class SetVisionPositionEstimateRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kVisionPositionEstimateFieldNumber = 1,
+    kVisionPositionEstimateFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // .mavsdk.rpc.mocap.VisionPositionEstimate vision_position_estimate = 1;
+  // .mavsdk.rpc.mocap.VisionPositionEstimate vision_position_estimate = 2;
   bool has_vision_position_estimate() const;
   private:
   bool _internal_has_vision_position_estimate() const;
@@ -322,6 +323,15 @@ class SetVisionPositionEstimateRequest final :
       ::mavsdk::rpc::mocap::VisionPositionEstimate* vision_position_estimate);
   ::mavsdk::rpc::mocap::VisionPositionEstimate* unsafe_arena_release_vision_position_estimate();
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.mocap.SetVisionPositionEstimateRequest)
  private:
   class _Internal;
@@ -330,6 +340,7 @@ class SetVisionPositionEstimateRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::mavsdk::rpc::mocap::VisionPositionEstimate* vision_position_estimate_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_mocap_2fmocap_2eproto;
 };
@@ -598,9 +609,10 @@ class SetAttitudePositionMocapRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kAttitudePositionMocapFieldNumber = 1,
+    kAttitudePositionMocapFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // .mavsdk.rpc.mocap.AttitudePositionMocap attitude_position_mocap = 1;
+  // .mavsdk.rpc.mocap.AttitudePositionMocap attitude_position_mocap = 2;
   bool has_attitude_position_mocap() const;
   private:
   bool _internal_has_attitude_position_mocap() const;
@@ -618,6 +630,15 @@ class SetAttitudePositionMocapRequest final :
       ::mavsdk::rpc::mocap::AttitudePositionMocap* attitude_position_mocap);
   ::mavsdk::rpc::mocap::AttitudePositionMocap* unsafe_arena_release_attitude_position_mocap();
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.mocap.SetAttitudePositionMocapRequest)
  private:
   class _Internal;
@@ -626,6 +647,7 @@ class SetAttitudePositionMocapRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::mavsdk::rpc::mocap::AttitudePositionMocap* attitude_position_mocap_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_mocap_2fmocap_2eproto;
 };
@@ -894,9 +916,10 @@ class SetOdometryRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kOdometryFieldNumber = 1,
+    kOdometryFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // .mavsdk.rpc.mocap.Odometry odometry = 1;
+  // .mavsdk.rpc.mocap.Odometry odometry = 2;
   bool has_odometry() const;
   private:
   bool _internal_has_odometry() const;
@@ -914,6 +937,15 @@ class SetOdometryRequest final :
       ::mavsdk::rpc::mocap::Odometry* odometry);
   ::mavsdk::rpc::mocap::Odometry* unsafe_arena_release_odometry();
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.mocap.SetOdometryRequest)
  private:
   class _Internal;
@@ -922,6 +954,7 @@ class SetOdometryRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::mavsdk::rpc::mocap::Odometry* odometry_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_mocap_2fmocap_2eproto;
 };
@@ -2943,7 +2976,27 @@ class MocapResult final :
 #endif  // __GNUC__
 // SetVisionPositionEstimateRequest
 
-// .mavsdk.rpc.mocap.VisionPositionEstimate vision_position_estimate = 1;
+// int32 drone_id = 1;
+inline void SetVisionPositionEstimateRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetVisionPositionEstimateRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetVisionPositionEstimateRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.mocap.SetVisionPositionEstimateRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SetVisionPositionEstimateRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SetVisionPositionEstimateRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.mocap.SetVisionPositionEstimateRequest.drone_id)
+}
+
+// .mavsdk.rpc.mocap.VisionPositionEstimate vision_position_estimate = 2;
 inline bool SetVisionPositionEstimateRequest::_internal_has_vision_position_estimate() const {
   return this != internal_default_instance() && vision_position_estimate_ != nullptr;
 }
@@ -3131,7 +3184,27 @@ inline void SetVisionPositionEstimateResponse::set_allocated_mocap_result(::mavs
 
 // SetAttitudePositionMocapRequest
 
-// .mavsdk.rpc.mocap.AttitudePositionMocap attitude_position_mocap = 1;
+// int32 drone_id = 1;
+inline void SetAttitudePositionMocapRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetAttitudePositionMocapRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetAttitudePositionMocapRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.mocap.SetAttitudePositionMocapRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SetAttitudePositionMocapRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SetAttitudePositionMocapRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.mocap.SetAttitudePositionMocapRequest.drone_id)
+}
+
+// .mavsdk.rpc.mocap.AttitudePositionMocap attitude_position_mocap = 2;
 inline bool SetAttitudePositionMocapRequest::_internal_has_attitude_position_mocap() const {
   return this != internal_default_instance() && attitude_position_mocap_ != nullptr;
 }
@@ -3319,7 +3392,27 @@ inline void SetAttitudePositionMocapResponse::set_allocated_mocap_result(::mavsd
 
 // SetOdometryRequest
 
-// .mavsdk.rpc.mocap.Odometry odometry = 1;
+// int32 drone_id = 1;
+inline void SetOdometryRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetOdometryRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetOdometryRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.mocap.SetOdometryRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SetOdometryRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SetOdometryRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.mocap.SetOdometryRequest.drone_id)
+}
+
+// .mavsdk.rpc.mocap.Odometry odometry = 2;
 inline bool SetOdometryRequest::_internal_has_odometry() const {
   return this != internal_default_instance() && odometry_ != nullptr;
 }

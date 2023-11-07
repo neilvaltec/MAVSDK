@@ -290,9 +290,10 @@ class RetrieveParamIntRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNameFieldNumber = 1,
+    kNameFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // string name = 1;
+  // string name = 2;
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -306,6 +307,15 @@ class RetrieveParamIntRequest final :
   std::string* _internal_mutable_name();
   public:
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.param_server.RetrieveParamIntRequest)
  private:
   class _Internal;
@@ -314,6 +324,7 @@ class RetrieveParamIntRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_param_5fserver_2fparam_5fserver_2eproto;
 };
@@ -593,10 +604,11 @@ class ProvideParamIntRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNameFieldNumber = 1,
-    kValueFieldNumber = 2,
+    kNameFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
+    kValueFieldNumber = 3,
   };
-  // string name = 1;
+  // string name = 2;
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -610,7 +622,16 @@ class ProvideParamIntRequest final :
   std::string* _internal_mutable_name();
   public:
 
-  // int32 value = 2;
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // int32 value = 3;
   void clear_value();
   ::PROTOBUF_NAMESPACE_ID::int32 value() const;
   void set_value(::PROTOBUF_NAMESPACE_ID::int32 value);
@@ -627,6 +648,7 @@ class ProvideParamIntRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   ::PROTOBUF_NAMESPACE_ID::int32 value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_param_5fserver_2fparam_5fserver_2eproto;
@@ -896,9 +918,10 @@ class RetrieveParamFloatRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNameFieldNumber = 1,
+    kNameFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // string name = 1;
+  // string name = 2;
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -912,6 +935,15 @@ class RetrieveParamFloatRequest final :
   std::string* _internal_mutable_name();
   public:
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.param_server.RetrieveParamFloatRequest)
  private:
   class _Internal;
@@ -920,6 +952,7 @@ class RetrieveParamFloatRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_param_5fserver_2fparam_5fserver_2eproto;
 };
@@ -1199,10 +1232,11 @@ class ProvideParamFloatRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNameFieldNumber = 1,
-    kValueFieldNumber = 2,
+    kNameFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
+    kValueFieldNumber = 3,
   };
-  // string name = 1;
+  // string name = 2;
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1216,7 +1250,16 @@ class ProvideParamFloatRequest final :
   std::string* _internal_mutable_name();
   public:
 
-  // float value = 2;
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // float value = 3;
   void clear_value();
   float value() const;
   void set_value(float value);
@@ -1233,6 +1276,7 @@ class ProvideParamFloatRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   float value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_param_5fserver_2fparam_5fserver_2eproto;
@@ -1502,9 +1546,10 @@ class RetrieveParamCustomRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNameFieldNumber = 1,
+    kNameFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // string name = 1;
+  // string name = 2;
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1518,6 +1563,15 @@ class RetrieveParamCustomRequest final :
   std::string* _internal_mutable_name();
   public:
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.param_server.RetrieveParamCustomRequest)
  private:
   class _Internal;
@@ -1526,6 +1580,7 @@ class RetrieveParamCustomRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_param_5fserver_2fparam_5fserver_2eproto;
 };
@@ -1810,10 +1865,11 @@ class ProvideParamCustomRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNameFieldNumber = 1,
-    kValueFieldNumber = 2,
+    kNameFieldNumber = 2,
+    kValueFieldNumber = 3,
+    kDroneIdFieldNumber = 1,
   };
-  // string name = 1;
+  // string name = 2;
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1827,7 +1883,7 @@ class ProvideParamCustomRequest final :
   std::string* _internal_mutable_name();
   public:
 
-  // string value = 2;
+  // string value = 3;
   void clear_value();
   const std::string& value() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1841,6 +1897,15 @@ class ProvideParamCustomRequest final :
   std::string* _internal_mutable_value();
   public:
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.param_server.ProvideParamCustomRequest)
  private:
   class _Internal;
@@ -1850,6 +1915,7 @@ class ProvideParamCustomRequest final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr value_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_param_5fserver_2fparam_5fserver_2eproto;
 };
@@ -2117,6 +2183,18 @@ class RetrieveAllParamsRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.param_server.RetrieveAllParamsRequest)
  private:
   class _Internal;
@@ -2124,6 +2202,7 @@ class RetrieveAllParamsRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_param_5fserver_2fparam_5fserver_2eproto;
 };
@@ -3139,7 +3218,27 @@ class ParamServerResult final :
 #endif  // __GNUC__
 // RetrieveParamIntRequest
 
-// string name = 1;
+// int32 drone_id = 1;
+inline void RetrieveParamIntRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 RetrieveParamIntRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 RetrieveParamIntRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.param_server.RetrieveParamIntRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void RetrieveParamIntRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void RetrieveParamIntRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.param_server.RetrieveParamIntRequest.drone_id)
+}
+
+// string name = 2;
 inline void RetrieveParamIntRequest::clear_name() {
   name_.ClearToEmpty();
 }
@@ -3303,7 +3402,27 @@ inline void RetrieveParamIntResponse::set_value(::PROTOBUF_NAMESPACE_ID::int32 v
 
 // ProvideParamIntRequest
 
-// string name = 1;
+// int32 drone_id = 1;
+inline void ProvideParamIntRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ProvideParamIntRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ProvideParamIntRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.param_server.ProvideParamIntRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void ProvideParamIntRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void ProvideParamIntRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.param_server.ProvideParamIntRequest.drone_id)
+}
+
+// string name = 2;
 inline void ProvideParamIntRequest::clear_name() {
   name_.ClearToEmpty();
 }
@@ -3349,7 +3468,7 @@ inline void ProvideParamIntRequest::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:mavsdk.rpc.param_server.ProvideParamIntRequest.name)
 }
 
-// int32 value = 2;
+// int32 value = 3;
 inline void ProvideParamIntRequest::clear_value() {
   value_ = 0;
 }
@@ -3467,7 +3586,27 @@ inline void ProvideParamIntResponse::set_allocated_param_server_result(::mavsdk:
 
 // RetrieveParamFloatRequest
 
-// string name = 1;
+// int32 drone_id = 1;
+inline void RetrieveParamFloatRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 RetrieveParamFloatRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 RetrieveParamFloatRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.param_server.RetrieveParamFloatRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void RetrieveParamFloatRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void RetrieveParamFloatRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.param_server.RetrieveParamFloatRequest.drone_id)
+}
+
+// string name = 2;
 inline void RetrieveParamFloatRequest::clear_name() {
   name_.ClearToEmpty();
 }
@@ -3631,7 +3770,27 @@ inline void RetrieveParamFloatResponse::set_value(float value) {
 
 // ProvideParamFloatRequest
 
-// string name = 1;
+// int32 drone_id = 1;
+inline void ProvideParamFloatRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ProvideParamFloatRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ProvideParamFloatRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.param_server.ProvideParamFloatRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void ProvideParamFloatRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void ProvideParamFloatRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.param_server.ProvideParamFloatRequest.drone_id)
+}
+
+// string name = 2;
 inline void ProvideParamFloatRequest::clear_name() {
   name_.ClearToEmpty();
 }
@@ -3677,7 +3836,7 @@ inline void ProvideParamFloatRequest::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:mavsdk.rpc.param_server.ProvideParamFloatRequest.name)
 }
 
-// float value = 2;
+// float value = 3;
 inline void ProvideParamFloatRequest::clear_value() {
   value_ = 0;
 }
@@ -3795,7 +3954,27 @@ inline void ProvideParamFloatResponse::set_allocated_param_server_result(::mavsd
 
 // RetrieveParamCustomRequest
 
-// string name = 1;
+// int32 drone_id = 1;
+inline void RetrieveParamCustomRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 RetrieveParamCustomRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 RetrieveParamCustomRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.param_server.RetrieveParamCustomRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void RetrieveParamCustomRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void RetrieveParamCustomRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.param_server.RetrieveParamCustomRequest.drone_id)
+}
+
+// string name = 2;
 inline void RetrieveParamCustomRequest::clear_name() {
   name_.ClearToEmpty();
 }
@@ -3985,7 +4164,27 @@ inline void RetrieveParamCustomResponse::set_allocated_value(std::string* value)
 
 // ProvideParamCustomRequest
 
-// string name = 1;
+// int32 drone_id = 1;
+inline void ProvideParamCustomRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ProvideParamCustomRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ProvideParamCustomRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.param_server.ProvideParamCustomRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void ProvideParamCustomRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void ProvideParamCustomRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.param_server.ProvideParamCustomRequest.drone_id)
+}
+
+// string name = 2;
 inline void ProvideParamCustomRequest::clear_name() {
   name_.ClearToEmpty();
 }
@@ -4031,7 +4230,7 @@ inline void ProvideParamCustomRequest::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:mavsdk.rpc.param_server.ProvideParamCustomRequest.name)
 }
 
-// string value = 2;
+// string value = 3;
 inline void ProvideParamCustomRequest::clear_value() {
   value_.ClearToEmpty();
 }
@@ -4174,6 +4373,26 @@ inline void ProvideParamCustomResponse::set_allocated_param_server_result(::mavs
 // -------------------------------------------------------------------
 
 // RetrieveAllParamsRequest
+
+// int32 drone_id = 1;
+inline void RetrieveAllParamsRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 RetrieveAllParamsRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 RetrieveAllParamsRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.param_server.RetrieveAllParamsRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void RetrieveAllParamsRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void RetrieveAllParamsRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.param_server.RetrieveAllParamsRequest.drone_id)
+}
 
 // -------------------------------------------------------------------
 

@@ -21,7 +21,8 @@ namespace rpc {
 namespace failure {
 constexpr InjectRequest::InjectRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : failure_unit_(0)
+  : drone_id_(0)
+  , failure_unit_(0)
 
   , failure_type_(0)
 
@@ -74,6 +75,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_failure_2ffailure_2eproto::off
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::failure::InjectRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::failure::InjectRequest, failure_unit_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::failure::InjectRequest, failure_type_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::failure::InjectRequest, instance_),
@@ -93,8 +95,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_failure_2ffailure_2eproto::off
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::mavsdk::rpc::failure::InjectRequest)},
-  { 8, -1, sizeof(::mavsdk::rpc::failure::InjectResponse)},
-  { 14, -1, sizeof(::mavsdk::rpc::failure::FailureResult)},
+  { 9, -1, sizeof(::mavsdk::rpc::failure::InjectResponse)},
+  { 15, -1, sizeof(::mavsdk::rpc::failure::FailureResult)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -105,49 +107,49 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_failure_2ffailure_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\025failure/failure.proto\022\022mavsdk.rpc.fail"
-  "ure\032\024mavsdk_options.proto\"\217\001\n\rInjectRequ"
-  "est\0225\n\014failure_unit\030\001 \001(\0162\037.mavsdk.rpc.f"
-  "ailure.FailureUnit\0225\n\014failure_type\030\002 \001(\016"
-  "2\037.mavsdk.rpc.failure.FailureType\022\020\n\010ins"
-  "tance\030\003 \001(\005\"K\n\016InjectResponse\0229\n\016failure"
-  "_result\030\001 \001(\0132!.mavsdk.rpc.failure.Failu"
-  "reResult\"\227\002\n\rFailureResult\0228\n\006result\030\001 \001"
-  "(\0162(.mavsdk.rpc.failure.FailureResult.Re"
-  "sult\022\022\n\nresult_str\030\002 \001(\t\"\267\001\n\006Result\022\022\n\016R"
-  "ESULT_UNKNOWN\020\000\022\022\n\016RESULT_SUCCESS\020\001\022\024\n\020R"
-  "ESULT_NO_SYSTEM\020\002\022\033\n\027RESULT_CONNECTION_E"
-  "RROR\020\003\022\026\n\022RESULT_UNSUPPORTED\020\004\022\021\n\rRESULT"
-  "_DENIED\020\005\022\023\n\017RESULT_DISABLED\020\006\022\022\n\016RESULT"
-  "_TIMEOUT\020\007*\375\003\n\013FailureUnit\022\034\n\030FAILURE_UN"
-  "IT_SENSOR_GYRO\020\000\022\035\n\031FAILURE_UNIT_SENSOR_"
-  "ACCEL\020\001\022\033\n\027FAILURE_UNIT_SENSOR_MAG\020\002\022\034\n\030"
-  "FAILURE_UNIT_SENSOR_BARO\020\003\022\033\n\027FAILURE_UN"
-  "IT_SENSOR_GPS\020\004\022$\n FAILURE_UNIT_SENSOR_O"
-  "PTICAL_FLOW\020\005\022\033\n\027FAILURE_UNIT_SENSOR_VIO"
-  "\020\006\022\'\n#FAILURE_UNIT_SENSOR_DISTANCE_SENSO"
-  "R\020\007\022 \n\034FAILURE_UNIT_SENSOR_AIRSPEED\020\010\022\037\n"
-  "\033FAILURE_UNIT_SYSTEM_BATTERY\020d\022\035\n\031FAILUR"
-  "E_UNIT_SYSTEM_MOTOR\020e\022\035\n\031FAILURE_UNIT_SY"
-  "STEM_SERVO\020f\022!\n\035FAILURE_UNIT_SYSTEM_AVOI"
-  "DANCE\020g\022!\n\035FAILURE_UNIT_SYSTEM_RC_SIGNAL"
-  "\020h\022&\n\"FAILURE_UNIT_SYSTEM_MAVLINK_SIGNAL"
-  "\020i*\322\001\n\013FailureType\022\023\n\017FAILURE_TYPE_OK\020\000\022"
-  "\024\n\020FAILURE_TYPE_OFF\020\001\022\026\n\022FAILURE_TYPE_ST"
-  "UCK\020\002\022\030\n\024FAILURE_TYPE_GARBAGE\020\003\022\026\n\022FAILU"
-  "RE_TYPE_WRONG\020\004\022\025\n\021FAILURE_TYPE_SLOW\020\005\022\030"
-  "\n\024FAILURE_TYPE_DELAYED\020\006\022\035\n\031FAILURE_TYPE"
-  "_INTERMITTENT\020\0072g\n\016FailureService\022U\n\006Inj"
-  "ect\022!.mavsdk.rpc.failure.InjectRequest\032\""
-  ".mavsdk.rpc.failure.InjectResponse\"\004\200\265\030\001"
-  "B!\n\021io.mavsdk.failureB\014FailureProtob\006pro"
-  "to3"
+  "ure\032\024mavsdk_options.proto\"\241\001\n\rInjectRequ"
+  "est\022\020\n\010drone_id\030\001 \001(\005\0225\n\014failure_unit\030\002 "
+  "\001(\0162\037.mavsdk.rpc.failure.FailureUnit\0225\n\014"
+  "failure_type\030\003 \001(\0162\037.mavsdk.rpc.failure."
+  "FailureType\022\020\n\010instance\030\004 \001(\005\"K\n\016InjectR"
+  "esponse\0229\n\016failure_result\030\001 \001(\0132!.mavsdk"
+  ".rpc.failure.FailureResult\"\227\002\n\rFailureRe"
+  "sult\0228\n\006result\030\001 \001(\0162(.mavsdk.rpc.failur"
+  "e.FailureResult.Result\022\022\n\nresult_str\030\002 \001"
+  "(\t\"\267\001\n\006Result\022\022\n\016RESULT_UNKNOWN\020\000\022\022\n\016RES"
+  "ULT_SUCCESS\020\001\022\024\n\020RESULT_NO_SYSTEM\020\002\022\033\n\027R"
+  "ESULT_CONNECTION_ERROR\020\003\022\026\n\022RESULT_UNSUP"
+  "PORTED\020\004\022\021\n\rRESULT_DENIED\020\005\022\023\n\017RESULT_DI"
+  "SABLED\020\006\022\022\n\016RESULT_TIMEOUT\020\007*\375\003\n\013Failure"
+  "Unit\022\034\n\030FAILURE_UNIT_SENSOR_GYRO\020\000\022\035\n\031FA"
+  "ILURE_UNIT_SENSOR_ACCEL\020\001\022\033\n\027FAILURE_UNI"
+  "T_SENSOR_MAG\020\002\022\034\n\030FAILURE_UNIT_SENSOR_BA"
+  "RO\020\003\022\033\n\027FAILURE_UNIT_SENSOR_GPS\020\004\022$\n FAI"
+  "LURE_UNIT_SENSOR_OPTICAL_FLOW\020\005\022\033\n\027FAILU"
+  "RE_UNIT_SENSOR_VIO\020\006\022\'\n#FAILURE_UNIT_SEN"
+  "SOR_DISTANCE_SENSOR\020\007\022 \n\034FAILURE_UNIT_SE"
+  "NSOR_AIRSPEED\020\010\022\037\n\033FAILURE_UNIT_SYSTEM_B"
+  "ATTERY\020d\022\035\n\031FAILURE_UNIT_SYSTEM_MOTOR\020e\022"
+  "\035\n\031FAILURE_UNIT_SYSTEM_SERVO\020f\022!\n\035FAILUR"
+  "E_UNIT_SYSTEM_AVOIDANCE\020g\022!\n\035FAILURE_UNI"
+  "T_SYSTEM_RC_SIGNAL\020h\022&\n\"FAILURE_UNIT_SYS"
+  "TEM_MAVLINK_SIGNAL\020i*\322\001\n\013FailureType\022\023\n\017"
+  "FAILURE_TYPE_OK\020\000\022\024\n\020FAILURE_TYPE_OFF\020\001\022"
+  "\026\n\022FAILURE_TYPE_STUCK\020\002\022\030\n\024FAILURE_TYPE_"
+  "GARBAGE\020\003\022\026\n\022FAILURE_TYPE_WRONG\020\004\022\025\n\021FAI"
+  "LURE_TYPE_SLOW\020\005\022\030\n\024FAILURE_TYPE_DELAYED"
+  "\020\006\022\035\n\031FAILURE_TYPE_INTERMITTENT\020\0072g\n\016Fai"
+  "lureService\022U\n\006Inject\022!.mavsdk.rpc.failu"
+  "re.InjectRequest\032\".mavsdk.rpc.failure.In"
+  "jectResponse\"\004\200\265\030\001B!\n\021io.mavsdk.failureB"
+  "\014FailureProtob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_failure_2ffailure_2eproto_deps[1] = {
   &::descriptor_table_mavsdk_5foptions_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_failure_2ffailure_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_failure_2ffailure_2eproto = {
-  false, false, 1443, descriptor_table_protodef_failure_2ffailure_2eproto, "failure/failure.proto", 
+  false, false, 1461, descriptor_table_protodef_failure_2ffailure_2eproto, "failure/failure.proto", 
   &descriptor_table_failure_2ffailure_2eproto_once, descriptor_table_failure_2ffailure_2eproto_deps, 1, 3,
   schemas, file_default_instances, TableStruct_failure_2ffailure_2eproto::offsets,
   file_level_metadata_failure_2ffailure_2eproto, file_level_enum_descriptors_failure_2ffailure_2eproto, file_level_service_descriptors_failure_2ffailure_2eproto,
@@ -260,17 +262,17 @@ InjectRequest::InjectRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 InjectRequest::InjectRequest(const InjectRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&failure_unit_, &from.failure_unit_,
+  ::memcpy(&drone_id_, &from.drone_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&instance_) -
-    reinterpret_cast<char*>(&failure_unit_)) + sizeof(instance_));
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(instance_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.failure.InjectRequest)
 }
 
 inline void InjectRequest::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&failure_unit_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&drone_id_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&instance_) -
-    reinterpret_cast<char*>(&failure_unit_)) + sizeof(instance_));
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(instance_));
 }
 
 InjectRequest::~InjectRequest() {
@@ -300,9 +302,9 @@ void InjectRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&failure_unit_, 0, static_cast<size_t>(
+  ::memset(&drone_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&instance_) -
-      reinterpret_cast<char*>(&failure_unit_)) + sizeof(instance_));
+      reinterpret_cast<char*>(&drone_id_)) + sizeof(instance_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -312,25 +314,32 @@ const char* InjectRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .mavsdk.rpc.failure.FailureUnit failure_unit = 1;
+      // int32 drone_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mavsdk.rpc.failure.FailureUnit failure_unit = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_failure_unit(static_cast<::mavsdk::rpc::failure::FailureUnit>(val));
         } else goto handle_unusual;
         continue;
-      // .mavsdk.rpc.failure.FailureType failure_type = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+      // .mavsdk.rpc.failure.FailureType failure_type = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_failure_type(static_cast<::mavsdk::rpc::failure::FailureType>(val));
         } else goto handle_unusual;
         continue;
-      // int32 instance = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+      // int32 instance = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
           instance_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -364,24 +373,30 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.failure.FailureUnit failure_unit = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // .mavsdk.rpc.failure.FailureUnit failure_unit = 2;
   if (this->_internal_failure_unit() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      1, this->_internal_failure_unit(), target);
+      2, this->_internal_failure_unit(), target);
   }
 
-  // .mavsdk.rpc.failure.FailureType failure_type = 2;
+  // .mavsdk.rpc.failure.FailureType failure_type = 3;
   if (this->_internal_failure_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      2, this->_internal_failure_type(), target);
+      3, this->_internal_failure_type(), target);
   }
 
-  // int32 instance = 3;
+  // int32 instance = 4;
   if (this->_internal_instance() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_instance(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(4, this->_internal_instance(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -400,19 +415,26 @@ size_t InjectRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.failure.FailureUnit failure_unit = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
+
+  // .mavsdk.rpc.failure.FailureUnit failure_unit = 2;
   if (this->_internal_failure_unit() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_failure_unit());
   }
 
-  // .mavsdk.rpc.failure.FailureType failure_type = 2;
+  // .mavsdk.rpc.failure.FailureType failure_type = 3;
   if (this->_internal_failure_type() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_failure_type());
   }
 
-  // int32 instance = 3;
+  // int32 instance = 4;
   if (this->_internal_instance() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
@@ -447,6 +469,9 @@ void InjectRequest::MergeFrom(const InjectRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   if (from._internal_failure_unit() != 0) {
     _internal_set_failure_unit(from._internal_failure_unit());
   }
@@ -476,9 +501,9 @@ void InjectRequest::InternalSwap(InjectRequest* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(InjectRequest, instance_)
       + sizeof(InjectRequest::instance_)
-      - PROTOBUF_FIELD_OFFSET(InjectRequest, failure_unit_)>(
-          reinterpret_cast<char*>(&failure_unit_),
-          reinterpret_cast<char*>(&other->failure_unit_));
+      - PROTOBUF_FIELD_OFFSET(InjectRequest, drone_id_)>(
+          reinterpret_cast<char*>(&drone_id_),
+          reinterpret_cast<char*>(&other->drone_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata InjectRequest::GetMetadata() const {

@@ -46,7 +46,7 @@ struct TableStruct_core_2fcore_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[5]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[7]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -56,6 +56,12 @@ extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table
 namespace mavsdk {
 namespace rpc {
 namespace core {
+class AddNewConnectionRequest;
+struct AddNewConnectionRequestDefaultTypeInternal;
+extern AddNewConnectionRequestDefaultTypeInternal _AddNewConnectionRequest_default_instance_;
+class AddNewConnectionResponse;
+struct AddNewConnectionResponseDefaultTypeInternal;
+extern AddNewConnectionResponseDefaultTypeInternal _AddNewConnectionResponse_default_instance_;
 class ConnectionState;
 struct ConnectionStateDefaultTypeInternal;
 extern ConnectionStateDefaultTypeInternal _ConnectionState_default_instance_;
@@ -75,6 +81,8 @@ extern SubscribeConnectionStateRequestDefaultTypeInternal _SubscribeConnectionSt
 }  // namespace rpc
 }  // namespace mavsdk
 PROTOBUF_NAMESPACE_OPEN
+template<> ::mavsdk::rpc::core::AddNewConnectionRequest* Arena::CreateMaybeMessage<::mavsdk::rpc::core::AddNewConnectionRequest>(Arena*);
+template<> ::mavsdk::rpc::core::AddNewConnectionResponse* Arena::CreateMaybeMessage<::mavsdk::rpc::core::AddNewConnectionResponse>(Arena*);
 template<> ::mavsdk::rpc::core::ConnectionState* Arena::CreateMaybeMessage<::mavsdk::rpc::core::ConnectionState>(Arena*);
 template<> ::mavsdk::rpc::core::ConnectionStateResponse* Arena::CreateMaybeMessage<::mavsdk::rpc::core::ConnectionStateResponse>(Arena*);
 template<> ::mavsdk::rpc::core::SetMavlinkTimeoutRequest* Arena::CreateMaybeMessage<::mavsdk::rpc::core::SetMavlinkTimeoutRequest>(Arena*);
@@ -201,6 +209,18 @@ class SubscribeConnectionStateRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.core.SubscribeConnectionStateRequest)
  private:
   class _Internal;
@@ -208,6 +228,7 @@ class SubscribeConnectionStateRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_core_2fcore_2eproto;
 };
@@ -476,15 +497,25 @@ class SetMavlinkTimeoutRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kTimeoutSFieldNumber = 1,
+    kTimeoutSFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // double timeout_s = 1;
+  // double timeout_s = 2;
   void clear_timeout_s();
   double timeout_s() const;
   void set_timeout_s(double value);
   private:
   double _internal_timeout_s() const;
   void _internal_set_timeout_s(double value);
+  public:
+
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.core.SetMavlinkTimeoutRequest)
@@ -495,6 +526,7 @@ class SetMavlinkTimeoutRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   double timeout_s_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_core_2fcore_2eproto;
 };
@@ -763,6 +795,289 @@ class ConnectionState final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_core_2fcore_2eproto;
 };
+// -------------------------------------------------------------------
+
+class AddNewConnectionRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mavsdk.rpc.core.AddNewConnectionRequest) */ {
+ public:
+  inline AddNewConnectionRequest() : AddNewConnectionRequest(nullptr) {}
+  ~AddNewConnectionRequest() override;
+  explicit constexpr AddNewConnectionRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  AddNewConnectionRequest(const AddNewConnectionRequest& from);
+  AddNewConnectionRequest(AddNewConnectionRequest&& from) noexcept
+    : AddNewConnectionRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline AddNewConnectionRequest& operator=(const AddNewConnectionRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AddNewConnectionRequest& operator=(AddNewConnectionRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const AddNewConnectionRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const AddNewConnectionRequest* internal_default_instance() {
+    return reinterpret_cast<const AddNewConnectionRequest*>(
+               &_AddNewConnectionRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(AddNewConnectionRequest& a, AddNewConnectionRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AddNewConnectionRequest* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AddNewConnectionRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AddNewConnectionRequest* New() const final {
+    return new AddNewConnectionRequest();
+  }
+
+  AddNewConnectionRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<AddNewConnectionRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const AddNewConnectionRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const AddNewConnectionRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AddNewConnectionRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mavsdk.rpc.core.AddNewConnectionRequest";
+  }
+  protected:
+  explicit AddNewConnectionRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kConnectionUrlFieldNumber = 1,
+  };
+  // string connection_url = 1;
+  void clear_connection_url();
+  const std::string& connection_url() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_connection_url(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_connection_url();
+  PROTOBUF_MUST_USE_RESULT std::string* release_connection_url();
+  void set_allocated_connection_url(std::string* connection_url);
+  private:
+  const std::string& _internal_connection_url() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_connection_url(const std::string& value);
+  std::string* _internal_mutable_connection_url();
+  public:
+
+  // @@protoc_insertion_point(class_scope:mavsdk.rpc.core.AddNewConnectionRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr connection_url_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_core_2fcore_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AddNewConnectionResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mavsdk.rpc.core.AddNewConnectionResponse) */ {
+ public:
+  inline AddNewConnectionResponse() : AddNewConnectionResponse(nullptr) {}
+  ~AddNewConnectionResponse() override;
+  explicit constexpr AddNewConnectionResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  AddNewConnectionResponse(const AddNewConnectionResponse& from);
+  AddNewConnectionResponse(AddNewConnectionResponse&& from) noexcept
+    : AddNewConnectionResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline AddNewConnectionResponse& operator=(const AddNewConnectionResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AddNewConnectionResponse& operator=(AddNewConnectionResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const AddNewConnectionResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const AddNewConnectionResponse* internal_default_instance() {
+    return reinterpret_cast<const AddNewConnectionResponse*>(
+               &_AddNewConnectionResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  friend void swap(AddNewConnectionResponse& a, AddNewConnectionResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AddNewConnectionResponse* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AddNewConnectionResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AddNewConnectionResponse* New() const final {
+    return new AddNewConnectionResponse();
+  }
+
+  AddNewConnectionResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<AddNewConnectionResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const AddNewConnectionResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const AddNewConnectionResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AddNewConnectionResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mavsdk.rpc.core.AddNewConnectionResponse";
+  }
+  protected:
+  explicit AddNewConnectionResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kSucceedFieldNumber = 1,
+  };
+  // bool succeed = 1;
+  void clear_succeed();
+  bool succeed() const;
+  void set_succeed(bool value);
+  private:
+  bool _internal_succeed() const;
+  void _internal_set_succeed(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:mavsdk.rpc.core.AddNewConnectionResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  bool succeed_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_core_2fcore_2eproto;
+};
 // ===================================================================
 
 
@@ -773,6 +1088,26 @@ class ConnectionState final :
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
 // SubscribeConnectionStateRequest
+
+// int32 drone_id = 1;
+inline void SubscribeConnectionStateRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeConnectionStateRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeConnectionStateRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.core.SubscribeConnectionStateRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SubscribeConnectionStateRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SubscribeConnectionStateRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.core.SubscribeConnectionStateRequest.drone_id)
+}
 
 // -------------------------------------------------------------------
 
@@ -872,7 +1207,27 @@ inline void ConnectionStateResponse::set_allocated_connection_state(::mavsdk::rp
 
 // SetMavlinkTimeoutRequest
 
-// double timeout_s = 1;
+// int32 drone_id = 1;
+inline void SetMavlinkTimeoutRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetMavlinkTimeoutRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetMavlinkTimeoutRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.core.SetMavlinkTimeoutRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SetMavlinkTimeoutRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SetMavlinkTimeoutRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.core.SetMavlinkTimeoutRequest.drone_id)
+}
+
+// double timeout_s = 2;
 inline void SetMavlinkTimeoutRequest::clear_timeout_s() {
   timeout_s_ = 0;
 }
@@ -920,9 +1275,87 @@ inline void ConnectionState::set_is_connected(bool value) {
   // @@protoc_insertion_point(field_set:mavsdk.rpc.core.ConnectionState.is_connected)
 }
 
+// -------------------------------------------------------------------
+
+// AddNewConnectionRequest
+
+// string connection_url = 1;
+inline void AddNewConnectionRequest::clear_connection_url() {
+  connection_url_.ClearToEmpty();
+}
+inline const std::string& AddNewConnectionRequest::connection_url() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.core.AddNewConnectionRequest.connection_url)
+  return _internal_connection_url();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AddNewConnectionRequest::set_connection_url(ArgT0&& arg0, ArgT... args) {
+ 
+ connection_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.core.AddNewConnectionRequest.connection_url)
+}
+inline std::string* AddNewConnectionRequest::mutable_connection_url() {
+  std::string* _s = _internal_mutable_connection_url();
+  // @@protoc_insertion_point(field_mutable:mavsdk.rpc.core.AddNewConnectionRequest.connection_url)
+  return _s;
+}
+inline const std::string& AddNewConnectionRequest::_internal_connection_url() const {
+  return connection_url_.Get();
+}
+inline void AddNewConnectionRequest::_internal_set_connection_url(const std::string& value) {
+  
+  connection_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* AddNewConnectionRequest::_internal_mutable_connection_url() {
+  
+  return connection_url_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* AddNewConnectionRequest::release_connection_url() {
+  // @@protoc_insertion_point(field_release:mavsdk.rpc.core.AddNewConnectionRequest.connection_url)
+  return connection_url_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void AddNewConnectionRequest::set_allocated_connection_url(std::string* connection_url) {
+  if (connection_url != nullptr) {
+    
+  } else {
+    
+  }
+  connection_url_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), connection_url,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:mavsdk.rpc.core.AddNewConnectionRequest.connection_url)
+}
+
+// -------------------------------------------------------------------
+
+// AddNewConnectionResponse
+
+// bool succeed = 1;
+inline void AddNewConnectionResponse::clear_succeed() {
+  succeed_ = false;
+}
+inline bool AddNewConnectionResponse::_internal_succeed() const {
+  return succeed_;
+}
+inline bool AddNewConnectionResponse::succeed() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.core.AddNewConnectionResponse.succeed)
+  return _internal_succeed();
+}
+inline void AddNewConnectionResponse::_internal_set_succeed(bool value) {
+  
+  succeed_ = value;
+}
+inline void AddNewConnectionResponse::set_succeed(bool value) {
+  _internal_set_succeed(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.core.AddNewConnectionResponse.succeed)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

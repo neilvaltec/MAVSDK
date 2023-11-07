@@ -20,7 +20,8 @@ namespace mavsdk {
 namespace rpc {
 namespace camera {
 constexpr PrepareRequest::PrepareRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct PrepareRequestDefaultTypeInternal {
   constexpr PrepareRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -43,7 +44,8 @@ struct PrepareResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PrepareResponseDefaultTypeInternal _PrepareResponse_default_instance_;
 constexpr TakePhotoRequest::TakePhotoRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct TakePhotoRequestDefaultTypeInternal {
   constexpr TakePhotoRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -67,7 +69,8 @@ struct TakePhotoResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TakePhotoResponseDefaultTypeInternal _TakePhotoResponse_default_instance_;
 constexpr StartPhotoIntervalRequest::StartPhotoIntervalRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : interval_s_(0){}
+  : drone_id_(0)
+  , interval_s_(0){}
 struct StartPhotoIntervalRequestDefaultTypeInternal {
   constexpr StartPhotoIntervalRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -90,7 +93,8 @@ struct StartPhotoIntervalResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT StartPhotoIntervalResponseDefaultTypeInternal _StartPhotoIntervalResponse_default_instance_;
 constexpr StopPhotoIntervalRequest::StopPhotoIntervalRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct StopPhotoIntervalRequestDefaultTypeInternal {
   constexpr StopPhotoIntervalRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -113,7 +117,8 @@ struct StopPhotoIntervalResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT StopPhotoIntervalResponseDefaultTypeInternal _StopPhotoIntervalResponse_default_instance_;
 constexpr StartVideoRequest::StartVideoRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct StartVideoRequestDefaultTypeInternal {
   constexpr StartVideoRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -136,7 +141,8 @@ struct StartVideoResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT StartVideoResponseDefaultTypeInternal _StartVideoResponse_default_instance_;
 constexpr StopVideoRequest::StopVideoRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct StopVideoRequestDefaultTypeInternal {
   constexpr StopVideoRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -159,7 +165,8 @@ struct StopVideoResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT StopVideoResponseDefaultTypeInternal _StopVideoResponse_default_instance_;
 constexpr StartVideoStreamingRequest::StartVideoStreamingRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct StartVideoStreamingRequestDefaultTypeInternal {
   constexpr StartVideoStreamingRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -182,7 +189,8 @@ struct StartVideoStreamingResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT StartVideoStreamingResponseDefaultTypeInternal _StartVideoStreamingResponse_default_instance_;
 constexpr StopVideoStreamingRequest::StopVideoStreamingRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct StopVideoStreamingRequestDefaultTypeInternal {
   constexpr StopVideoStreamingRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -206,7 +214,8 @@ struct StopVideoStreamingResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT StopVideoStreamingResponseDefaultTypeInternal _StopVideoStreamingResponse_default_instance_;
 constexpr SetModeRequest::SetModeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : mode_(0)
+  : drone_id_(0)
+  , mode_(0)
 {}
 struct SetModeRequestDefaultTypeInternal {
   constexpr SetModeRequestDefaultTypeInternal()
@@ -231,7 +240,8 @@ struct SetModeResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetModeResponseDefaultTypeInternal _SetModeResponse_default_instance_;
 constexpr ListPhotosRequest::ListPhotosRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : photos_range_(0)
+  : drone_id_(0)
+  , photos_range_(0)
 {}
 struct ListPhotosRequestDefaultTypeInternal {
   constexpr ListPhotosRequestDefaultTypeInternal()
@@ -256,7 +266,8 @@ struct ListPhotosResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListPhotosResponseDefaultTypeInternal _ListPhotosResponse_default_instance_;
 constexpr SubscribeInformationRequest::SubscribeInformationRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeInformationRequestDefaultTypeInternal {
   constexpr SubscribeInformationRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -279,7 +290,8 @@ struct InformationResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT InformationResponseDefaultTypeInternal _InformationResponse_default_instance_;
 constexpr SubscribeModeRequest::SubscribeModeRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeModeRequestDefaultTypeInternal {
   constexpr SubscribeModeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -303,7 +315,8 @@ struct ModeResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ModeResponseDefaultTypeInternal _ModeResponse_default_instance_;
 constexpr SubscribeVideoStreamInfoRequest::SubscribeVideoStreamInfoRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeVideoStreamInfoRequestDefaultTypeInternal {
   constexpr SubscribeVideoStreamInfoRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -326,7 +339,8 @@ struct VideoStreamInfoResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT VideoStreamInfoResponseDefaultTypeInternal _VideoStreamInfoResponse_default_instance_;
 constexpr SubscribeCaptureInfoRequest::SubscribeCaptureInfoRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeCaptureInfoRequestDefaultTypeInternal {
   constexpr SubscribeCaptureInfoRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -349,7 +363,8 @@ struct CaptureInfoResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CaptureInfoResponseDefaultTypeInternal _CaptureInfoResponse_default_instance_;
 constexpr SubscribeStatusRequest::SubscribeStatusRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeStatusRequestDefaultTypeInternal {
   constexpr SubscribeStatusRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -372,7 +387,8 @@ struct StatusResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT StatusResponseDefaultTypeInternal _StatusResponse_default_instance_;
 constexpr SubscribeCurrentSettingsRequest::SubscribeCurrentSettingsRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribeCurrentSettingsRequestDefaultTypeInternal {
   constexpr SubscribeCurrentSettingsRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -395,7 +411,8 @@ struct CurrentSettingsResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CurrentSettingsResponseDefaultTypeInternal _CurrentSettingsResponse_default_instance_;
 constexpr SubscribePossibleSettingOptionsRequest::SubscribePossibleSettingOptionsRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct SubscribePossibleSettingOptionsRequestDefaultTypeInternal {
   constexpr SubscribePossibleSettingOptionsRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -419,7 +436,8 @@ struct PossibleSettingOptionsResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PossibleSettingOptionsResponseDefaultTypeInternal _PossibleSettingOptionsResponse_default_instance_;
 constexpr SetSettingRequest::SetSettingRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : setting_(nullptr){}
+  : setting_(nullptr)
+  , drone_id_(0){}
 struct SetSettingRequestDefaultTypeInternal {
   constexpr SetSettingRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -443,7 +461,8 @@ struct SetSettingResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetSettingResponseDefaultTypeInternal _SetSettingResponse_default_instance_;
 constexpr GetSettingRequest::GetSettingRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : setting_(nullptr){}
+  : setting_(nullptr)
+  , drone_id_(0){}
 struct GetSettingRequestDefaultTypeInternal {
   constexpr GetSettingRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -467,7 +486,8 @@ struct GetSettingResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetSettingResponseDefaultTypeInternal _GetSettingResponse_default_instance_;
 constexpr FormatStorageRequest::FormatStorageRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : drone_id_(0){}
 struct FormatStorageRequestDefaultTypeInternal {
   constexpr FormatStorageRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -503,7 +523,8 @@ struct SelectCameraResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SelectCameraResponseDefaultTypeInternal _SelectCameraResponse_default_instance_;
 constexpr SelectCameraRequest::SelectCameraRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : camera_id_(0){}
+  : drone_id_(0)
+  , camera_id_(0){}
 struct SelectCameraRequestDefaultTypeInternal {
   constexpr SelectCameraRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -720,6 +741,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_camera_2fcamera_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::PrepareRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::PrepareResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -731,6 +753,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_camera_2fcamera_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::TakePhotoRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::TakePhotoResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -742,6 +765,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_camera_2fcamera_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::StartPhotoIntervalRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::StartPhotoIntervalRequest, interval_s_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::StartPhotoIntervalResponse, _internal_metadata_),
@@ -754,6 +778,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_camera_2fcamera_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::StopPhotoIntervalRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::StopPhotoIntervalResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -765,6 +790,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_camera_2fcamera_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::StartVideoRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::StartVideoResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -776,6 +802,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_camera_2fcamera_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::StopVideoRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::StopVideoResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -787,6 +814,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_camera_2fcamera_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::StartVideoStreamingRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::StartVideoStreamingResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -798,6 +826,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_camera_2fcamera_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::StopVideoStreamingRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::StopVideoStreamingResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -809,6 +838,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_camera_2fcamera_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::SetModeRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::SetModeRequest, mode_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::SetModeResponse, _internal_metadata_),
@@ -821,6 +851,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_camera_2fcamera_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::ListPhotosRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::ListPhotosRequest, photos_range_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::ListPhotosResponse, _internal_metadata_),
@@ -834,6 +865,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_camera_2fcamera_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::SubscribeInformationRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::InformationResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -845,6 +877,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_camera_2fcamera_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::SubscribeModeRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::ModeResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -856,6 +889,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_camera_2fcamera_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::SubscribeVideoStreamInfoRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::VideoStreamInfoResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -867,6 +901,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_camera_2fcamera_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::SubscribeCaptureInfoRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::CaptureInfoResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -878,6 +913,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_camera_2fcamera_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::SubscribeStatusRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::StatusResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -889,6 +925,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_camera_2fcamera_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::SubscribeCurrentSettingsRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::CurrentSettingsResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -900,6 +937,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_camera_2fcamera_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::SubscribePossibleSettingOptionsRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::PossibleSettingOptionsResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -911,6 +949,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_camera_2fcamera_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::SetSettingRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::SetSettingRequest, setting_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::SetSettingResponse, _internal_metadata_),
@@ -923,6 +962,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_camera_2fcamera_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::GetSettingRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::GetSettingRequest, setting_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::GetSettingResponse, _internal_metadata_),
@@ -936,6 +976,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_camera_2fcamera_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::FormatStorageRequest, drone_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::FormatStorageResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -953,6 +994,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_camera_2fcamera_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::SelectCameraRequest, drone_id_),
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::SelectCameraRequest, camera_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mavsdk::rpc::camera::CameraResult, _internal_metadata_),
@@ -1074,59 +1116,59 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_camera_2fcamera_2eproto::offse
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::mavsdk::rpc::camera::PrepareRequest)},
-  { 5, -1, sizeof(::mavsdk::rpc::camera::PrepareResponse)},
-  { 11, -1, sizeof(::mavsdk::rpc::camera::TakePhotoRequest)},
-  { 16, -1, sizeof(::mavsdk::rpc::camera::TakePhotoResponse)},
-  { 22, -1, sizeof(::mavsdk::rpc::camera::StartPhotoIntervalRequest)},
-  { 28, -1, sizeof(::mavsdk::rpc::camera::StartPhotoIntervalResponse)},
-  { 34, -1, sizeof(::mavsdk::rpc::camera::StopPhotoIntervalRequest)},
-  { 39, -1, sizeof(::mavsdk::rpc::camera::StopPhotoIntervalResponse)},
-  { 45, -1, sizeof(::mavsdk::rpc::camera::StartVideoRequest)},
-  { 50, -1, sizeof(::mavsdk::rpc::camera::StartVideoResponse)},
-  { 56, -1, sizeof(::mavsdk::rpc::camera::StopVideoRequest)},
-  { 61, -1, sizeof(::mavsdk::rpc::camera::StopVideoResponse)},
-  { 67, -1, sizeof(::mavsdk::rpc::camera::StartVideoStreamingRequest)},
-  { 72, -1, sizeof(::mavsdk::rpc::camera::StartVideoStreamingResponse)},
-  { 78, -1, sizeof(::mavsdk::rpc::camera::StopVideoStreamingRequest)},
-  { 83, -1, sizeof(::mavsdk::rpc::camera::StopVideoStreamingResponse)},
-  { 89, -1, sizeof(::mavsdk::rpc::camera::SetModeRequest)},
-  { 95, -1, sizeof(::mavsdk::rpc::camera::SetModeResponse)},
-  { 101, -1, sizeof(::mavsdk::rpc::camera::ListPhotosRequest)},
-  { 107, -1, sizeof(::mavsdk::rpc::camera::ListPhotosResponse)},
-  { 114, -1, sizeof(::mavsdk::rpc::camera::SubscribeInformationRequest)},
-  { 119, -1, sizeof(::mavsdk::rpc::camera::InformationResponse)},
-  { 125, -1, sizeof(::mavsdk::rpc::camera::SubscribeModeRequest)},
-  { 130, -1, sizeof(::mavsdk::rpc::camera::ModeResponse)},
-  { 136, -1, sizeof(::mavsdk::rpc::camera::SubscribeVideoStreamInfoRequest)},
-  { 141, -1, sizeof(::mavsdk::rpc::camera::VideoStreamInfoResponse)},
-  { 147, -1, sizeof(::mavsdk::rpc::camera::SubscribeCaptureInfoRequest)},
-  { 152, -1, sizeof(::mavsdk::rpc::camera::CaptureInfoResponse)},
-  { 158, -1, sizeof(::mavsdk::rpc::camera::SubscribeStatusRequest)},
-  { 163, -1, sizeof(::mavsdk::rpc::camera::StatusResponse)},
-  { 169, -1, sizeof(::mavsdk::rpc::camera::SubscribeCurrentSettingsRequest)},
-  { 174, -1, sizeof(::mavsdk::rpc::camera::CurrentSettingsResponse)},
-  { 180, -1, sizeof(::mavsdk::rpc::camera::SubscribePossibleSettingOptionsRequest)},
-  { 185, -1, sizeof(::mavsdk::rpc::camera::PossibleSettingOptionsResponse)},
-  { 191, -1, sizeof(::mavsdk::rpc::camera::SetSettingRequest)},
-  { 197, -1, sizeof(::mavsdk::rpc::camera::SetSettingResponse)},
-  { 203, -1, sizeof(::mavsdk::rpc::camera::GetSettingRequest)},
-  { 209, -1, sizeof(::mavsdk::rpc::camera::GetSettingResponse)},
-  { 216, -1, sizeof(::mavsdk::rpc::camera::FormatStorageRequest)},
-  { 221, -1, sizeof(::mavsdk::rpc::camera::FormatStorageResponse)},
-  { 227, -1, sizeof(::mavsdk::rpc::camera::SelectCameraResponse)},
-  { 233, -1, sizeof(::mavsdk::rpc::camera::SelectCameraRequest)},
-  { 239, -1, sizeof(::mavsdk::rpc::camera::CameraResult)},
-  { 246, -1, sizeof(::mavsdk::rpc::camera::Position)},
-  { 255, -1, sizeof(::mavsdk::rpc::camera::Quaternion)},
-  { 264, -1, sizeof(::mavsdk::rpc::camera::EulerAngle)},
-  { 272, -1, sizeof(::mavsdk::rpc::camera::CaptureInfo)},
-  { 284, -1, sizeof(::mavsdk::rpc::camera::VideoStreamSettings)},
-  { 296, -1, sizeof(::mavsdk::rpc::camera::VideoStreamInfo)},
-  { 304, -1, sizeof(::mavsdk::rpc::camera::Status)},
-  { 319, -1, sizeof(::mavsdk::rpc::camera::Option)},
-  { 326, -1, sizeof(::mavsdk::rpc::camera::Setting)},
-  { 335, -1, sizeof(::mavsdk::rpc::camera::SettingOptions)},
-  { 344, -1, sizeof(::mavsdk::rpc::camera::Information)},
+  { 6, -1, sizeof(::mavsdk::rpc::camera::PrepareResponse)},
+  { 12, -1, sizeof(::mavsdk::rpc::camera::TakePhotoRequest)},
+  { 18, -1, sizeof(::mavsdk::rpc::camera::TakePhotoResponse)},
+  { 24, -1, sizeof(::mavsdk::rpc::camera::StartPhotoIntervalRequest)},
+  { 31, -1, sizeof(::mavsdk::rpc::camera::StartPhotoIntervalResponse)},
+  { 37, -1, sizeof(::mavsdk::rpc::camera::StopPhotoIntervalRequest)},
+  { 43, -1, sizeof(::mavsdk::rpc::camera::StopPhotoIntervalResponse)},
+  { 49, -1, sizeof(::mavsdk::rpc::camera::StartVideoRequest)},
+  { 55, -1, sizeof(::mavsdk::rpc::camera::StartVideoResponse)},
+  { 61, -1, sizeof(::mavsdk::rpc::camera::StopVideoRequest)},
+  { 67, -1, sizeof(::mavsdk::rpc::camera::StopVideoResponse)},
+  { 73, -1, sizeof(::mavsdk::rpc::camera::StartVideoStreamingRequest)},
+  { 79, -1, sizeof(::mavsdk::rpc::camera::StartVideoStreamingResponse)},
+  { 85, -1, sizeof(::mavsdk::rpc::camera::StopVideoStreamingRequest)},
+  { 91, -1, sizeof(::mavsdk::rpc::camera::StopVideoStreamingResponse)},
+  { 97, -1, sizeof(::mavsdk::rpc::camera::SetModeRequest)},
+  { 104, -1, sizeof(::mavsdk::rpc::camera::SetModeResponse)},
+  { 110, -1, sizeof(::mavsdk::rpc::camera::ListPhotosRequest)},
+  { 117, -1, sizeof(::mavsdk::rpc::camera::ListPhotosResponse)},
+  { 124, -1, sizeof(::mavsdk::rpc::camera::SubscribeInformationRequest)},
+  { 130, -1, sizeof(::mavsdk::rpc::camera::InformationResponse)},
+  { 136, -1, sizeof(::mavsdk::rpc::camera::SubscribeModeRequest)},
+  { 142, -1, sizeof(::mavsdk::rpc::camera::ModeResponse)},
+  { 148, -1, sizeof(::mavsdk::rpc::camera::SubscribeVideoStreamInfoRequest)},
+  { 154, -1, sizeof(::mavsdk::rpc::camera::VideoStreamInfoResponse)},
+  { 160, -1, sizeof(::mavsdk::rpc::camera::SubscribeCaptureInfoRequest)},
+  { 166, -1, sizeof(::mavsdk::rpc::camera::CaptureInfoResponse)},
+  { 172, -1, sizeof(::mavsdk::rpc::camera::SubscribeStatusRequest)},
+  { 178, -1, sizeof(::mavsdk::rpc::camera::StatusResponse)},
+  { 184, -1, sizeof(::mavsdk::rpc::camera::SubscribeCurrentSettingsRequest)},
+  { 190, -1, sizeof(::mavsdk::rpc::camera::CurrentSettingsResponse)},
+  { 196, -1, sizeof(::mavsdk::rpc::camera::SubscribePossibleSettingOptionsRequest)},
+  { 202, -1, sizeof(::mavsdk::rpc::camera::PossibleSettingOptionsResponse)},
+  { 208, -1, sizeof(::mavsdk::rpc::camera::SetSettingRequest)},
+  { 215, -1, sizeof(::mavsdk::rpc::camera::SetSettingResponse)},
+  { 221, -1, sizeof(::mavsdk::rpc::camera::GetSettingRequest)},
+  { 228, -1, sizeof(::mavsdk::rpc::camera::GetSettingResponse)},
+  { 235, -1, sizeof(::mavsdk::rpc::camera::FormatStorageRequest)},
+  { 241, -1, sizeof(::mavsdk::rpc::camera::FormatStorageResponse)},
+  { 247, -1, sizeof(::mavsdk::rpc::camera::SelectCameraResponse)},
+  { 253, -1, sizeof(::mavsdk::rpc::camera::SelectCameraRequest)},
+  { 260, -1, sizeof(::mavsdk::rpc::camera::CameraResult)},
+  { 267, -1, sizeof(::mavsdk::rpc::camera::Position)},
+  { 276, -1, sizeof(::mavsdk::rpc::camera::Quaternion)},
+  { 285, -1, sizeof(::mavsdk::rpc::camera::EulerAngle)},
+  { 293, -1, sizeof(::mavsdk::rpc::camera::CaptureInfo)},
+  { 305, -1, sizeof(::mavsdk::rpc::camera::VideoStreamSettings)},
+  { 317, -1, sizeof(::mavsdk::rpc::camera::VideoStreamInfo)},
+  { 325, -1, sizeof(::mavsdk::rpc::camera::Status)},
+  { 340, -1, sizeof(::mavsdk::rpc::camera::Option)},
+  { 347, -1, sizeof(::mavsdk::rpc::camera::Setting)},
+  { 356, -1, sizeof(::mavsdk::rpc::camera::SettingOptions)},
+  { 365, -1, sizeof(::mavsdk::rpc::camera::Information)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -1188,204 +1230,213 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_camera_2fcamera_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\023camera/camera.proto\022\021mavsdk.rpc.camera"
-  "\032\024mavsdk_options.proto\"\020\n\016PrepareRequest"
-  "\"I\n\017PrepareResponse\0226\n\rcamera_result\030\001 \001"
-  "(\0132\037.mavsdk.rpc.camera.CameraResult\"\022\n\020T"
-  "akePhotoRequest\"K\n\021TakePhotoResponse\0226\n\r"
-  "camera_result\030\001 \001(\0132\037.mavsdk.rpc.camera."
-  "CameraResult\"/\n\031StartPhotoIntervalReques"
-  "t\022\022\n\ninterval_s\030\001 \001(\002\"T\n\032StartPhotoInter"
-  "valResponse\0226\n\rcamera_result\030\001 \001(\0132\037.mav"
-  "sdk.rpc.camera.CameraResult\"\032\n\030StopPhoto"
-  "IntervalRequest\"S\n\031StopPhotoIntervalResp"
-  "onse\0226\n\rcamera_result\030\001 \001(\0132\037.mavsdk.rpc"
-  ".camera.CameraResult\"\023\n\021StartVideoReques"
-  "t\"L\n\022StartVideoResponse\0226\n\rcamera_result"
-  "\030\001 \001(\0132\037.mavsdk.rpc.camera.CameraResult\""
-  "\022\n\020StopVideoRequest\"K\n\021StopVideoResponse"
-  "\0226\n\rcamera_result\030\001 \001(\0132\037.mavsdk.rpc.cam"
-  "era.CameraResult\"\034\n\032StartVideoStreamingR"
-  "equest\"U\n\033StartVideoStreamingResponse\0226\n"
+  "\032\024mavsdk_options.proto\"\"\n\016PrepareRequest"
+  "\022\020\n\010drone_id\030\001 \001(\005\"I\n\017PrepareResponse\0226\n"
   "\rcamera_result\030\001 \001(\0132\037.mavsdk.rpc.camera"
-  ".CameraResult\"\033\n\031StopVideoStreamingReque"
-  "st\"T\n\032StopVideoStreamingResponse\0226\n\rcame"
+  ".CameraResult\"$\n\020TakePhotoRequest\022\020\n\010dro"
+  "ne_id\030\001 \001(\005\"K\n\021TakePhotoResponse\0226\n\rcame"
   "ra_result\030\001 \001(\0132\037.mavsdk.rpc.camera.Came"
-  "raResult\"7\n\016SetModeRequest\022%\n\004mode\030\001 \001(\016"
-  "2\027.mavsdk.rpc.camera.Mode\"I\n\017SetModeResp"
-  "onse\0226\n\rcamera_result\030\001 \001(\0132\037.mavsdk.rpc"
-  ".camera.CameraResult\"I\n\021ListPhotosReques"
-  "t\0224\n\014photos_range\030\001 \001(\0162\036.mavsdk.rpc.cam"
-  "era.PhotosRange\"\203\001\n\022ListPhotosResponse\0226"
-  "\n\rcamera_result\030\001 \001(\0132\037.mavsdk.rpc.camer"
-  "a.CameraResult\0225\n\rcapture_infos\030\002 \003(\0132\036."
-  "mavsdk.rpc.camera.CaptureInfo\"\035\n\033Subscri"
-  "beInformationRequest\"J\n\023InformationRespo"
-  "nse\0223\n\013information\030\001 \001(\0132\036.mavsdk.rpc.ca"
-  "mera.Information\"\026\n\024SubscribeModeRequest"
-  "\"5\n\014ModeResponse\022%\n\004mode\030\001 \001(\0162\027.mavsdk."
-  "rpc.camera.Mode\"!\n\037SubscribeVideoStreamI"
-  "nfoRequest\"X\n\027VideoStreamInfoResponse\022=\n"
-  "\021video_stream_info\030\001 \001(\0132\".mavsdk.rpc.ca"
-  "mera.VideoStreamInfo\"\035\n\033SubscribeCapture"
-  "InfoRequest\"K\n\023CaptureInfoResponse\0224\n\014ca"
-  "pture_info\030\001 \001(\0132\036.mavsdk.rpc.camera.Cap"
-  "tureInfo\"\030\n\026SubscribeStatusRequest\"B\n\016St"
-  "atusResponse\0220\n\rcamera_status\030\001 \001(\0132\031.ma"
-  "vsdk.rpc.camera.Status\"!\n\037SubscribeCurre"
-  "ntSettingsRequest\"O\n\027CurrentSettingsResp"
-  "onse\0224\n\020current_settings\030\001 \003(\0132\032.mavsdk."
-  "rpc.camera.Setting\"(\n&SubscribePossibleS"
-  "ettingOptionsRequest\"\\\n\036PossibleSettingO"
-  "ptionsResponse\022:\n\017setting_options\030\001 \003(\0132"
-  "!.mavsdk.rpc.camera.SettingOptions\"@\n\021Se"
-  "tSettingRequest\022+\n\007setting\030\001 \001(\0132\032.mavsd"
-  "k.rpc.camera.Setting\"L\n\022SetSettingRespon"
-  "se\0226\n\rcamera_result\030\001 \001(\0132\037.mavsdk.rpc.c"
-  "amera.CameraResult\"@\n\021GetSettingRequest\022"
-  "+\n\007setting\030\001 \001(\0132\032.mavsdk.rpc.camera.Set"
-  "ting\"y\n\022GetSettingResponse\0226\n\rcamera_res"
-  "ult\030\001 \001(\0132\037.mavsdk.rpc.camera.CameraResu"
-  "lt\022+\n\007setting\030\002 \001(\0132\032.mavsdk.rpc.camera."
-  "Setting\"\026\n\024FormatStorageRequest\"O\n\025Forma"
+  "raResult\"A\n\031StartPhotoIntervalRequest\022\020\n"
+  "\010drone_id\030\001 \001(\005\022\022\n\ninterval_s\030\002 \001(\002\"T\n\032S"
+  "tartPhotoIntervalResponse\0226\n\rcamera_resu"
+  "lt\030\001 \001(\0132\037.mavsdk.rpc.camera.CameraResul"
+  "t\",\n\030StopPhotoIntervalRequest\022\020\n\010drone_i"
+  "d\030\001 \001(\005\"S\n\031StopPhotoIntervalResponse\0226\n\r"
+  "camera_result\030\001 \001(\0132\037.mavsdk.rpc.camera."
+  "CameraResult\"%\n\021StartVideoRequest\022\020\n\010dro"
+  "ne_id\030\001 \001(\005\"L\n\022StartVideoResponse\0226\n\rcam"
+  "era_result\030\001 \001(\0132\037.mavsdk.rpc.camera.Cam"
+  "eraResult\"$\n\020StopVideoRequest\022\020\n\010drone_i"
+  "d\030\001 \001(\005\"K\n\021StopVideoResponse\0226\n\rcamera_r"
+  "esult\030\001 \001(\0132\037.mavsdk.rpc.camera.CameraRe"
+  "sult\".\n\032StartVideoStreamingRequest\022\020\n\010dr"
+  "one_id\030\001 \001(\005\"U\n\033StartVideoStreamingRespo"
+  "nse\0226\n\rcamera_result\030\001 \001(\0132\037.mavsdk.rpc."
+  "camera.CameraResult\"-\n\031StopVideoStreamin"
+  "gRequest\022\020\n\010drone_id\030\001 \001(\005\"T\n\032StopVideoS"
+  "treamingResponse\0226\n\rcamera_result\030\001 \001(\0132"
+  "\037.mavsdk.rpc.camera.CameraResult\"I\n\016SetM"
+  "odeRequest\022\020\n\010drone_id\030\001 \001(\005\022%\n\004mode\030\002 \001"
+  "(\0162\027.mavsdk.rpc.camera.Mode\"I\n\017SetModeRe"
+  "sponse\0226\n\rcamera_result\030\001 \001(\0132\037.mavsdk.r"
+  "pc.camera.CameraResult\"[\n\021ListPhotosRequ"
+  "est\022\020\n\010drone_id\030\001 \001(\005\0224\n\014photos_range\030\002 "
+  "\001(\0162\036.mavsdk.rpc.camera.PhotosRange\"\203\001\n\022"
+  "ListPhotosResponse\0226\n\rcamera_result\030\001 \001("
+  "\0132\037.mavsdk.rpc.camera.CameraResult\0225\n\rca"
+  "pture_infos\030\002 \003(\0132\036.mavsdk.rpc.camera.Ca"
+  "ptureInfo\"/\n\033SubscribeInformationRequest"
+  "\022\020\n\010drone_id\030\001 \001(\005\"J\n\023InformationRespons"
+  "e\0223\n\013information\030\001 \001(\0132\036.mavsdk.rpc.came"
+  "ra.Information\"(\n\024SubscribeModeRequest\022\020"
+  "\n\010drone_id\030\001 \001(\005\"5\n\014ModeResponse\022%\n\004mode"
+  "\030\001 \001(\0162\027.mavsdk.rpc.camera.Mode\"3\n\037Subsc"
+  "ribeVideoStreamInfoRequest\022\020\n\010drone_id\030\001"
+  " \001(\005\"X\n\027VideoStreamInfoResponse\022=\n\021video"
+  "_stream_info\030\001 \001(\0132\".mavsdk.rpc.camera.V"
+  "ideoStreamInfo\"/\n\033SubscribeCaptureInfoRe"
+  "quest\022\020\n\010drone_id\030\001 \001(\005\"K\n\023CaptureInfoRe"
+  "sponse\0224\n\014capture_info\030\001 \001(\0132\036.mavsdk.rp"
+  "c.camera.CaptureInfo\"*\n\026SubscribeStatusR"
+  "equest\022\020\n\010drone_id\030\001 \001(\005\"B\n\016StatusRespon"
+  "se\0220\n\rcamera_status\030\001 \001(\0132\031.mavsdk.rpc.c"
+  "amera.Status\"3\n\037SubscribeCurrentSettings"
+  "Request\022\020\n\010drone_id\030\001 \001(\005\"O\n\027CurrentSett"
+  "ingsResponse\0224\n\020current_settings\030\001 \003(\0132\032"
+  ".mavsdk.rpc.camera.Setting\":\n&SubscribeP"
+  "ossibleSettingOptionsRequest\022\020\n\010drone_id"
+  "\030\001 \001(\005\"\\\n\036PossibleSettingOptionsResponse"
+  "\022:\n\017setting_options\030\001 \003(\0132!.mavsdk.rpc.c"
+  "amera.SettingOptions\"R\n\021SetSettingReques"
+  "t\022\020\n\010drone_id\030\001 \001(\005\022+\n\007setting\030\002 \001(\0132\032.m"
+  "avsdk.rpc.camera.Setting\"L\n\022SetSettingRe"
+  "sponse\0226\n\rcamera_result\030\001 \001(\0132\037.mavsdk.r"
+  "pc.camera.CameraResult\"R\n\021GetSettingRequ"
+  "est\022\020\n\010drone_id\030\001 \001(\005\022+\n\007setting\030\002 \001(\0132\032"
+  ".mavsdk.rpc.camera.Setting\"y\n\022GetSetting"
+  "Response\0226\n\rcamera_result\030\001 \001(\0132\037.mavsdk"
+  ".rpc.camera.CameraResult\022+\n\007setting\030\002 \001("
+  "\0132\032.mavsdk.rpc.camera.Setting\"(\n\024FormatS"
+  "torageRequest\022\020\n\010drone_id\030\001 \001(\005\"O\n\025Forma"
   "tStorageResponse\0226\n\rcamera_result\030\001 \001(\0132"
   "\037.mavsdk.rpc.camera.CameraResult\"N\n\024Sele"
   "ctCameraResponse\0226\n\rcamera_result\030\001 \001(\0132"
-  "\037.mavsdk.rpc.camera.CameraResult\"(\n\023Sele"
-  "ctCameraRequest\022\021\n\tcamera_id\030\001 \001(\005\"\240\002\n\014C"
-  "ameraResult\0226\n\006result\030\001 \001(\0162&.mavsdk.rpc"
-  ".camera.CameraResult.Result\022\022\n\nresult_st"
-  "r\030\002 \001(\t\"\303\001\n\006Result\022\022\n\016RESULT_UNKNOWN\020\000\022\022"
-  "\n\016RESULT_SUCCESS\020\001\022\026\n\022RESULT_IN_PROGRESS"
-  "\020\002\022\017\n\013RESULT_BUSY\020\003\022\021\n\rRESULT_DENIED\020\004\022\020"
-  "\n\014RESULT_ERROR\020\005\022\022\n\016RESULT_TIMEOUT\020\006\022\031\n\025"
-  "RESULT_WRONG_ARGUMENT\020\007\022\024\n\020RESULT_NO_SYS"
-  "TEM\020\010\"q\n\010Position\022\024\n\014latitude_deg\030\001 \001(\001\022"
-  "\025\n\rlongitude_deg\030\002 \001(\001\022\033\n\023absolute_altit"
-  "ude_m\030\003 \001(\002\022\033\n\023relative_altitude_m\030\004 \001(\002"
-  "\"8\n\nQuaternion\022\t\n\001w\030\001 \001(\002\022\t\n\001x\030\002 \001(\002\022\t\n\001"
-  "y\030\003 \001(\002\022\t\n\001z\030\004 \001(\002\"B\n\nEulerAngle\022\020\n\010roll"
-  "_deg\030\001 \001(\002\022\021\n\tpitch_deg\030\002 \001(\002\022\017\n\007yaw_deg"
-  "\030\003 \001(\002\"\377\001\n\013CaptureInfo\022-\n\010position\030\001 \001(\013"
-  "2\033.mavsdk.rpc.camera.Position\022:\n\023attitud"
-  "e_quaternion\030\002 \001(\0132\035.mavsdk.rpc.camera.Q"
-  "uaternion\022;\n\024attitude_euler_angle\030\003 \001(\0132"
-  "\035.mavsdk.rpc.camera.EulerAngle\022\023\n\013time_u"
-  "tc_us\030\004 \001(\004\022\022\n\nis_success\030\005 \001(\010\022\r\n\005index"
-  "\030\006 \001(\005\022\020\n\010file_url\030\007 \001(\t\"\305\001\n\023VideoStream"
-  "Settings\022\025\n\rframe_rate_hz\030\001 \001(\002\022!\n\031horiz"
-  "ontal_resolution_pix\030\002 \001(\r\022\037\n\027vertical_r"
-  "esolution_pix\030\003 \001(\r\022\024\n\014bit_rate_b_s\030\004 \001("
-  "\r\022\024\n\014rotation_deg\030\005 \001(\r\022\013\n\003uri\030\006 \001(\t\022\032\n\022"
-  "horizontal_fov_deg\030\007 \001(\002\"\302\003\n\017VideoStream"
-  "Info\0228\n\010settings\030\001 \001(\0132&.mavsdk.rpc.came"
-  "ra.VideoStreamSettings\022D\n\006status\030\002 \001(\01624"
-  ".mavsdk.rpc.camera.VideoStreamInfo.Video"
-  "StreamStatus\022H\n\010spectrum\030\003 \001(\01626.mavsdk."
-  "rpc.camera.VideoStreamInfo.VideoStreamSp"
-  "ectrum\"]\n\021VideoStreamStatus\022#\n\037VIDEO_STR"
-  "EAM_STATUS_NOT_RUNNING\020\000\022#\n\037VIDEO_STREAM"
-  "_STATUS_IN_PROGRESS\020\001\"\205\001\n\023VideoStreamSpe"
-  "ctrum\022!\n\035VIDEO_STREAM_SPECTRUM_UNKNOWN\020\000"
-  "\022\'\n#VIDEO_STREAM_SPECTRUM_VISIBLE_LIGHT\020"
-  "\001\022\"\n\036VIDEO_STREAM_SPECTRUM_INFRARED\020\002\"\207\005"
-  "\n\006Status\022\020\n\010video_on\030\001 \001(\010\022\031\n\021photo_inte"
-  "rval_on\030\002 \001(\010\022\030\n\020used_storage_mib\030\003 \001(\002\022"
-  "\035\n\025available_storage_mib\030\004 \001(\002\022\031\n\021total_"
-  "storage_mib\030\005 \001(\002\022\030\n\020recording_time_s\030\006 "
-  "\001(\002\022\031\n\021media_folder_name\030\007 \001(\t\022\?\n\016storag"
-  "e_status\030\010 \001(\0162\'.mavsdk.rpc.camera.Statu"
-  "s.StorageStatus\022\022\n\nstorage_id\030\t \001(\r\022;\n\014s"
-  "torage_type\030\n \001(\0162%.mavsdk.rpc.camera.St"
-  "atus.StorageType\"\221\001\n\rStorageStatus\022 \n\034ST"
-  "ORAGE_STATUS_NOT_AVAILABLE\020\000\022\036\n\032STORAGE_"
-  "STATUS_UNFORMATTED\020\001\022\034\n\030STORAGE_STATUS_F"
-  "ORMATTED\020\002\022 \n\034STORAGE_STATUS_NOT_SUPPORT"
-  "ED\020\003\"\240\001\n\013StorageType\022\030\n\024STORAGE_TYPE_UNK"
-  "NOWN\020\000\022\032\n\026STORAGE_TYPE_USB_STICK\020\001\022\023\n\017ST"
-  "ORAGE_TYPE_SD\020\002\022\030\n\024STORAGE_TYPE_MICROSD\020"
-  "\003\022\023\n\017STORAGE_TYPE_HD\020\007\022\027\n\022STORAGE_TYPE_O"
-  "THER\020\376\001\"7\n\006Option\022\021\n\toption_id\030\001 \001(\t\022\032\n\022"
-  "option_description\030\002 \001(\t\"w\n\007Setting\022\022\n\ns"
-  "etting_id\030\001 \001(\t\022\033\n\023setting_description\030\002"
-  " \001(\t\022)\n\006option\030\003 \001(\0132\031.mavsdk.rpc.camera"
-  ".Option\022\020\n\010is_range\030\004 \001(\010\"\177\n\016SettingOpti"
-  "ons\022\022\n\nsetting_id\030\001 \001(\t\022\033\n\023setting_descr"
-  "iption\030\002 \001(\t\022*\n\007options\030\003 \003(\0132\031.mavsdk.r"
-  "pc.camera.Option\022\020\n\010is_range\030\004 \001(\010\"\325\001\n\013I"
-  "nformation\022\023\n\013vendor_name\030\001 \001(\t\022\022\n\nmodel"
-  "_name\030\002 \001(\t\022\027\n\017focal_length_mm\030\003 \001(\002\022!\n\031"
-  "horizontal_sensor_size_mm\030\004 \001(\002\022\037\n\027verti"
-  "cal_sensor_size_mm\030\005 \001(\002\022 \n\030horizontal_r"
-  "esolution_px\030\006 \001(\r\022\036\n\026vertical_resolutio"
-  "n_px\030\007 \001(\r*8\n\004Mode\022\020\n\014MODE_UNKNOWN\020\000\022\016\n\n"
-  "MODE_PHOTO\020\001\022\016\n\nMODE_VIDEO\020\002*F\n\013PhotosRa"
-  "nge\022\024\n\020PHOTOS_RANGE_ALL\020\000\022!\n\035PHOTOS_RANG"
-  "E_SINCE_CONNECTION\020\0012\323\021\n\rCameraService\022R"
-  "\n\007Prepare\022!.mavsdk.rpc.camera.PrepareReq"
-  "uest\032\".mavsdk.rpc.camera.PrepareResponse"
-  "\"\000\022X\n\tTakePhoto\022#.mavsdk.rpc.camera.Take"
-  "PhotoRequest\032$.mavsdk.rpc.camera.TakePho"
-  "toResponse\"\000\022s\n\022StartPhotoInterval\022,.mav"
-  "sdk.rpc.camera.StartPhotoIntervalRequest"
-  "\032-.mavsdk.rpc.camera.StartPhotoIntervalR"
-  "esponse\"\000\022p\n\021StopPhotoInterval\022+.mavsdk."
-  "rpc.camera.StopPhotoIntervalRequest\032,.ma"
-  "vsdk.rpc.camera.StopPhotoIntervalRespons"
-  "e\"\000\022[\n\nStartVideo\022$.mavsdk.rpc.camera.St"
-  "artVideoRequest\032%.mavsdk.rpc.camera.Star"
-  "tVideoResponse\"\000\022X\n\tStopVideo\022#.mavsdk.r"
-  "pc.camera.StopVideoRequest\032$.mavsdk.rpc."
-  "camera.StopVideoResponse\"\000\022z\n\023StartVideo"
-  "Streaming\022-.mavsdk.rpc.camera.StartVideo"
-  "StreamingRequest\032..mavsdk.rpc.camera.Sta"
-  "rtVideoStreamingResponse\"\004\200\265\030\001\022w\n\022StopVi"
-  "deoStreaming\022,.mavsdk.rpc.camera.StopVid"
-  "eoStreamingRequest\032-.mavsdk.rpc.camera.S"
-  "topVideoStreamingResponse\"\004\200\265\030\001\022R\n\007SetMo"
-  "de\022!.mavsdk.rpc.camera.SetModeRequest\032\"."
-  "mavsdk.rpc.camera.SetModeResponse\"\000\022[\n\nL"
-  "istPhotos\022$.mavsdk.rpc.camera.ListPhotos"
-  "Request\032%.mavsdk.rpc.camera.ListPhotosRe"
-  "sponse\"\000\022]\n\rSubscribeMode\022\'.mavsdk.rpc.c"
-  "amera.SubscribeModeRequest\032\037.mavsdk.rpc."
-  "camera.ModeResponse\"\0000\001\022r\n\024SubscribeInfo"
-  "rmation\022..mavsdk.rpc.camera.SubscribeInf"
-  "ormationRequest\032&.mavsdk.rpc.camera.Info"
-  "rmationResponse\"\0000\001\022~\n\030SubscribeVideoStr"
-  "eamInfo\0222.mavsdk.rpc.camera.SubscribeVid"
-  "eoStreamInfoRequest\032*.mavsdk.rpc.camera."
-  "VideoStreamInfoResponse\"\0000\001\022v\n\024Subscribe"
-  "CaptureInfo\022..mavsdk.rpc.camera.Subscrib"
-  "eCaptureInfoRequest\032&.mavsdk.rpc.camera."
-  "CaptureInfoResponse\"\004\200\265\030\0000\001\022c\n\017Subscribe"
-  "Status\022).mavsdk.rpc.camera.SubscribeStat"
-  "usRequest\032!.mavsdk.rpc.camera.StatusResp"
-  "onse\"\0000\001\022\202\001\n\030SubscribeCurrentSettings\0222."
-  "mavsdk.rpc.camera.SubscribeCurrentSettin"
-  "gsRequest\032*.mavsdk.rpc.camera.CurrentSet"
-  "tingsResponse\"\004\200\265\030\0000\001\022\223\001\n\037SubscribePossi"
-  "bleSettingOptions\0229.mavsdk.rpc.camera.Su"
-  "bscribePossibleSettingOptionsRequest\0321.m"
-  "avsdk.rpc.camera.PossibleSettingOptionsR"
-  "esponse\"\0000\001\022[\n\nSetSetting\022$.mavsdk.rpc.c"
-  "amera.SetSettingRequest\032%.mavsdk.rpc.cam"
-  "era.SetSettingResponse\"\000\022[\n\nGetSetting\022$"
-  ".mavsdk.rpc.camera.GetSettingRequest\032%.m"
-  "avsdk.rpc.camera.GetSettingResponse\"\000\022d\n"
-  "\rFormatStorage\022\'.mavsdk.rpc.camera.Forma"
-  "tStorageRequest\032(.mavsdk.rpc.camera.Form"
-  "atStorageResponse\"\000\022e\n\014SelectCamera\022&.ma"
-  "vsdk.rpc.camera.SelectCameraRequest\032\'.ma"
-  "vsdk.rpc.camera.SelectCameraResponse\"\004\200\265"
-  "\030\001B\037\n\020io.mavsdk.cameraB\013CameraProtob\006pro"
-  "to3"
+  "\037.mavsdk.rpc.camera.CameraResult\":\n\023Sele"
+  "ctCameraRequest\022\020\n\010drone_id\030\001 \001(\005\022\021\n\tcam"
+  "era_id\030\002 \001(\005\"\240\002\n\014CameraResult\0226\n\006result\030"
+  "\001 \001(\0162&.mavsdk.rpc.camera.CameraResult.R"
+  "esult\022\022\n\nresult_str\030\002 \001(\t\"\303\001\n\006Result\022\022\n\016"
+  "RESULT_UNKNOWN\020\000\022\022\n\016RESULT_SUCCESS\020\001\022\026\n\022"
+  "RESULT_IN_PROGRESS\020\002\022\017\n\013RESULT_BUSY\020\003\022\021\n"
+  "\rRESULT_DENIED\020\004\022\020\n\014RESULT_ERROR\020\005\022\022\n\016RE"
+  "SULT_TIMEOUT\020\006\022\031\n\025RESULT_WRONG_ARGUMENT\020"
+  "\007\022\024\n\020RESULT_NO_SYSTEM\020\010\"q\n\010Position\022\024\n\014l"
+  "atitude_deg\030\001 \001(\001\022\025\n\rlongitude_deg\030\002 \001(\001"
+  "\022\033\n\023absolute_altitude_m\030\003 \001(\002\022\033\n\023relativ"
+  "e_altitude_m\030\004 \001(\002\"8\n\nQuaternion\022\t\n\001w\030\001 "
+  "\001(\002\022\t\n\001x\030\002 \001(\002\022\t\n\001y\030\003 \001(\002\022\t\n\001z\030\004 \001(\002\"B\n\n"
+  "EulerAngle\022\020\n\010roll_deg\030\001 \001(\002\022\021\n\tpitch_de"
+  "g\030\002 \001(\002\022\017\n\007yaw_deg\030\003 \001(\002\"\377\001\n\013CaptureInfo"
+  "\022-\n\010position\030\001 \001(\0132\033.mavsdk.rpc.camera.P"
+  "osition\022:\n\023attitude_quaternion\030\002 \001(\0132\035.m"
+  "avsdk.rpc.camera.Quaternion\022;\n\024attitude_"
+  "euler_angle\030\003 \001(\0132\035.mavsdk.rpc.camera.Eu"
+  "lerAngle\022\023\n\013time_utc_us\030\004 \001(\004\022\022\n\nis_succ"
+  "ess\030\005 \001(\010\022\r\n\005index\030\006 \001(\005\022\020\n\010file_url\030\007 \001"
+  "(\t\"\305\001\n\023VideoStreamSettings\022\025\n\rframe_rate"
+  "_hz\030\001 \001(\002\022!\n\031horizontal_resolution_pix\030\002"
+  " \001(\r\022\037\n\027vertical_resolution_pix\030\003 \001(\r\022\024\n"
+  "\014bit_rate_b_s\030\004 \001(\r\022\024\n\014rotation_deg\030\005 \001("
+  "\r\022\013\n\003uri\030\006 \001(\t\022\032\n\022horizontal_fov_deg\030\007 \001"
+  "(\002\"\302\003\n\017VideoStreamInfo\0228\n\010settings\030\001 \001(\013"
+  "2&.mavsdk.rpc.camera.VideoStreamSettings"
+  "\022D\n\006status\030\002 \001(\01624.mavsdk.rpc.camera.Vid"
+  "eoStreamInfo.VideoStreamStatus\022H\n\010spectr"
+  "um\030\003 \001(\01626.mavsdk.rpc.camera.VideoStream"
+  "Info.VideoStreamSpectrum\"]\n\021VideoStreamS"
+  "tatus\022#\n\037VIDEO_STREAM_STATUS_NOT_RUNNING"
+  "\020\000\022#\n\037VIDEO_STREAM_STATUS_IN_PROGRESS\020\001\""
+  "\205\001\n\023VideoStreamSpectrum\022!\n\035VIDEO_STREAM_"
+  "SPECTRUM_UNKNOWN\020\000\022\'\n#VIDEO_STREAM_SPECT"
+  "RUM_VISIBLE_LIGHT\020\001\022\"\n\036VIDEO_STREAM_SPEC"
+  "TRUM_INFRARED\020\002\"\207\005\n\006Status\022\020\n\010video_on\030\001"
+  " \001(\010\022\031\n\021photo_interval_on\030\002 \001(\010\022\030\n\020used_"
+  "storage_mib\030\003 \001(\002\022\035\n\025available_storage_m"
+  "ib\030\004 \001(\002\022\031\n\021total_storage_mib\030\005 \001(\002\022\030\n\020r"
+  "ecording_time_s\030\006 \001(\002\022\031\n\021media_folder_na"
+  "me\030\007 \001(\t\022\?\n\016storage_status\030\010 \001(\0162\'.mavsd"
+  "k.rpc.camera.Status.StorageStatus\022\022\n\nsto"
+  "rage_id\030\t \001(\r\022;\n\014storage_type\030\n \001(\0162%.ma"
+  "vsdk.rpc.camera.Status.StorageType\"\221\001\n\rS"
+  "torageStatus\022 \n\034STORAGE_STATUS_NOT_AVAIL"
+  "ABLE\020\000\022\036\n\032STORAGE_STATUS_UNFORMATTED\020\001\022\034"
+  "\n\030STORAGE_STATUS_FORMATTED\020\002\022 \n\034STORAGE_"
+  "STATUS_NOT_SUPPORTED\020\003\"\240\001\n\013StorageType\022\030"
+  "\n\024STORAGE_TYPE_UNKNOWN\020\000\022\032\n\026STORAGE_TYPE"
+  "_USB_STICK\020\001\022\023\n\017STORAGE_TYPE_SD\020\002\022\030\n\024STO"
+  "RAGE_TYPE_MICROSD\020\003\022\023\n\017STORAGE_TYPE_HD\020\007"
+  "\022\027\n\022STORAGE_TYPE_OTHER\020\376\001\"7\n\006Option\022\021\n\to"
+  "ption_id\030\001 \001(\t\022\032\n\022option_description\030\002 \001"
+  "(\t\"w\n\007Setting\022\022\n\nsetting_id\030\001 \001(\t\022\033\n\023set"
+  "ting_description\030\002 \001(\t\022)\n\006option\030\003 \001(\0132\031"
+  ".mavsdk.rpc.camera.Option\022\020\n\010is_range\030\004 "
+  "\001(\010\"\177\n\016SettingOptions\022\022\n\nsetting_id\030\001 \001("
+  "\t\022\033\n\023setting_description\030\002 \001(\t\022*\n\007option"
+  "s\030\003 \003(\0132\031.mavsdk.rpc.camera.Option\022\020\n\010is"
+  "_range\030\004 \001(\010\"\325\001\n\013Information\022\023\n\013vendor_n"
+  "ame\030\001 \001(\t\022\022\n\nmodel_name\030\002 \001(\t\022\027\n\017focal_l"
+  "ength_mm\030\003 \001(\002\022!\n\031horizontal_sensor_size"
+  "_mm\030\004 \001(\002\022\037\n\027vertical_sensor_size_mm\030\005 \001"
+  "(\002\022 \n\030horizontal_resolution_px\030\006 \001(\r\022\036\n\026"
+  "vertical_resolution_px\030\007 \001(\r*8\n\004Mode\022\020\n\014"
+  "MODE_UNKNOWN\020\000\022\016\n\nMODE_PHOTO\020\001\022\016\n\nMODE_V"
+  "IDEO\020\002*F\n\013PhotosRange\022\024\n\020PHOTOS_RANGE_AL"
+  "L\020\000\022!\n\035PHOTOS_RANGE_SINCE_CONNECTION\020\0012\323"
+  "\021\n\rCameraService\022R\n\007Prepare\022!.mavsdk.rpc"
+  ".camera.PrepareRequest\032\".mavsdk.rpc.came"
+  "ra.PrepareResponse\"\000\022X\n\tTakePhoto\022#.mavs"
+  "dk.rpc.camera.TakePhotoRequest\032$.mavsdk."
+  "rpc.camera.TakePhotoResponse\"\000\022s\n\022StartP"
+  "hotoInterval\022,.mavsdk.rpc.camera.StartPh"
+  "otoIntervalRequest\032-.mavsdk.rpc.camera.S"
+  "tartPhotoIntervalResponse\"\000\022p\n\021StopPhoto"
+  "Interval\022+.mavsdk.rpc.camera.StopPhotoIn"
+  "tervalRequest\032,.mavsdk.rpc.camera.StopPh"
+  "otoIntervalResponse\"\000\022[\n\nStartVideo\022$.ma"
+  "vsdk.rpc.camera.StartVideoRequest\032%.mavs"
+  "dk.rpc.camera.StartVideoResponse\"\000\022X\n\tSt"
+  "opVideo\022#.mavsdk.rpc.camera.StopVideoReq"
+  "uest\032$.mavsdk.rpc.camera.StopVideoRespon"
+  "se\"\000\022z\n\023StartVideoStreaming\022-.mavsdk.rpc"
+  ".camera.StartVideoStreamingRequest\032..mav"
+  "sdk.rpc.camera.StartVideoStreamingRespon"
+  "se\"\004\200\265\030\001\022w\n\022StopVideoStreaming\022,.mavsdk."
+  "rpc.camera.StopVideoStreamingRequest\032-.m"
+  "avsdk.rpc.camera.StopVideoStreamingRespo"
+  "nse\"\004\200\265\030\001\022R\n\007SetMode\022!.mavsdk.rpc.camera"
+  ".SetModeRequest\032\".mavsdk.rpc.camera.SetM"
+  "odeResponse\"\000\022[\n\nListPhotos\022$.mavsdk.rpc"
+  ".camera.ListPhotosRequest\032%.mavsdk.rpc.c"
+  "amera.ListPhotosResponse\"\000\022]\n\rSubscribeM"
+  "ode\022\'.mavsdk.rpc.camera.SubscribeModeReq"
+  "uest\032\037.mavsdk.rpc.camera.ModeResponse\"\0000"
+  "\001\022r\n\024SubscribeInformation\022..mavsdk.rpc.c"
+  "amera.SubscribeInformationRequest\032&.mavs"
+  "dk.rpc.camera.InformationResponse\"\0000\001\022~\n"
+  "\030SubscribeVideoStreamInfo\0222.mavsdk.rpc.c"
+  "amera.SubscribeVideoStreamInfoRequest\032*."
+  "mavsdk.rpc.camera.VideoStreamInfoRespons"
+  "e\"\0000\001\022v\n\024SubscribeCaptureInfo\022..mavsdk.r"
+  "pc.camera.SubscribeCaptureInfoRequest\032&."
+  "mavsdk.rpc.camera.CaptureInfoResponse\"\004\200"
+  "\265\030\0000\001\022c\n\017SubscribeStatus\022).mavsdk.rpc.ca"
+  "mera.SubscribeStatusRequest\032!.mavsdk.rpc"
+  ".camera.StatusResponse\"\0000\001\022\202\001\n\030Subscribe"
+  "CurrentSettings\0222.mavsdk.rpc.camera.Subs"
+  "cribeCurrentSettingsRequest\032*.mavsdk.rpc"
+  ".camera.CurrentSettingsResponse\"\004\200\265\030\0000\001\022"
+  "\223\001\n\037SubscribePossibleSettingOptions\0229.ma"
+  "vsdk.rpc.camera.SubscribePossibleSetting"
+  "OptionsRequest\0321.mavsdk.rpc.camera.Possi"
+  "bleSettingOptionsResponse\"\0000\001\022[\n\nSetSett"
+  "ing\022$.mavsdk.rpc.camera.SetSettingReques"
+  "t\032%.mavsdk.rpc.camera.SetSettingResponse"
+  "\"\000\022[\n\nGetSetting\022$.mavsdk.rpc.camera.Get"
+  "SettingRequest\032%.mavsdk.rpc.camera.GetSe"
+  "ttingResponse\"\000\022d\n\rFormatStorage\022\'.mavsd"
+  "k.rpc.camera.FormatStorageRequest\032(.mavs"
+  "dk.rpc.camera.FormatStorageResponse\"\000\022e\n"
+  "\014SelectCamera\022&.mavsdk.rpc.camera.Select"
+  "CameraRequest\032\'.mavsdk.rpc.camera.Select"
+  "CameraResponse\"\004\200\265\030\001B\037\n\020io.mavsdk.camera"
+  "B\013CameraProtob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_camera_2fcamera_2eproto_deps[1] = {
   &::descriptor_table_mavsdk_5foptions_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_camera_2fcamera_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_camera_2fcamera_2eproto = {
-  false, false, 7643, descriptor_table_protodef_camera_2fcamera_2eproto, "camera/camera.proto", 
+  false, false, 8021, descriptor_table_protodef_camera_2fcamera_2eproto, "camera/camera.proto", 
   &descriptor_table_camera_2fcamera_2eproto_once, descriptor_table_camera_2fcamera_2eproto_deps, 1, 54,
   schemas, file_default_instances, TableStruct_camera_2fcamera_2eproto::offsets,
   file_level_metadata_camera_2fcamera_2eproto, file_level_enum_descriptors_camera_2fcamera_2eproto, file_level_service_descriptors_camera_2fcamera_2eproto,
@@ -1580,10 +1631,12 @@ PrepareRequest::PrepareRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 PrepareRequest::PrepareRequest(const PrepareRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.camera.PrepareRequest)
 }
 
 inline void PrepareRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 PrepareRequest::~PrepareRequest() {
@@ -1613,6 +1666,7 @@ void PrepareRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1621,6 +1675,16 @@ const char* PrepareRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -1631,6 +1695,8 @@ const char* PrepareRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -1645,6 +1711,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.camera.PrepareRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -1661,6 +1733,13 @@ size_t PrepareRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -1690,6 +1769,9 @@ void PrepareRequest::MergeFrom(const PrepareRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1707,6 +1789,7 @@ bool PrepareRequest::IsInitialized() const {
 void PrepareRequest::InternalSwap(PrepareRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata PrepareRequest::GetMetadata() const {
@@ -1933,10 +2016,12 @@ TakePhotoRequest::TakePhotoRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 TakePhotoRequest::TakePhotoRequest(const TakePhotoRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.camera.TakePhotoRequest)
 }
 
 inline void TakePhotoRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 TakePhotoRequest::~TakePhotoRequest() {
@@ -1966,6 +2051,7 @@ void TakePhotoRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1974,6 +2060,16 @@ const char* TakePhotoRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -1984,6 +2080,8 @@ const char* TakePhotoRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -1998,6 +2096,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.camera.TakePhotoRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -2014,6 +2118,13 @@ size_t TakePhotoRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -2043,6 +2154,9 @@ void TakePhotoRequest::MergeFrom(const TakePhotoRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2060,6 +2174,7 @@ bool TakePhotoRequest::IsInitialized() const {
 void TakePhotoRequest::InternalSwap(TakePhotoRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata TakePhotoRequest::GetMetadata() const {
@@ -2286,12 +2401,17 @@ StartPhotoIntervalRequest::StartPhotoIntervalRequest(::PROTOBUF_NAMESPACE_ID::Ar
 StartPhotoIntervalRequest::StartPhotoIntervalRequest(const StartPhotoIntervalRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  interval_s_ = from.interval_s_;
+  ::memcpy(&drone_id_, &from.drone_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&interval_s_) -
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(interval_s_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.camera.StartPhotoIntervalRequest)
 }
 
 inline void StartPhotoIntervalRequest::SharedCtor() {
-interval_s_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&drone_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&interval_s_) -
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(interval_s_));
 }
 
 StartPhotoIntervalRequest::~StartPhotoIntervalRequest() {
@@ -2321,7 +2441,9 @@ void StartPhotoIntervalRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  interval_s_ = 0;
+  ::memset(&drone_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&interval_s_) -
+      reinterpret_cast<char*>(&drone_id_)) + sizeof(interval_s_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2331,9 +2453,16 @@ const char* StartPhotoIntervalRequest::_InternalParse(const char* ptr, ::PROTOBU
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // float interval_s = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // float interval_s = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
           interval_s_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
@@ -2367,10 +2496,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // float interval_s = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // float interval_s = 2;
   if (!(this->_internal_interval_s() <= 0 && this->_internal_interval_s() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_interval_s(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_interval_s(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2389,7 +2524,14 @@ size_t StartPhotoIntervalRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // float interval_s = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
+
+  // float interval_s = 2;
   if (!(this->_internal_interval_s() <= 0 && this->_internal_interval_s() >= 0)) {
     total_size += 1 + 4;
   }
@@ -2422,6 +2564,9 @@ void StartPhotoIntervalRequest::MergeFrom(const StartPhotoIntervalRequest& from)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   if (!(from._internal_interval_s() <= 0 && from._internal_interval_s() >= 0)) {
     _internal_set_interval_s(from._internal_interval_s());
   }
@@ -2442,7 +2587,12 @@ bool StartPhotoIntervalRequest::IsInitialized() const {
 void StartPhotoIntervalRequest::InternalSwap(StartPhotoIntervalRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(interval_s_, other->interval_s_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(StartPhotoIntervalRequest, interval_s_)
+      + sizeof(StartPhotoIntervalRequest::interval_s_)
+      - PROTOBUF_FIELD_OFFSET(StartPhotoIntervalRequest, drone_id_)>(
+          reinterpret_cast<char*>(&drone_id_),
+          reinterpret_cast<char*>(&other->drone_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata StartPhotoIntervalRequest::GetMetadata() const {
@@ -2669,10 +2819,12 @@ StopPhotoIntervalRequest::StopPhotoIntervalRequest(::PROTOBUF_NAMESPACE_ID::Aren
 StopPhotoIntervalRequest::StopPhotoIntervalRequest(const StopPhotoIntervalRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.camera.StopPhotoIntervalRequest)
 }
 
 inline void StopPhotoIntervalRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 StopPhotoIntervalRequest::~StopPhotoIntervalRequest() {
@@ -2702,6 +2854,7 @@ void StopPhotoIntervalRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2710,6 +2863,16 @@ const char* StopPhotoIntervalRequest::_InternalParse(const char* ptr, ::PROTOBUF
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -2720,6 +2883,8 @@ const char* StopPhotoIntervalRequest::_InternalParse(const char* ptr, ::PROTOBUF
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -2734,6 +2899,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.camera.StopPhotoIntervalRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -2750,6 +2921,13 @@ size_t StopPhotoIntervalRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -2779,6 +2957,9 @@ void StopPhotoIntervalRequest::MergeFrom(const StopPhotoIntervalRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2796,6 +2977,7 @@ bool StopPhotoIntervalRequest::IsInitialized() const {
 void StopPhotoIntervalRequest::InternalSwap(StopPhotoIntervalRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata StopPhotoIntervalRequest::GetMetadata() const {
@@ -3022,10 +3204,12 @@ StartVideoRequest::StartVideoRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 StartVideoRequest::StartVideoRequest(const StartVideoRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.camera.StartVideoRequest)
 }
 
 inline void StartVideoRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 StartVideoRequest::~StartVideoRequest() {
@@ -3055,6 +3239,7 @@ void StartVideoRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3063,6 +3248,16 @@ const char* StartVideoRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -3073,6 +3268,8 @@ const char* StartVideoRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -3087,6 +3284,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.camera.StartVideoRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -3103,6 +3306,13 @@ size_t StartVideoRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -3132,6 +3342,9 @@ void StartVideoRequest::MergeFrom(const StartVideoRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -3149,6 +3362,7 @@ bool StartVideoRequest::IsInitialized() const {
 void StartVideoRequest::InternalSwap(StartVideoRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata StartVideoRequest::GetMetadata() const {
@@ -3375,10 +3589,12 @@ StopVideoRequest::StopVideoRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 StopVideoRequest::StopVideoRequest(const StopVideoRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.camera.StopVideoRequest)
 }
 
 inline void StopVideoRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 StopVideoRequest::~StopVideoRequest() {
@@ -3408,6 +3624,7 @@ void StopVideoRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3416,6 +3633,16 @@ const char* StopVideoRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -3426,6 +3653,8 @@ const char* StopVideoRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -3440,6 +3669,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.camera.StopVideoRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -3456,6 +3691,13 @@ size_t StopVideoRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -3485,6 +3727,9 @@ void StopVideoRequest::MergeFrom(const StopVideoRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -3502,6 +3747,7 @@ bool StopVideoRequest::IsInitialized() const {
 void StopVideoRequest::InternalSwap(StopVideoRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata StopVideoRequest::GetMetadata() const {
@@ -3728,10 +3974,12 @@ StartVideoStreamingRequest::StartVideoStreamingRequest(::PROTOBUF_NAMESPACE_ID::
 StartVideoStreamingRequest::StartVideoStreamingRequest(const StartVideoStreamingRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.camera.StartVideoStreamingRequest)
 }
 
 inline void StartVideoStreamingRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 StartVideoStreamingRequest::~StartVideoStreamingRequest() {
@@ -3761,6 +4009,7 @@ void StartVideoStreamingRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3769,6 +4018,16 @@ const char* StartVideoStreamingRequest::_InternalParse(const char* ptr, ::PROTOB
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -3779,6 +4038,8 @@ const char* StartVideoStreamingRequest::_InternalParse(const char* ptr, ::PROTOB
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -3793,6 +4054,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.camera.StartVideoStreamingRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -3809,6 +4076,13 @@ size_t StartVideoStreamingRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -3838,6 +4112,9 @@ void StartVideoStreamingRequest::MergeFrom(const StartVideoStreamingRequest& fro
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -3855,6 +4132,7 @@ bool StartVideoStreamingRequest::IsInitialized() const {
 void StartVideoStreamingRequest::InternalSwap(StartVideoStreamingRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata StartVideoStreamingRequest::GetMetadata() const {
@@ -4081,10 +4359,12 @@ StopVideoStreamingRequest::StopVideoStreamingRequest(::PROTOBUF_NAMESPACE_ID::Ar
 StopVideoStreamingRequest::StopVideoStreamingRequest(const StopVideoStreamingRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.camera.StopVideoStreamingRequest)
 }
 
 inline void StopVideoStreamingRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 StopVideoStreamingRequest::~StopVideoStreamingRequest() {
@@ -4114,6 +4394,7 @@ void StopVideoStreamingRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4122,6 +4403,16 @@ const char* StopVideoStreamingRequest::_InternalParse(const char* ptr, ::PROTOBU
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -4132,6 +4423,8 @@ const char* StopVideoStreamingRequest::_InternalParse(const char* ptr, ::PROTOBU
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -4146,6 +4439,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.camera.StopVideoStreamingRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -4162,6 +4461,13 @@ size_t StopVideoStreamingRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -4191,6 +4497,9 @@ void StopVideoStreamingRequest::MergeFrom(const StopVideoStreamingRequest& from)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -4208,6 +4517,7 @@ bool StopVideoStreamingRequest::IsInitialized() const {
 void StopVideoStreamingRequest::InternalSwap(StopVideoStreamingRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata StopVideoStreamingRequest::GetMetadata() const {
@@ -4434,12 +4744,17 @@ SetModeRequest::SetModeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 SetModeRequest::SetModeRequest(const SetModeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  mode_ = from.mode_;
+  ::memcpy(&drone_id_, &from.drone_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&mode_) -
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(mode_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.camera.SetModeRequest)
 }
 
 inline void SetModeRequest::SharedCtor() {
-mode_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&drone_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&mode_) -
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(mode_));
 }
 
 SetModeRequest::~SetModeRequest() {
@@ -4469,7 +4784,9 @@ void SetModeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  mode_ = 0;
+  ::memset(&drone_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&mode_) -
+      reinterpret_cast<char*>(&drone_id_)) + sizeof(mode_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4479,9 +4796,16 @@ const char* SetModeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .mavsdk.rpc.camera.Mode mode = 1;
+      // int32 drone_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mavsdk.rpc.camera.Mode mode = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_mode(static_cast<::mavsdk::rpc::camera::Mode>(val));
@@ -4516,11 +4840,17 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.camera.Mode mode = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // .mavsdk.rpc.camera.Mode mode = 2;
   if (this->_internal_mode() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      1, this->_internal_mode(), target);
+      2, this->_internal_mode(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4539,7 +4869,14 @@ size_t SetModeRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.camera.Mode mode = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
+
+  // .mavsdk.rpc.camera.Mode mode = 2;
   if (this->_internal_mode() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_mode());
@@ -4573,6 +4910,9 @@ void SetModeRequest::MergeFrom(const SetModeRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   if (from._internal_mode() != 0) {
     _internal_set_mode(from._internal_mode());
   }
@@ -4593,7 +4933,12 @@ bool SetModeRequest::IsInitialized() const {
 void SetModeRequest::InternalSwap(SetModeRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(mode_, other->mode_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetModeRequest, mode_)
+      + sizeof(SetModeRequest::mode_)
+      - PROTOBUF_FIELD_OFFSET(SetModeRequest, drone_id_)>(
+          reinterpret_cast<char*>(&drone_id_),
+          reinterpret_cast<char*>(&other->drone_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetModeRequest::GetMetadata() const {
@@ -4820,12 +5165,17 @@ ListPhotosRequest::ListPhotosRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 ListPhotosRequest::ListPhotosRequest(const ListPhotosRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  photos_range_ = from.photos_range_;
+  ::memcpy(&drone_id_, &from.drone_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&photos_range_) -
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(photos_range_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.camera.ListPhotosRequest)
 }
 
 inline void ListPhotosRequest::SharedCtor() {
-photos_range_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&drone_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&photos_range_) -
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(photos_range_));
 }
 
 ListPhotosRequest::~ListPhotosRequest() {
@@ -4855,7 +5205,9 @@ void ListPhotosRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  photos_range_ = 0;
+  ::memset(&drone_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&photos_range_) -
+      reinterpret_cast<char*>(&drone_id_)) + sizeof(photos_range_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4865,9 +5217,16 @@ const char* ListPhotosRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .mavsdk.rpc.camera.PhotosRange photos_range = 1;
+      // int32 drone_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mavsdk.rpc.camera.PhotosRange photos_range = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_photos_range(static_cast<::mavsdk::rpc::camera::PhotosRange>(val));
@@ -4902,11 +5261,17 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.camera.PhotosRange photos_range = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // .mavsdk.rpc.camera.PhotosRange photos_range = 2;
   if (this->_internal_photos_range() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      1, this->_internal_photos_range(), target);
+      2, this->_internal_photos_range(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4925,7 +5290,14 @@ size_t ListPhotosRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.camera.PhotosRange photos_range = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
+
+  // .mavsdk.rpc.camera.PhotosRange photos_range = 2;
   if (this->_internal_photos_range() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_photos_range());
@@ -4959,6 +5331,9 @@ void ListPhotosRequest::MergeFrom(const ListPhotosRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   if (from._internal_photos_range() != 0) {
     _internal_set_photos_range(from._internal_photos_range());
   }
@@ -4979,7 +5354,12 @@ bool ListPhotosRequest::IsInitialized() const {
 void ListPhotosRequest::InternalSwap(ListPhotosRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(photos_range_, other->photos_range_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ListPhotosRequest, photos_range_)
+      + sizeof(ListPhotosRequest::photos_range_)
+      - PROTOBUF_FIELD_OFFSET(ListPhotosRequest, drone_id_)>(
+          reinterpret_cast<char*>(&drone_id_),
+          reinterpret_cast<char*>(&other->drone_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ListPhotosRequest::GetMetadata() const {
@@ -5238,10 +5618,12 @@ SubscribeInformationRequest::SubscribeInformationRequest(::PROTOBUF_NAMESPACE_ID
 SubscribeInformationRequest::SubscribeInformationRequest(const SubscribeInformationRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.camera.SubscribeInformationRequest)
 }
 
 inline void SubscribeInformationRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeInformationRequest::~SubscribeInformationRequest() {
@@ -5271,6 +5653,7 @@ void SubscribeInformationRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5279,6 +5662,16 @@ const char* SubscribeInformationRequest::_InternalParse(const char* ptr, ::PROTO
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -5289,6 +5682,8 @@ const char* SubscribeInformationRequest::_InternalParse(const char* ptr, ::PROTO
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -5303,6 +5698,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.camera.SubscribeInformationRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -5319,6 +5720,13 @@ size_t SubscribeInformationRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -5348,6 +5756,9 @@ void SubscribeInformationRequest::MergeFrom(const SubscribeInformationRequest& f
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -5365,6 +5776,7 @@ bool SubscribeInformationRequest::IsInitialized() const {
 void SubscribeInformationRequest::InternalSwap(SubscribeInformationRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeInformationRequest::GetMetadata() const {
@@ -5591,10 +6003,12 @@ SubscribeModeRequest::SubscribeModeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena
 SubscribeModeRequest::SubscribeModeRequest(const SubscribeModeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.camera.SubscribeModeRequest)
 }
 
 inline void SubscribeModeRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeModeRequest::~SubscribeModeRequest() {
@@ -5624,6 +6038,7 @@ void SubscribeModeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5632,6 +6047,16 @@ const char* SubscribeModeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -5642,6 +6067,8 @@ const char* SubscribeModeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -5656,6 +6083,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.camera.SubscribeModeRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -5672,6 +6105,13 @@ size_t SubscribeModeRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -5701,6 +6141,9 @@ void SubscribeModeRequest::MergeFrom(const SubscribeModeRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -5718,6 +6161,7 @@ bool SubscribeModeRequest::IsInitialized() const {
 void SubscribeModeRequest::InternalSwap(SubscribeModeRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeModeRequest::GetMetadata() const {
@@ -5930,10 +6374,12 @@ SubscribeVideoStreamInfoRequest::SubscribeVideoStreamInfoRequest(::PROTOBUF_NAME
 SubscribeVideoStreamInfoRequest::SubscribeVideoStreamInfoRequest(const SubscribeVideoStreamInfoRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.camera.SubscribeVideoStreamInfoRequest)
 }
 
 inline void SubscribeVideoStreamInfoRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeVideoStreamInfoRequest::~SubscribeVideoStreamInfoRequest() {
@@ -5963,6 +6409,7 @@ void SubscribeVideoStreamInfoRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5971,6 +6418,16 @@ const char* SubscribeVideoStreamInfoRequest::_InternalParse(const char* ptr, ::P
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -5981,6 +6438,8 @@ const char* SubscribeVideoStreamInfoRequest::_InternalParse(const char* ptr, ::P
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -5995,6 +6454,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.camera.SubscribeVideoStreamInfoRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -6011,6 +6476,13 @@ size_t SubscribeVideoStreamInfoRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -6040,6 +6512,9 @@ void SubscribeVideoStreamInfoRequest::MergeFrom(const SubscribeVideoStreamInfoRe
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -6057,6 +6532,7 @@ bool SubscribeVideoStreamInfoRequest::IsInitialized() const {
 void SubscribeVideoStreamInfoRequest::InternalSwap(SubscribeVideoStreamInfoRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeVideoStreamInfoRequest::GetMetadata() const {
@@ -6283,10 +6759,12 @@ SubscribeCaptureInfoRequest::SubscribeCaptureInfoRequest(::PROTOBUF_NAMESPACE_ID
 SubscribeCaptureInfoRequest::SubscribeCaptureInfoRequest(const SubscribeCaptureInfoRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.camera.SubscribeCaptureInfoRequest)
 }
 
 inline void SubscribeCaptureInfoRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeCaptureInfoRequest::~SubscribeCaptureInfoRequest() {
@@ -6316,6 +6794,7 @@ void SubscribeCaptureInfoRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6324,6 +6803,16 @@ const char* SubscribeCaptureInfoRequest::_InternalParse(const char* ptr, ::PROTO
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -6334,6 +6823,8 @@ const char* SubscribeCaptureInfoRequest::_InternalParse(const char* ptr, ::PROTO
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -6348,6 +6839,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.camera.SubscribeCaptureInfoRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -6364,6 +6861,13 @@ size_t SubscribeCaptureInfoRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -6393,6 +6897,9 @@ void SubscribeCaptureInfoRequest::MergeFrom(const SubscribeCaptureInfoRequest& f
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -6410,6 +6917,7 @@ bool SubscribeCaptureInfoRequest::IsInitialized() const {
 void SubscribeCaptureInfoRequest::InternalSwap(SubscribeCaptureInfoRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeCaptureInfoRequest::GetMetadata() const {
@@ -6636,10 +7144,12 @@ SubscribeStatusRequest::SubscribeStatusRequest(::PROTOBUF_NAMESPACE_ID::Arena* a
 SubscribeStatusRequest::SubscribeStatusRequest(const SubscribeStatusRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.camera.SubscribeStatusRequest)
 }
 
 inline void SubscribeStatusRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeStatusRequest::~SubscribeStatusRequest() {
@@ -6669,6 +7179,7 @@ void SubscribeStatusRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6677,6 +7188,16 @@ const char* SubscribeStatusRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -6687,6 +7208,8 @@ const char* SubscribeStatusRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -6701,6 +7224,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.camera.SubscribeStatusRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -6717,6 +7246,13 @@ size_t SubscribeStatusRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -6746,6 +7282,9 @@ void SubscribeStatusRequest::MergeFrom(const SubscribeStatusRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -6763,6 +7302,7 @@ bool SubscribeStatusRequest::IsInitialized() const {
 void SubscribeStatusRequest::InternalSwap(SubscribeStatusRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeStatusRequest::GetMetadata() const {
@@ -6989,10 +7529,12 @@ SubscribeCurrentSettingsRequest::SubscribeCurrentSettingsRequest(::PROTOBUF_NAME
 SubscribeCurrentSettingsRequest::SubscribeCurrentSettingsRequest(const SubscribeCurrentSettingsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.camera.SubscribeCurrentSettingsRequest)
 }
 
 inline void SubscribeCurrentSettingsRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribeCurrentSettingsRequest::~SubscribeCurrentSettingsRequest() {
@@ -7022,6 +7564,7 @@ void SubscribeCurrentSettingsRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -7030,6 +7573,16 @@ const char* SubscribeCurrentSettingsRequest::_InternalParse(const char* ptr, ::P
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -7040,6 +7593,8 @@ const char* SubscribeCurrentSettingsRequest::_InternalParse(const char* ptr, ::P
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -7054,6 +7609,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.camera.SubscribeCurrentSettingsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -7070,6 +7631,13 @@ size_t SubscribeCurrentSettingsRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -7099,6 +7667,9 @@ void SubscribeCurrentSettingsRequest::MergeFrom(const SubscribeCurrentSettingsRe
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -7116,6 +7687,7 @@ bool SubscribeCurrentSettingsRequest::IsInitialized() const {
 void SubscribeCurrentSettingsRequest::InternalSwap(SubscribeCurrentSettingsRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribeCurrentSettingsRequest::GetMetadata() const {
@@ -7332,10 +7904,12 @@ SubscribePossibleSettingOptionsRequest::SubscribePossibleSettingOptionsRequest(:
 SubscribePossibleSettingOptionsRequest::SubscribePossibleSettingOptionsRequest(const SubscribePossibleSettingOptionsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.camera.SubscribePossibleSettingOptionsRequest)
 }
 
 inline void SubscribePossibleSettingOptionsRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 SubscribePossibleSettingOptionsRequest::~SubscribePossibleSettingOptionsRequest() {
@@ -7365,6 +7939,7 @@ void SubscribePossibleSettingOptionsRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -7373,6 +7948,16 @@ const char* SubscribePossibleSettingOptionsRequest::_InternalParse(const char* p
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -7383,6 +7968,8 @@ const char* SubscribePossibleSettingOptionsRequest::_InternalParse(const char* p
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -7397,6 +7984,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.camera.SubscribePossibleSettingOptionsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -7413,6 +8006,13 @@ size_t SubscribePossibleSettingOptionsRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -7442,6 +8042,9 @@ void SubscribePossibleSettingOptionsRequest::MergeFrom(const SubscribePossibleSe
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -7459,6 +8062,7 @@ bool SubscribePossibleSettingOptionsRequest::IsInitialized() const {
 void SubscribePossibleSettingOptionsRequest::InternalSwap(SubscribePossibleSettingOptionsRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SubscribePossibleSettingOptionsRequest::GetMetadata() const {
@@ -7685,11 +8289,15 @@ SetSettingRequest::SetSettingRequest(const SetSettingRequest& from)
   } else {
     setting_ = nullptr;
   }
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.camera.SetSettingRequest)
 }
 
 inline void SetSettingRequest::SharedCtor() {
-setting_ = nullptr;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&setting_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&setting_)) + sizeof(drone_id_));
 }
 
 SetSettingRequest::~SetSettingRequest() {
@@ -7724,6 +8332,7 @@ void SetSettingRequest::Clear() {
     delete setting_;
   }
   setting_ = nullptr;
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -7733,9 +8342,16 @@ const char* SetSettingRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .mavsdk.rpc.camera.Setting setting = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mavsdk.rpc.camera.Setting setting = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_setting(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -7769,12 +8385,18 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.camera.Setting setting = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // .mavsdk.rpc.camera.Setting setting = 2;
   if (this->_internal_has_setting()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::setting(this), target, stream);
+        2, _Internal::setting(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -7793,11 +8415,18 @@ size_t SetSettingRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.camera.Setting setting = 1;
+  // .mavsdk.rpc.camera.Setting setting = 2;
   if (this->_internal_has_setting()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *setting_);
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -7831,6 +8460,9 @@ void SetSettingRequest::MergeFrom(const SetSettingRequest& from) {
   if (from._internal_has_setting()) {
     _internal_mutable_setting()->::mavsdk::rpc::camera::Setting::MergeFrom(from._internal_setting());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -7848,7 +8480,12 @@ bool SetSettingRequest::IsInitialized() const {
 void SetSettingRequest::InternalSwap(SetSettingRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(setting_, other->setting_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SetSettingRequest, drone_id_)
+      + sizeof(SetSettingRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(SetSettingRequest, setting_)>(
+          reinterpret_cast<char*>(&setting_),
+          reinterpret_cast<char*>(&other->setting_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetSettingRequest::GetMetadata() const {
@@ -8085,11 +8722,15 @@ GetSettingRequest::GetSettingRequest(const GetSettingRequest& from)
   } else {
     setting_ = nullptr;
   }
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.camera.GetSettingRequest)
 }
 
 inline void GetSettingRequest::SharedCtor() {
-setting_ = nullptr;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&setting_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&drone_id_) -
+    reinterpret_cast<char*>(&setting_)) + sizeof(drone_id_));
 }
 
 GetSettingRequest::~GetSettingRequest() {
@@ -8124,6 +8765,7 @@ void GetSettingRequest::Clear() {
     delete setting_;
   }
   setting_ = nullptr;
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -8133,9 +8775,16 @@ const char* GetSettingRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .mavsdk.rpc.camera.Setting setting = 1;
+      // int32 drone_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mavsdk.rpc.camera.Setting setting = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_setting(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -8169,12 +8818,18 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.camera.Setting setting = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // .mavsdk.rpc.camera.Setting setting = 2;
   if (this->_internal_has_setting()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::setting(this), target, stream);
+        2, _Internal::setting(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -8193,11 +8848,18 @@ size_t GetSettingRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mavsdk.rpc.camera.Setting setting = 1;
+  // .mavsdk.rpc.camera.Setting setting = 2;
   if (this->_internal_has_setting()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *setting_);
+  }
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -8231,6 +8893,9 @@ void GetSettingRequest::MergeFrom(const GetSettingRequest& from) {
   if (from._internal_has_setting()) {
     _internal_mutable_setting()->::mavsdk::rpc::camera::Setting::MergeFrom(from._internal_setting());
   }
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -8248,7 +8913,12 @@ bool GetSettingRequest::IsInitialized() const {
 void GetSettingRequest::InternalSwap(GetSettingRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(setting_, other->setting_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(GetSettingRequest, drone_id_)
+      + sizeof(GetSettingRequest::drone_id_)
+      - PROTOBUF_FIELD_OFFSET(GetSettingRequest, setting_)>(
+          reinterpret_cast<char*>(&setting_),
+          reinterpret_cast<char*>(&other->setting_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetSettingRequest::GetMetadata() const {
@@ -8523,10 +9193,12 @@ FormatStorageRequest::FormatStorageRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena
 FormatStorageRequest::FormatStorageRequest(const FormatStorageRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  drone_id_ = from.drone_id_;
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.camera.FormatStorageRequest)
 }
 
 inline void FormatStorageRequest::SharedCtor() {
+drone_id_ = 0;
 }
 
 FormatStorageRequest::~FormatStorageRequest() {
@@ -8556,6 +9228,7 @@ void FormatStorageRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  drone_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -8564,6 +9237,16 @@ const char* FormatStorageRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 drone_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -8574,6 +9257,8 @@ const char* FormatStorageRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -8588,6 +9273,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mavsdk.rpc.camera.FormatStorageRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -8604,6 +9295,13 @@ size_t FormatStorageRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -8633,6 +9331,9 @@ void FormatStorageRequest::MergeFrom(const FormatStorageRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -8650,6 +9351,7 @@ bool FormatStorageRequest::IsInitialized() const {
 void FormatStorageRequest::InternalSwap(FormatStorageRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(drone_id_, other->drone_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata FormatStorageRequest::GetMetadata() const {
@@ -9076,12 +9778,17 @@ SelectCameraRequest::SelectCameraRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 SelectCameraRequest::SelectCameraRequest(const SelectCameraRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  camera_id_ = from.camera_id_;
+  ::memcpy(&drone_id_, &from.drone_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&camera_id_) -
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(camera_id_));
   // @@protoc_insertion_point(copy_constructor:mavsdk.rpc.camera.SelectCameraRequest)
 }
 
 inline void SelectCameraRequest::SharedCtor() {
-camera_id_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&drone_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&camera_id_) -
+    reinterpret_cast<char*>(&drone_id_)) + sizeof(camera_id_));
 }
 
 SelectCameraRequest::~SelectCameraRequest() {
@@ -9111,7 +9818,9 @@ void SelectCameraRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  camera_id_ = 0;
+  ::memset(&drone_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&camera_id_) -
+      reinterpret_cast<char*>(&drone_id_)) + sizeof(camera_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -9121,9 +9830,16 @@ const char* SelectCameraRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 camera_id = 1;
+      // int32 drone_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          drone_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int32 camera_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           camera_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -9157,10 +9873,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 camera_id = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_drone_id(), target);
+  }
+
+  // int32 camera_id = 2;
   if (this->_internal_camera_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_camera_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_camera_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -9179,7 +9901,14 @@ size_t SelectCameraRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // int32 camera_id = 1;
+  // int32 drone_id = 1;
+  if (this->_internal_drone_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_drone_id());
+  }
+
+  // int32 camera_id = 2;
   if (this->_internal_camera_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
@@ -9214,6 +9943,9 @@ void SelectCameraRequest::MergeFrom(const SelectCameraRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_drone_id() != 0) {
+    _internal_set_drone_id(from._internal_drone_id());
+  }
   if (from._internal_camera_id() != 0) {
     _internal_set_camera_id(from._internal_camera_id());
   }
@@ -9234,7 +9966,12 @@ bool SelectCameraRequest::IsInitialized() const {
 void SelectCameraRequest::InternalSwap(SelectCameraRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(camera_id_, other->camera_id_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SelectCameraRequest, camera_id_)
+      + sizeof(SelectCameraRequest::camera_id_)
+      - PROTOBUF_FIELD_OFFSET(SelectCameraRequest, drone_id_)>(
+          reinterpret_cast<char*>(&drone_id_),
+          reinterpret_cast<char*>(&other->drone_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SelectCameraRequest::GetMetadata() const {

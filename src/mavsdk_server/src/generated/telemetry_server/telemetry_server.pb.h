@@ -595,11 +595,12 @@ class PublishPositionRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPositionFieldNumber = 1,
-    kVelocityNedFieldNumber = 2,
-    kHeadingFieldNumber = 3,
+    kPositionFieldNumber = 2,
+    kVelocityNedFieldNumber = 3,
+    kHeadingFieldNumber = 4,
+    kDroneIdFieldNumber = 1,
   };
-  // .mavsdk.rpc.telemetry_server.Position position = 1;
+  // .mavsdk.rpc.telemetry_server.Position position = 2;
   bool has_position() const;
   private:
   bool _internal_has_position() const;
@@ -617,7 +618,7 @@ class PublishPositionRequest final :
       ::mavsdk::rpc::telemetry_server::Position* position);
   ::mavsdk::rpc::telemetry_server::Position* unsafe_arena_release_position();
 
-  // .mavsdk.rpc.telemetry_server.VelocityNed velocity_ned = 2;
+  // .mavsdk.rpc.telemetry_server.VelocityNed velocity_ned = 3;
   bool has_velocity_ned() const;
   private:
   bool _internal_has_velocity_ned() const;
@@ -635,7 +636,7 @@ class PublishPositionRequest final :
       ::mavsdk::rpc::telemetry_server::VelocityNed* velocity_ned);
   ::mavsdk::rpc::telemetry_server::VelocityNed* unsafe_arena_release_velocity_ned();
 
-  // .mavsdk.rpc.telemetry_server.Heading heading = 3;
+  // .mavsdk.rpc.telemetry_server.Heading heading = 4;
   bool has_heading() const;
   private:
   bool _internal_has_heading() const;
@@ -653,6 +654,15 @@ class PublishPositionRequest final :
       ::mavsdk::rpc::telemetry_server::Heading* heading);
   ::mavsdk::rpc::telemetry_server::Heading* unsafe_arena_release_heading();
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.telemetry_server.PublishPositionRequest)
  private:
   class _Internal;
@@ -663,6 +673,7 @@ class PublishPositionRequest final :
   ::mavsdk::rpc::telemetry_server::Position* position_;
   ::mavsdk::rpc::telemetry_server::VelocityNed* velocity_ned_;
   ::mavsdk::rpc::telemetry_server::Heading* heading_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_telemetry_5fserver_2ftelemetry_5fserver_2eproto;
 };
@@ -783,9 +794,10 @@ class PublishHomeRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kHomeFieldNumber = 1,
+    kHomeFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // .mavsdk.rpc.telemetry_server.Position home = 1;
+  // .mavsdk.rpc.telemetry_server.Position home = 2;
   bool has_home() const;
   private:
   bool _internal_has_home() const;
@@ -803,6 +815,15 @@ class PublishHomeRequest final :
       ::mavsdk::rpc::telemetry_server::Position* home);
   ::mavsdk::rpc::telemetry_server::Position* unsafe_arena_release_home();
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.telemetry_server.PublishHomeRequest)
  private:
   class _Internal;
@@ -811,6 +832,7 @@ class PublishHomeRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::mavsdk::rpc::telemetry_server::Position* home_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_telemetry_5fserver_2ftelemetry_5fserver_2eproto;
 };
@@ -931,14 +953,15 @@ class PublishSysStatusRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kBatteryFieldNumber = 1,
-    kRcReceiverStatusFieldNumber = 2,
-    kGyroStatusFieldNumber = 3,
-    kAccelStatusFieldNumber = 4,
-    kMagStatusFieldNumber = 5,
-    kGpsStatusFieldNumber = 6,
+    kBatteryFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
+    kRcReceiverStatusFieldNumber = 3,
+    kGyroStatusFieldNumber = 4,
+    kAccelStatusFieldNumber = 5,
+    kMagStatusFieldNumber = 6,
+    kGpsStatusFieldNumber = 7,
   };
-  // .mavsdk.rpc.telemetry_server.Battery battery = 1;
+  // .mavsdk.rpc.telemetry_server.Battery battery = 2;
   bool has_battery() const;
   private:
   bool _internal_has_battery() const;
@@ -956,7 +979,16 @@ class PublishSysStatusRequest final :
       ::mavsdk::rpc::telemetry_server::Battery* battery);
   ::mavsdk::rpc::telemetry_server::Battery* unsafe_arena_release_battery();
 
-  // bool rc_receiver_status = 2;
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // bool rc_receiver_status = 3;
   void clear_rc_receiver_status();
   bool rc_receiver_status() const;
   void set_rc_receiver_status(bool value);
@@ -965,7 +997,7 @@ class PublishSysStatusRequest final :
   void _internal_set_rc_receiver_status(bool value);
   public:
 
-  // bool gyro_status = 3;
+  // bool gyro_status = 4;
   void clear_gyro_status();
   bool gyro_status() const;
   void set_gyro_status(bool value);
@@ -974,7 +1006,7 @@ class PublishSysStatusRequest final :
   void _internal_set_gyro_status(bool value);
   public:
 
-  // bool accel_status = 4;
+  // bool accel_status = 5;
   void clear_accel_status();
   bool accel_status() const;
   void set_accel_status(bool value);
@@ -983,7 +1015,7 @@ class PublishSysStatusRequest final :
   void _internal_set_accel_status(bool value);
   public:
 
-  // bool mag_status = 5;
+  // bool mag_status = 6;
   void clear_mag_status();
   bool mag_status() const;
   void set_mag_status(bool value);
@@ -992,7 +1024,7 @@ class PublishSysStatusRequest final :
   void _internal_set_mag_status(bool value);
   public:
 
-  // bool gps_status = 6;
+  // bool gps_status = 7;
   void clear_gps_status();
   bool gps_status() const;
   void set_gps_status(bool value);
@@ -1009,6 +1041,7 @@ class PublishSysStatusRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::mavsdk::rpc::telemetry_server::Battery* battery_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   bool rc_receiver_status_;
   bool gyro_status_;
   bool accel_status_;
@@ -1134,10 +1167,20 @@ class PublishExtendedSysStateRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kVtolStateFieldNumber = 1,
-    kLandedStateFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
+    kVtolStateFieldNumber = 2,
+    kLandedStateFieldNumber = 3,
   };
-  // .mavsdk.rpc.telemetry_server.VtolState vtol_state = 1;
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // .mavsdk.rpc.telemetry_server.VtolState vtol_state = 2;
   void clear_vtol_state();
   ::mavsdk::rpc::telemetry_server::VtolState vtol_state() const;
   void set_vtol_state(::mavsdk::rpc::telemetry_server::VtolState value);
@@ -1146,7 +1189,7 @@ class PublishExtendedSysStateRequest final :
   void _internal_set_vtol_state(::mavsdk::rpc::telemetry_server::VtolState value);
   public:
 
-  // .mavsdk.rpc.telemetry_server.LandedState landed_state = 2;
+  // .mavsdk.rpc.telemetry_server.LandedState landed_state = 3;
   void clear_landed_state();
   ::mavsdk::rpc::telemetry_server::LandedState landed_state() const;
   void set_landed_state(::mavsdk::rpc::telemetry_server::LandedState value);
@@ -1162,6 +1205,7 @@ class PublishExtendedSysStateRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   int vtol_state_;
   int landed_state_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1284,9 +1328,19 @@ class PublishInAirRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIsInAirFieldNumber = 1,
+    kDroneIdFieldNumber = 1,
+    kIsInAirFieldNumber = 2,
   };
-  // bool is_in_air = 1;
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // bool is_in_air = 2;
   void clear_is_in_air();
   bool is_in_air() const;
   void set_is_in_air(bool value);
@@ -1302,6 +1356,7 @@ class PublishInAirRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   bool is_in_air_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_telemetry_5fserver_2ftelemetry_5fserver_2eproto;
@@ -1423,9 +1478,19 @@ class PublishLandedStateRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kLandedStateFieldNumber = 1,
+    kDroneIdFieldNumber = 1,
+    kLandedStateFieldNumber = 2,
   };
-  // .mavsdk.rpc.telemetry_server.LandedState landed_state = 1;
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // .mavsdk.rpc.telemetry_server.LandedState landed_state = 2;
   void clear_landed_state();
   ::mavsdk::rpc::telemetry_server::LandedState landed_state() const;
   void set_landed_state(::mavsdk::rpc::telemetry_server::LandedState value);
@@ -1441,6 +1506,7 @@ class PublishLandedStateRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   int landed_state_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_telemetry_5fserver_2ftelemetry_5fserver_2eproto;
@@ -1562,10 +1628,11 @@ class PublishRawGpsRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kRawGpsFieldNumber = 1,
-    kGpsInfoFieldNumber = 2,
+    kRawGpsFieldNumber = 2,
+    kGpsInfoFieldNumber = 3,
+    kDroneIdFieldNumber = 1,
   };
-  // .mavsdk.rpc.telemetry_server.RawGps raw_gps = 1;
+  // .mavsdk.rpc.telemetry_server.RawGps raw_gps = 2;
   bool has_raw_gps() const;
   private:
   bool _internal_has_raw_gps() const;
@@ -1583,7 +1650,7 @@ class PublishRawGpsRequest final :
       ::mavsdk::rpc::telemetry_server::RawGps* raw_gps);
   ::mavsdk::rpc::telemetry_server::RawGps* unsafe_arena_release_raw_gps();
 
-  // .mavsdk.rpc.telemetry_server.GpsInfo gps_info = 2;
+  // .mavsdk.rpc.telemetry_server.GpsInfo gps_info = 3;
   bool has_gps_info() const;
   private:
   bool _internal_has_gps_info() const;
@@ -1601,6 +1668,15 @@ class PublishRawGpsRequest final :
       ::mavsdk::rpc::telemetry_server::GpsInfo* gps_info);
   ::mavsdk::rpc::telemetry_server::GpsInfo* unsafe_arena_release_gps_info();
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.telemetry_server.PublishRawGpsRequest)
  private:
   class _Internal;
@@ -1610,6 +1686,7 @@ class PublishRawGpsRequest final :
   typedef void DestructorSkippable_;
   ::mavsdk::rpc::telemetry_server::RawGps* raw_gps_;
   ::mavsdk::rpc::telemetry_server::GpsInfo* gps_info_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_telemetry_5fserver_2ftelemetry_5fserver_2eproto;
 };
@@ -1730,9 +1807,10 @@ class PublishBatteryRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kBatteryFieldNumber = 1,
+    kBatteryFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // .mavsdk.rpc.telemetry_server.Battery battery = 1;
+  // .mavsdk.rpc.telemetry_server.Battery battery = 2;
   bool has_battery() const;
   private:
   bool _internal_has_battery() const;
@@ -1750,6 +1828,15 @@ class PublishBatteryRequest final :
       ::mavsdk::rpc::telemetry_server::Battery* battery);
   ::mavsdk::rpc::telemetry_server::Battery* unsafe_arena_release_battery();
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.telemetry_server.PublishBatteryRequest)
  private:
   class _Internal;
@@ -1758,6 +1845,7 @@ class PublishBatteryRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::mavsdk::rpc::telemetry_server::Battery* battery_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_telemetry_5fserver_2ftelemetry_5fserver_2eproto;
 };
@@ -1878,9 +1966,10 @@ class PublishRcStatusRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kRcStatusFieldNumber = 1,
+    kRcStatusFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // .mavsdk.rpc.telemetry_server.RcStatus rc_status = 1;
+  // .mavsdk.rpc.telemetry_server.RcStatus rc_status = 2;
   bool has_rc_status() const;
   private:
   bool _internal_has_rc_status() const;
@@ -1898,6 +1987,15 @@ class PublishRcStatusRequest final :
       ::mavsdk::rpc::telemetry_server::RcStatus* rc_status);
   ::mavsdk::rpc::telemetry_server::RcStatus* unsafe_arena_release_rc_status();
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.telemetry_server.PublishRcStatusRequest)
  private:
   class _Internal;
@@ -1906,6 +2004,7 @@ class PublishRcStatusRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::mavsdk::rpc::telemetry_server::RcStatus* rc_status_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_telemetry_5fserver_2ftelemetry_5fserver_2eproto;
 };
@@ -2026,9 +2125,10 @@ class PublishStatusTextRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kStatusTextFieldNumber = 1,
+    kStatusTextFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // .mavsdk.rpc.telemetry_server.StatusText status_text = 1;
+  // .mavsdk.rpc.telemetry_server.StatusText status_text = 2;
   bool has_status_text() const;
   private:
   bool _internal_has_status_text() const;
@@ -2046,6 +2146,15 @@ class PublishStatusTextRequest final :
       ::mavsdk::rpc::telemetry_server::StatusText* status_text);
   ::mavsdk::rpc::telemetry_server::StatusText* unsafe_arena_release_status_text();
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.telemetry_server.PublishStatusTextRequest)
  private:
   class _Internal;
@@ -2054,6 +2163,7 @@ class PublishStatusTextRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::mavsdk::rpc::telemetry_server::StatusText* status_text_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_telemetry_5fserver_2ftelemetry_5fserver_2eproto;
 };
@@ -2174,9 +2284,10 @@ class PublishOdometryRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kOdometryFieldNumber = 1,
+    kOdometryFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // .mavsdk.rpc.telemetry_server.Odometry odometry = 1;
+  // .mavsdk.rpc.telemetry_server.Odometry odometry = 2;
   bool has_odometry() const;
   private:
   bool _internal_has_odometry() const;
@@ -2194,6 +2305,15 @@ class PublishOdometryRequest final :
       ::mavsdk::rpc::telemetry_server::Odometry* odometry);
   ::mavsdk::rpc::telemetry_server::Odometry* unsafe_arena_release_odometry();
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.telemetry_server.PublishOdometryRequest)
  private:
   class _Internal;
@@ -2202,6 +2322,7 @@ class PublishOdometryRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::mavsdk::rpc::telemetry_server::Odometry* odometry_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_telemetry_5fserver_2ftelemetry_5fserver_2eproto;
 };
@@ -2322,9 +2443,10 @@ class PublishPositionVelocityNedRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPositionVelocityNedFieldNumber = 1,
+    kPositionVelocityNedFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // .mavsdk.rpc.telemetry_server.PositionVelocityNed position_velocity_ned = 1;
+  // .mavsdk.rpc.telemetry_server.PositionVelocityNed position_velocity_ned = 2;
   bool has_position_velocity_ned() const;
   private:
   bool _internal_has_position_velocity_ned() const;
@@ -2342,6 +2464,15 @@ class PublishPositionVelocityNedRequest final :
       ::mavsdk::rpc::telemetry_server::PositionVelocityNed* position_velocity_ned);
   ::mavsdk::rpc::telemetry_server::PositionVelocityNed* unsafe_arena_release_position_velocity_ned();
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.telemetry_server.PublishPositionVelocityNedRequest)
  private:
   class _Internal;
@@ -2350,6 +2481,7 @@ class PublishPositionVelocityNedRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::mavsdk::rpc::telemetry_server::PositionVelocityNed* position_velocity_ned_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_telemetry_5fserver_2ftelemetry_5fserver_2eproto;
 };
@@ -2470,9 +2602,10 @@ class PublishGroundTruthRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kGroundTruthFieldNumber = 1,
+    kGroundTruthFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // .mavsdk.rpc.telemetry_server.GroundTruth ground_truth = 1;
+  // .mavsdk.rpc.telemetry_server.GroundTruth ground_truth = 2;
   bool has_ground_truth() const;
   private:
   bool _internal_has_ground_truth() const;
@@ -2490,6 +2623,15 @@ class PublishGroundTruthRequest final :
       ::mavsdk::rpc::telemetry_server::GroundTruth* ground_truth);
   ::mavsdk::rpc::telemetry_server::GroundTruth* unsafe_arena_release_ground_truth();
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.telemetry_server.PublishGroundTruthRequest)
  private:
   class _Internal;
@@ -2498,6 +2640,7 @@ class PublishGroundTruthRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::mavsdk::rpc::telemetry_server::GroundTruth* ground_truth_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_telemetry_5fserver_2ftelemetry_5fserver_2eproto;
 };
@@ -2618,9 +2761,10 @@ class PublishImuRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kImuFieldNumber = 1,
+    kImuFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // .mavsdk.rpc.telemetry_server.Imu imu = 1;
+  // .mavsdk.rpc.telemetry_server.Imu imu = 2;
   bool has_imu() const;
   private:
   bool _internal_has_imu() const;
@@ -2638,6 +2782,15 @@ class PublishImuRequest final :
       ::mavsdk::rpc::telemetry_server::Imu* imu);
   ::mavsdk::rpc::telemetry_server::Imu* unsafe_arena_release_imu();
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.telemetry_server.PublishImuRequest)
  private:
   class _Internal;
@@ -2646,6 +2799,7 @@ class PublishImuRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::mavsdk::rpc::telemetry_server::Imu* imu_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_telemetry_5fserver_2ftelemetry_5fserver_2eproto;
 };
@@ -2766,9 +2920,10 @@ class PublishScaledImuRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kImuFieldNumber = 1,
+    kImuFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // .mavsdk.rpc.telemetry_server.Imu imu = 1;
+  // .mavsdk.rpc.telemetry_server.Imu imu = 2;
   bool has_imu() const;
   private:
   bool _internal_has_imu() const;
@@ -2786,6 +2941,15 @@ class PublishScaledImuRequest final :
       ::mavsdk::rpc::telemetry_server::Imu* imu);
   ::mavsdk::rpc::telemetry_server::Imu* unsafe_arena_release_imu();
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.telemetry_server.PublishScaledImuRequest)
  private:
   class _Internal;
@@ -2794,6 +2958,7 @@ class PublishScaledImuRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::mavsdk::rpc::telemetry_server::Imu* imu_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_telemetry_5fserver_2ftelemetry_5fserver_2eproto;
 };
@@ -2914,9 +3079,10 @@ class PublishRawImuRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kImuFieldNumber = 1,
+    kImuFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // .mavsdk.rpc.telemetry_server.Imu imu = 1;
+  // .mavsdk.rpc.telemetry_server.Imu imu = 2;
   bool has_imu() const;
   private:
   bool _internal_has_imu() const;
@@ -2934,6 +3100,15 @@ class PublishRawImuRequest final :
       ::mavsdk::rpc::telemetry_server::Imu* imu);
   ::mavsdk::rpc::telemetry_server::Imu* unsafe_arena_release_imu();
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.telemetry_server.PublishRawImuRequest)
  private:
   class _Internal;
@@ -2942,6 +3117,7 @@ class PublishRawImuRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::mavsdk::rpc::telemetry_server::Imu* imu_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_telemetry_5fserver_2ftelemetry_5fserver_2eproto;
 };
@@ -3062,15 +3238,25 @@ class PublishUnixEpochTimeRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kTimeUsFieldNumber = 1,
+    kTimeUsFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // uint64 time_us = 1;
+  // uint64 time_us = 2;
   void clear_time_us();
   ::PROTOBUF_NAMESPACE_ID::uint64 time_us() const;
   void set_time_us(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
   ::PROTOBUF_NAMESPACE_ID::uint64 _internal_time_us() const;
   void _internal_set_time_us(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.telemetry_server.PublishUnixEpochTimeRequest)
@@ -3081,6 +3267,7 @@ class PublishUnixEpochTimeRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::uint64 time_us_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_telemetry_5fserver_2ftelemetry_5fserver_2eproto;
 };
@@ -10053,7 +10240,27 @@ class TelemetryServerResult final :
 #endif  // __GNUC__
 // PublishPositionRequest
 
-// .mavsdk.rpc.telemetry_server.Position position = 1;
+// int32 drone_id = 1;
+inline void PublishPositionRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishPositionRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishPositionRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.telemetry_server.PublishPositionRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void PublishPositionRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void PublishPositionRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.telemetry_server.PublishPositionRequest.drone_id)
+}
+
+// .mavsdk.rpc.telemetry_server.Position position = 2;
 inline bool PublishPositionRequest::_internal_has_position() const {
   return this != internal_default_instance() && position_ != nullptr;
 }
@@ -10143,7 +10350,7 @@ inline void PublishPositionRequest::set_allocated_position(::mavsdk::rpc::teleme
   // @@protoc_insertion_point(field_set_allocated:mavsdk.rpc.telemetry_server.PublishPositionRequest.position)
 }
 
-// .mavsdk.rpc.telemetry_server.VelocityNed velocity_ned = 2;
+// .mavsdk.rpc.telemetry_server.VelocityNed velocity_ned = 3;
 inline bool PublishPositionRequest::_internal_has_velocity_ned() const {
   return this != internal_default_instance() && velocity_ned_ != nullptr;
 }
@@ -10233,7 +10440,7 @@ inline void PublishPositionRequest::set_allocated_velocity_ned(::mavsdk::rpc::te
   // @@protoc_insertion_point(field_set_allocated:mavsdk.rpc.telemetry_server.PublishPositionRequest.velocity_ned)
 }
 
-// .mavsdk.rpc.telemetry_server.Heading heading = 3;
+// .mavsdk.rpc.telemetry_server.Heading heading = 4;
 inline bool PublishPositionRequest::_internal_has_heading() const {
   return this != internal_default_instance() && heading_ != nullptr;
 }
@@ -10327,7 +10534,27 @@ inline void PublishPositionRequest::set_allocated_heading(::mavsdk::rpc::telemet
 
 // PublishHomeRequest
 
-// .mavsdk.rpc.telemetry_server.Position home = 1;
+// int32 drone_id = 1;
+inline void PublishHomeRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishHomeRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishHomeRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.telemetry_server.PublishHomeRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void PublishHomeRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void PublishHomeRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.telemetry_server.PublishHomeRequest.drone_id)
+}
+
+// .mavsdk.rpc.telemetry_server.Position home = 2;
 inline bool PublishHomeRequest::_internal_has_home() const {
   return this != internal_default_instance() && home_ != nullptr;
 }
@@ -10421,7 +10648,27 @@ inline void PublishHomeRequest::set_allocated_home(::mavsdk::rpc::telemetry_serv
 
 // PublishSysStatusRequest
 
-// .mavsdk.rpc.telemetry_server.Battery battery = 1;
+// int32 drone_id = 1;
+inline void PublishSysStatusRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishSysStatusRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishSysStatusRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.telemetry_server.PublishSysStatusRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void PublishSysStatusRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void PublishSysStatusRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.telemetry_server.PublishSysStatusRequest.drone_id)
+}
+
+// .mavsdk.rpc.telemetry_server.Battery battery = 2;
 inline bool PublishSysStatusRequest::_internal_has_battery() const {
   return this != internal_default_instance() && battery_ != nullptr;
 }
@@ -10511,7 +10758,7 @@ inline void PublishSysStatusRequest::set_allocated_battery(::mavsdk::rpc::teleme
   // @@protoc_insertion_point(field_set_allocated:mavsdk.rpc.telemetry_server.PublishSysStatusRequest.battery)
 }
 
-// bool rc_receiver_status = 2;
+// bool rc_receiver_status = 3;
 inline void PublishSysStatusRequest::clear_rc_receiver_status() {
   rc_receiver_status_ = false;
 }
@@ -10531,7 +10778,7 @@ inline void PublishSysStatusRequest::set_rc_receiver_status(bool value) {
   // @@protoc_insertion_point(field_set:mavsdk.rpc.telemetry_server.PublishSysStatusRequest.rc_receiver_status)
 }
 
-// bool gyro_status = 3;
+// bool gyro_status = 4;
 inline void PublishSysStatusRequest::clear_gyro_status() {
   gyro_status_ = false;
 }
@@ -10551,7 +10798,7 @@ inline void PublishSysStatusRequest::set_gyro_status(bool value) {
   // @@protoc_insertion_point(field_set:mavsdk.rpc.telemetry_server.PublishSysStatusRequest.gyro_status)
 }
 
-// bool accel_status = 4;
+// bool accel_status = 5;
 inline void PublishSysStatusRequest::clear_accel_status() {
   accel_status_ = false;
 }
@@ -10571,7 +10818,7 @@ inline void PublishSysStatusRequest::set_accel_status(bool value) {
   // @@protoc_insertion_point(field_set:mavsdk.rpc.telemetry_server.PublishSysStatusRequest.accel_status)
 }
 
-// bool mag_status = 5;
+// bool mag_status = 6;
 inline void PublishSysStatusRequest::clear_mag_status() {
   mag_status_ = false;
 }
@@ -10591,7 +10838,7 @@ inline void PublishSysStatusRequest::set_mag_status(bool value) {
   // @@protoc_insertion_point(field_set:mavsdk.rpc.telemetry_server.PublishSysStatusRequest.mag_status)
 }
 
-// bool gps_status = 6;
+// bool gps_status = 7;
 inline void PublishSysStatusRequest::clear_gps_status() {
   gps_status_ = false;
 }
@@ -10615,7 +10862,27 @@ inline void PublishSysStatusRequest::set_gps_status(bool value) {
 
 // PublishExtendedSysStateRequest
 
-// .mavsdk.rpc.telemetry_server.VtolState vtol_state = 1;
+// int32 drone_id = 1;
+inline void PublishExtendedSysStateRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishExtendedSysStateRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishExtendedSysStateRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.telemetry_server.PublishExtendedSysStateRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void PublishExtendedSysStateRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void PublishExtendedSysStateRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.telemetry_server.PublishExtendedSysStateRequest.drone_id)
+}
+
+// .mavsdk.rpc.telemetry_server.VtolState vtol_state = 2;
 inline void PublishExtendedSysStateRequest::clear_vtol_state() {
   vtol_state_ = 0;
 }
@@ -10635,7 +10902,7 @@ inline void PublishExtendedSysStateRequest::set_vtol_state(::mavsdk::rpc::teleme
   // @@protoc_insertion_point(field_set:mavsdk.rpc.telemetry_server.PublishExtendedSysStateRequest.vtol_state)
 }
 
-// .mavsdk.rpc.telemetry_server.LandedState landed_state = 2;
+// .mavsdk.rpc.telemetry_server.LandedState landed_state = 3;
 inline void PublishExtendedSysStateRequest::clear_landed_state() {
   landed_state_ = 0;
 }
@@ -10659,7 +10926,27 @@ inline void PublishExtendedSysStateRequest::set_landed_state(::mavsdk::rpc::tele
 
 // PublishInAirRequest
 
-// bool is_in_air = 1;
+// int32 drone_id = 1;
+inline void PublishInAirRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishInAirRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishInAirRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.telemetry_server.PublishInAirRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void PublishInAirRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void PublishInAirRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.telemetry_server.PublishInAirRequest.drone_id)
+}
+
+// bool is_in_air = 2;
 inline void PublishInAirRequest::clear_is_in_air() {
   is_in_air_ = false;
 }
@@ -10683,7 +10970,27 @@ inline void PublishInAirRequest::set_is_in_air(bool value) {
 
 // PublishLandedStateRequest
 
-// .mavsdk.rpc.telemetry_server.LandedState landed_state = 1;
+// int32 drone_id = 1;
+inline void PublishLandedStateRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishLandedStateRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishLandedStateRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.telemetry_server.PublishLandedStateRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void PublishLandedStateRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void PublishLandedStateRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.telemetry_server.PublishLandedStateRequest.drone_id)
+}
+
+// .mavsdk.rpc.telemetry_server.LandedState landed_state = 2;
 inline void PublishLandedStateRequest::clear_landed_state() {
   landed_state_ = 0;
 }
@@ -10707,7 +11014,27 @@ inline void PublishLandedStateRequest::set_landed_state(::mavsdk::rpc::telemetry
 
 // PublishRawGpsRequest
 
-// .mavsdk.rpc.telemetry_server.RawGps raw_gps = 1;
+// int32 drone_id = 1;
+inline void PublishRawGpsRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishRawGpsRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishRawGpsRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.telemetry_server.PublishRawGpsRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void PublishRawGpsRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void PublishRawGpsRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.telemetry_server.PublishRawGpsRequest.drone_id)
+}
+
+// .mavsdk.rpc.telemetry_server.RawGps raw_gps = 2;
 inline bool PublishRawGpsRequest::_internal_has_raw_gps() const {
   return this != internal_default_instance() && raw_gps_ != nullptr;
 }
@@ -10797,7 +11124,7 @@ inline void PublishRawGpsRequest::set_allocated_raw_gps(::mavsdk::rpc::telemetry
   // @@protoc_insertion_point(field_set_allocated:mavsdk.rpc.telemetry_server.PublishRawGpsRequest.raw_gps)
 }
 
-// .mavsdk.rpc.telemetry_server.GpsInfo gps_info = 2;
+// .mavsdk.rpc.telemetry_server.GpsInfo gps_info = 3;
 inline bool PublishRawGpsRequest::_internal_has_gps_info() const {
   return this != internal_default_instance() && gps_info_ != nullptr;
 }
@@ -10891,7 +11218,27 @@ inline void PublishRawGpsRequest::set_allocated_gps_info(::mavsdk::rpc::telemetr
 
 // PublishBatteryRequest
 
-// .mavsdk.rpc.telemetry_server.Battery battery = 1;
+// int32 drone_id = 1;
+inline void PublishBatteryRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishBatteryRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishBatteryRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.telemetry_server.PublishBatteryRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void PublishBatteryRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void PublishBatteryRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.telemetry_server.PublishBatteryRequest.drone_id)
+}
+
+// .mavsdk.rpc.telemetry_server.Battery battery = 2;
 inline bool PublishBatteryRequest::_internal_has_battery() const {
   return this != internal_default_instance() && battery_ != nullptr;
 }
@@ -10985,7 +11332,27 @@ inline void PublishBatteryRequest::set_allocated_battery(::mavsdk::rpc::telemetr
 
 // PublishRcStatusRequest
 
-// .mavsdk.rpc.telemetry_server.RcStatus rc_status = 1;
+// int32 drone_id = 1;
+inline void PublishRcStatusRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishRcStatusRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishRcStatusRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.telemetry_server.PublishRcStatusRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void PublishRcStatusRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void PublishRcStatusRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.telemetry_server.PublishRcStatusRequest.drone_id)
+}
+
+// .mavsdk.rpc.telemetry_server.RcStatus rc_status = 2;
 inline bool PublishRcStatusRequest::_internal_has_rc_status() const {
   return this != internal_default_instance() && rc_status_ != nullptr;
 }
@@ -11079,7 +11446,27 @@ inline void PublishRcStatusRequest::set_allocated_rc_status(::mavsdk::rpc::telem
 
 // PublishStatusTextRequest
 
-// .mavsdk.rpc.telemetry_server.StatusText status_text = 1;
+// int32 drone_id = 1;
+inline void PublishStatusTextRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishStatusTextRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishStatusTextRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.telemetry_server.PublishStatusTextRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void PublishStatusTextRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void PublishStatusTextRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.telemetry_server.PublishStatusTextRequest.drone_id)
+}
+
+// .mavsdk.rpc.telemetry_server.StatusText status_text = 2;
 inline bool PublishStatusTextRequest::_internal_has_status_text() const {
   return this != internal_default_instance() && status_text_ != nullptr;
 }
@@ -11173,7 +11560,27 @@ inline void PublishStatusTextRequest::set_allocated_status_text(::mavsdk::rpc::t
 
 // PublishOdometryRequest
 
-// .mavsdk.rpc.telemetry_server.Odometry odometry = 1;
+// int32 drone_id = 1;
+inline void PublishOdometryRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishOdometryRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishOdometryRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.telemetry_server.PublishOdometryRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void PublishOdometryRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void PublishOdometryRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.telemetry_server.PublishOdometryRequest.drone_id)
+}
+
+// .mavsdk.rpc.telemetry_server.Odometry odometry = 2;
 inline bool PublishOdometryRequest::_internal_has_odometry() const {
   return this != internal_default_instance() && odometry_ != nullptr;
 }
@@ -11267,7 +11674,27 @@ inline void PublishOdometryRequest::set_allocated_odometry(::mavsdk::rpc::teleme
 
 // PublishPositionVelocityNedRequest
 
-// .mavsdk.rpc.telemetry_server.PositionVelocityNed position_velocity_ned = 1;
+// int32 drone_id = 1;
+inline void PublishPositionVelocityNedRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishPositionVelocityNedRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishPositionVelocityNedRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.telemetry_server.PublishPositionVelocityNedRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void PublishPositionVelocityNedRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void PublishPositionVelocityNedRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.telemetry_server.PublishPositionVelocityNedRequest.drone_id)
+}
+
+// .mavsdk.rpc.telemetry_server.PositionVelocityNed position_velocity_ned = 2;
 inline bool PublishPositionVelocityNedRequest::_internal_has_position_velocity_ned() const {
   return this != internal_default_instance() && position_velocity_ned_ != nullptr;
 }
@@ -11361,7 +11788,27 @@ inline void PublishPositionVelocityNedRequest::set_allocated_position_velocity_n
 
 // PublishGroundTruthRequest
 
-// .mavsdk.rpc.telemetry_server.GroundTruth ground_truth = 1;
+// int32 drone_id = 1;
+inline void PublishGroundTruthRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishGroundTruthRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishGroundTruthRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.telemetry_server.PublishGroundTruthRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void PublishGroundTruthRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void PublishGroundTruthRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.telemetry_server.PublishGroundTruthRequest.drone_id)
+}
+
+// .mavsdk.rpc.telemetry_server.GroundTruth ground_truth = 2;
 inline bool PublishGroundTruthRequest::_internal_has_ground_truth() const {
   return this != internal_default_instance() && ground_truth_ != nullptr;
 }
@@ -11455,7 +11902,27 @@ inline void PublishGroundTruthRequest::set_allocated_ground_truth(::mavsdk::rpc:
 
 // PublishImuRequest
 
-// .mavsdk.rpc.telemetry_server.Imu imu = 1;
+// int32 drone_id = 1;
+inline void PublishImuRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishImuRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishImuRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.telemetry_server.PublishImuRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void PublishImuRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void PublishImuRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.telemetry_server.PublishImuRequest.drone_id)
+}
+
+// .mavsdk.rpc.telemetry_server.Imu imu = 2;
 inline bool PublishImuRequest::_internal_has_imu() const {
   return this != internal_default_instance() && imu_ != nullptr;
 }
@@ -11549,7 +12016,27 @@ inline void PublishImuRequest::set_allocated_imu(::mavsdk::rpc::telemetry_server
 
 // PublishScaledImuRequest
 
-// .mavsdk.rpc.telemetry_server.Imu imu = 1;
+// int32 drone_id = 1;
+inline void PublishScaledImuRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishScaledImuRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishScaledImuRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.telemetry_server.PublishScaledImuRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void PublishScaledImuRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void PublishScaledImuRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.telemetry_server.PublishScaledImuRequest.drone_id)
+}
+
+// .mavsdk.rpc.telemetry_server.Imu imu = 2;
 inline bool PublishScaledImuRequest::_internal_has_imu() const {
   return this != internal_default_instance() && imu_ != nullptr;
 }
@@ -11643,7 +12130,27 @@ inline void PublishScaledImuRequest::set_allocated_imu(::mavsdk::rpc::telemetry_
 
 // PublishRawImuRequest
 
-// .mavsdk.rpc.telemetry_server.Imu imu = 1;
+// int32 drone_id = 1;
+inline void PublishRawImuRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishRawImuRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishRawImuRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.telemetry_server.PublishRawImuRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void PublishRawImuRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void PublishRawImuRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.telemetry_server.PublishRawImuRequest.drone_id)
+}
+
+// .mavsdk.rpc.telemetry_server.Imu imu = 2;
 inline bool PublishRawImuRequest::_internal_has_imu() const {
   return this != internal_default_instance() && imu_ != nullptr;
 }
@@ -11737,7 +12244,27 @@ inline void PublishRawImuRequest::set_allocated_imu(::mavsdk::rpc::telemetry_ser
 
 // PublishUnixEpochTimeRequest
 
-// uint64 time_us = 1;
+// int32 drone_id = 1;
+inline void PublishUnixEpochTimeRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishUnixEpochTimeRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 PublishUnixEpochTimeRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.telemetry_server.PublishUnixEpochTimeRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void PublishUnixEpochTimeRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void PublishUnixEpochTimeRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.telemetry_server.PublishUnixEpochTimeRequest.drone_id)
+}
+
+// uint64 time_us = 2;
 inline void PublishUnixEpochTimeRequest::clear_time_us() {
   time_us_ = uint64_t{0u};
 }

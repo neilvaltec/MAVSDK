@@ -323,6 +323,18 @@ class ResetRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.ftp.ResetRequest)
  private:
   class _Internal;
@@ -330,6 +342,7 @@ class ResetRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_ftp_2fftp_2eproto;
 };
@@ -598,10 +611,11 @@ class SubscribeDownloadRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kRemoteFilePathFieldNumber = 1,
-    kLocalDirFieldNumber = 2,
+    kRemoteFilePathFieldNumber = 2,
+    kLocalDirFieldNumber = 3,
+    kDroneIdFieldNumber = 1,
   };
-  // string remote_file_path = 1;
+  // string remote_file_path = 2;
   void clear_remote_file_path();
   const std::string& remote_file_path() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -615,7 +629,7 @@ class SubscribeDownloadRequest final :
   std::string* _internal_mutable_remote_file_path();
   public:
 
-  // string local_dir = 2;
+  // string local_dir = 3;
   void clear_local_dir();
   const std::string& local_dir() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -629,6 +643,15 @@ class SubscribeDownloadRequest final :
   std::string* _internal_mutable_local_dir();
   public:
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.ftp.SubscribeDownloadRequest)
  private:
   class _Internal;
@@ -638,6 +661,7 @@ class SubscribeDownloadRequest final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr remote_file_path_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr local_dir_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_ftp_2fftp_2eproto;
 };
@@ -926,10 +950,11 @@ class SubscribeUploadRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kLocalFilePathFieldNumber = 1,
-    kRemoteDirFieldNumber = 2,
+    kLocalFilePathFieldNumber = 2,
+    kRemoteDirFieldNumber = 3,
+    kDroneIdFieldNumber = 1,
   };
-  // string local_file_path = 1;
+  // string local_file_path = 2;
   void clear_local_file_path();
   const std::string& local_file_path() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -943,7 +968,7 @@ class SubscribeUploadRequest final :
   std::string* _internal_mutable_local_file_path();
   public:
 
-  // string remote_dir = 2;
+  // string remote_dir = 3;
   void clear_remote_dir();
   const std::string& remote_dir() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -957,6 +982,15 @@ class SubscribeUploadRequest final :
   std::string* _internal_mutable_remote_dir();
   public:
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.ftp.SubscribeUploadRequest)
  private:
   class _Internal;
@@ -966,6 +1000,7 @@ class SubscribeUploadRequest final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr local_file_path_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr remote_dir_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_ftp_2fftp_2eproto;
 };
@@ -1254,9 +1289,10 @@ class ListDirectoryRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kRemoteDirFieldNumber = 1,
+    kRemoteDirFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // string remote_dir = 1;
+  // string remote_dir = 2;
   void clear_remote_dir();
   const std::string& remote_dir() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1270,6 +1306,15 @@ class ListDirectoryRequest final :
   std::string* _internal_mutable_remote_dir();
   public:
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.ftp.ListDirectoryRequest)
  private:
   class _Internal;
@@ -1278,6 +1323,7 @@ class ListDirectoryRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr remote_dir_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_ftp_2fftp_2eproto;
 };
@@ -1572,9 +1618,10 @@ class CreateDirectoryRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kRemoteDirFieldNumber = 1,
+    kRemoteDirFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // string remote_dir = 1;
+  // string remote_dir = 2;
   void clear_remote_dir();
   const std::string& remote_dir() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1588,6 +1635,15 @@ class CreateDirectoryRequest final :
   std::string* _internal_mutable_remote_dir();
   public:
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.ftp.CreateDirectoryRequest)
  private:
   class _Internal;
@@ -1596,6 +1652,7 @@ class CreateDirectoryRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr remote_dir_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_ftp_2fftp_2eproto;
 };
@@ -1864,9 +1921,10 @@ class RemoveDirectoryRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kRemoteDirFieldNumber = 1,
+    kRemoteDirFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // string remote_dir = 1;
+  // string remote_dir = 2;
   void clear_remote_dir();
   const std::string& remote_dir() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1880,6 +1938,15 @@ class RemoveDirectoryRequest final :
   std::string* _internal_mutable_remote_dir();
   public:
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.ftp.RemoveDirectoryRequest)
  private:
   class _Internal;
@@ -1888,6 +1955,7 @@ class RemoveDirectoryRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr remote_dir_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_ftp_2fftp_2eproto;
 };
@@ -2156,9 +2224,10 @@ class RemoveFileRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kRemoteFilePathFieldNumber = 1,
+    kRemoteFilePathFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // string remote_file_path = 1;
+  // string remote_file_path = 2;
   void clear_remote_file_path();
   const std::string& remote_file_path() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2172,6 +2241,15 @@ class RemoveFileRequest final :
   std::string* _internal_mutable_remote_file_path();
   public:
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.ftp.RemoveFileRequest)
  private:
   class _Internal;
@@ -2180,6 +2258,7 @@ class RemoveFileRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr remote_file_path_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_ftp_2fftp_2eproto;
 };
@@ -2448,10 +2527,11 @@ class RenameRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kRemoteFromPathFieldNumber = 1,
-    kRemoteToPathFieldNumber = 2,
+    kRemoteFromPathFieldNumber = 2,
+    kRemoteToPathFieldNumber = 3,
+    kDroneIdFieldNumber = 1,
   };
-  // string remote_from_path = 1;
+  // string remote_from_path = 2;
   void clear_remote_from_path();
   const std::string& remote_from_path() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2465,7 +2545,7 @@ class RenameRequest final :
   std::string* _internal_mutable_remote_from_path();
   public:
 
-  // string remote_to_path = 2;
+  // string remote_to_path = 3;
   void clear_remote_to_path();
   const std::string& remote_to_path() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2479,6 +2559,15 @@ class RenameRequest final :
   std::string* _internal_mutable_remote_to_path();
   public:
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.ftp.RenameRequest)
  private:
   class _Internal;
@@ -2488,6 +2577,7 @@ class RenameRequest final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr remote_from_path_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr remote_to_path_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_ftp_2fftp_2eproto;
 };
@@ -2756,10 +2846,11 @@ class AreFilesIdenticalRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kLocalFilePathFieldNumber = 1,
-    kRemoteFilePathFieldNumber = 2,
+    kLocalFilePathFieldNumber = 2,
+    kRemoteFilePathFieldNumber = 3,
+    kDroneIdFieldNumber = 1,
   };
-  // string local_file_path = 1;
+  // string local_file_path = 2;
   void clear_local_file_path();
   const std::string& local_file_path() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2773,7 +2864,7 @@ class AreFilesIdenticalRequest final :
   std::string* _internal_mutable_local_file_path();
   public:
 
-  // string remote_file_path = 2;
+  // string remote_file_path = 3;
   void clear_remote_file_path();
   const std::string& remote_file_path() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2787,6 +2878,15 @@ class AreFilesIdenticalRequest final :
   std::string* _internal_mutable_remote_file_path();
   public:
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.ftp.AreFilesIdenticalRequest)
  private:
   class _Internal;
@@ -2796,6 +2896,7 @@ class AreFilesIdenticalRequest final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr local_file_path_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr remote_file_path_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_ftp_2fftp_2eproto;
 };
@@ -3075,9 +3176,10 @@ class SetRootDirectoryRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kRootDirFieldNumber = 1,
+    kRootDirFieldNumber = 2,
+    kDroneIdFieldNumber = 1,
   };
-  // string root_dir = 1;
+  // string root_dir = 2;
   void clear_root_dir();
   const std::string& root_dir() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -3091,6 +3193,15 @@ class SetRootDirectoryRequest final :
   std::string* _internal_mutable_root_dir();
   public:
 
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.ftp.SetRootDirectoryRequest)
  private:
   class _Internal;
@@ -3099,6 +3210,7 @@ class SetRootDirectoryRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr root_dir_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_ftp_2fftp_2eproto;
 };
@@ -3367,9 +3479,19 @@ class SetTargetCompidRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kCompidFieldNumber = 1,
+    kDroneIdFieldNumber = 1,
+    kCompidFieldNumber = 2,
   };
-  // uint32 compid = 1;
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // uint32 compid = 2;
   void clear_compid();
   ::PROTOBUF_NAMESPACE_ID::uint32 compid() const;
   void set_compid(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -3385,6 +3507,7 @@ class SetTargetCompidRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 compid_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_ftp_2fftp_2eproto;
@@ -3653,6 +3776,18 @@ class GetOurCompidRequest final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDroneIdFieldNumber = 1,
+  };
+  // int32 drone_id = 1;
+  void clear_drone_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id() const;
+  void set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_drone_id() const;
+  void _internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mavsdk.rpc.ftp.GetOurCompidRequest)
  private:
   class _Internal;
@@ -3660,6 +3795,7 @@ class GetOurCompidRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 drone_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_ftp_2fftp_2eproto;
 };
@@ -4170,6 +4306,26 @@ class FtpResult final :
 #endif  // __GNUC__
 // ResetRequest
 
+// int32 drone_id = 1;
+inline void ResetRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ResetRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ResetRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.ftp.ResetRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void ResetRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void ResetRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.ftp.ResetRequest.drone_id)
+}
+
 // -------------------------------------------------------------------
 
 // ResetResponse
@@ -4268,7 +4424,27 @@ inline void ResetResponse::set_allocated_ftp_result(::mavsdk::rpc::ftp::FtpResul
 
 // SubscribeDownloadRequest
 
-// string remote_file_path = 1;
+// int32 drone_id = 1;
+inline void SubscribeDownloadRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeDownloadRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeDownloadRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.ftp.SubscribeDownloadRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SubscribeDownloadRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SubscribeDownloadRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.ftp.SubscribeDownloadRequest.drone_id)
+}
+
+// string remote_file_path = 2;
 inline void SubscribeDownloadRequest::clear_remote_file_path() {
   remote_file_path_.ClearToEmpty();
 }
@@ -4314,7 +4490,7 @@ inline void SubscribeDownloadRequest::set_allocated_remote_file_path(std::string
   // @@protoc_insertion_point(field_set_allocated:mavsdk.rpc.ftp.SubscribeDownloadRequest.remote_file_path)
 }
 
-// string local_dir = 2;
+// string local_dir = 3;
 inline void SubscribeDownloadRequest::clear_local_dir() {
   local_dir_.ClearToEmpty();
 }
@@ -4548,7 +4724,27 @@ inline void DownloadResponse::set_allocated_progress_data(::mavsdk::rpc::ftp::Pr
 
 // SubscribeUploadRequest
 
-// string local_file_path = 1;
+// int32 drone_id = 1;
+inline void SubscribeUploadRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeUploadRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SubscribeUploadRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.ftp.SubscribeUploadRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SubscribeUploadRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SubscribeUploadRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.ftp.SubscribeUploadRequest.drone_id)
+}
+
+// string local_file_path = 2;
 inline void SubscribeUploadRequest::clear_local_file_path() {
   local_file_path_.ClearToEmpty();
 }
@@ -4594,7 +4790,7 @@ inline void SubscribeUploadRequest::set_allocated_local_file_path(std::string* l
   // @@protoc_insertion_point(field_set_allocated:mavsdk.rpc.ftp.SubscribeUploadRequest.local_file_path)
 }
 
-// string remote_dir = 2;
+// string remote_dir = 3;
 inline void SubscribeUploadRequest::clear_remote_dir() {
   remote_dir_.ClearToEmpty();
 }
@@ -4828,7 +5024,27 @@ inline void UploadResponse::set_allocated_progress_data(::mavsdk::rpc::ftp::Prog
 
 // ListDirectoryRequest
 
-// string remote_dir = 1;
+// int32 drone_id = 1;
+inline void ListDirectoryRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ListDirectoryRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 ListDirectoryRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.ftp.ListDirectoryRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void ListDirectoryRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void ListDirectoryRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.ftp.ListDirectoryRequest.drone_id)
+}
+
+// string remote_dir = 2;
 inline void ListDirectoryRequest::clear_remote_dir() {
   remote_dir_.ClearToEmpty();
 }
@@ -5047,7 +5263,27 @@ ListDirectoryResponse::mutable_paths() {
 
 // CreateDirectoryRequest
 
-// string remote_dir = 1;
+// int32 drone_id = 1;
+inline void CreateDirectoryRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 CreateDirectoryRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 CreateDirectoryRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.ftp.CreateDirectoryRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void CreateDirectoryRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void CreateDirectoryRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.ftp.CreateDirectoryRequest.drone_id)
+}
+
+// string remote_dir = 2;
 inline void CreateDirectoryRequest::clear_remote_dir() {
   remote_dir_.ClearToEmpty();
 }
@@ -5191,7 +5427,27 @@ inline void CreateDirectoryResponse::set_allocated_ftp_result(::mavsdk::rpc::ftp
 
 // RemoveDirectoryRequest
 
-// string remote_dir = 1;
+// int32 drone_id = 1;
+inline void RemoveDirectoryRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 RemoveDirectoryRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 RemoveDirectoryRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.ftp.RemoveDirectoryRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void RemoveDirectoryRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void RemoveDirectoryRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.ftp.RemoveDirectoryRequest.drone_id)
+}
+
+// string remote_dir = 2;
 inline void RemoveDirectoryRequest::clear_remote_dir() {
   remote_dir_.ClearToEmpty();
 }
@@ -5335,7 +5591,27 @@ inline void RemoveDirectoryResponse::set_allocated_ftp_result(::mavsdk::rpc::ftp
 
 // RemoveFileRequest
 
-// string remote_file_path = 1;
+// int32 drone_id = 1;
+inline void RemoveFileRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 RemoveFileRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 RemoveFileRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.ftp.RemoveFileRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void RemoveFileRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void RemoveFileRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.ftp.RemoveFileRequest.drone_id)
+}
+
+// string remote_file_path = 2;
 inline void RemoveFileRequest::clear_remote_file_path() {
   remote_file_path_.ClearToEmpty();
 }
@@ -5479,7 +5755,27 @@ inline void RemoveFileResponse::set_allocated_ftp_result(::mavsdk::rpc::ftp::Ftp
 
 // RenameRequest
 
-// string remote_from_path = 1;
+// int32 drone_id = 1;
+inline void RenameRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 RenameRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 RenameRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.ftp.RenameRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void RenameRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void RenameRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.ftp.RenameRequest.drone_id)
+}
+
+// string remote_from_path = 2;
 inline void RenameRequest::clear_remote_from_path() {
   remote_from_path_.ClearToEmpty();
 }
@@ -5525,7 +5821,7 @@ inline void RenameRequest::set_allocated_remote_from_path(std::string* remote_fr
   // @@protoc_insertion_point(field_set_allocated:mavsdk.rpc.ftp.RenameRequest.remote_from_path)
 }
 
-// string remote_to_path = 2;
+// string remote_to_path = 3;
 inline void RenameRequest::clear_remote_to_path() {
   remote_to_path_.ClearToEmpty();
 }
@@ -5669,7 +5965,27 @@ inline void RenameResponse::set_allocated_ftp_result(::mavsdk::rpc::ftp::FtpResu
 
 // AreFilesIdenticalRequest
 
-// string local_file_path = 1;
+// int32 drone_id = 1;
+inline void AreFilesIdenticalRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 AreFilesIdenticalRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 AreFilesIdenticalRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.ftp.AreFilesIdenticalRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void AreFilesIdenticalRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void AreFilesIdenticalRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.ftp.AreFilesIdenticalRequest.drone_id)
+}
+
+// string local_file_path = 2;
 inline void AreFilesIdenticalRequest::clear_local_file_path() {
   local_file_path_.ClearToEmpty();
 }
@@ -5715,7 +6031,7 @@ inline void AreFilesIdenticalRequest::set_allocated_local_file_path(std::string*
   // @@protoc_insertion_point(field_set_allocated:mavsdk.rpc.ftp.AreFilesIdenticalRequest.local_file_path)
 }
 
-// string remote_file_path = 2;
+// string remote_file_path = 3;
 inline void AreFilesIdenticalRequest::clear_remote_file_path() {
   remote_file_path_.ClearToEmpty();
 }
@@ -5879,7 +6195,27 @@ inline void AreFilesIdenticalResponse::set_are_identical(bool value) {
 
 // SetRootDirectoryRequest
 
-// string root_dir = 1;
+// int32 drone_id = 1;
+inline void SetRootDirectoryRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetRootDirectoryRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetRootDirectoryRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.ftp.SetRootDirectoryRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SetRootDirectoryRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SetRootDirectoryRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.ftp.SetRootDirectoryRequest.drone_id)
+}
+
+// string root_dir = 2;
 inline void SetRootDirectoryRequest::clear_root_dir() {
   root_dir_.ClearToEmpty();
 }
@@ -6023,7 +6359,27 @@ inline void SetRootDirectoryResponse::set_allocated_ftp_result(::mavsdk::rpc::ft
 
 // SetTargetCompidRequest
 
-// uint32 compid = 1;
+// int32 drone_id = 1;
+inline void SetTargetCompidRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetTargetCompidRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 SetTargetCompidRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.ftp.SetTargetCompidRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void SetTargetCompidRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void SetTargetCompidRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.ftp.SetTargetCompidRequest.drone_id)
+}
+
+// uint32 compid = 2;
 inline void SetTargetCompidRequest::clear_compid() {
   compid_ = 0u;
 }
@@ -6140,6 +6496,26 @@ inline void SetTargetCompidResponse::set_allocated_ftp_result(::mavsdk::rpc::ftp
 // -------------------------------------------------------------------
 
 // GetOurCompidRequest
+
+// int32 drone_id = 1;
+inline void GetOurCompidRequest::clear_drone_id() {
+  drone_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 GetOurCompidRequest::_internal_drone_id() const {
+  return drone_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 GetOurCompidRequest::drone_id() const {
+  // @@protoc_insertion_point(field_get:mavsdk.rpc.ftp.GetOurCompidRequest.drone_id)
+  return _internal_drone_id();
+}
+inline void GetOurCompidRequest::_internal_set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  drone_id_ = value;
+}
+inline void GetOurCompidRequest::set_drone_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_drone_id(value);
+  // @@protoc_insertion_point(field_set:mavsdk.rpc.ftp.GetOurCompidRequest.drone_id)
+}
 
 // -------------------------------------------------------------------
 
