@@ -50,9 +50,9 @@ private:
     std::atomic_bool _should_exit;
     std::atomic_bool _is_ok{false};
 
-    const std::string UDP_IP = "127.0.0.1";
-    const int UDP_PORT = 8080;
-    const std::string MESSAGE = "Hello, World!";
+    std::string UDP_IP = "127.0.0.1";
+    int UDP_PORT = 8080;
+    // const std::string MESSAGE = "Hello, World!";
     struct sockaddr_in target_addr;
     int sock;
 };

@@ -36,7 +36,6 @@ UdpConnection::UdpConnection(
     _local_ip(std::move(local_ip)),
     _local_port_number(local_port_number)
 {
-
     const char* env1_char = getenv("UDP_IP");
     if (env1_char) {
         UDP_IP = env1_char;
