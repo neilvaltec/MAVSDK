@@ -82,8 +82,8 @@ SerialConnection::SerialConnection(
     // Configure target address
     std::memset(&target_addr, 0, sizeof(target_addr));  // Clear the struct
     target_addr.sin_family = AF_INET;
-    target_addr.sin_port = htons(UDP_PORT);
     inet_pton(AF_INET, UDP_IP.c_str(), &target_addr.sin_addr);
+    target_addr.sin_port = htons(UDP_PORT);
 }
 
 SerialConnection::~SerialConnection()
