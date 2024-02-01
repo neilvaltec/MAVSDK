@@ -76,7 +76,7 @@ public:
     bool discover_new_system(Mavsdk& mavsdk, size_t current_total_drone_num)
     {
         // size_t original_num_systems = mavsdk.systems().size();
-        size_t original_num_systems = current_total_drone_num
+        size_t original_num_systems = current_total_drone_num;
         bool new_system_discoverd = false;
 
         std::cout << "Waiting to discover system...\n";
